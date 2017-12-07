@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/begin2x2"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="2х2 Простой метод"/>
+        <item
+            android:id="@+id/adv2x2"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="2х2 Продвинутый"/>
+        <item
+            android:id="@+id/begin"
+            android:icon="@drawable/ic_icon3"
+            android:title="3х3 для Начинающих"/>
+        <item
+            android:id="@+id/g2f"
+            android:icon="@drawable/ic_icon3"
+            android:title="3х3 Фридрих"/>
+        <item
+            android:id="@+id/blind"
+            android:icon="@drawable/ic_icon4"
+            android:title="3х3 с закрытыми глазами"/>
+    </group>
+
+    <item android:title="Дополнительно:">
+        <menu>
+            <item
+                android:id="@+id/timer"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Таймер"/>
+            <item
+                android:id="@+id/scramble"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Генератор скрамблов"/>
+        </menu>
+    </item>
+
+</menu>
