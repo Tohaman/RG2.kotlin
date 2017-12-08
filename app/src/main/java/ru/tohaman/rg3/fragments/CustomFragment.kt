@@ -12,9 +12,9 @@ import org.jetbrains.anko.support.v4.withArguments
 class CustomFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = CustomFragmentUI<Fragment>().createView(AnkoContext.create(context, this))
+        val view = PagerFragmentUI<Fragment>().createView(AnkoContext.create(context, this))
         val message = arguments.getString("message")
-        (view.findViewById(CustomFragmentUI.Ids.textViewFragmentMessage) as TextView).text = message
+        (view.findViewById(PagerFragmentUI.Ids.textViewFragmentMessage) as TextView).text = message
         return view
     }
 

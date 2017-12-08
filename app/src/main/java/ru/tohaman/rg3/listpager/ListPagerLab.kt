@@ -21,7 +21,7 @@ class ListPagerLab private constructor(context: Context){
     var listPagers = arrayListOf<ListPager>()
 
     init { // тут пишем то, что выполнится при инициализации синглета
-       // menuAdd("MAIN", R.array.main_title,R.array.main_icon,context)
+        //menuAdd("MAIN", R.array.main_title,R.array.main_icon,context)
        // menuAdd("MENU2X2",R.array.menu2x2_title,R.array.menu2x2_icon,context)
        // menuAdd("MENU3X3",R.array.menu3x3_title,R.array.menu3x3_icon,context)
 //        phaseInit("PLL",R.array.pll_title,R.array.pll_icon,R.array.pll_descr,R.array.pll_url,context)
