@@ -6,36 +6,36 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/begin2x2"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="2х2 Простой метод"/>
+            android:icon="@drawable/ic_icon2"
+            android:title="@string/begin_2x2"/>
         <item
             android:id="@+id/adv2x2"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="2х2 Продвинутый"/>
+            android:icon="@drawable/ic_icon2"
+            android:title="@string/advanced_2x2"/>
         <item
             android:id="@+id/begin"
             android:icon="@drawable/ic_icon3"
-            android:title="3х3 для Начинающих"/>
+            android:title="@string/begin_3x3"/>
         <item
             android:id="@+id/g2f"
             android:icon="@drawable/ic_icon3"
-            android:title="3х3 Фридрих"/>
+            android:title="@string/g2f_3x3"/>
         <item
             android:id="@+id/blind"
             android:icon="@drawable/ic_icon4"
-            android:title="3х3 с закрытыми глазами"/>
+            android:title="@string/blind_3x3"/>
     </group>
 
-    <item android:title="Дополнительно:">
+    <item android:title="@string/dopolnitelno">
         <menu>
             <item
                 android:id="@+id/timer"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Таймер"/>
+                android:icon="@drawable/ic_menu_timer"
+                android:title="@string/timer_st"/>
             <item
                 android:id="@+id/scramble"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Генератор скрамблов"/>
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/scramble_st"/>
         </menu>
     </item>
 

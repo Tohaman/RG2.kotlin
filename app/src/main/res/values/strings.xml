@@ -5,4 +5,12 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Настройки</string>
+    <string name="begin_2x2">2х2 Простой метод</string>
+    <string name="advanced_2x2">2х2 Продвинутый</string>
+    <string name="begin_3x3">3х3 для Начинающих</string>
+    <string name="g2f_3x3">3х3 Фридрих</string>
+    <string name="blind_3x3">3х3 с закрытыми глазами</string>
+    <string name="dopolnitelno">Дополнительно:</string>
+    <string name="timer_st">Таймер</string>
+    <string name="scramble_st">Генератор скрамблов</string>
 </resources>

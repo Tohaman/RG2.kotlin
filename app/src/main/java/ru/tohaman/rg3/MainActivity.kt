@@ -10,6 +10,9 @@ import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import org.jetbrains.anko.ctx
+import org.jetbrains.anko.startActivity
+import ru.tohaman.rg3.activitys.SlidingTabsActivity
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -68,7 +71,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
             R.id.g2f -> {
-
+                this.startActivity<SlidingTabsActivity>()
             }
             R.id.blind -> {
 
