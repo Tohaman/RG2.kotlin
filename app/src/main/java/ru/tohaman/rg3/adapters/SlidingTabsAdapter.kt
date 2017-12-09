@@ -4,10 +4,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 
-import ru.tohaman.rg3.fragments.CustomFragment
-import ru.tohaman.rg3.listpager.ListPager
-import ru.tohaman.rg3.listpager.ListPagerLab
-import java.util.ArrayList
+import ru.tohaman.rg3.fragments.FragmentPagerItem
 
 /**
  * Created by inaka on 12/23/15
@@ -26,7 +23,7 @@ class SlidingTabsAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     }
 
     override fun getItem(position: Int): Fragment {
-        return CustomFragment.newInstance(titles[position])
+        return FragmentPagerItem.newInstance(titles[position])
     }
 
 }

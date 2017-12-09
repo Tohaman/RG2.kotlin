@@ -4,7 +4,7 @@ import android.view.Gravity
 import android.widget.LinearLayout
 import org.jetbrains.anko.*
 
-class PagerFragmentUI<Fragment> : AnkoComponent<Fragment> {
+class FragmentPagerItemtUI<Fragment> : AnkoComponent<Fragment> {
 
     override fun createView(ui: AnkoContext<Fragment>) = with(ui) {
         linearLayout {
