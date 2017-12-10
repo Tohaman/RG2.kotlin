@@ -5,16 +5,15 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 
 import ru.tohaman.rg3.fragments.FragmentPagerItem
+import ru.tohaman.rg3.listpager.ListPager
 
-/**
- * Created by inaka on 12/23/15
- */
-class SlidingTabsAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+class SlidingTabsAdapter(fm: FragmentManager, lp: List<ListPager>) : FragmentPagerAdapter(fm) {
 
-    private var titles  = listOf("Смежные окошки", "Противоположные окошки", "Fragment3", "Fragment4", "Fragment5")
+    private var titles  = lp
 
     override fun getPageTitle(position: Int): CharSequence {
-        return titles[position]
+
+        return titles[position].title
     }
 
     override fun getCount(): Int {
@@ -23,7 +22,7 @@ class SlidingTabsAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     }
 
     override fun getItem(position: Int): Fragment {
-        return FragmentPagerItem.newInstance(titles[position])
+        return FragmentPagerItem.newInstance(titles[position].title)
     }
 
 }

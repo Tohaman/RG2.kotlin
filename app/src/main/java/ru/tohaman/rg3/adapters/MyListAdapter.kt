@@ -20,13 +20,13 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList<ListPager>()) : B
                 padding = dip(5)
                 orientation = HORIZONTAL
 
-                imageView(taskNum).lparams(width = dip(70), height = dip(70)) {
+                imageView(taskNum).lparams(width = dip(40), height = dip(40)) {
                     padding = dip(5)
                 }
 
                 textView {
                     text = list[i].title
-                    textSize = 18f
+                    textSize = 12f
                     padding = dip(5)
                     leftPadding = dip(20)
                     typeface = Typeface.DEFAULT_BOLD
