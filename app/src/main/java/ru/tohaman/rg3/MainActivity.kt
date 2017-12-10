@@ -1,7 +1,9 @@
 package ru.tohaman.rg3
 
+import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.NavigationView
+import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction
 import android.support.v4.view.GravityCompat
@@ -17,17 +19,17 @@ import ru.tohaman.rg3.listpager.ListPagerLab
 import ru.tohaman.rg3.DebugTag.TAG
 import ru.tohaman.rg3.activitys.SlidingTabsActivity
 import ru.tohaman.rg3.fragments.Fragment2x2Advanced
-import ru.tohaman.rg3.fragments.Fragment2x2Begin
-import ru.tohaman.rg3.fragments.FragmentSlidePager
+import ru.tohaman.rg3.fragments.FragmentListView
+import ru.tohaman.rg3.fragments.ListViewFragment
 
 // Статические переменные (верхнего уровня). Котлин в действии стр.77-78
 const val EXTRA_ID = "ru.tohaman.rubicsguide.PHASE_ID"
 const val RUBIC_PHASE = "ru.tohaman.rubicsguide.PHASE"
-lateinit var frag2x2Begin : Fragment
+lateinit var fragListView: ListViewFragment
 lateinit var frag2x2Adv : Fragment
 lateinit var fragG2F: Fragment
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, ListViewFragment.OnFragmentInteractionListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,22 +37,25 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val mListPagerLab = ListPagerLab.get(this)
         Log.v (TAG, "MainActivity CreateView")
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(maintoolbar)
 
-//        fab.setOnClickListener { view ->
+        fab.setOnClickListener { view ->
+            fragListView.changePhase("BASIC", this)
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                    .setAction("Action", null).show()
-//        }
+        }
 
         val toggle = ActionBarDrawerToggle(
-                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+                this, drawer_layout, maintoolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
-        frag2x2Begin = Fragment2x2Begin()
         frag2x2Adv = Fragment2x2Advanced()
-        fragG2F = FragmentSlidePager()
 
+        fragListView = ListViewFragment.newInstance("BEGIN")
+        val transaction : FragmentTransaction? = supportFragmentManager.beginTransaction()
+        transaction?.replace(R.id.frame_container, fragListView)?.commit()
+        //fragListView.changePhase("BEGIN", this)
 
         nav_view.setNavigationItemSelectedListener(this)
     }
@@ -81,30 +86,42 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
-        val frams : FragmentTransaction? = supportFragmentManager.beginTransaction()
+        val transaction : FragmentTransaction? = supportFragmentManager.beginTransaction()
         when (item.itemId) {
             R.id.begin2x2 -> {
-                frams?.replace(R.id.frame_container, frag2x2Begin)?.commit()
+                Log.v(DebugTag.TAG, "NavigationItemSelected begin 2x2")
+                transaction?.replace(R.id.frame_container, fragListView)?.commit()
+                fragListView.changePhase("BEGIN", this)
             }
             R.id.adv2x2 -> {
-                frams?.replace(R.id.frame_container, frag2x2Adv)?.commit()
+                Log.v(DebugTag.TAG, "NavigationItemSelected adv 2x2")
+                transaction?.replace(R.id.frame_container, frag2x2Adv)?.commit()
             }
             R.id.begin -> {
-
+                Log.v(DebugTag.TAG, "NavigationItemSelected begin")
+                transaction?.replace(R.id.frame_container, fragListView)?.commit()
+                fragListView.changePhase("BASIC", this)
             }
             R.id.g2f -> {
+                Log.v(DebugTag.TAG, "NavigationItemSelected g2f")
                 startActivity<SlidingTabsActivity>()
                 //frams?.replace(R.id.frame_container, fragG2F)?.commit()
             }
             R.id.blind -> {
+                Log.v(DebugTag.TAG, "NavigationItemSelected blind")
 
             }
             R.id.timer -> {
-
+                Log.v(DebugTag.TAG, "NavigationItemSelected timer")
             }
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    override fun onFragmentInteraction(uri: Uri) {
+        //Обработка событий из ListViewFragment
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

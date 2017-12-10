@@ -21,7 +21,7 @@ import ru.tohaman.rg3.listpager.ListPager
 import ru.tohaman.rg3.listpager.ListPagerLab
 import java.util.ArrayList
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_sliding_tabs.*
+import kotlinx.android.synthetic.main.app_bar_sliding.*
 import ru.tohaman.rg3.fragments.FragmentPagerItem
 
 
@@ -38,26 +38,17 @@ class SlidingTabsActivity : AppCompatActivity() {
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
-
-//        var fragPager = FragmentSlidePager()
-//        val fm = supportFragmentManager
-//        fm.beginTransaction().add(R.id.content_frame, fragPager)?.commit()
-
-
         Log.v (TAG, "MainFragment CreateView")
         val mListPagerLab = ListPagerLab.get(this)
         val mListPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList("BEGIN")
 
-
+        // Настраиваем листвью для выезжающего слева списка
         val mListAdapter = MyListAdapter(mListPagers)
-        val mDrawerListView : ListView = findViewById(R.id.left_drawer)
+        val mDrawerListView  = findViewById<ListView>(R.id.left_drawer)
         // подключим адаптер для выезжающего слева списка
         mDrawerListView.adapter = mListAdapter
 
-//        val mSlideTabsAdapter = SlidingTabsAdapter(fm,mListPagers)
-//        val mSlidePager : ViewPager = findViewById(R.id.viewPagerSlidingTabs)
-
-        val mViewPagerSlidingTabs: ViewPager = findViewById(R.id.viewPagerSlidingTabs)
+        val mViewPagerSlidingTabs = findViewById<ViewPager>(R.id.viewPagerSlidingTabs)
         // подключим адаптер для слайдингтаба (основного текста)
         mViewPagerSlidingTabs.adapter = object : FragmentStatePagerAdapter(supportFragmentManager) {
 
@@ -76,7 +67,7 @@ class SlidingTabsActivity : AppCompatActivity() {
         }
         tabs.setViewPager(mViewPagerSlidingTabs)
 
-        mDrawerListView.setOnItemClickListener { parent, view, position, id ->
+        mDrawerListView.setOnItemClickListener { _, _, position, _ ->
             mViewPagerSlidingTabs.currentItem = position
             drawer_layout.closeDrawer(GravityCompat.START)
         }

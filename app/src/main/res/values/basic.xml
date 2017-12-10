@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="basic_title">
+        <item>@string/basic_st1_title</item>
+        <item>@string/basic_st2_title</item>
+        <item>@string/basic_st3_title</item>
+        <item>@string/basic_st4_title</item>
+        <item>@string/basic_st5_title</item>
+        <item>@string/basic_st6_title</item>
+        <item>@string/basic_st7_title</item>
+        <item>@string/basic_st8_title</item>
+        <item>@string/basic_st9_title</item>
+        <item>@string/basic_st10_title</item>
+        <item>@string/basic_st11_title</item>
+        <item>@string/basic_st12_title</item>
+        <item>@string/basic_st13_title</item>
+        <item>@string/basic_st14_title</item>
+        <item>@string/basic_st15_title</item>
+        <item>@string/basic_st16_title</item>
+        <item>@string/basic_st17_title</item>
+        <item>@string/basic_st18_title</item>
+        <item>@string/basic_st19_title</item>
+        <item>@string/basic_st20_title</item>
+        <item>@string/basic_st21_title</item>
+        <item>@string/basic_st22_title</item>
+        <item>@string/basic_st23_title</item>
+        <item>@string/basic_st24_title</item>
+        <item>@string/basic_st25_title</item>
+        <item>@string/basic_st26_title</item>
+        <item>@string/basic_st27_title</item>
+        <item>@string/basic_st28_title</item>
+        <item>@string/basic_st29_title</item>
+        <item>@string/basic_st30_title</item>
+        <item>@string/basic_st31_title</item>
+        <item>@string/basic_st32_title</item>
+        <item>@string/basic_st33_title</item>
+        <item>@string/basic_st34_title</item>
+        <item>@string/basic_st35_title</item>
+        <item>@string/basic_st36_title</item>
+    </string-array>
+
+    <integer-array name="basic_icon">
+        <item>@drawable/vbasic_1</item>
+        <item>@drawable/vbasic_2</item>
+        <item>@drawable/vbasic_3</item>
+        <item>@drawable/vbasic_4</item>
+        <item>@drawable/vbasic_5</item>
+        <item>@drawable/vbasic_6</item>
+        <item>@drawable/vbasic_7</item>
+        <item>@drawable/vbasic_8</item>
+        <item>@drawable/vbasic_9</item>
+        <item>@drawable/vbasic_10</item>
+        <item>@drawable/vbasic_11</item>
+        <item>@drawable/vbasic_12</item>
+        <item>@drawable/vbasic_13</item>
+        <item>@drawable/vbasic_14</item>
+        <item>@drawable/vbasic_15</item>
+        <item>@drawable/vbasic_16</item>
+        <item>@drawable/vbasic_17</item>
+        <item>@drawable/vbasic_18</item>
+        <item>@drawable/vbasic_19</item>
+        <item>@drawable/vbasic_20</item>
+        <item>@drawable/vbasic_21</item>
+        <item>@drawable/vbasic_22</item>
+        <item>@drawable/vbasic_23</item>
+        <item>@drawable/vbasic_24</item>
+        <item>@drawable/vbasic_25</item>
+        <item>@drawable/vbasic_26</item>
+        <item>@drawable/vbasic_27</item>
+        <item>@drawable/vbasic_28</item>
+        <item>@drawable/vbasic_29</item>
+        <item>@drawable/vbasic_30</item>
+        <item>@drawable/vbasic_31</item>
+        <item>@drawable/vbasic_32</item>
+        <item>@drawable/vbasic_33</item>
+        <item>@drawable/vbasic_34</item>
+        <item>@drawable/vbasic_35</item>
+        <item>@drawable/vbasic_36</item>
+    </integer-array>
+
+    <string-array name="basic_descr">
+        <item>@string/basic_st1_descr</item>
+        <item>@string/basic_st2_descr</item>
+        <item>@string/basic_st3_descr</item>
+        <item>@string/basic_st4_descr</item>
+        <item>@string/basic_st5_descr</item>
+        <item>@string/basic_st6_descr</item>
+        <item>@string/basic_st7_descr</item>
+        <item>@string/basic_st8_descr</item>
+        <item>@string/basic_st9_descr</item>
+        <item>@string/basic_st10_descr</item>
+        <item>@string/basic_st11_descr</item>
+        <item>@string/basic_st12_descr</item>
+        <item>@string/basic_st13_descr</item>
+        <item>@string/basic_st14_descr</item>
+        <item>@string/basic_st15_descr</item>
+        <item>@string/basic_st16_descr</item>
+        <item>@string/basic_st17_descr</item>
+        <item>@string/basic_st18_descr</item>
+        <item>@string/basic_st19_descr</item>
+        <item>@string/basic_st20_descr</item>
+        <item>@string/basic_st21_descr</item>
+        <item>@string/basic_st22_descr</item>
+        <item>@string/basic_st23_descr</item>
+        <item>@string/basic_st24_descr</item>
+        <item>@string/basic_st25_descr</item>
+        <item>@string/basic_st26_descr</item>
+        <item>@string/basic_st27_descr</item>
+        <item>@string/basic_st28_descr</item>
+        <item>@string/basic_st29_descr</item>
+        <item>@string/basic_st30_descr</item>
+        <item>@string/basic_st31_descr</item>
+        <item>@string/basic_st32_descr</item>
+        <item>@string/basic_st33_descr</item>
+        <item>@string/basic_st34_descr</item>
+        <item>@string/basic_st35_descr</item>
+        <item>@string/basic_st36_descr</item>
+    </string-array>
+
+    <string-array name="basic_url">
+        <item>1_url</item>
+        <item>2_url</item>
+        <item>3_url</item>
+        <item>4_url</item>
+        <item>5_url</item>
+        <item>6_url</item>
+        <item>7_url</item>
+        <item>8_url</item>
+        <item>9_url</item>
+        <item>10_url</item>
+        <item>11_url</item>
+        <item>12_url</item>
+        <item>13_url</item>
+        <item>14_url</item>
+        <item>15_url</item>
+        <item>16_url</item>
+        <item>17_url</item>
+        <item>18_url</item>
+        <item>19_url</item>
+        <item>20_url</item>
+        <item>21_url</item>
+        <item>22_url</item>
+        <item>23_url</item>
+        <item>24_url</item>
+        <item>25_url</item>
+        <item>26_url</item>
+        <item>27_url</item>
+        <item>28_url</item>
+        <item>29_url</item>
+        <item>30_url</item>
+        <item>31_url</item>
+        <item>32_url</item>
+        <item>33_url</item>
+        <item>34_url</item>
+        <item>35_url</item>
+        <item>36_url</item>
+    </string-array>
+
+    <string name="basic_st1_title">R</string>
+    <string name="basic_st1_descr">Включение света</string>
+    <string name="basic_st2_title">R\'</string>
+    <string name="basic_st2_descr">Выключение света</string>
+    <string name="basic_st3_title">F</string>
+    <string name="basic_st3_descr">В Лондон</string>
+    <string name="basic_st4_title">F\'</string>
+    <string name="basic_st4_descr">Из Лондона</string>
+    <string name="basic_st5_title">U</string>
+    <string name="basic_st5_descr">Крыша по</string>
+    <string name="basic_st6_title">U\'</string>
+    <string name="basic_st6_descr">Крыша против</string>
+    <string name="basic_st7_title">D</string>
+    <string name="basic_st7_descr">Земля по</string>
+    <string name="basic_st8_title">D\'</string>
+    <string name="basic_st8_descr">Земля против</string>
+    <string name="basic_st9_title">L</string>
+    <string name="basic_st9_descr">Лево по</string>
+    <string name="basic_st10_title">L\'</string>
+    <string name="basic_st10_descr">Лево против</string>
+    <string name="basic_st11_title">B</string>
+    <string name="basic_st11_descr">Зад по</string>
+    <string name="basic_st12_title">B\'</string>
+    <string name="basic_st12_descr">Зад против</string>
+    <string name="basic_st13_title">Rw</string>
+    <string name="basic_st13_descr">Жирно вкл.свет</string>
+    <string name="basic_st14_title">Rw\'</string>
+    <string name="basic_st14_descr">Жирно выкл.свет</string>
+    <string name="basic_st15_title">Fw</string>
+    <string name="basic_st15_descr">Жирно в Лондон</string>
+    <string name="basic_st16_title">Fw\'</string>
+    <string name="basic_st16_descr">Жирно из Лондона</string>
+    <string name="basic_st17_title">Uw</string>
+    <string name="basic_st17_descr">Крыша жирно по</string>
+    <string name="basic_st18_title">Uw\'</string>
+    <string name="basic_st18_descr">Крыша жирно против</string>
+    <string name="basic_st19_title">Dw</string>
+    <string name="basic_st19_descr">Земля жирно по</string>
+    <string name="basic_st20_title">Dw\'</string>
+    <string name="basic_st20_descr">Земля жирно против</string>
+    <string name="basic_st21_title">Lw</string>
+    <string name="basic_st21_descr">Лево жирно по</string>
+    <string name="basic_st22_title">Lw\'</string>
+    <string name="basic_st22_descr">Лево жирно против</string>
+    <string name="basic_st23_title">Bw</string>
+    <string name="basic_st23_descr">Зад жирно по</string>
+    <string name="basic_st24_title">Bw\'</string>
+    <string name="basic_st24_descr">Зад жирно против</string>
+    <string name="basic_st25_title">M</string>
+    <string name="basic_st25_descr">Центр неудобно</string>
+    <string name="basic_st26_title">M\'</string>
+    <string name="basic_st26_descr">Центр удобно</string>
+    <string name="basic_st27_title">E</string>
+    <string name="basic_st27_descr">Центр по горизонтали</string>
+    <string name="basic_st28_title">E\'</string>
+    <string name="basic_st28_descr">Горизотальный центр против</string>
+    <string name="basic_st29_title">S</string>
+    <string name="basic_st29_descr">Середина по</string>
+    <string name="basic_st30_title">S\'</string>
+    <string name="basic_st30_descr">Середина против</string>
+    <string name="basic_st31_title">x</string>
+    <string name="basic_st31_descr">По оси X</string>
+    <string name="basic_st32_title">x\'</string>
+    <string name="basic_st32_descr">Против оси X</string>
+    <string name="basic_st33_title">y</string>
+    <string name="basic_st33_descr">По оси Y</string>
+    <string name="basic_st34_title">y\'</string>
+    <string name="basic_st34_descr">Против оси Y</string>
+    <string name="basic_st35_title">z</string>
+    <string name="basic_st35_descr">По оси Z</string>
+    <string name="basic_st36_title">z\'</string>
+    <string name="basic_st36_descr">Против оси Z</string>
+
+</resources>
