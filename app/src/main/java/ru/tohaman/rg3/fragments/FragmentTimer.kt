@@ -10,13 +10,13 @@ import android.view.ViewGroup
 import ru.tohaman.rg3.R
 
 
-class Fragment2x2Advanced : Fragment() {
+class FragmentTimer : Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater!!.inflate(R.layout.fragment_fragment2x2_advanced, container, false)
+        return inflater!!.inflate(R.layout.fragment_timer, container, false)
     }
 
 }// Required empty public constructor

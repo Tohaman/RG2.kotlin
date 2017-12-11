@@ -1,9 +1,9 @@
 package ru.tohaman.rg3
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.NavigationView
-import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction
 import android.support.v4.view.GravityCompat
@@ -18,8 +18,7 @@ import org.jetbrains.anko.startActivity
 import ru.tohaman.rg3.listpager.ListPagerLab
 import ru.tohaman.rg3.DebugTag.TAG
 import ru.tohaman.rg3.activitys.SlidingTabsActivity
-import ru.tohaman.rg3.fragments.Fragment2x2Advanced
-import ru.tohaman.rg3.fragments.FragmentListView
+import ru.tohaman.rg3.fragments.FragmentTimer
 import ru.tohaman.rg3.fragments.ListViewFragment
 
 // Статические переменные (верхнего уровня). Котлин в действии стр.77-78
@@ -50,12 +49,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
-        frag2x2Adv = Fragment2x2Advanced()
+        frag2x2Adv = FragmentTimer()
 
         fragListView = ListViewFragment.newInstance("BEGIN")
         val transaction : FragmentTransaction? = supportFragmentManager.beginTransaction()
         transaction?.replace(R.id.frame_container, fragListView)?.commit()
-        //fragListView.changePhase("BEGIN", this)
 
         nav_view.setNavigationItemSelectedListener(this)
     }
@@ -85,35 +83,48 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
         // Handle navigation view item clicks here.
         val transaction : FragmentTransaction? = supportFragmentManager.beginTransaction()
+        Log.v(DebugTag.TAG, "NavigationItemSelected $item.itemId")
         when (item.itemId) {
             R.id.begin2x2 -> {
-                Log.v(DebugTag.TAG, "NavigationItemSelected begin 2x2")
-                transaction?.replace(R.id.frame_container, fragListView)?.commit()
-                fragListView.changePhase("BEGIN", this)
-            }
-            R.id.adv2x2 -> {
-                Log.v(DebugTag.TAG, "NavigationItemSelected adv 2x2")
-                transaction?.replace(R.id.frame_container, frag2x2Adv)?.commit()
-            }
-            R.id.begin -> {
-                Log.v(DebugTag.TAG, "NavigationItemSelected begin")
                 transaction?.replace(R.id.frame_container, fragListView)?.commit()
                 fragListView.changePhase("BASIC", this)
             }
+            R.id.adv2x2 -> {
+                transaction?.replace(R.id.frame_container, frag2x2Adv)?.commit()
+            }
+            R.id.begin -> {
+                transaction?.replace(R.id.frame_container, fragListView)?.commit()
+                fragListView.changePhase("BEGIN", this)
+            }
             R.id.g2f -> {
-                Log.v(DebugTag.TAG, "NavigationItemSelected g2f")
-                startActivity<SlidingTabsActivity>()
+                startActivity<SlidingTabsActivity>(RUBIC_PHASE to "BEGIN", EXTRA_ID to "5")
                 //frams?.replace(R.id.frame_container, fragG2F)?.commit()
             }
             R.id.blind -> {
-                Log.v(DebugTag.TAG, "NavigationItemSelected blind")
+
+            }
+            R.id.blind_acc -> {
+
+            }
+            R.id.begin4x4 -> {
 
             }
             R.id.timer -> {
-                Log.v(DebugTag.TAG, "NavigationItemSelected timer")
             }
+            R.id.scramble -> {
+
+            }
+            R.id.pll_game -> {
+
+            }
+            R.id.basic_move -> {
+
+            }
+
+
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)

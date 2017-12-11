@@ -32,10 +32,6 @@ import android.os.Build
  * create an instance of this fragment.
  */
 class ListViewFragment : ListFragment() {
-
-    // TODO: Rename and change types of parameters
-    private var mParam1: String? = null
-    private var mParam2: String? = null
     private var mPhase: String = "BEGIN"
     private lateinit var mDrawerListView: ListView
 
@@ -44,15 +40,10 @@ class ListViewFragment : ListFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.v (DebugTag.TAG, "ListViewFragment onCreate")
         super.onCreate(savedInstanceState)
-        if (arguments != null) {
-            mParam1 = arguments.getString(ARG_PARAM1)
-            mParam2 = arguments.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return super.onCreateView(inflater, container, savedInstanceState)
-
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -78,8 +69,6 @@ class ListViewFragment : ListFragment() {
         val mListPagers : ArrayList<ListPager> = ListPagerLab.get(context!!).getPhaseList(mPhase)
         val mListAdapter = MyListAdapter(mListPagers,1.5f)
         listAdapter = mListAdapter
-//        mDrawerListView.adapter = mListAdapter
-//        mDrawerListView.deferNotifyDataSetChanged()
     }
 
     override fun onListItemClick(l: ListView?, v: View?, position: Int, id: Long) {
@@ -121,35 +110,16 @@ class ListViewFragment : ListFragment() {
      * See the Android Training lesson [Communicating with Other Fragments](http://developer.android.com/training/basics/fragments/communicating.html) for more information.
      */
     interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         fun onFragmentInteraction(uri: Uri) {
             Log.v(DebugTag.TAG, "ListViewFragment onFragmentInteraction")
         }
     }
 
     companion object {
-        // TODO: Rename parameter arguments, choose names that match
-        // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-        private val ARG_PARAM1 = "param1"
-        private val ARG_PARAM2 = "param2"
-
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ListViewFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        fun newInstance(param1: String, param2: String = ""): ListViewFragment {
+        fun newInstance(param1: String): ListViewFragment {
             Log.v(DebugTag.TAG, "ListViewFragment newInstance")
             val fragment = ListViewFragment()
-            val args = Bundle()
-            args.putString(ARG_PARAM1, param1)
-            args.putString(ARG_PARAM2, param2)
-            fragment.arguments = args
-            Log.v(DebugTag.TAG, "ListViewFragment newInstance end")
+            fragment.mPhase = param1
             return fragment
         }
     }

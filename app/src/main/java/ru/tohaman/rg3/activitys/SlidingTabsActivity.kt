@@ -22,6 +22,7 @@ import ru.tohaman.rg3.listpager.ListPagerLab
 import java.util.ArrayList
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_sliding.*
+import ru.tohaman.rg3.RUBIC_PHASE
 import ru.tohaman.rg3.fragments.FragmentPagerItem
 
 
@@ -32,6 +33,11 @@ class SlidingTabsActivity : AppCompatActivity() {
         Log.v (TAG, "SlidingTabActivity Create")
         setContentView(R.layout.activity_sliding_tabs)
         setSupportActionBar(toolbar)
+        var name = "BASIC"
+
+        if (intent.hasExtra(RUBIC_PHASE)){
+            name = intent.extras.getString(RUBIC_PHASE)
+        }
 
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
@@ -40,7 +46,7 @@ class SlidingTabsActivity : AppCompatActivity() {
 
         Log.v (TAG, "MainFragment CreateView")
         val mListPagerLab = ListPagerLab.get(this)
-        val mListPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList("BEGIN")
+        val mListPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList(name)
 
         // Настраиваем листвью для выезжающего слева списка
         val mListAdapter = MyListAdapter(mListPagers)

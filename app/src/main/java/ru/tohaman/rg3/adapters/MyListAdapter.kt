@@ -5,12 +5,8 @@ import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.LinearLayout
 import android.widget.LinearLayout.HORIZONTAL
 import org.jetbrains.anko.*
-import ru.tohaman.rg3.R.id.center
-import ru.tohaman.rg3.R.id.textView
-import ru.tohaman.rg3.fragments.ListViewUI
 import ru.tohaman.rg3.listpager.ListPager
 
 /**

@@ -22,20 +22,40 @@
             android:title="@string/g2f_3x3"/>
         <item
             android:id="@+id/blind"
-            android:icon="@drawable/ic_icon4"
+            android:icon="@drawable/ic_icon3"
             android:title="@string/blind_3x3"/>
+        <item
+            android:id="@+id/blind_acc"
+            android:icon="@drawable/ic_icon3"
+            android:title="@string/blind_acc_3x3"/>
+        <item
+            android:id="@+id/begin4x4"
+            android:icon="@drawable/ic_icon4"
+            android:title="@string/begin_4x4"/>
+        <item
+            android:id="@+id/timer"
+            android:icon="@drawable/ic_menu_timer"
+            android:title="@string/timer_st"/>
+        <item
+            android:id="@+id/scramble"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/scramble_st"/>
+        <item
+            android:id="@+id/pll_game"
+            android:icon="@drawable/ic_menu_game"
+            android:title="@string/pll_game"/>
+        <item
+            android:id="@+id/basic_move"
+            android:icon="@drawable/ic_menu_basic"
+            android:title="@string/basic_moves"/>
     </group>
 
     <item android:title="@string/dopolnitelno">
         <menu>
             <item
-                android:id="@+id/timer"
-                android:icon="@drawable/ic_menu_timer"
-                android:title="@string/timer_st"/>
-            <item
-                android:id="@+id/scramble"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="@string/scramble_st"/>
+                android:id="@+id/about"
+                android:icon="@drawable/ic_menu_about"
+                android:title="@string/st_about"/>
         </menu>
     </item>
 
