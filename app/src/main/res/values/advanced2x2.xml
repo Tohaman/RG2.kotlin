@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="adv2x2_title">
+        <item>@string/adv2x2_st1_title</item>
+        <item>@string/adv2x2_st2_title</item>
+        <item>@string/adv2x2_st3_title</item>
+    </string-array>
+
+    <integer-array name="adv2x2_icon">
+        <item>@drawable/ic_icon2</item>
+        <item>@drawable/ic_icon2</item>
+        <item>@drawable/ic_icon2</item>
+    </integer-array>
+    
+    <string-array name="adv2x2_descr">
+        <item>@string/adv2x2_st1_descr</item>
+        <item>@string/adv2x2_st2_descr</item>
+        <item>@string/adv2x2_st3_descr</item>
+    </string-array>
+
+
+    <string-array name="adv2x2_url">
+        <item>@string/adv2x2_st1_url</item>
+        <item>@string/adv2x2_st2_url</item>
+        <item>@string/adv2x2_st3_url</item>
+    </string-array>
+    
+    <string name="adv2x2_st1_title">Этап 1. Нижний слой</string>
+    <string name="adv2x2_st1_descr" formatted="false"><![CDATA[
+        <p>По сути кубик 2х2 является упрощенным вариантом кубика 3х3 у которого отсутствуют центры
+        и ребра, т.е. можно считать, что они всегда собраны.</p>
+    ]]></string>
+    <string name="adv2x2_st1_url"></string>
+
+    <string name="adv2x2_st2_title">Этап 2. OLL 2x2</string>
+    <string name="adv2x2_st2_descr" formatted="false"><![CDATA[
+        <p>Второй этап так же делается в один алгоритм.</p>
+    ]]></string>
+    <string name="adv2x2_st2_url">8VCsFNFa5yM</string>
+
+    <string name="adv2x2_st3_title">Этап 3. PLL 2x2</string>
+    <string name="adv2x2_st3_descr" formatted="false"><![CDATA[
+        <p>Третий этап, как и в кубике 3х3 - PLL.</p>
+    ]]></string>
+    <string name="adv2x2_st3_url">8VCsFNFa5yM</string>
+
+</resources>

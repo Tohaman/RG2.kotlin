@@ -23,5 +23,8 @@
     <dimen name="begin_pager_t_height">90dp</dimen>
     <dimen name="begin_pager_height7">107dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="z_oll_w">100dp</dimen>
+    <dimen name="z_oll_h">100dp</dimen>
+    <dimen name="z_oll_wbig">100dp</dimen>
 
 </resources>

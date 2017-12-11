@@ -21,9 +21,10 @@ class ListPagerLab private constructor(context: Context){
     var listPagers = arrayListOf<ListPager>()
 
     init { // тут пишем то, что выполнится при инициализации синглета
-        //menuAdd("MAIN", R.array.main_title,R.array.main_icon,context)
-       // menuAdd("MENU2X2",R.array.menu2x2_title,R.array.menu2x2_icon,context)
+       menuAdd("BEGIN2X2",R.array.begin2x2_title,R.array.begin2x2_icon,context)
+       menuAdd("ADV2X2",R.array.adv2x2_title,R.array.adv2x2_icon,context)
        // menuAdd("MENU3X3",R.array.menu3x3_title,R.array.menu3x3_icon,context)
+        menuAdd("G2F", R.array.g2f_title,R.array.g2f_icon,context,R.array.g2f_phase)
 //        phaseInit("PLL",R.array.pll_title,R.array.pll_icon,R.array.pll_descr,R.array.pll_url,context)
         phaseInit("BEGIN",R.array.begin_title,R.array.begin_icon,R.array.begin_descr,R.array.begin_url,context)
         phaseInit("BASIC",R.array.basic_title,R.array.basic_icon,R.array.basic_descr,R.array.basic_url,context)
@@ -44,11 +45,16 @@ class ListPagerLab private constructor(context: Context){
 
     //--------функции класса ----------------
 
-    private fun menuAdd(phase:String, titleArray:Int, iconArray:Int, context: Context){
-        val mTitles =  context.resources.getStringArray(titleArray)
-        val resID = context.resources.obtainTypedArray (iconArray)
+    private fun menuAdd(phase:String, titleArray:Int, iconArray:Int, context: Context, phaseArray:Int = 0){
+        val mTitles = context.resources.getStringArray(titleArray)
+        val resID = context.resources.obtainTypedArray(iconArray)
         for (i in mTitles.indices) {
-            listPagers.add( ListPager(phase, i, mTitles[i],resID.getResourceId(i, 0)))
+            when (phaseArray) {
+                0 -> {listPagers.add(ListPager(phase, i, mTitles[i], resID.getResourceId(i, 0)))}
+                else -> {
+                    listPagers.add(ListPager(phase, i, mTitles[i], resID.getResourceId(i, 0),comment = context.resources.getStringArray(phaseArray)[i]))
+                }
+            }
         }
         resID.recycle()
     }

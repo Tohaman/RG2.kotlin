@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="@dimen/z_3d_w"
+        android:height="@dimen/z_3d_h"
+        android:viewportWidth="17.8"
+        android:viewportHeight="17.8">
+    <path android:fillColor="@color/cube_white" android:pathData="M5.9,4.77l3.11,-1.05l2.79,1.02l-2.96,1.06z"/>
+    <path android:fillColor="@color/cube_white" android:pathData="M9.37,3.58l2.71,-0.95l2.79,0.89l-2.66,1.1z"/>
+    <path android:fillColor="@color/cube_white" android:pathData="M12.47,2.49l1.99,-0.62l2.82,0.76l-2.05,0.78z"/>
+    <path android:fillColor="@color/cube_white" android:pathData="M9.3,1.55l2.02,-0.66l2.77,0.83l-2.23,0.66z"/>
+    <path android:fillColor="@color/cube_white" android:pathData="M6.2,2.5l2.67,-0.86l2.76,0.84l-2.73,0.95z"/>
+    <path android:fillColor="@color/cube_white" android:pathData="M2.89,3.57l2.99,-0.96l2.7,0.96l-3.05,1z"/>
+    <path android:fillColor="@color/cube_white" android:pathData="M0.55,2.62l2.85,-0.84l2.05,0.73l-2.87,0.93z"/>
+    <path android:fillColor="@color/cube_white" android:pathData="M3.79,1.65l2.77,-0.79l2.02,0.7l-2.64,0.83z"/>
+    <path android:fillColor="@color/cube_white" android:pathData="M6.82,0.77l2.23,-0.61l2.07,0.6l-2.21,0.7z"/>
+</vector>

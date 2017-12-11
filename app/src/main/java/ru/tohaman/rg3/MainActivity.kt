@@ -1,7 +1,5 @@
 package ru.tohaman.rg3
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
@@ -25,8 +23,7 @@ import ru.tohaman.rg3.fragments.ListViewFragment
 const val EXTRA_ID = "ru.tohaman.rubicsguide.PHASE_ID"
 const val RUBIC_PHASE = "ru.tohaman.rubicsguide.PHASE"
 lateinit var fragListView: ListViewFragment
-lateinit var frag2x2Adv : Fragment
-lateinit var fragG2F: Fragment
+lateinit var fragTimer: Fragment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, ListViewFragment.OnFragmentInteractionListener {
 
@@ -39,7 +36,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(maintoolbar)
 
         fab.setOnClickListener { view ->
-            fragListView.changePhase("BASIC", this)
+            drawer_layout.openDrawer(GravityCompat.START)
+//            drawer_layout.closeDrawer(GravityCompat.START)
+//            fragListView.changePhase("BASIC", this)
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                    .setAction("Action", null).show()
         }
@@ -49,7 +48,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
-        frag2x2Adv = FragmentTimer()
+        fragTimer = FragmentTimer()
 
         fragListView = ListViewFragment.newInstance("BEGIN")
         val transaction : FragmentTransaction? = supportFragmentManager.beginTransaction()
@@ -90,18 +89,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (item.itemId) {
             R.id.begin2x2 -> {
                 transaction?.replace(R.id.frame_container, fragListView)?.commit()
-                fragListView.changePhase("BASIC", this)
+                fragListView.changePhase("BEGIN2X2", this)
             }
             R.id.adv2x2 -> {
-                transaction?.replace(R.id.frame_container, frag2x2Adv)?.commit()
+                transaction?.replace(R.id.frame_container, fragListView)?.commit()
+                fragListView.changePhase("ADV2X2", this)
             }
             R.id.begin -> {
                 transaction?.replace(R.id.frame_container, fragListView)?.commit()
                 fragListView.changePhase("BEGIN", this)
             }
             R.id.g2f -> {
-                startActivity<SlidingTabsActivity>(RUBIC_PHASE to "BEGIN", EXTRA_ID to "5")
-                //frams?.replace(R.id.frame_container, fragG2F)?.commit()
+                transaction?.replace(R.id.frame_container, fragListView)?.commit()
+                fragListView.changePhase("G2F", this)
             }
             R.id.blind -> {
 
@@ -113,6 +113,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
             R.id.timer -> {
+                transaction?.replace(R.id.frame_container, fragTimer)?.commit()
             }
             R.id.scramble -> {
 
@@ -131,8 +132,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    override fun onFragmentInteraction(uri: Uri) {
+    override fun onFragmentInteraction(phase:String, id:Int) {
         //Обработка событий из ListViewFragment
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        startActivity<SlidingTabsActivity>(RUBIC_PHASE to phase, EXTRA_ID to id)
     }
 }

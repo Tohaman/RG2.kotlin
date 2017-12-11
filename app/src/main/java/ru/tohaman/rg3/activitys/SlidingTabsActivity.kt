@@ -9,10 +9,6 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.ListView
-import kotlinx.android.synthetic.main.app_bar_main.*
-import org.jetbrains.anko.listView
-import org.jetbrains.anko.sdk15.coroutines.onItemClick
-import org.jetbrains.anko.toast
 import ru.tohaman.rg3.DebugTag.TAG
 
 import ru.tohaman.rg3.R
@@ -21,7 +17,9 @@ import ru.tohaman.rg3.listpager.ListPager
 import ru.tohaman.rg3.listpager.ListPagerLab
 import java.util.ArrayList
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.app_bar_sliding.*
+import ru.tohaman.rg3.EXTRA_ID
 import ru.tohaman.rg3.RUBIC_PHASE
 import ru.tohaman.rg3.fragments.FragmentPagerItem
 
@@ -30,13 +28,23 @@ class SlidingTabsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.v (TAG, "SlidingTabActivity Create")
+        Log.v (TAG, "SlidingTabActivity onCreate")
         setContentView(R.layout.activity_sliding_tabs)
         setSupportActionBar(toolbar)
-        var name = "BASIC"
 
+        fab_sl.setOnClickListener { view ->
+            onBackPressed()
+        }
+
+
+        //Инициируем фазу и номер этапа, должны быть переданы из другой активности, если нет, то используем значения по-умолчанию
+        var mPhase = "BEGIN"
+        var id = 0
         if (intent.hasExtra(RUBIC_PHASE)){
-            name = intent.extras.getString(RUBIC_PHASE)
+            mPhase = intent.extras.getString(RUBIC_PHASE)
+        }
+        if (intent.hasExtra(EXTRA_ID)){
+            id = intent.extras.getInt(EXTRA_ID)
         }
 
         val toggle = ActionBarDrawerToggle(
@@ -44,9 +52,9 @@ class SlidingTabsActivity : AppCompatActivity() {
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
-        Log.v (TAG, "MainFragment CreateView")
+        Log.v (TAG, "SlidingTabActivity onCrate Инициализируем ListPagers и передаем его адаптерам")
         val mListPagerLab = ListPagerLab.get(this)
-        val mListPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList(name)
+        val mListPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList(mPhase)
 
         // Настраиваем листвью для выезжающего слева списка
         val mListAdapter = MyListAdapter(mListPagers)
@@ -71,15 +79,13 @@ class SlidingTabsActivity : AppCompatActivity() {
             }
 
         }
+        mViewPagerSlidingTabs.currentItem = id
         tabs.setViewPager(mViewPagerSlidingTabs)
 
         mDrawerListView.setOnItemClickListener { _, _, position, _ ->
             mViewPagerSlidingTabs.currentItem = position
             drawer_layout.closeDrawer(GravityCompat.START)
         }
-
-//        mViewPagerSlidingTabs.currentItem = 5
-
 
     }
 

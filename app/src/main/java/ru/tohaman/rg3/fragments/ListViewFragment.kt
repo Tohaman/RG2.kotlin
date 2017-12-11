@@ -14,13 +14,18 @@ import org.jetbrains.anko.support.v4.toast
 import ru.tohaman.rg3.DebugTag
 
 import ru.tohaman.rg3.R
-import ru.tohaman.rg3.R.color.transparent
 import ru.tohaman.rg3.adapters.MyListAdapter
 import ru.tohaman.rg3.listpager.ListPager
 import ru.tohaman.rg3.listpager.ListPagerLab
 import java.util.ArrayList
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
+import android.view.Gravity
+import org.jetbrains.anko.backgroundColor
+import org.jetbrains.anko.frameLayout
+import ru.tohaman.rg3.EXTRA_ID
+import ru.tohaman.rg3.RUBIC_PHASE
+import ru.tohaman.rg3.activitys.SlidingTabsActivity
 
 
 /**
@@ -73,15 +78,10 @@ class ListViewFragment : ListFragment() {
 
     override fun onListItemClick(l: ListView?, v: View?, position: Int, id: Long) {
         super.onListItemClick(l, v, position, id)
-        toast("Ваш выбор $mPhase, $position")
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    fun onButtonPressed(uri: Uri) {
-        Log.v (DebugTag.TAG, "ListViewFragment onButtonPressed")
         if (mListener != null) {
-            mListener!!.onFragmentInteraction(uri)
+            mListener!!.onFragmentInteraction(mPhase,position)
         }
+        //toast("Ваш выбор $mPhase, $position")
     }
 
     override fun onAttach(context: Context?) {
@@ -110,7 +110,7 @@ class ListViewFragment : ListFragment() {
      * See the Android Training lesson [Communicating with Other Fragments](http://developer.android.com/training/basics/fragments/communicating.html) for more information.
      */
     interface OnFragmentInteractionListener {
-        fun onFragmentInteraction(uri: Uri) {
+        fun onFragmentInteraction(phase: String, id : Int) {
             Log.v(DebugTag.TAG, "ListViewFragment onFragmentInteraction")
         }
     }
