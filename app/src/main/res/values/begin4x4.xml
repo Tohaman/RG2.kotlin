@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="begin4_title">
+        <item>@string/begin4_st1_title</item>
+        <item>@string/begin4_st2_title</item>
+        <item>@string/begin4_st3_title</item>
+        <item>@string/begin4_st4_title</item>
+        <item>@string/begin4_st5a_title</item>
+        <item>@string/begin4_st5b_title</item>
+        <item>@string/begin4_st6_title</item>
+        <item>@string/begin4_st7_title</item>
+        <item>@string/begin4_st8_title</item>
+        <item>@string/begin4_st9_title</item>
+    </string-array>
+
+    <integer-array name="begin4_icon">
+        <item>@drawable/main4x4</item>
+        <item>@drawable/main4x4</item>
+        <item>@drawable/main4x4</item>
+        <item>@drawable/main4x4</item>
+        <item>@drawable/main4x4</item>
+        <item>@drawable/main4x4</item>
+        <item>@drawable/main4x4</item>
+        <item>@drawable/main4x4</item>
+        <item>@drawable/main4x4</item>
+        <item>@drawable/main4x4</item>
+    </integer-array>
+    
+    <string-array name="begin4_descr">
+        <item>@string/begin4_st1_descr</item>
+        <item>@string/begin4_st2_descr</item>
+        <item>@string/begin4_st3_descr</item>
+        <item>@string/begin4_st4_descr</item>
+        <item>@string/begin4_st5a_descr</item>
+        <item>@string/begin4_st5b_descr</item>
+        <item>@string/begin4_st6_descr</item>
+        <item>@string/begin4_st7_descr</item>
+        <item>@string/begin4_st8_descr</item>
+        <item>@string/begin4_st9_descr</item>
+    </string-array>
+
+
+    <string-array name="begin4_url">
+        <item>@string/begin4_st1_url</item>
+        <item>@string/begin4_st2_url</item>
+        <item>@string/begin4_st3_url</item>
+        <item>@string/begin4_st4_url</item>
+        <item>@string/begin4_st5a_url</item>
+        <item>@string/begin4_st5b_url</item>
+        <item>@string/begin4_st6_url</item>
+        <item>@string/begin4_st7_url</item>
+        <item>@string/begin4_st8_url</item>
+        <item>@string/begin4_st9_url</item>
+    </string-array>
+    
+    <string name="begin4_st1_title">Этап 1. Основные отличия от 3х3</string>
+    <string name="begin4_st1_descr" formatted="false"><![CDATA[
+        <p>Существует несколько методов сборки кубика Рубика для начинающих.
+        </p>
+    ]]></string>
+    <string name="begin4_st1_url"></string>
+
+    <string name="begin4_st2_title">Этап 2. Нижний крест</string>
+    <string name="begin4_st2_descr" formatted="false"><![CDATA[
+        <p>На данном этапе обращаем внимание только на <b>ребра</b> кубика,
+        </p>
+    ]]></string>
+    <string name="begin4_st2_url"></string>
+
+    <string name="begin4_st3_title">Этап 3. Правильный крест</string>
+    <string name="begin4_st3_descr" formatted="false"><![CDATA[
+        <p>Теперь надо совместить ребра со своими центрами. Договоримся,
+        </p>
+    ]]></string>
+    <string name="begin4_st3_url"></string>
+
+    <string name="begin4_st4_title">Этап 4. Первый (нижний) слой</string>
+    <string name="begin4_st4_descr" formatted="false"><![CDATA[
+        <p>На этом этапе ставим на место углы выбранной на первом этапе стороны.
+        </p>
+    ]]></string>
+    <string name="begin4_st4_url"></string>
+
+    <string name="begin4_st5a_title">Этап 5а. Два нижних слоя (Ромашки)</string>
+    <string name="begin4_st5a_descr" formatted="false"><![CDATA[
+        <p>На этом этапе занимаемся ребрами которые должны находится на
+        </p>
+    ]]></string>
+    <string name="begin4_st5a_url"></string>
+
+    <string name="begin4_st5b_title">Этап 5б. Два нижних слоя (Желтый одуванчик)</string>
+    <string name="begin4_st5b_descr" formatted="false"><![CDATA[
+        <p>Если на третьем этаже (крыше) все ребра с наклейками с цветом крыши,
+        </p>
+    ]]></string>
+    <string name="begin4_st5b_url"></string>
+
+    <string name="begin4_st6_title">Этап 6. Верхний крест (Оружие)</string>
+    <string name="begin4_st6_descr" formatted="false"><![CDATA[
+        <p>И снова занимаемся ребрами, но уже ребрами цвета крыши.
+        </p>
+    ]]></string>
+    <string name="begin4_st6_url"></string>
+
+    <string name="begin4_st7_title">Этап 7. Красим крышу</string>
+    <string name="begin4_st7_descr" formatted="false"><![CDATA[
+        <p>А теперь займемся углами и сделаем всю крышу одного цвета (покрасим ее),
+        </p>
+    ]]></string>
+    <string name="begin4_st7_url"></string>
+
+    <string name="begin4_st8_title">Этап 8. Ставим грани (Убийство в Лондоне)</string>
+    <string name="begin4_st8_descr" formatted="false"><![CDATA[
+        <p>Теперь расставим на свои места ребра на верхней грани (сделаем верхний
+        </p>
+    ]]></string>
+    <string name="begin4_st8_url"></string>
+
+    <string name="begin4_st9_title">Этап 9. Треугольники (Инфаркт)</string>
+    <string name="begin4_st9_descr" formatted="false"><![CDATA[
+        <p>Ну и на последнем этапе мы ставим на место углы верхней грани (крыши).
+        </p>
+    ]]></string>
+    <string name="begin4_st9_url"></string>
+
+
+</resources>

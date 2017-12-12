@@ -38,7 +38,6 @@ import ru.tohaman.rg3.activitys.SlidingTabsActivity
  */
 class ListViewFragment : ListFragment() {
     private var mPhase: String = "BEGIN"
-    private lateinit var mDrawerListView: ListView
 
     private var mListener: OnFragmentInteractionListener? = null
 
@@ -48,8 +47,10 @@ class ListViewFragment : ListFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        //return super.onCreateView(inflater, container, savedInstanceState)
+        return inflater!!.inflate(R.layout.listview_4_fragment, null)
     }
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         Log.v (DebugTag.TAG, "ListViewFragment onActivityCreated $mPhase")

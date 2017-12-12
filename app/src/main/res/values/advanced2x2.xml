@@ -8,9 +8,9 @@
     </string-array>
 
     <integer-array name="adv2x2_icon">
-        <item>@drawable/ic_icon2</item>
-        <item>@drawable/ic_icon2</item>
-        <item>@drawable/ic_icon2</item>
+        <item>@drawable/main2x2</item>
+        <item>@drawable/main2x2</item>
+        <item>@drawable/main2x2</item>
     </integer-array>
     
     <string-array name="adv2x2_descr">
