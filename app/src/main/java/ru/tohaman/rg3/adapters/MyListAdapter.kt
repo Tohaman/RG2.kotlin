@@ -62,7 +62,7 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
         }
     }
 
-    override fun getItem(position: Int): Any {
+    override fun getItem(position: Int): ListPager {
         return list[position]
     }
 

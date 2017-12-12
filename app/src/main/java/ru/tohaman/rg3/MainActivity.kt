@@ -23,6 +23,7 @@ import ru.tohaman.rg3.DebugTag.TAG
 import ru.tohaman.rg3.activitys.SlidingTabsActivity
 import ru.tohaman.rg3.fragments.FragmentTimer
 import ru.tohaman.rg3.fragments.ListViewFragment
+import ru.tohaman.rg3.listpager.ListPager
 
 // Статические переменные (верхнего уровня). Котлин в действии стр.77-78
 const val EXTRA_ID = "ru.tohaman.rubicsguide.PHASE_ID"
@@ -32,15 +33,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var fragListView: ListViewFragment
     private lateinit var fragTimer: Fragment
     private var back_pressed_time: Long = 0
+    lateinit var mListPagerLab: ListPagerLab
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.v (TAG, "MainActivity ListPagerLab init")
-        val mListPagerLab = ListPagerLab.get(this)
         Log.v (TAG, "MainActivity CreateView")
         setContentView(R.layout.activity_main)
         setSupportActionBar(maintoolbar)
-
+        mListPagerLab = ListPagerLab.get(this)
         fab.setOnClickListener { view ->
             drawer_layout.openDrawer(GravityCompat.START)
 //            drawer_layout.closeDrawer(GravityCompat.START)
@@ -137,13 +138,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 transaction?.replace(R.id.frame_container, fragTimer)?.commit()
             }
             R.id.scramble -> {
-
+                Snackbar.make(contentView!!, "Генератор скрамблов пока недоступен", Snackbar.LENGTH_LONG)
+                        .setAction("ОК", {}).show()
             }
             R.id.pll_game -> {
-
+                Snackbar.make(contentView!!, "Игра пока недоступна", Snackbar.LENGTH_LONG)
+                        .setAction("ОК", {}).show()
             }
             R.id.basic_move -> {
-
+                transaction?.replace(R.id.frame_container, fragListView)?.commit()
+                fragListView.changePhase("BASIC", this)
+                saveStartPhase("BASIC")
             }
 
 
@@ -168,6 +173,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onFragmentInteraction(phase:String, id:Int) {
         //Обработка событий из ListViewFragment
-        startActivity<SlidingTabsActivity>(RUBIC_PHASE to phase, EXTRA_ID to id)
+        Log.v(DebugTag.TAG, "onFragmentInteraction Start, $phase, $id")
+        val lp = mListPagerLab.getPhaseItem(id,phase)
+        val desc:String = getString(lp.description)
+        when (phase) {
+            "BASIC" -> { toast(desc)}
+
+            else -> { startActivity<SlidingTabsActivity>(RUBIC_PHASE to phase, EXTRA_ID to id)}
+        }
     }
 }

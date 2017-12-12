@@ -104,9 +104,8 @@ class ListPagerLab private constructor(context: Context){
     }
 
     //возвращает из ListPagerLab один ListPager с заданными фазой и номером
-    fun getPhaseItem(id: Int, phase: String): ListPager? {
-        var mPagerList: ListPager? = null
-
+    fun getPhaseItem(id: Int, phase: String): ListPager {
+        var mPagerList: ListPager = ListPager("",0)
         for (listPager in listPagers) {
             if ((phase == listPager.phase) and (id == listPager.id)) {
                 mPagerList = listPager

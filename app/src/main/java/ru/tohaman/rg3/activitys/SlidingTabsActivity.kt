@@ -52,16 +52,18 @@ class SlidingTabsActivity : AppCompatActivity() {
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
-        Log.v (TAG, "SlidingTabActivity onCrate Инициализируем ListPagers и передаем его адаптерам")
+        Log.v (TAG, "SlidingTabActivity onCreate Инициализируем ListPagers и передаем его адаптерам")
         val mListPagerLab = ListPagerLab.get(this)
         val mListPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList(mPhase)
 
+        Log.v (TAG, "SlidingTabActivity onCreate Настраиваем ListView для списка слева")
         // Настраиваем листвью для выезжающего слева списка
         val mListAdapter = MyListAdapter(mListPagers)
         val mDrawerListView  = findViewById<ListView>(R.id.left_drawer)
         // подключим адаптер для выезжающего слева списка
         mDrawerListView.adapter = mListAdapter
 
+        Log.v (TAG, "SlidingTabActivity onCreate Настраиваем SlidingTab")
         val mViewPagerSlidingTabs = findViewById<ViewPager>(R.id.viewPagerSlidingTabs)
         // подключим адаптер для слайдингтаба (основного текста)
         mViewPagerSlidingTabs.adapter = object : FragmentStatePagerAdapter(supportFragmentManager) {
