@@ -5,7 +5,6 @@ import android.graphics.Typeface
 import android.view.Gravity
 import android.widget.LinearLayout
 import org.jetbrains.anko.*
-import org.jetbrains.anko.custom.style
 
 class FragmentPagerItemtUI<Fragment> : AnkoComponent<Fragment> {
 
