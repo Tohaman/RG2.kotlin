@@ -22,7 +22,7 @@ class SlidingTabsAdapter(fm: FragmentManager, lp: List<ListPager>) : FragmentPag
     }
 
     override fun getItem(position: Int): Fragment {
-        return FragmentPagerItem.newInstance(titles[position].title)
+        return FragmentPagerItem.newInstance(titles[position])
     }
 
 }

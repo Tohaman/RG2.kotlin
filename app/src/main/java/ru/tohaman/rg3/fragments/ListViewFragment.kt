@@ -47,7 +47,7 @@ class ListViewFragment : ListFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        //return super.onCreateView(inflater, container, savedInstanceState)
+        //Берем layout listview_4_fragment, чтобы небольшие литсвью располагались по центру фрагмента, а не по верхнему краю
         return inflater!!.inflate(R.layout.listview_4_fragment, null)
     }
 

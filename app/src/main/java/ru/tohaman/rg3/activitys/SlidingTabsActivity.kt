@@ -75,7 +75,7 @@ class SlidingTabsActivity : AppCompatActivity() {
             }
 
             override fun getItem(position: Int): Fragment {
-                return FragmentPagerItem.newInstance(mListPagers[position].title)
+                return FragmentPagerItem.newInstance(mListPagers[position])
             }
 
         }
