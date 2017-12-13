@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/z_cube_back_black"/>
+    <item android:drawable="@drawable/z_cube_left_g"/>
+    <item android:drawable="@drawable/z_cube_right_o"/>
+
+    <item android:drawable="@drawable/z_3d_up_11_y"/>
+    <item android:drawable="@drawable/z_3d_up_12_y"/>
+    <item android:drawable="@drawable/z_3d_up_13_y"/>
+    <item android:drawable="@drawable/z_3d_up_21_y"/>
+    <item android:drawable="@drawable/z_3d_up_22_y"/>
+    <item android:drawable="@drawable/z_3d_up_23_y"/>
+    <item android:drawable="@drawable/z_3d_up_31_g"/>
+    <item android:drawable="@drawable/z_3d_up_32_y"/>
+    <item android:drawable="@drawable/z_3d_up_33_g"/>
+
+    <item android:drawable="@drawable/z_3d_up_41_y"/>
+    <item android:drawable="@drawable/z_3d_up_42_g"/>
+    <item android:drawable="@drawable/z_3d_up_43_y"/>
+    <item android:drawable="@drawable/z_3d_up_44_g"/>
+    <item android:drawable="@drawable/z_3d_up_45_g"/>
+    <item android:drawable="@drawable/z_3d_up_46_g"/>
+</layer-list>

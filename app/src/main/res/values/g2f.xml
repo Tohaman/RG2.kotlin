@@ -6,7 +6,6 @@
         <item>Такой разный F2L</item>
         <item>Максимкин PLL</item>
         <item>Долгожданный OLL</item>
-        <item>Игра \"Угадай PLL\"</item>
     </string-array>
 
     <integer-array name="g2f_icon">
@@ -15,16 +14,28 @@
         <item>@drawable/vf2l</item>
         <item>@drawable/vpll</item>
         <item>@drawable/voll_56</item>
-        <item>@drawable/vpll_test</item>
     </integer-array>
 
-    <string-array name="g2f_phase">
-        <item>ACCEL</item>
-        <item>CROSS</item>
-        <item>ADVF2L</item>
-        <item>PLL</item>
-        <item>OLL</item>
-        <item>PLLTEST</item>
+    <string-array name="g2f_descr">
+        <item>@string/g2f_st1_descr</item>
+        <item>@string/g2f_st2_descr</item>
+        <item>@string/g2f_st3_descr</item>
+        <item>@string/g2f_st4_descr</item>
+        <item>@string/g2f_st5_descr</item>
     </string-array>
+
+    <string-array name="g2f_null">
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+    </string-array>
+
+    <string name="g2f_st1_descr">ACCEL</string>
+    <string name="g2f_st2_descr">CROSS</string>
+    <string name="g2f_st3_descr">ADVF2L</string>
+    <string name="g2f_st4_descr">PLL</string>
+    <string name="g2f_st5_descr">OLL</string>
 
 </resources>

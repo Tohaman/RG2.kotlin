@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pll_title">
+        <item>@string/pll_st1_title</item>
+        <item>@string/pll_st2_title</item>
+        <item>@string/pll_st3_title</item>
+        <item>@string/pll_st4_title</item>
+        <item>@string/pll_st5_title</item>
+        <item>@string/pll_st6_title</item>
+        <item>@string/pll_st7_title</item>
+        <item>@string/pll_st8_title</item>
+        <item>@string/pll_st9_title</item>
+        <item>@string/pll_st10_title</item>
+        <item>@string/pll_st11_title</item>
+        <item>@string/pll_st12_title</item>
+        <item>@string/pll_st13_title</item>
+        <item>@string/pll_st14_title</item>
+        <item>@string/pll_st15_title</item>
+        <item>@string/pll_st16_title</item>
+        <item>@string/pll_st17_title</item>
+        <item>@string/pll_st18_title</item>
+        <item>@string/pll_st19_title</item>
+        <item>@string/pll_st20_title</item>
+        <item>@string/pll_st21_title</item>
+    </string-array>
+
+    <integer-array name="pll_icon">
+        <item>@drawable/vpll_1</item>
+        <item>@drawable/vpll_2</item>
+        <item>@drawable/vpll_3</item>
+        <item>@drawable/vpll_4</item>
+        <item>@drawable/vpll_5</item>
+        <item>@drawable/vpll_6</item>
+        <item>@drawable/vpll_7</item>
+        <item>@drawable/vpll_8</item>
+        <item>@drawable/vpll_9</item>
+        <item>@drawable/vpll_10</item>
+        <item>@drawable/vpll_11</item>
+        <item>@drawable/vpll_12</item>
+        <item>@drawable/vpll_13</item>
+        <item>@drawable/vpll_14</item>
+        <item>@drawable/vpll_15</item>
+        <item>@drawable/vpll_16</item>
+        <item>@drawable/vpll_17</item>
+        <item>@drawable/vpll_18</item>
+        <item>@drawable/vpll_19</item>
+        <item>@drawable/vpll_20</item>
+        <item>@drawable/vpll_21</item>
+    </integer-array>
+
+    <string-array name="pll_descr">
+        <item>@string/pll_st1_descr</item>
+        <item>@string/pll_st2_descr</item>
+        <item>@string/pll_st3_descr</item>
+        <item>@string/pll_st4_descr</item>
+        <item>@string/pll_st5_descr</item>
+        <item>@string/pll_st6_descr</item>
+        <item>@string/pll_st7_descr</item>
+        <item>@string/pll_st8_descr</item>
+        <item>@string/pll_st9_descr</item>
+        <item>@string/pll_st10_descr</item>
+        <item>@string/pll_st11_descr</item>
+        <item>@string/pll_st12_descr</item>
+        <item>@string/pll_st13_descr</item>
+        <item>@string/pll_st14_descr</item>
+        <item>@string/pll_st15_descr</item>
+        <item>@string/pll_st16_descr</item>
+        <item>@string/pll_st17_descr</item>
+        <item>@string/pll_st18_descr</item>
+        <item>@string/pll_st19_descr</item>
+        <item>@string/pll_st20_descr</item>
+        <item>@string/pll_st21_descr</item>
+    </string-array>
+
+    <string-array name="pll_url">
+        <item>@string/pll_st1_url</item>
+        <item>@string/pll_st2_url</item>
+        <item>@string/pll_st3_url</item>
+        <item>@string/pll_st4_url</item>
+        <item>@string/pll_st5_url</item>
+        <item>@string/pll_st6_url</item>
+        <item>@string/pll_st7_url</item>
+        <item>@string/pll_st8_url</item>
+        <item>@string/pll_st9_url</item>
+        <item>@string/pll_st10_url</item>
+        <item>@string/pll_st11_url</item>
+        <item>@string/pll_st12_url</item>
+        <item>@string/pll_st13_url</item>
+        <item>@string/pll_st14_url</item>
+        <item>@string/pll_st15_url</item>
+        <item>@string/pll_st16_url</item>
+        <item>@string/pll_st17_url</item>
+        <item>@string/pll_st18_url</item>
+        <item>@string/pll_st19_url</item>
+        <item>@string/pll_st20_url</item>
+        <item>@string/pll_st21_url</item>
+    </string-array>
+
+    <string name="pll_st1_title">Смежные окошки</string>
+    <string name="pll_st1_descr" formatted="false"><![CDATA[
+        <p>Что такое PLL? <b>P</b>ermutation <b>L</b>ast <b>L</b>ayer, перестановка последнего слоя - это последний из этапов по методу Фридрих. Включает в себя 21 алгоритм.<br/><br/>
+        В идеале надо стремиться к тому, чтобы определять PLL алгоритм по любым двум сторонам, или хотя бы по трем.
+        Для тренировки определения алгоритма, можно поиграть в игру <a href="rubic-activity://plltest">\"Определи PLL\".</a><br/><br/>
+        Но для начала, чтобы не путаться будем обращать внимание на наиболее яркие черты той или иной ситуации.
+        Названия алгоритмов зачастую связаны именно с этими чертами.<br/><br/>
+        Например первый алгоритм - <b>Окошки</b>, международное название <b>U Perm</b></p>
+        <p><b>Как определить Окошки</b>: <br/>
+        <p style="text-align:center"><img src="vpll_1.xml" width="30%%"></p>
+        В первую очередь, если есть тройной блок и глазки, это уже 100% Окошки.
+        Если тройной блок сразу не виден, то ситуация очень похожа на рельсы или шахматы. Но в отличии от рельс только
+        один цвет совпадает с соседними глазками. А в отличии от шахмат, один центр противоположен, а другой смежен со своими глазками.<br/>
+        Окошки бывают <a href="rubic-activity://ytactivity?time=5:43&link=P69UVywfz04">двух видов:</a>
+        смежные и противоположные. Договоримся называть окошки
+        по тому, какая ситуация справа от тройного блока. Смежное там окошко с глазками или противоположное.</p>
+        Начнем со смежных окошек. Международное название - <b>Ua Perm</b><br/>
+        <b>Как решать:</b>
+        <p>1. Тройным блоком слева: <br/>
+        <p style="text-align:center"><img src="vpll_1_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=11:30&link=P69UVywfz04">на видео 11:30</a> <br/>
+        <b>Алгоритм: R2 U\' S\' U2 S U\' R2  </b></p>
+        <p>2. Тройным блоком спереди (к себе):<br/>
+        <p style="text-align:center"><img src="vpll_1_2" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=16:15&link=P69UVywfz04">на видео 16:15</a>, или можно взять неудобно (большим пальцем от себя) и первый ход R2 крутить против часовой стрелки) <br/>
+        Альтернативный <a href="rubic-activity://ytactivity?time=0:48&link=0P_uLdvKRbI">фингертрикс от JPerm</a> для этого же алгоритма с интересным движением указательным пальцем левой руки.<br/>
+        <b>Алгоритм: R2 U\' R\' U\' R U R U R U\' R </b></p>
+        <p>3. Тройным блоком сзади (от себя):<br/>
+        <p style="text-align:center"><img src="vpll_1_3" width="60%%"></p>
+        <a href="rubic-activity://ytactivity?time=0:15&link=0P_uLdvKRbI">фингертрикс от JPerm</a> с интересным движением указательным пальцем левой руки.<br/>
+        <b>Алгоритм: (R U\' R U) (R U R U\' R\' U\' R2)</b></p>
+    ]]></string>
+    <string name="pll_st1_url">P69UVywfz04</string>
+
+    <string name="pll_st2_title">Противоположные окошки</string>
+    <string name="pll_st2_descr" formatted="false"><![CDATA[
+        Международное название - <b>Ub Perm</b><br/>
+        <p><b>Как определить:</b> <br/>Так же как и Смежные окошки, но справа от тройного блока окошко противоположно своим глазкам.</p>
+        <b>Как решать:</b>
+        <p>1. Тройным блоком слева: <br/>
+        <p style="text-align:center"><img src="vpll_2_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=8:12&link=P69UVywfz04">на видео 8:12</a>
+        или <a href="rubic-activity://ytactivity?time=10:02&link=P69UVywfz04">10:02</a> <br/>
+        <b>Алгоритм: R2\' U S\' U2 S U R2 </b><br/></p>
+        <p>2. Тройным блоком спереди (к себе):<br/>
+        <p style="text-align:center"><img src="vpll_2_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=18:44&link=P69UVywfz04">на видео 18:44</a> <br/>
+        Альтернативный <a href="rubic-activity://ytactivity?time=1:52&link=0P_uLdvKRbI">фингертрикс от JPerm</a> для этого же алгоритма.<br/>
+        <b>Алгоритм: R\' U R\' U\' R\' U\' R\' U R U R2 </b></p>
+        <p>3. Тройным блоком сзади (от себя):<br/>
+        <p style="text-align:center"><img src="vpll_2_3" width="60%%"></p>
+        <a href="rubic-activity://ytactivity?time=1:18&link=0P_uLdvKRbI">фингертрикс от JPerm</a> с интересным движением указательным пальцем левой руки.<br/>
+        <b>Алгоритм: (R2 U) (R U R\' U\' R\' U\') (R\' U R\')</b></p>
+    ]]></string>
+    <string name="pll_st2_url">P69UVywfz04</string>
+
+    <string name="pll_st3_title">Рельсы</string>
+    <string name="pll_st3_descr" formatted="false"><![CDATA[
+        Международное название - <b>Z Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        Очень простой алгоритм для определения. С любых двух сторон окошки смежные со своими глазками.
+        При этом цвет обоих окошек либо совпадает с глазками второй стороны, либо им противоположен.
+        В отличии от окошек, где тоже можно увидеть окошки на двух сторонах смежные со своими глазками,
+        но там одно окошко совпадает с глазками второй стороны, а другое им противоположно.</p>
+        <b>Как решать:</b><br/>
+        В обоих данных случаях держать как на картинке, т.е. центр передней грани, должен поменятся с центром правой грани.<br/>
+        <p style="text-align:center"><img src="vpll_3_1.xml" width="60%%"></p>
+        <p>1. Простой для запоминания вариант: <br/>
+        Фингертрикс:  <a href="rubic-activity://ytactivity?time=2:00&link=p77y_1rCWsg">на видео 2:00</a> <br/>
+        <b>Алгоритм: F2 M2 F2 M2 U\' M2 U\' M2 </b><br/></p>
+        <p>2. Быстрый вариант (хоть ходов и больше, но сделать их можно быстрее): <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:08&link=p77y_1rCWsg">на видео 4:08</a> <br/>
+        <b>Алгоритм: (U R\' U\' R) (U\' R U R) (U\' R\' U R) (U R2 U\' R\') U </b></p>
+    ]]></string>
+    <string name="pll_st3_url">p77y_1rCWsg</string>
+
+
+    <string name="pll_st4_title">Шахматы</string>
+    <string name="pll_st4_descr" formatted="false"><![CDATA[
+        Международное название - <b>H Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        С любой стороны окошки противоположные своим глазками, опять же достаточно посмотреть на любые две стороны.</p>
+        <b>Как решать:</b><br/>
+        Как держать без разницы. <br/>
+        <p style="text-align:center"><img src="vpll_4_1.xml" width="60%%"></p>
+        <p>1. Простой вариант: <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=10:00&link=p77y_1rCWsg">на видео 10:00</a> <br/>
+        <b>Алгоритм: 6 раз (M2 U\') </b></p>
+        <p>2. Ускоренный вариант, но посложнее:
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=11:38&link=p77y_1rCWsg">на видео 11:38</a> <br/>
+        <b>Алгоритм: (M2 U2) (M2 U\') (M2 U2) (M2 U\') </b></p>
+        3. Для тех, у кого плохо с вращение среднего слоя: <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=13:35&link=p77y_1rCWsg">на видео 13:35</a> <br/>
+        <b>Алгоритм: (R2 U2 R U2 R2 U2) (R2 U2 R U2 R2 U2) </b>
+    ]]></string>
+
+    <string name="pll_st4_url">p77y_1rCWsg</string>
+
+    <string name="pll_st5_title">Запад</string>
+    <string name="pll_st5_descr" formatted="false"><![CDATA[
+        Международное название - <b>T Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        Если смотреть не только на две стороны, то есть два двойных блока между которыми глазки.
+        По двум сторонам: со стороны блока и глазок все просто, глазки примыкают к блоку, а окошко противоположно
+        глазкам и совпадает по цвету с наклейкой рядом с блоком. Со стороны блока и \"светофора\"
+        очень похоже на треугольник, но наклейка рядом с блоком смежная блоку, а дальше три разные.</p>
+        <p style="text-align:center"><img src="vpll_5.xml" width="60%%"></p>
+         <b>Как решать:</b><br/>
+        Повернуть двойным левым блоком к себе.<br/>
+        <p style="text-align:center"><img src="vpll_5_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:00&link=fwvKWr087bM">на видео 4:00</a> <br/>
+        <b>Алгоритм: (R U R\' U\') (R\' F R2 U\' R\' U\') (R U R\' F\') </b>
+    ]]></string>
+    <string name="pll_st5_url">fwvKWr087bM</string>
+
+    <string name="pll_st6_title">Юг</string>
+    <string name="pll_st6_descr" formatted="false"><![CDATA[
+        Международное название - <b>Jb Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        Проще всего узнать по тройному блоку и прилегающему к нему слева двойному или справа от него
+        не прилегающему двойному. С других сторон похоже на правые кирпичи, но с одним кирпичом
+        наклейка противоположная, а с другим смежная.</p>
+        <p style="text-align:center"><img src="vpll_6.xml" width="60%%"></p>
+        <b>Как решать:</b><br/>
+        <p style="text-align:center"><img src="vpll_6_1.xml" width="60%%"></p>
+        <p>1. Тройным блоком слева. Очень похоже на Запад, но сначала последние 4 хода Запада (R U R\' F\'), а потом Запад без этих 4-х ходов.<br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=8:24&link=fwvKWr087bM">на видео 8:24</a> <br/>
+        <b>Алгоритм:  (R U R\' F\') (R U R\' U\') (R\' F R2 U\' R\' U\') </b></p>
+        2. Так же тройным блоком слева, ходов меньше, но с кручением левой грани.<br/>
+        <b>Алгоритм: (R U2 R\' U\' R U2) L\' U R\' U\' L </b>
+    ]]></string>
+    <string name="pll_st6_url">fwvKWr087bM</string>
+
+    <string name="pll_st7_title">Светофор</string>
+    <string name="pll_st7_descr" formatted="false"><![CDATA[
+        Международное название - <b>F Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        Проще всего со стороны тройного блока и примыкающей к нему стороны с тремя наклейками
+        разного цвета хоть справа, хоть слева (потому и светофор). Если же смотреть с противоположной
+        тройному блоку стороны, то крайние (дальние друг от друга наклейки) одинаковые, а ближние такие
+        же как и на соседней стороне, но поменяны местами.</p>
+        <p style="text-align:center"><img src="vpll_7.xml" width="60%%"></p>
+        <b>Как решать:</b><br/>
+        <p style="text-align:center"><img src="vpll_7_1.xml" width="60%%"></p>
+        Тройным блоком слева. Первые три хода против часовой стрелки (правая, верхняя, передняя), теперь Запад без
+        последнего хода и два хода по часовой стрелке (верхняя и правая грани).<br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=5:18&link=B3iSPvlr7PA">на видео 5:18</a> <br/>
+        <b>Алгоритм: (R\' U\' F\') (R U R\' U\') R\' F R2 U\' R\' U\' (R U R\' U R) </b>
+    ]]></string>
+    <string name="pll_st7_url">B3iSPvlr7PA</string>
+
+    <string name="pll_st8_title">Австралия</string>
+    <string name="pll_st8_descr" formatted="false"><![CDATA[
+        Международное название - <b>Y Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        Если вы видите два двойных блока, а между ними какой-то угол - это 100% Австралия. Если только
+        один блок, то блок этот будет примыкающий к разноцветной стороне и наклейка рядом с блоком
+        такая же как центр соседней стороны.<br/>
+        Ну и если смотреть со стороны обеих разноцветных сторон, то центры соответствуют краям
+        противоположной стороны, а угол противоположен центрам.</p>
+        <b>Как решать:</b><br/>
+        <p style="text-align:center"><img src="vpll_8_1.xml" width="60%%"></p>
+        Одним двойным блоком к себе, другим справа. 2 хода (в Лондон, включили свет), потом последние 7 ходов Запада, пиф-паф и английский пиф-паф. <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=9:35&link=B3iSPvlr7PA">на видео 9:35</a> <br/>
+        <b>Алгоритм: (F R) (U\' R\' U\' R U R\' F\') (R U R\' U\') (R\' F R F\') </b>
+    ]]></string>
+    <string name="pll_st8_url">B3iSPvlr7PA</string>
+
+    <string name="pll_st9_title">Смежный Треугольник</string>
+    <string name="pll_st9_descr" formatted="false"><![CDATA[
+        Международное название - <b>Aa Perm</b><br/>
+        <p><b>Как определить Треугольники:</b><br/>
+        Если вы смотрите со стороны двух двойных блоков, то крайние наклейки должны быть одинаковые.</p>
+        <p style="text-align:center"><img src="vpll_9.xml" width="60%%"></p>
+        <p>Если не видите ни одного блока, но видите глазки, то глазки должны совпададть с центром другой стороны.
+        Если видите глазки и один блок, то оставшиеся две наклейки тоже должны быть одинаковые.
+        Ну и самый сложный вариант для определения, блок и сторона без глазок - крайняя дальняя
+        от блока наклейка, должна совпадать по цвету с блоком, соседняя с блоком противоположная,
+        а оставшиеся две должны быть смежны блоку.</p>
+        <p>Теперь определимся с тем какой треугольник смежный, а какой противоположный. Если развернуть кубик
+        двойным блоком справа, то смотрим на наклейку, которая будет слева (<a href="rubic-activity://ytactivity?time=3:05&link=L_r41Y1MuAY">3:05 на видео</a>). И если
+        она смежная с блоком, то такой треугольник будем называть смежным, а если противоположная, то
+        соответственно противоположным.</p>
+        <p>Ну или чтобы было проще, то смежный треугольник, это такой, который методом для новичков решается с первого раза.</p>
+        <b>Как решать:</b><br/>
+        <p>1. Обычный 9 этап методики для начинающих. Крышей слева, глазками вверх.</p>
+
+        2. Двойным блоком справа, глазками слева. Очень похоже на комбинацию Юг, только два хода (5ый и 9ый) \"жирных\" и последний ход делать не нужно. <br/>
+        <p style="text-align:center"><img src="vpll_9_1.xml" width="60%%"> </p>
+        <p>Фингертрикс: <a href="rubic-activity://ytactivity?time=4:14&link=L_r41Y1MuAY">на видео 4:14</a> <br/>
+        <b>Алгоритм: (R U R\' F\') (Rw U R\' U\' Rw\' F R2 U\' R\') </b></p>
+
+        3. Крышей к себе, глазками справа, собранным углом слева (быстрый вариант, но сложный фингертрикс): <br/>
+        <p style="text-align:center"><img src="vpll_9_2.xml" width="60%%"> </p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=8:18&link=L_r41Y1MuAY">на видео 8:18</a> <br/>
+        <b>Алгоритм: R2 D2 R\' U\' R D2 R\' U R\' </b>
+    ]]></string>
+    <string name="pll_st9_url">L_r41Y1MuAY</string>
+
+    <string name="pll_st10_title">Противоположный Треугольник</string>
+    <string name="pll_st10_descr" formatted="false"><![CDATA[
+        Международное название - <b>Ab Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        Так же как и смежный треугольник, только наклейка рядом с "правым" блоком (тем который
+        примыкает к правой грани) ему противоположна.</p>
+        <p style="text-align:center"><img src="vpll_10.xml" width="60%%"></p>
+        <b>Как решать:</b><br/>
+        <p>1. Двойным правым блоком к себе. Cвет крутим только двойной <br/>
+        <p style="text-align:center"><img src="vpll_10_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=11:55&link=L_r41Y1MuAY">на видео 11:55</a> <br/>
+        <b>Алгоритм: Rw U\' Rw F2 Rw\' U Rw F2 Rw2</b></p>
+        <p>2. Вариант <a href="rubic-activity://ytactivity?time=5:18&link=B_Fkals9Svk">из Ускорения N20</a>.
+        Крышей к себе, собранным углом слева сверху: <br/>
+        <p style="text-align:center"><img src="vpll_10_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=15:24&link=L_r41Y1MuAY">на видео 15:24</a> <br/>
+        <b>Алгоритм: R2 D2 (R U R\') D2 (R U\' R) </b></p>
+    ]]></string>
+    <string name="pll_st10_url">L_r41Y1MuAY</string>
+
+    <string name="pll_st11_title">Черепаха (Терминатор)</string>
+    <string name="pll_st11_descr" formatted="false"><![CDATA[
+        Международное название - <b>E Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        Сложный алгоритм для определения, т.к. со всех сторон светофоры. Один из трех случаев (еще шахматы и рельсы),
+        где нет ни двойных ни тем более тройных блоков. Но в шахматах и рельсах есть глазки и их легко определить с любой стороны.
+        И именно потому, что на определение этого алгоритма уходит больше времени, чем на остальные, он и называется Черепахой.</p>
+        <p>Хотя когда вы научитесь определять алгоритм по любым двум сторонам, то тут все просто. С любой
+        стороны один из центров соответствует дальнему краю противоположной стороны, а другой центр ближнему.
+        Оставшиеся две наклейки противоположны центрам.</p>
+        <b>Как решать:</b><br/>
+        <p>1. Вариант из ускорений N10, когда крайние наклейки соответствуют центрам соответствующих боковых граней <br/>
+        <p style="text-align:center"><img src="vpll_11_1.xml" width="60%%"></p>
+        Повернуть крышей от себя (ход x). И выполнить Носик, а потом сразу Ушки <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:13&link=L-g7AQfghlw">на видео 6:13</a> <br/>
+        <b>Алгоритм: (D\' R\' U\' R D R\' U R) (D\' R\' U R D R\' U\' R) </b><br/></p>
+        <p>2. Вариант, когда крайние наклейки противоположны центрам соответствующих граней. Повернуть крышей направо (ход z) <br/>
+        <p style="text-align:center"><img src="vpll_11_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=10:20&link=L-g7AQfghlw">на видео 10:20</a> <br/>
+        <b>Алгоритм: U2 R2 F (R U R\' U\') (R U R\' U\') (R U R\' U\') F\' R2 U2 </b></p>
+    ]]></string>
+    <string name="pll_st11_url">L-g7AQfghlw</string>
+
+    <string name="pll_st12_title">Угол</string>
+    <string name="pll_st12_descr" formatted="false"><![CDATA[
+        Международное название - <b>V Perm</b><br/>
+         <p><b>Как определить:</b><br/>
+        <a href="rubic-activity://ytactivity?time=14:00&link=L-g7AQfghlw">на видео 14:00</a>.
+        Со стороны смежных двойных блоков очень похож на треугольник, но крайние наклейки разные.</p>
+        <p style="text-align:center"><img src="vpll_12.xml" width="60%%"></p>
+        <p>Со стороны блока и стороны со светофором, наклейка рядом с блоком противоположна блоку и совпадает с цветом
+        центра грани без блока, а остальные наклейки смежны центру.</p>
+        <p>Со стороны двух светофоров очень похоже на Черепашку, но у Черепашки один центр совпадает с цветом угла,
+        а тут оба центра сопадают с цветом угла, а вот крайние наклейки противоположны центрам.</p>
+        <b>Как решать:</b><br/>
+        <p>Держать как на картинке, левым двойным блоком к себе.<br/>
+        <p style="text-align:center"><img src="vpll_12_1.xml" width="60%%"></p>
+        <p>Фингертрикс: <a href="rubic-activity://ytactivity?time=16:40&link=L-g7AQfghlw">на видео 16:40</a><br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:58&link=W-8n_E1YASU">от J Perm</a><br/>
+        <b>Алгоритм: (R U2 R\' D)  (R U\' R U\' R U R2\' D) (R\' U\' R D2) </b></p>
+
+        <p>Альтернативные варианты от J Perm. Для начала сам алгоритм: <br/><br/>
+
+        <b>(R\' U R\' U\') y R\' F\' R2 U\' R\' (U R\' F R F)</b><br/><br/>
+
+        Тепрерь о том, как его выполнять:
+        <a href="rubic-activity://ytactivity?time=0:43&link=W-8n_E1YASU">Базовый</a> фингертрикс,
+        но чтобы делать его чуть быстрее, в последней части алгоритма используем
+        <a href="rubic-activity://ytactivity?time=1:35&link=W-8n_E1YASU">средний палец правой руки</a>,
+        т.е. получается <a href="rubic-activity://ytactivity?time=1:45&link=W-8n_E1YASU">вот так.</a><br/>
+        Или можно последний ход делать <a href="rubic-activity://ytactivity?time=2:00&link=W-8n_E1YASU">левой рукой,</a>
+        т.е. <a href="rubic-activity://ytactivity?time=2:15&link=W-8n_E1YASU">вот так.</a>
+        А еще в этом видео вы найдете и фингертрикс для ситуации когда в конце надо, сделать
+        <a href="rubic-activity://ytactivity?time=2:40&link=W-8n_E1YASU">ход U</a>
+        (довернуть крышу).</p>
+
+        <p>Еще один альтернативный вариант:<br/>
+        уже без перехвата и кручения <a href="rubic-activity://ytactivity?time=3:01&link=W-8n_E1YASU">передней грани</a>.<br/>
+        <b>Алгоритм: R\' U R\' U\' R D\' R\' D R\' U D\' R2 U\' R2 D R2</b>. <br/>
+        Но, данный алгоритм все таки наверно чуть медленее предыдущего, т.к. в нем фактически больше ходов, да
+        еще и больше \"медленных\" двойных. Более подробно
+        <a href="rubic-activity://ytactivity?time=3:26&link=W-8n_E1YASU">в видео с 3:26.</a></p>
+
+        <p>Второй альтернативный вариант от J Perm, является вариантом от Максима, фингертрикс приведен выше.
+        К минусам данного алгоритма стоит отнести перехваты <a href="rubic-activity://ytactivity?time=4:31&link=W-8n_E1YASU">правой рукой.</a></p>
+
+        <p>Ну и еще один, уже более быстрый вариант, но с довольно
+        <a href="rubic-activity://ytactivity?time=5:10&link=W-8n_E1YASU">сложным фингертриксом.</a></br>
+        <b>Алгоритм: z D\' R2 D R2 U R\' D\' R U\' R U R\' D R U\'</b></p>
+
+    ]]></string>
+    <string name="pll_st12_url">L-g7AQfghlw</string>
+
+    <string name="pll_st13_title">Правые кирпичи</string>
+    <string name="pll_st13_descr" formatted="false"><![CDATA[
+        Международное название - <b>Nb Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        Очень легко, с любой стороны два двойных правых блока с противоположной наклейкой в обоих случаях.</p>
+        <p style="text-align:center"><img src="vpll_13.xml" width="60%%"></p>
+        <b>Как решать:</b><br/>
+        <p>1. Как держать не имеет значения, главное крышей сверху :) А если повернуть как на картинке,
+        то не придется делать довороты после выполнения алгоритма.
+        <p style="text-align:center"><img src="vpll_13_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:04&link=NbajmNXifXk">на видео 3:04</a> <br/>
+        <b>Алгоритм: (R U\' L U2 R\' U L\') (R U\' L U2  R\' U L\') </b></p>
+        <p>2. Или в принципе тот же алгоритм, но из другого положения. Повернуть крышей направо (ход z).<br/>
+        Начинаем с движения со стороны блока. Обратите внимание на фигурные скобки, верх и низ можно крутить вместе <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:05&link=NbajmNXifXk">на видео 4:05</a>
+        или <a href="rubic-activity://ytactivity?time=10:50&link=NbajmNXifXk">10:50</a> <br/>
+        <b>Алгоритм: (D R\' U R2 D\' R {U\')(D} R\' U R2 D\' R U\') </b></p>
+    ]]></string>
+    <string name="pll_st13_url">NbajmNXifXk</string>
+
+    <string name="pll_st14_title">Левые кирпичи</string>
+    <string name="pll_st14_descr" formatted="false"><![CDATA[
+        Международное название - <b>Na Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        Определить очень легко, с любой стороны два двойных левых блока и противоположной наклейкой в обоих случаях.</p>
+        <p style="text-align:center"><img src="vpll_14.xml" width="60%%"></p>
+        <b>Как решать:</b><br/>
+        <p>1. Как держать не имеет значения, главное крышей сверху :) А если повернуть как на картинке,
+        то не придется делать довороты после выполнения алгоритма.
+        <p style="text-align:center"><img src="vpll_14_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:45&link=NbajmNXifXk">на видео 6:45</a> <br/>
+        <b>Алгоритм: (L\' U R\' U2 L U\' R) (L\' U R\' U2 L U\' R) </b></p>
+        <p>2. Или как и с правыми кирпичами повернуть крышей направо (ход z). Начинаем с движения со стороны блока. Обратите
+        внимание на фигурные скобки, верх и низ можно крутить вместе. <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=9:10&link=NbajmNXifXk">на видео 9:10</a>
+        или <a href="rubic-activity://ytactivity?time=12:05&link=NbajmNXifXk">12:05</a> <br/>
+        <b>Алгоритм: (U\' R D\' R2 U R\' {D)(U\'} R D\' R2 U R\' D} </b></p>
+    ]]></string>
+    <string name="pll_st14_url">NbajmNXifXk</string>
+
+    <string name="pll_st15_title">Убийца</string>
+    <string name="pll_st15_descr" formatted="false"><![CDATA[
+        Международное название - <b>Rb Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        Легко определить по двойному блоку и примыкающим к этому блоку глазкам со смежным центром, а не противоположным
+        как у Запада.</p>
+        <p style="text-align:center"><img src="vpll_15.xml" width="60%%"></p>
+        <p>Со стороны глазок и светофора - похоже на треугольник, центр светофора совпадает с глазками,
+        но в отличии от треугольника центр глазок совпадает с углом светофора. Ну или проще говоря,
+        у убийцы с этого ракурса только три цвета, а у треугольника четыре.</p>
+        <p>Со стороны блока и светофора тоже похоже на треугольник,  но опять видны только 3 цвета, а не 4.</p>
+        <p>Со стороны двух светофоров - центры противоположны друг другу, крайние совпадают между собой, а наклейки угла одна
+        совпадает с одним из центров, а другая противоположна крайним.</p>
+        <b>Как решать:</b><br/>
+        Взять кубик блоком слева, глазками к себе и сделать 8ой этап метода для новичков :) <br/>
+        <p style="text-align:center"><img src="vpll_15_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:22&link=AB940Ieyt58">на видео 4:22</a> <br/>
+        <b>Алгоритм: R\' U2 R U2 R\' F (R U R\' U\') R\' F\' R2 U\' </b>
+    ]]></string>
+    <string name="pll_st15_url">AB940Ieyt58</string>
+
+    <string name="pll_st16_title">Экватор</string>
+    <string name="pll_st16_descr" formatted="false"><![CDATA[
+        Международное название - <b>Ra Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        Является зеркальным вариантом Убийцы. Отличия только в том с какой стороны находятся элементы,
+        поэтому в принципе определять как и убийцу. Но у Экватора блок находится справа от глазок. А т.к.
+        вам все равно придется для выполнения поставить или глазками или блоком к себе, то тут уже их легко различить.</p>
+        <b>Как решать:</b><br/>
+        <p>1. Все то же что и у Убийцы, но слева. Глазками к себе, блоком справа. <br/>
+        <p style="text-align:center"><img src="vpll_16_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:40&link=AB940Ieyt58">на видео 6:40</a> <br/>
+        <b>Алгоритм: L U2 L\' U2 L F\' (L\' U\' L U) L F R2 U </b></p>
+        <p>2. Экватор из <a href="rubic-activity://ytactivity?time=4:35&link=pT72Wh8VZT4">"слепой сборки N19"</a>, двойным блоком к себе. <br/>
+        <p style="text-align:center"><img src="vpll_16_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=9:00&link=AB940Ieyt58">на видео 9:00</a> <br/>
+        <b>Алгоритм: (R U R\' F\') (R U2 R\' U2) R\' F (R U R) U2 R\' U\' </b></p>
+        <p>3. Как и предыдущий алгоритм - двойным блоком к себе.<br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=12:15&link=AB940Ieyt58">на видео 12:15</a> <br/>
+        <b>Алгоритм: (R U\' R\' U\') (R U R D) (R\' U\' R D\') (R\' U2 R\' U\') </b></p>
+    ]]></string>
+    <string name="pll_st16_url">AB940Ieyt58</string>
+
+    <string name="pll_st17_title">Встречная машинка</string>
+    <string name="pll_st17_descr" formatted="false"><![CDATA[
+        Международное название - <b>Ga Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        Есть двойной блок и глазки не примыкающие к блоку, находящиеся на левой от блока стороне, при этом
+        сами глазки противоположны блоку по цвету. Можно спутать с треугольниками, но в отличии от
+        треугольников наклейки между глазками и рядом с блоком противоположны, а не одинаковы.</p>
+        <p style="text-align:center"><img src="vpll_17.xml" width="30%%"></p>
+        <p>Со стороны светофора и глазок: если смотреть слева направо, то четыре наклейки разного цвета, а потом повторяются две последние.</p>
+        <b>Как решать:</b><br/>
+        1. Двойным блоком справа.<br/>
+        <p style="text-align:center"><img src="vpll_17_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=5:10&link=w8pDuyhAdVo">на видео 5:10</a> <br/>
+        <b>Алгоритм: (UD\' R2 U) (R\' U R\' U\' R U\') (R2 U\'D R\' U R) </b><br/><br/>
+        2. Двойным блоком к себе, глазками налево. В принципе все тоже самое, но вначале не крутим UD\', а
+        вконце крутим D\'.<br/>
+        <p style="text-align:center"><img src="vpll_17_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:32&link=nBMCuMiSFIg">от J Perm</a> <br/>
+        <b>Алгоритм: R2 U R\' U R\' U\' R U\' R2 (DU\') R\' U R D\'</b>
+        <p>P.S. <a href="rubic-activity://ytactivity?time=4:28&link=nBMCuMiSFIg">совет от J Perm</a>
+        на примере встречной машинки, но применим для всех GPerm\'ов. Если вы понимаете, что после
+        выполнения алгоритма, вам придется сделать U2 (довернуть крышу дважды). Это легко понять по
+        цвету глазок, если делать варианты алгоритмов GPerm для глазок слева, которые в данном
+        случае будут противоположны цвету левой грани.
+        Просто начните алгоритм с последнего хода нижней грани D или D\' в зависимости от алгоритма. В
+        этом случае не придется крутить неудобно D и U2 последним ходом.</p>
+    ]]></string>
+    <string name="pll_st17_url">w8pDuyhAdVo</string>
+
+    <string name="pll_st18_title">Уезжающая (попутная) машинка</string>
+    <string name="pll_st18_descr" formatted="false"><![CDATA[
+        Международное название - <b>Gc Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        Есть двойной блок и глазки не примыкающие к блоку, находящиеся на правой от блока стороне, при этом
+        сами глазки противоположны блоку по цвету.</p>
+        <p style="text-align:center"><img src="vpll_18.xml" width="30%%"></p>
+        <p>Со стороны светофора и глазок: если смотреть справа налево, то четыре наклейки разного цвета,
+        а потом повторяются две последние.</p>
+        <p>Очень желательно уметь опредлять данный алгоритм со стороны светофора и блока (глазками от себя).
+        Слева направо получаются три наклеки не совпадающие с блоком, блок и наклейка такого же цвета как и первая.</p>
+        <b>Как решать:</b><br/>
+        1. Двойным блоком справа, глазками от себя.<br/>
+        <p style="text-align:center"><img src="vpll_18_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=9:55&link=w8pDuyhAdVo">на видео 9:55</a> <br/>
+        <b>Алгоритм: (U\'D R2 U\') (R U\' R U R\' U) (R2 UD\' R U\' R\') </b><br/><br/>
+
+        2. Блоком к себе, глазками направо.<br/>
+        <p style="text-align:center"><img src="vpll_18_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=14:30&link=w8pDuyhAdVo">на видео 14:30</a> (большой палец сверху) <br/>
+        <b>Алгоритм: R2\' F2 (R U2) (R U2) R\' F (R U R\' U\') R\' F R2 </b><br/><br/>
+
+        3. Блоком от себя, глазками налево.<br/>
+        <p style="text-align:center"><img src="vpll_18_3.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:56&link=nBMCuMiSFIg">от J Perm</a> <br/>
+        или чуть другой вариант <a href="rubic-activity://ytactivity?time=2:09&link=nBMCuMiSFIg">фингертрикса</a>
+        с нестандартным врещением крыши большим пальцем правой руки.<br/>
+        <b>Алгоритм: R2 U\' R U\' R U R\' U R2 (D\'U) R U\' R\' D </b>
+    ]]></string>
+    <string name="pll_st18_url">w8pDuyhAdVo</string>
+
+    <string name="pll_st19_title">Ближняя улитка</string>
+    <string name="pll_st19_descr" formatted="false"><![CDATA[
+        Международное название - <b>Gd Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        По двум сторонам алгоритм определяется не просто. Отличительная особенность
+        улиток, двойной блок и глазки на противоположной этому блоку стороне, причем центр глазок противоположен самим глазкам.
+        Ситуацию когда двойной блок находится справа и примыкает к передней стороне, улитку будем называть ближней,
+        а если примыкает к задней стороне, то дальней.</p>
+        <p style="text-align:center"><img src="vpll_19.xml" width="30%%"></p>
+        <p>Со стороны блока и светофора или блока и глазок очень похоже на машинки. Но в отличии от машинок,
+        что центр глазок, что наклейка рядом с блоком противоположеы глазкам/блоку, а не смежны как у машинок.</p>
+        <b>Как решать:</b><br/>
+        Двойным блоком справа, глазками налево. <br/>
+        <p style="text-align:center"><img src="vpll_19_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:00&link=F-ODZtge9Ig">на видео 3:00</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:50&link=nBMCuMiSFIg">от J Perm</a> <br/>
+        <b>Алгоритм: (R U R\' U\'D) (R2 U\' R U\') (R\' U R\' U) R2 UD\' </b><br/><br/>
+        P.S. Вы наверно заметили что алгоритмы Максима и J Perm отличаются последним ходом U, все
+        дело в том, что у Максима привязка идет к двойному блоку, а у J Perm к глазкам.
+    ]]></string>
+    <string name="pll_st19_url">F-ODZtge9Ig</string>
+
+    <string name="pll_st20_title">Дальняя улитка</string>
+    <string name="pll_st20_descr" formatted="false"><![CDATA[
+        Международное название - <b>Gb Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        Отличительная особенность улиток, двойной блок и глазки на противоположной этому блоку стороне.
+        Если поставить блоком справа, то блок будет примыкать к задней грани.</p>
+        <p style="text-align:center"><img src="vpll_20.xml" width="30%%"></p>
+        <b>Как решать:</b><br/>
+        1. Двойным блоком справа, глазками налево.<br/>
+        <p style="text-align:center"><img src="vpll_20_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=8:05&link=F-ODZtge9Ig">на видео 8:05</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:59&link=nBMCuMiSFIg">от J Perm</a> <br/>
+        <b>Алгоритм: (R\' U\' R UD\') (R2 U R\' U) (R U\' R U\') R2\' U\'D </b><br/><br/>
+    ]]></string>
+    <string name="pll_st20_url">F-ODZtge9Ig</string>
+
+    <string name="pll_st21_title">Север (Инь-ян, Левая лямбда)</string>
+    <string name="pll_st21_descr" formatted="false"><![CDATA[
+        Международное название - <b>Ja Perm</b><br/>
+        <p><b>Как определить:</b><br/>
+        Тройной блок и примыкающий к нему справа двойной. С остальных сторон похоже на левые кирпичи,
+        но с одним кирпичем наклейка противоположная, а с другим смежная.</p>
+        <p style="text-align:center"><img src="vpll_21.xml" width="30%%"></p>
+        <b>Как решать:</b><br/>
+        1. Тройным блоком слева (<a href="rubic-activity://ytactivity?time=3:15&link=AoqKnYoDrio">Вариант из Ускорений N19</a>)<br/>
+        <p style="text-align:center"><img src="vpll_21_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:10&link=4ulPytSlCR0">на видео 3:10</a> <br/>
+        <b>Алгоритм: F2 (L\' U\' L) F2 (R\' D R\' D\') R2 </b> <br/>
+        2. Крышей вправо, тройной блок снизу, т.е. поставить тройным блоком справа и наклонить (ход z)<br/>
+        <p style="text-align:center"><img src="vpll_21_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=5:40&link=4ulPytSlCR0">на видео 5:40</a> <br/>
+        <b>Алгоритм: U\' (R2 U R U\') R2 D R\' U R D\' </b>
+    ]]></string>
+    <string name="pll_st21_url">4ulPytSlCR0</string>
+</resources>

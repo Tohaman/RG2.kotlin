@@ -29,7 +29,7 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
         }
     }
 
-
+    // В базе храним только Фазу, номер этапа в фазе и комент для этапа... остальное инициализируем в ListPagerLab
     val DATABASE_CREATE =
             "CREATE TABLE if not exists $TABLE_NAME (" +
                     "$PHASE TEXT, " +

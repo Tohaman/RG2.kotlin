@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/z_oll_back_big"/>
+
+    <item android:drawable="@drawable/vaccel_4_12" android:right="@dimen/oll_left_sw"/>
+    <item android:drawable="@drawable/vaccel_4_13" android:left="@dimen/oll_left_sw"/>
+</layer-list>

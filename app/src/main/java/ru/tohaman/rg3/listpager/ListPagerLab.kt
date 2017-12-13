@@ -21,13 +21,16 @@ class ListPagerLab private constructor(context: Context){
     var listPagers = arrayListOf<ListPager>()
 
     init { // тут пишем то, что выполнится при инициализации синглета
+        //TODO по двушке надо поменять на phaseInit, когда напишу для них текстовку
        menuAdd("BEGIN2X2",R.array.begin2x2_title,R.array.begin2x2_icon,context)
        menuAdd("ADV2X2",R.array.adv2x2_title,R.array.adv2x2_icon,context)
        // menuAdd("MENU3X3",R.array.menu3x3_title,R.array.menu3x3_icon,context)
-        menuAdd("G2F", R.array.g2f_title,R.array.g2f_icon,context,R.array.g2f_phase)
-//        phaseInit("PLL",R.array.pll_title,R.array.pll_icon,R.array.pll_descr,R.array.pll_url,context)
+        phaseInit("G2F", R.array.g2f_title,R.array.g2f_icon,R.array.g2f_descr,R.array.g2f_null,context)
         phaseInit("BEGIN",R.array.begin_title,R.array.begin_icon,R.array.begin_descr,R.array.begin_url,context)
         phaseInit("BASIC",R.array.basic_title,R.array.basic_icon,R.array.basic_descr,R.array.basic_url,context)
+        phaseInit("ACCEL",R.array.accel_title,R.array.accel_icon,R.array.accel_descr,R.array.accel_url,context)
+        phaseInit("OLL",R.array.oll_title,R.array.oll_icon,R.array.oll_descr,R.array.oll_url,context)
+        phaseInit("PLL",R.array.pll_title,R.array.pll_icon,R.array.pll_descr,R.array.pll_url,context)
         phaseInit("BEGIN4X4",R.array.begin4_title,R.array.begin4_icon,R.array.begin4_descr,R.array.begin4_url,context)
     }
 
@@ -65,9 +68,8 @@ class ListPagerLab private constructor(context: Context){
         val mIcon = context.resources.obtainTypedArray (iconArray)
         val mDescr = context.resources.obtainTypedArray (descrArray)
         val mUrl = context.resources.getStringArray(urlArray)
-        var mListPager: ListPager?
         for (i in mTitles.indices) {
-            mListPager = mDatabase.getListPagerFromBase(i, phase)
+            var mListPager = mDatabase.getListPagerFromBase(i, phase)
             if (mListPager == null) {
                 mListPager = ListPager(phase, i, mTitles[i], mIcon.getResourceId(i,0), mDescr.getResourceId(i,0), mUrl[i])
                 addListPager2Base(mListPager)

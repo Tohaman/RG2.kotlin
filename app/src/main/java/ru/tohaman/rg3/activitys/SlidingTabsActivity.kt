@@ -36,7 +36,6 @@ class SlidingTabsActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-
         //Инициируем фазу и номер этапа, должны быть переданы из другой активности, если нет, то используем значения по-умолчанию
         var mPhase = "BEGIN"
         var id = 0

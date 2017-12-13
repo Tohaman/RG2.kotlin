@@ -33,7 +33,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var fragListView: ListViewFragment
     private lateinit var fragTimer: Fragment
     private var back_pressed_time: Long = 0
-    lateinit var mListPagerLab: ListPagerLab
+    lateinit private var mListPagerLab: ListPagerLab
+    private var curPhase: String = "BEGIN"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,11 +44,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(maintoolbar)
         mListPagerLab = ListPagerLab.get(this)
         fab.setOnClickListener { view ->
-            drawer_layout.openDrawer(GravityCompat.START)
-//            drawer_layout.closeDrawer(GravityCompat.START)
-//            fragListView.changePhase("BASIC", this)
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                    .setAction("OK", {}).show()
+            if (curPhase == "G2F_NEXT") {
+                curPhase = "G2F"
+                fragListView.changePhase(curPhase, this)
+            } else {
+                drawer_layout.openDrawer(GravityCompat.START)
+            }
         }
 
         val toggle = ActionBarDrawerToggle(
@@ -57,7 +59,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         fragTimer = FragmentTimer()
 
-        fragListView = ListViewFragment.newInstance(loadStartPhase())
+        curPhase = loadStartPhase()
+        fragListView = ListViewFragment.newInstance(curPhase)
         val transaction : FragmentTransaction? = supportFragmentManager.beginTransaction()
         transaction?.replace(R.id.frame_container, fragListView)?.commit()
 
@@ -68,11 +71,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {
+            if (curPhase == "G2F_NEXT") {
+                curPhase = "G2F"
+                fragListView.changePhase(curPhase, this)
+            } else {
             if (back_pressed_time + 1000 > System.currentTimeMillis()) {
                 super.onBackPressed()
             } else {
                 toast("Нажмите еще раз для выхода")
                 back_pressed_time = System.currentTimeMillis()
+            }
             }
         }
     }
@@ -96,29 +104,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
         // Handle navigation view item clicks here.
-        val transaction: FragmentTransaction? = supportFragmentManager.beginTransaction()
         Log.v(DebugTag.TAG, "NavigationItemSelected $item.itemId")
         when (item.itemId) {
-            R.id.begin2x2 -> {
-                transaction?.replace(R.id.frame_container, fragListView)?.commit()
-                fragListView.changePhase("BEGIN2X2", this)
-                saveStartPhase("BEGIN2X2")
-            }
-            R.id.adv2x2 -> {
-                transaction?.replace(R.id.frame_container, fragListView)?.commit()
-                fragListView.changePhase("ADV2X2", this)
-                saveStartPhase("ADV2X2")
-            }
-            R.id.begin -> {
-                transaction?.replace(R.id.frame_container, fragListView)?.commit()
-                fragListView.changePhase("BEGIN", this)
-                saveStartPhase("BEGIN")
-            }
-            R.id.g2f -> {
-                transaction?.replace(R.id.frame_container, fragListView)?.commit()
-                fragListView.changePhase("G2F", this)
-                saveStartPhase("G2F")
-            }
+            R.id.begin2x2 -> { setPhase("BEGIN2X2") }
+
+            R.id.adv2x2 -> { setPhase("ADV2X2") }
+
+            R.id.begin -> { setPhase("BEGIN") }
+
+            R.id.g2f -> { setPhase("G2F") }
+
             R.id.blind -> {
                 Snackbar.make(contentView!!, "Blind пока недоступен", Snackbar.LENGTH_LONG)
                     .setAction("ОК", {}).show()
@@ -129,12 +124,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                         .setAction("ОК", {}).show()
 
             }
-            R.id.begin4x4 -> {
-                transaction?.replace(R.id.frame_container, fragListView)?.commit()
-                fragListView.changePhase("BEGIN4X4", this)
-                saveStartPhase("BEGIN4X4")
-            }
+            R.id.begin4x4 -> { setPhase("BEGIN4X4")}
+
             R.id.timer -> {
+                val transaction: FragmentTransaction? = supportFragmentManager.beginTransaction()
                 transaction?.replace(R.id.frame_container, fragTimer)?.commit()
             }
             R.id.scramble -> {
@@ -145,12 +138,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Snackbar.make(contentView!!, "Игра пока недоступна", Snackbar.LENGTH_LONG)
                         .setAction("ОК", {}).show()
             }
-            R.id.basic_move -> {
-                transaction?.replace(R.id.frame_container, fragListView)?.commit()
-                fragListView.changePhase("BASIC", this)
-                saveStartPhase("BASIC")
-            }
-
+            R.id.basic_move -> { setPhase("BASIC") }
 
         }
 
@@ -163,22 +151,36 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return sp.getString("startPhase", "BEGIN")
     }
 
-    @SuppressLint("ApplySharedPref")
     fun saveStartPhase(phase:String) {
         val sp = PreferenceManager.getDefaultSharedPreferences(this)
         val editor = sp.edit()
         editor.putString("startPhase", phase)
-        editor.commit() // подтверждаем изменения
+        editor.apply() // подтверждаем изменения
     }
 
+    fun setPhase (phase: String){
+        curPhase = phase
+        val transaction: FragmentTransaction? = supportFragmentManager.beginTransaction()
+        transaction?.replace(R.id.frame_container, fragListView)?.commit()
+        fragListView.changePhase(curPhase, this)
+        saveStartPhase(curPhase)
+    }
+
+    //Обработка выбора пункта меню в листвью.
     override fun onFragmentInteraction(phase:String, id:Int) {
         //Обработка событий из ListViewFragment
         Log.v(DebugTag.TAG, "onFragmentInteraction Start, $phase, $id")
         val lp = mListPagerLab.getPhaseItem(id,phase)
         val desc:String = getString(lp.description)
         when (phase) {
+            //Если в листвью "Основные движения", то показать "тост",
             "BASIC" -> { toast(desc)}
-
+            //Если меню "переходим на Фридрих", то меняем текст листвью на соответствующую фазу
+            "G2F" -> {
+                fragListView.changePhase(desc, this)
+                curPhase = "G2F_NEXT"
+            }
+            //в других случаях запустить SlideTab с просмотром этапов
             else -> { startActivity<SlidingTabsActivity>(RUBIC_PHASE to phase, EXTRA_ID to id)}
         }
     }

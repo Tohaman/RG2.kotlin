@@ -42,6 +42,19 @@ class FragmentPagerItemtUI<Fragment> : AnkoComponent<Fragment> {
                         isSelectable = true
                         textSize = 15f
                     }.lparams(wrapContent, wrapContent)
+
+                    linearLayout {
+//                        backgroundColor = Color.RED
+                        gravity = Gravity.CENTER
+                        youTubeThumbnailView {
+                            id = Ids.youTubeView
+                        }.lparams(matchParent, matchParent)
+                    }.lparams(matchParent, dip(150)) {setMargins(dip(0), dip(8), dip(0), dip(8))}
+                    textView {
+                        id = Ids.comment_text
+                        textSize = 16f
+                        text = "Свой комментарий:"
+                    }.lparams(matchParent, wrapContent) {setMargins(dip(0), dip(8), dip(0), dip(32))}
                 }.lparams(matchParent, wrapContent) {setMargins(dip(16), dip(0), dip(16), dip(0))}
             }.lparams(matchParent, wrapContent)
         }
@@ -52,5 +65,7 @@ class FragmentPagerItemtUI<Fragment> : AnkoComponent<Fragment> {
         val pager_imageView = 2
         val description_text = 3
         val description_text2 = 4
+        val youTubeView = 5
+        val comment_text = 6
     }
 }

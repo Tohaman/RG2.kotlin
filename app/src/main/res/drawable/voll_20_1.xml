@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/z_oll_back_big"/>
+
+    <item android:drawable="@drawable/z_cube_back_black" android:right="@dimen/oll_right_sw"/>
+    <item android:drawable="@drawable/z_cube_left_g" android:right="@dimen/oll_right_sw"/>
+    <item android:drawable="@drawable/z_cube_right_o" android:right="@dimen/oll_right_sw"/>
+
+    <item android:drawable="@drawable/z_3d_up_11_g" android:right="@dimen/oll_right_sw"/>
+    <item android:drawable="@drawable/z_3d_up_12_y" android:right="@dimen/oll_right_sw"/>
+    <item android:drawable="@drawable/z_3d_up_13_g" android:right="@dimen/oll_right_sw"/>
+    <item android:drawable="@drawable/z_3d_up_21_g" android:right="@dimen/oll_right_sw"/>
+    <item android:drawable="@drawable/z_3d_up_22_y" android:right="@dimen/oll_right_sw"/>
+    <item android:drawable="@drawable/z_3d_up_23_y" android:right="@dimen/oll_right_sw"/>
+    <item android:drawable="@drawable/z_3d_up_31_g" android:right="@dimen/oll_right_sw"/>
+    <item android:drawable="@drawable/z_3d_up_32_g" android:right="@dimen/oll_right_sw"/>
+    <item android:drawable="@drawable/z_3d_up_33_y" android:right="@dimen/oll_right_sw"/>
+
+    <item android:drawable="@drawable/z_3d_up_41_g" android:right="@dimen/oll_right_sw"/>
+    <item android:drawable="@drawable/z_3d_up_42_y" android:right="@dimen/oll_right_sw"/>
+    <item android:drawable="@drawable/z_3d_up_43_g" android:right="@dimen/oll_right_sw"/>
+    <item android:drawable="@drawable/z_3d_up_44_g" android:right="@dimen/oll_right_sw"/>
+    <item android:drawable="@drawable/z_3d_up_45_g" android:right="@dimen/oll_right_sw"/>
+    <item android:drawable="@drawable/z_3d_up_46_y" android:right="@dimen/oll_right_sw"/>
+
+    <item android:drawable="@drawable/voll_20" android:left="@dimen/oll_left_sw"/>
+</layer-list>

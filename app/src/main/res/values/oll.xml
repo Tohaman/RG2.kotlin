@@ -1,0 +1,1203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="oll_title">
+        <item>@string/oll_st1_title</item>
+        <item>@string/oll_st2_title</item>
+        <item>@string/oll_st3_title</item>
+        <item>@string/oll_st4_title</item>
+        <item>@string/oll_st5_title</item>
+        <item>@string/oll_st6_title</item>
+        <item>@string/oll_st7_title</item>
+        <item>@string/oll_st8_title</item>
+        <item>@string/oll_st9_title</item>
+        <item>@string/oll_st10_title</item>
+        <item>@string/oll_st11_title</item>
+        <item>@string/oll_st12_title</item>
+        <item>@string/oll_st13_title</item>
+        <item>@string/oll_st14_title</item>
+        <item>@string/oll_st15_title</item>
+        <item>@string/oll_st16_title</item>
+        <item>@string/oll_st17_title</item>
+        <item>@string/oll_st18_title</item>
+        <item>@string/oll_st19_title</item>
+        <item>@string/oll_st20_title</item>
+        <item>@string/oll_st21_title</item>
+        <item>@string/oll_st22_title</item>
+        <item>@string/oll_st23_title</item>
+        <item>@string/oll_st24_title</item>
+        <item>@string/oll_st25_title</item>
+        <item>@string/oll_st26_title</item>
+        <item>@string/oll_st27_title</item>
+        <item>@string/oll_st28_title</item>
+        <item>@string/oll_st29_title</item>
+        <item>@string/oll_st30_title</item>
+        <item>@string/oll_st31_title</item>
+        <item>@string/oll_st32_title</item>
+        <item>@string/oll_st33_title</item>
+        <item>@string/oll_st34_title</item>
+        <item>@string/oll_st35_title</item>
+        <item>@string/oll_st36_title</item>
+        <item>@string/oll_st37_title</item>
+        <item>@string/oll_st38_title</item>
+        <item>@string/oll_st39_title</item>
+        <item>@string/oll_st40_title</item>
+        <item>@string/oll_st41_title</item>
+        <item>@string/oll_st42_title</item>
+        <item>@string/oll_st43_title</item>
+        <item>@string/oll_st44_title</item>
+        <item>@string/oll_st45_title</item>
+        <item>@string/oll_st46_title</item>
+        <item>@string/oll_st47_title</item>
+        <item>@string/oll_st48_title</item>
+        <item>@string/oll_st49_title</item>
+        <item>@string/oll_st50_title</item>
+        <item>@string/oll_st51_title</item>
+        <item>@string/oll_st52_title</item>
+        <item>@string/oll_st53_title</item>
+        <item>@string/oll_st54_title</item>
+        <item>@string/oll_st55_title</item>
+        <item>@string/oll_st56_title</item>
+        <item>@string/oll_st57_title</item>
+    </string-array>
+
+    <integer-array name="oll_icon">
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_2</item>
+        <item>@drawable/voll_3</item>
+        <item>@drawable/voll_4</item>
+        <item>@drawable/voll_5</item>
+        <item>@drawable/voll_6</item>
+        <item>@drawable/voll_7</item>
+        <item>@drawable/voll_8</item>
+        <item>@drawable/voll_9</item>
+        <item>@drawable/voll_10</item>
+        <item>@drawable/voll_11</item>
+        <item>@drawable/voll_12</item>
+        <item>@drawable/voll_13</item>
+        <item>@drawable/voll_14</item>
+        <item>@drawable/voll_15</item>
+        <item>@drawable/voll_16</item>
+        <item>@drawable/voll_17</item>
+        <item>@drawable/voll_18</item>
+        <item>@drawable/voll_19</item>
+        <item>@drawable/voll_20</item>
+        <item>@drawable/voll_21</item>
+        <item>@drawable/voll_22</item>
+        <item>@drawable/voll_23</item>
+        <item>@drawable/voll_24</item>
+        <item>@drawable/voll_25</item>
+        <item>@drawable/voll_26</item>
+        <item>@drawable/voll_27</item>
+        <item>@drawable/voll_28</item>
+        <item>@drawable/voll_29</item>
+        <item>@drawable/voll_30</item>
+        <item>@drawable/voll_31</item>
+        <item>@drawable/voll_32</item>
+        <item>@drawable/voll_33</item>
+        <item>@drawable/voll_34</item>
+        <item>@drawable/voll_35</item>
+        <item>@drawable/voll_36</item>
+        <item>@drawable/voll_37</item>
+        <item>@drawable/voll_38</item>
+        <item>@drawable/voll_39</item>
+        <item>@drawable/voll_40</item>
+        <item>@drawable/voll_41</item>
+        <item>@drawable/voll_42</item>
+        <item>@drawable/voll_43</item>
+        <item>@drawable/voll_44</item>
+        <item>@drawable/voll_45</item>
+        <item>@drawable/voll_46</item>
+        <item>@drawable/voll_47</item>
+        <item>@drawable/voll_48</item>
+        <item>@drawable/voll_49</item>
+        <item>@drawable/voll_50</item>
+        <item>@drawable/voll_51</item>
+        <item>@drawable/voll_52</item>
+        <item>@drawable/voll_53_11</item>
+        <item>@drawable/voll_54</item>
+        <item>@drawable/voll_55</item>
+        <item>@drawable/voll_56</item>
+        <item>@drawable/voll_57</item>
+    </integer-array>
+
+    <string-array name="oll_descr">
+        <item>@string/oll_st1_descr</item>
+        <item>@string/oll_st2_descr</item>
+        <item>@string/oll_st3_descr</item>
+        <item>@string/oll_st4_descr</item>
+        <item>@string/oll_st5_descr</item>
+        <item>@string/oll_st6_descr</item>
+        <item>@string/oll_st7_descr</item>
+        <item>@string/oll_st8_descr</item>
+        <item>@string/oll_st9_descr</item>
+        <item>@string/oll_st10_descr</item>
+        <item>@string/oll_st11_descr</item>
+        <item>@string/oll_st12_descr</item>
+        <item>@string/oll_st13_descr</item>
+        <item>@string/oll_st14_descr</item>
+        <item>@string/oll_st15_descr</item>
+        <item>@string/oll_st16_descr</item>
+        <item>@string/oll_st17_descr</item>
+        <item>@string/oll_st18_descr</item>
+        <item>@string/oll_st19_descr</item>
+        <item>@string/oll_st20_descr</item>
+        <item>@string/oll_st21_descr</item>
+        <item>@string/oll_st22_descr</item>
+        <item>@string/oll_st23_descr</item>
+        <item>@string/oll_st24_descr</item>
+        <item>@string/oll_st25_descr</item>
+        <item>@string/oll_st26_descr</item>
+        <item>@string/oll_st27_descr</item>
+        <item>@string/oll_st28_descr</item>
+        <item>@string/oll_st29_descr</item>
+        <item>@string/oll_st30_descr</item>
+        <item>@string/oll_st31_descr</item>
+        <item>@string/oll_st32_descr</item>
+        <item>@string/oll_st33_descr</item>
+        <item>@string/oll_st34_descr</item>
+        <item>@string/oll_st35_descr</item>
+        <item>@string/oll_st36_descr</item>
+        <item>@string/oll_st37_descr</item>
+        <item>@string/oll_st38_descr</item>
+        <item>@string/oll_st39_descr</item>
+        <item>@string/oll_st40_descr</item>
+        <item>@string/oll_st41_descr</item>
+        <item>@string/oll_st42_descr</item>
+        <item>@string/oll_st43_descr</item>
+        <item>@string/oll_st44_descr</item>
+        <item>@string/oll_st45_descr</item>
+        <item>@string/oll_st46_descr</item>
+        <item>@string/oll_st47_descr</item>
+        <item>@string/oll_st48_descr</item>
+        <item>@string/oll_st49_descr</item>
+        <item>@string/oll_st50_descr</item>
+        <item>@string/oll_st51_descr</item>
+        <item>@string/oll_st52_descr</item>
+        <item>@string/oll_st53_descr</item>
+        <item>@string/oll_st54_descr</item>
+        <item>@string/oll_st55_descr</item>
+        <item>@string/oll_st56_descr</item>
+        <item>@string/oll_st57_descr</item>
+    </string-array>
+
+    <string-array name="oll_url">
+        <item>@string/oll_st1_url</item>
+        <item>@string/oll_st2_url</item>
+        <item>@string/oll_st3_url</item>
+        <item>@string/oll_st4_url</item>
+        <item>@string/oll_st5_url</item>
+        <item>@string/oll_st6_url</item>
+        <item>@string/oll_st7_url</item>
+        <item>@string/oll_st8_url</item>
+        <item>@string/oll_st9_url</item>
+        <item>@string/oll_st10_url</item>
+        <item>@string/oll_st11_url</item>
+        <item>@string/oll_st12_url</item>
+        <item>@string/oll_st13_url</item>
+        <item>@string/oll_st14_url</item>
+        <item>@string/oll_st15_url</item>
+        <item>@string/oll_st16_url</item>
+        <item>@string/oll_st17_url</item>
+        <item>@string/oll_st18_url</item>
+        <item>@string/oll_st19_url</item>
+        <item>@string/oll_st20_url</item>
+        <item>@string/oll_st21_url</item>
+        <item>@string/oll_st22_url</item>
+        <item>@string/oll_st23_url</item>
+        <item>@string/oll_st24_url</item>
+        <item>@string/oll_st25_url</item>
+        <item>@string/oll_st26_url</item>
+        <item>@string/oll_st27_url</item>
+        <item>@string/oll_st28_url</item>
+        <item>@string/oll_st29_url</item>
+        <item>@string/oll_st30_url</item>
+        <item>@string/oll_st31_url</item>
+        <item>@string/oll_st32_url</item>
+        <item>@string/oll_st33_url</item>
+        <item>@string/oll_st34_url</item>
+        <item>@string/oll_st35_url</item>
+        <item>@string/oll_st36_url</item>
+        <item>@string/oll_st37_url</item>
+        <item>@string/oll_st38_url</item>
+        <item>@string/oll_st39_url</item>
+        <item>@string/oll_st40_url</item>
+        <item>@string/oll_st41_url</item>
+        <item>@string/oll_st42_url</item>
+        <item>@string/oll_st43_url</item>
+        <item>@string/oll_st44_url</item>
+        <item>@string/oll_st45_url</item>
+        <item>@string/oll_st46_url</item>
+        <item>@string/oll_st47_url</item>
+        <item>@string/oll_st48_url</item>
+        <item>@string/oll_st49_url</item>
+        <item>@string/oll_st50_url</item>
+        <item>@string/oll_st51_url</item>
+        <item>@string/oll_st52_url</item>
+        <item>@string/oll_st53_url</item>
+        <item>@string/oll_st54_url</item>
+        <item>@string/oll_st55_url</item>
+        <item>@string/oll_st56_url</item>
+        <item>@string/oll_st57_url</item>
+    </string-array>
+
+    <string name="oll_st1_title">#1 Снежинка</string>
+    <string name="oll_st1_descr" formatted="false"><![CDATA[
+        <p>OLL (Orintation Last Layer, ориентация последнего слоя) - предпоследний этап по методу Фридрих.
+        Задача данного этапа - покрасить крышу в один цвет. Всего 57 алгоритмов. В данном цикле сначала
+        будут рассмотрены не знакомые по ускорениям алгоритмы. </p>
+        <b>Как решать:</b>
+        <p>1. Как держать Снежинку не имеет значения, главное крышей вверх. <br/>
+        Серединка, два против часовой, пять по часовой, два против часовой, серединка назад. </br>
+        <p style="text-align:center"><img src="voll_1_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:40&link=vDG7tg__FNo">на видео 2:40</a> <br/>
+        <b>Алгоритм: S (R\' U\') (R U R U R) U\' R\' S\' </b></p>
+        <p>2. Альтернативный вариант, но не такой быстрый
+        <a href="rubic-activity://ytactivity?time=4:08&link=vDG7tg__FNo">на видео 4:08</a> <br/>
+        <b>Алгоритм: (M U\' M U\' M U\' M U\') (M\' U\' M\' U\' M\' U\' M\' U\') </b></p>
+        <p>3. Вариант от Феликса Земдегса<br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=11:51&link=IasVqtCHoj0">от Феликса</a> <br/>
+        <b>Алгоритм: M U (R U R\' U\') M2\' (U R U\' Rw\')</b> хотя судя по исполнению, правильнее
+        записать так:<br/> <b>Rw\' R U (R U R\' U\') Rw2 R2\' (U R U\' Rw\')</b></p>
+        <b>Как смоделировать</b>: выполнить Снежинку еще раз :)
+    ]]></string>
+    <string name="oll_st1_url">vDG7tg__FNo</string>
+
+    <string name="oll_st2_title">#2 Домино</string>
+    <string name="oll_st2_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Поставить по диагонали из дальнего левого в ближний правый угол и одной точкой к
+         себе (как на картинке) и выполнить: <br/>
+        Морской пиф-паф, английский пиф-паф, крыша 2 раза, английский пиф-паф. <br/>
+         <p style="text-align:center"><img src="voll_2_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:03&link=OCcpJ62kO9s">на видео 2:03</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=11:39&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R U R\' U) (R\' F R F\') U2 (R\' F R F\') </b><br/></p><br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=3:25&link=OCcpJ62kO9s">на видео 3:25</a>, сделать  <br/>
+        <b>(F R\' F\' R) U2 (F R\' F\' R) (U\' R U\' R\')</b>
+    ]]></string>
+    <string name="oll_st2_url">OCcpJ62kO9s</string>
+
+    <string name="oll_st3_title">#3 Пуля в коридоре</string>
+    <string name="oll_st3_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Держать одной наклейкой к себе. Похоже на домино, но отличается первыми ходами.
+        R, U2, R\', английский пиф-паф, крыша 2 раза, английский пиф-паф.</p>
+        <p style="text-align:center"><img src="voll_3_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:12&link=mkQPh6bCk7c">на видео 2:12</a><br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=10:18&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R U2 R\') (R\' F R F\') U2 (R\' F R F\') </b><br/><br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=3:32&link=mkQPh6bCk7c">на видео 3:32</a> </br>
+        <b>(F R\' F\' R) U2 (F R\' F\' R) (R U2 R\')</b>
+    ]]></string>
+    <string name="oll_st3_url">mkQPh6bCk7c</string>
+
+    <string name="oll_st4_title">#4 Пуля в стену</string>
+    <string name="oll_st4_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Держать одной наклейкой к себе, стенкой от себя.
+        Жирный пиф-паф, крыша ещё, жирно включаем, крыша 2 раза, выкл.свет, крыша 2 раза, вкл.свет, крыша против, выключить жирно. <br/>
+        <p style="text-align:center"><img src="voll_4_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:52&link=kQZFmvkb1eg">на видео 1:52</a>  <br/>
+        <b>Алгоритм: (Rw U Rw\' U2) Rw U2 R\' U2 R U\' Rw\' </b></p>
+        <p>2. Повернуть стенкой слева - F, пиф-паф, S, пиф-паф, Fw\' <br/>
+        <p style="text-align:center"><img src="voll_4_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=10:32&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: F (R U R\' U\') S (R U R\' U\') Fw\'  </b> </p> <br/> <br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=3:18&link=kQZFmvkb1eg">на видео 3:18</a> сделать
+        пулю в коридоре или пулю в стену еще раз. В любом случае получается пуля в стену.</p>
+    ]]></string>
+    <string name="oll_st4_url">kQZFmvkb1eg</string>
+
+    <string name="oll_st5_title">#5 Вектор с точкой</string>
+    <string name="oll_st5_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Установить Вектор на юго-восток. Жирно в Лондон, пиф-паф, жирно из Лондона, крыша против, в Лондон, пиф-паф, из Лондона.
+        <p style="text-align:center"><img src="voll_5_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:22&link=WD3C99fU7dc">на видео 2:22</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=10:46&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: Fw (R U R\' U\') Fw\' U\' F (R U R\' U\') F\' </b> </p> <br/> <br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=3:00&link=WD3C99fU7dc">на видео 3:00</a>
+         - выполнить данный алгоритм 3 раза или выполнить Вектор с блоком.
+    ]]></string>
+    <string name="oll_st5_url">WD3C99fU7dc</string>
+
+    <string name="oll_st6_title">#6 Вектор с блоком</string>
+    <string name="oll_st6_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Установить вектор как и прошлом случае на юго-восток, чтобы было легче отличить от вектора с точкой. <br/>
+        <p style="text-align:center"><img src="voll_6_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:15&link=vwJYwlgnEbs">на видео 2:15</a>  <br/>
+        <b>Алгоритм: M U\' Rw U2 Rw\' U\' R U\' M\' R </b></p>
+        <p>2. Поставить вектор на северо-восток и выполнить вектор с точкой, но другим ходом U между Лондонами.  <br/>
+        <p style="text-align:center"><img src="voll_6_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=10:59&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: Fw (R U R\' U\') Fw\' (U) F (R U R\' U\') F\' </b> </p> <br/> <br/>
+        <b>Как смоделировать</b>: Сделать вектор с точкой.
+    ]]></string>
+    <string name="oll_st6_url">vwJYwlgnEbs</string>
+
+    <string name="oll_st7_title">#7 Микки Маус с бородой</string>
+    <string name="oll_st7_descr1">\t
+    </string>
+    <string name="oll_st7_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Взять бородой к себе. Жирная рыбка, жирно выключить, крыша против, вкл.свет, снова
+        крыша против, выкл.свет, крыша дважды, включить жирно. <br/>
+        <p style="text-align:center"><img src="voll_7_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:00&link=2TKJWiA7Yzg">на видео 4:00</a>  <br/>
+        <b>Алгоритм: Rw U R\' U R U2 Rw2\' U\' R U\' R\' U2 Rw </b></p>
+        <p>2. Взять бородой вверх. В Лондон, морской пиф-паф, перехват, выкл свет, крыша дважды, англ.пиф-паф  <br/>
+        <p style="text-align:center"><img src="voll_7_2.xml" width="60%%"></p>
+        <b>Алгоритм: F (R U R\' U) y\' (R\' U2) (R\' F R F\')</b></p>
+        <p>3. В предыдущем алгоритме вместо последнего хода морского пиф-пафа и перехвата (U y\')
+        крутить два нижеих слоя (Dw). Но и акценты тогда уже несколько по другому будут стоять. <br/>
+        <b>Алгоритм: (F R) (U R\') Dw (R\' U2) (R\' F R F\') </b> </p>
+        <p>4. Взять бородой влево.</p>
+        <p style="text-align:center"><img src="voll_7_3.xml" width="60%%"></p>
+        <p>Фингертрикс: <a href="rubic-activity://ytactivity?time=11:13&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R U2\') (R2\' F R F\') U2\' M\' (U R U\' Rw\')</b><br/>
+        или как его выполняет Феликс: <br/>
+        <b>(R U2\') (R2\' F R F\') U2\' Rw R\' (U R U\' Rw\')</b></p>
+        <b>Как смоделировать</b>: Сделать домино или алгоритм от Феликса.
+    ]]></string>
+    <string name="oll_st7_url">2TKJWiA7Yzg</string>
+
+    <string name="oll_st8_title">#8 Микки Маус с бакенбардами</string>
+    <string name="oll_st8_descr1">\t
+    </string>
+    <string name="oll_st8_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Ушами вверх (как на картинке). Средний слой неудобно, крыша по, пиф-паф, средний слой назад,
+        английский пиф-паф.</p>
+        <p style="text-align:center"><img src="voll_8_1.xml" width="60%%"></p> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:29&link=VuQfVI8a6nY">на видео 1:29</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=11:27&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: M U (R U R\' U\') M\' (R\' F R F\')  </b><br/><br/>
+        <b>Как смоделировать</b>: Сделать Микки Мауса с бородой от Максима.
+    ]]></string>
+    <string name="oll_st8_url">VuQfVI8a6nY</string>
+
+    <string name="oll_st9_title">#9 Школа</string>
+    <string name="oll_st9_descr1">\t
+    </string>
+    <string name="oll_st9_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Поставить буквой H. Выполнить пиф-паф, средний слой удобно, анти-пиф-паф с двойным последним кручением. <br/>
+        <p style="text-align:center"><img src="voll_9_1.xml" width="60%%"></p> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:26&link=qMGjfB8CcH0">на видео 2:26</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:28&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R U R\' U\') M\' (U R U\' Rw\') </b> </p>
+        <p>2. Если плохо получается крутить средний слой, то вместо M\' можно выполнить Rw R\'. <br/>
+        <b>Алгоритм: (R U R\' U\') Rw (R\' U R U\' Rw\') </b> </p>
+        <p>3. Вариант из ускорений слепой сборки №1, но он немного сложнее.  <br/>
+        <b>Алгоритм: M\' U\' M\' U\' M\' U2 M U\' M U\' M </b> </p>
+        <b>Как смоделировать</b>: выполнить Школу 2 раза или Летучего змея.
+    ]]></string>
+    <string name="oll_st9_url">qMGjfB8CcH0</string>
+
+    <string name="oll_st10_title">#10 Летающий змей</string>
+    <string name="oll_st10_descr1">\t
+    </string>
+    <string name="oll_st10_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Змей улетает влево от нас. Жирный пиф-паф, средний неудобно, анти-пиф-паф.  <br/>
+        Ну и как и в прошлом случае, вместо <b>М</b> можно сделать <b>Rw\' R</b>.  </p>
+        <p style="text-align:center"><img src="voll_10_1.xml" width="60%%"></p> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:46&link=RczVF3poV4E">на видео 2:46</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:18&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (Rw U R\' U\') M (U R U\' R\') </b>  или <br/>
+        <b>Алгоритм: (Rw U R\' U\') Rw\' R (U R U\' R\') </b> <br/><br/>
+        <p>2. Змей улетает от нас вправо. Вариант из ускорений слепой сборки №10, но он немного
+        сложнее, т.к. есть неудобное кручение среднего слоя. <br/>
+        <b>Алгоритм: (M U M\') U2 (M U M\') </b> </p>
+        <b>Как смоделировать</b>: выполнить Школу или Змея 2 раза.
+    ]]></string>
+    <string name="oll_st10_url">RczVF3poV4E</string>
+
+    <string name="oll_st11_title">#11 Чистый бумеранг 1-3</string>
+    <string name="oll_st11_descr" formatted="false"><![CDATA[
+		<p>Вариантов чистого бумеранга целых шесть, чтобы понять который из них перед вами, поверните бумеранг
+        на 9 и 12 часов и посмотрите на переднюю и правую грани. Сколько там желтых наклеек.
+        По количеству наклеек и будем называть чистые бумеранги.  <br/>
+        Начнем с Чистого бумеранга 1-3.</p>
+        <b>Как решать:</b>
+        <p>1. Короткая буква Т, длинная буква Т.</p>
+        <p style="text-align:center"><img src="voll_11_1.xml" width="60%%"></p> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:18&link=QbXsEIoaEIY">на видео 3:18</a>  <br/>
+        <b>Алгоритм: F (R U R\' U\') F\' (R U R\' U\') (R\' F R F\')</b> <br/><br/>
+        2. Поставить на 3 и 6 часов (меньше ходов и без кручения передней грани) <br/>
+        <p style="text-align:center"><img src="voll_11_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=8:24&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (Rw\' U\' R U\') (R\' U R U\') (R\' U2 Rw) </b> <br/><br/>
+        <b>Как смоделировать</b>: 8 раз выполнить алгоритм 1 или один раз алгоритм 2.
+    ]]></string>
+    <string name="oll_st11_url">QbXsEIoaEIY</string>
+
+    <string name="oll_st12_title">#12 Чистый бумеранг 2-1</string>
+    <string name="oll_st12_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Данный бумеранг можно назвать классическим, т.к. выполнить надо алгоритм
+        для новичков: в Лондон, два пиф-пафа, из Лондона. </p>
+        <p style="text-align:center"><img src="voll_12_1.xml" width="60%%"></p> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:09&link=hpKpQDXbA4Q">на видео 1:09</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=7:42&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: F\' (R U R\' U\') (R U R\' U\') F </b> <br/><br/>
+        <b>Как смоделировать</b>: В Лондон, 4 пиф-пафа, из Лондона. Или В Лондон, 2 анти-пиф-пафа,
+         из Лондона. <a href="rubic-activity://ytactivity?time=2:50&link=hpKpQDXbA4Q">На видео 2:50</a>.
+    ]]></string>
+    <string name="oll_st12_url">hpKpQDXbA4Q</string>
+
+    <string name="oll_st13_title">#13 Чистый бумеранг 1-2</string>
+    <string name="oll_st13_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b><br/>
+        <p>Является зеркальным случаем предыдущего, и поэтому все тоже, что и в бумеранге 2-1, но слева.
+        Повернуть на 3 и 12 часов (ход U), Из Лондона, 2 пиф-пафа слева, в Лондон.</p>
+        <p style="text-align:center"><img src="voll_13_1.xml" width="60%%"></p> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:20&link=CQYVqMdqpQk">на видео 1:20</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=7:52&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: U [F (L\' U\' L U) (L\' U\' L U) F\'] </b> <br/><br/>
+        <b>Как смоделировать</b>: Аналогично предыдущему случаю. Из Лондона, 4 пиф-пафа левой рукой, в Лондон.
+    ]]></string>
+    <string name="oll_st13_url">CQYVqMdqpQk</string>
+
+    <string name="oll_st14_title">#14 Чистый бумеранг 3-1</string>
+    <string name="oll_st14_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Простой и быстрый алгоритм с двойным включением/выключением света.
+        Жирно включили и от этого сильно поехала крыша, дальше чередуем включения выключения
+        света с кручением крыши и жирно выключаем свет. Очень похож на второй алгоритм НТВ+, только
+        первый и последний ходы жирные.</p>
+        <p style="text-align:center"><img src="voll_14_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:44&link=Ek1Y8_vjQYw">на видео 0:44</a><br/>
+        <b>Алгоритм: (Rw U2) (R\' U\' R U R\' U\' R U\') Rw\'</b><br/>
+        или немного по другому расставить акцены: <b>(Rw U2 R\' U\') (R U R\' U\') (R U\' Rw\')</b><br/><br/>
+
+        2. Альтернативный вариант, похож на альтернативный вариант Чистого бумеранга 1-3,
+        но установить бумеранг надо на 3 и 12 часов.  <br/>
+        <p style="text-align:center"><img src="voll_14_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=8:36&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (Rw U R\' U) (R U\' R\' U) (R U2 Rw\') </b><br/><br/>
+        <b>Как смоделировать</b>: Повторить алгоритм еще раз.
+        <a href="rubic-activity://ytactivity?time=2:07&link=Ek1Y8_vjQYw">На видео 2:07</a> .
+    ]]></string>
+    <string name="oll_st14_url">Ek1Y8_vjQYw</string>
+
+    <string name="oll_st15_title">#15 Чистый бумеранг 2-3 (Официант)</string>
+    <string name="oll_st15_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Официант подходит к ближнему столику, принимает заказ, идет к дальнему столику,
+        берет заказ. Возвращается к ближнему, приносит заказ. Идет снова к дальнему и отдает заказ.</p>
+        <p style="text-align:center"><img src="voll_15_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:52&link=YBDy3ZrHy54">на видео 2:52</a> <br/>
+        <b>Алгоритм: (R\' F) (R2 B\') (R2\' F\') (R2 B) R\' </b><br/><br/>
+
+        <p>2. Повернуть на 6 и 3 часов. Свет включаем и выключаем только жирно.</p>
+        <p style="text-align:center"><img src="voll_15_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=8:14&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: Rw\' U Rw2 U\' Rw2\' U\' Rw2 U Rw\'  </b><br/><br/>
+        <b>Как смоделировать</b>: сделать данный алгоритм 5 раз или чистый бумеранг 3-2.
+    ]]></string>
+    <string name="oll_st15_url">YBDy3ZrHy54</string>
+
+    <string name="oll_st16_title">#16 Чистый бумеранг 3-2</string>
+    <string name="oll_st16_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Противоположный алгоритму Феликса для бумеранга 2-3. Повернуть на 12 и 3 часов.
+        Свет включаем и выключаем только жирно. Очень интересный, хоть и не простой фингертрикс. </p>
+        <p style="text-align:center"><img src="voll_16_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:50&link=4rv_zkC5XR0">на видео 0:50</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=8:02&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: {U} (Rw U\') (Rw2\' U Rw2 U Rw2\' U\') Rw  </b>
+        <p>2. Повернуть на 6 и 9 часов и сделать <b>Дальнего официанта</b>, потому что
+        в этом случае официант начинает с дальнего столика. Сначала официант принес заказ
+        дальнему столику, потом ближнему. Получил расчет за дальним столиком, рассчитал ближний,
+        вернулся на место. </p>
+        <p style="text-align:center"><img src="voll_16_2.xml" width="60%%"></p>
+        <b>Алгоритм: U\' (R B\') (R2\' F) (R2 B) (R2\' F\') R  </b><br/><br/>
+        <b>Как смоделировать</b>: сделать бумеранг 2-3 (официанта)
+    ]]></string>
+    <string name="oll_st16_url">4rv_zkC5XR0</string>
+
+    <string name="oll_st17_title">#17 Правая молния с блоком</string>
+    <string name="oll_st17_descr" formatted="false"><![CDATA[
+        <p>Вариантов молний всего четыре. Правая/левая с блоком/точкой. Чтобы их отличить друг
+        от друга надо повернуть так, чтобы молния смотрела <b>углом</b> вниз. </p>
+        <b>Как решать:</b>
+        <p>1. Простейший алгоритм, включить свет, крыша 2 раза, выключить свет, крыша 2 раза
+        и английский пиф-паф. </p>
+        <p style="text-align:center"><img src="voll_17_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:10&link=_TyI0kuDKJs">на видео 2:10</a> <br/>
+        <b>Алгоритм: R U2 R\' U2 (R\' F R F\') </b><br/><br/>
+
+        <p>2. Альтернативный вариант без вращения передней грани, но из положения блоком сверху.
+        Сделать северо-западную <b>Акулу</b>, т.е. ту которая уплывает налево, но с первым и
+        последним жирными ходами</p>
+        <p style="text-align:center"><img src="voll_17_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=9:06&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (Rw\' U\' R U\') R\' U2 Rw </b><br/><br/>
+
+        <b>Как смоделировать</b>: сделать данный алгоритм слева, т.е.  <b>L\' U2 L U2 (L F\' L\' F)</b>
+        <a href="rubic-activity://ytactivity?time=3:22&link=_TyI0kuDKJs">на видео 3:22</a> .
+    ]]></string>
+    <string name="oll_st17_url">_TyI0kuDKJs</string>
+
+    <string name="oll_st18_title">#18 Левая молния с блоком</string>
+    <string name="oll_st18_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1.Сделать <b>жирную рыбку</b>. Т.е. все ходы как у рыбки, только первый и последний жирные.</p>
+        <p style="text-align:center"><img src="voll_18_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:42&link=sBcjCoCpWSE">на видео 1:42</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=8:57&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (Rw U R\' U) R U2 Rw\' </b><br/><br/>
+
+        <p>2.Сделать Правую молнию слева <br/>
+        <b>Алгоритм: L\' U2 L U2 (L F\' L\' F) </b></p>
+
+        <b>Как смоделировать</b>: сделать правую молнию с блоком <b>R U2 R\' U2 (R\' F R F\')</b>.
+    ]]></string>
+    <string name="oll_st18_url">sBcjCoCpWSE</string>
+
+    <string name="oll_st19_title">#19 Левая молния с точкой</string>
+    <string name="oll_st19_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Длинный алгоритм, крыша дважды, в Лондон, пиф-паф, из Лондона, получается
+        буква Т с точкой, поэтому: крыша, в Лондон, пиф-паф, из Лондона. </p>
+        <p style="text-align:center"><img src="voll_19_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:10&link=jVgSgrMwzYU">на видео 2:10</a> <br/>
+        <b>Алгоритм: U2 F (R U R\' U\') F\' U F (R U R\' U\') F\' </b> <br/><br/>
+
+        <p>2. Короче, но сложнее алгоритм. Поставить точкой слева.</p>
+        <p style="text-align:center"><img src="voll_19_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=9:31&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: M\' (R\' U\' R U\' R\' U2 R) U\' M</b><br/><br/>
+        <b>Как смоделировать</b>: через анти-пиф-паф, т.е. все ходы в обратном порядке
+        <b>F (U R U\' R\') F\' U\' F (U R U\' R\') F\' U2</b>.
+    ]]></string>
+    <string name="oll_st19_url">jVgSgrMwzYU</string>
+
+    <string name="oll_st20_title">#20 Правая молния с точкой</string>
+    <string name="oll_st20_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1.Так же как и правую молнию, но сначала (до буквы Т) слева. Крыша дважды, из Лондона (в Лондон слева),
+        пиф-паф слева, в Лондон (из Лондона слева), крыша по, в Лондон, пиф-паф обычный, из Лондона. </p>
+        <p style="text-align:center"><img src="voll_20_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:54&link=YxxC_n6d8Bw">на видео 0:54</a> <br/>
+        <b>Алгоритм: U2 F\' (L\' U\' L U) F U F (R U R\' U\') F\' </b><br/><br/>
+
+        <p>2. Без вращения левой грани, так же как левую молнию поставить точкой слева.</p>
+        <p style="text-align:center"><img src="voll_20_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=9:18&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: Rw\' (R2 U R\' U R U2 R\') U M\' </b><br/><br/>
+
+        <b>Как смоделировать</b>: тоже через анти-пиф-паф, т.е. все ходы в обратном порядке
+        <b>F (U R U\' R\') F\' U\' F\' (U\' L\' U L) F U2</b>.
+    ]]></string>
+    <string name="oll_st20_url">YxxC_n6d8Bw</string>
+
+    <string name="oll_st21_title">#21 Левый мягкий знак с точкой</string>
+    <string name="oll_st21_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Жирно в Лондон, пиф-паф, жирно из Лондона </p>
+        <p style="text-align:center"><img src="voll_21_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:58&link=O29zp6zLXEQ">на видео 1:58</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:04&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: Fw (R U R\' U\') Fw\' </b><br/><br/>
+
+        <p>2. Из такого же положения, но без жирных Лондонов. В Лондон, антипиф-паф, из Лондона.
+        Выполнять лучше из стандартного положения рук и в Лондон уезжать большим пальцем правой руки.</p>
+        <b>Алгоритм: F (U R U\' R\') F\'</b><br/><br/>
+
+        <b>Как смоделировать</b>: обратно второму варианту, в Лондон (не жирно), пиф-паф, из Лондона.
+    ]]></string>
+    <string name="oll_st21_url">O29zp6zLXEQ</string>
+
+    <string name="oll_st22_title">#22 Правый мягкий знак с точкой</string>
+
+    <string name="oll_st22_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Все тоже, что и с левым мягким знаком, но слева. Жирно в Лондон слева, левый пиф-паф, жирно из Лондона слева. <br/>
+        Заметьте, что <b>Левый мягкий знак</b> делается правой рукой, а <b>Правый мягкий знак</b> - левой. </p>
+        <p style="text-align:center"><img src="voll_22_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:48&link=OIZDlsU0RjQ">на видео 0:48</a> <br/>
+        <b>Алгоритм: Fw\' (L\' U\' L U) Fw  </b><br/><br/>
+
+        <p>2. Тот же самый алгоритм, но через правую руку, т.е. выполнить чуть-чуть по другому.
+        Начальное положение рук: Левая рука стандартно, большой палец правой руки сверху.<br/>
+        <b>Алгоритм: B\' (U\' R\' U R) B</b></p>
+
+        <p>3. Из положения точкой справа. Хоть и без врещения левой грани, но не очень удобный алгоритм.</p>
+        <p style="text-align:center"><img src="voll_22_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:56&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: R\' U\' F\' U F R</b><br/><br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=1:14&link=OIZDlsU0RjQ">на видео 1:14</a>
+        в Лондон слева, пиф-паф слева, из Лондона слева.
+    ]]></string>
+    <string name="oll_st22_url">OIZDlsU0RjQ</string>
+
+    <string name="oll_st23_title">#23 Левый мягкий знак с блоком</string>
+    <string name="oll_st23_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Крыша дважды, средний слой, пиф-паф, английский пиф-паф с последним жирным ходом. </p>
+        <p style="text-align:center"><img src="voll_23_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:00&link=fb00j4900Cw">на видео 1:00</a> <br/>
+        <b>Алгоритм: {U2} S (R U R\' U\') (R\' F R Fw\')</b>
+
+        <p>2. В принципе так же из положения палочкой вверх справа.<p>
+        <p style="text-align:center"><img src="voll_23_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:45&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R U B\') (U\' R\' U) (R B R\')</b><br/><br/>
+
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=2:00&link=fb00j4900Cw">на видео 2:00</a>
+          - <b>L F\' (L\' U\' L U) F U\' L\'</b>.
+    ]]></string>
+    <string name="oll_st23_url">fb00j4900Cw</string>
+
+    <string name="oll_st24_title">#24 Правый мягкий знак с блоком</string>
+    <string name="oll_st24_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p style="text-align:center"><img src="voll_24_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:13&link=Qq10hEWLDXQ">на видео 1:13</a>
+        (<a href="rubic-activity://ytactivity?time=2:25&link=Qq10hEWLDXQ">или 2:25</a>) <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:36&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: R\' U\' F (U R U\' R\') F\' R </b><br/><br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=2:06&link=Qq10hEWLDXQ">на видео 2:06</a>
+         противположными ходами <b>R\' F (R U R\' U\') F\' U R</b>.
+    ]]></string>
+    <string name="oll_st24_url">Qq10hEWLDXQ</string>
+
+    <string name="oll_st25_title">#25 Правый петух с точкой</string>
+    <string name="oll_st25_descr" formatted="false"><![CDATA[
+        <p>И снова четыре похожие ситуации, которые назовем <b>петухами</b>. Т.к. если включить
+        воображение, то действительно похоже на петуха вид сбоку. Хотя на счет того, где голвова,
+        а где хвост, я бы с Максимом поспорил :)</p>
+        <p style="text-align:center"><img src="voll_25_2.xml" width="30%%"></p>
+        <p>Петухи как и молнии бывают
+        правые/левые и с точкой/блоком. Чтобы их отличить друг от друга, надо поставить петуха
+        головой и хвостом к себе (двумя правильно ориентированными углами) и для начала посмотреть
+        на <b>бумеранг</b> петуха. Если он справа, то петух левый, а если слева, то петух правый (т.к.
+        во первых, мы смотрим на перевернутого петуха, а во вторых, то какой петух определяет, какой
+        рукой делать алгоритм). Теперь посмотрите на соответствующую грань (правую для правого или
+        на левую для левого петуха). Что там точка или блок. Ну или:<br/>
+        бумеранг + глазки = петух с точкой<br/>
+        бумеранг + ушки = петух с блоком.<br/>
+        Начнем с самого простого, правого петуха с точкой.</p>
+        <b>Как решать:</b><br/>
+        1. Сначала делаем рыбку, получаем <b>Букву Т с точкой</b>, и соответственно едем в Лондон, пиф-паф,
+        из Лондона.<br/>
+        <p style="text-align:center"><img src="voll_25_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:30&link=CcIx5DfnKwY">на видео 3:30</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=7:05&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R U R\' U R U2 R\') F (R U R\' U\') F\'</b><br/><br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=4:08&link=CcIx5DfnKwY">на видео 4:08</a>
+         нужно повторить данный алгоритм пять раз на собранном OLL. Или сделать левого петуха с точкой от Феликса.
+    ]]></string>
+    <string name="oll_st25_url">CcIx5DfnKwY</string>
+
+    <string name="oll_st26_title">#26 Левый петух с точкой</string>
+    <string name="oll_st26_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Все так же, как и с правым петухом, но слева.</p>
+        <p style="text-align:center"><img src="voll_26_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:09&link=dNs1j2mY42g">на видео 1:09</a> <br/>
+        <b>Алгоритм: (L\' U\' L U\') L\' U2 L F\' (L\' U\' L U) F</b><br/><br/>
+
+        <p>2. Поставить петуха головой вверх. Делаем северо-западную <b>Акулу</b>, получаем <b>Букву Т с
+        точкой</b>, и соответственно едем в Лондон, пиф-паф, из Лондона.</p>
+        <p style="text-align:center"><img src="voll_26_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:53&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R\' U\' R U\' R\' U2 R) F (R U R\' U\') F\'</b><br/><br/>
+
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=2:05&link=dNs1j2mY42g">на видео 2:05</a>
+         нужно повторить данный алгоритм пять раз на собранном OLL. Или сделать Снежинку, в Лондон, пиф-паф, из Лондона.
+    ]]></string>
+    <string name="oll_st26_url">dNs1j2mY42g</string>
+
+    <string name="oll_st27_title">#27 Правый петух с блоком</string>
+    <string name="oll_st27_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Повернуть как и в предыдущих петухах вверх тормашками.</p>
+        <p style="text-align:center"><img src="voll_27_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:47&link=g2OOVob1f-E">на видео 1:47</a> <br/>
+        <b>Алгоритм: (F R\' F) R2 (U\' R\' U\') R U R\' F2</b><br/><br/>
+
+        <p>2. Вариант от Феликса, с меньшим кручением передней грани. Из того же положения (вверх ногами).</p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:52&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: F U (R U2 R\' U\') (R U2 R\' U\') F\'</b><br/><br/>
+
+        <p>3. Или повернуть ногами к себе и на первый взгляд сложный, но на самом деле удобный
+        алгоритм, если изначально взять большим пальцем правой руки от себя. Хотя лично мне больше
+        нравится вариант Феликса.</p>
+        <p style="text-align:center"><img src="voll_27_2.xml" width="60%%"></p>
+        <b>Алгоритм: (R2\' U R\' B\') (R U\' R2\' U) (Lw U Lw\')</b><br/><br/>
+
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=3:03&link=g2OOVob1f-E">на видео 3:03</a>
+         нужно выполнить данный алгоритм три раза.
+    ]]></string>
+    <string name="oll_st27_url">g2OOVob1f-E</string>
+
+    <string name="oll_st28_title">#28 Левый петух с блоком</string>
+    <string name="oll_st28_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Абсолютно аналогично правому петуху с блоком, только слева.</p>
+        <p style="text-align:center"><img src="voll_28_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:44&link=Rg9b36qBOeo">на видео 0:44</a> <br/>
+        <b>Алгоритм: (F\' L F\') L2 (U L U) L\' U\' L F2</b><br/><br/>
+
+        <p>2. Поставить петуха блоком к себе. Очень быстрый и удобный алгоритм, без вращения левой грани.
+        Начальное положение рук как при пиф-пафе.</p>
+        <p style="text-align:center"><img src="voll_28_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:41&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R U R\' U\') (R U\' R\') (F\' U\' F) (R U R\')</b><br/><br/>
+
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=1:16&link=Rg9b36qBOeo">на видео 1:16</a>
+         нужно выполнить данный алгоритм три раза.
+    ]]></string>
+    <string name="oll_st28_url">Rg9b36qBOeo</string>
+
+    <string name="oll_st29_title">#29 Левый квадрат</string>
+    <string name="oll_st29_descr" formatted="false"><![CDATA[
+        <p>Еще две ситуации, которые очень легко отличить от других, но немного сложнее друг от друга -
+        <b>Квадраты.</b> Квадрат может быть левым или правым.</p>
+        <p>Как их <a href="rubic-activity://ytactivity?time=1:01&link=mknzlNHW6_A">различать:</a>
+        Поврнуть квадратом к себе и при этом блок на противоположной боковой стороне тоже должен быть
+        спереди. Если он сзади, значит надо поставить квадрат с другой стороны. Или еще один вариант определения:
+        К какой стороне примыкают двойные блоки, такой и квадрат. Начнем с левого квадрата.</p>
+        <b>Как решать:</b>
+        <p>Из положения квадрат к себе слева (как в видео). Очень похоже на обычную
+        <a href="rubic-activity://ytactivity?time=2:37&link=mknzlNHW6_A">Акулу</a>, которая
+        уплывает вправо. Только второй и последний ходы жирные. </p>
+        <p style="text-align:center"><img src="voll_29_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:07&link=mknzlNHW6_A">на видео 3:07</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:06&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: Rw U2 R\' U\' R U\' Rw\'</b><br/><br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=3:19&link=mknzlNHW6_A">на видео 3:19</a>
+         нужно сделать <b>Левую молнию с блоком</b>, т.е. жирную рыбку.
+    ]]></string>
+    <string name="oll_st29_url">mknzlNHW6_A</string>
+
+    <string name="oll_st30_title">#30 Правый квадрат</string>
+    <string name="oll_st30_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Аналогично левому квадрату только зеркально. Соответственно если из положения квадрат к себе справа, то сначала U2.</p>
+        <p style="text-align:center"><img src="voll_30_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:14&link=Gqb32CfhALs">на видео 1:14</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:18&link=47JfJxU7EjM">от J Perm</a> <br/>
+        <b>Алгоритм: {U2} (Lw\' U2 L U L\' U Lw)</b><br/><br/>
+        <p>2. Действительно из положения квадрат к себе справа. В данном случае можно сделать очень похожий на
+        левый квадрат алгоритм, только крышу надо крутить по часовой стрелке (т.е. в середине
+        получается морской пиф-паф) и поменять местами жирные ходы.
+        <p style="text-align:center"><img src="voll_30_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:55&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: Rw\' U2 (R U R\' U) Rw</b><br/><br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=1:44&link=Gqb32CfhALs">на видео 1:44</a>
+        нужно сделать Жирную рыбку слева.
+    ]]></string>
+    <string name="oll_st30_url">Gqb32CfhALs</string>
+
+    <string name="oll_st31_title">#31 Галстук с блоком</string>
+    <string name="oll_st31_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Сделать первую часть алгоритма PLL Австралия: В Лондон, включили свет, три хода против
+        часовой, неполный пиф-паф и из Лондона.</p>
+        <p style="text-align:center"><img src="voll_31_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:00&link=yqcAJD1W590">на видео 1:00</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=5:43&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: F R (U\' R\' U\') (R U R\') F\'</b><br/><br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=1:25&link=yqcAJD1W590">на видео 1:25</a>
+        выполнить вторую часть Австралии: пиф-паф, английский пиф-паф.
+        ]]></string>
+    <string name="oll_st31_url">yqcAJD1W590</string>
+
+    <string name="oll_st32_title">#32 Галстук с точкой</string>
+    <string name="oll_st32_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Поставить так же как и галстук с блоком. Выключаем свет слева, крыша дважды,
+        жирно выключаем свет дважды, в Лондон, жирно включаем
+        свет, крыша против, снова включаем свет жирно, крыша дважды, включаем свет слева.</p>
+        <p style="text-align:center"><img src="voll_32_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:37&link=rlHhiQQVv1M">на видео 0:37</a> <br/>
+        или <a href="rubic-activity://ytactivity?time=1:44&link=rlHhiQQVv1M">на видео 1:44</a> <br/>
+        <b>Алгоритм: L U2 Rw2\' F Rw U\' Rw U2 L\'</b><br/><br/>
+        <p>2. Поставить большим квадратом к себе справа и сделать более удобный алгоритм без кручения
+        левой грани. Первые 7 ходов как в Микки Маусе с бородой от Феликса, а потом трехходовочка.</p>
+        <p style="text-align:center"><img src="voll_32_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=5:32&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R U2) (R2 F R F\') (R U2 R\')</b><br/><br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=1:11&link=rlHhiQQVv1M">на видео 1:11</a>
+        выполнить алгоритм несколько раз.
+        ]]></string>
+    <string name="oll_st32_url">rlHhiQQVv1M</string>
+
+    <string name="oll_st33_title">#33 Метро с точкой</string>
+    <string name="oll_st33_descr" formatted="false"><![CDATA[
+        <p>Еще две ситуации, которые назовем <b>Метро</b>. Как не сложно догадаться, <b>Метро</b> может быть
+        с точкой, а может быть с блоком. Чтобы определить, что нам досталось, поверните кубик буквой М как на
+        картинке и посмотрите на переднюю грань, что там, блок или точка.</p>
+        <b>Как решать:</b>
+        <p>Поставить как на картинке, буквой М слева и выполнить: Морской пиф-паф, морской пиф-паф с обратными ходами крыши, английский пиф-паф.</p>
+        <p style="text-align:center"><img src="voll_33_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:52&link=KixrDe28A3Y">на видео 0:52</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:55&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R U R\' U) (R U\' R\' U\') (R\' F R F\')</b><br/><br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=2:00&link=KixrDe28A3Y">на видео 2:00</a>
+        выполнить данный алгоритм 5 раз.
+    ]]></string>
+    <string name="oll_st33_url">KixrDe28A3Y</string>
+
+    <string name="oll_st34_title">#34 Метро с блоком</string>
+    <string name="oll_st34_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>1. Поставить так же, как и Метро с точкой, но поскольку это Метро с блоком, то уже блоком к себе, а не точкой.</p>
+        <p style="text-align:center"><img src="voll_34_3.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:09&link=6mWixWwb-Rw">на видео 1:09</a> <br/>
+        <b>Алгоритм: (R U R2\') (F\' U\' F) U R2 U2 R\'</b><br/><br/>
+
+        <p>2. Поставить как на кртинке. Зеркальный морской пиф-паф (все ходы обратные), морской пиф-паф с обратными включениями
+        выключениями света, жирно гасим свет слева, крыша против, гасим свет справа и крыша
+        снова против, поворачиваем кубик желтой стороной вверх.</p>
+        <p style="text-align:center"><img src="voll_34_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:40&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R\' U\' R U\') (R\' U R U) (Lw U\' R\' U) x</b><br/><br/>
+
+        <p>3. Из положения, буквой М справа. А выполнять так же как и Метро с точкой, но слева.
+        Морской пиф-паф слева, левый морской пиф-паф с обратными ходами крыши, левый английский пиф-паф.</p>
+        <p style="text-align:center"><img src="voll_34_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:54&link=47JfJxU7EjM">от J Perm</a> <br/>
+        <b>Алгоритм: (L\' U\' L U\') (L\' U L\' U) (L F\' L\' F)</b><br/><br/>
+
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=2:05&link=6mWixWwb-Rw">на видео 2:05</a>
+        выполнить алгоритм Максима 3 раза.
+        ]]></string>
+    <string name="oll_st34_url">6mWixWwb-Rw</string>
+
+    <string name="oll_st35_title">#35 Рюмка с блоком</string>
+    <string name="oll_st35_descr" formatted="false"><![CDATA[
+        <p>Еще две ситуации, которые назовем <b>Рюмка</b>. Как не сложно догадаться, <b>Рюмка</b> может быть
+        с точкой, а может быть с блоком. Чтобы определить, какая нам досталась, надо поставить рюмку
+        ножкой вправо и посмотреть что на передней грани, блок или точка.</p>
+        <b>Как решать:</b>
+        <p>Поставить двойным блоком к себе. Пиф-паф, выключить свет и уехать в Лонодон, включить
+        свет ярко (дважды), крыша по, выключить свет, крыша против, вернуться из Лондона.
+        Ну или Пиф-паф, выключить свет и уехать в Лонодон, включить свет, пиф-паф, вернуться из Лондона.</p>
+        <p style="text-align:center"><img src="voll_35_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:35&link=BSl34nXFvPQ">на видео 1:35</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=5:08&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R U R\' U\') R\' F (R2 U R\' U\') F\'</b><br/><br/>
+
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=2:25&link=BSl34nXFvPQ">на видео 2:25</a>
+        выполнить алгоритм 8 раз.
+        ]]></string>
+    <string name="oll_st35_url">BSl34nXFvPQ</string>
+
+    <string name="oll_st36_title">#36 Рюмка с точкой</string>
+    <string name="oll_st36_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Перевернуть рюмку как на картинке (ход U\'). Морской пиф-паф, английский пиф-паф, включить свет, дважды крышу, выключить свет.
+        <p style="text-align:center"><img src="voll_36_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:23&link=R32nstcHIRQ">на видео 1:23</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=5:20&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R U R\' U) (R\' F R F\') (R U2 R\')</b><br/><br/>
+
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=1:52&link=R32nstcHIRQ">на видео 1:52</a>
+        выполнить алгоритм 5 раз, можно с ходом U\' в начале, а можно и без него, главное 5 раз одинаково.
+        ]]></string>
+    <string name="oll_st36_url">R32nstcHIRQ</string>
+
+    <string name="oll_st37_title">#37 Буква Т (Тесла) с точкой</string>
+    <string name="oll_st37_descr" formatted="false"><![CDATA[
+        <p>Переходим к палкам, и начнем со знакомых по ускорениям Букв Т или Тесла.</p>
+        <b>Как решать:</b>
+        <p>Ситуация из <b>Ускорения N7</b>. Обычный алгоритм \"палка\" для новичков. В Лондон, пиф-паф, из Лондона.</p>
+        <p style="text-align:center"><img src="voll_37_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:13&link=HcLUcMWL7Ic">на видео 1:13</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:47&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: F (R U R\' U\') F\'</b><br/><br/>
+        <b>Как смоделировать</b>: В Лондон, 5 пиф-пафов, из Лондона.
+        ]]></string>
+    <string name="oll_st37_url">HcLUcMWL7Ic</string>
+
+    <string name="oll_st38_title">#38 Буква Т (Тесла) с блоком</string>
+    <string name="oll_st38_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Еще одна ситуация из <b>Ускорения N7</b>. Все просто: обычный пиф-паф, потом английский пиф-паф</p>
+        <p style="text-align:center"><img src="voll_38_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:33&link=TsIcvobaPXY">на видео 0:33</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:39&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R U R\' U\') (R\' F R F\')</b><br/><br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=0:45&link=TsIcvobaPXY">на видео 0:45</a>
+        выполнить <b>Галстук с блоком: F R (U\' R\' U\') (R U R\') F\'</b> или
+        <a href="rubic-activity://ytactivity?time=1:24&link=TsIcvobaPXY">на видео 1:24</a> - два раза выполнить данный алгоритм.
+        ]]></string>
+    <string name="oll_st38_url">TsIcvobaPXY</string>
+
+    <string name="oll_st39_title">#39 Правый пропеллер</string>
+    <string name="oll_st39_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Еще одна разновидность палки - пропеллеры. Пропеллеры бывают левые и правые. Чтобы было
+        легче запомнить - левый пропеллер делается через вращение левой грани, а правый через вращение правой.</p>
+        <p>Пропеллер необходимо поставить палкой горизонтально и точкой к себе. Выключаем свет,
+        едем в Лондон, пиф-паф, из Лондона, крыша по, включаем свет.</p>
+        <p style="text-align:center"><img src="voll_39_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:52&link=w-DIz-DfNrg">на видео 1:52</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=9:56&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R\' F) (R U R\' U\') F\' U R</b><br/><br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=2:15&link=w-DIz-DfNrg">на видео 2:15</a>
+        выполнить <b> S (R U R\' U\') (R\' F R Fw\')</b>, т.е. S, пиф-паф, английский пиф-паф с последним
+        жирным ходом.
+        ]]></string>
+    <string name="oll_st39_url">w-DIz-DfNrg</string>
+
+    <string name="oll_st40_title">#40 Левый пропеллер</string>
+    <string name="oll_st40_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Взять так же точкой к себе и сделать все аналогично правому пропеллеру, но через вращение левой грани.</p>
+        <p style="text-align:center"><img src="voll_40_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:50&link=rzBm9e_FuiI">на видео 0:50</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=9:45&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (L F\') (L\' U\' L U) F U\' L\'</b><br/><br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=1:24&link=rzBm9e_FuiI">на видео 1:24</a>
+        аналогично правому пропеллеру выполнить: S\', пиф-паф слева, английский пиф-паф с последним
+        жирным ходом слева.
+        ]]></string>
+    <string name="oll_st40_url">rzBm9e_FuiI</string>
+
+    <string name="oll_st41_title">#41 Скобка с блоком</string>
+    <string name="oll_st41_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Поставить скобку как на картинке (блоком справа) и выполнить очень простой алгоритм:
+        выключить свет, крыша против, английский пиф-паф, возвращаем крышу и свет на место.</p>
+        <p style="text-align:center"><img src="voll_41_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:14&link=GeEglUjr9Cg">на видео 1:14</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:30&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: R\' U\' (R\' F R F\') U R</b><br/><br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=2:16&link=GeEglUjr9Cg">на видео 2:16</a>
+        повторить данный алгоритм 5 раз. Ну или R\' U\', пять английских пиф-пафов, R U.
+        ]]></string>
+    <string name="oll_st41_url">GeEglUjr9Cg</string>
+
+    <string name="oll_st42_title">#42 Скобка с точкой</string>
+    <string name="oll_st42_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Поставить данную скобку не как скобку с блоком, а горизонтельно на картинке. И выполнить довольно
+        простой для запоминания, но не простой для исполнения алгоритм, т.к. в алгоритме есть перехват
+        правой рукой.</p>
+        <p style="text-align:center"><img src="voll_42_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:55&link=hfRAZDv84fA">на видео 0:55</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:16&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R U R2\' U\') (R\' F R U) R U\' F\'</b><br/><br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=1:55&link=hfRAZDv84fA">на видео 1:55</a>
+        повторить данный алгоритм 2 раза.
+        ]]></string>
+    <string name="oll_st42_url">hfRAZDv84fA</string>
+
+    <string name="oll_st43_title">#43 Левая клюшка с точкой</string>
+    <string name="oll_st43_descr" formatted="false"><![CDATA[
+        <p>Еще четыре ситуации, но в которых я отступлю, от наименований предложенных Максимом. Согласитесь,
+        что <b>Правая клюшка с точкой</b>, звучит лучше и легче, чем <b>Левая буква Г с правым блоком</b>.
+        Обратите внимание, что <b>Правые</b> буквы Г - это <b>Левые</b> клюшки и соответственно
+        <b>Левые</b> буквы Г - это <b>Правые</b> клюшки. Чтобы меньше путаться, если для вас это <b>буквы Г</b>
+        то выполняйте их по алгоритмам Максима, а если <b>Клюшки</b>, то по алгоритмам от Феликса Земдегса,
+        в них как раз, в основном начальное положение загнутым концом к себе и вы четко увидите, с блоком Клюшка или с точкой.
+        </p>
+        <b>Как решать:</b>
+        <p>Едиственная Клюшка, которую надо поставить загнутым концом вверх (как букву Г).<br/>
+        Жирно включить свет, крыша по, жирно выключить свет, пиф-паф, снова жирно включить, крыша обратно и
+        жирно выключить свет.</p>
+        <p style="text-align:center"><img src="voll_43_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:29&link=2zloUL9uWSQ">на видео 2:29</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:23&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (Rw U Rw\') (R U R\' U\') (Rw U\' Rw\')</b><br/><br/>
+        <b>Как смоделировать</b>: <a href="rubic-activity://ytactivity?time=3:03&link=2zloUL9uWSQ">на видео 3:03</a>
+        повторить данный алгоритм 5 раз.
+    ]]></string>
+    <string name="oll_st43_url">2zloUL9uWSQ</string>
+
+    <string name="oll_st44_title">#44 Правая клюшка с точкой</string>
+    <string name="oll_st44_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Как левую Г с правым блоком: Так же как и предыдущий случай, но слева. Т.е.
+        Жирно включить свет слева, крыша против, жирно выключить свет слева, левый пиф-паф, жирно включить слева, крыша по и
+        жирно выключить свет слева.</p>
+        <p style="text-align:center"><img src="voll_44_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:29&link=GXTtry_rdq8">на видео 2:29</a> <br/>
+        <b>Алгоритм: (Lw\' U\' Lw) (L\' U\' L U) (Lw\' U Lw)</b><br/>
+
+        <p>Как Клюшку: Тоже похоже на предыдущий случай, но зеркалим не право и лево, а вращения граней по и против часовой стрелки.
+        В этом случае можно обойтись без вращения левой грани.<br/>
+        Жирно выключить свет, крыша против, жирно включить свет, обратный пиф-паф, снова жирно выключить, крыша обратно и
+        жирно включить свет.</p>
+        <p style="text-align:center"><img src="voll_44_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:32&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (Rw\' U\' Rw) (R\' U\' R U) (Rw\' U Rw)</b><br/><br/>
+        ]]></string>
+    <string name="oll_st44_url">GXTtry_rdq8</string>
+
+    <string name="oll_st45_title">#45 Правая клюшка с блоком</string>
+    <string name="oll_st45_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Как левую Г с левым блоком:</p>
+        <p style="text-align:center"><img src="voll_45_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:57&link=o1u_YhSHEB4">на видео 1:57</a> <br/>
+        <b>Алгоритм: (Rw\' U Rw) (U Rw\' U\' Rw) y (R U\' R\')</b><br/><br/>
+
+        <p>Как правую клюшку c блоком:</p>
+        <p style="text-align:center"><img src="voll_45_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:13&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R\' F R) (U R\' F\' R) (F U\' F\')</b><br/><br/>
+        ]]></string>
+    <string name="oll_st45_url">o1u_YhSHEB4</string>
+
+    <string name="oll_st46_title">#46 Левая клюшка с блоком</string>
+    <string name="oll_st46_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Как правую Г с правым блоком: так же как и предыдущюю букву Г, но слева.</p>
+        <p style="text-align:center"><img src="voll_46_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:42&link=QDzT8Fe_nf8">на видео 0:42</a> <br/>
+        <b>Алгоритм: (Lw U\' Lw\') (U\' Lw U Lw\') y\' (R\' U R)</b><br/><br/>
+
+        <p>Как левую клюшку c блоком: опять же как и предыдущую букву Г, но все ходы в другую сторону.</p>
+        <p style="text-align:center"><img src="voll_46_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:03&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (Rw U\' Rw\') (U\' Rw U Rw\') y\' (R\' U R)</b><br/><br/>
+        <b>Как смоделировать</b>: Выполнить рюмку c блоком - (R U R\' U\') R\' F (R2 U R\' U\') F\'.
+        ]]></string>
+    <string name="oll_st46_url">QDzT8Fe_nf8</string>
+
+    <string name="oll_st47_title">#47 Чистая палка 3-3</string>
+    <string name="oll_st47_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p style="text-align:center"><img src="voll_47_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:55&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R\' F R U) (R U\' R2\' F\') R2 U\' R\' (U R U R\')</b><br/><br/>
+        ]]></string>
+    <string name="oll_st47_url"></string>
+
+    <string name="oll_st48_title">#48 Чистая палка 1-3</string>
+    <string name="oll_st48_descr" formatted="false"><![CDATA[
+        <p>В этой палке есть и блок и точка, но будем считать ее палкой с точкой.</p>
+        <b>Как решать:</b>
+        <p>Поставить палку вертикально, тройным блоком справа, точкой слева.</p>
+        <p style="text-align:center"><img src="voll_48_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:45&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R\' U\' R U\' R\' U) y\' (R\' U R) B</b><br/><br/>
+    ]]></string>
+    <string name="oll_st48_url"></string>
+
+    <string name="oll_st49_title">#49 Чистая палка 2-2</string>
+    <string name="oll_st49_descr" formatted="false"><![CDATA[
+        <p>Рассмотрим чистые палки, которые бывают 4 видов:
+        Симметричные/ассиметричные и с точкой/блоком. Первой будет ассиметричная палка с блоком.
+        Поставить ее надо горизонтально, глазками налево, ушками направо.</p>
+        <b>Как решать:</b>
+        <p>Жирно едем в Лондон, два пиф-пафа, жирно из Лондона.</p>
+        <p style="text-align:center"><img src="voll_49_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:22&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: Fw (R U R\' U\') (R U R\' U\') Fw\'</b><br/><br/>
+        <b>Как смоделировать</b>: Почти так же как и выполнять, только в Лондон уезжать и возвращаться надо не жирно, т.е.
+        В Лондон, два пиф-пафа, из Лондона.
+        ]]></string>
+    <string name="oll_st49_url"></string>
+
+    <string name="oll_st50_title">#50 Чистая палка 1-1</string>
+    <string name="oll_st50_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Поставить палку горизонтально. </p>
+        <p style="text-align:center"><img src="voll_50_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:32&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: Rw\' U\' Rw (U\' R\' U R) (U\' R\' U R) Rw\' U Rw</b><br/><br/>
+        ]]></string>
+    <string name="oll_st50_url">yXg8rKBOOgk</string>
+
+    <string name="oll_st51_title">#51 Рыбка</string>
+    <string name="oll_st51_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Ситуация из <b>Ускорения N2</b>.</p>
+        <p style="text-align:center"><img src="voll_51_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:20&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=7:04&link=PUTeFKC9R2Y">от Максима</a><br/>
+        <b>Алгоритм: (R U R\' U) R U2 R\'</b><br/><br/>
+        ]]></string>
+    <string name="oll_st51_url">PUTeFKC9R2Y</string>
+
+    <string name="oll_st52_title">#52 Акула</string>
+    <string name="oll_st52_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Ситуация из <b>Ускорения N11</b>.<br/>
+        1. Акула уплывает вправо:</p>
+        <p style="text-align:center"><img src="voll_52_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:08&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: R U2 R\' U\' R U\' R\'</b><br/><br/>
+        <p>2. Акула уплывает влево:</p>
+        <p style="text-align:center"><img src="voll_52_2.xml" width="60%%"></p>
+        Алгоритм: <b>R\' U\' R U\' R U2 R\' </b><br/>
+        Для этого алгоритма очень удобный и быстрый фингертрикс с начальным положением большого пальца правой руки
+        сверху. Т.е. стандартное положение рук получается после первого хода и двойное кручение крыши
+        можно делать указательным и средним пальцами правой руки. Но почему-то в видео ни у кого этого варианта
+        не приведено.
+        ]]></string>
+    <string name="oll_st52_url">blOgwHue1PE</string>
+
+    <string name="oll_st53_title">#53 Носик</string>
+    <string name="oll_st53_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Ситуация из <b>Ускорения N9</b>.<br/>
+        <p style="text-align:center"><img src="voll_53_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:00&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: F\' (Rw U R\' U\') Rw\' F R</b><br/><br/>
+        <p style="text-align:center"><img src="voll_53_2.xml" width="60%%"></p>
+        <b>Алгоритм: (R\' F R B\') (R\' F\' R B)</b><br/><br/>
+        ]]></string>
+    <string name="oll_st53_url">ICMhcSF54OM</string>
+
+    <string name="oll_st54_title">#54 Ушки</string>
+    <string name="oll_st54_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Ушками слева. Простой для запоминания и исполнения алгоритм, к тому же без перехватов.
+        Пиф-паф с первым жирным ходом, английский пиф-паф опять же с первым жирным ходом.</p>
+        <p style="text-align:center"><img src="voll_54_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:51&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (Rw U R\' U\') (Rw\' F R F\')</b><br/><br/>
+        <p>Вариант из <b>Ускорения N8</b> от Максима. Ушками назад, да еще нижней гранью к себе.</p>
+        <p style="text-align:center"><img src="voll_54_2.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:50&link=gbuLeCv_fRM">от Максима</a> <br/>
+        <b>Алгоритм: x D\' R\' U R D R\' U\' R x\'</b>
+        ]]></string>
+    <string name="oll_st54_url">gbuLeCv_fRM</string>
+
+    <string name="oll_st55_title">#55 Глазки</string>
+    <string name="oll_st55_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Ситуация из <b>Ускорения N13</b>.<br/>
+        <p style="text-align:center"><img src="voll_55_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:15&link=dzINk50Y1jI">от Максима</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:08&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: R2 D R\' U2 R D\' R\' U2 R\'</b><br/><br/>
+        ]]></string>
+    <string name="oll_st55_url">dzINk50Y1jI</string>
+
+    <string name="oll_st56_title">#56 НТВ+</string>
+    <string name="oll_st56_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Ситуация из <b>Ускорения N4</b>. Взять глазками к себе, Уехать в Лондон, три пиф-пафа, вернуться из Лондона.</p>
+        <p style="text-align:center"><img src="voll_56_1.xml" width="60%%"></p>
+        <b>Алгоритм: F (R U R\' U\') (R U R\' U\') (R U R\' U\') F\' </b>
+        <p>Альтернативный вариант, без кручения передней грани:<br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:28&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R U2) (R\' U\' R U R\' U\' R U\' R\')</b></p>
+        ]]></string>
+    <string name="oll_st56_url">vJS0EyEPFPY</string>
+
+    <string name="oll_st57_title">#57 Вертолет</string>
+    <string name="oll_st57_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Ситуация из <b>Ускорения N14</b>.</p>
+        <p style="text-align:center"><img src="voll_57_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:08&link=m2EkIKd6efA">от Максима</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:41&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:14&link=47JfJxU7EjM">от J Perm</a> <br/>
+        <b>Алгоритм: R U2 R2\' U\' R2 U\' R2\' U2 R </b>
+        ]]></string>
+    <string name="oll_st57_url">m2EkIKd6efA</string>
+
+
+</resources>

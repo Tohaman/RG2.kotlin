@@ -26,5 +26,7 @@
     <dimen name="z_oll_w">100dp</dimen>
     <dimen name="z_oll_h">100dp</dimen>
     <dimen name="z_oll_wbig">100dp</dimen>
+    <dimen name="oll_left_sw">115dp</dimen>
+    <dimen name="oll_right_sw">115dp</dimen>
 
 </resources>

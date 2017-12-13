@@ -1,5 +1,6 @@
 package ru.tohaman.rg3.fragments
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
@@ -7,24 +8,34 @@ import android.support.v4.app.Fragment
 import android.text.Html
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import com.google.android.youtube.player.YouTubeInitializationResult
+import com.google.android.youtube.player.YouTubeStandalonePlayer
+import com.google.android.youtube.player.YouTubeThumbnailLoader
+import com.google.android.youtube.player.YouTubeThumbnailView
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.image
 import org.jetbrains.anko.imageResource
+import org.jetbrains.anko.support.v4.toast
 import org.jetbrains.anko.support.v4.withArguments
+import ru.tohaman.rg3.DebugTag
+import ru.tohaman.rg3.DeveloperKey.DEVELOPER_KEY
 import ru.tohaman.rg3.listpager.ListPager
 
-class FragmentPagerItem : Fragment() {
-
+class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener {
+    var url:String = ""
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = FragmentPagerItemtUI<Fragment>().createView(AnkoContext.create(context, this))
         val message = arguments.getString("message")
         val topImage = arguments.getInt("topImage")
         val description = arguments.getInt("desc")
+        url = arguments.getString("url")
 
         // Немного преобразуем текст для корректного отображения.
         val text = "<html><body style=\"text-align:justify\"> %s </body></html>"
@@ -52,6 +63,17 @@ class FragmentPagerItem : Fragment() {
         (view.findViewById(FragmentPagerItemtUI.Ids.textViewFragmentMessage) as TextView).text = message
         (view.findViewById(FragmentPagerItemtUI.Ids.pager_imageView) as ImageView).imageResource = topImage
         (view.findViewById(FragmentPagerItemtUI.Ids.description_text) as TextView).text = spanresult
+
+        val thumbnailView = view.findViewById(FragmentPagerItemtUI.Ids.youTubeView) as YouTubeThumbnailView
+        if (url == "") {
+            thumbnailView.visibility = View.INVISIBLE
+        } else {
+            thumbnailView.visibility = View.VISIBLE
+        }
+
+        thumbnailView.visibility = View.VISIBLE
+        thumbnailView.initialize(DEVELOPER_KEY, this )
+
         return view
     }
 
@@ -77,11 +99,27 @@ class FragmentPagerItem : Fragment() {
         drawable
     }
 
+    override fun onInitializationSuccess(p0: YouTubeThumbnailView?, p1: YouTubeThumbnailLoader?) {
+        p1?.setVideo(url)
+    }
+
+    override fun onInitializationFailure(p0: YouTubeThumbnailView?, errorReason: YouTubeInitializationResult?) {
+        if (errorReason!!.isUserRecoverableError) {
+            Log.v(DebugTag.TAG, "YouTube onInitializationFailure errorReason.isUserRecoverableError")
+
+        } else {
+            Log.v(DebugTag.TAG, "YouTube onInitializationFailure Ошибка инициализации YouTubePlayer")
+            val errorMessage = "Ошибка инициализации YouTubePlayer"
+            toast(errorMessage)
+        }
+    }
+
     companion object {
         fun newInstance(lp: ListPager): FragmentPagerItem {
             return FragmentPagerItem().withArguments("message" to lp.title,
                     "topImage" to lp.icon,
-                    "desc" to lp.description)
+                    "desc" to lp.description,
+                    "url" to lp.url)
         }
     }
 }

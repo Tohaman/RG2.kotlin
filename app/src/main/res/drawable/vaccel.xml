@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/z_cube_back_black"/>
+    <item android:drawable="@drawable/z_cube_left_g"/>
+    <item android:drawable="@drawable/z_cube_right_r"/>
+    <item android:drawable="@drawable/z_cube_up_w"/>
+</layer-list>
