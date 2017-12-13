@@ -308,10 +308,14 @@
         Фингертрикс: <a href="rubic-activity://ytactivity?time=11:55&link=L_r41Y1MuAY">на видео 11:55</a> <br/>
         <b>Алгоритм: Rw U\' Rw F2 Rw\' U Rw F2 Rw2</b></p>
         <p>2. Вариант <a href="rubic-activity://ytactivity?time=5:18&link=B_Fkals9Svk">из Ускорения N20</a>.
-        Крышей к себе, собранным углом слева сверху: <br/>
+        Крышей к себе, собранным углом слева сверху: <br/></p>
         <p style="text-align:center"><img src="vpll_10_2.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=15:24&link=L_r41Y1MuAY">на видео 15:24</a> <br/>
-        <b>Алгоритм: R2 D2 (R U R\') D2 (R U\' R) </b></p>
+        <p>Фингертрикс: <a href="rubic-activity://ytactivity?time=15:24&link=L_r41Y1MuAY">на видео 15:24</a> <br/>
+        <b>Алгоритм: (R U\' R) D2 (R\' U R) D2 R2 </b></p>
+        <p>3. Вариант. Повернуть собранным углом к себе слева и наклонить крышей от себя.</p>
+        <p style="text-align:center"><img src="vpll_10_3.xml" width="60%%"></p>
+        <b>Алгоритм: R2 D2 (R U R\') D2 (R U\' R) </b>
+
     ]]></string>
     <string name="pll_st10_url">L_r41Y1MuAY</string>
 
@@ -541,7 +545,7 @@
         а если примыкает к задней стороне, то дальней.</p>
         <p style="text-align:center"><img src="vpll_19.xml" width="30%%"></p>
         <p>Со стороны блока и светофора или блока и глазок очень похоже на машинки. Но в отличии от машинок,
-        что центр глазок, что наклейка рядом с блоком противоположеы глазкам/блоку, а не смежны как у машинок.</p>
+        что центр глазок, что наклейка рядом с блоком противоположны глазкам/блоку, а не смежны как у машинок.</p>
         <b>Как решать:</b><br/>
         Двойным блоком справа, глазками налево. <br/>
         <p style="text-align:center"><img src="vpll_19_1.xml" width="60%%"></p>
