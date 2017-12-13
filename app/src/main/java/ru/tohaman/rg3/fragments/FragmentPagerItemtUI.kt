@@ -2,6 +2,7 @@ package ru.tohaman.rg3.fragments
 
 import android.graphics.Color
 import android.graphics.Typeface
+import android.text.method.LinkMovementMethod
 import android.view.Gravity
 import android.widget.LinearLayout
 import org.jetbrains.anko.*
@@ -44,11 +45,16 @@ class FragmentPagerItemtUI<Fragment> : AnkoComponent<Fragment> {
                     }.lparams(wrapContent, wrapContent)
 
                     linearLayout {
+                        id = Ids.linlayout
 //                        backgroundColor = Color.RED
                         gravity = Gravity.CENTER
                         youTubeThumbnailView {
                             id = Ids.youTubeView
                         }.lparams(matchParent, matchParent)
+                        textView {
+                            id = Ids.youTubeTextView
+                            movementMethod = LinkMovementMethod.getInstance()
+                        }
                     }.lparams(matchParent, dip(150)) {setMargins(dip(0), dip(8), dip(0), dip(8))}
                     textView {
                         id = Ids.comment_text
@@ -67,5 +73,7 @@ class FragmentPagerItemtUI<Fragment> : AnkoComponent<Fragment> {
         val description_text2 = 4
         val youTubeView = 5
         val comment_text = 6
+        val linlayout = 7
+        val youTubeTextView = 8
     }
 }

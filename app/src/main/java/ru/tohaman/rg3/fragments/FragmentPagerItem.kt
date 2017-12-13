@@ -4,32 +4,39 @@ import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
 import android.text.Html
 import android.text.Spanned
-import android.text.method.LinkMovementMethod
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubeStandalonePlayer
 import com.google.android.youtube.player.YouTubeThumbnailLoader
 import com.google.android.youtube.player.YouTubeThumbnailView
 import org.jetbrains.anko.AnkoContext
-import org.jetbrains.anko.image
 import org.jetbrains.anko.imageResource
 import org.jetbrains.anko.support.v4.toast
 import org.jetbrains.anko.support.v4.withArguments
 import ru.tohaman.rg3.DebugTag
 import ru.tohaman.rg3.DeveloperKey.DEVELOPER_KEY
+import ru.tohaman.rg3.VIDEO_PREVIEW
 import ru.tohaman.rg3.listpager.ListPager
 
 class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener {
+    // Константы для YouTubePlayer
+    private val REQ_START_STANDALONE_PLAYER = 101
+    private val REQ_RESOLVE_SERVICE_MISSING = 2
+    private val RECOVERY_DIALOG_REQUEST = 1
+
+
     var url:String = ""
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = FragmentPagerItemtUI<Fragment>().createView(AnkoContext.create(context, this))
         val message = arguments.getString("message")
@@ -64,17 +71,57 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         (view.findViewById(FragmentPagerItemtUI.Ids.pager_imageView) as ImageView).imageResource = topImage
         (view.findViewById(FragmentPagerItemtUI.Ids.description_text) as TextView).text = spanresult
 
-        val thumbnailView = view.findViewById(FragmentPagerItemtUI.Ids.youTubeView) as YouTubeThumbnailView
+        val ytTextView = view.findViewById(FragmentPagerItemtUI.Ids.youTubeTextView) as TextView
+
+        // Если ссылка пустая, то вообще не отображаем видеопревью
+        val ytViewLayout = view.findViewById(FragmentPagerItemtUI.Ids.linlayout) as LinearLayout
         if (url == "") {
-            thumbnailView.visibility = View.INVISIBLE
+            ytViewLayout.visibility = View.GONE
         } else {
-            thumbnailView.visibility = View.VISIBLE
+            ytViewLayout.visibility = View.VISIBLE
         }
 
-        thumbnailView.visibility = View.VISIBLE
-        thumbnailView.initialize(DEVELOPER_KEY, this )
+        //смотрим в настройках программы, показывать превью видео или текст
+        val previewEnabled = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean(VIDEO_PREVIEW, true)
+        val thumbnailView = view.findViewById(FragmentPagerItemtUI.Ids.youTubeView) as YouTubeThumbnailView
+        if (previewEnabled and canPlayYouTubeVideo()) {
+            thumbnailView.visibility = View.VISIBLE
+            ytTextView.visibility = View.GONE
+            thumbnailView.initialize(DEVELOPER_KEY, this)
+            thumbnailView.setOnClickListener {
+                playYouTubeVideo(true, url)
+            }
+        } else {
+            thumbnailView.visibility = View.GONE
+            ytTextView.visibility = View.VISIBLE
+            //TODO перевести этот код с явы
+//            String text = "<html><body> <a href=\"rubic-activity://ytactivity?time=0:00&link=%s\"> %s </a></body></html>";
+//            String description = String.format(text,mListPager.getUrl(),getString(R.string.pager_youtubeText));
+//            Spanned spanresult;
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//                spanresult = Html.fromHtml(description, Html.FROM_HTML_MODE_LEGACY, imgGetter, null);
+//            } else {
+//                spanresult = Html.fromHtml(description, imgGetter, null);
+//            }
+//            youtubetext.setText(spanresult);
+
+        }
 
         return view
+    }
+
+    private fun canPlayYouTubeVideo():Boolean = playYouTubeVideo(false)
+
+    private fun playYouTubeVideo(needPlaying:Boolean, urlToPlay: String = "0TvO_rpG_aM"): Boolean {
+        val intent: Intent? = YouTubeStandalonePlayer.createVideoIntent(activity, DEVELOPER_KEY, urlToPlay, 1000, true, true)
+        if (intent != null) {
+           return when {
+                (canResolveIntent(intent)) and (needPlaying) -> {startActivityForResult(intent, REQ_START_STANDALONE_PLAYER); true}
+                (!canResolveIntent(intent)) and (needPlaying) -> {YouTubeInitializationResult.SERVICE_MISSING.getErrorDialog(activity, REQ_RESOLVE_SERVICE_MISSING).show(); false}
+                !needPlaying -> {canResolveIntent(intent)}
+               else -> {false}
+           }
+        } else return false
     }
 
     @Suppress("DEPRECATION")
@@ -99,10 +146,14 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         drawable
     }
 
+
+    //Два обязательных переопределяемых метода для имплементного YouTubeThumbnailView.OnInitializedListener
     override fun onInitializationSuccess(p0: YouTubeThumbnailView?, p1: YouTubeThumbnailLoader?) {
+        //если удачно инициализировали, то передаем краткий url видео, для автосоздания превью видео
         p1?.setVideo(url)
     }
 
+    // если не удалось инициализировать youTubeThumbnailView
     override fun onInitializationFailure(p0: YouTubeThumbnailView?, errorReason: YouTubeInitializationResult?) {
         if (errorReason!!.isUserRecoverableError) {
             Log.v(DebugTag.TAG, "YouTube onInitializationFailure errorReason.isUserRecoverableError")
@@ -112,6 +163,12 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
             val errorMessage = "Ошибка инициализации YouTubePlayer"
             toast(errorMessage)
         }
+    }
+
+    // И еще один метод для ЮТплеера = true, если есть приложение, которое может обрабоать наше намерение (интент)
+    private fun canResolveIntent(intent: Intent): Boolean {
+        val resolveInfo = activity.packageManager.queryIntentActivities(intent, 0)
+        return resolveInfo != null && !resolveInfo.isEmpty()
     }
 
     companion object {

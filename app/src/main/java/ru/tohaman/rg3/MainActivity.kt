@@ -1,6 +1,7 @@
 package ru.tohaman.rg3
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.design.widget.NavigationView
@@ -13,10 +14,14 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import com.google.android.youtube.player.YouTubeInitializationResult
+import com.google.android.youtube.player.YouTubeThumbnailLoader
+import com.google.android.youtube.player.YouTubeThumbnailView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import org.jetbrains.anko.contentView
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.support.v4.toast
 import org.jetbrains.anko.toast
 import ru.tohaman.rg3.listpager.ListPagerLab
 import ru.tohaman.rg3.DebugTag.TAG
@@ -28,6 +33,7 @@ import ru.tohaman.rg3.listpager.ListPager
 // Статические переменные (верхнего уровня). Котлин в действии стр.77-78
 const val EXTRA_ID = "ru.tohaman.rubicsguide.PHASE_ID"
 const val RUBIC_PHASE = "ru.tohaman.rubicsguide.PHASE"
+const val VIDEO_PREVIEW = "video_preview"   //наименования ключа для сохранения/извлечения значения из файла настроек
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, ListViewFragment.OnFragmentInteractionListener {
     private lateinit var fragListView: ListViewFragment
@@ -39,10 +45,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.v (TAG, "MainActivity ListPagerLab init")
+        mListPagerLab = ListPagerLab.get(this)
         Log.v (TAG, "MainActivity CreateView")
         setContentView(R.layout.activity_main)
         setSupportActionBar(maintoolbar)
-        mListPagerLab = ListPagerLab.get(this)
+
         fab.setOnClickListener { view ->
             if (curPhase == "G2F_NEXT") {
                 curPhase = "G2F"
@@ -65,6 +72,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         transaction?.replace(R.id.frame_container, fragListView)?.commit()
 
         nav_view.setNavigationItemSelectedListener(this)
+
     }
 
     override fun onBackPressed() {
@@ -184,4 +192,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             else -> { startActivity<SlidingTabsActivity>(RUBIC_PHASE to phase, EXTRA_ID to id)}
         }
     }
+
 }
