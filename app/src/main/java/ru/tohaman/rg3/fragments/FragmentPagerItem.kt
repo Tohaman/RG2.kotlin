@@ -39,7 +39,8 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = FragmentPagerItemtUI<Fragment>().createView(AnkoContext.create(context, this))
-        val message = arguments.getString("message")
+        //Данные во фрагмент передаются через фабричный метод newInstance данного фрагмента
+        val message = arguments.getString("title")
         val topImage = arguments.getInt("topImage")
         val description = arguments.getInt("desc")
         url = arguments.getString("url")
@@ -66,7 +67,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         //смотрим в настройках программы, показывать превью видео или текст
         val previewEnabled = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean(VIDEO_PREVIEW, true)
         val thumbnailView = view.findViewById(FragmentPagerItemtUI.Ids.youTubeView) as YouTubeThumbnailView
-        if (!previewEnabled and canPlayYouTubeVideo()) {
+        if (previewEnabled and canPlayYouTubeVideo()) {
             thumbnailView.visibility = View.VISIBLE
             ytTextView.visibility = View.GONE
             thumbnailView.initialize(DEVELOPER_KEY, this)
@@ -176,7 +177,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
     companion object {
         fun newInstance(lp: ListPager): FragmentPagerItem {
-            return FragmentPagerItem().withArguments("message" to lp.title,
+            return FragmentPagerItem().withArguments("title" to lp.title,
                     "topImage" to lp.icon,
                     "desc" to lp.description,
                     "url" to lp.url)
