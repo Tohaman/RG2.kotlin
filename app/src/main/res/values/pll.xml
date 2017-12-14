@@ -109,23 +109,23 @@
         В первую очередь, если есть тройной блок и глазки, это уже 100% Окошки.
         Если тройной блок сразу не виден, то ситуация очень похожа на рельсы или шахматы. Но в отличии от рельс только
         один цвет совпадает с соседними глазками. А в отличии от шахмат, один центр противоположен, а другой смежен со своими глазками.<br/>
-        Окошки бывают <a href="rubic-activity://ytactivity?time=5:43&link=P69UVywfz04">двух видов:</a>
+        Окошки бывают <a href="rg2://ytplay?time=5:43&link=P69UVywfz04">двух видов:</a>
         смежные и противоположные. Договоримся называть окошки
         по тому, какая ситуация справа от тройного блока. Смежное там окошко с глазками или противоположное.</p>
         Начнем со смежных окошек. Международное название - <b>Ua Perm</b><br/>
         <b>Как решать:</b>
         <p>1. Тройным блоком слева: <br/>
         <p style="text-align:center"><img src="vpll_1_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=11:30&link=P69UVywfz04">на видео 11:30</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=11:30&link=P69UVywfz04">на видео 11:30</a> <br/>
         <b>Алгоритм: R2 U\' S\' U2 S U\' R2  </b></p>
         <p>2. Тройным блоком спереди (к себе):<br/>
         <p style="text-align:center"><img src="vpll_1_2" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=16:15&link=P69UVywfz04">на видео 16:15</a>, или можно взять неудобно (большим пальцем от себя) и первый ход R2 крутить против часовой стрелки) <br/>
-        Альтернативный <a href="rubic-activity://ytactivity?time=0:48&link=0P_uLdvKRbI">фингертрикс от JPerm</a> для этого же алгоритма с интересным движением указательным пальцем левой руки.<br/>
+        Фингертрикс: <a href="rg2://ytplay?time=16:15&link=P69UVywfz04">на видео 16:15</a>, или можно взять неудобно (большим пальцем от себя) и первый ход R2 крутить против часовой стрелки) <br/>
+        Альтернативный <a href="rg2://ytplay?time=0:48&link=0P_uLdvKRbI">фингертрикс от JPerm</a> для этого же алгоритма с интересным движением указательным пальцем левой руки.<br/>
         <b>Алгоритм: R2 U\' R\' U\' R U R U R U\' R </b></p>
         <p>3. Тройным блоком сзади (от себя):<br/>
         <p style="text-align:center"><img src="vpll_1_3" width="60%%"></p>
-        <a href="rubic-activity://ytactivity?time=0:15&link=0P_uLdvKRbI">фингертрикс от JPerm</a> с интересным движением указательным пальцем левой руки.<br/>
+        <a href="rg2://ytplay?time=0:15&link=0P_uLdvKRbI">фингертрикс от JPerm</a> с интересным движением указательным пальцем левой руки.<br/>
         <b>Алгоритм: (R U\' R U) (R U R U\' R\' U\' R2)</b></p>
     ]]></string>
     <string name="pll_st1_url">P69UVywfz04</string>
@@ -137,17 +137,17 @@
         <b>Как решать:</b>
         <p>1. Тройным блоком слева: <br/>
         <p style="text-align:center"><img src="vpll_2_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=8:12&link=P69UVywfz04">на видео 8:12</a>
-        или <a href="rubic-activity://ytactivity?time=10:02&link=P69UVywfz04">10:02</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=8:12&link=P69UVywfz04">на видео 8:12</a>
+        или <a href="rg2://ytplay?time=10:02&link=P69UVywfz04">10:02</a> <br/>
         <b>Алгоритм: R2\' U S\' U2 S U R2 </b><br/></p>
         <p>2. Тройным блоком спереди (к себе):<br/>
         <p style="text-align:center"><img src="vpll_2_2.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=18:44&link=P69UVywfz04">на видео 18:44</a> <br/>
-        Альтернативный <a href="rubic-activity://ytactivity?time=1:52&link=0P_uLdvKRbI">фингертрикс от JPerm</a> для этого же алгоритма.<br/>
+        Фингертрикс: <a href="rg2://ytplay?time=18:44&link=P69UVywfz04">на видео 18:44</a> <br/>
+        Альтернативный <a href="rg2://ytplay?time=1:52&link=0P_uLdvKRbI">фингертрикс от JPerm</a> для этого же алгоритма.<br/>
         <b>Алгоритм: R\' U R\' U\' R\' U\' R\' U R U R2 </b></p>
         <p>3. Тройным блоком сзади (от себя):<br/>
         <p style="text-align:center"><img src="vpll_2_3" width="60%%"></p>
-        <a href="rubic-activity://ytactivity?time=1:18&link=0P_uLdvKRbI">фингертрикс от JPerm</a> с интересным движением указательным пальцем левой руки.<br/>
+        <a href="rg2://ytplay?time=1:18&link=0P_uLdvKRbI">фингертрикс от JPerm</a> с интересным движением указательным пальцем левой руки.<br/>
         <b>Алгоритм: (R2 U) (R U R\' U\' R\' U\') (R\' U R\')</b></p>
     ]]></string>
     <string name="pll_st2_url">P69UVywfz04</string>
@@ -164,10 +164,10 @@
         В обоих данных случаях держать как на картинке, т.е. центр передней грани, должен поменятся с центром правой грани.<br/>
         <p style="text-align:center"><img src="vpll_3_1.xml" width="60%%"></p>
         <p>1. Простой для запоминания вариант: <br/>
-        Фингертрикс:  <a href="rubic-activity://ytactivity?time=2:00&link=p77y_1rCWsg">на видео 2:00</a> <br/>
+        Фингертрикс:  <a href="rg2://ytplay?time=2:00&link=p77y_1rCWsg">на видео 2:00</a> <br/>
         <b>Алгоритм: F2 M2 F2 M2 U\' M2 U\' M2 </b><br/></p>
         <p>2. Быстрый вариант (хоть ходов и больше, но сделать их можно быстрее): <br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:08&link=p77y_1rCWsg">на видео 4:08</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=4:08&link=p77y_1rCWsg">на видео 4:08</a> <br/>
         <b>Алгоритм: (U R\' U\' R) (U\' R U R) (U\' R\' U R) (U R2 U\' R\') U </b></p>
     ]]></string>
     <string name="pll_st3_url">p77y_1rCWsg</string>
@@ -182,13 +182,13 @@
         Как держать без разницы. <br/>
         <p style="text-align:center"><img src="vpll_4_1.xml" width="60%%"></p>
         <p>1. Простой вариант: <br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=10:00&link=p77y_1rCWsg">на видео 10:00</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=10:00&link=p77y_1rCWsg">на видео 10:00</a> <br/>
         <b>Алгоритм: 6 раз (M2 U\') </b></p>
         <p>2. Ускоренный вариант, но посложнее:
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=11:38&link=p77y_1rCWsg">на видео 11:38</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=11:38&link=p77y_1rCWsg">на видео 11:38</a> <br/>
         <b>Алгоритм: (M2 U2) (M2 U\') (M2 U2) (M2 U\') </b></p>
         3. Для тех, у кого плохо с вращение среднего слоя: <br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=13:35&link=p77y_1rCWsg">на видео 13:35</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=13:35&link=p77y_1rCWsg">на видео 13:35</a> <br/>
         <b>Алгоритм: (R2 U2 R U2 R2 U2) (R2 U2 R U2 R2 U2) </b>
     ]]></string>
 
@@ -206,7 +206,7 @@
          <b>Как решать:</b><br/>
         Повернуть двойным левым блоком к себе.<br/>
         <p style="text-align:center"><img src="vpll_5_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:00&link=fwvKWr087bM">на видео 4:00</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=4:00&link=fwvKWr087bM">на видео 4:00</a> <br/>
         <b>Алгоритм: (R U R\' U\') (R\' F R2 U\' R\' U\') (R U R\' F\') </b>
     ]]></string>
     <string name="pll_st5_url">fwvKWr087bM</string>
@@ -222,7 +222,7 @@
         <b>Как решать:</b><br/>
         <p style="text-align:center"><img src="vpll_6_1.xml" width="60%%"></p>
         <p>1. Тройным блоком слева. Очень похоже на Запад, но сначала последние 4 хода Запада (R U R\' F\'), а потом Запад без этих 4-х ходов.<br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=8:24&link=fwvKWr087bM">на видео 8:24</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=8:24&link=fwvKWr087bM">на видео 8:24</a> <br/>
         <b>Алгоритм:  (R U R\' F\') (R U R\' U\') (R\' F R2 U\' R\' U\') </b></p>
         2. Так же тройным блоком слева, ходов меньше, но с кручением левой грани.<br/>
         <b>Алгоритм: (R U2 R\' U\' R U2) L\' U R\' U\' L </b>
@@ -242,7 +242,7 @@
         <p style="text-align:center"><img src="vpll_7_1.xml" width="60%%"></p>
         Тройным блоком слева. Первые три хода против часовой стрелки (правая, верхняя, передняя), теперь Запад без
         последнего хода и два хода по часовой стрелке (верхняя и правая грани).<br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=5:18&link=B3iSPvlr7PA">на видео 5:18</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=5:18&link=B3iSPvlr7PA">на видео 5:18</a> <br/>
         <b>Алгоритм: (R\' U\' F\') (R U R\' U\') R\' F R2 U\' R\' U\' (R U R\' U R) </b>
     ]]></string>
     <string name="pll_st7_url">B3iSPvlr7PA</string>
@@ -259,7 +259,7 @@
         <b>Как решать:</b><br/>
         <p style="text-align:center"><img src="vpll_8_1.xml" width="60%%"></p>
         Одним двойным блоком к себе, другим справа. 2 хода (в Лондон, включили свет), потом последние 7 ходов Запада, пиф-паф и английский пиф-паф. <br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=9:35&link=B3iSPvlr7PA">на видео 9:35</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=9:35&link=B3iSPvlr7PA">на видео 9:35</a> <br/>
         <b>Алгоритм: (F R) (U\' R\' U\' R U R\' F\') (R U R\' U\') (R\' F R F\') </b>
     ]]></string>
     <string name="pll_st8_url">B3iSPvlr7PA</string>
@@ -276,7 +276,7 @@
         от блока наклейка, должна совпадать по цвету с блоком, соседняя с блоком противоположная,
         а оставшиеся две должны быть смежны блоку.</p>
         <p>Теперь определимся с тем какой треугольник смежный, а какой противоположный. Если развернуть кубик
-        двойным блоком справа, то смотрим на наклейку, которая будет слева (<a href="rubic-activity://ytactivity?time=3:05&link=L_r41Y1MuAY">3:05 на видео</a>). И если
+        двойным блоком справа, то смотрим на наклейку, которая будет слева (<a href="rg2://ytplay?time=3:05&link=L_r41Y1MuAY">3:05 на видео</a>). И если
         она смежная с блоком, то такой треугольник будем называть смежным, а если противоположная, то
         соответственно противоположным.</p>
         <p>Ну или чтобы было проще, то смежный треугольник, это такой, который методом для новичков решается с первого раза.</p>
@@ -285,12 +285,12 @@
 
         2. Двойным блоком справа, глазками слева. Очень похоже на комбинацию Юг, только два хода (5ый и 9ый) \"жирных\" и последний ход делать не нужно. <br/>
         <p style="text-align:center"><img src="vpll_9_1.xml" width="60%%"> </p>
-        <p>Фингертрикс: <a href="rubic-activity://ytactivity?time=4:14&link=L_r41Y1MuAY">на видео 4:14</a> <br/>
+        <p>Фингертрикс: <a href="rg2://ytplay?time=4:14&link=L_r41Y1MuAY">на видео 4:14</a> <br/>
         <b>Алгоритм: (R U R\' F\') (Rw U R\' U\' Rw\' F R2 U\' R\') </b></p>
 
         3. Крышей к себе, глазками справа, собранным углом слева (быстрый вариант, но сложный фингертрикс): <br/>
         <p style="text-align:center"><img src="vpll_9_2.xml" width="60%%"> </p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=8:18&link=L_r41Y1MuAY">на видео 8:18</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=8:18&link=L_r41Y1MuAY">на видео 8:18</a> <br/>
         <b>Алгоритм: R2 D2 R\' U\' R D2 R\' U R\' </b>
     ]]></string>
     <string name="pll_st9_url">L_r41Y1MuAY</string>
@@ -305,12 +305,12 @@
         <b>Как решать:</b><br/>
         <p>1. Двойным правым блоком к себе. Cвет крутим только двойной <br/>
         <p style="text-align:center"><img src="vpll_10_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=11:55&link=L_r41Y1MuAY">на видео 11:55</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=11:55&link=L_r41Y1MuAY">на видео 11:55</a> <br/>
         <b>Алгоритм: Rw U\' Rw F2 Rw\' U Rw F2 Rw2</b></p>
-        <p>2. Вариант <a href="rubic-activity://ytactivity?time=5:18&link=B_Fkals9Svk">из Ускорения N20</a>.
+        <p>2. Вариант <a href="rg2://ytplay?time=5:18&link=B_Fkals9Svk">из Ускорения N20</a>.
         Крышей к себе, собранным углом слева сверху: <br/></p>
         <p style="text-align:center"><img src="vpll_10_2.xml" width="60%%"></p>
-        <p>Фингертрикс: <a href="rubic-activity://ytactivity?time=15:24&link=L_r41Y1MuAY">на видео 15:24</a> <br/>
+        <p>Фингертрикс: <a href="rg2://ytplay?time=15:24&link=L_r41Y1MuAY">на видео 15:24</a> <br/>
         <b>Алгоритм: (R U\' R) D2 (R\' U R) D2 R2 </b></p>
         <p>3. Вариант. Повернуть собранным углом к себе слева и наклонить крышей от себя.</p>
         <p style="text-align:center"><img src="vpll_10_3.xml" width="60%%"></p>
@@ -333,11 +333,11 @@
         <p>1. Вариант из ускорений N10, когда крайние наклейки соответствуют центрам соответствующих боковых граней <br/>
         <p style="text-align:center"><img src="vpll_11_1.xml" width="60%%"></p>
         Повернуть крышей от себя (ход x). И выполнить Носик, а потом сразу Ушки <br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:13&link=L-g7AQfghlw">на видео 6:13</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=6:13&link=L-g7AQfghlw">на видео 6:13</a> <br/>
         <b>Алгоритм: (D\' R\' U\' R D R\' U R) (D\' R\' U R D R\' U\' R) </b><br/></p>
         <p>2. Вариант, когда крайние наклейки противоположны центрам соответствующих граней. Повернуть крышей направо (ход z) <br/>
         <p style="text-align:center"><img src="vpll_11_2.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=10:20&link=L-g7AQfghlw">на видео 10:20</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=10:20&link=L-g7AQfghlw">на видео 10:20</a> <br/>
         <b>Алгоритм: U2 R2 F (R U R\' U\') (R U R\' U\') (R U R\' U\') F\' R2 U2 </b></p>
     ]]></string>
     <string name="pll_st11_url">L-g7AQfghlw</string>
@@ -346,7 +346,7 @@
     <string name="pll_st12_descr" formatted="false"><![CDATA[
         Международное название - <b>V Perm</b><br/>
          <p><b>Как определить:</b><br/>
-        <a href="rubic-activity://ytactivity?time=14:00&link=L-g7AQfghlw">на видео 14:00</a>.
+        <a href="rg2://ytplay?time=14:00&link=L-g7AQfghlw">на видео 14:00</a>.
         Со стороны смежных двойных блоков очень похож на треугольник, но крайние наклейки разные.</p>
         <p style="text-align:center"><img src="vpll_12.xml" width="60%%"></p>
         <p>Со стороны блока и стороны со светофором, наклейка рядом с блоком противоположна блоку и совпадает с цветом
@@ -356,8 +356,8 @@
         <b>Как решать:</b><br/>
         <p>Держать как на картинке, левым двойным блоком к себе.<br/>
         <p style="text-align:center"><img src="vpll_12_1.xml" width="60%%"></p>
-        <p>Фингертрикс: <a href="rubic-activity://ytactivity?time=16:40&link=L-g7AQfghlw">на видео 16:40</a><br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:58&link=W-8n_E1YASU">от J Perm</a><br/>
+        <p>Фингертрикс: <a href="rg2://ytplay?time=16:40&link=L-g7AQfghlw">на видео 16:40</a><br/>
+        Фингертрикс: <a href="rg2://ytplay?time=3:58&link=W-8n_E1YASU">от J Perm</a><br/>
         <b>Алгоритм: (R U2 R\' D)  (R U\' R U\' R U R2\' D) (R\' U\' R D2) </b></p>
 
         <p>Альтернативные варианты от J Perm. Для начала сам алгоритм: <br/><br/>
@@ -365,28 +365,28 @@
         <b>(R\' U R\' U\') y R\' F\' R2 U\' R\' (U R\' F R F)</b><br/><br/>
 
         Тепрерь о том, как его выполнять:
-        <a href="rubic-activity://ytactivity?time=0:43&link=W-8n_E1YASU">Базовый</a> фингертрикс,
+        <a href="rg2://ytplay?time=0:43&link=W-8n_E1YASU">Базовый</a> фингертрикс,
         но чтобы делать его чуть быстрее, в последней части алгоритма используем
-        <a href="rubic-activity://ytactivity?time=1:35&link=W-8n_E1YASU">средний палец правой руки</a>,
-        т.е. получается <a href="rubic-activity://ytactivity?time=1:45&link=W-8n_E1YASU">вот так.</a><br/>
-        Или можно последний ход делать <a href="rubic-activity://ytactivity?time=2:00&link=W-8n_E1YASU">левой рукой,</a>
-        т.е. <a href="rubic-activity://ytactivity?time=2:15&link=W-8n_E1YASU">вот так.</a>
+        <a href="rg2://ytplay?time=1:35&link=W-8n_E1YASU">средний палец правой руки</a>,
+        т.е. получается <a href="rg2://ytplay?time=1:45&link=W-8n_E1YASU">вот так.</a><br/>
+        Или можно последний ход делать <a href="rg2://ytplay?time=2:00&link=W-8n_E1YASU">левой рукой,</a>
+        т.е. <a href="rg2://ytplay?time=2:15&link=W-8n_E1YASU">вот так.</a>
         А еще в этом видео вы найдете и фингертрикс для ситуации когда в конце надо, сделать
-        <a href="rubic-activity://ytactivity?time=2:40&link=W-8n_E1YASU">ход U</a>
+        <a href="rg2://ytplay?time=2:40&link=W-8n_E1YASU">ход U</a>
         (довернуть крышу).</p>
 
         <p>Еще один альтернативный вариант:<br/>
-        уже без перехвата и кручения <a href="rubic-activity://ytactivity?time=3:01&link=W-8n_E1YASU">передней грани</a>.<br/>
+        уже без перехвата и кручения <a href="rg2://ytplay?time=3:01&link=W-8n_E1YASU">передней грани</a>.<br/>
         <b>Алгоритм: R\' U R\' U\' R D\' R\' D R\' U D\' R2 U\' R2 D R2</b>. <br/>
         Но, данный алгоритм все таки наверно чуть медленее предыдущего, т.к. в нем фактически больше ходов, да
         еще и больше \"медленных\" двойных. Более подробно
-        <a href="rubic-activity://ytactivity?time=3:26&link=W-8n_E1YASU">в видео с 3:26.</a></p>
+        <a href="rg2://ytplay?time=3:26&link=W-8n_E1YASU">в видео с 3:26.</a></p>
 
         <p>Второй альтернативный вариант от J Perm, является вариантом от Максима, фингертрикс приведен выше.
-        К минусам данного алгоритма стоит отнести перехваты <a href="rubic-activity://ytactivity?time=4:31&link=W-8n_E1YASU">правой рукой.</a></p>
+        К минусам данного алгоритма стоит отнести перехваты <a href="rg2://ytplay?time=4:31&link=W-8n_E1YASU">правой рукой.</a></p>
 
         <p>Ну и еще один, уже более быстрый вариант, но с довольно
-        <a href="rubic-activity://ytactivity?time=5:10&link=W-8n_E1YASU">сложным фингертриксом.</a></br>
+        <a href="rg2://ytplay?time=5:10&link=W-8n_E1YASU">сложным фингертриксом.</a></br>
         <b>Алгоритм: z D\' R2 D R2 U R\' D\' R U\' R U R\' D R U\'</b></p>
 
     ]]></string>
@@ -402,12 +402,12 @@
         <p>1. Как держать не имеет значения, главное крышей сверху :) А если повернуть как на картинке,
         то не придется делать довороты после выполнения алгоритма.
         <p style="text-align:center"><img src="vpll_13_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:04&link=NbajmNXifXk">на видео 3:04</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=3:04&link=NbajmNXifXk">на видео 3:04</a> <br/>
         <b>Алгоритм: (R U\' L U2 R\' U L\') (R U\' L U2  R\' U L\') </b></p>
         <p>2. Или в принципе тот же алгоритм, но из другого положения. Повернуть крышей направо (ход z).<br/>
         Начинаем с движения со стороны блока. Обратите внимание на фигурные скобки, верх и низ можно крутить вместе <br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:05&link=NbajmNXifXk">на видео 4:05</a>
-        или <a href="rubic-activity://ytactivity?time=10:50&link=NbajmNXifXk">10:50</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=4:05&link=NbajmNXifXk">на видео 4:05</a>
+        или <a href="rg2://ytplay?time=10:50&link=NbajmNXifXk">10:50</a> <br/>
         <b>Алгоритм: (D R\' U R2 D\' R {U\')(D} R\' U R2 D\' R U\') </b></p>
     ]]></string>
     <string name="pll_st13_url">NbajmNXifXk</string>
@@ -422,12 +422,12 @@
         <p>1. Как держать не имеет значения, главное крышей сверху :) А если повернуть как на картинке,
         то не придется делать довороты после выполнения алгоритма.
         <p style="text-align:center"><img src="vpll_14_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:45&link=NbajmNXifXk">на видео 6:45</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=6:45&link=NbajmNXifXk">на видео 6:45</a> <br/>
         <b>Алгоритм: (L\' U R\' U2 L U\' R) (L\' U R\' U2 L U\' R) </b></p>
         <p>2. Или как и с правыми кирпичами повернуть крышей направо (ход z). Начинаем с движения со стороны блока. Обратите
         внимание на фигурные скобки, верх и низ можно крутить вместе. <br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=9:10&link=NbajmNXifXk">на видео 9:10</a>
-        или <a href="rubic-activity://ytactivity?time=12:05&link=NbajmNXifXk">12:05</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=9:10&link=NbajmNXifXk">на видео 9:10</a>
+        или <a href="rg2://ytplay?time=12:05&link=NbajmNXifXk">12:05</a> <br/>
         <b>Алгоритм: (U\' R D\' R2 U R\' {D)(U\'} R D\' R2 U R\' D} </b></p>
     ]]></string>
     <string name="pll_st14_url">NbajmNXifXk</string>
@@ -448,7 +448,7 @@
         <b>Как решать:</b><br/>
         Взять кубик блоком слева, глазками к себе и сделать 8ой этап метода для новичков :) <br/>
         <p style="text-align:center"><img src="vpll_15_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:22&link=AB940Ieyt58">на видео 4:22</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=4:22&link=AB940Ieyt58">на видео 4:22</a> <br/>
         <b>Алгоритм: R\' U2 R U2 R\' F (R U R\' U\') R\' F\' R2 U\' </b>
     ]]></string>
     <string name="pll_st15_url">AB940Ieyt58</string>
@@ -463,14 +463,14 @@
         <b>Как решать:</b><br/>
         <p>1. Все то же что и у Убийцы, но слева. Глазками к себе, блоком справа. <br/>
         <p style="text-align:center"><img src="vpll_16_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:40&link=AB940Ieyt58">на видео 6:40</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=6:40&link=AB940Ieyt58">на видео 6:40</a> <br/>
         <b>Алгоритм: L U2 L\' U2 L F\' (L\' U\' L U) L F R2 U </b></p>
-        <p>2. Экватор из <a href="rubic-activity://ytactivity?time=4:35&link=pT72Wh8VZT4">"слепой сборки N19"</a>, двойным блоком к себе. <br/>
+        <p>2. Экватор из <a href="rg2://ytplay?time=4:35&link=pT72Wh8VZT4">"слепой сборки N19"</a>, двойным блоком к себе. <br/>
         <p style="text-align:center"><img src="vpll_16_2.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=9:00&link=AB940Ieyt58">на видео 9:00</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=9:00&link=AB940Ieyt58">на видео 9:00</a> <br/>
         <b>Алгоритм: (R U R\' F\') (R U2 R\' U2) R\' F (R U R) U2 R\' U\' </b></p>
         <p>3. Как и предыдущий алгоритм - двойным блоком к себе.<br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=12:15&link=AB940Ieyt58">на видео 12:15</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=12:15&link=AB940Ieyt58">на видео 12:15</a> <br/>
         <b>Алгоритм: (R U\' R\' U\') (R U R D) (R\' U\' R D\') (R\' U2 R\' U\') </b></p>
     ]]></string>
     <string name="pll_st16_url">AB940Ieyt58</string>
@@ -487,14 +487,14 @@
         <b>Как решать:</b><br/>
         1. Двойным блоком справа.<br/>
         <p style="text-align:center"><img src="vpll_17_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=5:10&link=w8pDuyhAdVo">на видео 5:10</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=5:10&link=w8pDuyhAdVo">на видео 5:10</a> <br/>
         <b>Алгоритм: (UD\' R2 U) (R\' U R\' U\' R U\') (R2 U\'D R\' U R) </b><br/><br/>
         2. Двойным блоком к себе, глазками налево. В принципе все тоже самое, но вначале не крутим UD\', а
         вконце крутим D\'.<br/>
         <p style="text-align:center"><img src="vpll_17_2.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:32&link=nBMCuMiSFIg">от J Perm</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=0:32&link=nBMCuMiSFIg">от J Perm</a> <br/>
         <b>Алгоритм: R2 U R\' U R\' U\' R U\' R2 (DU\') R\' U R D\'</b>
-        <p>P.S. <a href="rubic-activity://ytactivity?time=4:28&link=nBMCuMiSFIg">совет от J Perm</a>
+        <p>P.S. <a href="rg2://ytplay?time=4:28&link=nBMCuMiSFIg">совет от J Perm</a>
         на примере встречной машинки, но применим для всех GPerm\'ов. Если вы понимаете, что после
         выполнения алгоритма, вам придется сделать U2 (довернуть крышу дважды). Это легко понять по
         цвету глазок, если делать варианты алгоритмов GPerm для глазок слева, которые в данном
@@ -518,18 +518,18 @@
         <b>Как решать:</b><br/>
         1. Двойным блоком справа, глазками от себя.<br/>
         <p style="text-align:center"><img src="vpll_18_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=9:55&link=w8pDuyhAdVo">на видео 9:55</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=9:55&link=w8pDuyhAdVo">на видео 9:55</a> <br/>
         <b>Алгоритм: (U\'D R2 U\') (R U\' R U R\' U) (R2 UD\' R U\' R\') </b><br/><br/>
 
         2. Блоком к себе, глазками направо.<br/>
         <p style="text-align:center"><img src="vpll_18_2.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=14:30&link=w8pDuyhAdVo">на видео 14:30</a> (большой палец сверху) <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=14:30&link=w8pDuyhAdVo">на видео 14:30</a> (большой палец сверху) <br/>
         <b>Алгоритм: R2\' F2 (R U2) (R U2) R\' F (R U R\' U\') R\' F R2 </b><br/><br/>
 
         3. Блоком от себя, глазками налево.<br/>
         <p style="text-align:center"><img src="vpll_18_3.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:56&link=nBMCuMiSFIg">от J Perm</a> <br/>
-        или чуть другой вариант <a href="rubic-activity://ytactivity?time=2:09&link=nBMCuMiSFIg">фингертрикса</a>
+        Фингертрикс: <a href="rg2://ytplay?time=1:56&link=nBMCuMiSFIg">от J Perm</a> <br/>
+        или чуть другой вариант <a href="rg2://ytplay?time=2:09&link=nBMCuMiSFIg">фингертрикса</a>
         с нестандартным врещением крыши большим пальцем правой руки.<br/>
         <b>Алгоритм: R2 U\' R U\' R U R\' U R2 (D\'U) R U\' R\' D </b>
     ]]></string>
@@ -549,8 +549,8 @@
         <b>Как решать:</b><br/>
         Двойным блоком справа, глазками налево. <br/>
         <p style="text-align:center"><img src="vpll_19_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:00&link=F-ODZtge9Ig">на видео 3:00</a> <br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:50&link=nBMCuMiSFIg">от J Perm</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=3:00&link=F-ODZtge9Ig">на видео 3:00</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=2:50&link=nBMCuMiSFIg">от J Perm</a> <br/>
         <b>Алгоритм: (R U R\' U\'D) (R2 U\' R U\') (R\' U R\' U) R2 UD\' </b><br/><br/>
         P.S. Вы наверно заметили что алгоритмы Максима и J Perm отличаются последним ходом U, все
         дело в том, что у Максима привязка идет к двойному блоку, а у J Perm к глазкам.
@@ -567,8 +567,8 @@
         <b>Как решать:</b><br/>
         1. Двойным блоком справа, глазками налево.<br/>
         <p style="text-align:center"><img src="vpll_20_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=8:05&link=F-ODZtge9Ig">на видео 8:05</a> <br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:59&link=nBMCuMiSFIg">от J Perm</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=8:05&link=F-ODZtge9Ig">на видео 8:05</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=0:59&link=nBMCuMiSFIg">от J Perm</a> <br/>
         <b>Алгоритм: (R\' U\' R UD\') (R2 U R\' U) (R U\' R U\') R2\' U\'D </b><br/><br/>
     ]]></string>
     <string name="pll_st20_url">F-ODZtge9Ig</string>
@@ -581,13 +581,13 @@
         но с одним кирпичем наклейка противоположная, а с другим смежная.</p>
         <p style="text-align:center"><img src="vpll_21.xml" width="30%%"></p>
         <b>Как решать:</b><br/>
-        1. Тройным блоком слева (<a href="rubic-activity://ytactivity?time=3:15&link=AoqKnYoDrio">Вариант из Ускорений N19</a>)<br/>
+        1. Тройным блоком слева (<a href="rg2://ytplay?time=3:15&link=AoqKnYoDrio">Вариант из Ускорений N19</a>)<br/>
         <p style="text-align:center"><img src="vpll_21_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:10&link=4ulPytSlCR0">на видео 3:10</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=3:10&link=4ulPytSlCR0">на видео 3:10</a> <br/>
         <b>Алгоритм: F2 (L\' U\' L) F2 (R\' D R\' D\') R2 </b> <br/>
         2. Крышей вправо, тройной блок снизу, т.е. поставить тройным блоком справа и наклонить (ход z)<br/>
         <p style="text-align:center"><img src="vpll_21_2.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=5:40&link=4ulPytSlCR0">на видео 5:40</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=5:40&link=4ulPytSlCR0">на видео 5:40</a> <br/>
         <b>Алгоритм: U\' (R2 U R U\') R2 D R\' U R D\' </b>
     ]]></string>
     <string name="pll_st21_url">4ulPytSlCR0</string>

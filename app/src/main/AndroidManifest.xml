@@ -24,6 +24,18 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activitys.YouTubeActivity"
+            android:theme="@style/Theme.AppCompat.Dialog">
+            <intent-filter>
+                <data
+                    android:scheme="rg2"
+                    android:host="ytplay"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".activitys.SlidingTabsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>

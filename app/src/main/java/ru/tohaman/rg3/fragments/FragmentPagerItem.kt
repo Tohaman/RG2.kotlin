@@ -25,6 +25,7 @@ import org.jetbrains.anko.support.v4.toast
 import org.jetbrains.anko.support.v4.withArguments
 import ru.tohaman.rg3.DebugTag
 import ru.tohaman.rg3.DeveloperKey.DEVELOPER_KEY
+import ru.tohaman.rg3.R
 import ru.tohaman.rg3.VIDEO_PREVIEW
 import ru.tohaman.rg3.listpager.ListPager
 
@@ -33,7 +34,6 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
     private val REQ_START_STANDALONE_PLAYER = 101
     private val REQ_RESOLVE_SERVICE_MISSING = 2
     private val RECOVERY_DIALOG_REQUEST = 1
-
 
     var url:String = ""
 
@@ -44,37 +44,19 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         val description = arguments.getInt("desc")
         url = arguments.getString("url")
 
-        // Немного преобразуем текст для корректного отображения.
-        val text = "<html><body style=\"text-align:justify\"> %s </body></html>"
-        var desc = String.format(text, getString(description))
-        desc = desc.replace("%%", "%25")
+        var text = "<html><body style=\"text-align:justify\"> %s </body></html>"
+        val st = getString(description)
+        text = String.format(text, st)
+        val spantext = spannedString(text)
 
-        // Android 7.0 ака N (Nougat) = API 24, начиная с версии Андроид 7.0 вместо HTML.fromHtml (String)
-        // лучше использовать HTML.fromHtml (String, int), где int различные флаги, влияющие на отображение html
-        // аналогично для метода HTML.fromHtml (String, ImageGetter, TagHandler) -> HTML.fromHtml (String, int, ImageGetter, TagHandler)
-        // поэтому используем @SuppressWarnings("deprecation") перед объявлением метода и вот такую конструкцию
-        // для преобразования String в Spanned. В принципе использование старой конструкции равноценно использованию
-        // новой с флагом Html.FROM_HTML_MODE_LEGACY... подробнее о флагах-модификаторах на developer.android.com
-        // В методе Html.fromHtml(String, imgGetter, tagHandler) - tagHandler - это метод, который вызывется, если
-        // в строке встречается тэг, который не распознан, т.е. тут можно обрабатывать свои тэги
-        // пока не используется (null), но все воозможно :)
-
-        val spanresult: Spanned
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            spanresult = Html.fromHtml(desc, Html.FROM_HTML_MODE_LEGACY, imgGetter, null)
-        } else {
-            @Suppress("DEPRECATION")
-            spanresult = Html.fromHtml(desc, imgGetter, null)
-        }
-
-        (view.findViewById(FragmentPagerItemtUI.Ids.textViewFragmentMessage) as TextView).text = message
-        (view.findViewById(FragmentPagerItemtUI.Ids.pager_imageView) as ImageView).imageResource = topImage
-        (view.findViewById(FragmentPagerItemtUI.Ids.description_text) as TextView).text = spanresult
+        (view.findViewById(FragmentPagerItemtUI.Ids.pagerTitleText) as TextView).text = message
+        (view.findViewById(FragmentPagerItemtUI.Ids.pagerImageView) as ImageView).imageResource = topImage
+        (view.findViewById(FragmentPagerItemtUI.Ids.descriptionText) as TextView).text = spantext
 
         val ytTextView = view.findViewById(FragmentPagerItemtUI.Ids.youTubeTextView) as TextView
 
         // Если ссылка пустая, то вообще не отображаем видеопревью
-        val ytViewLayout = view.findViewById(FragmentPagerItemtUI.Ids.linlayout) as LinearLayout
+        val ytViewLayout = view.findViewById(FragmentPagerItemtUI.Ids.linLayout) as LinearLayout
         if (url == "") {
             ytViewLayout.visibility = View.GONE
         } else {
@@ -84,7 +66,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         //смотрим в настройках программы, показывать превью видео или текст
         val previewEnabled = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean(VIDEO_PREVIEW, true)
         val thumbnailView = view.findViewById(FragmentPagerItemtUI.Ids.youTubeView) as YouTubeThumbnailView
-        if (previewEnabled and canPlayYouTubeVideo()) {
+        if (!previewEnabled and canPlayYouTubeVideo()) {
             thumbnailView.visibility = View.VISIBLE
             ytTextView.visibility = View.GONE
             thumbnailView.initialize(DEVELOPER_KEY, this)
@@ -94,34 +76,31 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         } else {
             thumbnailView.visibility = View.GONE
             ytTextView.visibility = View.VISIBLE
-            //TODO перевести этот код с явы
-//            String text = "<html><body> <a href=\"rubic-activity://ytactivity?time=0:00&link=%s\"> %s </a></body></html>";
-//            String description = String.format(text,mListPager.getUrl(),getString(R.string.pager_youtubeText));
-//            Spanned spanresult;
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-//                spanresult = Html.fromHtml(description, Html.FROM_HTML_MODE_LEGACY, imgGetter, null);
-//            } else {
-//                spanresult = Html.fromHtml(description, imgGetter, null);
-//            }
-//            youtubetext.setText(spanresult);
-
+            text = "<html><body> <a href=\"rg2://ytplay?time=0:00&link=%s\"> %s </a></body></html>"
+            text = String.format(text, url, getString(R.string.pager_youtubetext))
+            ytTextView.text = spannedString(text)
         }
 
         return view
     }
 
+
     private fun canPlayYouTubeVideo():Boolean = playYouTubeVideo(false)
 
     private fun playYouTubeVideo(needPlaying:Boolean, urlToPlay: String = "0TvO_rpG_aM"): Boolean {
         val intent: Intent? = YouTubeStandalonePlayer.createVideoIntent(activity, DEVELOPER_KEY, urlToPlay, 1000, true, true)
-        if (intent != null) {
-           return when {
-                (canResolveIntent(intent)) and (needPlaying) -> {startActivityForResult(intent, REQ_START_STANDALONE_PLAYER); true}
-                (!canResolveIntent(intent)) and (needPlaying) -> {YouTubeInitializationResult.SERVICE_MISSING.getErrorDialog(activity, REQ_RESOLVE_SERVICE_MISSING).show(); false}
-                !needPlaying -> {canResolveIntent(intent)}
-               else -> {false}
-           }
-        } else return false
+        if (intent != null) return when {
+                (canResolveIntent(intent)) and (needPlaying) -> {
+                    startActivityForResult(intent, REQ_START_STANDALONE_PLAYER)
+                    true
+                }
+                (!canResolveIntent(intent)) and (needPlaying) -> {
+                    YouTubeInitializationResult.SERVICE_MISSING.getErrorDialog(activity, REQ_RESOLVE_SERVICE_MISSING).show()
+                    false
+                }
+                !needPlaying -> {canResolveIntent(intent)}  //true or false
+                else -> {false}
+            } else return false
     }
 
     @Suppress("DEPRECATION")
@@ -146,6 +125,36 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         drawable
     }
 
+    // И еще один метод для ЮТплеера = true, если есть приложение, которое может обрабоать наше намерение (интент)
+    private fun canResolveIntent(intent: Intent): Boolean {
+        val resolveInfo = activity.packageManager.queryIntentActivities(intent, 0)
+        return resolveInfo != null && !resolveInfo.isEmpty()
+    }
+
+    private fun spannedString(desc:String): Spanned {
+        // Немного преобразуем текст для корректного отображения.
+        val desc = desc.replace("%%", "%25")
+
+        // Android 7.0 ака N (Nougat) = API 24, начиная с версии Андроид 7.0 вместо HTML.fromHtml (String)
+        // лучше использовать HTML.fromHtml (String, int), где int различные флаги, влияющие на отображение html
+        // аналогично для метода HTML.fromHtml (String, ImageGetter, TagHandler) -> HTML.fromHtml (String, int, ImageGetter, TagHandler)
+        // поэтому используем @SuppressWarnings("deprecation") перед объявлением метода и вот такую конструкцию
+        // для преобразования String в Spanned. В принципе использование старой конструкции равноценно использованию
+        // новой с флагом Html.FROM_HTML_MODE_LEGACY... подробнее о флагах-модификаторах на developer.android.com
+        // В методе Html.fromHtml(String, imgGetter, tagHandler) - tagHandler - это метод, который вызывется, если
+        // в строке встречается тэг, который не распознан, т.е. тут можно обрабатывать свои тэги
+        // пока не используется (null), но все воозможно :)
+
+        val spanresult: Spanned
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            spanresult = Html.fromHtml(desc, Html.FROM_HTML_MODE_LEGACY, imgGetter, null)
+        } else {
+            @Suppress("DEPRECATION")
+            spanresult = Html.fromHtml(desc, imgGetter, null)
+        }
+        return spanresult
+    }
+
 
     //Два обязательных переопределяемых метода для имплементного YouTubeThumbnailView.OnInitializedListener
     override fun onInitializationSuccess(p0: YouTubeThumbnailView?, p1: YouTubeThumbnailLoader?) {
@@ -163,12 +172,6 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
             val errorMessage = "Ошибка инициализации YouTubePlayer"
             toast(errorMessage)
         }
-    }
-
-    // И еще один метод для ЮТплеера = true, если есть приложение, которое может обрабоать наше намерение (интент)
-    private fun canResolveIntent(intent: Intent): Boolean {
-        val resolveInfo = activity.packageManager.queryIntentActivities(intent, 0)
-        return resolveInfo != null && !resolveInfo.isEmpty()
     }
 
     companion object {

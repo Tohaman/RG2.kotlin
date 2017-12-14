@@ -154,19 +154,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    fun loadStartPhase():String {
+    private fun loadStartPhase():String {
         val sp = PreferenceManager.getDefaultSharedPreferences(this)
         return sp.getString("startPhase", "BEGIN")
     }
 
-    fun saveStartPhase(phase:String) {
+    private fun saveStartPhase(phase:String) {
         val sp = PreferenceManager.getDefaultSharedPreferences(this)
         val editor = sp.edit()
         editor.putString("startPhase", phase)
         editor.apply() // подтверждаем изменения
     }
 
-    fun setPhase (phase: String){
+    private fun setPhase (phase: String){
         curPhase = phase
         val transaction: FragmentTransaction? = supportFragmentManager.beginTransaction()
         transaction?.replace(R.id.frame_container, fragListView)?.commit()

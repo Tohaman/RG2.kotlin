@@ -136,8 +136,8 @@
         делать два раза (назовем её акулой), да очень просто, у золотой рыбки (правильной) точка на передней
         грани справа, а у акулы слева.</p>
         <p style="text-align:center"><img src="vaccel_2_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=7:04&link=PUTeFKC9R2Y">на видео 7:04</a><br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:20&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=7:04&link=PUTeFKC9R2Y">на видео 7:04</a><br/>
+        Фингертрикс: <a href="rg2://ytplay?time=0:20&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: (R U R\' U) R U2 R\'</b>
     ]]></string>
     <string name="accel_st2_url">PUTeFKC9R2Y</string>
@@ -158,9 +158,9 @@
         <p style="text-align:center"><img src="vaccel_4_1.xml" width="60%%"></p>
         <b>Алгоритм: F (R U R\' U\') (R U R\' U\') (R U R\' U\') F\' </b>
         <p>Альтернативный вариант, без кручения передней грани:<br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:28&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=0:28&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: (R U2) (R\' U\' R U R\' U\' R U\' R\')</b></p>
-        <p><a href="rubic-activity://ytactivity?time=0:26&link=t3KcPrjmJJ4">Бонус от JPerm:</a>
+        <p><a href="rg2://ytplay?time=0:26&link=t3KcPrjmJJ4">Бонус от JPerm:</a>
         если углы стоят парами</p>
         <p style="text-align:center"><img src="vaccel_4_2.xml" width="60%%"></p>
         <p>как на данных картинках, то в первом случае лучше использовать первый алгоритм,
@@ -186,7 +186,7 @@
         <p>Если на 9ом этапе ни одного угла нет на месте и все центры противоположны глазкам на своих гранях,
         значит это ситуация "шахматы". Повторяем 6 раз: средний слой 2 раза, крышу против часовой.</p>
         <p style="text-align:center"><img src="vaccel_6_1.xml" width="60%%"></p>
-        <p>Фингертрикс: <a href="rubic-activity://ytactivity?time=3:50&link=1lyDpI5-5m4">на видео 3:50</a> </p>
+        <p>Фингертрикс: <a href="rg2://ytplay?time=3:50&link=1lyDpI5-5m4">на видео 3:50</a> </p>
         <b>Алгоритм: 6 раз (M2 U\')</b>
     ]]></string>
     <string name="accel_st6_url">1lyDpI5-5m4</string>
@@ -197,7 +197,7 @@
        буквы Т направо и посмотреть на 3ий этаж, какая буква Т, с точкой или с блоком (двуми точками).</p>
        <p>Если <b>\"Т с точкой\"</b>, то выполнить обычную \"палку\", т.е. в Лондон, пиф-паф, из Лондона.<p>
        <p style="text-align:center"><img src="vaccel_7_1.xml" width="60%%"></p>
-       Фингертрикс: <a href="rubic-activity://ytactivity?time=1:47&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+       Фингертрикс: <a href="rg2://ytplay?time=1:47&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
        <b>Алгоритм: F (R U R\' U\') F\' </b><br/>
        <p>Если <b>\"Т с блоком\"</b>, то сначала обычный пиф-паф, потом английский пиф-паф.</p>
        <p style="text-align:center"><img src="vaccel_7_2.xml" width="60%%"></p>
@@ -216,7 +216,7 @@
         правую вниз, верхнюю на место и правую вверх.</p>
         <p style="text-align:center"><img src="vaccel_8_1.xml" width="60%%"></p>
         Фингертрикс: Cтандартное положение рук.
-        <a href="rubic-activity://ytactivity?time=6:50&link=gbuLeCv_fRM">на видео 6:50</a> <br/>
+        <a href="rg2://ytplay?time=6:50&link=gbuLeCv_fRM">на видео 6:50</a> <br/>
         <b>Алгоритм: D\' R\' U R D R\' U\' R </b>
     ]]></string>
     <string name="accel_st8_url">gbuLeCv_fRM</string>
@@ -230,7 +230,7 @@
         часовой. Т.е. низ против часовой, правую вниз, верх против часовой, правую вверх,
         низ по часовой, правую вниз, верх по часовой, правую вверх.
         <p style="text-align:center"><img src="vaccel_9_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=7:36&link=gbuLeCv_fRM">на видео 7:36</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=7:36&link=gbuLeCv_fRM">на видео 7:36</a> <br/>
         <b>Алгоритм: D\' R\' U\' R D R\' U R </b>
     ]]></string>
     <string name="accel_st9_url">ICMhcSF54OM</string>
@@ -244,7 +244,7 @@
         или видео). Повернуть как в носике или ушках крышей от себя и выполнить сначала носик, а
         потом никуда не переворачивая ушки.</p>
         <p style="text-align:center"><img src="vaccel_10_1.xml" width="60%%"></p>
-        Фингертрикс: стандартное положение рук, <a href="rubic-activity://ytactivity?time=7:22&link=fpkbnBU0Cd0">на видео 7:22</a> <br/>
+        Фингертрикс: стандартное положение рук, <a href="rg2://ytplay?time=7:22&link=fpkbnBU0Cd0">на видео 7:22</a> <br/>
         <b>Алгоритм: (D\' R\' U\' R D R\' U R) (D\' R\' U R D R\' U\' R) </b>
     ]]></string>
     <string name="accel_st10_url">fpkbnBU0Cd0</string>
@@ -260,9 +260,9 @@
         уплывает направо и вверх, т.е. на северо-восток, то назовем такую Акулу северо-восточной.</p>
         <p style="text-align:center"><img src="vaccel_11_1.xml" width="60%%"></p>
         Фингертрикс: в видео к сожалению не приведен, поэтому из другого
-        <a href="rubic-activity://ytactivity?time=2:37&link=mknzlNHW6_A">видео</a>. Но т.к. в данном
+        <a href="rg2://ytplay?time=2:37&link=mknzlNHW6_A">видео</a>. Но т.к. в данном
         видео из стандртного положения рыбки головой влево к себе, то с дополнительным U2 вначале.<br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:11&link=IasVqtCHoj0">от Феликса Земдекса.</a><br/>
+        Фингертрикс: <a href="rg2://ytplay?time=0:11&link=IasVqtCHoj0">от Феликса Земдекса.</a><br/>
         <b>Алгоритм: R U2 R\' U\' R U\' R\' </b><br/><br/>
         <p>Альтернативный вариант: поставить рыбку головой ВЛЕВО взад, назовем этот вариант <b>Акулы</b> северо-западным,
         т.к. акула уплывает на северо-запад.:</p>
@@ -286,8 +286,8 @@
         <p>Можно делать данный алгоритм для любой пули на шестом этапе. Это будет быстрее чем пулю преобразовывать
         в палку или бумеранг, а потом решать их.</p>
         <p style="text-align:center"><img src="vaccel_12_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:30&link=ZsybuodfAqM">на видео 3:30</a> <br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=11:39&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=3:30&link=ZsybuodfAqM">на видео 3:30</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=11:39&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: (R U R\' U) (R\' F R F\') U2 (R\' F R F\') </b>
     ]]></string>
     <string name="accel_st12_url">ZsybuodfAqM</string>
@@ -298,8 +298,8 @@
         нижнюю по часовой, еще выключаем, сильно едет крыша (2 раза), включаем свет, низ против часовой,
         выключаем свет, крыша 2 раза и еще раз выключаем свет.</p>
         <p style="text-align:center"><img src="vaccel_13_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:15&link=dzINk50Y1jI">на видео 6:15</a> <br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=1:08&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=6:15&link=dzINk50Y1jI">на видео 6:15</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=1:08&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: R2 D R\' U2 R D\' R\' U2 R\' </b><br/>
     ]]></string>
     <string name="accel_st13_url">dzINk50Y1jI</string>
@@ -311,8 +311,8 @@
         и в ускорении N3, т.е. Глазками налево. Включаем свет, крыша 2 раза, дважды выключаем свет, крыша
         против часовой, включаем 2 раза, снова крыша против, опять выключаем 2 раза, крыша 2 раза и включаем свет.</p>
         <p style="text-align:center"><img src="vaccel_3_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:08&link=m2EkIKd6efA">на видео 3:08</a> <br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=0:14&link=47JfJxU7EjM">от J Perm</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=3:08&link=m2EkIKd6efA">на видео 3:08</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=0:14&link=47JfJxU7EjM">от J Perm</a> <br/>
         <b>Алгоритм: R U2 R2\' U\' R2 U\' R2\' U2 R </b>
     ]]></string>
     <string name="accel_st14_url">m2EkIKd6efA</string>
@@ -337,7 +337,7 @@
         блок справа. Надо применить комбинацию Юг, которая очень похожа на комбинацию запад. Только
         сначала надо выполнить 4 последних хода Запада, а потом Запад без этих четырех ходов.</p>
         <p style="text-align:center"><img src="vaccel_16_1.xml" width="60%%"></p>
-        Фингертрикс: см.слепую <a href="rubic-activity://ytactivity?time=2:33&link=rzGqTZKG74o">сборку N7 с 2:33</a> <br/>
+        Фингертрикс: см.слепую <a href="rg2://ytplay?time=2:33&link=rzGqTZKG74o">сборку N7 с 2:33</a> <br/>
         <b>Алгоритм: (R U R\' F\') (R U R\' U\' R\' F R2 U\' R\' U\')</b>
     ]]></string>
     <string name="accel_st16_url">YkHnPKT1m30</string>
@@ -350,13 +350,13 @@
         в алгоритме скобки стоят именно так.</p>
         <b>Смежные глазки (окошки):</b><br/>
         <p style="text-align:center"><img src="vaccel_17_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=7:18&link=dUGv4WJfJGU">на видео 7:18</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=7:18&link=dUGv4WJfJGU">на видео 7:18</a> <br/>
         <b>Алгоритм: R2 U\' (F B\') R2 (F\' B) U\' R2 </b><br/><br/>
         <b>Противоположные глазки (окошки):</b><br/>
         <p style="text-align:center"><img src="vaccel_17_2.xml" width="60%%"></p>
         Пока просто повторить данный алгоритм два раза, ну или выполнить данный алгоритм в обратном порядке,
         т.е. по сути вместо U\' делать U.<br/>
-        Подробнее данная ситуация будет рассмотрена в <a href="rubic-activity://ytactivity?time=0:00&link=P69UVywfz04">Окошках PLL</a>.
+        Подробнее данная ситуация будет рассмотрена в <a href="rg2://ytplay?time=0:00&link=P69UVywfz04">Окошках PLL</a>.
     ]]></string>
     <string name="accel_st17_url">dUGv4WJfJGU</string>
 
@@ -370,7 +370,7 @@
         Итак, первые три хода против часовой стрелки (правая, верхняя, передняя), теперь Запад без
         последнего хода и два хода по часовой стрелке - верхняя и правая грани.</p>
         <p style="text-align:center"><img src="vaccel_18_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=5:30&link=ir8W-IBgmas">на видео 5:30</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=5:30&link=ir8W-IBgmas">на видео 5:30</a> <br/>
         <b>Алгоритм: (R\' U\' F\') {R U R\' U\' R\' F R2 U\' R\' U\' (R U R\')} (U R) </b>
     ]]></string>
     <string name="accel_st18_url">ir8W-IBgmas</string>
@@ -386,7 +386,7 @@
         правый свет и от этого у нас едет земля под ногами, мы еще раз выключили свет и земля
         вернулась на место и от радости включаем свет 2 раза.</p>
         <p style="text-align:center"><img src="vaccel_19_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:15&link=AoqKnYoDrio">на видео 3:15</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=3:15&link=AoqKnYoDrio">на видео 3:15</a> <br/>
         <b>Алгоритм: F2 (L\' U\' L) F2 R\' D R\' D\' R2</b>
     ]]></string>
     <string name="accel_st19_descr2">
@@ -403,8 +403,8 @@
         и два раза выключаем свет. Т.е. 3 хода, двойной низ, 3 хода двойной низ и двойной свет.</p>
         <p style="text-align:center"><img src="vaccel_20_1.xml" width="60%%"></p>
         <p><b>\"Смежная наклейка\"</b> - пока делаем старым алгоритмом. Альтернативные варианты рассмотрим
-        в <a href="rubic-activity://ytactivity?time=0:00&link=L_r41Y1MuAY">PLL Треугольники</a> <br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=6:00&link=B_Fkals9Svk">на видео 6:00</a> <br/>
+        в <a href="rg2://ytplay?time=0:00&link=L_r41Y1MuAY">PLL Треугольники</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=6:00&link=B_Fkals9Svk">на видео 6:00</a> <br/>
         <b>Алгоритм: (R, U\', R) D2 (R\' U R) D2 R2</b>
     ]]></string>
     <string name="accel_st20_url">B_Fkals9Svk</string>
@@ -415,40 +415,40 @@
     терминами спидкубинга. Пригодится, если будете смотреть видео на английском, в том числе и
     приведенные в данной программе.<br/><br/>
 
-    <b>1. <a href="rubic-activity://ytactivity?time=0:00&link=4nSnsav3bIU">Sexy Move</a></b>
+    <b>1. <a href="rg2://ytplay?time=0:00&link=4nSnsav3bIU">Sexy Move</a></b>
     - в русском варианте <b>пиф-паф</b>. Простая четырехходовая комбинация <b>R U R\' U\'</b>. Ну а почему в
     английском варианте это так называется,
-    <a href="rubic-activity://ytactivity?time=0:06&link=4nSnsav3bIU">смотрите в видео</a> :)))<br/><br/>
+    <a href="rg2://ytplay?time=0:06&link=4nSnsav3bIU">смотрите в видео</a> :)))<br/><br/>
 
-    <b>2. <a href="rubic-activity://ytactivity?time=0:18&link=4nSnsav3bIU">TPS</a></b> = Turns Per Second -
+    <b>2. <a href="rg2://ytplay?time=0:18&link=4nSnsav3bIU">TPS</a></b> = Turns Per Second -
     количество ходов (поворотов) в секунду. Величина позволяющая оценить на сколько быстро вы
     крутите кубик. Чтобы оценить свой TPS выполните какую-то достаточно длинную комбинацию и заметьте
     время за которое вы это сделаете. Теперь поделите количество сделанных ходов, на время. Например
-    <a href="rubic-activity://ytactivity?time=0:35&link=4nSnsav3bIU">Рыбку</a>, в которой семь ходов.<br/>
+    <a href="rg2://ytplay?time=0:35&link=4nSnsav3bIU">Рыбку</a>, в которой семь ходов.<br/>
     Но, то что вы крутите кубик очень быстро не означает что вы быстро собираете кубик.
-    <a href="rubic-activity://ytactivity?time=0:52&link=4nSnsav3bIU">Иначе говоря</a>,
+    <a href="rg2://ytplay?time=0:52&link=4nSnsav3bIU">Иначе говоря</a>,
     именно потому, что вы крутите слишком быстро, вы не сможете сохранять высокий TPS для всей сборки.
     Т.к. между выполнениями комбинаций у вас будут бОльшие паузы. Гораздо эффективнее, вращать кубик
     медленнее, но без пауз между комбинациями.<br/><br/>
 
-    <b>3. <a href="rubic-activity://ytactivity?time=1:42&link=4nSnsav3bIU">Sune</a></b> = Рыбка из Ускорения N2,
-    <b><a href="rubic-activity://ytactivity?time=2:07&link=4nSnsav3bIU">Antisune</a></b> = Акула из Ускорения N11,
-    <b><a href="rubic-activity://ytactivity?time=2:13&link=4nSnsav3bIU">Pi</a></b> = Вертолет из Ускорения N14,
-    <b><a href="rubic-activity://ytactivity?time=2:19&link=4nSnsav3bIU">U</a></b> = Глазки из Ускорения N13,
-    <b><a href="rubic-activity://ytactivity?time=2:27&link=4nSnsav3bIU">T</a></b> = Ушки из Ускорения N8,
-    <b><a href="rubic-activity://ytactivity?time=2:30&link=4nSnsav3bIU">L</a></b> = Носик из Ускорения N9 и
-    <b><a href="rubic-activity://ytactivity?time=2:39&link=4nSnsav3bIU">H</a></b> = НТВ+ из Ускорения N8.
+    <b>3. <a href="rg2://ytplay?time=1:42&link=4nSnsav3bIU">Sune</a></b> = Рыбка из Ускорения N2,
+    <b><a href="rg2://ytplay?time=2:07&link=4nSnsav3bIU">Antisune</a></b> = Акула из Ускорения N11,
+    <b><a href="rg2://ytplay?time=2:13&link=4nSnsav3bIU">Pi</a></b> = Вертолет из Ускорения N14,
+    <b><a href="rg2://ytplay?time=2:19&link=4nSnsav3bIU">U</a></b> = Глазки из Ускорения N13,
+    <b><a href="rg2://ytplay?time=2:27&link=4nSnsav3bIU">T</a></b> = Ушки из Ускорения N8,
+    <b><a href="rg2://ytplay?time=2:30&link=4nSnsav3bIU">L</a></b> = Носик из Ускорения N9 и
+    <b><a href="rg2://ytplay?time=2:39&link=4nSnsav3bIU">H</a></b> = НТВ+ из Ускорения N8.
     Данные алгоритмы объединены в один блок как базовые OLL алгоритмы. В терминах применяемых в данной
     программе, именно эти алгоритмы позволяют решать 7-ой этап не новичковым методом.<br/><br/>
 
-    <b>4. <a href="rubic-activity://ytactivity?time=2:43&link=4nSnsav3bIU">2-gen</a></b> = Turns 2 Layer,
+    <b>4. <a href="rg2://ytplay?time=2:43&link=4nSnsav3bIU">2-gen</a></b> = Turns 2 Layer,
     вращение двух слоев. Проще говоря, 2-gen алгоритмы, это такие алгоритмы, при выполнении которых вращаются только
     2 слоя. Чаще всего R и U. Например: пиф-паф, рыбка, PLL окошки, PLL рельсы. Такие алгоритмы можно
     выполнять очень быстро (с высоким TPS) и они очень удобны для сборки
-    <a href="rubic-activity://ytactivity?time=3:16&link=4nSnsav3bIU">одной рукой</a>(One Hand).
+    <a href="rg2://ytplay?time=3:16&link=4nSnsav3bIU">одной рукой</a>(One Hand).
     <b>3-gen</b> алгоритмы - соответственно те, при выполнении которых, вращаются 3 грани.<br/><br/>
 
-    <b>5. <a href="rubic-activity://ytactivity?time=3:22&link=4nSnsav3bIU">Average vs Mean</a></b> - Усредненное
+    <b>5. <a href="rg2://ytplay?time=3:22&link=4nSnsav3bIU">Average vs Mean</a></b> - Усредненное
     и среднее время. Если дословное переводить с агнглийского, то и mean time и average time означает
     среднее время (сборки). Но считается оно по разному. Mean time - это суммарное время всех
     попыток поделенное на количество попыток, т.е. точное среднее время. В то время как Average это более
@@ -456,20 +456,20 @@
     лучший и худший результат. Или под понятием Average time может пониматься примерное среднее время
     сборок.<br/><br/>
 
-    <b>6. <a href="rubic-activity://ytactivity?time=4:27&link=4nSnsav3bIU">Sleagehammer</a></b> -
+    <b>6. <a href="rg2://ytplay?time=4:27&link=4nSnsav3bIU">Sleagehammer</a></b> -
     Кувалда или Английский пиф-паф <b>(R\' F R F\')</b>. Еще одна простая четырехходовка из Ускорения N1.
     Используется как часть многих алгоритмов. Так же можно использовать и как альтернативу первому
     базовому <b>U (R U\' R\')</b> алгоритму интуитивного F2L, особенно при постановке на свое место
-    <a href="rubic-activity://ytactivity?time=4:42&link=4nSnsav3bIU">последней пары </a>. А в
-    <a href="rubic-activity://ytactivity?time=4:54&link=4nSnsav3bIU">такой ситуации</a> и вовсе можно
+    <a href="rg2://ytplay?time=4:42&link=4nSnsav3bIU">последней пары </a>. А в
+    <a href="rg2://ytplay?time=4:54&link=4nSnsav3bIU">такой ситуации</a> и вовсе можно
     получить OLL Skip.<br/><br/>
 
-    <b>7. <a href="rubic-activity://ytactivity?time=4:56&link=4nSnsav3bIU">AUF</a></b> - Adjust Upper Face.
+    <b>7. <a href="rg2://ytplay?time=4:56&link=4nSnsav3bIU">AUF</a></b> - Adjust Upper Face.
     Установка верхней грани - установочные ходы для PLL алгоритмов, а также
     установка на свое место собранной верхней грани после PLL алгоритма. Обычно быстрее крутить верх,
     чем делать перехваты.<br/><br/>
 
-    <b>8. <a href="rubic-activity://ytactivity?time=5:21&link=4nSnsav3bIU">CFOP, Roux, ZZ</a></b><br/>
+    <b>8. <a href="rg2://ytplay?time=5:21&link=4nSnsav3bIU">CFOP, Roux, ZZ</a></b><br/>
     <b>CFOP</b> = Cross, F2L, OLL, PLL. Скоростной метод сборки, которым пользуется большинство спидкуберов.
     Так же известен как метод Джесики Фридрих. Как видно из названия состоит из последовательной
     сборки креста (Cross), первых двух слоев (F2L),
@@ -478,7 +478,7 @@
     отражены в видео.<br/>
     <b>ZZ</b> - еще один метод, суть котрого в первоначальном правильном ориентировании ребер.<br/><br/>
 
-    <b>9. <a href="rubic-activity://ytactivity?time=7:37&link=4nSnsav3bIU">COLL vs OLLCP</a></b><br/>
+    <b>9. <a href="rg2://ytplay?time=7:37&link=4nSnsav3bIU">COLL vs OLLCP</a></b><br/>
     <b>COLL</b> = Corners & OLL (углы и OLL),<br/>
     <b>OLLCP</b> = OLL & Corner Permutation (OLL и установка углов
     на свои места). Результат и тех и других алгоритмов одинаков - PLL с углами на своих местах,
@@ -487,35 +487,35 @@
     из третьей части данного видео, по 6 на каждую ситуацию минус 2 ситуации для HTB+ где их всего 4,
     всего получается 40 алгоритмов.<br/><br/>
 
-    <b>10. <a href="rubic-activity://ytactivity?time=8:51&link=4nSnsav3bIU">Metrics</a></b>
+    <b>10. <a href="rg2://ytplay?time=8:51&link=4nSnsav3bIU">Metrics</a></b>
     Метрики - различные варианты подсчета ходов.<br/>
-    <b><a href="rubic-activity://ytactivity?time=9:15&link=4nSnsav3bIU">STM</a></b>
+    <b><a href="rg2://ytplay?time=9:15&link=4nSnsav3bIU">STM</a></b>
     = Slice Turn Metric. Метрика в которой ходы среднего слоя (M, S) считаются как один ход.
-    Вот <a href="rubic-activity://ytactivity?time=9:23&link=4nSnsav3bIU">пример подсчета</a> STM
+    Вот <a href="rg2://ytplay?time=9:23&link=4nSnsav3bIU">пример подсчета</a> STM
     ходов для алгоритма <b>M2 U\' M U2 M\' U\' M2</b>.<br/>
-    <b><a href="rubic-activity://ytactivity?time=9:32&link=4nSnsav3bIU">HTM</a></b>
+    <b><a href="rg2://ytplay?time=9:32&link=4nSnsav3bIU">HTM</a></b>
     = Half Turn Metric. В HTM ходы среднего слоя считаются как 2 хода, т.е. как последовательные
     ходы боковых граней. Например тот же самый алгоритм <b>M2 U\' M U2 M\' U\' M2</b> в метрике HTM
     будет подсчитан как 11 ходов.<br/>
-    <b><a href="rubic-activity://ytactivity?time=9:53&link=4nSnsav3bIU">QTM</a></b>
+    <b><a href="rg2://ytplay?time=9:53&link=4nSnsav3bIU">QTM</a></b>
     = Quarter Turn Metric. В данной метрике поворот любой грани на 90 градусов означает один ход.
     Т.е. ход типа R2 или U2 в данной метрике будет считаться как 2 хода.<br/>
-    <b><a href="rubic-activity://ytactivity?time=9:53&link=4nSnsav3bIU">ETM</a></b>
+    <b><a href="rg2://ytplay?time=9:53&link=4nSnsav3bIU">ETM</a></b>
     = Execution Turn Metric. Тут все еще интереснее, как видно из названия,
     в данной метрике количество ходов зависит от того как вы исполняете данный алгоритм. Т.е.
     одно действие = один ход. Например если вы
-    <a href="rubic-activity://ytactivity?time=10:15&link=4nSnsav3bIU">делаете U2 так</a>,
-    то это 2 хода, а <a href="rubic-activity://ytactivity?time=10:18&link=4nSnsav3bIU">если так</a>,
+    <a href="rg2://ytplay?time=10:15&link=4nSnsav3bIU">делаете U2 так</a>,
+    то это 2 хода, а <a href="rg2://ytplay?time=10:18&link=4nSnsav3bIU">если так</a>,
     то один. Так же в ETM перехват куба считается за один ход.<br/><br/>
 
-    <b>11. <a href="rubic-activity://ytactivity?time=0:00&link=XhjQNdEaHJw">VLS</a></b>
+    <b>11. <a href="rg2://ytplay?time=0:00&link=XhjQNdEaHJw">VLS</a></b>
     Valk Last Slot - алгоритмы позволяющие решать OLL без постановки на место последней пары F2L.
     Называются так в честь разработчика и популяризатора этой методики Матса Валька (Mats Valk).
     Методика включает в себя порядка 200 алгоритмов. Поэтому для начала можно освоить
-    <b><a href="rubic-activity://ytactivity?time=0:20&link=XhjQNdEaHJw">Winter Variation</a></b>.
+    <b><a href="rg2://ytplay?time=0:20&link=XhjQNdEaHJw">Winter Variation</a></b>.
     Данные алгоритмы являются частью VLS и отличаются тем, что крест на верхней сторне уже собран
     и соответственно таких алгоритмов уже меньше - всего 27. И найти их
-    <a href="rubic-activity://ytactivity?time=0:00&link=rbRJWAH_pts">можно тут.</a><br/><br/>
+    <a href="rg2://ytplay?time=0:00&link=rbRJWAH_pts">можно тут.</a><br/><br/>
 
     </p>
 

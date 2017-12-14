@@ -57,13 +57,15 @@
     <string name="begin4_st1_title">Этап 1. Основные отличия от 3х3</string>
     <string name="begin4_st1_descr" formatted="false"><![CDATA[
         <p>Существует несколько методов сборки кубика Рубика для начинающих.
+        <a href="rg2://ytplay?time=8:16&link=ku-FyZvD48Q"><b>пиф-паф</b>.</a>
         </p>
     ]]></string>
-    <string name="begin4_st1_url"></string>
+    <string name="begin4_st1_url">ku-FyZvD48Q</string>
 
     <string name="begin4_st2_title">Этап 2. Нижний крест</string>
     <string name="begin4_st2_descr" formatted="false"><![CDATA[
         <p>На данном этапе обращаем внимание только на <b>ребра</b> кубика,
+        <a href="rg2://ytplay?time=8:16&link=ku-FyZvD48Q"><b>пиф-паф</b>.</a>
         </p>
     ]]></string>
     <string name="begin4_st2_url"></string>

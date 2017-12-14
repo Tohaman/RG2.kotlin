@@ -20,5 +20,7 @@
     <string name="pll_game">Угадай PLL</string>
     <string name="basic_moves">Основные движения</string>
     <string name="st_about">О программе</string>
+    <string name="pager_youtubetext">Ссылка на YouTube видео</string>
+    <string name="error_player">Ошибка инициализации YouTubePlayer (%1$s)</string>
 
 </resources>

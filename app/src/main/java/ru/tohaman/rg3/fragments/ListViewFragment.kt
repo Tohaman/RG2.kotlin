@@ -29,12 +29,12 @@ import ru.tohaman.rg3.activitys.SlidingTabsActivity
 
 
 /**
- * A simple [Fragment] subclass.
- * Activities that contain this fragment must implement the
+ * ListViewFragment - фрагмент в котором встроенный ListView
+ * отображает лист этапов определенной фазы
+ * Активити содержащая этот fragment должна имплементить
  * [ListViewFragment.OnFragmentInteractionListener] interface
- * to handle interaction events.
- * Use the [ListViewFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * для получения ответов от этого фрагмента.
+ * Для создания экземпляра фрагмента используйте [ListViewFragment.newInstance]
  */
 class ListViewFragment : ListFragment() {
     private var mPhase: String = "BEGIN"
