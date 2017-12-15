@@ -1,12 +1,15 @@
 package ru.tohaman.rg3.ui
 
+import android.graphics.Color
 import android.os.Build
 import android.view.View
+import android.widget.LinearLayout
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.linearLayout
 import org.jetbrains.anko.matchParent
 import org.jetbrains.anko.textView
 import ru.tohaman.rg3.AnkoComponentEx
+import ru.tohaman.rg3.R
 import ru.tohaman.rg3.ankoconstraintlayout.constraintLayout
 
 
@@ -18,10 +21,18 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() {
     override fun create(ui: AnkoContext<Fragment>): View = with(ui) {
         linearLayout {
             constraintLayout {
+                val leftpad = linearLayout { }
+                val rigthpad = linearLayout { }
                 val name = textView("David")
                 val surname = textView("Khol")
 
                 constraints {
+                    leftpad.connect( RIGHT to LEFT of rigthpad with 16.dp,
+                            TOPS of parentId with 16.dp,
+                            BOTTOMS of parentId with 8.dp,
+                            LEFTS of parentId with 16.dp
+                            )
+                    rigthpad.connect( )
                     name.connect(
                             STARTS of parentId with 16.dp,
                             TOPS of parentId with 16.dp
