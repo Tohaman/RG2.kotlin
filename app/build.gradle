@@ -39,6 +39,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     // Pagers sliding tabs https://github.com/astuetz/PagerSlidingTabStrip
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
-    // constraintlayout for anko https://github.com/AckeeCZ/anko-constraint-layout
-//    implementation 'cz.ackee:anko-constraint-layout:0.6.5'
+
 }

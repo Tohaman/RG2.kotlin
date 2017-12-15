@@ -10,7 +10,9 @@ import org.jetbrains.anko.*
 import ru.tohaman.rg3.listpager.ListPager
 
 /**
- * Created by anton on 27.11.17. Адаптер для listview
+ * Created by anton on 27.11.17. Адаптер для listview включает в себя сразу и UI
+ * хотя правильне наверно сделать в getView() return listUI()
+ * а ListUI сделать наследником AnkoComponentEx
  */
 
 class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m: Float = 1f) : BaseAdapter() {

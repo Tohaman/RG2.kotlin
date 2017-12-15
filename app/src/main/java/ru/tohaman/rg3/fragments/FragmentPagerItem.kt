@@ -28,6 +28,7 @@ import ru.tohaman.rg3.DeveloperKey.DEVELOPER_KEY
 import ru.tohaman.rg3.R
 import ru.tohaman.rg3.VIDEO_PREVIEW
 import ru.tohaman.rg3.listpager.ListPager
+import ru.tohaman.rg3.ui.FragmentPagerItemtUI
 
 class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener {
     // Константы для YouTubePlayer
@@ -38,7 +39,10 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
     var url:String = ""
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+        // Создаем Вью
         val view = FragmentPagerItemtUI<Fragment>().createView(AnkoContext.create(context, this))
+
         //Данные во фрагмент передаются через фабричный метод newInstance данного фрагмента
         val message = arguments.getString("title")
         val topImage = arguments.getInt("topImage")

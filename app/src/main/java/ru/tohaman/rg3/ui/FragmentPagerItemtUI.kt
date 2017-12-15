@@ -1,18 +1,20 @@
-package ru.tohaman.rg3.fragments
+package ru.tohaman.rg3.ui
 
 import android.graphics.Typeface
 import android.text.method.LinkMovementMethod
 import android.view.Gravity
 import android.widget.LinearLayout
 import org.jetbrains.anko.*
+import ru.tohaman.rg3.AnkoComponentEx
+import ru.tohaman.rg3.youTubeThumbnailView
 
 /**
  *  Класс для создания одного элемента PagerView для ViewPagerSlidingTab с помощью Anko
  */
 
-class FragmentPagerItemtUI<Fragment> : AnkoComponent<Fragment> {
+class FragmentPagerItemtUI<Fragment> : AnkoComponentEx<Fragment>() {
 
-    override fun createView(ui: AnkoContext<Fragment>) = with(ui) {
+    override fun create(ui: AnkoContext<Fragment>) = with(ui) {
         linearLayout {
             orientation = LinearLayout.VERTICAL
             gravity = Gravity.TOP
@@ -27,8 +29,8 @@ class FragmentPagerItemtUI<Fragment> : AnkoComponent<Fragment> {
 
                         imageView {
                             id = Ids.pagerImageView
-                            padding = dip(8)
-                        }.lparams(dip(80), dip(80))
+                            padding = 8.dp
+                        }.lparams(80.dp, 80.dp)
 
                         textView {
                             gravity = Gravity.CENTER
@@ -36,12 +38,12 @@ class FragmentPagerItemtUI<Fragment> : AnkoComponent<Fragment> {
                             //Если текст ниже селектабельный, то и этот тоже надо делать таким,
                             //иначе текст будет автоматом прокручиваться при открытии view
 //                            isSelectable = true
-                            textSize = 20f
+                            textSize = 20F
                             typeface = Typeface.DEFAULT_BOLD
-                            padding = dip(10)
+                            padding = 10.dp
 
                         }.lparams(matchParent, wrapContent)
-                    }.lparams(matchParent, wrapContent) {setMargins(dip(16), dip(10), dip(16), dip(10))}
+                    }.lparams(matchParent, wrapContent) {setMargins(16.dp, 10.dp, 16.dp, 10.dp)}
 
                     textView {
                         id = Ids.descriptionText
@@ -64,15 +66,15 @@ class FragmentPagerItemtUI<Fragment> : AnkoComponent<Fragment> {
                             id = Ids.youTubeTextView
                             movementMethod = LinkMovementMethod.getInstance()
                         }
-                    }.lparams(matchParent, dip(150)) {setMargins(dip(0), dip(8), dip(0), dip(8))}
+                    }.lparams(matchParent, 150.dp) {setMargins(0.dp, 8.dp, 0.dp, 8.dp)}
 
                     textView {
                         id = Ids.commentText
                         textSize = 16f
                         text = "Свой комментарий:"
-                    }.lparams(matchParent, wrapContent) {setMargins(dip(0), dip(8), dip(0), dip(32))}
+                    }.lparams(matchParent, wrapContent) {setMargins(0.dp, 8.dp, 0.dp, 32.dp)}
 
-                }.lparams(matchParent, wrapContent) {setMargins(dip(16), dip(0), dip(16), dip(0))}
+                }.lparams(matchParent, wrapContent) {setMargins(16.dp, 0.dp, 16.dp, 0.dp)}
             }.lparams(matchParent, wrapContent)
         }
     }
