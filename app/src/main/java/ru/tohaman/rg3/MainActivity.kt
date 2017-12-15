@@ -21,7 +21,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import org.jetbrains.anko.contentView
 import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.support.v4.toast
 import org.jetbrains.anko.toast
 import ru.tohaman.rg3.listpager.ListPagerLab
 import ru.tohaman.rg3.DebugTag.TAG
