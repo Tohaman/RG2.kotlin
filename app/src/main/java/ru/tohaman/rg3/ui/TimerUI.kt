@@ -1,8 +1,11 @@
 package ru.tohaman.rg3.ui
 
 import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Build
+import android.view.Gravity
 import android.view.View
+import android.view.ViewGroup
 import android.widget.LinearLayout
 import org.jetbrains.anko.*
 import ru.tohaman.rg3.AnkoComponentEx
@@ -16,26 +19,72 @@ import ru.tohaman.rg3.ankoconstraintlayout.constraintLayout
 class TimerUI<Fragment> : AnkoComponentEx<Fragment>() {
 
     override fun create(ui: AnkoContext<Fragment>): View = with(ui) {
+        //толщина рамки в dp
+        val m = 10
+        //высота верхней части
+        val h = 100
+        val w = 220
         linearLayout {
             constraintLayout {
-                val leftpad = linearLayout {
+                backgroundColor = getColorFromResourses(R.color.blue)
+
+                val leftPad = linearLayout {
+                    backgroundColor = getColorFromResourses(R.color.dark_gray)
+                }.lparams(0.dp,0.dp) {margin = m.dp}    //{setMargins(m.dp,m.dp,m.dp,m.dp)}
+                val rigthPad = linearLayout {
+                    backgroundColor = getColorFromResourses(R.color.dark_gray)
+                }.lparams(0.dp,0.dp) {margin = m.dp}    //{setMargins(m.dp,m.dp,m.dp,m.dp)}
+
+                val topLayout = linearLayout {
                     backgroundColor = getColorFromResourses(R.color.blue)
-                }.lparams(120.dp,120.dp)
-                val rigthpad = linearLayout {
-                    backgroundColor = getColorFromResourses(R.color.red)
-                }.lparams(120.dp,120.dp)
+                }.lparams(w.dp,h.dp)
+
+                val topInsideLayout = linearLayout {
+                    backgroundColor = getColorFromResourses(R.color.dark_gray)
+                }.lparams(0.dp,0.dp) {margin = m.dp}
+
+                val timeLayout = linearLayout {
+                    backgroundColor = getColorFromResourses(R.color.white)
+                    textView {
+                        text = "0:00:00"
+                        textSize = 24F
+                        padding = m.dp
+                        typeface = Typeface.MONOSPACE
+                        textColor = getColorFromResourses(R.color.black)
+                    }
+                }
 //                val name = textView("David")
 //                val surname = textView("Khol") {
 //                    textColor = Color.BLUE
 //                }
 
                 constraints {
-                    leftpad.connect( RIGHT to LEFT of rigthpad with 16.dp,
-                            TOPS of parentId with 16.dp,
-                            BOTTOMS of parentId with 8.dp,
-                            LEFTS of parentId with 16.dp
-                            )
-                    rigthpad.connect( BOTTOMS of parentId with 20.dp, LEFTS of parentId with 20.dp)
+                    val layouts = arrayOf (leftPad,rigthPad)
+                    layouts.chainSpreadInside(RIGHT of parentId,LEFT of parentId)
+
+                    leftPad.connect(LEFTS of parentId,
+                            TOPS of parentId,
+                            RIGHT to LEFT of rigthPad,
+                            BOTTOMS of parentId
+                    )
+                    rigthPad.connect( LEFT to RIGHT of leftPad,
+                            TOPS of parentId,
+                            RIGHTS of parentId,
+                            BOTTOMS of parentId
+                    )
+                    topLayout.connect(RIGHTS of parentId,
+                            TOPS of parentId,
+                            LEFTS of parentId)
+
+                    topInsideLayout.connect(RIGHTS of topLayout,
+                            TOPS of topLayout,
+                            LEFTS of topLayout,
+                            BOTTOMS of topLayout)
+
+                    timeLayout.connect(RIGHTS of topLayout,
+                            TOPS of topLayout,
+                            LEFTS of topLayout,
+                            BOTTOMS of topLayout)
 //                    name.connect(
 //                            STARTS of parentId with 16.dp,
 //                            TOPS of parentId with 16.dp
