@@ -53,10 +53,10 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() {
                         textColor = getColorFromResourses(R.color.black)
                     }
                 }
-//                val name = textView("David")
-//                val surname = textView("Khol") {
-//                    textColor = Color.BLUE
-//                }
+
+                val leftCircle = imageView (R.drawable.timer_circle){
+
+                }
 
                 constraints {
                     val layouts = arrayOf (leftPad,rigthPad)
@@ -85,14 +85,8 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() {
                             TOPS of topLayout,
                             LEFTS of topLayout,
                             BOTTOMS of topLayout)
-//                    name.connect(
-//                            STARTS of parentId with 16.dp,
-//                            TOPS of parentId with 16.dp
-//                    )
-//                    surname.connect(
-//                            TOP to BOTTOM of name,
-//                            STARTS of name
-//                    )
+
+                    leftCircle.connect( LEFTS of timeLayout)
                 }
             }.lparams(matchParent, matchParent)
         }
