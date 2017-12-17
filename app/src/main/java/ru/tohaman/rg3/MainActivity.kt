@@ -82,12 +82,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 curPhase = "G2F"
                 fragListView.changePhase(curPhase, this)
             } else {
-            if (back_pressed_time + 1000 > System.currentTimeMillis()) {
-                super.onBackPressed()
-            } else {
-                toast("Нажмите еще раз для выхода")
-                back_pressed_time = System.currentTimeMillis()
-            }
+                if (back_pressed_time + 1000 > System.currentTimeMillis()) {
+                    super.onBackPressed()
+                } else {
+                    toast("Нажмите еще раз для выхода")
+                    back_pressed_time = System.currentTimeMillis()
+                }
             }
         }
     }
