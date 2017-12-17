@@ -47,8 +47,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         mListPagerLab = ListPagerLab.get(this)
         Log.v (TAG, "MainActivity CreateView")
         setContentView(R.layout.activity_main)
-        setSupportActionBar(maintoolbar)
 
+        fragTimer = FragmentTimer()
+        curPhase = loadStartPhase()
+        fragListView = ListViewFragment.newInstance("BEGIN")
+        val transaction : FragmentTransaction? = supportFragmentManager.beginTransaction()
+        when (curPhase) {
+            "TIMER" -> {transaction?.replace(R.id.frame_container, fragTimer)?.commit()}
+            else -> { setPhase(curPhase) }
+        }
+
+
+        nav_view.setNavigationItemSelectedListener(this)
         fab.setOnClickListener { view ->
             if (curPhase == "G2F_NEXT") {
                 curPhase = "G2F"
@@ -57,21 +67,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 drawer_layout.openDrawer(GravityCompat.START)
             }
         }
-
+        setSupportActionBar(maintoolbar)
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, maintoolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
-
-        fragTimer = FragmentTimer()
-
-        curPhase = loadStartPhase()
-        fragListView = ListViewFragment.newInstance(curPhase)
-        val transaction : FragmentTransaction? = supportFragmentManager.beginTransaction()
-        transaction?.replace(R.id.frame_container, fragListView)?.commit()
-
-        nav_view.setNavigationItemSelectedListener(this)
-
     }
 
     override fun onBackPressed() {
@@ -136,6 +136,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.timer -> {
                 val transaction: FragmentTransaction? = supportFragmentManager.beginTransaction()
                 transaction?.replace(R.id.frame_container, fragTimer)?.commit()
+                saveStartPhase("TIMER")
             }
             R.id.scramble -> {
                 Snackbar.make(contentView!!, "Генератор скрамблов пока недоступен", Snackbar.LENGTH_LONG)
