@@ -42,8 +42,8 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener{
         //толщина рамки в dp
         val m = 10.dp
         //высота верхней части
-        val h = 100.dp
-        val w = 220.dp
+        var h = 100.dp
+        var w = 220.dp
         //размер контрольных кружков рядом со временем
         val circleSize = 20.dp
         //размер текста таймера
@@ -58,9 +58,9 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener{
         when (screenSize) {
             SCREENLAYOUT_SIZE_SMALL -> {}
             SCREENLAYOUT_SIZE_NORMAL -> {}
-            SCREENLAYOUT_SIZE_LARGE -> {}
-            //SCREENLAYOUT_SIZE_XLARGE
-            else -> {handSize = 120.dp}
+            SCREENLAYOUT_SIZE_LARGE -> {handSize = 120.dp; h = 150; w = 330}
+            //SCREENLAYOUT_SIZE_XLARGE и может быть когда-то и больше
+            else -> {handSize = 150.dp; h = 180; w = 380}
         }
         Log.v (TAG, "TimerUI create start with ScreenSize = $screenSize")
         linearLayout {
