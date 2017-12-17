@@ -78,8 +78,8 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener{
                 rightPad.setOnTouchListener(this@TimerUI)
 
                 if (oneHandToStart) {
-                    leftPad.lparams(0,0) {setMargins(0,m,0,m)}
-                    rightPad.lparams(0,0) {setMargins(0,m,0,m)}
+                    leftPad.lparams(0,0) {setMargins(m,m,0,m)}
+                    rightPad.lparams(0,0) {setMargins(0,m,m,m)}
                 }
 
                 topLayout = linearLayout {
