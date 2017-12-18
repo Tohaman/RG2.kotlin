@@ -30,6 +30,8 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener{
     private lateinit var rightCircle: ImageView
     private lateinit var textTime: TextView
 
+//    val runnable = Runnable { StartTimer() }
+
     private var startTime: Long = 0
     private var reset_pressed_time: Long = 0
     private var leftHandDown = false
@@ -171,15 +173,18 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener{
         val action = event!!.action
         when (v?.id) {
             leftPad.id -> {
+                //что-то сделали с левой панелью
 //                Log.v (TAG, "TimerUI leftPad.action = $action TimerReady = $timerReady TimerStart = $timerStart")
                 val icon = ContextCompat.getDrawable(context, R.drawable.timer_circle)
                 leftHandDown = onTouchAction(leftHandDown, rightHandDown, action, leftCircle)
             }
             rightPad.id -> {
+                //что-то сделали с правой панелью
 //                Log.v (TAG, "TimerUI rightPad.action = $action TimerReady = $timerReady TimerStart = $timerStart")
                 rightHandDown = onTouchAction(rightHandDown, leftHandDown, action, rightCircle)
             }
             topLayout.id -> {
+                //нажали или отпустили панель таймера
 //                Log.v (TAG, "TimerUI topLayout.action = $action TimerReady = $timerReady TimerStart = $timerStart")
                 if (action == MotionEvent.ACTION_DOWN) {
                     if (reset_pressed_time + 300 > System.currentTimeMillis()) {
@@ -193,6 +198,7 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener{
         return true
     }
 
+    // на входе состояние нажатий лев и прав панели, на выходе текущее состояние в зависимости от action Up или Down
     private fun onTouchAction(first_hand: Boolean, second_hand: Boolean, action: Int, handLight: ImageView): Boolean {
         //true если хоть что-то из этого true
         val sec_hand = second_hand or oneHandToStart
@@ -229,7 +235,7 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener{
     fun setCircleColor(handLight: ImageView, colorId: Int) {
         val icon = ContextCompat.getDrawable(context, R.drawable.timer_circle)
         DrawableCompat.setTint(icon, getColorFromResourses(colorId))
-        //красим кружки, только текущий или оба в зависимости от одно или двурукого управления
+        //красим кружки, только текущий или оба в зависимости от одно- или дву-рукого управления
         if (oneHandToStart) {
             leftCircle.setImageDrawable(icon)
             rightCircle.setImageDrawable(icon)
