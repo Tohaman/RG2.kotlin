@@ -26,6 +26,7 @@ import ru.tohaman.rg3.listpager.ListPagerLab
 import ru.tohaman.rg3.DebugTag.TAG
 import ru.tohaman.rg3.activitys.SlidingTabsActivity
 import ru.tohaman.rg3.fragments.FragmentTimer
+import ru.tohaman.rg3.fragments.FragmentTimerSettings
 import ru.tohaman.rg3.fragments.ListViewFragment
 import ru.tohaman.rg3.listpager.ListPager
 
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         Log.v (TAG, "MainActivity CreateView")
         setContentView(R.layout.activity_main)
 
-        fragTimer = FragmentTimer()
+        fragTimer = FragmentTimerSettings()
         curPhase = loadStartPhase()
         fragListView = ListViewFragment.newInstance("BEGIN")
         val transaction : FragmentTransaction? = supportFragmentManager.beginTransaction()

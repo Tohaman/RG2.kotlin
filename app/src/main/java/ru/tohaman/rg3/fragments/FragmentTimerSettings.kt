@@ -7,15 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import org.jetbrains.anko.*
-import ru.tohaman.rg3.ui.TimerUI
+import ru.tohaman.rg3.ui.TimerSettingsUI
 
 
-class FragmentTimer : Fragment() {
+class FragmentTimerSettings : Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return TimerUI<Fragment>().createView(AnkoContext.create(context, this))
+        return TimerSettingsUI<Fragment>().createView(AnkoContext.create(context, this))
     }
 
 }

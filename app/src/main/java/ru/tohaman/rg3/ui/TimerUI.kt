@@ -4,6 +4,7 @@ import android.content.res.Configuration
 import android.content.res.Configuration.*
 import android.graphics.Typeface
 import android.os.Build
+import android.os.Handler
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.util.Log
@@ -22,7 +23,8 @@ import ru.tohaman.rg3.ankoconstraintlayout.constraintLayout
 /**
  * Created by Test on 15.12.2017. Интерфейс таймера
  */
-class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener{
+class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener {
+
     private lateinit var leftPad: LinearLayout
     private lateinit var rightPad: LinearLayout
     private lateinit var topLayout: LinearLayout
@@ -30,7 +32,13 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener{
     private lateinit var rightCircle: ImageView
     private lateinit var textTime: TextView
 
-//    val runnable = Runnable { StartTimer() }
+    private var timerRunnable: Runnable = object : Runnable {
+
+        override fun run() {
+            ShowTimerTime()
+            timerHandler.postDelayed(this, 30)
+        }
+    }
 
     private var startTime: Long = 0
     private var reset_pressed_time: Long = 0
@@ -38,7 +46,7 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener{
     private var rightHandDown = false
     private var timerReady = false
     private var timerStart = false
-    private var oneHandToStart = true       //управление таймером одной рукой? или для старта надо положить обе
+    private var oneHandToStart = true      //управление таймером одной рукой? или для старта надо положить обе
 
     override fun create(ui: AnkoContext<Fragment>): View = with(ui) {
         //толщина рамки в dp
@@ -64,6 +72,7 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener{
             //SCREENLAYOUT_SIZE_XLARGE и может быть когда-то и больше
             else -> {handSize = 150.dp; h = 180; w = 380}
         }
+
         Log.v (TAG, "TimerUI create start with ScreenSize = $screenSize")
         linearLayout {
             constraintLayout {
@@ -96,7 +105,6 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener{
                 val timeLayout = linearLayout {
                     backgroundColor = getColorFromResourses(R.color.white)
                     textTime = textView {
-                        id = Ids.textTimer
                         text = "0:00:00"
                         textSize = timerTextSize
                         padding = m
@@ -252,6 +260,8 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener{
 
     fun StopTimer() {
         Log.v (TAG, "TimerUI StopTimer")
+        ShowTimerTime()
+        timerHandler.removeCallbacks(timerRunnable)
         timerStart = false
         timerReady = false
     }
@@ -260,6 +270,28 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener{
         Log.v (TAG, "TimerUI StartTimer")
         timerStart = true                      // поставили признак, что таймер запущен
         timerReady = false                     // сняли "готовость" таймера
+        startTime = System.currentTimeMillis()
+        timerHandler.postDelayed(timerRunnable, 0)
+    }
+
+
+    private fun ShowTimerTime() {
+        val curtime = System.currentTimeMillis() - startTime
+        val millis = ((curtime % 1000) / 10).toInt()             // сотые доли секунды
+        var seconds = (curtime / 1000).toInt()
+        var minutes = seconds / 60
+        seconds %= 60
+        if (minutes > 9) {
+            startTime += 600000; minutes = 0
+        }
+        textTime.text = String.format("%d:%02d:%02d", minutes, seconds, millis)
+    }
+
+
+    object timerHandler : Handler() {
+        override fun handleMessage(msg: android.os.Message) {
+            // обновляем TextView
+        }
     }
 
     fun getColorFromResourses (colorRes:Int):Int {
@@ -270,9 +302,4 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener{
             context.resources.getColor(colorRes)
         }
     }
-
-    object Ids {
-        val textTimer = 1
-    }
-
 }
