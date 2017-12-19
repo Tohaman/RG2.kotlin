@@ -15,12 +15,11 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import org.jetbrains.anko.*
-import ru.tohaman.rg3.AnkoComponentEx
 import ru.tohaman.rg3.DebugTag.TAG
-import ru.tohaman.rg3.R
 import ru.tohaman.rg3.ankoconstraintlayout.constraintLayout
 import android.media.SoundPool
 import android.media.AudioManager
+import ru.tohaman.rg3.*
 
 
 /**
@@ -76,14 +75,14 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener, So
         }
 
         var sp = PreferenceManager.getDefaultSharedPreferences(context)
-        oneHandToStart = sp.getBoolean("oneHandTimer", false)
-        metronomEnabled = sp.getBoolean("metronomEnabled", true)
-        metronomTime = sp.getInt("metronomTime", 80)
+        oneHandToStart = sp.getBoolean(ONE_HAND_TO_START, false)
+        metronomEnabled = sp.getBoolean(METRONOM_ENABLED, true)
+        metronomTime = sp.getInt(METRONOM_TIME, 80)
 
         spl = SoundPool(MAX_STREAMS, AudioManager.STREAM_MUSIC, 0)
         spl.setOnLoadCompleteListener(this@TimerUI)
 
-        soundIdTick = spl.load(context, R.raw.metronom2, 1)
+        soundIdTick = spl.load(context, R.raw.metronom, 1)
         Log.d(TAG, "soundIdTick = " + soundIdTick)
 
         Log.v (TAG, "TimerUI create start with ScreenSize = $screenSize")
@@ -275,13 +274,9 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener, So
 
     private var soundRunnable: Runnable = object : Runnable {
         override fun run() {
-            playTick()
-            TimerHandler.postDelayed(this, 500)
+            spl.play(soundIdTick, 1F, 1F, 0, 0, 1F)
+            TimerHandler.postDelayed(this, (60000/metronomTime).toLong())
         }
-    }
-
-    private fun playTick() {
-        spl.play(soundIdTick, 1F, 1F, 0, 0, 1F)
     }
 
     private fun timerReset() {
@@ -304,8 +299,8 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener, So
         timerStart = true                      // поставили признак, что таймер запущен
         timerReady = false                     // сняли "готовость" таймера
         startTime = System.currentTimeMillis()
-        TimerHandler.post(timerRunnable)  //запускам хэндлер, аналогично .postDelayed(timerRunnable, 0)
-        TimerHandler.post(soundRunnable)  //запускам хэндлер, аналогично .postDelayed(timerRunnable, 0)
+        TimerHandler.post(timerRunnable)  //запускам хэндлер для отбражения времени, аналогично .postDelayed(timerRunnable, 0)
+        if (metronomEnabled) {TimerHandler.post(soundRunnable)}  //запускам хэндлер для метронома
     }
 
     private fun showTimerTime() {

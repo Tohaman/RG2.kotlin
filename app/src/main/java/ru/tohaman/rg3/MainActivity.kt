@@ -34,6 +34,9 @@ import ru.tohaman.rg3.listpager.ListPager
 const val EXTRA_ID = "ru.tohaman.rubicsguide.PHASE_ID"
 const val RUBIC_PHASE = "ru.tohaman.rubicsguide.PHASE"
 const val VIDEO_PREVIEW = "video_preview"   //наименования ключа для сохранения/извлечения значения из файла настроек
+const val ONE_HAND_TO_START = "oneHandToStart"
+const val METRONOM_ENABLED = "metronomEnabled"
+const val METRONOM_TIME = "metronomTime"
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, ListViewFragment.OnFragmentInteractionListener {
     private lateinit var fragListView: ListViewFragment

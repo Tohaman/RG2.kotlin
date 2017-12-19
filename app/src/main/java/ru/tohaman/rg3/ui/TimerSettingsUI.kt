@@ -1,6 +1,5 @@
 package ru.tohaman.rg3.ui
 
-import android.graphics.Paint
 import android.os.Build
 import android.preference.PreferenceManager
 import android.util.Log
@@ -9,10 +8,8 @@ import android.view.View
 import android.widget.LinearLayout
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onClick
-import org.jetbrains.anko.sdk25.coroutines.onCheckedChange
-import ru.tohaman.rg3.AnkoComponentEx
+import ru.tohaman.rg3.*
 import ru.tohaman.rg3.DebugTag.TAG
-import ru.tohaman.rg3.R
 import ru.tohaman.rg3.activitys.TimerActivity
 import ru.tohaman.rg3.ankoconstraintlayout.constraintLayout
 
@@ -21,23 +18,27 @@ import ru.tohaman.rg3.ankoconstraintlayout.constraintLayout
  * Created by Test on 15.12.2017. Интерфейс таймера
  */
 class TimerSettingsUI<Fragment> : AnkoComponentEx<Fragment>() {
-    var oneHandTimer : Boolean = false
 
     override fun create(ui: AnkoContext<Fragment>): View = with(ui) {
         Log.v (TAG, "TimerSettingsUI create start")
         val m = 16.dp
-        oneHandTimer = loadTimerOneHandSettings()
+        val sp = PreferenceManager.getDefaultSharedPreferences(context)
+        var oneHandToStart = sp.getBoolean(ONE_HAND_TO_START, false)
+        var metronomEnabled = sp.getBoolean(METRONOM_ENABLED, true)
+        var metronomTime = sp.getInt(METRONOM_TIME, 80)
+
         linearLayout {
             gravity = Gravity.CENTER
             constraintLayout {
                 val oneHandCheckBox = checkBox {
                     text = "Управление таймером одной рукой"
                     textSize = 16F
-                    isChecked = oneHandTimer
+                    isChecked = oneHandToStart
                 }.lparams(wrapContent,wrapContent)
                 val metronom = checkBox {
                     text = "Метроном"
                     textSize = 24F
+                    isChecked = metronomEnabled
                 }
                 val metronomText = textView {
                     text = "Частота метронома (тактов в минуту)"
@@ -47,10 +48,23 @@ class TimerSettingsUI<Fragment> : AnkoComponentEx<Fragment>() {
                     gravity = Gravity.CENTER
                     val buttonMinus = button ("-")
                     val textHz = textView {
-                        text = "80"
+                        text = metronomTime.toString()
                         textSize = 24F
-                    }.lparams() {margin = m}
+                    }.lparams {margin = m}
                     val buttonPlus = button ("+")
+
+                    buttonMinus.onClick {
+                        metronomTime--
+                        if (metronomTime < 1) {metronomTime = 1}
+                        saveInt2SP(metronomTime,METRONOM_TIME)
+                        textHz.text = metronomTime.toString()
+                    }
+                    buttonPlus.onClick {
+                        metronomTime++
+                        if (metronomTime > 240) {metronomTime = 240}
+                        saveInt2SP(metronomTime,METRONOM_TIME)
+                        textHz.text = metronomTime.toString()
+                    }
                 }.lparams(0,wrapContent)
 
                 val startButton = button {
@@ -59,9 +73,15 @@ class TimerSettingsUI<Fragment> : AnkoComponentEx<Fragment>() {
                     textSize = 30F
                     padding = 20.dp
                 }.lparams(0,wrapContent)
+
                 startButton.onClick { startActivity<TimerActivity>() }
+
                 oneHandCheckBox.setOnCheckedChangeListener { _, isChecked ->
-                    saveTimerOneHandSettings(isChecked)
+                    saveBoolean2SP(isChecked, ONE_HAND_TO_START)
+                }
+
+                metronom.setOnCheckedChangeListener { _, isChecked ->
+                    saveBoolean2SP(isChecked, METRONOM_ENABLED)
                 }
 
                 constraints {
@@ -87,18 +107,19 @@ class TimerSettingsUI<Fragment> : AnkoComponentEx<Fragment>() {
         }
     }
 
-    fun saveTimerOneHandSettings(bool : Boolean) {
+    fun saveBoolean2SP(bool : Boolean, st : String) {
         val sp = PreferenceManager.getDefaultSharedPreferences(context)
         val editor = sp.edit()
-        editor.putBoolean("oneHandTimer", bool)
+        editor.putBoolean(st, bool)
         editor.apply() // подтверждаем изменения
     }
 
-    fun loadTimerOneHandSettings():Boolean {
+    fun saveInt2SP(int : Int, st : String) {
         val sp = PreferenceManager.getDefaultSharedPreferences(context)
-        return sp.getBoolean("oneHandTimer", false)
+        val editor = sp.edit()
+        editor.putInt(st, int)
+        editor.apply() // подтверждаем изменения
     }
-
 
     private fun getColorFromResources(colorRes:Int):Int {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
