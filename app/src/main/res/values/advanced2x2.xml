@@ -35,7 +35,7 @@
 
     <string name="adv2x2_st2_title">Этап 2. OLL 2x2</string>
     <string name="adv2x2_st2_descr" formatted="false"><![CDATA[
-        <p>Второй этап так же делается в один алгоритм.</p>
+        <p>OLL для 2х2.</p>
     ]]></string>
     <string name="adv2x2_st2_url">8VCsFNFa5yM</string>
 

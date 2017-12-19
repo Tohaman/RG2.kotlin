@@ -5,6 +5,7 @@ import android.content.res.Configuration.*
 import android.graphics.Typeface
 import android.os.Build
 import android.os.Handler
+import android.preference.PreferenceManager
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.util.Log
@@ -18,12 +19,14 @@ import ru.tohaman.rg3.AnkoComponentEx
 import ru.tohaman.rg3.DebugTag.TAG
 import ru.tohaman.rg3.R
 import ru.tohaman.rg3.ankoconstraintlayout.constraintLayout
+import android.media.SoundPool
+import android.media.AudioManager
 
 
 /**
  * Created by Test on 15.12.2017. Интерфейс таймера
  */
-class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener {
+class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener, SoundPool.OnLoadCompleteListener {
 
     private lateinit var leftPad: LinearLayout
     private lateinit var rightPad: LinearLayout
@@ -32,13 +35,10 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener {
     private lateinit var rightCircle: ImageView
     private lateinit var textTime: TextView
 
-    private var timerRunnable: Runnable = object : Runnable {
+    val MAX_STREAMS = 2
+    lateinit var spl: SoundPool
+    var soundIdTick: Int = 0
 
-        override fun run() {
-            ShowTimerTime()
-            timerHandler.postDelayed(this, 30)
-        }
-    }
 
     private var startTime: Long = 0
     private var reset_pressed_time: Long = 0
@@ -47,6 +47,8 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener {
     private var timerReady = false
     private var timerStart = false
     private var oneHandToStart = true      //управление таймером одной рукой? или для старта надо положить обе
+    private var metronomEnabled = true
+    private var metronomTime = 80
 
     override fun create(ui: AnkoContext<Fragment>): View = with(ui) {
         //толщина рамки в dp
@@ -70,46 +72,56 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener {
             SCREENLAYOUT_SIZE_NORMAL -> {}
             SCREENLAYOUT_SIZE_LARGE -> {handSize = 120.dp; h = 150; w = 330}
             //SCREENLAYOUT_SIZE_XLARGE и может быть когда-то и больше
-            else -> {handSize = 150.dp; h = 180; w = 380}
+            else -> {handSize = 150.dp; h = 220; w = 420}
         }
+
+        var sp = PreferenceManager.getDefaultSharedPreferences(context)
+        oneHandToStart = sp.getBoolean("oneHandTimer", false)
+        metronomEnabled = sp.getBoolean("metronomEnabled", true)
+        metronomTime = sp.getInt("metronomTime", 80)
+
+        spl = SoundPool(MAX_STREAMS, AudioManager.STREAM_MUSIC, 0)
+        spl.setOnLoadCompleteListener(this@TimerUI)
+
+        soundIdTick = spl.load(context, R.raw.metronom2, 1)
+        Log.d(TAG, "soundIdTick = " + soundIdTick)
 
         Log.v (TAG, "TimerUI create start with ScreenSize = $screenSize")
         linearLayout {
             constraintLayout {
-                backgroundColor = getColorFromResourses(R.color.blue)
+                backgroundColor = getColorFromResources(R.color.blue)
 
-                leftPad = linearLayout {
-                    backgroundColor = getColorFromResourses(R.color.dark_gray)
-                }.lparams(0,0) {margin = m}    //{setMargins(m.dp,m.dp,m.dp,m.dp)}
+                leftPad = linearLayout { backgroundColor = getColorFromResources(R.color.dark_gray) }
                 leftPad.setOnTouchListener(this@TimerUI)
 
-                rightPad = linearLayout {
-                    backgroundColor = getColorFromResourses(R.color.dark_gray)
-                }.lparams(0,0) {margin = m}    //{setMargins(m.dp,m.dp,m.dp,m.dp)}
+                rightPad = linearLayout { backgroundColor = getColorFromResources(R.color.dark_gray) }
                 rightPad.setOnTouchListener(this@TimerUI)
 
                 if (oneHandToStart) {
                     leftPad.lparams(0,0) {setMargins(m,m,0,m)}
                     rightPad.lparams(0,0) {setMargins(0,m,m,m)}
+                } else {
+                    leftPad.lparams(0,0) {margin = m}    //{setMargins(m.dp,m.dp,m.dp,m.dp)}
+                    rightPad.lparams(0,0) {margin = m}    //{setMargins(m.dp,m.dp,m.dp,m.dp)}
                 }
 
                 topLayout = linearLayout {
-                    backgroundColor = getColorFromResourses(R.color.blue)
+                    backgroundColor = getColorFromResources(R.color.blue)
                 }.lparams(w,h)
                 topLayout.setOnTouchListener(this@TimerUI)
 
                 val topInsideLayout = linearLayout {
-                    backgroundColor = getColorFromResourses(R.color.dark_gray)
+                    backgroundColor = getColorFromResources(R.color.dark_gray)
                 }.lparams(0,0) {margin = m}
 
                 val timeLayout = linearLayout {
-                    backgroundColor = getColorFromResourses(R.color.white)
+                    backgroundColor = getColorFromResources(R.color.white)
                     textTime = textView {
-                        text = "0:00:00"
+                        text = context.getString(R.string.begin_timer_text)
                         textSize = timerTextSize
                         padding = m
                         typeface = Typeface.MONOSPACE
-                        textColor = getColorFromResourses(R.color.black)
+                        textColor = getColorFromResources(R.color.black)
                     }
                 }
 
@@ -196,7 +208,7 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener {
 //                Log.v (TAG, "TimerUI topLayout.action = $action TimerReady = $timerReady TimerStart = $timerStart")
                 if (action == MotionEvent.ACTION_DOWN) {
                     if (reset_pressed_time + 300 > System.currentTimeMillis()) {
-                        TimerReset()
+                        timerReset()
                     } else {
                         reset_pressed_time = System.currentTimeMillis()
                     }
@@ -218,7 +230,7 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener {
                     //если обе руки прикоснулись и таймер не статован, то значит таймер "готов"
                     (sec_hand and !timerStart) -> {timerReady = true}           //таймер готов к запуску
                     //если обе руки прикоснулись, а таймер был запущен, значит его надо остановить
-                    (sec_hand and timerStart) -> { StopTimer()}   //останавливаем таймер
+                    (sec_hand and timerStart) -> { stopTimer()}   //останавливаем таймер
                     //в противном случае,
                     else -> { /**ничего не делаем */ }
                 }
@@ -230,7 +242,7 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener {
             // если отпустили палец
             MotionEvent.ACTION_UP -> {
                 // Если таймер "готов", то запускаем таймер и
-                if (timerReady) { StartTimer() }
+                if (timerReady) { startTimer() }
                 // красим кружочек/чки готовности в красный
                 setCircleColor(handLight, R.color.red)
                 false       //вернем что текущая рука убрана
@@ -240,9 +252,9 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener {
         }
     }
 
-    fun setCircleColor(handLight: ImageView, colorId: Int) {
+    private fun setCircleColor(handLight: ImageView, colorId: Int) {
         val icon = ContextCompat.getDrawable(context, R.drawable.timer_circle)
-        DrawableCompat.setTint(icon, getColorFromResourses(colorId))
+        DrawableCompat.setTint(icon, getColorFromResources(colorId))
         //красим кружки, только текущий или оба в зависимости от одно- или дву-рукого управления
         if (oneHandToStart) {
             leftCircle.setImageDrawable(icon)
@@ -252,49 +264,64 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener {
         }
     }
 
-    private fun TimerReset() {
-        Log.v (TAG, "TimerUI TimerReset")
-        StopTimer()
-        textTime.text = "0:00:00"
+    private var timerRunnable: Runnable = object : Runnable {
+        override fun run() {
+            //выводим время на экран
+            showTimerTime()
+            //и планируем зауск себя через 30 милисекунд
+            TimerHandler.postDelayed(this, 30)
+        }
     }
 
-    fun StopTimer() {
-        Log.v (TAG, "TimerUI StopTimer")
-        ShowTimerTime()
-        timerHandler.removeCallbacks(timerRunnable)
+    private var soundRunnable: Runnable = object : Runnable {
+        override fun run() {
+            playTick()
+            TimerHandler.postDelayed(this, 500)
+        }
+    }
+
+    private fun playTick() {
+        spl.play(soundIdTick, 1F, 1F, 0, 0, 1F)
+    }
+
+    private fun timerReset() {
+        Log.v (TAG, "TimerUI timerReset")
+        stopTimer()
+        textTime.text = context.getString(R.string.begin_timer_text)
+    }
+
+    fun stopTimer() {
+        Log.v (TAG, "TimerUI stopTimer")
+        showTimerTime()
+        TimerHandler.removeCallbacks(timerRunnable)
+        TimerHandler.removeCallbacks(soundRunnable)
         timerStart = false
         timerReady = false
     }
 
-    fun StartTimer() {
-        Log.v (TAG, "TimerUI StartTimer")
+    fun startTimer() {
+        Log.v (TAG, "TimerUI startTimer")
         timerStart = true                      // поставили признак, что таймер запущен
         timerReady = false                     // сняли "готовость" таймера
         startTime = System.currentTimeMillis()
-        timerHandler.postDelayed(timerRunnable, 0)
+        TimerHandler.post(timerRunnable)  //запускам хэндлер, аналогично .postDelayed(timerRunnable, 0)
+        TimerHandler.post(soundRunnable)  //запускам хэндлер, аналогично .postDelayed(timerRunnable, 0)
     }
 
-
-    private fun ShowTimerTime() {
+    private fun showTimerTime() {
         val curtime = System.currentTimeMillis() - startTime
         val millis = ((curtime % 1000) / 10).toInt()             // сотые доли секунды
         var seconds = (curtime / 1000).toInt()
         var minutes = seconds / 60
         seconds %= 60
-        if (minutes > 9) {
+        if (minutes > 9) {  //если получилось больше 10 минут, то добавляем к начальному времени 10 мин.
             startTime += 600000; minutes = 0
         }
         textTime.text = String.format("%d:%02d:%02d", minutes, seconds, millis)
     }
 
 
-    object timerHandler : Handler() {
-        override fun handleMessage(msg: android.os.Message) {
-            // обновляем TextView
-        }
-    }
-
-    fun getColorFromResourses (colorRes:Int):Int {
+    private fun getColorFromResources(colorRes:Int):Int {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             context.resources.getColor(colorRes,null)
         } else {
@@ -302,4 +329,11 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener {
             context.resources.getColor(colorRes)
         }
     }
+
+    override fun onLoadComplete(soundPool: SoundPool?, sampleId: Int, status: Int) {
+        Log.d(TAG, "onLoadComplete, sampleId = $sampleId, status = $status")
+    }
+
+
+    object TimerHandler : Handler()
 }

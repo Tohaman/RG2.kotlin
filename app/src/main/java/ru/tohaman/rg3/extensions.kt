@@ -51,7 +51,3 @@ abstract class AnkoComponentEx<in T>: AnkoComponent<T> {
 inline fun ViewManager.youTubeThumbnailView (init: YouTubeThumbnailView.() -> Unit): YouTubeThumbnailView {
     return ankoView({ YouTubeThumbnailView(it) }, 0, init)
 }
-
-//inline fun ViewManager.constraintLayout (init: ConstraintLayout.() -> Unit): ConstraintLayout {
-//    return ankoView({ ConstraintLayout(it) }, 0, init)
-//}
