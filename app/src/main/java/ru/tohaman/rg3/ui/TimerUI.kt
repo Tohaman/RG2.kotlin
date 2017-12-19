@@ -88,12 +88,12 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener, So
         Log.v (TAG, "TimerUI create start with ScreenSize = $screenSize")
         linearLayout {
             constraintLayout {
-                backgroundColor = getColorFromResources(R.color.blue)
+                backgroundColorResource = R.color.blue
 
-                leftPad = linearLayout { backgroundColor = getColorFromResources(R.color.dark_gray) }
+                leftPad = linearLayout { backgroundColorResource = R.color.dark_gray }
                 leftPad.setOnTouchListener(this@TimerUI)
 
-                rightPad = linearLayout { backgroundColor = getColorFromResources(R.color.dark_gray) }
+                rightPad = linearLayout { backgroundColorResource = R.color.dark_gray }
                 rightPad.setOnTouchListener(this@TimerUI)
 
                 if (oneHandToStart) {
@@ -105,22 +105,22 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener, So
                 }
 
                 topLayout = linearLayout {
-                    backgroundColor = getColorFromResources(R.color.blue)
+                    backgroundColorResource = R.color.blue
                 }.lparams(w,h)
                 topLayout.setOnTouchListener(this@TimerUI)
 
                 val topInsideLayout = linearLayout {
-                    backgroundColor = getColorFromResources(R.color.dark_gray)
+                    backgroundColorResource = R.color.dark_gray
                 }.lparams(0,0) {margin = m}
 
                 val timeLayout = linearLayout {
-                    backgroundColor = getColorFromResources(R.color.white)
+                    backgroundColorResource = R.color.white
                     textTime = textView {
                         text = context.getString(R.string.begin_timer_text)
                         textSize = timerTextSize
                         padding = m
                         typeface = Typeface.MONOSPACE
-                        textColor = getColorFromResources(R.color.black)
+                        textColorResource = R.color.black
                     }
                 }
 

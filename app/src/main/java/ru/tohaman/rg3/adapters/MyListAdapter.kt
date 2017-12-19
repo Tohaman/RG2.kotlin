@@ -1,5 +1,6 @@
 package ru.tohaman.rg3.adapters
 
+import android.content.Context
 import android.graphics.Typeface
 import android.view.Gravity
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.LinearLayout.HORIZONTAL
 import org.jetbrains.anko.*
+import ru.tohaman.rg3.R
 import ru.tohaman.rg3.listpager.ListPager
 
 /**
@@ -16,7 +18,12 @@ import ru.tohaman.rg3.listpager.ListPager
  */
 
 class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m: Float = 1f) : BaseAdapter() {
+    lateinit var context: Context
+    val Int.dp: Int get() = this.dpf.toInt()
+    val Int.dpf: Float get() = this * context.resources.displayMetrics.density
+
     override fun getView(i: Int, v: View?, parent: ViewGroup?): View {
+        context = parent!!.context
         return with(parent!!.context) {
             when (list[0].phase) {
                 "BASIC" -> {
@@ -45,19 +52,16 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
                     linearLayout {
                         padding = dip(5)
                         orientation = HORIZONTAL
+                        gravity = Gravity.START
 
-                        imageView(taskNum).lparams(width = dip(40 * m), height = dip(40 * m)) {
-                            padding = dip(5)
-                        }
+                        imageView(taskNum) {
+                        }.lparams(dip(40 * m),dip(40 * m)) {margin = 5.dp}
 
                         textView {
                             text = list[i].title
                             textSize = m * 12f
-                            padding = dip(5)
-                            leftPadding = dip(20)
                             typeface = Typeface.DEFAULT_BOLD
-
-                        }
+                        }.lparams(matchParent, wrapContent) { setMargins(20.dp, 5.dp, 5.dp, 5.dp) }
                     }
                 }
             }

@@ -24,5 +24,6 @@
     <string name="error_player">Ошибка инициализации YouTubePlayer (%1$s)</string>
     <string name="begin_timer_text">0:00:00</string>
     <string name="action_help">Помощь</string>
+    <string name="st_thanks">Сказать спасибо</string>
 
 </resources>

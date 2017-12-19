@@ -152,7 +152,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Snackbar.make(contentView!!, "Игра пока недоступна", Snackbar.LENGTH_LONG)
                         .setAction("ОК", {}).show()
             }
+
             R.id.basic_move -> { setPhase("BASIC") }
+
+            R.id.thanks -> {
+                Snackbar.make(contentView!!, "Сказать спасибо!", Snackbar.LENGTH_LONG)
+                        .setAction("ОК", {}).show()
+            }
+            R.id.about -> {
+                Snackbar.make(contentView!!, "О программе", Snackbar.LENGTH_LONG)
+                        .setAction("ОК", {}).show()
+            }
+
 
         }
 

@@ -53,6 +53,10 @@
     <item android:title="@string/dopolnitelno">
         <menu>
             <item
+                android:id="@+id/thanks"
+                android:icon="@drawable/ic_menu_thanks"
+                android:title="@string/st_thanks"/>
+            <item
                 android:id="@+id/about"
                 android:icon="@drawable/ic_menu_about"
                 android:title="@string/st_about"/>
