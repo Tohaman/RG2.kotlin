@@ -113,7 +113,6 @@ open class _ConstraintSet : ConstraintSet() {
         if (weights != null && chainStyle == CHAIN_PACKED) {
             throw IllegalArgumentException("You may not use weights together with chainStyle CHAIN_PACKED")
         }
-        // TODO: 9. 9. 2017 david.khol: throw an exception when no view in the chain defines match_constraint
 
         if (begin.side in horizontal && end.side in horizontal) {
             createHorizontalChain(begin.viewId, begin.side, end.viewId, end.side, this, weights, chainStyle)

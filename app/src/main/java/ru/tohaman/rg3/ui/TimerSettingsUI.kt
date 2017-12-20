@@ -1,6 +1,5 @@
 package ru.tohaman.rg3.ui
 
-import android.os.Build
 import android.preference.PreferenceManager
 import android.util.Log
 import android.view.Gravity
@@ -23,8 +22,8 @@ class TimerSettingsUI<Fragment> : AnkoComponentEx<Fragment>() {
         Log.v (TAG, "TimerSettingsUI create start")
         val m = 16.dp
         val sp = PreferenceManager.getDefaultSharedPreferences(context)
-        var oneHandToStart = sp.getBoolean(ONE_HAND_TO_START, false)
-        var metronomEnabled = sp.getBoolean(METRONOM_ENABLED, true)
+        val oneHandToStart = sp.getBoolean(ONE_HAND_TO_START, false)
+        val metronomEnabled = sp.getBoolean(METRONOM_ENABLED, true)
         var metronomTime = sp.getInt(METRONOM_TIME, 80)
 
         linearLayout {
@@ -69,7 +68,7 @@ class TimerSettingsUI<Fragment> : AnkoComponentEx<Fragment>() {
 
                 val startButton = button {
                     text = "Запустить таймер"
-                    backgroundColor = getColorFromResources(R.color.colorAccent)
+                    backgroundColorResource = R.color.colorAccent
                     textSize = 30F
                     padding = 20.dp
                 }.lparams(0,wrapContent)
@@ -119,15 +118,6 @@ class TimerSettingsUI<Fragment> : AnkoComponentEx<Fragment>() {
         val editor = sp.edit()
         editor.putInt(st, int)
         editor.apply() // подтверждаем изменения
-    }
-
-    private fun getColorFromResources(colorRes:Int):Int {
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            context.resources.getColor(colorRes,null)
-        } else {
-            @Suppress("DEPRECATION")
-            context.resources.getColor(colorRes)
-        }
     }
 
 }

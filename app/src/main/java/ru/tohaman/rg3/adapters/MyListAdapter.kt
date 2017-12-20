@@ -14,7 +14,7 @@ import ru.tohaman.rg3.listpager.ListPager
 /**
  * Created by anton on 27.11.17. Адаптер для listview включает в себя сразу и UI
  * хотя правильне наверно сделать в getView() return listUI()
- * а ListUI сделать наследником AnkoComponentEx
+ * а ListUI сделать наследником AnkoComponentEx, пока это TODO
  */
 
 class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m: Float = 1f) : BaseAdapter() {
@@ -24,7 +24,7 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
 
     override fun getView(i: Int, v: View?, parent: ViewGroup?): View {
         context = parent!!.context
-        return with(parent!!.context) {
+        return with(context) {
             when (list[0].phase) {
                 "BASIC" -> {
                     val taskNum: Int = list[i].icon
@@ -39,7 +39,6 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
                             padding = dip(5)
                             rightPadding = dip(30)
                             typeface = Typeface.DEFAULT_BOLD
-
                         }
 
                         imageView(taskNum).lparams(height = dip(75)) {

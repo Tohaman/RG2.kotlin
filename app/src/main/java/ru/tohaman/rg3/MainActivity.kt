@@ -19,9 +19,8 @@ import com.google.android.youtube.player.YouTubeThumbnailLoader
 import com.google.android.youtube.player.YouTubeThumbnailView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
-import org.jetbrains.anko.contentView
-import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.*
+import org.jetbrains.anko.design.snackbar
 import ru.tohaman.rg3.listpager.ListPagerLab
 import ru.tohaman.rg3.DebugTag.TAG
 import ru.tohaman.rg3.activitys.SlidingTabsActivity
@@ -106,9 +105,23 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+        Log.v (TAG, "onOptionsItemSelected - curPhase - $curPhase")
         when (item.itemId) {
             R.id.action_help -> {
-                //TODO написать хелп к настройкам таймера и таймеру
+                when (curPhase) {
+                    "BEGIN2X2" -> {
+                        alert(getString(R.string.help_begin2x2)) { okButton { } }.show()
+                    }
+                    "ADV2X2" -> {
+                        alert(getString(R.string.help_adv2x2)) { okButton { } }.show()
+                    }
+                    "BEGIN" -> {
+                        alert(getString(R.string.help_begin)) { okButton { } }.show()
+                    }
+                    "TIMER" -> {
+                        alert(getString(R.string.help_timer)) { okButton { } }.show()
+                    }
+                }
                 return true}
             else -> return super.onOptionsItemSelected(item)
         }
@@ -128,14 +141,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.g2f -> { setPhase("G2F") }
 
             R.id.blind -> {
-                Snackbar.make(contentView!!, "Blind пока недоступен", Snackbar.LENGTH_LONG)
-                    .setAction("ОК", {}).show()
-
+                snackbar(contentView!!, "Blind пока недоступен","ОК") {/** Do something */}
             }
             R.id.blind_acc -> {
-                Snackbar.make(contentView!!, "Blind пока недоступен", Snackbar.LENGTH_LONG)
-                        .setAction("ОК", {}).show()
-
+                snackbar(contentView!!, "Blind пока недоступен","ОК") {/** Do something */}
             }
             R.id.begin4x4 -> { setPhase("BEGIN4X4")}
 
@@ -145,25 +154,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 saveStartPhase("TIMER")
             }
             R.id.scramble -> {
-                Snackbar.make(contentView!!, "Генератор скрамблов пока недоступен", Snackbar.LENGTH_LONG)
-                        .setAction("ОК", {}).show()
+                snackbar(contentView!!, "Генератор скрамблов пока недоступен","ОК") {/** Do something */}
             }
             R.id.pll_game -> {
-                Snackbar.make(contentView!!, "Игра пока недоступна", Snackbar.LENGTH_LONG)
-                        .setAction("ОК", {}).show()
+                snackbar(contentView!!, "Игра пока недоступна","ОК") {/** Do something */}
             }
 
             R.id.basic_move -> { setPhase("BASIC") }
 
             R.id.thanks -> {
-                Snackbar.make(contentView!!, "Сказать спасибо!", Snackbar.LENGTH_LONG)
-                        .setAction("ОК", {}).show()
+                snackbar(contentView!!, "Спасибо!","ОК") {/** Do something */}
             }
             R.id.about -> {
-                Snackbar.make(contentView!!, "О программе", Snackbar.LENGTH_LONG)
-                        .setAction("ОК", {}).show()
+                snackbar (contentView!!, "О программе", "OK") {/** Do something */}
             }
-
 
         }
 

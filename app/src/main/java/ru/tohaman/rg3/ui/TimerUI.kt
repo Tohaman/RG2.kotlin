@@ -192,7 +192,7 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener, So
         val action = event!!.action
         when (v?.id) {
             leftPad.id -> {
-                //что-то сделали с левой панелью
+                //что-то сделали (нажали или отпустили) с левой панелью
 //                Log.v (TAG, "TimerUI leftPad.action = $action TimerReady = $timerReady TimerStart = $timerStart")
                 val icon = ContextCompat.getDrawable(context, R.drawable.timer_circle)
                 leftHandDown = onTouchAction(leftHandDown, rightHandDown, action, leftCircle)
