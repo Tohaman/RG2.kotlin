@@ -3,6 +3,7 @@ package ru.tohaman.rg3
 import android.content.Context
 import android.os.Build
 import android.transition.TransitionManager
+import android.view.ContextThemeWrapper
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewManager
@@ -57,3 +58,11 @@ abstract class AnkoComponentEx<in T>: AnkoComponent<T> {
 inline fun ViewManager.youTubeThumbnailView (init: YouTubeThumbnailView.() -> Unit): YouTubeThumbnailView {
     return ankoView({ YouTubeThumbnailView(it) }, 0, init)
 }
+
+inline fun ViewManager.styledButton(styleRes: Int = 0, init: Button.() -> Unit): Button {
+    return ankoView({ if (styleRes == 0) Button(it) else Button(ContextThemeWrapper(it, styleRes), null, 0) }, 0) {
+        init()
+    }
+}
+
+inline fun ViewManager.styledButton(styleRes: Int = 0): Button = styledButton(styleRes) {}
