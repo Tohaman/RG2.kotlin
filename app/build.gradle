@@ -43,3 +43,8 @@ dependencies {
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
 
 }
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
