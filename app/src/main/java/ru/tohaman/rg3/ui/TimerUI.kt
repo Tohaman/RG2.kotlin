@@ -1,5 +1,6 @@
 package ru.tohaman.rg3.ui
 
+import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.content.res.Configuration.*
 import android.graphics.Typeface
@@ -25,7 +26,7 @@ import ru.tohaman.rg3.*
 /**
  * Created by Test on 15.12.2017. Интерфейс таймера
  */
-class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener, SoundPool.OnLoadCompleteListener {
+class TimerUI<in Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener, SoundPool.OnLoadCompleteListener {
 
     private lateinit var leftPad: LinearLayout
     private lateinit var rightPad: LinearLayout
@@ -49,6 +50,7 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener, So
     private var metronomEnabled = true
     private var metronomTime = 80
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun create(ui: AnkoContext<Fragment>): View = with(ui) {
         //толщина рамки в dp
         val m = 10.dp
@@ -74,7 +76,7 @@ class TimerUI<Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener, So
             else -> {handSize = 150.dp; h = 220; w = 420}
         }
 
-        var sp = PreferenceManager.getDefaultSharedPreferences(context)
+        val sp = PreferenceManager.getDefaultSharedPreferences(context)
         oneHandToStart = sp.getBoolean(ONE_HAND_TO_START, false)
         metronomEnabled = sp.getBoolean(METRONOM_ENABLED, true)
         metronomTime = sp.getInt(METRONOM_TIME, 80)

@@ -28,4 +28,5 @@
     <string name="azbuka_button">Выбрать азбуку</string>
     <string name="generate_button">Генерировать скрамбл</string>
     <string name="scram_waiting">Ищем подходящий скрамбл</string>
+    <string name="contentdescription">contentDescription</string>
 </resources>

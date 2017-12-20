@@ -14,7 +14,7 @@ import ru.tohaman.rg3.ankoconstraintlayout.constraintLayout
 /**
  * Created by Test on 15.12.2017. Интерфейс таймера
  */
-class ScrambleGenUI<Fragment> : AnkoComponentEx<Fragment>() {
+class ScrambleGenUI<in Fragment> : AnkoComponentEx<Fragment>() {
 
     override fun create(ui: AnkoContext<Fragment>): View = with(ui) {
         Log.v (TAG, "ScrambleGenUI create start")

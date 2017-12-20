@@ -16,7 +16,7 @@ import ru.tohaman.rg3.ankoconstraintlayout.constraintLayout
 /**
  * Created by Test on 15.12.2017. Интерфейс таймера
  */
-class TimerSettingsUI<Fragment> : AnkoComponentEx<Fragment>() {
+class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
 
     override fun create(ui: AnkoContext<Fragment>): View = with(ui) {
         Log.v (TAG, "TimerSettingsUI create start")

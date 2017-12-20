@@ -53,8 +53,8 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
         val mListPagers : List<ListPager> = arrayListOf()
         val db = this.readableDatabase
         val selectQuery = "SELECT * FROM $TABLE_NAME WHERE $PHASE = '$phase'"
-        val cursor = db.rawQuery(selectQuery, null)
-        try {
+        val curCursor = db.rawQuery(selectQuery, null)
+        curCursor.use { cursor ->
             if (cursor.count != 0) {
                 cursor.moveToFirst()
                 if (cursor.count > 0) {
@@ -66,8 +66,6 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
                     } while ((cursor.moveToNext()))
                 }
             }
-        } finally {
-            cursor.close()
         }
         return mListPagers
     }
@@ -76,8 +74,8 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
         var listPager: ListPager? = null
         val db = this.readableDatabase
         val selectQuery = "SELECT * FROM $TABLE_NAME WHERE $PHASE = '$phase' AND $ID = $id"
-        val cursor = db.rawQuery(selectQuery, null)
-        try {
+        val curCursor = db.rawQuery(selectQuery, null)
+        curCursor.use { cursor ->
             if (cursor.count != 0) {
                 cursor.moveToFirst()
                 listPager = ListPager(cursor.getString(cursor.getColumnIndex(PHASE)),
@@ -85,8 +83,6 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
                         cursor.getString(cursor.getColumnIndex(COMMENT))
                 )
             }
-        } finally {
-            cursor.close()
         }
         return listPager
     }

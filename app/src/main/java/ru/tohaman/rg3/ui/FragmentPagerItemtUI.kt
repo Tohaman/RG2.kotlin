@@ -12,7 +12,7 @@ import ru.tohaman.rg3.youTubeThumbnailView
  *  Класс для создания одного элемента PagerView для ViewPagerSlidingTab с помощью Anko
  */
 
-class FragmentPagerItemtUI<Fragment> : AnkoComponentEx<Fragment>() {
+class FragmentPagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
 
     override fun create(ui: AnkoContext<Fragment>) = with(ui) {
         linearLayout {

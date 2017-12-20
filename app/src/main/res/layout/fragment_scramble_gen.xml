@@ -15,6 +15,7 @@
 
         <Button
             android:id="@+id/button_azbuka"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -23,6 +24,7 @@
 
         <Button
             android:id="@+id/button_generate"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -158,7 +160,8 @@
                     android:horizontalSpacing="1dp"
                     android:verticalSpacing="1dp"
                     android:numColumns="12"
-                    android:stretchMode="columnWidth">
+                    android:stretchMode="columnWidth"
+                    tools:ignore="NestedScrolling">
                 </GridView>
 
                 <ProgressBar
