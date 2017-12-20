@@ -1,13 +1,12 @@
-package ru.tohaman.rg3.listpager
+package ru.tohaman.rg3.data
 
 import android.content.Context
 import org.jetbrains.anko.db.insert
 import ru.tohaman.rg3.R
-import ru.tohaman.rg3.database.BaseHelper
-import ru.tohaman.rg3.database.BaseHelper.Companion.COMMENT
-import ru.tohaman.rg3.database.BaseHelper.Companion.ID
-import ru.tohaman.rg3.database.BaseHelper.Companion.PHASE
-import ru.tohaman.rg3.database.BaseHelper.Companion.TABLE_NAME
+import ru.tohaman.rg3.data.BaseHelper.Companion.COMMENT
+import ru.tohaman.rg3.data.BaseHelper.Companion.ID
+import ru.tohaman.rg3.data.BaseHelper.Companion.PHASE
+import ru.tohaman.rg3.data.BaseHelper.Companion.TABLE_NAME
 import java.util.ArrayList
 
 /**
@@ -53,7 +52,7 @@ class ListPagerLab private constructor(context: Context){
             when (phaseArray) {
                 0 -> {listPagers.add(ListPager(phase, i, mTitles[i], resID.getResourceId(i, 0)))}
                 else -> {
-                    listPagers.add(ListPager(phase, i, mTitles[i], resID.getResourceId(i, 0),comment = context.resources.getStringArray(phaseArray)[i]))
+                    listPagers.add(ListPager(phase, i, mTitles[i], resID.getResourceId(i, 0), comment = context.resources.getStringArray(phaseArray)[i]))
                 }
             }
         }
@@ -69,7 +68,7 @@ class ListPagerLab private constructor(context: Context){
         for (i in mTitles.indices) {
             var mListPager = mDatabase.getListPagerFromBase(i, phase)
             if (mListPager == null) {
-                mListPager = ListPager(phase, i, mTitles[i], mIcon.getResourceId(i,0), mDescr.getResourceId(i,0), mUrl[i])
+                mListPager = ListPager(phase, i, mTitles[i], mIcon.getResourceId(i, 0), mDescr.getResourceId(i, 0), mUrl[i])
                 addListPager2Base(mListPager)
             } else {
                 mListPager.title = mTitles[i]
@@ -105,7 +104,7 @@ class ListPagerLab private constructor(context: Context){
 
     //возвращает из ListPagerLab один ListPager с заданными фазой и номером
     fun getPhaseItem(id: Int, phase: String): ListPager {
-        var mPagerList: ListPager = ListPager("",0)
+        var mPagerList: ListPager = ListPager("", 0)
         for (listPager in listPagers) {
             if ((phase == listPager.phase) and (id == listPager.id)) {
                 mPagerList = listPager

@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 
 import ru.tohaman.rg3.fragments.FragmentPagerItem
-import ru.tohaman.rg3.listpager.ListPager
+import ru.tohaman.rg3.data.ListPager
 
 /**
  *  Для примера, пока не используется, т.к. используется анонимный класс в SlidingTabActivity * A simple [Fragment] subclass.

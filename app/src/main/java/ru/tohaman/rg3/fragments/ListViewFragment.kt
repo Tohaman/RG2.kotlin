@@ -1,31 +1,22 @@
 package ru.tohaman.rg3.fragments
 
 import android.content.Context
-import android.net.Uri
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v4.app.ListFragment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
-import org.jetbrains.anko.support.v4.toast
 import ru.tohaman.rg3.DebugTag
 
 import ru.tohaman.rg3.R
 import ru.tohaman.rg3.adapters.MyListAdapter
-import ru.tohaman.rg3.listpager.ListPager
-import ru.tohaman.rg3.listpager.ListPagerLab
+import ru.tohaman.rg3.data.ListPager
+import ru.tohaman.rg3.data.ListPagerLab
 import java.util.ArrayList
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
-import android.view.Gravity
-import org.jetbrains.anko.backgroundColor
-import org.jetbrains.anko.frameLayout
-import ru.tohaman.rg3.EXTRA_ID
-import ru.tohaman.rg3.RUBIC_PHASE
-import ru.tohaman.rg3.activitys.SlidingTabsActivity
 
 
 /**

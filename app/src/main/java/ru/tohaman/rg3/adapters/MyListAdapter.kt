@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.LinearLayout.HORIZONTAL
 import org.jetbrains.anko.*
-import ru.tohaman.rg3.R
-import ru.tohaman.rg3.listpager.ListPager
+import ru.tohaman.rg3.data.ListPager
 
 /**
  * Created by anton on 27.11.17. Адаптер для listview включает в себя сразу и UI
@@ -72,7 +71,7 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
     }
 
     override fun getItemId(position: Int): Long {
-        return 0L
+        return position.toLong()
     }
 
     override fun getCount(): Int {

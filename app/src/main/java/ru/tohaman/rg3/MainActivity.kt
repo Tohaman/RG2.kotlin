@@ -1,11 +1,8 @@
 package ru.tohaman.rg3
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.design.widget.NavigationView
-import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction
 import android.support.v4.view.GravityCompat
@@ -14,20 +11,16 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import com.google.android.youtube.player.YouTubeInitializationResult
-import com.google.android.youtube.player.YouTubeThumbnailLoader
-import com.google.android.youtube.player.YouTubeThumbnailView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.design.snackbar
-import ru.tohaman.rg3.listpager.ListPagerLab
+import ru.tohaman.rg3.data.ListPagerLab
 import ru.tohaman.rg3.DebugTag.TAG
 import ru.tohaman.rg3.activitys.SlidingTabsActivity
-import ru.tohaman.rg3.fragments.FragmentTimer
+import ru.tohaman.rg3.fragments.FragmentScrambleGen
 import ru.tohaman.rg3.fragments.FragmentTimerSettings
 import ru.tohaman.rg3.fragments.ListViewFragment
-import ru.tohaman.rg3.listpager.ListPager
 
 // Статические переменные (верхнего уровня). Котлин в действии стр.77-78
 const val EXTRA_ID = "ru.tohaman.rubicsguide.PHASE_ID"
@@ -40,6 +33,7 @@ const val METRONOM_TIME = "metronomTime"
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, ListViewFragment.OnFragmentInteractionListener {
     private lateinit var fragListView: ListViewFragment
     private lateinit var fragTimer: Fragment
+    private lateinit var fragScrambleGen: Fragment
     private var back_pressed_time: Long = 0
     lateinit private var mListPagerLab: ListPagerLab
     private var curPhase: String = "BEGIN"
@@ -52,14 +46,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
 
         fragTimer = FragmentTimerSettings()
+        fragScrambleGen = FragmentScrambleGen ()
         curPhase = loadStartPhase()
         fragListView = ListViewFragment.newInstance("BEGIN")
         val transaction : FragmentTransaction? = supportFragmentManager.beginTransaction()
         when (curPhase) {
             "TIMER" -> {transaction?.replace(R.id.frame_container, fragTimer)?.commit()}
+            "SCRAMBLEGEN" -> {transaction?.replace(R.id.frame_container, fragScrambleGen)?.commit()}
             else -> { setPhase(curPhase) }
         }
-
 
         nav_view.setNavigationItemSelectedListener(this)
         fab.setOnClickListener { view ->
@@ -154,7 +149,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 saveStartPhase("TIMER")
             }
             R.id.scramble -> {
-                snackbar(contentView!!, "Генератор скрамблов пока недоступен","ОК") {/** Do something */}
+                val transaction: FragmentTransaction? = supportFragmentManager.beginTransaction()
+                transaction?.replace(R.id.frame_container, fragScrambleGen)?.commit()
+                saveStartPhase("SCRAMBLEGEN")
             }
             R.id.pll_game -> {
                 snackbar(contentView!!, "Игра пока недоступна","ОК") {/** Do something */}

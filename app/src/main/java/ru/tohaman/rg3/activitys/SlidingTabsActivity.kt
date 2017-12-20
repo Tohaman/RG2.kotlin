@@ -13,11 +13,10 @@ import ru.tohaman.rg3.DebugTag.TAG
 
 import ru.tohaman.rg3.R
 import ru.tohaman.rg3.adapters.MyListAdapter
-import ru.tohaman.rg3.listpager.ListPager
-import ru.tohaman.rg3.listpager.ListPagerLab
+import ru.tohaman.rg3.data.ListPager
+import ru.tohaman.rg3.data.ListPagerLab
 import java.util.ArrayList
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.app_bar_sliding.*
 import ru.tohaman.rg3.EXTRA_ID
 import ru.tohaman.rg3.RUBIC_PHASE

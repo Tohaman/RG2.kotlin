@@ -25,4 +25,7 @@
     <string name="begin_timer_text">0:00:00</string>
     <string name="action_help">Помощь</string>
     <string name="st_thanks">Сказать спасибо</string>
+    <string name="azbuka_button">Выбрать азбуку</string>
+    <string name="generate_button">Генерировать скрамбл</string>
+    <string name="scram_waiting">Ищем подходящий скрамбл</string>
 </resources>

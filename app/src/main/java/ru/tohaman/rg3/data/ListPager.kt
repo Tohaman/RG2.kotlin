@@ -1,4 +1,4 @@
-package ru.tohaman.rg3.listpager
+package ru.tohaman.rg3.data
 
 //        phase: String,         // фаза - PLL,OLL,Beginer,Blind etc
 //        Id: Int,               // порядковый номер этапа в фазе

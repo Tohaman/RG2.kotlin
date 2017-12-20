@@ -2,18 +2,15 @@ package ru.tohaman.rg3
 
 import android.content.Context
 import android.os.Build
-import android.support.constraint.ConstraintLayout
 import android.transition.TransitionManager
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewManager
+import android.widget.Button
 import android.widget.TextView
 import com.google.android.youtube.player.YouTubeThumbnailView
-import org.jetbrains.anko.AnkoComponent
-import org.jetbrains.anko.AnkoContext
+import org.jetbrains.anko.*
 import org.jetbrains.anko.custom.ankoView
-import org.jetbrains.anko.textColor
-import org.jetbrains.anko.textView
 
 
 abstract class AnkoComponentEx<in T>: AnkoComponent<T> {
@@ -32,6 +29,15 @@ abstract class AnkoComponentEx<in T>: AnkoComponent<T> {
         return textView(text) {
             textColor = 0xFF000000.toInt()
             textSize = 20F
+            init()
+        }
+    }
+
+    protected fun ViewManager.defaultButton(txt: CharSequence, init: Button.() -> Unit): Button {
+        return button {
+            text = txt
+            height = wrapContent
+            width = matchParent
             init()
         }
     }

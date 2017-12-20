@@ -27,7 +27,7 @@ import ru.tohaman.rg3.DebugTag
 import ru.tohaman.rg3.DeveloperKey.DEVELOPER_KEY
 import ru.tohaman.rg3.R
 import ru.tohaman.rg3.VIDEO_PREVIEW
-import ru.tohaman.rg3.listpager.ListPager
+import ru.tohaman.rg3.data.ListPager
 import ru.tohaman.rg3.ui.FragmentPagerItemtUI
 
 class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener {

@@ -12,7 +12,6 @@ import ru.tohaman.rg3.ui.TimerUI
 
 class FragmentTimer : Fragment() {
 
-
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return TimerUI<Fragment>().createView(AnkoContext.create(context, this))

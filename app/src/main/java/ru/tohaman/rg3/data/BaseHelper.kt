@@ -1,4 +1,4 @@
-package ru.tohaman.rg3.database
+package ru.tohaman.rg3.data
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -7,7 +7,6 @@ import org.jetbrains.anko.db.INTEGER
 import org.jetbrains.anko.db.ManagedSQLiteOpenHelper
 import org.jetbrains.anko.db.TEXT
 import org.jetbrains.anko.db.createTable
-import ru.tohaman.rg3.listpager.ListPager
 
 class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_NAME, null, VERSION) {
 
@@ -30,6 +29,7 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
     }
 
     // В базе храним только Фазу, номер этапа в фазе и комент для этапа... остальное инициализируем в ListPagerLab
+    // Поскольку используем анко-функции для доступа к базе, то данная строка в принципе не нужна
     val DATABASE_CREATE =
             "CREATE TABLE if not exists $TABLE_NAME (" +
                     "$PHASE TEXT, " +
@@ -80,10 +80,10 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
         try {
             if (cursor.count != 0) {
                 cursor.moveToFirst()
-                listPager = ListPager(cursor.getString(cursor.getColumnIndex(BaseHelper.PHASE)),
-                                      cursor.getInt(cursor.getColumnIndex(BaseHelper.ID)),
-                                      cursor.getString(cursor.getColumnIndex(BaseHelper.COMMENT))
-                                      )
+                listPager = ListPager(cursor.getString(cursor.getColumnIndex(PHASE)),
+                        cursor.getInt(cursor.getColumnIndex(ID)),
+                        cursor.getString(cursor.getColumnIndex(COMMENT))
+                )
             }
         } finally {
             cursor.close()
