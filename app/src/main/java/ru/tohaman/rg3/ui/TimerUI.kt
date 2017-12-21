@@ -227,8 +227,8 @@ class TimerUI<in Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener,
             //если что-нажато (первое прикосновение)
             MotionEvent.ACTION_DOWN -> {
                 when {
-                    //если обе руки прикоснулись и таймер не статован, то значит таймер "готов"
-                    (sec_hand and !timerStart) -> {timerReady = true}           //таймер готов к запуску
+                    //если обе руки прикоснулись и таймер не статован, то значит таймер "готов", обнуляем время таймера
+                    (sec_hand and !timerStart) -> {timerReady = true; textTime.text = context.getString(R.string.begin_timer_text)}           //таймер готов к запуску
                     //если обе руки прикоснулись, а таймер был запущен, значит его надо остановить
                     (sec_hand and timerStart) -> { stopTimer()}   //останавливаем таймер
                     //в противном случае,
@@ -305,9 +305,9 @@ class TimerUI<in Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener,
     }
 
     private fun showTimerTime() {
-        val curtime = System.currentTimeMillis() - startTime
-        val millis = ((curtime % 1000) / 10).toInt()             // сотые доли секунды
-        var seconds = (curtime / 1000).toInt()
+        val curTime = System.currentTimeMillis() - startTime
+        val millis = ((curTime % 1000) / 10).toInt()             // сотые доли секунды
+        var seconds = (curTime / 1000).toInt()
         var minutes = seconds / 60
         seconds %= 60
         if (minutes > 9) {  //если получилось больше 10 минут, то добавляем к начальному времени 10 мин.
@@ -315,7 +315,6 @@ class TimerUI<in Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener,
         }
         textTime.text = String.format("%d:%02d:%02d", minutes, seconds, millis)
     }
-
 
     private fun getColorFromResources(colorRes:Int):Int {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -329,7 +328,6 @@ class TimerUI<in Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener,
     override fun onLoadComplete(soundPool: SoundPool?, sampleId: Int, status: Int) {
         Log.d(TAG, "onLoadComplete, sampleId = $sampleId, status = $status")
     }
-
 
     object TimerHandler : Handler()
 }

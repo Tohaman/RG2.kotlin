@@ -12,14 +12,14 @@ import ru.tohaman.rg3.data.ListPager
 
 /**
  * Created by anton on 27.11.17. Адаптер для listview включает в себя сразу и UI
- * хотя правильне наверно сделать в getView() return listUI()
+ * хотя можно наверно сделать в getView() return listUI()
  * а ListUI сделать наследником AnkoComponentEx, пока это TODO
  */
 
 class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m: Float = 1f) : BaseAdapter() {
     lateinit var context: Context
-    val Int.dp: Int get() = this.dpf.toInt()
-    val Int.dpf: Float get() = this * context.resources.displayMetrics.density
+    private val Int.dp: Int get() = this.dpf.toInt()
+    private val Int.dpf: Float get() = this * context.resources.displayMetrics.density
 
     override fun getView(i: Int, v: View?, parent: ViewGroup?): View {
         context = parent!!.context

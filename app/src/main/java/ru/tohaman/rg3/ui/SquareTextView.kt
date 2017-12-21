@@ -22,6 +22,7 @@ class SquareTextView : TextView {
 
     override//переопределяем метод
     fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         val width = View.getDefaultSize(suggestedMinimumWidth, widthMeasureSpec);
         setMeasuredDimension(width, width)             //высота равна ширине
     }
