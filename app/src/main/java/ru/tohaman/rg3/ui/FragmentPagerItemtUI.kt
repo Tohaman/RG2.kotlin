@@ -6,6 +6,7 @@ import android.view.Gravity
 import android.widget.LinearLayout
 import org.jetbrains.anko.*
 import ru.tohaman.rg3.AnkoComponentEx
+import ru.tohaman.rg3.ankoconstraintlayout.constraintLayout
 import ru.tohaman.rg3.youTubeThumbnailView
 
 /**
@@ -53,16 +54,15 @@ class FragmentPagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
                         textSize = 15f
                     }.lparams(wrapContent, wrapContent)
 
-                    linearLayout {
+                    val cl = constraintLayout {
                         id = Ids.linLayout
 //                        backgroundColor = Color.RED
-                        gravity = Gravity.CENTER
 
-                        youTubeThumbnailView {
+                        val yt = youTubeThumbnailView {
                             id = Ids.youTubeView
-                        }.lparams(matchParent, matchParent)
+                        }
 
-                        textView {
+                        val txt = textView {
                             id = Ids.youTubeTextView
                             movementMethod = LinkMovementMethod.getInstance()
                         }

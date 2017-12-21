@@ -14,7 +14,6 @@ import com.google.android.youtube.player.YouTubeThumbnailView
 import org.jetbrains.anko.*
 import org.jetbrains.anko.custom.ankoView
 import ru.tohaman.rg3.ui.SquareRelativeLayout
-import ru.tohaman.rg3.ui.SquareTextView
 
 
 abstract class AnkoComponentEx<in T>: AnkoComponent<T> {
@@ -70,9 +69,6 @@ inline fun ViewManager.styledButton(styleRes: Int = 0, init: Button.() -> Unit):
 
 inline fun ViewManager.styledButton(styleRes: Int = 0): Button = styledButton(styleRes) {}
 
-inline fun ViewManager.squareTextView(init: TextView.() -> Unit): SquareTextView {
-    return ankoView({SquareTextView(it)},0,init)
-}
 
 inline fun ViewManager.squareRelativeLayout(init: RelativeLayout.() -> Unit) : SquareRelativeLayout {
     return ankoView({SquareRelativeLayout(it)},0,init)

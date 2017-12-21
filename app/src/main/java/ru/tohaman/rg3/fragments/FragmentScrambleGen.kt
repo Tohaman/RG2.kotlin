@@ -1,7 +1,9 @@
 package ru.tohaman.rg3.fragments
 
 
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
@@ -24,13 +26,28 @@ import ru.tohaman.rg3.data.CubeAzbuka
 
 
 class FragmentScrambleGen : Fragment() {
+
+    private val SCRAMBLE = "scramble"
+    private val SCRAMBLE_LEN = "scrambleLength"
+    private val CHK_BUF_EDGES = "checkEdgesBuffer"
+    private val CHK_BUF_CORNERS = "checkCornersBuffer"
+
     private var gridList = ArrayList<CubeAzbuka>()
     private val cubeColor = IntArray(6)
     private var currentCube = IntArray(54)
+    private lateinit var  sp : SharedPreferences
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater?.inflate(R.layout.fragment_scramble_gen, container, false)
         Log.v (TAG, "FragmentScrambleGen onCreateView - start")
+
+        sp = PreferenceManager.getDefaultSharedPreferences(context)
+        val scramble = sp.getString(SCRAMBLE, "U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R")
+        var chkEdgesBuffer = sp.getBoolean(CHK_BUF_EDGES, true)
+        var chkCornersBuffer = sp.getBoolean(CHK_BUF_CORNERS, false)
+        var scrambleLength = sp.getInt(SCRAMBLE_LEN, 14)
+
+        val view = inflater?.inflate(R.layout.fragment_scramble_gen, container, false)
+
         cubeColor[0] = R.color.cube_blue
         cubeColor[1] = R.color.cube_orange
         cubeColor[2] = R.color.cube_white
@@ -73,7 +90,6 @@ class FragmentScrambleGen : Fragment() {
         // очищаем
         val grList = clearArray4GridList()
 
-
         // если буква элемента = пробелу, то это элемент куба, если остается = "" то фона
         // задаем элементам куба GridList'а цвет, соответствующий элемнтам куба (массива)
         for (i in 0..8) {
@@ -88,6 +104,7 @@ class FragmentScrambleGen : Fragment() {
     }
 
     private fun clearArray4GridList(): ArrayList<CubeAzbuka> {
+        Log.v (TAG, "FragmentScrambleGen clearArray4GridList")
         // 108 элементов GridList делаем пустыми и прозрачными
         val cubeAzbuka = CubeAzbuka(R.color.transparent, "")
         val grList = arrayListOf<CubeAzbuka>()

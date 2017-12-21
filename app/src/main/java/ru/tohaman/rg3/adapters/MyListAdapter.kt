@@ -13,7 +13,7 @@ import ru.tohaman.rg3.data.ListPager
 /**
  * Created by anton on 27.11.17. Адаптер для listview включает в себя сразу и UI
  * хотя можно наверно сделать в getView() return listUI()
- * а ListUI сделать наследником AnkoComponentEx, пока это TODO
+ * а ListUI сделать наследником AnkoComponentEx, хотя кода не много и так наверно проще
  */
 
 class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m: Float = 1f) : BaseAdapter() {
@@ -28,7 +28,6 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
                 "BASIC" -> {
                     val taskNum: Int = list[i].icon
                     linearLayout {
-                        padding = dip(5)
                         orientation = HORIZONTAL
                         gravity = Gravity.CENTER
 
@@ -48,9 +47,8 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
                 else -> {
                     val taskNum: Int = list[i].icon
                     linearLayout {
-                        padding = dip(5)
                         orientation = HORIZONTAL
-                        gravity = Gravity.START
+                        gravity = Gravity.CENTER
 
                         imageView(taskNum) {
                         }.lparams(dip(40 * m),dip(40 * m)) {margin = 5.dp}

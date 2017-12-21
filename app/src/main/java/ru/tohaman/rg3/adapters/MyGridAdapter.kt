@@ -14,9 +14,7 @@ import org.jetbrains.anko.*
 import ru.tohaman.rg3.R
 import ru.tohaman.rg3.data.CubeAzbuka
 import ru.tohaman.rg3.squareRelativeLayout
-import ru.tohaman.rg3.squareTextView
 import ru.tohaman.rg3.ui.SquareRelativeLayout
-import ru.tohaman.rg3.ui.SquareTextView
 
 /**
  * Created by anton on 27.11.17. Адаптер для GridView включает в себя сразу и UI для одного элемента
@@ -38,10 +36,10 @@ class MyGridAdapter (val context: Context, private val gridList: List<CubeAzbuka
             holder = ViewHolder()
             grid = with (context) {
                 linearLayout {
-                    holder.linLay = linearLayout {
-                        holder.relLay = squareRelativeLayout {
+                    holder.linLay = linearLayout {                  //Линлэйаут во всю клетку
+                        holder.relLay = squareRelativeLayout {      //Квадратный RelativeLayout с отступом в 2dp(черная рамка)
                             gravity = Gravity.CENTER
-                            holder.txtView = textView {
+                            holder.txtView = textView {             //В центре буква (если нужна)
                                 gravity = Gravity.CENTER
                                 text = " "
                             }
@@ -61,7 +59,7 @@ class MyGridAdapter (val context: Context, private val gridList: List<CubeAzbuka
             holder.linLay!!.backgroundColorResource = R.color.black
         }
 
-        // для всех клеток внутренности делаем цвета из gridList и букву для проставляем оттуда же
+        // для всех клеток внутренности делаем цвета из gridList и букву проставляем оттуда же
         // для пустых клеток они должны быть прозрачными и пустыми.
         holder.txtView!!.text = gridList[position].letter
         holder.relLay!!.backgroundColorResource = gridList[position].color
