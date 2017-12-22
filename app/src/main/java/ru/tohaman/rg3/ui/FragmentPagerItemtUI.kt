@@ -1,12 +1,13 @@
 package ru.tohaman.rg3.ui
 
 import android.graphics.Typeface
+import android.support.v4.content.ContextCompat
 import android.text.method.LinkMovementMethod
 import android.view.Gravity
 import android.widget.LinearLayout
 import org.jetbrains.anko.*
 import ru.tohaman.rg3.AnkoComponentEx
-import ru.tohaman.rg3.ankoconstraintlayout.constraintLayout
+import ru.tohaman.rg3.R
 import ru.tohaman.rg3.youTubeThumbnailView
 
 /**
@@ -54,19 +55,25 @@ class FragmentPagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
                         textSize = 15f
                     }.lparams(wrapContent, wrapContent)
 
-                    val cl = constraintLayout {
-                        id = Ids.linLayout
-//                        backgroundColor = Color.RED
+                    relativeLayout {
+                        id = Ids.youTubeLayout
+//                        backgroundColorResource = R.color.red
 
-                        val yt = youTubeThumbnailView {
-                            id = Ids.youTubeView
-                        }
+                        youTubeThumbnailView {
+                            id = Ids.ytThumbnailView
+                        }.lparams {centerInParent()}
 
-                        val txt = textView {
+                        imageView (ContextCompat.getDrawable(context, R.drawable.ic_play)){
+                            id = Ids.icPlayPreview
+
+                        }.lparams(100.dp,100.dp) {centerInParent()}
+
+                        textView {
                             id = Ids.youTubeTextView
                             movementMethod = LinkMovementMethod.getInstance()
-                        }
-                    }.lparams(matchParent, 150.dp) {setMargins(0.dp, 8.dp, 0.dp, 8.dp)}
+                        }.lparams() {centerInParent()}
+
+                    }.lparams(matchParent, 160.dp) {setMargins(0.dp, 8.dp, 0.dp, 8.dp)}
 
                     textView {
                         id = Ids.commentText
@@ -83,9 +90,10 @@ class FragmentPagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
         val pagerTitleText = 1
         val pagerImageView = 2
         val descriptionText = 3
-        val youTubeView = 5
+        val ytThumbnailView = 5
         val commentText = 6
-        val linLayout = 7
+        val youTubeLayout = 7
         val youTubeTextView = 8
+        val icPlayPreview = 9
     }
 }

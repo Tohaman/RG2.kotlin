@@ -13,7 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubeStandalonePlayer
@@ -60,8 +60,8 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         val ytTextView = view.findViewById(FragmentPagerItemtUI.Ids.youTubeTextView) as TextView
 
-        // Если ссылка пустая, то вообще не отображаем видеопревью
-        val ytViewLayout = view.findViewById(FragmentPagerItemtUI.Ids.linLayout) as LinearLayout
+        // Если ссылка пустая, то вообще не отображаем видеопревью (скрываем лэйаут с текстом и превьюшкой)
+        val ytViewLayout = view.findViewById(FragmentPagerItemtUI.Ids.youTubeLayout) as RelativeLayout
         if (url == "") {
             ytViewLayout.visibility = View.GONE
         } else {
@@ -70,23 +70,35 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         //смотрим в настройках программы, показывать превью видео или текст
         val previewEnabled = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean(VIDEO_PREVIEW, true)
-        val thumbnailView = view.findViewById(FragmentPagerItemtUI.Ids.youTubeView) as YouTubeThumbnailView
+        val thumbnailView = view.findViewById(FragmentPagerItemtUI.Ids.ytThumbnailView) as YouTubeThumbnailView
+        val playPreviewImage = view.findViewById(FragmentPagerItemtUI.Ids.icPlayPreview) as ImageView
         if (previewEnabled and canPlayYouTubeVideo()) {
-            thumbnailView.visibility = View.VISIBLE
-            ytTextView.visibility = View.GONE
-            thumbnailView.initialize(DEVELOPER_KEY, this)
-            thumbnailView.setOnClickListener {
-                playYouTubeVideo(true, url)
-            }
+            showYouTubePreview(thumbnailView, ytTextView, playPreviewImage)
         } else {
-            thumbnailView.visibility = View.GONE
-            ytTextView.visibility = View.VISIBLE
-            text = "<html><body> <a href=\"rg2://ytplay?time=0:00&link=%s\"> %s </a></body></html>"
-            text = String.format(text, url, getString(R.string.pager_youtubetext))
-            ytTextView.text = spannedString(text)
+            hideYouTubePreview(thumbnailView, ytTextView, playPreviewImage, text)  //скрыть превью, отобразить текстовой ссылкой
         }
 
         return view
+    }
+
+    private fun hideYouTubePreview(thumbnailView: YouTubeThumbnailView, ytTextView: TextView, playPreviewImage: ImageView, text: String) {
+        var text1 = text
+        thumbnailView.visibility = View.GONE
+        playPreviewImage.visibility = View.GONE
+        ytTextView.visibility = View.VISIBLE
+        text1 = "<html><body> <a href=\"rg2://ytplay?time=0:00&link=%s\"> %s </a></body></html>"
+        text1 = kotlin.String.format(text1, url, getString(R.string.pager_youtubetext))
+        ytTextView.text = spannedString(text1)
+    }
+
+    private fun showYouTubePreview(thumbnailView: YouTubeThumbnailView, ytTextView: TextView, playPreviewImage: ImageView) {
+        thumbnailView.visibility = View.VISIBLE
+        playPreviewImage.visibility = View.GONE
+        ytTextView.visibility = View.GONE
+        thumbnailView.initialize(DEVELOPER_KEY, this)
+        thumbnailView.setOnClickListener {
+            playYouTubeVideo(true, url)
+        }
     }
 
 

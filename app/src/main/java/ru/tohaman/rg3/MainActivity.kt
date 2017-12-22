@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         nav_view.setNavigationItemSelectedListener(this)
-        fab.setOnClickListener { view ->
+        fab.setOnClickListener { _ ->
             if (curPhase == "G2F_NEXT") {
                 curPhase = "G2F"
                 fragListView.changePhase(curPhase, this)

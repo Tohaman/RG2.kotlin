@@ -42,8 +42,7 @@ class YouTubeActivity : Activity() {
         Log.v (DebugTag.TAG, "YouTubeActivity преобразуем время")
         val text1 = intent.data!!.getQueryParameter("time")
         val videoId = intent.data!!.getQueryParameter("link")
-        var intent: Intent? = null
-        intent = YouTubeStandalonePlayer.createVideoIntent(this, DEVELOPER_KEY, videoId, StringToTimeMillis(text1), true, true)
+        var intent = YouTubeStandalonePlayer.createVideoIntent(this, DEVELOPER_KEY, videoId, StringToTimeMillis(text1), true, true)
         if (intent != null) {
             if (canResolveIntent(intent)) {
                 Log.v (DebugTag.TAG, "Установлен - запускаем StandAlone плеер c нужного времени")
