@@ -1,4 +1,4 @@
-package ru.tohaman.rg3
+package ru.tohaman.rg3.ui
 
 import android.content.Context
 import android.os.Build
@@ -13,7 +13,6 @@ import android.widget.TextView
 import com.google.android.youtube.player.YouTubeThumbnailView
 import org.jetbrains.anko.*
 import org.jetbrains.anko.custom.ankoView
-import ru.tohaman.rg3.ui.SquareRelativeLayout
 
 
 abstract class AnkoComponentEx<in T>: AnkoComponent<T> {

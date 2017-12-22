@@ -29,4 +29,10 @@
     <string name="generate_button">Генерировать скрамбл</string>
     <string name="scram_waiting">Ищем подходящий скрамбл</string>
     <string name="contentdescription">contentDescription</string>
+    <string name="buttonScrambleGen">Генерировать скрамбл</string>
+    <string name="chkBoxEdgeBuffer">Без переплавки буфера ребер</string>
+    <string name="chkBoxCornerBuffer">Без переплавки буфера углов</string>
+    <string name="scrambleLengthText">Длина скрамбла:</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
 </resources>

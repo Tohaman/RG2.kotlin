@@ -1,5 +1,6 @@
 package ru.tohaman.rg3.ui
 
+import android.content.Context
 import android.preference.PreferenceManager
 import android.util.Log
 import android.view.Gravity
@@ -11,6 +12,8 @@ import ru.tohaman.rg3.*
 import ru.tohaman.rg3.DebugTag.TAG
 import ru.tohaman.rg3.activitys.TimerActivity
 import ru.tohaman.rg3.ankoconstraintlayout.constraintLayout
+import ru.tohaman.rg3.util.saveBoolean2SP
+import ru.tohaman.rg3.util.saveInt2SP
 
 
 /**
@@ -52,26 +55,19 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                     }.lparams {margin = m}
                     val buttonPlus = button ("+")
 
-                    buttonMinus.onClick {
+                    buttonMinus.onClick { view ->
                         metronomTime--
                         if (metronomTime < 1) {metronomTime = 1}
-                        saveInt2SP(metronomTime,METRONOM_TIME)
+                        saveInt2SP(metronomTime, METRONOM_TIME, view!!.context)
                         textHz.text = metronomTime.toString()
                     }
-                    buttonPlus.onClick {
+                    buttonPlus.onClick { view ->
                         metronomTime++
                         if (metronomTime > 240) {metronomTime = 240}
-                        saveInt2SP(metronomTime,METRONOM_TIME)
+                        saveInt2SP(metronomTime, METRONOM_TIME, view!!.context)
                         textHz.text = metronomTime.toString()
                     }
                 }.lparams(0,wrapContent)
-
-//                val startButton = button {
-//                    text = "Запустить таймер"
-//                    backgroundColorResource = R.color.colorAccent
-//                    textSize = 30F
-//                    padding = 20.dp
-//                }.lparams(0,wrapContent)
 
                 val startButton = styledButton(R.style.Widget_AppCompat_Button_Colored) {
                     text = "Запустить таймер"
@@ -82,11 +78,11 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                 startButton.onClick { startActivity<TimerActivity>() }
 
                 oneHandCheckBox.setOnCheckedChangeListener { _, isChecked ->
-                    saveBoolean2SP(isChecked, ONE_HAND_TO_START)
+                    saveBoolean2SP(isChecked, ONE_HAND_TO_START, context)
                 }
 
                 metronom.setOnCheckedChangeListener { _, isChecked ->
-                    saveBoolean2SP(isChecked, METRONOM_ENABLED)
+                    saveBoolean2SP(isChecked, METRONOM_ENABLED, context)
                 }
 
                 constraints {
@@ -110,20 +106,6 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                 }
             }.lparams(matchParent, wrapContent) {margin = m}
         }
-    }
-
-    fun saveBoolean2SP(bool : Boolean, st : String) {
-        val sp = PreferenceManager.getDefaultSharedPreferences(context)
-        val editor = sp.edit()
-        editor.putBoolean(st, bool)
-        editor.apply() // подтверждаем изменения
-    }
-
-    fun saveInt2SP(int : Int, st : String) {
-        val sp = PreferenceManager.getDefaultSharedPreferences(context)
-        val editor = sp.edit()
-        editor.putInt(st, int)
-        editor.apply() // подтверждаем изменения
     }
 
 }

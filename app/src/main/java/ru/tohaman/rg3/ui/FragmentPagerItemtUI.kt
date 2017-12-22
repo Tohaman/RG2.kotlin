@@ -6,9 +6,7 @@ import android.text.method.LinkMovementMethod
 import android.view.Gravity
 import android.widget.LinearLayout
 import org.jetbrains.anko.*
-import ru.tohaman.rg3.AnkoComponentEx
 import ru.tohaman.rg3.R
-import ru.tohaman.rg3.youTubeThumbnailView
 
 /**
  *  Класс для создания одного элемента PagerView для ViewPagerSlidingTab с помощью Anko
