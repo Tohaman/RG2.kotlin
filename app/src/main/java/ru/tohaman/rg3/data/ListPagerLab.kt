@@ -114,7 +114,7 @@ class ListPagerLab private constructor(context: Context){
     }
 
 
-    fun getMaximAzbuka() =  arrayOf(
+    fun getMaximAzbuka(): Array<String> =  arrayOf(
             "М","Л","Л",
             "М","-","К",
             "И","И","К",
@@ -165,5 +165,17 @@ class ListPagerLab private constructor(context: Context){
             "З","-","Е",
             "З","Ж","Ж"
     )
+
+    fun getCustomAzbuka(): Array<String> {
+        val azbuka : Array<String>
+        val mListPager = getPhaseItem(0, "AZBUKA")
+        if (mListPager.comment == "") {
+            azbuka = getMaximAzbuka()
+        } else {
+            azbuka = mListPager.comment.split(" ").toTypedArray()
+        }
+        return azbuka
+    }
+
 
 }

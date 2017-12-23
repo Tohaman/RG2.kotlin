@@ -82,11 +82,10 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
     }
 
     private fun hideYouTubePreview(thumbnailView: YouTubeThumbnailView, ytTextView: TextView, playPreviewImage: ImageView, text: String) {
-        var text1 = text
         thumbnailView.visibility = View.GONE
         playPreviewImage.visibility = View.GONE
         ytTextView.visibility = View.VISIBLE
-        text1 = "<html><body> <a href=\"rg2://ytplay?time=0:00&link=%s\"> %s </a></body></html>"
+        var text1 = "<html><body> <a href=\"rg2://ytplay?time=0:00&link=%s\"> %s </a></body></html>"
         text1 = kotlin.String.format(text1, url, getString(R.string.pager_youtubetext))
         ytTextView.text = spannedString(text1)
     }

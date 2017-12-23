@@ -20,7 +20,7 @@ import ru.tohaman.rg3.ui.SquareRelativeLayout
  */
 
 
-class MyGridAdapter (val context: Context, private val gridList: List<CubeAzbuka>) : BaseAdapter() {
+class MyGridAdapter (val context: Context, var gridList: List<CubeAzbuka>) : BaseAdapter() {
     private val Int.dp: Int get() = this.dpf.toInt()
     private val Int.dpf: Float get() = this * context.resources.displayMetrics.density
 
