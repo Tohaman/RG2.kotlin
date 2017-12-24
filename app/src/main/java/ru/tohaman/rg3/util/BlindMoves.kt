@@ -246,145 +246,145 @@ fun blinde41(cube: IntArray): IntArray {  //желтооранжевое
 
 //--------------------------------------------------------------------------------------------------
 
-fun Blinde20(cube: IntArray): IntArray {  //белосинекрасный угол
+fun blinde20(cube: IntArray): IntArray {  //белосинекрасный угол
     runScramble(cube, "R D' F'")
     australia(cube)
     runScramble(cube, "F D R'")
     return cube
 }
 
-fun Blinde26(cube: IntArray): IntArray {  //белокраснозеленый угол
+fun blinde26(cube: IntArray): IntArray {  //белокраснозеленый угол
     australia(cube)
     return cube
 }
 
-fun Blinde24(cube: IntArray): IntArray {  //белозеленооранжевый угол
+fun blinde24(cube: IntArray): IntArray {  //белозеленооранжевый угол
     runScramble(cube, "F' D R")
     australia(cube)
     runScramble(cube, "R' D' F")
     return cube
 }
 
-fun Blinde45(cube: IntArray): IntArray {  //зеленооранжевобелый
+fun blinde45(cube: IntArray): IntArray {  //зеленооранжевобелый
     runScramble(cube, "F' D F'")
     australia(cube)
     runScramble(cube, "F D' F")
     return cube
 }
 
-fun Blinde47(cube: IntArray): IntArray {  //зеленобелосиний
+fun blinde47(cube: IntArray): IntArray {  //зеленобелосиний
     runScramble(cube, "F R")
     australia(cube)
     runScramble(cube, "R' F'")
     return cube
 }
 
-fun Blinde53(cube: IntArray): IntArray {  //зеленокрасножелтый
+fun blinde53(cube: IntArray): IntArray {  //зеленокрасножелтый
     runScramble(cube, "R")
     australia(cube)
     runScramble(cube, "R'")
     return cube
 }
 
-fun Blinde51(cube: IntArray): IntArray {  //зеленожелтооранжевый
+fun blinde51(cube: IntArray): IntArray {  //зеленожелтооранжевый
     runScramble(cube, "D F'")
     australia(cube)
     runScramble(cube, "F D'")
     return cube
 }
 
-fun Blinde8(cube: IntArray): IntArray {  //синекраснобелый
+fun blinde8(cube: IntArray): IntArray {  //синекраснобелый
     runScramble(cube, "R'")
     australia(cube)
     runScramble(cube, "R")
     return cube
 }
 
-fun Blinde2(cube: IntArray): IntArray {  //синежелтокрасный
+fun blinde2(cube: IntArray): IntArray {  //синежелтокрасный
     runScramble(cube, "D' F'")
     australia(cube)
     runScramble(cube, "F D")
     return cube
 }
 
-fun Blinde0(cube: IntArray): IntArray {  //синеоранжевожелтый
+fun blinde0(cube: IntArray): IntArray {  //синеоранжевожелтый
     runScramble(cube, "D2 R")
     australia(cube)
     runScramble(cube, "R' D2")
     return cube
 }
 
-fun Blinde17(cube: IntArray): IntArray {  //оранжевобелозеленый
+fun blinde17(cube: IntArray): IntArray {  //оранжевобелозеленый
     runScramble(cube, "F")
     australia(cube)
     runScramble(cube, "F'")
     return cube
 }
 
-fun Blinde15(cube: IntArray): IntArray {  //оранжевозеленожелтый
+fun blinde15(cube: IntArray): IntArray {  //оранжевозеленожелтый
     runScramble(cube, "D R")
     australia(cube)
     runScramble(cube, "R' D'")
     return cube
 }
 
-fun Blinde9(cube: IntArray): IntArray {  //оранжевожелтосиний
+fun blinde9(cube: IntArray): IntArray {  //оранжевожелтосиний
     runScramble(cube, "D2 F'")
     australia(cube)
     runScramble(cube, "F D2")
     return cube
 }
 
-fun Blinde27(cube: IntArray): IntArray {  //краснобелосиний
+fun blinde27(cube: IntArray): IntArray {  //краснобелосиний
     runScramble(cube, "R2 F'")
     australia(cube)
     runScramble(cube, "F R2")
     return cube
 }
 
-fun Blinde33(cube: IntArray): IntArray {  //краснозеленобелый
+fun blinde33(cube: IntArray): IntArray {  //краснозеленобелый
     runScramble(cube, "R' F'")
     australia(cube)
     runScramble(cube, "F R")
     return cube
 }
 
-fun Blinde35(cube: IntArray): IntArray {  //красножелтозеленый
+fun blinde35(cube: IntArray): IntArray {  //красножелтозеленый
     runScramble(cube, "F'")
     australia(cube)
     runScramble(cube, "F")
     return cube
 }
 
-fun Blinde29(cube: IntArray): IntArray {  //красносинежелтый
+fun blinde29(cube: IntArray): IntArray {  //красносинежелтый
     runScramble(cube, "R F'")
     australia(cube)
     runScramble(cube, "F R'")
     return cube
 }
 
-fun Blinde38(cube: IntArray): IntArray {  //желтосинеоранжевый
+fun blinde38(cube: IntArray): IntArray {  //желтосинеоранжевый
     runScramble(cube, "D' R2")
     australia(cube)
     runScramble(cube, "R2 D")
     return cube
 }
 
-fun Blinde36(cube: IntArray): IntArray {  //желтокрасносиний
+fun blinde36(cube: IntArray): IntArray {  //желтокрасносиний
     runScramble(cube, "R2")
     australia(cube)
     runScramble(cube, "R2")
     return cube
 }
 
-fun Blinde42(cube: IntArray): IntArray {  //желтозеленокрасный
+fun blinde42(cube: IntArray): IntArray {  //желтозеленокрасный
     runScramble(cube, "D R2")
     australia(cube)
     runScramble(cube, "R2 D'")
     return cube
 }
 
-fun Blinde44(cube: IntArray): IntArray {  //желтооранжевозеленый
+fun blinde44(cube: IntArray): IntArray {  //желтооранжевозеленый
     runScramble(cube, "D2 R2")
     australia(cube)
     runScramble(cube, "R2 D2")

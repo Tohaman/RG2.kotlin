@@ -59,7 +59,7 @@ class FragmentPagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
 
                         youTubeThumbnailView {
                             id = Ids.ytThumbnailView
-                        }.lparams {centerInParent()}
+                        }.lparams (matchParent, matchParent) {centerInParent()}
 
                         imageView (ContextCompat.getDrawable(context, R.drawable.ic_play)){
                             id = Ids.icPlayPreview
@@ -69,7 +69,7 @@ class FragmentPagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
                         textView {
                             id = Ids.youTubeTextView
                             movementMethod = LinkMovementMethod.getInstance()
-                        }.lparams() {centerInParent()}
+                        }.lparams {centerInParent()}
 
                     }.lparams(matchParent, 160.dp) {setMargins(0.dp, 8.dp, 0.dp, 8.dp)}
 

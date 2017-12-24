@@ -116,6 +116,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     "TIMER" -> {
                         alert(getString(R.string.help_timer)) { okButton { } }.show()
                     }
+                    "SCRAMBLEGEN" -> {
+                        alert {
+                            customView {
+                                verticalLayout {
+                                    val familyName = editText {
+                                        hint = "Family name"
+                                    }
+                                    val firstName = editText {
+                                        hint = "First name"
+                                    }
+                                    positiveButton("Register") {  }
+                                }
+                            }
+                        }.show()
+                    }
                 }
                 return true}
             else -> return super.onOptionsItemSelected(item)

@@ -7,16 +7,24 @@ import android.preference.PreferenceManager
  * Created by Test on 22.12.2017. Различные утилиты
  */
 
-fun saveBoolean2SP(bool : Boolean, st : String, context: Context) {
+fun saveBoolean2SP(value: Boolean, key: String, context: Context) {
     val sp = PreferenceManager.getDefaultSharedPreferences(context)
     val editor = sp.edit()
-    editor.putBoolean(st, bool)
+    editor.putBoolean(key, value)
     editor.apply() // подтверждаем изменения
 }
 
-fun saveInt2SP(int : Int, st : String, context: Context) {
+fun saveInt2SP(value: Int, key: String, context: Context) {
     val sp = PreferenceManager.getDefaultSharedPreferences(context)
     val editor = sp.edit()
-    editor.putInt(st, int)
+    editor.putInt(key, value)
     editor.apply() // подтверждаем изменения
 }
+
+fun saveString2SP(value : String, key: String, context: Context) {
+    val sp = PreferenceManager.getDefaultSharedPreferences(context)
+    val editor = sp.edit()
+    editor.putString(key, value)
+    editor.apply() // подтверждаем изменения
+}
+

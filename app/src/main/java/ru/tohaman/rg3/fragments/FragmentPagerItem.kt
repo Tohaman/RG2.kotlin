@@ -92,7 +92,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
     private fun showYouTubePreview(thumbnailView: YouTubeThumbnailView, ytTextView: TextView, playPreviewImage: ImageView) {
         thumbnailView.visibility = View.VISIBLE
-        playPreviewImage.visibility = View.GONE
+        playPreviewImage.visibility = View.VISIBLE
         ytTextView.visibility = View.GONE
         thumbnailView.initialize(DEVELOPER_KEY, this)
         thumbnailView.setOnClickListener {

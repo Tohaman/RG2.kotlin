@@ -13,10 +13,11 @@ import android.widget.*
 import kotlinx.android.synthetic.main.fragment_scramble_gen.*
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.async
-import org.jetbrains.anko.backgroundColorResource
+import org.jetbrains.anko.*
 import org.jetbrains.anko.coroutines.experimental.bg
 import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
 import org.jetbrains.anko.sdk15.coroutines.onClick
+import org.jetbrains.anko.support.v4.alert
 import ru.tohaman.rg3.DebugTag.TAG
 import ru.tohaman.rg3.R
 import ru.tohaman.rg3.adapters.MyGridAdapter
@@ -52,6 +53,7 @@ class FragmentScrambleGen : Fragment() {
     private lateinit var generateScramble : Button
     private lateinit var checkBoxEdges : CheckBox
     private lateinit var checkBoxCorners : CheckBox
+    private lateinit var checkBoxShowSolve : CheckBox
     private lateinit var textScrambleLen: TextView
     private lateinit var textScramble: TextView
     private lateinit var textSolve: TextView
@@ -61,8 +63,9 @@ class FragmentScrambleGen : Fragment() {
     private var mainEdge: HashMap<Int,Int> = hashMapOf(0 to 0)
     private var dopEdge: HashMap<Int,Int> = hashMapOf(0 to 0)
     private var mainCorner: HashMap<Int,Int> = hashMapOf(0 to 0)
-    private var popCorner: HashMap<Int,Int> = hashMapOf(0 to 0)
+    private var dopCorner: HashMap<Int,Int> = hashMapOf(0 to 0)
     private var listEdgesOnPlace: SortedMap<Int,Int> = sortedMapOf(0 to 0)
+    private var listCornersOnPlace: SortedMap<Int,Int> = sortedMapOf(0 to 0)
     private var edgePriority: HashMap<Int,Int> = hashMapOf(0 to 0)
     private var cornerPriority: HashMap<Int,Int> = hashMapOf(0 to 0)
 
@@ -146,12 +149,37 @@ class FragmentScrambleGen : Fragment() {
 
         //Текст самого скрамбла
         textScramble = view.findViewById(R.id.scramble)
+        textScramble.onClick { v ->
+            alert {
+                customView {
+                    verticalLayout {
+                        val setScramble = editText (textScramble.text){
+                            hint = "введите свой скрамбл"
+                        }
+                        positiveButton("OK") {
+                            val scramble_st = setScramble.text.toString()
+                            textScramble.text = scramble_st
+                            saveString2SP(scramble_st,SCRAMBLE, v!!.context)
+                            val cube = runScramble(resetCube(), scramble_st)
+                            showCube(cube)
+                            textSolve.text = showSolve(cube)
+                        }
+                        negativeButton("Отмена") {}
+                    }
+                }
+            }.show()
+        }
+
+        // Чекбокс отображать или нет решение скрамбла
+        checkBoxShowSolve = view.findViewById(R.id.checkBox_solve)
 
         //Текст с решением скрамбла
         textSolve = view.findViewById(R.id.solve_text)
+        val st = showSolve(runScramble(resetCube(), scramble))
+        textSolve.text = st
 
-        currentCube = initialize()                  //берем собранный кубик
-        gridList = initGridList(currentCube)        //подготавливаем текущий кубик для вывода в GridView
+        currentCube = resetCube()                  //берем собранный кубик
+        gridList = prepareCubeToShowInGridView(currentCube)        //подготавливаем текущий кубик для вывода в GridView
         val a = isAllEdgesOnItsPlace(currentCube)
 
         //находим GridView и выводим в него текущий кубик
@@ -162,8 +190,17 @@ class FragmentScrambleGen : Fragment() {
         return view
     }
 
-    private fun initialize(): IntArray {
-        Log.v (TAG, "FragmentScrambleGen initialize = ResetCube")
+    private fun showSolve(cube: IntArray): String {
+        val st = getSolve(cube)
+        return if (checkBoxShowSolve.isChecked) {
+            st
+        } else {
+            st.split(" ".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray().size.toString()
+        }
+    }
+
+    private fun resetCube(): IntArray {
+        Log.v (TAG, "FragmentScrambleGen resetCube")
         val cube = IntArray(54)
         for (i in cube.indices) {
             cube[i] = i / 9
@@ -173,13 +210,12 @@ class FragmentScrambleGen : Fragment() {
 
     private fun showCube(cube: IntArray) {
         Log.v (TAG, "FragmentScrambleGen showCube")
-        gridAdapter.gridList = initGridList(cube)
+        gridAdapter.gridList = prepareCubeToShowInGridView(cube)
         gridAdapter.notifyDataSetChanged()
     }
 
-    //TODO переименовать в prepareCubeToShowInGridView
-    private fun initGridList(cube: IntArray) : ArrayList<CubeAzbuka> {
-        Log.v (TAG, "FragmentScrambleGen InitGridList")
+    private fun prepareCubeToShowInGridView(cube: IntArray) : ArrayList<CubeAzbuka> {
+        Log.v (TAG, "FragmentScrambleGen prepareCubeToShowInGridView")
         // очищаем grList = ListOf<(R.color.transparent, "")> - 108штук
         val grList = clearArray4GridList()
         // Задаем для элементов куба букву равную пробелу, и цвет соответствующий элемнтам куба (массива)
@@ -206,11 +242,40 @@ class FragmentScrambleGen : Fragment() {
         return grList
     }
 
+    private fun getSolve(maincube: IntArray): String {
+        var solve = "("
+        var cube = maincube.clone()
+        do {
+            val sumColor = getColorOfElement(cube,23,30)
+            val sc = edgeBufferSolve(cube, mainEdge[sumColor]!!, solve)
+            solve = sc.solve
+            cube = sc.cube
+        } while (!isAllEdgesOnItsPlace(cube))
+
+        solve = solve.trim { it <= ' ' }
+        solve += ") "
+        val j = solve.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray().size
+        if (j % 2 != 0) {
+            solve += "Эк "
+        }
+
+        solve += "("
+        do {
+            val sumColor = getColorOfElement(cube,18,11)
+            val sc = cornerBufferSolve(cube,  mainCorner[sumColor]!!, solve)
+            solve = sc.solve
+            cube = sc.cube
+        } while (!isAllCornersOnItsPlace(cube))
+
+        solve = solve.trim { it <= ' ' }
+        //TODO проверить нужен ли пробел в конце solve
+        solve += ")"
+        return solve
+    }
+
+
     private fun scrambleGenerate(chkEdgesBuffer: Boolean, chkCornersBuffer: Boolean, scrambleLength: Int) {
         Log.v(TAG, "FragmentScrambleGen scrambleGenerate")
-        // берем собранный куб и выводим его на экран А смысл???, закоментировал
-//        currentCube = initialize()
-//        showCube(currentCube)
         // делаем кнопку "Генерерировать" не активной, прогресбар активным и убираем решение скрамбла
         button_generate.isEnabled = false
         progressBar.visibility = View.VISIBLE
@@ -238,70 +303,62 @@ class FragmentScrambleGen : Fragment() {
         showCube(currentCube)
     }
 
-
     private fun generateScrambleWithParam(checkEdge: Boolean, checkCorner: Boolean, lenScramble: Int): GenerateResult {
         Log.v(TAG, "Ищем скрамбл подходящий по параметрам переплавок буфера и длинне")
 
-        var j = 0                                  //счетчик количества попыток найти скрмбл
         var genRes = GenerateResult("","")
 
         do {
-            var genScrambleCube = initialize()
-//            j++
-            genRes.scramble = generateScramble(lenScramble)     //сгенерировать скрамбл длинны указанной в поле ScrambleLength
-//            genRes.scramble = "R' F' R U2 B R' D' U2 B' L'"
-            genScrambleCube = runScramble(genScrambleCube, genRes.scramble)
+            //сгенерируем скрамбл длинны указанной в поле ScrambleLength
+            genRes.scramble = generateScramble(lenScramble)
+            //разбираем кубик по скрамблу
+            var genScrambleCube = runScramble(resetCube(), genRes.scramble)
+            //устанавливаем флаги в начальное положение, обнуляем решение
             var isEdgeMelted = false
             var isCornerMelted = false
             var result = true
             genRes.solve = ""
 
+            //проверяем подходит ли нам скрамбл, для этого собираем кубик,
             do {
-                var summColor = getColorOfElement(genScrambleCube,23,30) //смотрим что в буфере
-                if ((summColor == 43) or (summColor == 34)) {           //если там буферный элемент бело-красный или красно-белый, то
-                    isEdgeMelted = true                                 //ставим признак переплавки
-                }
-                val sc = edgeBufferSolve(genScrambleCube, mainEdge[summColor]!!, genRes.solve)
-
+                //сначала ребра: смотрим что в буфере ребер
+                val sumColor = getColorOfElement(genScrambleCube,23,30)
+                //если там буферный элемент бело-красный или красно-белый, то ставим признак переплавки
+                if ((sumColor == 43) or (sumColor == 34)) { isEdgeMelted = true }
+                // ставим на место ребро из буфера
+                val sc = edgeBufferSolve(genScrambleCube, mainEdge[sumColor]!!, genRes.solve)
+                // сохраняем результаты выполнения одной "буквы"
                 genRes.solve = sc.solve
                 genScrambleCube = sc.cube
+            // выполняем пока все ребра не будут на своих местах
             } while (!isAllEdgesOnItsPlace(genScrambleCube))
 
-
+            // считаем количество букв, определяя нужен Экватор или нет
             val d = genRes.solve.split(" ".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray().size
             if (d % 2 != 0) {
                 genRes.solve += "Эк "
             }
 
-//            do {
-//                val a = CurCube[18] + 1       //смотрим что в буфере углов
-//                val b = CurCube[11] + 1
-//                val c = mainCorner[a * 10 + b]
-//                if ((c == 18) or (c == 11) or (c == 6)) {
-//                    isCornerMelted = true
-//                }
-//                val sc = BufferUgolSolve(CurCube, c, solve)
-//                solve = sc.getSolve()
-//                CurCube = sc.getCube()
-//            } while ((!CheckUgol(CurCube))!!)
+            do {
+                //сначала ребра: смотрим что в буфере углов (18,11)
+                val sumColor = getColorOfElement(genScrambleCube,18,11)
+                //если там буферный элемент (бело-красный-зеленый), то ставим признак переплавки
+                if ((sumColor == 18) or (sumColor == 11) or (sumColor == 6)) { isCornerMelted = true }
+                // ставим на место угол из буфера
+                val sc = cornerBufferSolve(genScrambleCube, mainCorner[sumColor]!!, genRes.solve)
+                genRes.solve = sc.solve
+                genScrambleCube = sc.cube
+            } while (!isAllCornersOnItsPlace(genScrambleCube))
             Log.v(TAG, "Проверка Scramble ${genRes.scramble}, Переплавка буфера ребер - $isEdgeMelted , Переплавка буфера углов - $isCornerMelted")
             if (isEdgeMelted && checkEdge) { result = false }
             if (isCornerMelted && checkCorner) { result = false }
         } while (!result)
-        Log.v(TAG, "Таки скрамбл ${genRes.scramble} подошел под условия")
-        //solve = solve + j;            //добавить к решению количество попыток решения
+        Log.v(TAG, "Таки скрамбл ${genRes.scramble} подошел под наши условия")
+
         return genRes
     }
 
-    //получаем цвет переданных ячеек куба
-    private fun getColorOfElement(cube: IntArray, firstElement: Int, secondElement: Int): Int {
-//        Log.v(TAG, "FragmentScrambleGen getColorOfElement")
-        val firstColor = cube[firstElement] + 1       //смотрим что в буфере ребер
-        val secondColor = cube[secondElement] + 1
-        return firstColor * 10 + secondColor
-    }
-
-
+    //Генерация скрамбла определенной длинны (без учета переплавки буфера)
     private fun generateScramble(length: Int): String {
         Log.v(TAG, "FragmentScrambleGen generateScramble $length")
         val random = Random()
@@ -331,23 +388,9 @@ class FragmentScrambleGen : Fragment() {
         return scramble
     }
 
-    private fun isAllEdgesOnItsPlace(cube: IntArray): Boolean {    //проверяем все ли грани на своих местах
-        var check = true
-        listEdgesOnPlace.clear()
-        var j = 0
-        for (i in 0..52) {
-            val secColor = dopEdge[i]
-            if (secColor != null) {
-                val fcolor = getColorOfElement(cube,i,secColor)
-                if (mainEdge[fcolor] != i) {
-                    listEdgesOnPlace.put(j, i )
-                    j++
-                    check = false
-                }
-            }
-        }
-        return check
-    }
+    //получаем цвет переданных ячеек куба (двузначное число, первая и вторая цифры которого соответствую икомым цветам)
+    private fun getColorOfElement(cube: IntArray, firstElement: Int, secondElement: Int): Int
+            = (cube[firstElement] + 1) * 10 + cube[secondElement] + 1
 
     // Установка на свое место элемента цвета colorOfElement находящегося в буфере ребер
     // Возвращает SolveCube = куб после выполнения установки и решение solve + текущий ход
@@ -371,21 +414,7 @@ class FragmentScrambleGen : Fragment() {
             21 -> tmpCube = blinde21(tmpCube)
             23 ->                     // для бело-красного ребра
                 if (!isAllEdgesOnItsPlace(tmpCube)) {
-                    colOfElem = 0
-                    // цикл поиска свободной корзины
-                    var j = 0
-                    while (colOfElem == 0) {
-                        var i = 0
-                        do {
-                            if (edgePriority[j] == listEdgesOnPlace[i]) {
-                                colOfElem = edgePriority[j]!!
-                            } //ищем ребра на своем месте по приоритету edgePriority
-                            i++
-                        } while (listEdgesOnPlace[i] != null)
-                        j++
-                    }
-                    //переплавляем буфер (рекурсия)
-                    val sc = edgeBufferSolve(tmpCube, colOfElem, solv)
+                    val sc = meltingEdge(tmpCube, solv)
                     solv = sc.solve
                     tmpCube = sc.cube
                 } else {
@@ -426,6 +455,135 @@ class FragmentScrambleGen : Fragment() {
         }
         return SolveCube(tmpCube, solv)
     }
+
+    private fun meltingEdge(tmpCube: IntArray, solv: String): SolveCube {
+        var colorOfElement = 0
+        // цикл поиска свободной корзины
+        var j = 0
+        while (colorOfElement == 0) {
+            var i = 0
+            do {
+                if (edgePriority[j] == listEdgesOnPlace[i]) {
+                    colorOfElement = edgePriority[j]!!
+                } //ищем ребра на своем месте по приоритету edgePriority
+                i++
+            } while (listEdgesOnPlace[i] != null)
+            j++
+        }
+        //переплавляем буфер (рекурсия)
+        return edgeBufferSolve(tmpCube, colorOfElement, solv)
+    }
+
+    private fun isAllEdgesOnItsPlace(cube: IntArray): Boolean {    //проверяем все ли грани на своих местах
+        //предположим что все на местах
+        var result = true
+        //Обнуляем список ребер стоящих на местах
+        listEdgesOnPlace.clear()
+        var j = 0
+        for (i in 0..52) {
+            val secColor = dopEdge[i]
+            if (secColor != null) {
+                val fcolor = getColorOfElement(cube,i,secColor)
+                if (mainEdge[fcolor] != i) {
+                    listEdgesOnPlace.put(j, i)
+                    j++
+                    result = false
+                }
+            }
+        }
+        return result
+    }
+
+    // Установка на свое место элемента цвета colorOfElement находящегося в буфере углов
+    // Возвращает SolveCube = куб после выполнения установки и решение solve + текущий ход
+    private fun cornerBufferSolve(cube: IntArray, colorOfElement: Int, solve: String): SolveCube {
+        var tmpCube = cube
+        var colOfElem = colorOfElement
+        var solv = solve
+        if (!(colOfElem == 18 || colOfElem == 11 || colOfElem == 6)) {           //если с не равно 18,11 или 6, то буфер не на месте и добавляем букву к решению.
+            solv = solv + findLetter(colOfElem) + " "
+        }
+        when (colOfElem) {
+            0 -> tmpCube = blinde0(tmpCube)
+            2 -> tmpCube = blinde2(tmpCube)
+            6 -> if (!isAllCornersOnItsPlace(tmpCube)) {
+                val sc = meltingCorner(tmpCube, solv)
+                solv = sc.solve
+                tmpCube = sc.cube
+            }
+            8 -> tmpCube = blinde8(tmpCube)
+            9 -> tmpCube = blinde9(tmpCube)
+            11 -> if (!isAllCornersOnItsPlace(tmpCube)) {
+                val sc = meltingCorner(tmpCube, solv)
+                solv = sc.solve
+                tmpCube = sc.cube
+            }
+            15 -> tmpCube = blinde15(tmpCube)
+            17 -> tmpCube = blinde17(tmpCube)
+            18 -> if (!isAllCornersOnItsPlace(tmpCube)) {
+                val sc = meltingCorner(tmpCube, solv)
+                solv = sc.solve
+                tmpCube = sc.cube
+            }
+            20 -> tmpCube = blinde20(tmpCube)
+            24 -> tmpCube = blinde24(tmpCube)
+            26 -> tmpCube = blinde26(tmpCube)
+            27 -> tmpCube = blinde27(tmpCube)
+            29 -> tmpCube = blinde29(tmpCube)
+            33 -> tmpCube = blinde33(tmpCube)
+            35 -> tmpCube = blinde35(tmpCube)
+            36 -> tmpCube = blinde36(tmpCube)
+            38 -> tmpCube = blinde38(tmpCube)
+            42 -> tmpCube = blinde42(tmpCube)
+            44 -> tmpCube = blinde44(tmpCube)
+            45 -> tmpCube = blinde45(tmpCube)
+            47 -> tmpCube = blinde47(tmpCube)
+            51 -> tmpCube = blinde51(tmpCube)
+            53 -> tmpCube = blinde53(tmpCube)
+        }
+        return SolveCube(tmpCube, solv)
+    }
+
+    private fun meltingCorner(tmpCube: IntArray, solv: String): SolveCube {
+        var colorOfElement = 0
+        // цикл поиска свободной корзины
+        var j = 0
+        while (colorOfElement == 0) {
+            var i = 0
+            do {
+                if (cornerPriority[j] == listCornersOnPlace[i]) {
+                    colorOfElement = cornerPriority[j]!!
+                } //ищем ребра на своем месте по приоритету cornerPriority
+                i++
+            } while (listCornersOnPlace[i] != null)
+            j++
+        }
+        //переплавляем буфер (рекурсия)
+        return cornerBufferSolve(tmpCube, colorOfElement, solv)
+    }
+
+    private fun isAllCornersOnItsPlace(cube: IntArray): Boolean {    //проверяем все ли углы на своих местах
+        //предположим что все на местах
+        var result = true
+        //Обнуляем список углов стоящих на своих местах
+        listCornersOnPlace.clear()
+        var j = 0
+        //Будем проверять все элементы кубика
+        for (i in 0..52) {
+            //Проверяем данный элемент угол или ребро
+            val secColor = dopCorner[i]
+            if (secColor != null) {
+                val fcolor = getColorOfElement(cube,i,secColor)
+                if (mainCorner[fcolor] != i) {
+                    listCornersOnPlace.put(j, i)
+                    j++
+                    result = false
+                }
+            }
+        }
+        return result
+    }
+
 
     private fun findLetter(c: Int): String {     //Доработать функцию поиска буквы из азбуки, пока просто цифра
         val listPagerLab = ListPagerLab.get(context)
@@ -528,31 +686,31 @@ class FragmentScrambleGen : Fragment() {
         //Создаем табличку соответствия основного и дополнительного угла [где искать второй цвет]
         //углы рассматриваем по часовой стрелке, поэтому достаточно первых двух цветов, чтобы пределить угол
         //первая и вторая цифра номер соответствующих позиций угла в кубе. т.е. 0->9, 9->38, 38->0
-        popCorner.clear()
-        popCorner.put(0, 9)       //сине-оранжево-желтый Л
-        popCorner.put(2, 36)       //сине-желто-красный К
-        popCorner.put(6, 18)       //сине-бело-оранжевый М
-        popCorner.put(8, 27)       //сине-красно-белый И
-        popCorner.put(9, 38)      //оранжево-желто-синий Р
-        popCorner.put(11, 6)       //оранжево-сине-белый Н
-        popCorner.put(15, 51)      //оранжево-зелено-желтый П
-        popCorner.put(17, 24)      //оранжево-бело-зеленый О
-        popCorner.put(18, 11)      //бело-оранжево-синий А
-        popCorner.put(20, 8)      //бело-сине-красный Б
-        popCorner.put(24, 45)      //бело-зелено-оранжевый Г
-        popCorner.put(26, 33)      //бело-красно-зеленый В
-        popCorner.put(27, 20)      //красно-бело-синяя Ф
-        popCorner.put(29, 2)      //красно-сине-желтая У
-        popCorner.put(33, 47)      //красно-зелено-белая С
-        popCorner.put(35, 42)      //красно-желто-зеленая Т
-        popCorner.put(36, 29)      //желто-красно-синяя Ц
-        popCorner.put(38, 0)      //желто-сине-оранжевая Х
-        popCorner.put(42, 53)      //желто-зелено-красная Ч
-        popCorner.put(44, 15)      //желто-оранжево-зеленая Ш
-        popCorner.put(45, 17)      //зелено-оранжево-белая Д
-        popCorner.put(47, 26)      //зелено-бело-красная Е
-        popCorner.put(51, 44)      //зелено-желто-оранжевая З
-        popCorner.put(53, 35)      //зелено-красно-желтая Ж
+        dopCorner.clear()
+        dopCorner.put(0, 9)       //сине-оранжево-желтый Л
+        dopCorner.put(2, 36)       //сине-желто-красный К
+        dopCorner.put(6, 18)       //сине-бело-оранжевый М
+        dopCorner.put(8, 27)       //сине-красно-белый И
+        dopCorner.put(9, 38)      //оранжево-желто-синий Р
+        dopCorner.put(11, 6)       //оранжево-сине-белый Н
+        dopCorner.put(15, 51)      //оранжево-зелено-желтый П
+        dopCorner.put(17, 24)      //оранжево-бело-зеленый О
+        dopCorner.put(18, 11)      //бело-оранжево-синий А
+        dopCorner.put(20, 8)      //бело-сине-красный Б
+        dopCorner.put(24, 45)      //бело-зелено-оранжевый Г
+        dopCorner.put(26, 33)      //бело-красно-зеленый В
+        dopCorner.put(27, 20)      //красно-бело-синяя Ф
+        dopCorner.put(29, 2)      //красно-сине-желтая У
+        dopCorner.put(33, 47)      //красно-зелено-белая С
+        dopCorner.put(35, 42)      //красно-желто-зеленая Т
+        dopCorner.put(36, 29)      //желто-красно-синяя Ц
+        dopCorner.put(38, 0)      //желто-сине-оранжевая Х
+        dopCorner.put(42, 53)      //желто-зелено-красная Ч
+        dopCorner.put(44, 15)      //желто-оранжево-зеленая Ш
+        dopCorner.put(45, 17)      //зелено-оранжево-белая Д
+        dopCorner.put(47, 26)      //зелено-бело-красная Е
+        dopCorner.put(51, 44)      //зелено-желто-оранжевая З
+        dopCorner.put(53, 35)      //зелено-красно-желтая Ж
 
         // Порядок поиска свободной корзины для переплавки ребра
         edgePriority = hashMapOf(
