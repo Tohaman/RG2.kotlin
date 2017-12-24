@@ -28,7 +28,7 @@ import ru.tohaman.rg3.DeveloperKey.DEVELOPER_KEY
 import ru.tohaman.rg3.R
 import ru.tohaman.rg3.VIDEO_PREVIEW
 import ru.tohaman.rg3.data.ListPager
-import ru.tohaman.rg3.ui.FragmentPagerItemtUI
+import ru.tohaman.rg3.ui.PagerItemtUI
 
 class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener {
     // Константы для YouTubePlayer
@@ -41,7 +41,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         // Создаем Вью
-        val view = FragmentPagerItemtUI<Fragment>().createView(AnkoContext.create(context, this))
+        val view = PagerItemtUI<Fragment>().createView(AnkoContext.create(context, this))
 
         //Данные во фрагмент передаются через фабричный метод newInstance данного фрагмента
         val message = arguments.getString("title")
@@ -54,14 +54,14 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         text = String.format(text, st)
         val spantext = spannedString(text)
 
-        (view.findViewById(FragmentPagerItemtUI.Ids.pagerTitleText) as TextView).text = message
-        (view.findViewById(FragmentPagerItemtUI.Ids.pagerImageView) as ImageView).imageResource = topImage
-        (view.findViewById(FragmentPagerItemtUI.Ids.descriptionText) as TextView).text = spantext
+        (view.findViewById(PagerItemtUI.Ids.pagerTitleText) as TextView).text = message
+        (view.findViewById(PagerItemtUI.Ids.pagerImageView) as ImageView).imageResource = topImage
+        (view.findViewById(PagerItemtUI.Ids.descriptionText) as TextView).text = spantext
 
-        val ytTextView = view.findViewById(FragmentPagerItemtUI.Ids.youTubeTextView) as TextView
+        val ytTextView = view.findViewById(PagerItemtUI.Ids.youTubeTextView) as TextView
 
         // Если ссылка пустая, то вообще не отображаем видеопревью (скрываем лэйаут с текстом и превьюшкой)
-        val ytViewLayout = view.findViewById(FragmentPagerItemtUI.Ids.youTubeLayout) as RelativeLayout
+        val ytViewLayout = view.findViewById(PagerItemtUI.Ids.youTubeLayout) as RelativeLayout
         if (url == "") {
             ytViewLayout.visibility = View.GONE
         } else {
@@ -70,18 +70,18 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         //смотрим в настройках программы, показывать превью видео или текст
         val previewEnabled = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean(VIDEO_PREVIEW, true)
-        val thumbnailView = view.findViewById(FragmentPagerItemtUI.Ids.ytThumbnailView) as YouTubeThumbnailView
-        val playPreviewImage = view.findViewById(FragmentPagerItemtUI.Ids.icPlayPreview) as ImageView
+        val thumbnailView = view.findViewById(PagerItemtUI.Ids.ytThumbnailView) as YouTubeThumbnailView
+        val playPreviewImage = view.findViewById(PagerItemtUI.Ids.icPlayPreview) as ImageView
         if (previewEnabled and canPlayYouTubeVideo()) {
             showYouTubePreview(thumbnailView, ytTextView, playPreviewImage)
         } else {
-            hideYouTubePreview(thumbnailView, ytTextView, playPreviewImage, text)  //скрыть превью, отобразить текстовой ссылкой
+            hideYouTubePreview(thumbnailView, ytTextView, playPreviewImage)  //скрыть превью, отобразить текстовой ссылкой
         }
 
         return view
     }
 
-    private fun hideYouTubePreview(thumbnailView: YouTubeThumbnailView, ytTextView: TextView, playPreviewImage: ImageView, text: String) {
+    private fun hideYouTubePreview(thumbnailView: YouTubeThumbnailView, ytTextView: TextView, playPreviewImage: ImageView) {
         thumbnailView.visibility = View.GONE
         playPreviewImage.visibility = View.GONE
         ytTextView.visibility = View.VISIBLE
@@ -121,11 +121,11 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
     @Suppress("DEPRECATION")
     private val imgGetter = Html.ImageGetter { source ->
-        var source = source
+        var sourceString = source
         val drawable: Drawable
-        source = source.replace(".png", "")
-        source = source.replace(".xml", "")
-        var resID = resources.getIdentifier(source, "drawable", activity.packageName)
+        sourceString = sourceString.replace(".png", "")
+        sourceString = sourceString.replace(".xml", "")
+        var resID = resources.getIdentifier(sourceString, "drawable", activity.packageName)
         //если картинка в drawable не найдена, то подсовываем заведомо существующую картинку
         if (resID == 0) {
             resID = resources.getIdentifier("ic_warning", "drawable", activity.packageName)
@@ -149,7 +149,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
     private fun spannedString(desc:String): Spanned {
         // Немного преобразуем текст для корректного отображения.
-        val desc = desc.replace("%%", "%25")
+        val desc1 = desc.replace("%%", "%25")
 
         // Android 7.0 ака N (Nougat) = API 24, начиная с версии Андроид 7.0 вместо HTML.fromHtml (String)
         // лучше использовать HTML.fromHtml (String, int), где int различные флаги, влияющие на отображение html
@@ -163,10 +163,10 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         val spanresult: Spanned
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            spanresult = Html.fromHtml(desc, Html.FROM_HTML_MODE_LEGACY, imgGetter, null)
+            spanresult = Html.fromHtml(desc1, Html.FROM_HTML_MODE_LEGACY, imgGetter, null)
         } else {
             @Suppress("DEPRECATION")
-            spanresult = Html.fromHtml(desc, imgGetter, null)
+            spanresult = Html.fromHtml(desc1, imgGetter, null)
         }
         return spanresult
     }

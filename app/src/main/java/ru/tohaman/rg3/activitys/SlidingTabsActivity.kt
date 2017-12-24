@@ -31,7 +31,7 @@ class SlidingTabsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sliding_tabs)
         setSupportActionBar(toolbar)
 
-        fab_sl.setOnClickListener { view ->
+        fab_sl.setOnClickListener {
             onBackPressed()
         }
 

@@ -189,23 +189,20 @@ class TimerUI<in Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener,
         }
     }
 
-    override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-        v?.performClick()
-        val action = event!!.action
-        when (v?.id) {
+    override fun onTouch(v: View, event: MotionEvent): Boolean {
+        v.performClick()
+        val action = event.action
+        when (v.id) {
             leftPad.id -> {
                 //что-то сделали (нажали или отпустили) с левой панелью
-//                Log.v (TAG, "TimerUI leftPad.action = $action TimerReady = $timerReady TimerStart = $timerStart")
-                leftHandDown = onTouchAction(leftHandDown, rightHandDown, action, leftCircle)
+                leftHandDown = onTouchAction(rightHandDown, action, leftCircle)
             }
             rightPad.id -> {
                 //что-то сделали с правой панелью
-//                Log.v (TAG, "TimerUI rightPad.action = $action TimerReady = $timerReady TimerStart = $timerStart")
-                rightHandDown = onTouchAction(rightHandDown, leftHandDown, action, rightCircle)
+                rightHandDown = onTouchAction(leftHandDown, action, rightCircle)
             }
             topLayout.id -> {
                 //нажали или отпустили панель таймера
-//                Log.v (TAG, "TimerUI topLayout.action = $action TimerReady = $timerReady TimerStart = $timerStart")
                 if (action == MotionEvent.ACTION_DOWN) {
                     if (reset_pressed_time + 300 > System.currentTimeMillis()) {
                         timerReset()
@@ -219,7 +216,7 @@ class TimerUI<in Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener,
     }
 
     // на входе состояние нажатий лев и прав панели, на выходе текущее состояние в зависимости от action Up или Down
-    private fun onTouchAction(first_hand: Boolean, second_hand: Boolean, action: Int, handLight: ImageView): Boolean {
+    private fun onTouchAction(second_hand: Boolean, action: Int, handLight: ImageView): Boolean {
         //true если хоть что-то из этого true
         val sec_hand = second_hand or oneHandToStart
         //вот так в котлине when может возвращать какое-то значение, в данном случае положена или отпущена рука (true или false)

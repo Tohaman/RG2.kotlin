@@ -30,11 +30,13 @@ const val ONE_HAND_TO_START = "oneHandToStart"
 const val METRONOM_ENABLED = "metronomEnabled"
 const val METRONOM_TIME = "metronomTime"
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, ListViewFragment.OnFragmentInteractionListener {
+class MainActivity : AppCompatActivity(),
+        NavigationView.OnNavigationItemSelectedListener,
+        ListViewFragment.OnFragmentInteractionListener,
+        FragmentScrambleGen.OnSrambleGenInteractionListener {
+
     private lateinit var fragListView: ListViewFragment
-    private lateinit var fragTimer: Fragment
-    private lateinit var fragScrambleGen: Fragment
-    private var back_pressed_time: Long = 0
+    private var backPressedTime: Long = 0
     lateinit private var mListPagerLab: ListPagerLab
     private var curPhase: String = "BEGIN"
 
@@ -45,15 +47,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         Log.v (TAG, "MainActivity CreateView")
         setContentView(R.layout.activity_main)
 
-        fragTimer = FragmentTimerSettings()
-        fragScrambleGen = FragmentScrambleGen ()
         curPhase = loadStartPhase()
         fragListView = ListViewFragment.newInstance("BEGIN")
-        val transaction : FragmentTransaction? = supportFragmentManager.beginTransaction()
         when (curPhase) {
-            "TIMER" -> {transaction?.replace(R.id.frame_container, fragTimer)?.commit()}
-            "SCRAMBLEGEN" -> {transaction?.replace(R.id.frame_container, fragScrambleGen)?.commit()}
-            else -> { setPhase(curPhase) }
+            "TIMER" -> {setFragment(FragmentTimerSettings.newInstance())}
+            "SCRAMBLEGEN" -> {setFragment(FragmentScrambleGen.newInstance())}
+            else -> { setFragment(ListViewFragment.newInstance(curPhase)) }
         }
 
         nav_view.setNavigationItemSelectedListener(this)
@@ -72,6 +71,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
     }
 
+    fun setFragment (fragment: Fragment) {
+        val transaction : FragmentTransaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frame_container, fragment).commit()
+    }
+
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
@@ -80,11 +84,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 curPhase = "G2F"
                 fragListView.changePhase(curPhase, this)
             } else {
-                if (back_pressed_time + 1000 > System.currentTimeMillis()) {
+                if (backPressedTime + 1000 > System.currentTimeMillis()) {
                     super.onBackPressed()
                 } else {
                     toast("Нажмите еще раз для выхода")
-                    back_pressed_time = System.currentTimeMillis()
+                    backPressedTime = System.currentTimeMillis()
                 }
             }
         }
@@ -116,22 +120,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     "TIMER" -> {
                         alert(getString(R.string.help_timer)) { okButton { } }.show()
                     }
-                    "SCRAMBLEGEN" -> {
-                        alert {
-                            customView {
-                                verticalLayout {
-                                    val familyName = editText {
-                                        hint = "Family name"
-                                    }
-                                    val firstName = editText {
-                                        hint = "First name"
-                                    }
-                                    positiveButton("Register") {  }
-                                }
-                            }
-                        }.show()
-                    }
-                }
+                  }
                 return true}
             else -> return super.onOptionsItemSelected(item)
         }
@@ -142,13 +131,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Handle navigation view item clicks here.
         Log.v(DebugTag.TAG, "NavigationItemSelected $item.itemId")
         when (item.itemId) {
-            R.id.begin2x2 -> { setPhase("BEGIN2X2") }
+            R.id.begin2x2 -> { setListFragmentPhase("BEGIN2X2") }
 
-            R.id.adv2x2 -> { setPhase("ADV2X2") }
+            R.id.adv2x2 -> { setListFragmentPhase("ADV2X2") }
 
-            R.id.begin -> { setPhase("BEGIN") }
+            R.id.begin -> { setListFragmentPhase("BEGIN") }
 
-            R.id.g2f -> { setPhase("G2F") }
+            R.id.g2f -> { setListFragmentPhase("G2F") }
 
             R.id.blind -> {
                 snackbar(contentView!!, "Blind пока недоступен","ОК") {/** Do something */}
@@ -156,23 +145,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.blind_acc -> {
                 snackbar(contentView!!, "Blind пока недоступен","ОК") {/** Do something */}
             }
-            R.id.begin4x4 -> { setPhase("BEGIN4X4")}
+            R.id.begin4x4 -> { setListFragmentPhase("BEGIN4X4")}
 
             R.id.timer -> {
-                val transaction: FragmentTransaction? = supportFragmentManager.beginTransaction()
-                transaction?.replace(R.id.frame_container, fragTimer)?.commit()
+                setFragment(FragmentTimerSettings.newInstance())
                 saveStartPhase("TIMER")
             }
             R.id.scramble -> {
-                val transaction: FragmentTransaction? = supportFragmentManager.beginTransaction()
-                transaction?.replace(R.id.frame_container, fragScrambleGen)?.commit()
+                setFragment(FragmentScrambleGen.newInstance())
                 saveStartPhase("SCRAMBLEGEN")
             }
             R.id.pll_game -> {
                 snackbar(contentView!!, "Игра пока недоступна","ОК") {/** Do something */}
             }
 
-            R.id.basic_move -> { setPhase("BASIC") }
+            R.id.basic_move -> { setListFragmentPhase("BASIC") }
 
             R.id.thanks -> {
                 snackbar(contentView!!, "Спасибо!","ОК") {/** Do something */}
@@ -199,10 +186,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         editor.apply() // подтверждаем изменения
     }
 
-    private fun setPhase (phase: String){
+    private fun setListFragmentPhase(phase: String){
         curPhase = phase
-        val transaction: FragmentTransaction? = supportFragmentManager.beginTransaction()
-        transaction?.replace(R.id.frame_container, fragListView)?.commit()
+        val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frame_container, fragListView).commit()
         fragListView.changePhase(curPhase, this)
         saveStartPhase(curPhase)
     }
@@ -223,6 +210,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             //в других случаях запустить SlideTab с просмотром этапов
             else -> { startActivity<SlidingTabsActivity>(RUBIC_PHASE to phase, EXTRA_ID to id)}
+        }
+    }
+
+    override fun onScrambleGenInteraction(button: String) {
+        super.onScrambleGenInteraction(button)
+        if (button == "AZBUKA") {
+            toast("Нажата кнопка AZBUKA")
         }
     }
 

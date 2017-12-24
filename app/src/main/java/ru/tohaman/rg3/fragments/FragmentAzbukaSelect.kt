@@ -9,22 +9,24 @@ import android.view.View
 import android.view.ViewGroup
 import org.jetbrains.anko.*
 import ru.tohaman.rg3.DebugTag
-import ru.tohaman.rg3.ui.TimerSettingsUI
+import ru.tohaman.rg3.ui.AzbukaSelectUI
+import ru.tohaman.rg3.ui.TimerUI
 
 
-class FragmentTimerSettings : Fragment() {
+class FragmentAzbukaSelect : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return TimerSettingsUI<Fragment>().createView(AnkoContext.create(context, this))
+        return AzbukaSelectUI<Fragment>().createView(AnkoContext.create(context, this))
     }
 
     companion object {
-        fun newInstance(): FragmentTimerSettings {
-            Log.v(DebugTag.TAG, "FragmentTimerSettings newInstance")
-            return FragmentTimerSettings()
+        fun newInstance(): FragmentAzbukaSelect {
+            Log.v(DebugTag.TAG, "FragmentAzbukaSelect newInstance")
+            return FragmentAzbukaSelect()
         }
     }
+
 
 }
 

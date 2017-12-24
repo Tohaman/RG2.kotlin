@@ -12,12 +12,13 @@ import ru.tohaman.rg3.R
  *  Класс для создания одного элемента PagerView для ViewPagerSlidingTab с помощью Anko
  */
 
-class FragmentPagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
+class PagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
 
     override fun create(ui: AnkoContext<Fragment>) = with(ui) {
         linearLayout {
             orientation = LinearLayout.VERTICAL
             gravity = Gravity.TOP
+
             scrollView{
                 linearLayout {
                     orientation = LinearLayout.VERTICAL

@@ -27,7 +27,7 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
         val sp = PreferenceManager.getDefaultSharedPreferences(context)
         val oneHandToStart = sp.getBoolean(ONE_HAND_TO_START, false)
         val metronomEnabled = sp.getBoolean(METRONOM_ENABLED, true)
-        var metronomTime = sp.getInt(METRONOM_TIME, 80)
+        var metronomTime = sp.getInt(METRONOM_TIME, 60)
 
         linearLayout {
             gravity = Gravity.CENTER
