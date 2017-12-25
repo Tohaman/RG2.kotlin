@@ -29,6 +29,7 @@ import ru.tohaman.rg3.R
 import ru.tohaman.rg3.VIDEO_PREVIEW
 import ru.tohaman.rg3.data.ListPager
 import ru.tohaman.rg3.ui.PagerItemtUI
+import ru.tohaman.rg3.util.spannedString
 
 class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener {
     // Константы для YouTubePlayer
@@ -52,11 +53,11 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         var text = "<html><body style=\"text-align:justify\"> %s </body></html>"
         val st = getString(description)
         text = String.format(text, st)
-        val spantext = spannedString(text)
+        val spanText = spannedString(text, imgGetter)
 
         (view.findViewById(PagerItemtUI.Ids.pagerTitleText) as TextView).text = message
         (view.findViewById(PagerItemtUI.Ids.pagerImageView) as ImageView).imageResource = topImage
-        (view.findViewById(PagerItemtUI.Ids.descriptionText) as TextView).text = spantext
+        (view.findViewById(PagerItemtUI.Ids.descriptionText) as TextView).text = spanText
 
         val ytTextView = view.findViewById(PagerItemtUI.Ids.youTubeTextView) as TextView
 
@@ -87,7 +88,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         ytTextView.visibility = View.VISIBLE
         var text1 = "<html><body> <a href=\"rg2://ytplay?time=0:00&link=%s\"> %s </a></body></html>"
         text1 = kotlin.String.format(text1, url, getString(R.string.pager_youtubetext))
-        ytTextView.text = spannedString(text1)
+        ytTextView.text = spannedString(text1, imgGetter)
     }
 
     private fun showYouTubePreview(thumbnailView: YouTubeThumbnailView, ytTextView: TextView, playPreviewImage: ImageView) {
@@ -99,7 +100,6 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
             playYouTubeVideo(true, url)
         }
     }
-
 
     private fun canPlayYouTubeVideo():Boolean = playYouTubeVideo(false)
 
@@ -130,14 +130,13 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         if (resID == 0) {
             resID = resources.getIdentifier("ic_warning", "drawable", activity.packageName)
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            drawable = resources.getDrawable(resID, null)
+        drawable = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            resources.getDrawable(resID, null)
         } else {
-            drawable = resources.getDrawable(resID)
+            resources.getDrawable(resID)
         }
 
         drawable.setBounds(0, 0, drawable.intrinsicWidth, drawable.intrinsicHeight)
-
         drawable
     }
 
@@ -146,31 +145,6 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         val resolveInfo = activity.packageManager.queryIntentActivities(intent, 0)
         return resolveInfo != null && !resolveInfo.isEmpty()
     }
-
-    private fun spannedString(desc:String): Spanned {
-        // Немного преобразуем текст для корректного отображения.
-        val desc1 = desc.replace("%%", "%25")
-
-        // Android 7.0 ака N (Nougat) = API 24, начиная с версии Андроид 7.0 вместо HTML.fromHtml (String)
-        // лучше использовать HTML.fromHtml (String, int), где int различные флаги, влияющие на отображение html
-        // аналогично для метода HTML.fromHtml (String, ImageGetter, TagHandler) -> HTML.fromHtml (String, int, ImageGetter, TagHandler)
-        // поэтому используем @SuppressWarnings("deprecation") перед объявлением метода и вот такую конструкцию
-        // для преобразования String в Spanned. В принципе использование старой конструкции равноценно использованию
-        // новой с флагом Html.FROM_HTML_MODE_LEGACY... подробнее о флагах-модификаторах на developer.android.com
-        // В методе Html.fromHtml(String, imgGetter, tagHandler) - tagHandler - это метод, который вызывется, если
-        // в строке встречается тэг, который не распознан, т.е. тут можно обрабатывать свои тэги
-        // пока не используется (null), но все воозможно :)
-
-        val spanresult: Spanned
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            spanresult = Html.fromHtml(desc1, Html.FROM_HTML_MODE_LEGACY, imgGetter, null)
-        } else {
-            @Suppress("DEPRECATION")
-            spanresult = Html.fromHtml(desc1, imgGetter, null)
-        }
-        return spanresult
-    }
-
 
     //Два обязательных переопределяемых метода для имплементного YouTubeThumbnailView.OnInitializedListener
     override fun onInitializationSuccess(p0: YouTubeThumbnailView?, p1: YouTubeThumbnailLoader?) {

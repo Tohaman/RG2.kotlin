@@ -1,10 +1,52 @@
 package ru.tohaman.rg3.util
 
+import android.util.Log
+import ru.tohaman.rg3.DebugTag
+import ru.tohaman.rg3.R
+import ru.tohaman.rg3.data.CubeAzbuka
+import java.util.ArrayList
+
 /**
  * Created by Toha on 22.12.2017.
  * Основные движения для кубика
  */
 
+fun resetCube(): IntArray {
+    Log.v (DebugTag.TAG, "FragmentScrambleGen resetCube")
+    val cube = IntArray(54)
+    for (i in cube.indices) {
+        cube[i] = i / 9
+    }
+    return cube
+}
+
+fun prepareCubeToShowInGridView(cube: IntArray) : ArrayList<CubeAzbuka> {
+    Log.v (DebugTag.TAG, "FragmentScrambleGen prepareCubeToShowInGridView")
+    // очищаем grList = ListOf<(R.color.transparent, "")> - 108штук
+    val grList = clearArray4GridList()
+    // Задаем для элементов куба букву равную пробелу, и цвет соответствующий элемнтам куба (массива)
+    // если остается = "" и цвет прозрачный то это элемент фона (и будет не виден)
+    for (i in 0..8) {
+        grList[(i / 3) * 12 + 3 + i % 3] = CubeAzbuka(cubeColor[cube[i]], " ")
+        grList[(i / 3 + 3) * 12 + i % 3] = CubeAzbuka(cubeColor[cube[i + 9]], " ")
+        grList[(i / 3 + 3) * 12 + 3 + i % 3] = CubeAzbuka(cubeColor[cube[i + 18]], " ")
+        grList[(i / 3 + 3) * 12 + 6 + i % 3] = CubeAzbuka(cubeColor[cube[i + 27]], " ")
+        grList[(i / 3 + 3) * 12 + 9 + i % 3] = CubeAzbuka(cubeColor[cube[i + 36]], " ")
+        grList[(i / 3 + 6) * 12 + 3 + i % 3] = CubeAzbuka(cubeColor[cube[i + 45]], " ")
+    }
+    return grList
+}
+
+fun clearArray4GridList(): ArrayList<CubeAzbuka> {
+    Log.v (DebugTag.TAG, "FragmentScrambleGen clearArray4GridList")
+    // 108 элементов GridList делаем пустыми и прозрачными
+    val cubeAzbuka = CubeAzbuka(R.color.transparent, "")
+    val grList = arrayListOf<CubeAzbuka>()
+    for (i in 0..107) {
+        grList.add(cubeAzbuka)
+    }
+    return grList
+}
 
 fun changeElements(cube: IntArray, firstElement: Int, secondElement: Int): IntArray {
     val buf = cube[firstElement]

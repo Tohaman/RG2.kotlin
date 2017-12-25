@@ -18,6 +18,7 @@ import org.jetbrains.anko.design.snackbar
 import ru.tohaman.rg3.data.ListPagerLab
 import ru.tohaman.rg3.DebugTag.TAG
 import ru.tohaman.rg3.activitys.SlidingTabsActivity
+import ru.tohaman.rg3.fragments.FragmentAzbukaSelect
 import ru.tohaman.rg3.fragments.FragmentScrambleGen
 import ru.tohaman.rg3.fragments.FragmentTimerSettings
 import ru.tohaman.rg3.fragments.ListViewFragment
@@ -32,7 +33,7 @@ const val METRONOM_TIME = "metronomTime"
 
 class MainActivity : AppCompatActivity(),
         NavigationView.OnNavigationItemSelectedListener,
-        ListViewFragment.OnFragmentInteractionListener,
+        ListViewFragment.OnListViewInteractionListener,
         FragmentScrambleGen.OnSrambleGenInteractionListener {
 
     private lateinit var fragListView: ListViewFragment
@@ -57,11 +58,18 @@ class MainActivity : AppCompatActivity(),
 
         nav_view.setNavigationItemSelectedListener(this)
         fab.setOnClickListener { _ ->
-            if (curPhase == "G2F_NEXT") {
-                curPhase = "G2F"
-                fragListView.changePhase(curPhase, this)
-            } else {
-                drawer_layout.openDrawer(GravityCompat.START)
+            when (curPhase) {
+                "G2F_NEXT" -> {
+                    curPhase = "G2F"
+                    fragListView.changePhase(curPhase, this)
+                }
+                "AZBUKA" -> {
+                    curPhase = "SCRAMBLEGEN"
+                    setFragment(FragmentScrambleGen.newInstance())
+                }
+                else -> {
+                    drawer_layout.openDrawer(GravityCompat.START)
+                }
             }
         }
         setSupportActionBar(maintoolbar)
@@ -71,7 +79,7 @@ class MainActivity : AppCompatActivity(),
         toggle.syncState()
     }
 
-    fun setFragment (fragment: Fragment) {
+    private fun setFragment (fragment: Fragment) {
         val transaction : FragmentTransaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame_container, fragment).commit()
     }
@@ -84,11 +92,16 @@ class MainActivity : AppCompatActivity(),
                 curPhase = "G2F"
                 fragListView.changePhase(curPhase, this)
             } else {
-                if (backPressedTime + 1000 > System.currentTimeMillis()) {
-                    super.onBackPressed()
+                if (curPhase == "AZBUKA"){
+                    curPhase = "SCRAMBLEGEN"
+                    setFragment(FragmentScrambleGen.newInstance())
                 } else {
-                    toast("Нажмите еще раз для выхода")
-                    backPressedTime = System.currentTimeMillis()
+                    if (backPressedTime + 1000 > System.currentTimeMillis()) {
+                        super.onBackPressed()
+                    } else {
+                        toast("Нажмите еще раз для выхода")
+                        backPressedTime = System.currentTimeMillis()
+                    }
                 }
             }
         }
@@ -195,9 +208,9 @@ class MainActivity : AppCompatActivity(),
     }
 
     //Обработка выбора пункта меню в листвью.
-    override fun onFragmentInteraction(phase:String, id:Int) {
+    override fun onListViewInteraction(phase:String, id:Int) {
         //Обработка событий из ListViewFragment
-        Log.v(DebugTag.TAG, "onFragmentInteraction Start, $phase, $id")
+        Log.v(DebugTag.TAG, "onListViewInteraction Start, $phase, $id")
         val lp = mListPagerLab.getPhaseItem(id,phase)
         val desc:String = getString(lp.description)
         when (phase) {
@@ -216,7 +229,8 @@ class MainActivity : AppCompatActivity(),
     override fun onScrambleGenInteraction(button: String) {
         super.onScrambleGenInteraction(button)
         if (button == "AZBUKA") {
-            toast("Нажата кнопка AZBUKA")
+            setFragment(FragmentAzbukaSelect.newInstance())
+            curPhase = "AZBUKA"
         }
     }
 

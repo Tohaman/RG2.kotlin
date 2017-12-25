@@ -23,14 +23,14 @@ import android.os.Build
  * ListViewFragment - фрагмент в котором встроенный ListView
  * отображает лист этапов определенной фазы
  * Активити содержащая этот fragment должна имплементить
- * [ListViewFragment.OnFragmentInteractionListener] interface
+ * [ListViewFragment.OnListViewInteractionListener] interface
  * для получения ответов от этого фрагмента.
  * Для создания экземпляра фрагмента используйте [ListViewFragment.newInstance]
  */
 class ListViewFragment : ListFragment() {
     private var mPhase: String = "BEGIN"
 
-    private var mListener: OnFragmentInteractionListener? = null
+    private var mListener: OnListViewInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.v (DebugTag.TAG, "ListViewFragment onCreate")
@@ -71,7 +71,7 @@ class ListViewFragment : ListFragment() {
     override fun onListItemClick(l: ListView?, v: View?, position: Int, id: Long) {
         super.onListItemClick(l, v, position, id)
         if (mListener != null) {
-            mListener!!.onFragmentInteraction(mPhase,position)
+            mListener!!.onListViewInteraction(mPhase,position)
         }
         //toast("Ваш выбор $mPhase, $position")
     }
@@ -79,10 +79,10 @@ class ListViewFragment : ListFragment() {
     override fun onAttach(context: Context?) {
         Log.v (DebugTag.TAG, "ListViewFragment onAttach")
         super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
+        if (context is OnListViewInteractionListener) {
             mListener = context
         } else {
-            throw RuntimeException(context!!.toString() + " must implement OnFragmentInteractionListener")
+            throw RuntimeException(context!!.toString() + " must implement OnListViewInteractionListener")
         }
     }
 
@@ -101,9 +101,9 @@ class ListViewFragment : ListFragment() {
      *
      * See the Android Training lesson [Communicating with Other Fragments](http://developer.android.com/training/basics/fragments/communicating.html) for more information.
      */
-    interface OnFragmentInteractionListener {
-        fun onFragmentInteraction(phase: String, id : Int) {
-            Log.v(DebugTag.TAG, "ListViewFragment onFragmentInteraction")
+    interface OnListViewInteractionListener {
+        fun onListViewInteraction(phase: String, id : Int) {
+            Log.v(DebugTag.TAG, "ListViewFragment onListViewInteraction")
         }
     }
 

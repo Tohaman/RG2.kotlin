@@ -36,4 +36,8 @@
     <string name="minus">-</string>
     <string name="plus">+</string>
     <string name="checkBoxSolveText">Решение:</string>
+    <string name="scramble_def_value">R F L B</string>
+    <string name="scramble_def_solve">(А Г Ш Т Р Ц Л З Ж) (Ж П М Ф Б В)</string>
+    <string name="scrambleText">Скрамбл:</string>
+    <string name="azbukaButtonText">Выбрать азбуку</string>
 </resources>

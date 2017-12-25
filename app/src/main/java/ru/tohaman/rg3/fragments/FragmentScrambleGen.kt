@@ -34,8 +34,6 @@ import kotlin.collections.HashMap
  *
  */
 
-
-
 class FragmentScrambleGen : Fragment() {
 
     private val SCRAMBLE = "scramble"
@@ -46,13 +44,10 @@ class FragmentScrambleGen : Fragment() {
 
     private var mListener: OnSrambleGenInteractionListener? = null
 
-    private var gridList = ArrayList<CubeAzbuka>()
-    private val cubeColor = IntArray(6)
     private var currentCube = IntArray(54)
 
     private lateinit var gridAdapter : MyGridAdapter
 
-    private lateinit var sp : SharedPreferences
     private lateinit var progressBar : ProgressBar
     private lateinit var progressText : TextView
     private lateinit var generateScramble : Button
@@ -65,34 +60,20 @@ class FragmentScrambleGen : Fragment() {
     private lateinit var buttonPlus: Button
     private lateinit var buttonMinus: Button
 
-    private var mainEdge: HashMap<Int,Int> = hashMapOf(0 to 0)
-    private var dopEdge: HashMap<Int,Int> = hashMapOf(0 to 0)
-    private var mainCorner: HashMap<Int,Int> = hashMapOf(0 to 0)
-    private var dopCorner: HashMap<Int,Int> = hashMapOf(0 to 0)
     private var listEdgesOnPlace: SortedMap<Int,Int> = sortedMapOf(0 to 0)
     private var listCornersOnPlace: SortedMap<Int,Int> = sortedMapOf(0 to 0)
-    private var edgePriority: HashMap<Int,Int> = hashMapOf(0 to 0)
-    private var cornerPriority: HashMap<Int,Int> = hashMapOf(0 to 0)
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Log.v (TAG, "FragmentScrambleGen onCreateView - start")
 
-        sp = PreferenceManager.getDefaultSharedPreferences(context)
+        val sp = PreferenceManager.getDefaultSharedPreferences(context)
         val scramble = sp.getString(SCRAMBLE, "U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R")
         var chkEdgesBuffer = sp.getBoolean(CHK_BUF_EDGES, true)
         var chkCornersBuffer = sp.getBoolean(CHK_BUF_CORNERS, false)
         var scrambleLength = sp.getInt(SCRAMBLE_LEN, 14)
         var chkShowSolve = sp.getBoolean(CHK_SHOW_SOLVE, true)
-        initArrays()
 
         val view = inflater?.inflate(R.layout.fragment_scramble_gen, container, false)
-
-        cubeColor[0] = R.color.cube_blue
-        cubeColor[1] = R.color.cube_orange
-        cubeColor[2] = R.color.cube_white
-        cubeColor[3] = R.color.cube_red
-        cubeColor[4] = R.color.cube_yellow
-        cubeColor[5] = R.color.cube_green
 
         Log.v (TAG, "FragmentScrambleGen onCreateView - hide ProgressBar & ProgressText")
         progressBar = view!!.findViewById<ProgressBar>(R.id.progressBar)
@@ -199,7 +180,7 @@ class FragmentScrambleGen : Fragment() {
         textSolve = view.findViewById(R.id.solve_text)
         textSolve.text = showSolve(currentCube)
 
-        gridList = prepareCubeToShowInGridView(currentCube)        //подготавливаем текущий кубик для вывода в GridView
+        val gridList = prepareCubeToShowInGridView(currentCube)        //подготавливаем текущий кубик для вывода в GridView
 
         //находим GridView и выводим в него текущий кубик
         val gridView = view.findViewById(R.id.scram_gridView) as GridView
@@ -218,47 +199,10 @@ class FragmentScrambleGen : Fragment() {
         }
     }
 
-    private fun resetCube(): IntArray {
-        Log.v (TAG, "FragmentScrambleGen resetCube")
-        val cube = IntArray(54)
-        for (i in cube.indices) {
-            cube[i] = i / 9
-        }
-        return cube
-    }
-
     private fun showCube(cube: IntArray) {
         Log.v (TAG, "FragmentScrambleGen showCube")
         gridAdapter.gridList = prepareCubeToShowInGridView(cube)
         gridAdapter.notifyDataSetChanged()
-    }
-
-    private fun prepareCubeToShowInGridView(cube: IntArray) : ArrayList<CubeAzbuka> {
-        Log.v (TAG, "FragmentScrambleGen prepareCubeToShowInGridView")
-        // очищаем grList = ListOf<(R.color.transparent, "")> - 108штук
-        val grList = clearArray4GridList()
-        // Задаем для элементов куба букву равную пробелу, и цвет соответствующий элемнтам куба (массива)
-        // если остается = "" и цвет прозрачный то это элемент фона (и будет не виден)
-        for (i in 0..8) {
-            grList[(i / 3) * 12 + 3 + i % 3] = CubeAzbuka(cubeColor[cube[i]], " ")
-            grList[(i / 3 + 3) * 12 + i % 3] = CubeAzbuka(cubeColor[cube[i + 9]], " ")
-            grList[(i / 3 + 3) * 12 + 3 + i % 3] = CubeAzbuka(cubeColor[cube[i + 18]], " ")
-            grList[(i / 3 + 3) * 12 + 6 + i % 3] = CubeAzbuka(cubeColor[cube[i + 27]], " ")
-            grList[(i / 3 + 3) * 12 + 9 + i % 3] = CubeAzbuka(cubeColor[cube[i + 36]], " ")
-            grList[(i / 3 + 6) * 12 + 3 + i % 3] = CubeAzbuka(cubeColor[cube[i + 45]], " ")
-        }
-        return grList
-    }
-
-    private fun clearArray4GridList(): ArrayList<CubeAzbuka> {
-        Log.v (TAG, "FragmentScrambleGen clearArray4GridList")
-        // 108 элементов GridList делаем пустыми и прозрачными
-        val cubeAzbuka = CubeAzbuka(R.color.transparent, "")
-        val grList = arrayListOf<CubeAzbuka>()
-        for (i in 0..107) {
-            grList.add(cubeAzbuka)
-        }
-        return grList
     }
 
     private fun getSolve(maincube: IntArray): String {
@@ -290,7 +234,6 @@ class FragmentScrambleGen : Fragment() {
         solve += ")"
         return solve
     }
-
 
     private fun scrambleGenerate(chkEdgesBuffer: Boolean, chkCornersBuffer: Boolean, scrambleLength: Int) {
         Log.v(TAG, "FragmentScrambleGen scrambleGenerate")
@@ -602,148 +545,6 @@ class FragmentScrambleGen : Fragment() {
         return range.start + nextInt(range.last - range.start)
     }
 
-    private fun initArrays() {        //Инициализируем таблицы соответствий
-        //Создаем табличку (словарь) номеров основных ребер, для определенных сочетаний цветов, остальные элементы равны null
-        //первое число цвет, например 12 = синий 1 + оранжевый 2
-        //второе число номер основного(первого) цвета как элемента куба (0..53)
-        mainEdge.clear()
-        mainEdge.put(12, 3)      //для сине-оранжевого ребра
-        mainEdge.put(13, 7)      //для сине-белого ребра
-        mainEdge.put(14, 5)      //для сине-красного ребра
-        mainEdge.put(15, 1)      //для сине-желтого ребра
-        mainEdge.put(21, 10)     //для оранжево-синей ребра
-        mainEdge.put(23, 14)     //для оранжево-белого ребра
-        mainEdge.put(25, 12)     //для оранжево-желтого ребра
-        mainEdge.put(26, 16)     //для оранжево-зеленого ребра
-        mainEdge.put(31, 19)     //для бело-синей ребра
-        mainEdge.put(32, 21)     //для бело-оранжевого ребра
-        mainEdge.put(34, 23)     //для бело-красного ребра
-        mainEdge.put(36, 25)     //для бело-зеленого ребра
-        mainEdge.put(41, 28)     //для красно-синей ребра
-        mainEdge.put(43, 30)     //для красно-белого ребра
-        mainEdge.put(45, 32)     //для красно-желтого ребра
-        mainEdge.put(46, 34)     //для красно-зеленого ребра
-        mainEdge.put(51, 37)     //для желто-синей ребра
-        mainEdge.put(52, 41)     //для желто-оранжевого ребра
-        mainEdge.put(54, 39)     //для желто-красного ребра
-        mainEdge.put(56, 43)     //для желто-зеленого ребра
-        mainEdge.put(62, 48)     //для зелено-оранжевого ребра
-        mainEdge.put(63, 46)     //для зелено-белого ребра
-        mainEdge.put(64, 50)     //для зелено-красного ребра
-        mainEdge.put(65, 52)     //для зелено-желтого ребра
-
-        //Создаем табличку соответствия основного цвета и дополнительного цвета ребра [где искать второй цвет)
-        //первая и вторая цифра номер соответствующих друг другу позиций ребра в кубе. т.е. 1->37, 37->1
-        dopEdge.clear()
-        dopEdge.put(1, 37)           //сине-желтое
-        dopEdge.put(3, 10)           //сине-оранжевое
-        dopEdge.put(5, 28)           //сине-красное
-        dopEdge.put(7, 19)           //сине-белое
-        dopEdge.put(10, 3)           //оранжево-синяя
-        dopEdge.put(12, 41)          //оранжево-желтое
-        dopEdge.put(14, 21)          //оранжево-белое
-        dopEdge.put(16, 48)          //оранжево-зеленое
-        dopEdge.put(19, 7)           //бело-синяя
-        dopEdge.put(21, 14)          //бело-оранжевое
-        dopEdge.put(23, 30)          //бело-красное
-        dopEdge.put(25, 46)          //бело-зеленое
-        dopEdge.put(28, 5)           //красно-синяя
-        dopEdge.put(30, 23)          //красно-белое
-        dopEdge.put(32, 39)          //красно-желтое
-        dopEdge.put(34, 50)          //красно-зеленое
-        dopEdge.put(37, 1)           //желто-синяя
-        dopEdge.put(39, 32)          //желто-красное
-        dopEdge.put(41, 12)          //желто-оранжевое
-        dopEdge.put(43, 52)          //желто-зеленое
-        dopEdge.put(46, 25)          //зелено-белое
-        dopEdge.put(48, 16)          //зелено-оранжевое
-        dopEdge.put(50, 34)          //зелено-красное
-        dopEdge.put(52, 43)          //зелено-желтое
-
-        //Создаем табличку номеров основных углов, для определенных сочетаний цветов (по цвету его место)
-        //первое число цвет, например 12 = синий 1 + оранжевый 2
-        //второе число номер основного(первого) цвета как элемента куба (0..53)
-        mainCorner.clear()
-        mainCorner.put(12, 0)      //для сине-оранжево-желтого угла
-        mainCorner.put(13, 6)      //для сине-бело-оранжевого угла
-        mainCorner.put(14, 8)      //для сине-красно-белого угла
-        mainCorner.put(15, 2)      //для сине-желто-красного угла
-        mainCorner.put(21, 11)     //для оранжево-сине-белого угла
-        mainCorner.put(23, 17)     //для оранжево-бело-зеленого угла
-        mainCorner.put(25, 9)     //для оранжево-желто-синего угла
-        mainCorner.put(26, 15)     //для оранжево-зелено-желтого угла
-        mainCorner.put(31, 20)     //для бело-сине-красного угла
-        mainCorner.put(32, 18)     //для бело-оранжево-синего угла
-        mainCorner.put(34, 26)     //для бело-красно-зеленого угла
-        mainCorner.put(36, 24)     //для бело-зелено-оранжевого угла
-        mainCorner.put(41, 29)     //для красно-сине-желтого угла
-        mainCorner.put(43, 27)     //для красно-бело-синего угла
-        mainCorner.put(45, 35)     //для красно-желто-зеленого угла
-        mainCorner.put(46, 33)     //для красно-зелено-белого угла
-        mainCorner.put(51, 38)     //для желто-сине-оранжевого угла
-        mainCorner.put(52, 44)     //для желто-оранжево-зеленого угла
-        mainCorner.put(54, 36)     //для желто-красно-синего угла
-        mainCorner.put(56, 42)     //для желто-зелено-красного угла
-        mainCorner.put(62, 45)     //для зелено-оранжево-белого угла
-        mainCorner.put(63, 47)     //для зелено-бело-красного угла
-        mainCorner.put(64, 53)     //для зелено-красно-желтого угла
-        mainCorner.put(65, 51)     //для зелено-желто-оранжевого угла
-
-        //Создаем табличку соответствия основного и дополнительного угла [где искать второй цвет]
-        //углы рассматриваем по часовой стрелке, поэтому достаточно первых двух цветов, чтобы пределить угол
-        //первая и вторая цифра номер соответствующих позиций угла в кубе. т.е. 0->9, 9->38, 38->0
-        dopCorner.clear()
-        dopCorner.put(0, 9)       //сине-оранжево-желтый Л
-        dopCorner.put(2, 36)       //сине-желто-красный К
-        dopCorner.put(6, 18)       //сине-бело-оранжевый М
-        dopCorner.put(8, 27)       //сине-красно-белый И
-        dopCorner.put(9, 38)      //оранжево-желто-синий Р
-        dopCorner.put(11, 6)       //оранжево-сине-белый Н
-        dopCorner.put(15, 51)      //оранжево-зелено-желтый П
-        dopCorner.put(17, 24)      //оранжево-бело-зеленый О
-        dopCorner.put(18, 11)      //бело-оранжево-синий А
-        dopCorner.put(20, 8)      //бело-сине-красный Б
-        dopCorner.put(24, 45)      //бело-зелено-оранжевый Г
-        dopCorner.put(26, 33)      //бело-красно-зеленый В
-        dopCorner.put(27, 20)      //красно-бело-синяя Ф
-        dopCorner.put(29, 2)      //красно-сине-желтая У
-        dopCorner.put(33, 47)      //красно-зелено-белая С
-        dopCorner.put(35, 42)      //красно-желто-зеленая Т
-        dopCorner.put(36, 29)      //желто-красно-синяя Ц
-        dopCorner.put(38, 0)      //желто-сине-оранжевая Х
-        dopCorner.put(42, 53)      //желто-зелено-красная Ч
-        dopCorner.put(44, 15)      //желто-оранжево-зеленая Ш
-        dopCorner.put(45, 17)      //зелено-оранжево-белая Д
-        dopCorner.put(47, 26)      //зелено-бело-красная Е
-        dopCorner.put(51, 44)      //зелено-желто-оранжевая З
-        dopCorner.put(53, 35)      //зелено-красно-желтая Ж
-
-        // Порядок поиска свободной корзины для переплавки ребра
-        edgePriority = hashMapOf(
-                0 to 21,     // в первую очередь проверяем не занята ли бело-оранжевое ребро
-                1 to 25,            // бело-зеленое
-                2 to 48,            // зелено-оранжевое
-                3 to 3,             // сине-оранжевое
-                4 to 41,            // желто-оранжевое
-                5 to 43,            // желто-зеленое
-                6 to 37,            // желто-синее
-                7 to 39,            // желто-красное
-                8 to 7,             // сине-белое
-                9 to 34,            // красно-зеленое
-                10 to 28)            // красно-синее
-
-        // Порядок поиска свободной корзины для переплавки угла
-        cornerPriority = hashMapOf(
-                0 to 26,     // в первую очередь проверяем не занят ли бело-красно-зеленый угол
-                1 to 44,            // желто-зелено-оранжевый
-                2 to 36,            // желто-красно-синий
-                3 to 42,            // желто-красно-зеленый
-                4 to 38,            // желто-сине-оранжевый
-                5 to 20,            // бело-сине-красный
-                6 to 24)            // бело-зелено-оранжевый
-    }
-
-
     override fun onAttach(context: Context?) {
         Log.v (DebugTag.TAG, "FragmentScrambleGen onAttach")
         super.onAttach(context)
@@ -763,7 +564,7 @@ class FragmentScrambleGen : Fragment() {
 
     interface OnSrambleGenInteractionListener {
         fun onScrambleGenInteraction(button: String) {
-            Log.v(DebugTag.TAG, "FragmentScrambleGen onFragmentInteraction")
+            Log.v(DebugTag.TAG, "FragmentScrambleGen onListViewInteraction")
         }
     }
 

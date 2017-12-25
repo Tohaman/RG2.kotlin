@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Выбрать азбуку"
+            android:text="@string/azbukaButtonText"
             android:textSize="12sp" />
 
         <Button
@@ -120,8 +120,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
-                    android:layout_marginLeft="8dp"
-                    android:text="Скрамбл:"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/scrambleText"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -129,7 +129,7 @@
                     android:id="@+id/scramble"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="U D R F H K L j J K H J K H K J S D H A K H H D K J"
+                    android:text="@string/scramble_def_value"
                     android:textAlignment="viewStart"
                     android:textSize="16sp"
                     app:layout_constraintLeft_toRightOf="@+id/scramble_textView"
@@ -137,7 +137,7 @@
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_optimizationLevel="basic"
-                    android:layout_marginLeft="8dp" />
+                    android:layout_marginStart="8dp" />
 
             </android.support.constraint.ConstraintLayout>
 
@@ -206,7 +206,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Т А Ч Р Ш О Х У Г Д Ч Т Ш Б М"
+                    android:text="@string/scramble_def_solve"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
