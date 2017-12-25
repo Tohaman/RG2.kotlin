@@ -56,7 +56,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button_myazbuka"
+                android:id="@+id/button_my_azbuka"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -64,7 +64,7 @@
                 android:text="Азбука Антона"/>
 
             <Button
-                android:id="@+id/button_maxazbuka"
+                android:id="@+id/button_max_azbuka"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dimen_margin_8"
@@ -78,7 +78,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button_saveazbuka"
+                android:id="@+id/button_save_azbuka"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/dimen_margin_8"
@@ -86,7 +86,7 @@
                 android:text="Сохранить текущую азбуку"/>
 
             <Button
-                android:id="@+id/button_loadazbuka"
+                android:id="@+id/button_load_azbuka"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dimen_margin_8"

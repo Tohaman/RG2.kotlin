@@ -38,6 +38,7 @@ class MyGridAdapter (val context: Context, var gridList: List<CubeAzbuka>) : Bas
                             gravity = Gravity.CENTER
                             holder.txtView = textView {             //В центре буква (если нужна)
                                 gravity = Gravity.CENTER
+                                textColorResource = R.color.black
                                 text = " "
                             }
                         }.lparams(matchParent, matchParent) { margin = 2.dp }

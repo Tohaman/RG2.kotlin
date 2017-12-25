@@ -12,7 +12,7 @@ import java.util.ArrayList
  */
 
 fun resetCube(): IntArray {
-    Log.v (DebugTag.TAG, "FragmentScrambleGen resetCube")
+    Log.v (DebugTag.TAG, "resetCube")
     val cube = IntArray(54)
     for (i in cube.indices) {
         cube[i] = i / 9
@@ -21,7 +21,7 @@ fun resetCube(): IntArray {
 }
 
 fun prepareCubeToShowInGridView(cube: IntArray) : ArrayList<CubeAzbuka> {
-    Log.v (DebugTag.TAG, "FragmentScrambleGen prepareCubeToShowInGridView")
+    Log.v (DebugTag.TAG, "prepareCubeToShowInGridView")
     // очищаем grList = ListOf<(R.color.transparent, "")> - 108штук
     val grList = clearArray4GridList()
     // Задаем для элементов куба букву равную пробелу, и цвет соответствующий элемнтам куба (массива)
@@ -36,6 +36,24 @@ fun prepareCubeToShowInGridView(cube: IntArray) : ArrayList<CubeAzbuka> {
     }
     return grList
 }
+
+fun prepareAzbukaToShowInGridView(azbuka: Array<String>): ArrayList<CubeAzbuka> {
+    Log.v (DebugTag.TAG, "prepareAzbukaToShowInGridView")
+    val grList = clearArray4GridList()
+
+    val cube = resetCube()
+
+    for (i in 0..8) {
+        grList[i / 3 * 12 + 3 + i % 3] = CubeAzbuka(cubeColor[cube[i]], azbuka[i])
+        grList[(i / 3 + 3) * 12 + i % 3] = CubeAzbuka(cubeColor[cube[i + 9]], azbuka[i + 9])
+        grList[(i / 3 + 3) * 12 + 3 + i % 3] = CubeAzbuka(cubeColor[cube[i + 18]], azbuka[i + 18])
+        grList[(i / 3 + 3) * 12 + 6 + i % 3] = CubeAzbuka(cubeColor[cube[i + 27]], azbuka[i + 27])
+        grList[(i / 3 + 3) * 12 + 9 + i % 3] = CubeAzbuka(cubeColor[cube[i + 36]], azbuka[i + 36])
+        grList[(i / 3 + 6) * 12 + 3 + i % 3] = CubeAzbuka(cubeColor[cube[i + 45]], azbuka[i + 45])
+    }
+    return grList
+}
+
 
 fun clearArray4GridList(): ArrayList<CubeAzbuka> {
     Log.v (DebugTag.TAG, "FragmentScrambleGen clearArray4GridList")

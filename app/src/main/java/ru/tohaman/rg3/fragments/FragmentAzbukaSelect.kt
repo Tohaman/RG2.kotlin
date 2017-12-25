@@ -12,13 +12,18 @@ import ru.tohaman.rg3.DebugTag
 import ru.tohaman.rg3.ui.AzbukaSelectUI
 import ru.tohaman.rg3.ui.TimerUI
 
+/**
+ * Фрагмент с выбором Азбуки, UI создается в [onCreateView]
+ * в этом UI вся логики работы фрагмента
+ * фабричный метод [newInstance] для создания фрагмента
+ */
 
 class FragmentAzbukaSelect : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return AzbukaSelectUI<Fragment>().createView(AnkoContext.create(context, this))
-    }
+}
 
     companion object {
         fun newInstance(): FragmentAzbukaSelect {
