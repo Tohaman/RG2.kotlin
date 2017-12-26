@@ -24,6 +24,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("OLL",R.array.oll_title,R.array.oll_icon,R.array.oll_descr,R.array.oll_url,context)
         phaseInit("PLL",R.array.pll_title,R.array.pll_icon,R.array.pll_descr,R.array.pll_url,context)
         phaseInit("BEGIN4X4",R.array.begin4_title,R.array.begin4_icon,R.array.begin4_descr,R.array.begin4_url,context)
+        phaseInit("AZBUKA", R.array.azbuka_title, R.array.g2f_icon,R.array.g2f_descr,R.array.g2f_null,context)
     }
 
     //собственно сам синглет, точнее Холдер, который держит сиглетную ссылку (INSTANCE) на экземпляр класса
@@ -86,7 +87,8 @@ class ListPagerLab private constructor(context: Context){
 
     //возвращает из ListPagerLab один ListPager с заданными фазой и номером
     fun getPhaseItem(id: Int, phase: String): ListPager {
-        var mPagerList: ListPager = ListPager("", 0)
+        var mPagerList = ListPager("", 0, "", 0)
+
         for (listPager in listPagers) {
             if ((phase == listPager.phase) and (id == listPager.id)) {
                 mPagerList = listPager
@@ -94,7 +96,6 @@ class ListPagerLab private constructor(context: Context){
         }
         return mPagerList
     }
-
 
     fun getMaximAzbuka(): Array<String> =  arrayOf(
             "М","Л","Л",
@@ -157,12 +158,12 @@ class ListPagerLab private constructor(context: Context){
     }
 
     fun updateCurrentAzbuka(azbuka: Array<String>) {
-        val listPager = ListPager("AZBUKA",0, azbuka.joinToString (" ","", ""))
+        val listPager = ListPager("AZBUKA",0, comment =  azbuka.joinToString (" ","", ""))
         updateListPager(listPager)
     }
 
     fun saveCustomAzbuka(azbuka: Array<String>) {
-        val listPager = ListPager("AZBUKA",1,  azbuka.joinToString (" ","", ""))
+        val listPager = ListPager("AZBUKA",1, comment = azbuka.joinToString (" ","", ""))
         updateListPager(listPager)
     }
 
@@ -178,7 +179,7 @@ class ListPagerLab private constructor(context: Context){
     }
 
     //обновляем элемент ListPagerLab (свой комментарий)
-    private fun updateListPager(listPager: ListPager) {
+    fun updateListPager(listPager: ListPager) {
         // Обновляем элемент ListPager в синглете listPagers
         for ((i, lp) in listPagers.withIndex()) {
             if ((listPager.phase == lp.phase) and (listPager.id == lp.id)) {

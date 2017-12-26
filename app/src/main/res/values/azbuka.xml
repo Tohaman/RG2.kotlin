@@ -17,4 +17,14 @@
     Программа подставит в решение буквы из той азбуки, которую вы выберете.
     ]]></string>
 
+    <string-array name="azbuka_title">
+        <item>CURRENTAZBUKA</item>
+        <item>CUSTOMAZBUKA</item>
+    </string-array>
+
+    <string-array name="azbuka_descr">
+        <item>@string/g2f_st1_descr</item>
+        <item>@string/g2f_st2_descr</item>
+    </string-array>
+
 </resources>

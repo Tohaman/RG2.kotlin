@@ -15,6 +15,7 @@ import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.support.v4.alert
 import ru.tohaman.rg3.*
 import ru.tohaman.rg3.adapters.MyGridAdapter
+import ru.tohaman.rg3.data.ListPager
 import ru.tohaman.rg3.data.ListPagerLab
 import ru.tohaman.rg3.util.*
 
@@ -103,10 +104,13 @@ class AzbukaSelectUI<in Fragment> : AnkoComponentEx<Fragment>()  {
 
                                         buttonMinus.onClick {
                                             var ch = letter[0]
-                                            if (ch == 'Ж') {ch = 'Ё'; ch++ }
                                             ch--
-                                            if (ch < 'Ё') { ch = 'Е' }
-                                            if (ch < 'А' && ch != 'Ё') { ch = 'Я'}
+                                            when {
+                                                (ch == 'Е') -> { ch = 'Ё' }
+                                                (ch < 'Ё') -> { ch = 'Е' }
+                                                (ch < 'А') and (ch != 'Ё') -> { ch = 'Я' }
+
+                                            }
                                             letter = ch.toString()
                                             letterText.text = letter
                                         }
@@ -124,15 +128,15 @@ class AzbukaSelectUI<in Fragment> : AnkoComponentEx<Fragment>()  {
                                         }
                                     }.lparams(matchParent, wrapContent) {margin = 8.dp}
                                     positiveButton("OK") {
+                                        gridAdapter.gridList[position].letter = letter
+                                        val azbuka = getAzbukaFromAdapter(gridAdapter)
+                                        listPagerLab.updateCurrentAzbuka(azbuka)
+                                        gridAdapter.notifyDataSetChanged()
                                     }
                                     negativeButton("Отмена") {}
                                 }
                             }
                         }.show()
-//                        val manager = getFragmentManager()
-//                        val dialog = InputLetterFragment.newInstance(mAdapter.getItem(position), position)
-//                        dialog.setTargetFragment(this@AzbukaFragment, REQUEST_AZBUKA)
-//                        dialog.show(manager, DIALOG_AZBUKA)
                     }
                 }
 
@@ -145,8 +149,11 @@ class AzbukaSelectUI<in Fragment> : AnkoComponentEx<Fragment>()  {
 
     private fun getAzbukaFromString(st: String) = st.split(" ") as ArrayList<String>
 
-    private fun getAzbukaFromAdapter(gridAdapter: MyGridAdapter) = gridAdapter.gridList.indices
+    private fun getAzbukaFromAdapter(gridAdapter: MyGridAdapter) : Array<String> {
+        return  gridAdapter.gridList.indices
                 .filter { (gridAdapter.getItem(it) != "") }
-                .map { gridAdapter.getItem(it) }
+                .map { gridAdapter.getItem(it)}
+                .toTypedArray()
+    }
 
 }

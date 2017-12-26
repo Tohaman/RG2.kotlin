@@ -188,7 +188,7 @@ class FragmentScrambleGen : Fragment() {
     }
 
     private fun showSolve(cube: IntArray): String {
-        val st = getSolve(cube)
+        val st = getSolve(cube).first
         return if (checkBoxShowSolve.isChecked) {
             st
         } else {
@@ -202,34 +202,54 @@ class FragmentScrambleGen : Fragment() {
         gridAdapter.notifyDataSetChanged()
     }
 
-    private fun getSolve(maincube: IntArray): String {
+    //Возвращаем решение, была ли переплавка буф.ребер, была ли переплавка буф.углов
+    private fun getSolve(maincube: IntArray):  Triple<String, Boolean, Boolean>  {
         var solve = "("
         var cube = maincube.clone()
+        var isEdgeMelted = false
+        var isCornerMelted = false
+
+        //решаем ребра
         do {
-            val sumColor = getColorOfElement(cube,23,30)
+            //сначала ребра: смотрим что в буфере ребер
+            val sumColor = getColorOfElement(cube, 23, 30)
+            //если там буферный элемент бело-красный или красно-белый, то ставим признак переплавки
+            if ((sumColor == 43) or (sumColor == 34)) { isEdgeMelted = true }
+            // ставим на место ребро из буфера
             val sc = edgeBufferSolve(cube, mainEdge[sumColor]!!, solve)
+            // сохраняем результаты выполнения одной "буквы"
             solve = sc.solve
             cube = sc.cube
+            // выполняем пока все ребра не будут на своих местах
         } while (!isAllEdgesOnItsPlace(cube))
 
         solve = solve.trim { it <= ' ' }
         solve += ") "
+        // Проверяем нужен ли экватор, и выполняем его если надо
         val j = solve.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray().size
         if (j % 2 != 0) {
             solve += "Эк "
+            cube = ekvator(cube)
         }
 
+        //решаем углы
         solve += "("
         do {
+            //сначала ребра: смотрим что в буфере углов
             val sumColor = getColorOfElement(cube,18,11)
+            //если там буферный элемент, то ставим признак переплавки
+            if ((sumColor == 18) or (sumColor == 11) or (sumColor == 6)) { isCornerMelted = true }
+            // ставим на место угол из буфера
             val sc = cornerBufferSolve(cube,  mainCorner[sumColor]!!, solve)
+            // сохраняем результаты выполнения одной "буквы"
             solve = sc.solve
             cube = sc.cube
+            // выполняем пока все углы не будут на своих местах
         } while (!isAllCornersOnItsPlace(cube))
 
         solve = solve.trim { it <= ' ' }
         solve += ")"
-        return solve
+        return Triple(solve,isEdgeMelted,isCornerMelted)
     }
 
     private fun scrambleGenerate(chkEdgesBuffer: Boolean, chkCornersBuffer: Boolean, scrambleLength: Int) {
@@ -265,38 +285,17 @@ class FragmentScrambleGen : Fragment() {
         Log.v(TAG, "Ищем скрамбл подходящий по параметрам переплавок буфера и длинне")
         var scramble: String
         do {
+            var result = true
             //сгенерируем скрамбл длинны указанной в поле ScrambleLength
             scramble = generateScramble(lenScramble)
             //разбираем кубик по скрамблу
-            var genScrambleCube = runScramble(resetCube(), scramble)
-            //устанавливаем флаги в начальное положение, обнуляем решение
-            var isEdgeMelted = false
-            var isCornerMelted = false
-            var result = true
+            val genScrambleCube = runScramble(resetCube(), scramble)
+            // получаем решение кубика (solve,isEdgeMelted,isCornerMelted)
+            val triple = getSolve(genScrambleCube)
+            val isEdgeMelted = triple.second
+            val isCornerMelted = triple.third
 
-            //проверяем подходит ли нам скрамбл, для этого собираем кубик,
-            do {
-                //сначала ребра: смотрим что в буфере ребер
-                val sumColor = getColorOfElement(genScrambleCube,23,30)
-                //если там буферный элемент бело-красный или красно-белый, то ставим признак переплавки
-                if ((sumColor == 43) or (sumColor == 34)) { isEdgeMelted = true }
-                // ставим на место ребро из буфера, решение не волнует, поэтому ""
-                val sc = edgeBufferSolve(genScrambleCube, mainEdge[sumColor]!!, "")
-                // сохраняем результаты выполнения одной "буквы"
-                genScrambleCube = sc.cube
-            // выполняем пока все ребра не будут на своих местах
-            } while (!isAllEdgesOnItsPlace(genScrambleCube))
-
-            do {
-                //сначала ребра: смотрим что в буфере углов (18,11)
-                val sumColor = getColorOfElement(genScrambleCube,18,11)
-                //если там буферный элемент (бело-красный-зеленый), то ставим признак переплавки
-                if ((sumColor == 18) or (sumColor == 11) or (sumColor == 6)) { isCornerMelted = true }
-                // ставим на место угол из буфера
-                val sc = cornerBufferSolve(genScrambleCube, mainCorner[sumColor]!!, "")
-                genScrambleCube = sc.cube
-            } while (!isAllCornersOnItsPlace(genScrambleCube))
-            Log.v(TAG, "Проверка Scramble $scramble, Переплавка буфера ребер - $isEdgeMelted , Переплавка буфера углов - $isCornerMelted")
+            Log.v(TAG, "Проверка Scramble $scramble, Переплавка буфера ребер - ${triple.second} , Переплавка буфера углов - ${triple.third}")
             if (isEdgeMelted && checkEdge) { result = false }
             if (isCornerMelted && checkCorner) { result = false }
         } while (!result)
