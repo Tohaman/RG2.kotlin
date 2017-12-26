@@ -1,12 +1,7 @@
 package ru.tohaman.rg3.data
 
 import android.content.Context
-import org.jetbrains.anko.db.insert
 import ru.tohaman.rg3.R
-import ru.tohaman.rg3.data.BaseHelper.Companion.COMMENT
-import ru.tohaman.rg3.data.BaseHelper.Companion.ID
-import ru.tohaman.rg3.data.BaseHelper.Companion.PHASE
-import ru.tohaman.rg3.data.BaseHelper.Companion.TABLE_NAME
 import java.util.ArrayList
 
 /**
@@ -69,7 +64,7 @@ class ListPagerLab private constructor(context: Context){
             var mListPager = mDatabase.getListPagerFromBase(i, phase)
             if (mListPager == null) {
                 mListPager = ListPager(phase, i, mTitles[i], mIcon.getResourceId(i, 0), mDescr.getResourceId(i, 0), mUrl[i])
-                addListPager2Base(mListPager)
+                mDatabase.addListPager2Base(mListPager)
             } else {
                 mListPager.title = mTitles[i]
                 mListPager.icon= mIcon.getResourceId(i,0)
@@ -82,24 +77,11 @@ class ListPagerLab private constructor(context: Context){
         mDescr.recycle()
     }
 
-    // получить комментарий для заданных фазы и номера из базы в виде объекта ListPager (с пустыми остальными полями)
 
-    fun addListPager2Base(listPager: ListPager) {
-        mDatabase.writableDatabase.insert(TABLE_NAME,
-                    PHASE to listPager.phase,
-                    ID to listPager.id,
-                    COMMENT to listPager.comment)
-    }
 
     //возвращает из ListPagerLab список ListPager'ов с заданной фазой (все записи для данной фазы)
     fun getPhaseList(phase: String): ArrayList<ListPager> {
-        val pagerLists = ArrayList<ListPager>()
-        for (listPager in listPagers) {
-            if (phase == listPager.phase) {
-                pagerLists.add(listPager)
-            }
-        }
-        return pagerLists
+        return listPagers.filterTo(ArrayList()) { phase == it.phase }
     }
 
     //возвращает из ListPagerLab один ListPager с заданными фазой и номером
@@ -166,9 +148,27 @@ class ListPagerLab private constructor(context: Context){
             "З","Ж","Ж"
     )
 
-    fun getCustomAzbuka(): Array<String> {
+    fun getCurrentAzbuka(): Array<String> {
+        return getAzbuka(0)
+    }
+
+    fun getCustomAzbuka():Array<String> {
+        return getAzbuka(1)
+    }
+
+    fun updateCurrentAzbuka(azbuka: Array<String>) {
+        val listPager = ListPager("AZBUKA",0, azbuka.joinToString (" ","", ""))
+        updateListPager(listPager)
+    }
+
+    fun saveCustomAzbuka(azbuka: Array<String>) {
+        val listPager = ListPager("AZBUKA",1,  azbuka.joinToString (" ","", ""))
+        updateListPager(listPager)
+    }
+
+    private fun getAzbuka(id:Int) :Array<String> {
         val azbuka : Array<String>
-        val mListPager = getPhaseItem(0, "AZBUKA")
+        val mListPager = getPhaseItem(id, "AZBUKA")
         azbuka = if (mListPager.comment == "") {
             getMaximAzbuka()
         } else {
@@ -177,5 +177,21 @@ class ListPagerLab private constructor(context: Context){
         return azbuka
     }
 
+    //обновляем элемент ListPagerLab (свой комментарий)
+    private fun updateListPager(listPager: ListPager) {
+        // Обновляем элемент ListPager в синглете listPagers
+        for ((i, lp) in listPagers.withIndex()) {
+            if ((listPager.phase == lp.phase) and (listPager.id == lp.id)) {
+                listPagers[i] = listPager
+            }
+        }
+        // Обновляем коммент в базе, если его нет, то создаем
+        if (mDatabase.getListPagerFromBase(listPager.id, listPager.phase) == null) {
+            mDatabase.addListPager2Base(listPager)
+        } else {
+            mDatabase.updateListPagerInBase(listPager)
+        }
+
+    }
 
 }

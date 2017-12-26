@@ -3,10 +3,7 @@ package ru.tohaman.rg3.data
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import org.jetbrains.anko.ctx
-import org.jetbrains.anko.db.INTEGER
-import org.jetbrains.anko.db.ManagedSQLiteOpenHelper
-import org.jetbrains.anko.db.TEXT
-import org.jetbrains.anko.db.createTable
+import org.jetbrains.anko.db.*
 
 class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_NAME, null, VERSION) {
 
@@ -86,6 +83,21 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
         }
         return listPager
     }
+
+    fun addListPager2Base(listPager: ListPager) {
+        this.writableDatabase.insert(TABLE_NAME,
+                PHASE to listPager.phase,
+                ID to listPager.id,
+                COMMENT to listPager.comment)
+    }
+
+    fun updateListPagerInBase(listPager: ListPager) {
+        this.writableDatabase.update(TABLE_NAME,
+                PHASE to listPager.phase,
+                ID to listPager.id,
+                COMMENT to listPager.comment)
+    }
+
 
 }
 

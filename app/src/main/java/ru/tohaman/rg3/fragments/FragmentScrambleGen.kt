@@ -2,7 +2,6 @@ package ru.tohaman.rg3.fragments
 
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
@@ -23,11 +22,9 @@ import ru.tohaman.rg3.DebugTag
 import ru.tohaman.rg3.DebugTag.TAG
 import ru.tohaman.rg3.R
 import ru.tohaman.rg3.adapters.MyGridAdapter
-import ru.tohaman.rg3.data.CubeAzbuka
 import ru.tohaman.rg3.data.ListPagerLab
 import ru.tohaman.rg3.util.*
 import java.util.*
-import kotlin.collections.HashMap
 
 /**
  * Created by anton on 27.11.17. Фрагмент отображающий генератор скрамблов
@@ -533,13 +530,11 @@ class FragmentScrambleGen : Fragment() {
         return result
     }
 
-
     private fun findLetter(c: Int): String {     //Доработать функцию поиска буквы из азбуки, пока просто цифра
         val listPagerLab = ListPagerLab.get(context)
-        val azbuka = listPagerLab.getCustomAzbuka()
+        val azbuka = listPagerLab.getCurrentAzbuka()
         return azbuka[c]
     }
-
 
     fun Random.nextInt(range: IntRange): Int {
         return range.start + nextInt(range.last - range.start)
@@ -560,7 +555,6 @@ class FragmentScrambleGen : Fragment() {
         super.onDetach()
         mListener = null
     }
-
 
     interface OnSrambleGenInteractionListener {
         fun onScrambleGenInteraction(button: String) {
