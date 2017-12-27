@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ru.tohaman.rg3">
+    package="ru.tohaman.rg2">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="ru.tohaman.rg2.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activitys.YouTubeActivity"
+            android:name="ru.tohaman.rg2.activitys.YouTubeActivity"
             android:theme="@style/Theme.AppCompat.Dialog">
             <intent-filter>
                 <data
@@ -38,10 +38,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activitys.SlidingTabsActivity"
+            android:name="ru.tohaman.rg2.activitys.SlidingTabsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activitys.TimerActivity"
+            android:name="ru.tohaman.rg2.activitys.TimerActivity"
             android:theme="@style/AppTheme.NoActionBar"
             />
     </application>

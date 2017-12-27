@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pll_test_phases">
+        <item>Смежные окошки</item>
+        <item>Противоположные окошки</item>
+        <item>Рельсы</item>
+        <item>Шахматы</item>
+        <item>Запад</item>
+        <item>Юг</item>
+        <item>Светофор</item>
+        <item>Австралия</item>
+        <item>Смежный треугольник</item>
+        <item>Противоположный треугольник</item>
+        <item>Черепаха</item>
+        <item>Угол</item>
+        <item>Правые кирпичи</item>
+        <item>Левые кирпичи</item>
+        <item>Убийца</item>
+        <item>Экватор</item>
+        <item>Встречная машинка</item>
+        <item>Попутная машинка</item>
+        <item>Ближняя улитка</item>
+        <item>Дальняя улитка</item>
+        <item>Север</item>
+    </string-array>
+
+    <integer-array name="pll_test_icon">
+        <item>@drawable/vpll_test_1</item>
+        <item>@drawable/vpll_test_2</item>
+        <item>@drawable/vpll_test_3</item>
+        <item>@drawable/vpll_test_4</item>
+        <item>@drawable/vpll_test_5</item>
+        <item>@drawable/vpll_test_6</item>
+        <item>@drawable/vpll_test_7</item>
+        <item>@drawable/vpll_test_8</item>
+        <item>@drawable/vpll_test_9</item>
+        <item>@drawable/vpll_test_10</item>
+        <item>@drawable/vpll_test_11</item>
+        <item>@drawable/vpll_test_12</item>
+        <item>@drawable/vpll_test_13</item>
+        <item>@drawable/vpll_test_14</item>
+        <item>@drawable/vpll_test_15</item>
+        <item>@drawable/vpll_test_16</item>
+        <item>@drawable/vpll_test_17</item>
+        <item>@drawable/vpll_test_18</item>
+        <item>@drawable/vpll_test_19</item>
+        <item>@drawable/vpll_test_20</item>
+        <item>@drawable/vpll_test_21</item>
+    </integer-array>
+
+    <string-array name="pll_test_descr">
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+    </string-array>
+
+    <string-array name="pll_test_url">
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+    </string-array>
+
+</resources>
