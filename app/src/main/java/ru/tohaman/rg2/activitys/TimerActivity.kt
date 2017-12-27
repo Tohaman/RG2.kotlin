@@ -2,6 +2,7 @@ package ru.tohaman.rg2.activitys
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.v4.app.FragmentTransaction
 import android.util.Log
 import ru.tohaman.rg2.DebugTag.TAG
@@ -17,4 +18,5 @@ class TimerActivity : AppCompatActivity() {
         val transaction : FragmentTransaction? = supportFragmentManager.beginTransaction()
         transaction?.replace(R.id.fragment_container, FragmentTimer())?.commit()
     }
+
 }

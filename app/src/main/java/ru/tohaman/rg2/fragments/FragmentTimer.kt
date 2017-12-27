@@ -17,5 +17,9 @@ class FragmentTimer : Fragment() {
         return TimerUI<Fragment>().createView(AnkoContext.create(context, this))
     }
 
+    override fun onPause() {
+        super.onPause()
+    }
+
 }
 

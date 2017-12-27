@@ -261,7 +261,7 @@ class TimerUI<in Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener,
         }
     }
 
-    private var timerRunnable: Runnable = object : Runnable {
+    var timerRunnable: Runnable = object : Runnable {
         override fun run() {
             //выводим время на экран
             showTimerTime()
@@ -270,7 +270,7 @@ class TimerUI<in Fragment> : AnkoComponentEx<Fragment>() , View.OnTouchListener,
         }
     }
 
-    private var soundRunnable: Runnable = object : Runnable {
+    var soundRunnable: Runnable = object : Runnable {
         override fun run() {
             spl.play(soundIdTick, 1F, 1F, 0, 0, 1F)
             TimerHandler.postDelayed(this, (60000/metronomTime).toLong())

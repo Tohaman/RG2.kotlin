@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity(),
             "TIMER" -> {setFragment(FragmentTimerSettings.newInstance())}
             "SCRAMBLEGEN" -> {setFragment(FragmentScrambleGen.newInstance())}
             "TESTPLL" -> {setFragment(FragmentTestPLL.newInstance())}
-            else -> { setFragment(ListViewFragment.newInstance(curPhase)) }
+            else -> { setListFragmentPhase(curPhase) }
         }
 
         nav_view.setNavigationItemSelectedListener(this)
