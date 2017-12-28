@@ -164,7 +164,7 @@ class MainActivity : AppCompatActivity(),
             R.id.blind_acc -> {
                 snackbar(contentView!!, "Blind пока недоступен","ОК") {/** Do something */}
             }
-            R.id.begin4x4 -> { setListFragmentPhase("BEGIN4X4")}
+//            R.id.begin4x4 -> { setListFragmentPhase("BEGIN4X4")}
 
             R.id.timer -> {
                 setFragment(FragmentTimerSettings.newInstance())

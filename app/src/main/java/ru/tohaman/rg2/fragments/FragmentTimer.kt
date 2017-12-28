@@ -48,7 +48,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
 
     private var oneHandToStart = true      //управление таймером одной рукой? или для старта надо положить обе
     private var metronomEnabled = true
-    private var metronomTime = 80
+    private var metronomTime = 60
 
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
@@ -56,7 +56,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         val sp = PreferenceManager.getDefaultSharedPreferences(context)
         oneHandToStart = sp.getBoolean(ONE_HAND_TO_START, false)
         metronomEnabled = sp.getBoolean(METRONOM_ENABLED, true)
-        metronomTime = sp.getInt(METRONOM_TIME, 80)
+        metronomTime = sp.getInt(METRONOM_TIME, 60)
 
         spl = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             SoundPool.Builder()
@@ -78,6 +78,11 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     override fun onPause() {
         super.onPause()
         stopTimer()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        timerReset()
     }
 
     override fun onTouch(v: View, event: MotionEvent): Boolean {
@@ -184,7 +189,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     }
 
     private fun startTimer() {
-        Log.v (DebugTag.TAG, "TimerUI startTimer")
+        Log.v (DebugTag.TAG, "TimerUI startTimer with metronomTime $metronomTime")
         timerStart = true                      // поставили признак, что таймер запущен
         timerReady = false                     // сняли "готовость" таймера
         startTime = System.currentTimeMillis()
