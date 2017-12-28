@@ -30,10 +30,10 @@ const val METRONOM_TIME = "metronomTime"
 
 class MainActivity : AppCompatActivity(),
         NavigationView.OnNavigationItemSelectedListener,
-        ListViewFragment.OnListViewInteractionListener,
+        FragmentListView.OnListViewInteractionListener,
         FragmentScrambleGen.OnSrambleGenInteractionListener {
 
-    private lateinit var fragListView: ListViewFragment
+    private lateinit var fragListView: FragmentListView
     private var backPressedTime: Long = 0
     lateinit private var mListPagerLab: ListPagerLab
     private var curPhase: String = "BEGIN"
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(),
         setContentView(R.layout.activity_main)
 
         curPhase = loadStartPhase()
-        fragListView = ListViewFragment.newInstance("BEGIN")
+        fragListView = FragmentListView.newInstance("BEGIN")
         when (curPhase) {
             "TIMER" -> {setFragment(FragmentTimerSettings.newInstance())}
             "SCRAMBLEGEN" -> {setFragment(FragmentScrambleGen.newInstance())}
@@ -210,7 +210,7 @@ class MainActivity : AppCompatActivity(),
 
     //Обработка выбора пункта меню в листвью.
     override fun onListViewInteraction(phase:String, id:Int) {
-        //Обработка событий из ListViewFragment
+        //Обработка событий из FragmentListView
         Log.v(DebugTag.TAG, "onListViewInteraction Start, $phase, $id")
         val lp = mListPagerLab.getPhaseItem(id,phase)
         val desc:String = getString(lp.description)

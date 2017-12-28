@@ -20,20 +20,20 @@ import android.os.Build
 
 
 /**
- * ListViewFragment - фрагмент в котором встроенный ListView
+ * FragmentListView - фрагмент в котором встроенный ListView
  * отображает лист этапов определенной фазы
  * Активити содержащая этот fragment должна имплементить
- * [ListViewFragment.OnListViewInteractionListener] interface
+ * [FragmentListView.OnListViewInteractionListener] interface
  * для получения ответов от этого фрагмента.
- * Для создания экземпляра фрагмента используйте [ListViewFragment.newInstance]
+ * Для создания экземпляра фрагмента используйте [FragmentListView.newInstance]
  */
-class ListViewFragment : ListFragment() {
+class FragmentListView : ListFragment() {
     private var mPhase: String = "BEGIN"
 
     private var mListener: OnListViewInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.v (DebugTag.TAG, "ListViewFragment onCreate")
+        Log.v (DebugTag.TAG, "FragmentListView onCreate")
         super.onCreate(savedInstanceState)
     }
 
@@ -44,7 +44,7 @@ class ListViewFragment : ListFragment() {
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        Log.v (DebugTag.TAG, "ListViewFragment onActivityCreated $mPhase")
+        Log.v (DebugTag.TAG, "FragmentListView onActivityCreated $mPhase")
         super.onActivityCreated(savedInstanceState)
         val mListPagers : ArrayList<ListPager> = ListPagerLab.get(context!!).getPhaseList(mPhase)
         val mListAdapter = MyListAdapter(mListPagers,1.5f)
@@ -61,7 +61,7 @@ class ListViewFragment : ListFragment() {
     }
 
     fun changePhase (phase: String, context: Context?) {
-        Log.v (DebugTag.TAG, "ListViewFragment changePhase $phase")
+        Log.v (DebugTag.TAG, "FragmentListView changePhase $phase")
         mPhase = phase
         val mListPagers : ArrayList<ListPager> = ListPagerLab.get(context!!).getPhaseList(mPhase)
         val mListAdapter = MyListAdapter(mListPagers,1.5f)
@@ -77,7 +77,7 @@ class ListViewFragment : ListFragment() {
     }
 
     override fun onAttach(context: Context?) {
-        Log.v (DebugTag.TAG, "ListViewFragment onAttach")
+        Log.v (DebugTag.TAG, "FragmentListView onAttach")
         super.onAttach(context)
         if (context is OnListViewInteractionListener) {
             mListener = context
@@ -87,7 +87,7 @@ class ListViewFragment : ListFragment() {
     }
 
     override fun onDetach() {
-        Log.v (DebugTag.TAG, "ListViewFragment onDetach")
+        Log.v (DebugTag.TAG, "FragmentListView onDetach")
         super.onDetach()
         mListener = null
     }
@@ -103,14 +103,14 @@ class ListViewFragment : ListFragment() {
      */
     interface OnListViewInteractionListener {
         fun onListViewInteraction(phase: String, id : Int) {
-            Log.v(DebugTag.TAG, "ListViewFragment onListViewInteraction")
+            Log.v(DebugTag.TAG, "FragmentListView onListViewInteraction")
         }
     }
 
     companion object {
-        fun newInstance(param1: String): ListViewFragment {
-            Log.v(DebugTag.TAG, "ListViewFragment newInstance")
-            val fragment = ListViewFragment()
+        fun newInstance(param1: String): FragmentListView {
+            Log.v(DebugTag.TAG, "FragmentListView newInstance")
+            val fragment = FragmentListView()
             fragment.mPhase = param1
             return fragment
         }
