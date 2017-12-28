@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="advf2l_title">
+        <item>@string/advf2l_st1_title</item>
+        <item>@string/advf2l_st2_title</item>
+        <item>@string/advf2l_st3_title</item>
+        <item>@string/advf2l_st4_title</item>
+        <item>@string/advf2l_st5_title</item>
+    </string-array>
+
+    <integer-array name="advf2l_icon">
+        <item>@drawable/vf2l</item>
+        <item>@drawable/vf2l1</item>
+        <item>@drawable/vf2l2_1</item>
+        <item>@drawable/vf2l3_1</item>
+        <item>@drawable/vf2l4_1</item>
+    </integer-array>
+
+    <string-array name="advf2l_descr">
+        <item>@string/advf2l_st1_descr</item>
+        <item>@string/advf2l_st2_descr</item>
+        <item>@string/advf2l_st3_descr</item>
+        <item>@string/advf2l_st4_descr</item>
+        <item>@string/advf2l_st5_descr</item>
+    </string-array>
+
+    <string-array name="advf2l_url">
+        <item>@string/advf2l_st1_url</item>
+        <item>@string/advf2l_st2_url</item>
+        <item>@string/advf2l_st3_url</item>
+        <item>@string/advf2l_st4_url</item>
+        <item>@string/advf2l_st5_url</item>
+    </string-array>
+
+    <string name="advf2l_max_title">Жизненный F2L от Максима</string>
+    <string name="advf2l_max_descr" formatted="false"><![CDATA[
+    <p>Данный цикл обучалок предназначен для начинающих осваивать F2L и поэтому тут как и в методике
+    для начинающих Максима Чечнева используются различные ассоциации и паралелли с обычной жизнью.
+    Собственно говоря, поэтому цикл и называется Жизненный F2L.</p>
+    Для перехода к списку ситуаций -
+    <a href="rubic-activity://listactivity?phase=F2L"> щелкните сюда</a>
+    ]]></string>
+
+    <string name="advf2l_st1_title">Интуитивный F2L от JPerm</string>
+    <string name="advf2l_st1_descr" formatted="false"><![CDATA[
+        <p>Как много было сказано в видео от Максима, но почему-то мало уделено этому внимания, F2L как и
+        крест можно и нужно понимать, т.е. можно решать интуитивно, без формул, особенно на \"первых парах\". А уже потом применяя
+        формулы ускорять свою сборку. Т.е. на мой взгляд, F2L лучше начать с интуитивного F2L, сразу
+        отказавшись от новичкового метода, постепенно ускоряя формулами (от Максима и Кристофера)
+        свои самые \"нелюбимые\" ситуации. Пусть поначалу это и окажется медленее, чем новичковый метод.</p>
+
+        <p>На ютубе много видео по F2L, но к сожалению нормального интуитивного F2L на русском языке я
+        так и не нашел (может дело просто в моих тараканах в голове). Поэтому за основу я взял видео
+        от JPerm (пусть и на английском), но где все четко, упорядоченно и без ненужной фоновой музыки.
+        Надеюсь, что с моими комментариями будет все понятно.</p>
+
+        <p>Главное отличие F2L от метода для новичков, в том, что два нижних слоя
+        <a href="rubic-activity://ytactivity?time=0:08&link=Ar_Zit1VLG0">собираются вместе</a>
+        , угол (парень) ставится на место вместе со своим ребром (девушкой), т.е. парой.</p>
+
+        <p style="text-align:center"><img src="vf2l.xml" width="30%%"></p>
+
+        <p>В F2L есть <b><a href="rubic-activity://ytactivity?time=0:08&link=Ar_Zit1VLG0">4 базовых алгоритма</a> (The 4 Fundamental Algorithms).</b><br/>
+        Когда я сказал, что решать F2L можно без формул, я слукавил. Все таки 4 алгоритма выучить придется.
+        Но во-первых, это трехходовки, а во-вторых, пара из них зеркальна другой паре (делается не справа, а слева),
+        т.е. по сути это всего лишь два простейших трехходовых алгоритма. Итак:</p>
+
+        <a href="rubic-activity://ytactivity?time=0:24&link=Ar_Zit1VLG0">Первый базовый</a> алгоритм: <b>R U\' R\'</b><br/>
+        Применяется для ситуации когда угол с ребром уже образуют пару.
+
+        <p style="text-align:center"><img src="vf2l_int_2.xml" width="30%%"></p>
+
+        <a href="rubic-activity://ytactivity?time=0:32&link=Ar_Zit1VLG0">Зеркальный первому</a> <b>L\' U L</b><br/>
+        <p style="text-align:center"><img src="vf2l_int_3.xml" width="30%%"></p>
+
+        <a href="rubic-activity://ytactivity?time=0:40&link=Ar_Zit1VLG0">Второй базовый</a> алгоритм: <b>R U R\'</b><br/>
+        Применяется когда верхние наклейки угла и ребра разные. Является первыми тремя ходами обычного пиф-пафа.
+        <p style="text-align:center"><img src="vf2l_int_4.xml" width="30%%"></p>
+
+        Ну и <a href="rubic-activity://ytactivity?time=0:50&link=Ar_Zit1VLG0">зеркальный ему</a> <b>L\' U\' L</b><br/>
+        <p style="text-align:center"><img src="vf2l_int_5.xml" width="30%%"></p>
+
+        Перейдем непосредственно к сборке.<br/><br/>
+
+        1. Первое правило интуитивной сбоки <b>Обе части пары должны быть на
+        <a href="rubic-activity://ytactivity?time=1:02&link=Ar_Zit1VLG0">верхнем слое</a>
+        (Both pieces in top layer).</b><br/>
+        Если какая-то из частей не наверху, то ее надо туда поднять.
+        Проще всего это сдеалать пиф-пафом, ну или лучше
+        <a href="rubic-activity://ytactivity?time=1:20&link=Ar_Zit1VLG0">первыми тремя ходами</a>
+        пиф-пафа, т.е. вторым базовым алгоритмом  <b>R U R\'</b>.<br/>
+
+        <p style="text-align:center"><img src="vf2l_int_6.xml" width="60%%"></p>
+
+        Пожалуй есть одно исключение, когда не стоит поднимать обе части наверх - это когда угол уже
+        стоит на своем месте. В этом случае проще загнать
+        ребро на место <b>ромашкой</b> (или каким-нибудь алгоритмом из ускорений Advanced F2L).<br/><br/>
+
+        2. <b>Сверху ли <a href="rubic-activity://ytactivity?time=1:02&link=Ar_Zit1VLG0"> белая наклейка?</a> (Is white facing up?)</b><br/>
+        Если обе части на верхнем слое, то теперь смотрим на угол, точнее на то, куда он смотрит
+        белой наклейкой. Вверх или куда-то вбок. Т.е. проще говоря, смотрим парень у нас с завышенной
+        самооценкой или нет. <br/><br/>
+
+        2.1 Первый случай: <b><a href="rubic-activity://ytactivity?time=1:32&link=Ar_Zit1VLG0">белая сбоку</a></b>, т.е.
+        парень скромный или наглый.<br/><br/>
+
+        <p style="text-align:center"><img src="vf2l_int_7.xml" width="60%%"></p>
+
+        3. <b>Устанавливаем угол (Move the corner piece).</b><br/>
+        Для этого подгоняем парня к
+        <a href="rubic-activity://ytactivity?time=1:32&link=Ar_Zit1VLG0"> своей квартире</a>,
+        как в методике для начинающих. Теперь
+        <a href="rubic-activity://ytactivity?time=1:43&link=Ar_Zit1VLG0"> смотрим на верхнюю наклейку,</a>
+        и . . . отводим угол от той стороны, какого цвета верхняя наклейка. Т.е. так,
+        чтобы после отвода, белая наклейка угла оставалась видна.<br/><br/>
+
+        <p style="text-align:center"><img src="vf2l_int_8.xml" width="60%%"></p>
+
+        4. Смотрим <b><a href="rubic-activity://ytactivity?time=1:54&link=Ar_Zit1VLG0">одинаковы ли верхние наклейки угла и ребра.</a>
+        (Are top colors the same?).</b><br/>
+        И в зависимости от этого определяем, где место ребра по отношению к углу.<br/>
+        Как определить место куда должно встать ребро?
+        <a href="rubic-activity://ytactivity?time=2:10&link=Ar_Zit1VLG0">Положите палец</a> на середину крыши, параллельно
+        той грани, на которой белая наклейка угла. Два ребра, до которых дотрагивается палец и есть
+        те два места, на котороые может встать ребро в зависимости как раз от того, одинаковы или нет
+        верхние наклейки угла и ребра.
+
+        <p style="text-align:center"><img src="vf2l_int_9.xml" width="60%%"></p>
+
+        Если наклейки
+        <a href="rubic-activity://ytactivity?time=2:19&link=Ar_Zit1VLG0">одинаковы,</a> то место рядом с углом.
+        Если <a href="rubic-activity://ytactivity?time=2:24&link=Ar_Zit1VLG0">противоположны,</a>
+        то на противоположной грани.
+
+        <p style="text-align:center"><img src="vf2l_int_10.xml" width="80%%"></p>
+
+        5. С местом определились. Теперь - <b><a href="rubic-activity://ytactivity?time=2:28&link=Ar_Zit1VLG0">ставим ребро на это место.</a>
+        (Move the edge piece).</b><br/>
+        Но поставить надо так, чтобы угол остался там где он есть.
+        Для этого опустим угол на первый этаж вращением той грани, на которой белая наклейка угла.
+        Крутим крышу, так чтобы ребро встало на место и возвращаем угол на свое место.
+
+        <p style="text-align:center"><img src="vf2l_int_11.xml" width="80%%"></p>
+
+        6. <b><a href="rubic-activity://ytactivity?time=2:48&link=Ar_Zit1VLG0">Заселяем.</a>
+        (Insert).</b><br/>
+        Используя один из базовых алгоритмов. Для одинаковых верхних наклеек это будет один из первых базовых.
+
+        <p style="text-align:center"><img src="vf2l_int_12.xml" width="80%%"></p>
+
+        Теперь о ситуации когда верхние наклейки <a href="rubic-activity://ytactivity?time=2:48&link=Ar_Zit1VLG0">угла и ребра разные.</a><br/>
+        Абсолютно те же самые 5 и 6 шаги,
+
+        <p style="text-align:center"><img src="vf2l_int_11_1.xml" width="80%%"></p>
+
+        только ребро ставим не к углу, а на противоположную грань и для
+        заселения используем один из вторых базовых алгоритмов.
+
+        <p style="text-align:center"><img src="vf2l_int_13.xml" width="60%%"></p>
+
+        2.2 Вернемся еще чуть назад к ситуации, когда обе части на верхнем слое, но
+        <b><a href="rubic-activity://ytactivity?time=3:59&link=Ar_Zit1VLG0">белая наклейка угла сверху</a></b>,
+        т.е. парень с завышенной самооценкой. Этот случай на мой взгляд еще проще, чем когда белая наклейка сбоку.<br/>
+
+        <p style="text-align:center"><img src="vf2l_int_14.xml" width="60%%"></p>
+
+        3.  Тут сразу начинаем с  <b><a href="rubic-activity://ytactivity?time=4:15&link=Ar_Zit1VLG0">установки на место ребра</a>
+        (Move the edge piece).</b><be/>
+        А место у ребра в данном случае на своей грани, т.е. делаем хорошо знакомый \"Стебель ромашки\". И теперь
+        опускаем ребро на второй этаж <a href="rubic-activity://ytactivity?time=4:18&link=Ar_Zit1VLG0">от своей квартиры.</a>
+
+        <p style="text-align:center"><img src="vf2l_int_15.xml" width="60%%"></p>
+
+        4. <b><a href="rubic-activity://ytactivity?time=4:21&link=Ar_Zit1VLG0">Ставим угол над ребром.</a>
+        (Put corner above edge).</b> И поднимаем пару на верхний слой.
+
+        <p style="text-align:center"><img src="vf2l_int_16.xml" width="60%%"></p>
+
+        5. <b><a href="rubic-activity://ytactivity?time=4:28&link=Ar_Zit1VLG0">Заселяем.</a>
+        (Insert).</b><br/>
+        Используя один из первых базовых алгоритмов <b>R U\' R\'</b> или <b>L\' U L</b>.<br/><br/>
+
+        <p style="text-align:center"><img src="vf2l_int_12.xml" width="80%%"></p>
+
+        Profit!<br/><br/>
+
+        Осталось рассказать про ситуации немного выходящие за рамки вышепреведенной инструкции.
+        <b><a href="rubic-activity://ytactivity?time=4:37&link=Ar_Zit1VLG0">(How to solve special cases).</a></b><br/>
+        Например такая ситуация:
+
+        <p style="text-align:center"><img src="vf2l_int_17.xml" width="30%%"></p>
+
+        В этом случае не получится собрать стебель, опустить ребро на второй этаж и подогнать к
+        ребру угол, т.к. угол окажется на первом этаже. Есть несколько вариантов решения:<br/><br/>
+        1. Алгоритмы - их вы можете найти в других частях F2L (Жизненном и Advanced)<br/><br/>
+
+        2. <b><a href="rubic-activity://ytactivity?time=5:21&link=Ar_Zit1VLG0">Надо разбить такую пару.</a> (Split it up)</b><br/>
+        И простой алгоритм для разбивки пар такой: опустите угол на первый этаж, уведите ребро в сторону, верните угол наверх
+        <b>(R\' U R)</b>. Но как вы заметили, данный алгоритм выселяет пару из задней правой квартиры.
+        Ничего страшного, просто поверните два нижних слоя так, чтобы задняя правая квартира
+        <a href="rubic-activity://ytactivity?time=6:05&link=Ar_Zit1VLG0">не была занята.</a><br/><br/>
+
+        Если ребро опускается вместе с углом, например такая ситуация:
+
+        <p style="text-align:center"><img src="vf2l_int_18.xml" width="30%%"></p>
+
+        то в этом случае не опустите, а поднимите угол и отведите его в сторону, после чего верните
+        ребро на место, т.е. <b>(R U\' R\')</b>. Пара расстанется и ее можно легко решить интуитивно.
+
+        <p>Пример <a href="rubic-activity://ytactivity?time=6:20&link=Ar_Zit1VLG0">интуитивной сборки F2L</a> на видео с 6:20</p>
+
+        <p> И еще немножко от себя. Считайте это первым ускорением интуитивного F2L. Если угол в
+        своей квартире, но перевернут (белой наклейкой на первом этаже), а ребро на третьем этаже, то
+        просто начинайте делать алгоритм для угла с завышенной самооценкой.</p>
+
+        <p style="text-align:center"><img src="vf2l_int_19.xml" width="30%%"></p>
+
+        <p>Т.е. сначала подгоните
+        ребро к своему цвету (сделайте стебель \"ромашки\"), опустите ребро на второй этаж от квартиры,
+        тем самым подняв угол на верхний слой и посмотрите на угол, если белая наклейка сверху, то
+        продолжаем алгоритм \"парня с завышенной самооценкой\", т.е. ставим угол над ребром. Если же
+        наклейка сбоку, то отводим крышу в противоположную сторону (\"давим\" на белую наклейку). Теперь
+        возвращаем ребро на третий этаж. Получаем одну из базовых ситуаций - заселяем.
+        </p>
+    ]]></string>
+    <string name="advf2l_st1_url">Ar_Zit1VLG0</string>
+
+
+
+    <string name="advf2l_st2_title">Advanced F2L</string>
+    <string name="advf2l_st2_descr" formatted="false"><![CDATA[
+    <p>Серия видеороликов Advanced F2L от Кристофера Олсона
+    <a href="http://www.cyotheking.com/about">Christopher Olson</a> - подразумевает, что вы уже
+    собираете кубик используя Интуитивный, а лучше Жизненный F2L.</p>
+
+    <p>В предыдущих частях (Интуитивном и Жизненном F2L) для упрощения понимания мы всегда подгоняли парня в ближний правый
+    угол, подгоняли к нему его квартиру и делали различные перехваты. Т.е. перед выполнением
+    непосредственно алгоритма делали установочные ходы (setup move). Если же вы хотите собирать кубик
+    действительно быстро, то надо стараться сводить эти установочные ходы к минимуму, а лучше стараться
+    и вовсе их избегать. Смотрите данные видео, а так же видео сборок от профессионалов (например
+    <a href="https://www.youtube.com/watch?v=l6B2rh7tem4&list=PLI24ciRbl8BW8ybKSDsDzrSbSOx6pt1Pm">на канале JPerm</a>
+    или <a href="rubic-activity://ytactivity?time=1:25&link=oq_QN7VJUxo">на канале Криса</a>
+    </p>
+
+    <p>Оригинальное видео на английском и ситуации в нем никак не упорядочены,
+    но надеюсь, что с моими комментариями и картинками (превьюшками ситуаций) все будет понятно и
+    вы легко сможете найти нужную ситуацию.</p>
+
+    <p>1. Первая ситуация - <a href="rubic-activity://ytactivity?time=0:25&link=WIFh0sXDkMM">пара</a>
+    около своей квартиры, но и пара и квартира на задней стороне слева. Обычно вы сделали бы перехват
+    (ход y\') и левый английский пиф-паф или первый левый базовый алгоритм, но есть другой вариант: </p>
+    <p style="text-align:center"><img src="vf2l1_1.xml" width="60%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=0:40&link=WIFh0sXDkMM">Алгоритм:</a> Lw U L\' U\' M\'</b><br/>
+    Можно использовать зеркальный алгоритм и для классического случая из <b>Части Ф</b>, когда пара и квартира спереди:<br/>
+    <b><a href="rubic-activity://ytactivity?time=0:48&link=WIFh0sXDkMM">Алгоритм:</a> Rw U R\' U\' M</b>
+
+    <p>2. Вторая ситуация - <a href="rubic-activity://ytactivity?time=0:56&link=WIFh0sXDkMM">снова пара</a>
+    на задней грани около своей квартиры, но уже справа.</p>
+    <p style="text-align:center"><img src="vf2l1_2.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=0:40&link=WIFh0sXDkMM">Алгоритм:</a> Rw\' U\' R U M\'</b>
+
+    <p>3. Третья ситуация - <a href="rubic-activity://ytactivity?time=1:10&link=WIFh0sXDkMM">пара</a>
+    на передней грани слева, а квартира ее сзади справа. Можно сделать U2 и привести к ситуации 2, но
+    как обычно есть и другой вариант.</p>
+    <p style="text-align:center"><img src="vf2l1_3.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:15&link=WIFh0sXDkMM">Алгоритм:</a> R2 F R F\' R</b>
+
+    <p>4. Четвертая ситуация - <a href="rubic-activity://ytactivity?time=1:26&link=WIFh0sXDkMM">девушка</a>
+    дома, но перевернута, парень с завышенной самооценкой справа сзади. Опять же можно использовать
+    и вместо обычного алгоритма, только первым ходом поставить парня назад, пусть и разбив пару. Данный
+    алгоритм быстрее, т.к. в нем нет двойных кручений.</p>
+    <p style="text-align:center"><img src="vf2l1_4.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:33&link=WIFh0sXDkMM">Алгоритм:</a> (R\' F R F\') R U\' R\'</b>
+
+    <p>5. Пятая ситуация - <a href="rubic-activity://ytactivity?time=1:49&link=WIFh0sXDkMM">пара</a>
+    в своем доме, но перевернута, а дом находится справа сзади.</p>
+    <p style="text-align:center"><img src="vf2l1_5.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:55&link=WIFh0sXDkMM">Алгоритм:</a> R\' U R\' F R F\' R</b>
+
+    <p>6. Шестая ситуация - <a href="rubic-activity://ytactivity?time=2:07&link=WIFh0sXDkMM">парень</a>
+    с завышенной самооценкой, девушка сзади него и они совместимы. Ускорение для <b>Части Ж</b>. Без
+    двойных кручений и перехватов, а так же с удобным фингертриксом (если второй ход делать
+    указательным пальцем левой руки). За счет этого выполняется
+    <a href="rubic-activity://ytactivity?time=2:26&link=WIFh0sXDkMM">быстрее,</a> чем алгоритм из
+    <a href="rubic-activity://ytactivity?time=2:39&link=WIFh0sXDkMM"><b>Части Ж</b></a>, хотя, когда
+    квартира находится справа сзади, лучше использовать алгоритм с двойным кручением, а не
+    делать перхват <b>y</b>.</p>
+    <p style="text-align:center"><img src="vf2l1_6.xml" width="60%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=2:14&link=WIFh0sXDkMM">Алгоритм:</a> (F U R U\' R\' F\') R U\' R\'</b><br/>
+    <b><a href="rubic-activity://ytactivity?time=2:32&link=WIFh0sXDkMM">Алгоритм для квартиры сзади:</a> (U2 R2 U2 R) U R\' U R2</b>
+
+    <p>7. Седьмая <a href="rubic-activity://ytactivity?time=2:42&link=WIFh0sXDkMM">ситуация</a>
+    из <b>Части Е</b>, альтернативный вариант c удобным фингертриксом из стандартного положения рук.
+    Максимкин алгоритм вроде бы и короче, но мне кажется что данный алгоритм быстрее.</p>
+    <p style="text-align:center"><img src="vf2l1_7.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=2:47&link=WIFh0sXDkMM">Алгоритм:</a> U2 (R U R\' U\') R U\' R\' U2 R U\' R\'</b><br/>
+    или старый <b><a href="rubic-activity://ytactivity?time=3:07&link=WIFh0sXDkMM">Алгоритм:</a> (U2 R2 U2 R\') U\' R U\' R2</b><br/>
+
+    <p>8. Восьмая <a href="rubic-activity://ytactivity?time=3:22&link=WIFh0sXDkMM">ситуация</a>
+    из <b>Части Л</b>, альтернативный вариант без перехватов, и сложным, но очень быстрым
+    <a href="rubic-activity://ytactivity?time=3:37&link=WIFh0sXDkMM">фингертриксом</a>. С очень
+    нестандартным начальным положением рук - правая рука как при стандартном положении, а вот у
+    левой большой палец сверху.</p>
+    <p style="text-align:center"><img src="vf2l1_8.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=3:27&link=WIFh0sXDkMM">Алгоритм:</a> (R B L U\') L\' B\' R\'</b><br/>
+    или тоже самое, но в другой интерпретации:<br/>
+    <b>(Lw U Rw U\') Rw\' U\' Lw\'</b>
+
+    <p>9. Девятая <a href="rubic-activity://ytactivity?time=3:40&link=WIFh0sXDkMM">ситуация</a>
+    из <b>Части Т</b>, но квартира спереди слева или просто зеркальная предыдущей ситуации. Опять же
+    очень быстрый и удобный алгоритм.</p>
+    <p style="text-align:center"><img src="vf2l1_9.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=3:47&link=WIFh0sXDkMM">Алгоритм:</a> M U\' R\' F R U M\'</b><br/>
+    ну или вместо неудобного <b>М</b>, можно сделать <b>Rw\' R</b>.
+    <p>Еще один вариант из ускорения 3.8 без вращения средней грани (M).</p>
+    <b><a href="rubic-activity://ytactivity?time=2:28&link=IL7VMSTatAA">Алгоритм:</a> F U\' (R U\' R\') U2 F\'</b>
+
+    <p>10. Десятая ситуация - <a href="rubic-activity://ytactivity?time=4:10&link=WIFh0sXDkMM">парень</a>
+    наглый на первом этаже, девушка на втором этаже, на своем месте, но перевернута. Можно
+    пиф-пафом привести ситуацию к шестому ускорению, а можно использовать
+    <a href="rubic-activity://ytactivity?time=4:23&link=WIFh0sXDkMM">быстрый</a>
+    алгоритм с жирными включениями и выключениями света и привести ситуацию к трехходовке из <b>Части Х</b>.</p>
+    <p style="text-align:center"><img src="vf2l1_10.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=4:16&link=WIFh0sXDkMM">Алгоритм:</a> Rw U\' Rw\' U2 Rw U Rw\' (R U R\')</b>
+
+    <p>11. Одиннадцатая <a href="rubic-activity://ytactivity?time=4:10&link=WIFh0sXDkMM">ситуация</a>
+    зеркальная десятой. Все тоже самое, парень смотрящий на нас и перевернутая девушка на своем месте,
+    но все это слева. Начальное положение рук как при пиф-пафе. Кстати чтобы получить данную ситуацию,
+    можно сделать алгоритм из ускорения 10 на собранном F2L. И напротив чтобы получить ситуацию 10,
+    выполнить данный алгоритм.</p>
+    <p style="text-align:center"><img src="vf2l1_11.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=4:31&link=WIFh0sXDkMM">Алгоритм:</a> F R U2 R\' F\' (L\' U\' L)</b>
+
+    <p>12. Двенадцатая <a href="rubic-activity://ytactivity?time=4:43&link=WIFh0sXDkMM">ситуация</a>
+    - все аналогично предыдущей, но квартира спереди справа. В этом случае делаем алгоритм обратный
+    ситуации 10.</p>
+    <p style="text-align:center"><img src="vf2l1_12.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=4:49&link=WIFh0sXDkMM">Алгоритм:</a> (R U\' R\') Rw U\' Rw\' U2 Rw U Rw\'</b>
+
+    <p>13. Тринадцатая <a href="rubic-activity://ytactivity?time=5:00&link=WIFh0sXDkMM">ситуация</a>
+    - скромный парень на 3 этаже, девушка на втором в своей квартире, но перевернута, а квартира
+    справа сзади. Можно было поднять девушку на третий этаж, увести на заднюю грань, вернуть парня
+    на третий этаж, подвести к нему квартиру и заселить в 3 хода. А можно сделать это удобно и
+    <a href="rubic-activity://ytactivity?time=5:15&link=WIFh0sXDkMM">быстро.</a></p>
+    <p style="text-align:center"><img src="vf2l1_13.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=5:10&link=WIFh0sXDkMM">Алгоритм:</a> (R\' F) R\' F\' R U\' R</b>
+
+    <p>14. Четырнадцатая <a href="rubic-activity://ytactivity?time=5:20&link=WIFh0sXDkMM">ситуация</a>
+    из <b>Части В-3</b>. Парень с завышенной самооценкой, девушка на третьем этаже слева напротив своей
+    грани. Но квартира у них спереди слева. Очень короткий и
+    <a href="rubic-activity://ytactivity?time=5:41&link=WIFh0sXDkMM">быстрый</a> алгоритм.</p>
+    <p style="text-align:center"><img src="vf2l1_14.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=5:35&link=WIFh0sXDkMM">Алгоритм:</a> F R U2 R\' F\'</b>
+    <p>Если же угол и квартира справа, то лучше использовать алгоритм из ускорений 3.4</p>
+    <p style="text-align:center"><img src="vf2l3_4.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:21&link=IL7VMSTatAA">Алгоритм:</a> (Rw U\' Rw\') U2 (Rw U Rw\')</b>
+
+
+    <p>15. Пятнадцатая <a href="rubic-activity://ytactivity?time=5:44&link=WIFh0sXDkMM">ситуация</a>
+    ускорение для <b>Ромашки направо</b>, т.е. одной из ситуаций, когда парень уже на своем месте,
+    а девушка на третьем этаже. Вот только стебель ромашки должен быть слева (на картинке не видно).
+    Очень простой и быстрый алгоритм: жирный пиф-паф, жирнный английский пиф-паф.
+    <p style="text-align:center"><img src="vf2l1_15.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=5:54&link=WIFh0sXDkMM">Алгоритм:</a> (Rw U Rw\' U\') (Rw\' F Rw F\')</b>
+
+    ]]></string>
+    <string name="advf2l_st2_url">WIFh0sXDkMM</string>
+
+    <string name="advf2l_st3_title">Advanced F2L 2.0</string>
+    <string name="advf2l_st3_descr" formatted="false"><![CDATA[
+    <p>Вторая часть усорений F2L от Кристофера Олсона <a href="http://www.cyotheking.com/about">Christopher Olson.</a></p>
+
+    <p>1. Первая <a href="rubic-activity://ytactivity?time=0:12&link=28Ln2lfkD9U">ситуация.</a>
+    Ускорение для классической \"ромашки налево\", но только для случая, когда задняя правая пара
+    еще не на своем месте. Короткий, удобный супербыстрый алгоритм. </p>
+    <p style="text-align:center"><img src="vf2l2_1.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=0:29&link=28Ln2lfkD9U">Алгоритм:</a> R2 U\' R\' U R2</b>
+
+    <p>2. Вторая <a href="rubic-activity://ytactivity?time=0:35&link=28Ln2lfkD9U">ситуация.</a>
+    Противоположная предыдущей, для классической \"ромашки направо\", но опять только для случая, когда
+    передняя правая пара еще не на своем месте.</p>
+    <p style="text-align:center"><img src="vf2l2_2.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=0:46&link=28Ln2lfkD9U">Алгоритм:</a> R2 U R U\' R2</b>
+
+    <p>3. Третья <a href="rubic-activity://ytactivity?time=0:53&link=28Ln2lfkD9U">ситуация.</a>
+    Вариант для <b>Части Т</b>, но пара стоит слева. Вариант без перехватов и Dw кручений.</p>
+    <p style="text-align:center"><img src="vf2l2_3.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:05&link=28Ln2lfkD9U">Алгоритм:</a> F (U R U\' R\') F\' R U R\'</b>
+
+    <p>4. Четвертая <a href="rubic-activity://ytactivity?time=1:11&link=28Ln2lfkD9U">ситуация.</a>
+    Вариант для классической <b>Части Т</b>.</p>
+    <p style="text-align:center"><img src="vf2l2_4.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:15&link=28Ln2lfkD9U">Алгоритм:</a> x\' R2 U\' R\' U R\' x U2 R U\' R\'<br/> или немного по другому: Lw R U\' R\' U Lw\' U2 R U\' R\'</b>
+
+    <p>5. Пятая <a href="rubic-activity://ytactivity?time=1:22&link=28Ln2lfkD9U">ситуация.</a>
+    Казалось бы что тут ускорять, если данная ситуация решается в 3 хода. Но в данной ситуации можно
+    сразу поставить на место и ребра (EO - Edge Orientation), тем самым упростив себе OLL, а может и
+    совсем его пропустив. Т.е. если у вас пара как на картинке и только одна левая верхняя грань
+    ориентирована как надо (желтой вверх), то можно выполнить данный алгоритм. По сути
+    он объединяет два хорошо знакомых алгоритма английский пиф-паф и палку - (R\' F R <b>F\') (F</b> R U R\' U\' F\'), но
+    без ненужных \"из Лондона\" и \"в Лондон\") на стыке.</p>
+    <p style="text-align:center"><img src="vf2l2_5.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:35&link=28Ln2lfkD9U">Алгоритм:</a> R\' F R2 U R\' U\' F\'</b>
+
+    <p>6. Шестая <a href="rubic-activity://ytactivity?time=1:41&link=28Ln2lfkD9U">ситуация.</a>
+    Можно ходом U\' привести ситуацию к первому ускорению перовой части, но в данном случае, обратите
+    внимание еще и на ребра, т.е. снова EO - в действии. Если ориентировано только одно дальнее ребро,
+    то все ребра для OLL встанут на место.<br/>
+    К тому же, алгоритм без перехватов и с очень удобным
+    фингертриксом, поэтому можно использовать и как основной алгоритм для <b>Части Ф</b>.</p>
+    <p style="text-align:center"><img src="vf2l2_6.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:56&link=28Ln2lfkD9U">Алгоритм:</a> R\' D\' Rw U\' Rw\' D R</b>
+
+    <p>7. Седьмая <a href="rubic-activity://ytactivity?time=2:00&link=28Ln2lfkD9U">ситуация.</a>
+    И снова казалось бы что тут ускорять, перехват и установка в 2 хода. Но опять обращаем внимание
+    на ребра верхней грани. И снова если только одно дальнее ребро ориентировано как надо, лучше
+    выполнить очень похожий на предыдущий алгоритм.</p>
+    <p style="text-align:center"><img src="vf2l2_7.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=2:09&link=28Ln2lfkD9U">Алгоритм:</a> R\' D\' Rw U\' Rw\' D R</b>
+
+    <p>8. Восьмая <a href="rubic-activity://ytactivity?time=2:13&link=28Ln2lfkD9U">ситуация.</a>
+    Редкая ситуация, но можно пропустить OLL и сразу перейти к PLL. Очень похоже на <b>Носик</b>,
+    только начинается c выключения света, а потом заселяем в 4 хода. Обратите внимание, что лучше
+    выполнять из стандартного положения рук, а нижнюю грань в обоих случаях крутить левой рукой.</p>
+    <p style="text-align:center"><img src="vf2l2_8.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=2:22&link=28Ln2lfkD9U">Алгоритм:</a> (R\' D\' R U\' R\' D R) (U R U\' R\')</b>
+
+    <p>9. Девятая <a href="rubic-activity://ytactivity?time=2:28&link=28Ln2lfkD9U">ситуация.</a>
+    Еще одна ситуация, когда легко пропустить OLL. Быстрый и удобный алгоритм, который можно испоьзовать
+    и как основной для <b>Части Е</b>.</p>
+    <p style="text-align:center"><img src="vf2l2_9.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=2:38&link=28Ln2lfkD9U">Алгоритм:</a> (R U\' R2 D\' R U2 R\' D R)</b>
+
+    <p>10. Десятая <a href="rubic-activity://ytactivity?time=2:43&link=28Ln2lfkD9U">ситуация.</a>
+    Очень полезный алгоритм, для ситуации когда угол на своем месте, ребро тоже на своем, но перевернуто.
+    Это будет гораздо быстрее, чем сначала поднимать пару на верхний слой, а потом решать эту пару, но
+    данный алгоритм можно применять только, когда задняя правая пара не на своем месте (как в ускорении 1).</p>
+    <p style="text-align:center"><img src="vf2l2_10.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=3:03&link=28Ln2lfkD9U">Алгоритм:</a> D\' R\' F R F\' R U\' R\' D</b>
+
+    <p>11. Одиннадцатая <a href="rubic-activity://ytactivity?time=3:13&link=28Ln2lfkD9U">ситуация.</a>
+    Обычно в такой ситуации вы бы сделали U2, перехват и т.д. Но можно обойтись и без перехвата.</p>
+    <p style="text-align:center"><img src="vf2l2_11.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=3:22&link=28Ln2lfkD9U">Алгоритм:</a> Rw\' U R U\' R\' U\' Rw</b>
+
+    <p>12. Двенадцатая <a href="rubic-activity://ytactivity?time=3:27&link=28Ln2lfkD9U">ситуация.</a>
+    Еще один алгоритм для <b>Части Ф</b> с OLL скипом. Тоже быстрый и удобный алгоритм.</p>
+    <p style="text-align:center"><img src="vf2l2_12.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=3:43&link=28Ln2lfkD9U">Алгоритм:</a> Rw\' D\' Rw U\' Rw\' D Rw</b>
+
+    ]]></string>
+    <string name="advf2l_st3_url">28Ln2lfkD9U</string>
+
+    <string name="advf2l_st4_title">Advanced F2L 3.0</string>
+    <string name="advf2l_st4_descr" formatted="false"><![CDATA[
+    <p>Третья часть усорений F2L от Кристофера Олсона <a href="http://www.cyotheking.com/about">Christopher Olson.</a></p>
+
+    <p>1. Первая <a href="rubic-activity://ytactivity?time=0:40&link=IL7VMSTatAA">ситуация.</a>
+    Очень полезное ускорение, позволяющее обойтись без перехвата когда квартира справа сзади, угол над
+    квартирой, ребро на передней грани, но они совместимы. </p>
+    <p style="text-align:center"><img src="vf2l3_1.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=0:47&link=IL7VMSTatAA">Алгоритм:</a> Rw U2 R2 U\' R2 U\' Rw\'</b>
+
+    <p>2. Вторая <a href="rubic-activity://ytactivity?time=0:53&link=IL7VMSTatAA">ситуация.</a>
+    Можно конечно ходом U привести ситуацию к \"Ромашке налево\", а можно сделать удивительно быстрый
+    и удобный алгоритм.</p>
+    <p style="text-align:center"><img src="vf2l3_2.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:02&link=IL7VMSTatAA">Алгоритм:</a> F\' (R U R\' U\') R\' F R</b>
+
+    <p>3. Третья <a href="rubic-activity://ytactivity?time=1:08&link=IL7VMSTatAA">ситуация.</a>
+    Классическая \"Ромашка налево\". Тоже быстрый и более удобный чем ромашка алгоритм.</p>
+    <p style="text-align:center"><img src="vf2l3_3.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:12&link=IL7VMSTatAA">Алгоритм:</a> R\' F\' R (U R U\' R\') F</b>
+
+    <p>4. Четвертая <a href="rubic-activity://ytactivity?time=1:17&link=IL7VMSTatAA">ситуация.</a>
+    И снова все быстро, без перехватов и вращений передней грани. </p>
+    <p style="text-align:center"><img src="vf2l3_4.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:21&link=IL7VMSTatAA">Алгоритм:</a> (Rw U\' Rw\') U2 (Rw U Rw\')</b>
+    <p>Для квартиры и угла слева, вот такой алгоритм из ускорения 1.14</p>
+    <p style="text-align:center"><img src="vf2l1_14.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=5:35&link=WIFh0sXDkMM">Алгоритм:</a> F R U2 R\' F\'</b>
+
+
+    <p>5. Пятая <a href="rubic-activity://ytactivity?time=1:28&link=IL7VMSTatAA">ситуация.</a>
+    Еще одно ускорение к серии ускорений из предыдущей части, касающихся ориентации ребер или скипу OLL.</p>
+    <p style="text-align:center"><img src="vf2l3_5.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:41&link=IL7VMSTatAA">Алгоритм:</a> R\' D\' (Rw U Rw\') D R2 U R\'</b>
+
+    <p>6. Шестая <a href="rubic-activity://ytactivity?time=1:47&link=IL7VMSTatAA">ситуация.</a>
+    Можно конечно сделать U, перехват и ускорение 1.7 или 2.9. А можно и такой красивый алгоритм.</p>
+    <p style="text-align:center"><img src="vf2l3_6.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:50&link=IL7VMSTatAA">Алгоритм:</a> R\' F R\' F\' R2 U\' (R\' U R)</b>
+
+    <p>7. Седьмая <a href="rubic-activity://ytactivity?time=1:57&link=IL7VMSTatAA">ситуация.</a>
+    В классическом F2L надо либо поднять пару наверх неудобно (F F\') либо ставить неудобно через (B B\').
+    Поэтому лучше вот таким алгоритмом, ну или поднять левой (опусть жирно правую) и воспользоваться
+    ускорением 1.2</p>
+    <p style="text-align:center"><img src="vf2l3_7.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=2:01&link=IL7VMSTatAA">Алгоритм:</a> R\' (F U\' F\') R</b><br/>
+    или с использованием ускорения из первой части <b><a href="rubic-activity://ytactivity?time=2:16&link=IL7VMSTatAA">Алгоритм:</a> Rw\' F U\' R U M\'</b>
+
+    <p>8. Восьмая <a href="rubic-activity://ytactivity?time=2:20&link=IL7VMSTatAA">ситуация.</a>
+    Еще один вариант для ситуации из ускорения 1.9, но без вращения средней грани (M).</p>
+    <p style="text-align:center"><img src="vf2l3_8.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=2:28&link=IL7VMSTatAA">Алгоритм:</a> F U\' (R U\' R\') U2 F\'</b>
+
+    <p>9. Девятая <a href="rubic-activity://ytactivity?time=2:33&link=IL7VMSTatAA">ситуация.</a>
+    Вместо U и трех пиф-пафов можно и чуть быстрее. </p>
+    <p style="text-align:center"><img src="vf2l3_9.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=2:44&link=IL7VMSTatAA">Алгоритм:</a> (F R\' F\' R) U\' (R U\' R\')</b>
+
+    <p>10. Десятая <a href="rubic-activity://ytactivity?time=2:51&link=IL7VMSTatAA">ситуация.</a>
+    Один из моих любимых алгоритмов. Быстро, красиво и удобно тренировать
+    (повтор алгоритма возвращает все на место).</p>
+    <p style="text-align:center"><img src="vf2l3_10.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=2:57&link=IL7VMSTatAA">Алгоритм:</a> (R2 D\') F2 (D R2)</b>
+
+    ]]></string>
+    <string name="advf2l_st4_url">IL7VMSTatAA</string>
+
+    <string name="advf2l_st5_title">Advanced F2L 4.0</string>
+    <string name="advf2l_st5_descr" formatted="false"><![CDATA[
+    <p>Четвертая часть ускорений F2L от Кристофера Олсона <a href="http://www.cyotheking.com/about">Christopher Olson.</a></p>
+
+    <p>1. Первая <a href="rubic-activity://ytactivity?time=0:32&link=zstdjvprOAg">ситуация.</a>
+    Вроде и ускорять нечего U2 и загнать в три хода, но можно воспользоваться и чуть более длинным,
+    но на самом деле более быстрым алгоритмом, к тому же без вращения левой грани.</p>
+    <p style="text-align:center"><img src="vf2l4_1.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=0:47&link=zstdjvprOAg">Алгоритм:</a> R\' F (R U R\') F\' R</b>
+
+    <p>2. Вторая <a href="rubic-activity://ytactivity?time=1:03&link=zstdjvprOAg">ситуация.</a>
+    Двойное ускорение. Можно использовать как \"Ромашку направо\" для передней грани и в случае,
+    если надо переставить ребро на втором этаже справа налево.</p>
+    <p style="text-align:center"><img src="vf2l4_2.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:08&link=zstdjvprOAg">Алгоритм:</a> F (Rw U Rw\' U\') F\'</b>
+
+    <p>3. Третья <a href="rubic-activity://ytactivity?time=1:22&link=zstdjvprOAg">ситуация.</a>
+    Зеркальное предыдущему ускорение. Можно использовать как \"Ромашку налево\" и если надо переставить ребро на
+    втором этаже слева направо.</p>
+    <p style="text-align:center"><img src="vf2l4_3.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:24&link=zstdjvprOAg">Алгоритм:</a> F (U Rw U\' Rw\') F\'</b>
+
+    <p>4. Четвертая <a href="rubic-activity://ytactivity?time=1:29&link=zstdjvprOAg">ситуация.</a>
+    Чтобы не делать два перехвата, можно сделать такой не простой для запоминания алгоритм. </p>
+    <p style="text-align:center"><img src="vf2l4_4.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:38&link=zstdjvprOAg">Алгоритм:</a> R\' U\' R\' D\' R U R\' D R U\' R</b>
+
+    <p>5. Пятая <a href="rubic-activity://ytactivity?time=1:45&link=zstdjvprOAg">ситуация.</a>
+    Обратите внимание, что квартира в данном случае находится слева сзади. Т.е. либо сделать перехват
+    (y) и Максимкин алгоритм уже без первого хода U2, либо вот так без перехватов.</p>
+    <p style="text-align:center"><img src="vf2l4_5.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=1:50&link=zstdjvprOAg">Алгоритм:</a> Rw U R\' U R U2 B Rw\'</b>
+
+    <p>6. Шестая <a href="rubic-activity://ytactivity?time=2:10&link=zstdjvprOAg">ситуация.</a>
+    Вот так красиво подгоняем ребро к углу (алгоритмом обратным ускорению 1.1) и заселяем в три хода.</p>
+    <p style="text-align:center"><img src="vf2l4_6.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=2:17&link=zstdjvprOAg">Алгоритм:</a> (M\' U R U\' Rw\') R U\' R\'</b>
+
+    <p>7. Седьмая <a href="rubic-activity://ytactivity?time=2:25&link=zstdjvprOAg">ситуация.</a>
+    Вроде бы неудобная ситуация и ребро и угол не на третьем этаже, но вот как просто можно ее решить.</p>
+    <p style="text-align:center"><img src="vf2l4_7.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=2:50&link=zstdjvprOAg">Алгоритм:</a> R\' F R U\' F\' R U\' R\'</b>
+
+    <p>8. Восьмая <a href="rubic-activity://ytactivity?time=2:55&link=zstdjvprOAg">ситуация.</a>
+    Опять же куда быстрее чем U, два пиф-пафа, перехват и еще пиф-паф.</p>
+    <p style="text-align:center"><img src="vf2l4_8.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=2:59&link=zstdjvprOAg">Алгоритм:</a> R\' F R2 U\' R\' U2 F\'</b>
+
+    <p>9. Девятая <a href="rubic-activity://ytactivity?time=3:07&link=zstdjvprOAg">ситуация.</a>
+    Ну и как же обойтись без скипа OLL. Еще один алгоритм для легко определяемой ситуации, позволяющий
+    перейти сразу к PLL.</p>
+    <p style="text-align:center"><img src="vf2l4_9.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=3:17&link=zstdjvprOAg">Алгоритм:</a> F (U R U\' R\') F\' R U R\'</b>
+
+    <p>10. Десятая <a href="rubic-activity://ytactivity?time=3:35&link=zstdjvprOAg">ситуация.</a>
+    И так вроде не сложная ситуация, но можно ее решить только через кручение удобных U и R, без Лондонов.</p>
+    <p style="text-align:center"><img src="vf2l4_10.xml" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=3:44&link=zstdjvprOAg">Алгоритм:</a> R\' U\' (R2 U R2) U\' R</b>
+
+    ]]></string>
+    <string name="advf2l_st5_url">zstdjvprOAg</string>
+
+
+</resources>

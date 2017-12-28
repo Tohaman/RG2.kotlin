@@ -38,6 +38,7 @@ class FragmentListView : ListFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        loadSavedState()
         //Берем layout listview_4_fragment, чтобы небольшие литсвью располагались по центру фрагмента, а не по верхнему краю
         return inflater!!.inflate(R.layout.listview_4_fragment, null)
     }
@@ -60,13 +61,13 @@ class FragmentListView : ListFragment() {
         }
     }
 
-    fun changePhase (phase: String, context: Context?) {
-        Log.v (DebugTag.TAG, "FragmentListView changePhase $phase")
-        mPhase = phase
-        val mListPagers : ArrayList<ListPager> = ListPagerLab.get(context!!).getPhaseList(mPhase)
-        val mListAdapter = MyListAdapter(mListPagers,1.5f)
-        listAdapter = mListAdapter
-    }
+//    fun changePhase (phase: String, context: Context?) {
+//        Log.v (DebugTag.TAG, "FragmentListView changePhase $phase")
+//        mPhase = phase
+//        val mListPagers : ArrayList<ListPager> = ListPagerLab.get(context!!).getPhaseList(mPhase)
+//        val mListAdapter = MyListAdapter(mListPagers,1.5f)
+//        listAdapter = mListAdapter
+//    }
 
     override fun onListItemClick(l: ListView?, v: View?, position: Int, id: Long) {
         super.onListItemClick(l, v, position, id)
@@ -92,6 +93,19 @@ class FragmentListView : ListFragment() {
         mListener = null
     }
 
+    override fun onSaveInstanceState(state: Bundle?) {
+        if (state != null) {
+            state.putString("phase", mPhase)
+            Log.v (DebugTag.TAG, "Save InstanceState = $mPhase")
+        }
+        super.onSaveInstanceState(state)
+    }
+
+    private fun loadSavedState() {
+        mPhase = arguments.getString("phase")
+        Log.v (DebugTag.TAG, "Load SavedState = $mPhase")
+    }
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -109,9 +123,11 @@ class FragmentListView : ListFragment() {
 
     companion object {
         fun newInstance(param1: String): FragmentListView {
-            Log.v(DebugTag.TAG, "FragmentListView newInstance")
+            Log.v(DebugTag.TAG, "FragmentListView newInstance with $param1")
             val fragment = FragmentListView()
-            fragment.mPhase = param1
+            val args = Bundle()
+            args.putString("phase", param1)
+            fragment.arguments = args
             return fragment
         }
     }

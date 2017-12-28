@@ -57,9 +57,9 @@ class MainActivity : AppCompatActivity(),
         nav_view.setNavigationItemSelectedListener(this)
         fab.setOnClickListener { _ ->
             when (curPhase) {
-                "G2F_NEXT" -> {
+                "ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL" -> {
                     curPhase = "G2F"
-                    fragListView.changePhase(curPhase, this)
+                    setListFragmentPhase(curPhase)
                     fab.setImageResource(R.drawable.ic_fab_forward)
                 }
                 "AZBUKA" -> {
@@ -88,14 +88,18 @@ class MainActivity : AppCompatActivity(),
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {
-            if (curPhase == "G2F_NEXT") {
-                curPhase = "G2F"
-                fragListView.changePhase(curPhase, this)
-            } else {
-                if (curPhase == "AZBUKA"){
+            when (curPhase) {
+                "ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL" -> {
+                    curPhase = "G2F"
+                    setListFragmentPhase(curPhase)
+                    fab.setImageResource(R.drawable.ic_fab_forward)
+                }
+                "AZBUKA" -> {
                     curPhase = "SCRAMBLEGEN"
                     setFragment(FragmentScrambleGen.newInstance())
-                } else {
+                    fab.setImageResource(R.drawable.ic_fab_forward)
+                }
+                else -> {
                     if (backPressedTime + 1000 > System.currentTimeMillis()) {
                         super.onBackPressed()
                     } else {
@@ -181,9 +185,10 @@ class MainActivity : AppCompatActivity(),
             R.id.about -> {
                 snackbar (contentView!!, "О программе", "OK") {/** Do something */}
             }
-
+            R.id.exit -> {
+                finish()
+            }
         }
-
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
@@ -203,8 +208,7 @@ class MainActivity : AppCompatActivity(),
     private fun setListFragmentPhase(phase: String){
         curPhase = phase
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.frame_container, fragListView).commit()
-        fragListView.changePhase(curPhase, this)
+        transaction.replace(R.id.frame_container, FragmentListView.newInstance(curPhase)).commit()
         saveStartPhase(curPhase)
     }
 
@@ -219,9 +223,8 @@ class MainActivity : AppCompatActivity(),
             "BASIC" -> { toast(desc)}
             //Если меню "переходим на Фридрих", то меняем текст листвью на соответствующую фазу
             "G2F" -> {
-                fragListView.changePhase(desc, this)
+                setListFragmentPhase(desc)
                 fab.setImageResource(R.drawable.ic_fab_backward)
-                curPhase = "G2F_NEXT"
             }
             //в других случаях запустить SlideTab с просмотром этапов
             else -> { startActivity<SlidingTabsActivity>(RUBIC_PHASE to phase, EXTRA_ID to id)}

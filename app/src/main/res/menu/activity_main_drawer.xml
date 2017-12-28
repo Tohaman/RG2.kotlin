@@ -60,6 +60,10 @@
                 android:id="@+id/about"
                 android:icon="@drawable/ic_menu_about"
                 android:title="@string/st_about"/>
+            <item
+                android:id="@+id/exit"
+                android:icon="@drawable/ic_menu_about"
+                android:title="@string/st_exit"/>
         </menu>
     </item>
 
