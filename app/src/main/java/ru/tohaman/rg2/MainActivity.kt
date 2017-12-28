@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.app.AppCompatDelegate
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         Log.v (TAG, "MainActivity ListPagerLab init")
         mListPagerLab = ListPagerLab.get(this)
         Log.v (TAG, "MainActivity CreateView")
@@ -180,7 +182,7 @@ class MainActivity : AppCompatActivity(),
             R.id.basic_move -> { setListFragmentPhase("BASIC") }
 
             R.id.thanks -> {
-                snackbar(contentView!!, "Спасибо!","ОК") {/** Do something */}
+                snackbar(contentView!!, "И вам спасибо!","ОК") {/** Do something */}
             }
             R.id.about -> {
                 snackbar (contentView!!, "О программе", "OK") {/** Do something */}

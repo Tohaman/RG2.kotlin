@@ -62,7 +62,7 @@
                 android:title="@string/st_about"/>
             <item
                 android:id="@+id/exit"
-                android:icon="@drawable/ic_menu_about"
+                android:icon="@drawable/ic_menu_exit"
                 android:title="@string/st_exit"/>
         </menu>
     </item>
