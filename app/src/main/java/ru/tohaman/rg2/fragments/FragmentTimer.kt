@@ -1,7 +1,6 @@
 package ru.tohaman.rg2.fragments
 
 
-import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.graphics.Typeface
 import android.media.AudioManager
@@ -214,7 +213,6 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         }
     }
 
-    @SuppressLint("ClickableViewAccessibility")
     private fun createUI(): View {
         //толщина рамки в dp
         val m = dip(10)
@@ -239,8 +237,8 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         //SCREENLAYOUT_SIZE_XLARGE и может быть когда-то и больше
             else -> {handSize = dip (150); h = dip(220); w = dip (420)}
         }
-
         return UI {
+            @Suppress("ClickableViewAccessibility")
             linearLayout {
                 constraintLayout {
                     backgroundColorResource = R.color.blue
