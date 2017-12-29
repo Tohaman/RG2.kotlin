@@ -1,6 +1,5 @@
 package ru.tohaman.rg2.ui
 
-import android.print.PrintAttributes
 import android.util.Log
 import android.view.Gravity
 import android.view.View
@@ -23,9 +22,31 @@ class TestPllUI<in Fragment> : AnkoComponentEx<Fragment>() {
         linearLayout {
             gravity = Gravity.CENTER
             orientation = LinearLayout.VERTICAL
+
+            val ptTextView = textView {
+                text = "Сложность:"
+                textSize = 24F
+            }.lparams() { margin = 8.dp }
+            radioGroup  {
+                backgroundColor = 0x333333.opaque
+                id = Ids.radioGroup
+                orientation = LinearLayout.VERTICAL
+                radioButton {
+                    text = "по двум сторонам"
+                    textSize = 18F
+                    id = Ids.radio_2d
+                }.lparams(wrapContent, wrapContent) {horizontalMargin = m}
+                radioButton {
+                    text = "по трем сторонам"
+                    textSize = 18F
+                    id = Ids.radio_3d
+                    isChecked = true
+                }.lparams(wrapContent, wrapContent) {horizontalMargin = m}
+            }.lparams(wrapContent, wrapContent)
+
             val rowCountText = textView {
                 text = "Количество вариантов ответа"
-                textSize = 20F
+                textSize = 24F
             }.lparams() { margin = 16.dp }
             val rowCountLinLay = linearLayout {
                 gravity = Gravity.CENTER
@@ -33,18 +54,21 @@ class TestPllUI<in Fragment> : AnkoComponentEx<Fragment>() {
 
                 val rowCountButtonMinus = button("-")
                 val countRowCount = textView {
-                    text = "4"
+                    text = "6"
                     textSize = 24F
                 }.lparams() {
-                    marginStart = m
-                    marginEnd = m
+                    horizontalMargin = m
                 }
                 val rowCountButtonPlus = button("+")
             }.lparams(matchParent, wrapContent) { margin = 8.dp }
-            val ptTextView = textView {
-                text = "Сложность:"
-            }.lparams() { margin = 16.dp }
+
         }
     }
 
+
+    private object Ids {
+        val radioGroup = 1
+        val radio_3d = 2
+        val radio_2d = 5
+    }
 }

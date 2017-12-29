@@ -318,13 +318,13 @@ class FragmentScrambleGen : Fragment() {
             if (curRandom != prevRandom) {
                     i++                                                 //увеличиваем счетчик на 1
                     // ход будет по часовой, против или двойной
-                    when (random.nextInt(3)) {
-                        //по часовой
-                        0 -> { scramble = "$scramble${map[curRandom]} " }      //просто добавляем букву
-                        //против часовой
-                        1 -> { scramble = "$scramble${map[curRandom]}' " }      //добавляем букву c '
-                        //двойной
-                        2 -> { scramble = "$scramble${map[curRandom]}2 " }      //добавляем двойку
+                    when (random.nextInt(3)) {          // случайное число от 0 до 2
+                        //если 0, то считаем что по часовой
+                        0 -> { scramble += "${map[curRandom]} " }      //просто добавляем букву
+                        //1 - против часовой
+                        1 -> { scramble += "${map[curRandom]}' " }      //добавляем букву c '
+                        //2 - двойной
+                        2 -> { scramble += "${map[curRandom]}2 " }      //добавляем двойку
                     }
                     prevRandom = curRandom                              //запоминаем это число в prevRandom
                 }

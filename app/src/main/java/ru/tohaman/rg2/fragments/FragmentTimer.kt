@@ -231,7 +231,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         //размер картинок с руками
         var handSize = dip (80)
 
-        // screenSize это размер по специальной шкале класса Configuration: в диапазоне [1; 4],
+        // screenSize это размер по специальной шкале класса Configuration: в диапазоне [1..4],
         // чему соответствуют константы с наименованиями: SCREENLAYOUT_SIZE_SMALL, SCREENLAYOUT_SIZE_NORMAL,
         // SCREENLAYOUT_SIZE_LARGE и SCREENLAYOUT_SIZE_XLARGE.
         val screenSize = resources.configuration.screenLayout and Configuration.SCREENLAYOUT_SIZE_MASK

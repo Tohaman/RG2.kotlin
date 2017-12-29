@@ -185,7 +185,7 @@ class MainActivity : AppCompatActivity(),
                 snackbar(contentView!!, "И вам спасибо!","ОК") {/** Do something */}
             }
             R.id.about -> {
-                snackbar (contentView!!, "О программе", "OK") {/** Do something */}
+                snackbar (contentView!!, "Ну так себе программа :)", "OK") {/** Do something */}
             }
             R.id.exit -> {
                 finish()
@@ -205,6 +205,7 @@ class MainActivity : AppCompatActivity(),
         val editor = sp.edit()
         editor.putString("startPhase", phase)
         editor.apply() // подтверждаем изменения
+        curPhase = phase
     }
 
     private fun setListFragmentPhase(phase: String){
