@@ -85,11 +85,11 @@
 
                 <Button
                     android:id="@+id/button_azbuka"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/dimen_margin_8"
                     android:layout_weight="1"
-                    android:text="Выбрать азбуку"
+                    android:text="@string/azbukaButtonText"
                     android:textSize="16sp"/>
 
             </LinearLayout>
@@ -105,20 +105,20 @@
                     android:orientation="vertical">
 
                     <CheckBox
-                        android:id="@+id/checkBox_rebro"
+                        android:id="@+id/checkBox_edges"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/dimen_margin_8"
                         android:layout_weight="1"
-                        android:text="Без переплавки буфера ребер"/>
+                        android:text="@string/chkBoxEdgeBuffer"/>
 
                     <CheckBox
-                        android:id="@+id/checkBox_ugol"
+                        android:id="@+id/checkBox_corners"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/dimen_margin_8"
                         android:layout_weight="1"
-                        android:text="Без переплавки буфера углов"/>
+                        android:text="@string/chkBoxCornerBuffer"/>
                 </LinearLayout>
 
                 <android.support.constraint.ConstraintLayout
@@ -129,15 +129,14 @@
                         android:id="@+id/textView"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:text="Длина скрамбла:"
+                        android:text="@string/scrambleLengthText"
                         android:textColor="@android:color/background_dark"
                         android:textSize="16sp"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/button_minus"
-                        android:layout_marginLeft="8dp"/>
+                        android:layout_marginStart="8dp"/>
 
                     <Button
                         android:id="@+id/button_minus"
@@ -154,7 +153,6 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
-                        android:layout_marginRight="8dp"
                         android:gravity="center"
                         android:text="14"
                         android:textColor="@android:color/background_dark"
@@ -179,11 +177,12 @@
 
                     <Button
                         android:id="@+id/button_generate"
-                        android:layout_width="match_parent"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="@dimen/dimen_margin_8"
                         android:layout_weight="1"
-                        android:text="Генерировать скрамбл"
+                        android:text="@string/buttonScrambleGen"
                         android:textSize="16sp"/>
                 </LinearLayout>
 
@@ -206,9 +205,8 @@
                 android:id="@+id/scramble_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:text="Скрамбл:"
+                android:text="@string/scrambleText"
                 android:textColor="@android:color/background_dark"
                 android:textSize="16sp"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -218,9 +216,8 @@
                 android:id="@+id/scramble"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:text="U D R F H K L j J K H J K H K J S D H A K H H D K J"
+                android:text="@string/scramble_def_value"
                 android:textAlignment="viewStart"
                 android:textColor="@android:color/background_dark"
                 android:textSize="16sp"
@@ -248,7 +245,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Решение:"
+                android:text="@string/checkBoxSolveText"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
@@ -258,7 +255,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Т А Ч Р Ш О Х У Г Д Ч Т Ш Б М"
+                android:text="@string/scramble_def_solve"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/checkBox_solve"
                 app:layout_constraintRight_toRightOf="parent"

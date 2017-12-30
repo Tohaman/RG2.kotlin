@@ -310,24 +310,28 @@ class FragmentScrambleGen : Fragment() {
         val random = Random()
         var scramble = ""
         var i = 0
-        var prevRandom = 9
-        val map = hashMapOf(1 to "R", 2 to "U", 3 to "F", 4 to "L", 5 to "D", 6 to "B" )
+        var prevRandom = random.nextInt(0..6)                     //генерируем число от 0 до 5
+        var prevPrevRandom = random.nextInt(0..6)                 //генерируем число от 0 до 5
+        val map = hashMapOf(0 to "R", 1 to "L", 2 to "F", 3 to "B", 4 to "U", 5 to "D")
 
         do {
-            val curRandom = random.nextInt(1..7)                     //генерируем число от 1 до 6
+            val curRandom = random.nextInt(0..6)                     //генерируем число от 0 до 5
             if (curRandom != prevRandom) {
+                if ((curRandom / 2 != prevRandom / 2) or (curRandom != prevPrevRandom)) {
                     i++                                                 //увеличиваем счетчик на 1
                     // ход будет по часовой, против или двойной
-                    when (random.nextInt(3)) {          // случайное число от 0 до 2
-                        //если 0, то считаем что по часовой
-                        0 -> { scramble += "${map[curRandom]} " }      //просто добавляем букву
-                        //1 - против часовой
-                        1 -> { scramble += "${map[curRandom]}' " }      //добавляем букву c '
-                        //2 - двойной
-                        2 -> { scramble += "${map[curRandom]}2 " }      //добавляем двойку
+                    when (random.nextInt(3)) {
+                    //по часовой
+                        0 -> { scramble = "$scramble${map[curRandom]} "  }      //просто добавляем букву
+                    //против часовой
+                        1 -> { scramble = "$scramble${map[curRandom]}' " }      //добавляем букву c '
+                    //двойной
+                        2 -> { scramble = "$scramble${map[curRandom]}2 " }      //добавляем двойку
                     }
+                    prevPrevRandom = prevRandom                         // запоминаем -2 позиции от текущего числа
                     prevRandom = curRandom                              //запоминаем это число в prevRandom
                 }
+            }
         } while (i < length)
 
         scramble = scramble.trim (' ')                 //убираем лишние пробелы
