@@ -68,7 +68,7 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                     }
                 }.lparams(0,wrapContent)
 
-                val startButton = styledButton(R.style.Widget_AppCompat_Button_Colored) {
+                val startButton = styledButton(R.style.AppTheme_Button_Colored) {
                     text = "Запустить таймер"
                     textSize = 16F
                     padding = 20.dp
