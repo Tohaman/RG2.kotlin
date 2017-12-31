@@ -41,4 +41,5 @@
     <string name="scrambleText">Скрамбл:</string>
     <string name="azbukaButtonText">Выбрать азбуку</string>
     <string name="st_exit">Выход</string>
+    <string name="title_activity_pll_test_game">PllTestGame</string>
 </resources>

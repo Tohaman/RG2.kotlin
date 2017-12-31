@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="@dimen/z_3s_w"
+        android:height="@dimen/z_3s_h"
+        android:viewportHeight="871.27"
+        android:viewportWidth="912.45">
+<path android:fillColor="@color/cube_yellow" android:pathData="M586.1,192.4l200,0l-39.6,68.6l-178.8,0z"/>
+    <path android:fillColor="@color/cube_yellow" android:pathData="M609.5,105.1l227,0l-39.3,68l-206,-0z"/>
+    <path android:fillColor="@color/cube_yellow" android:pathData="M632.4,19.4l253.5,0l-38.3,66.4l-233,0z"/>
+    <path android:fillColor="@color/cube_yellow" android:pathData="M300.8,19.4l311.6,0l-17.8,66.4l-276,0z"/>
+    <path android:fillColor="@color/cube_yellow" android:pathData="M323.8,105.1l265.7,0l-18.2,68l-229.2,0z"/>
+    <path android:fillColor="@color/cube_yellow" android:pathData="M347.2,192.4l218.9,0l-18.4,68.6l-182.1,0z"/>
+    <path android:fillColor="@color/cube_yellow" android:pathData="M127.1,192.4l200,0l18.4,68.6l-178.8,0z"/>
+    <path android:fillColor="@color/cube_yellow" android:pathData="M76.7,105.1l227.1,0l18.2,68l-206,0z"/>
+    <path android:fillColor="@color/cube_yellow" android:pathData="M27.2,19.4l253.6,0l17.8,66.4l-233,-0z"/>
+</vector>

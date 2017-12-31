@@ -28,6 +28,9 @@ const val VIDEO_PREVIEW = "video_preview"   //наименования ключ�
 const val ONE_HAND_TO_START = "oneHandToStart"
 const val METRONOM_ENABLED = "metronomEnabled"
 const val METRONOM_TIME = "metronomTime"
+const val PLL_TEST_ROW_COUNT = "pllTestRowCount"
+const val PLL_TEST_3SIDE = "isPllTest3Side"
+
 
 class MainActivity : AppCompatActivity(),
         NavigationView.OnNavigationItemSelectedListener,
@@ -52,7 +55,7 @@ class MainActivity : AppCompatActivity(),
         when (curPhase) {
             "TIMER" -> {setFragment(FragmentTimerSettings.newInstance())}
             "SCRAMBLEGEN" -> {setFragment(FragmentScrambleGen.newInstance())}
-            "TESTPLL" -> {setFragment(FragmentTestPLL.newInstance())}
+            "TESTPLL" -> {setFragment(FragmentTestPLLSettings.newInstance())}
             else -> { setListFragmentPhase(curPhase) }
         }
 
@@ -175,7 +178,7 @@ class MainActivity : AppCompatActivity(),
                 saveStartPhase("SCRAMBLEGEN")
             }
             R.id.pll_game -> {
-                setFragment(FragmentTestPLL.newInstance())
+                setFragment(FragmentTestPLLSettings.newInstance())
                 saveStartPhase("TESTPLL")
             }
 

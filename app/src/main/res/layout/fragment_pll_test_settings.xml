@@ -9,14 +9,14 @@
     android:layout_marginEnd="@dimen/mid_padding">
 
     <RadioGroup
-        android:id="@+id/radioGroup2"
+        android:id="@+id/radio_group_difficulty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:checkedButton="@+id/rb_3side"
+        app:layout_constraintBottom_toTopOf="@+id/start_game_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/start_game_button"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView2"
@@ -24,21 +24,17 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Сложность:"
-            app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:textSize="18sp"/>
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rb_2side"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="по двум сторонам"/>
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rb_3side"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -51,13 +47,14 @@
         style="@style/AppTheme.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/mid_padding"
         android:text="Начать игру"
+        android:paddingTop="@dimen/big_margin"
+        android:paddingBottom="@dimen/big_margin"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_answer_count"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
-        app:layout_constraintBottom_toTopOf="@+id/text_answer_count"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_difficulty"/>
 
     <TextView
         android:id="@+id/text_answer_count"
@@ -65,11 +62,11 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="Количество вариантов ответа"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/lin_lay_answer_count"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/start_game_button"
-        app:layout_constraintBottom_toTopOf="@+id/lin_lay_answer_count"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/start_game_button"/>
 
 
     <LinearLayout
@@ -84,26 +81,29 @@
         >
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button_minus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="-"/>
+            android:text="@string/minus"
+            android:textSize="18sp"/>
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/text_row_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="2"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="24sp"/>
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/button_plus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="+"/>
+            android:text="@string/plus"
+            android:textSize="18sp"/>
     </LinearLayout>
 
     <Button
@@ -111,6 +111,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Задать свои названия для этапов"
+        android:textAllCaps="false"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

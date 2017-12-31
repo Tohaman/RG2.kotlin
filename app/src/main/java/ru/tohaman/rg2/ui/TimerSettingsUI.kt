@@ -101,7 +101,6 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                     linLayout.connect(HORIZONTAL of parentId,
                             TOP to BOTTOM of metronomText,
                             BOTTOMS of parentId)
-
                 }
             }.lparams(matchParent, wrapContent) {margin = m}
         }

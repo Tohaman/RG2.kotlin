@@ -17,7 +17,7 @@ import ru.tohaman.rg2.ui.TestPllUI
  * фабричный метод [newInstance] для создания фрагмента
  */
 
-class FragmentTestPLL : Fragment() {
+class FragmentTestPLLSettings : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -25,9 +25,9 @@ class FragmentTestPLL : Fragment() {
 }
 
     companion object {
-        fun newInstance(): FragmentTestPLL {
-            Log.v(DebugTag.TAG, "FragmentTestPLL newInstance")
-            return FragmentTestPLL()
+        fun newInstance(): FragmentTestPLLSettings {
+            Log.v(DebugTag.TAG, "FragmentTestPLLSettings newInstance")
+            return FragmentTestPLLSettings()
         }
     }
 
