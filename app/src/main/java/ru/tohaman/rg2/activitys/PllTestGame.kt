@@ -37,8 +37,7 @@ class PllTestGame : Activity() {
         setContentView(R.layout.activity_pll_test_game)
         actionBar?.setDisplayHomeAsUpEnabled(true)
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
-        val rows = sp.getInt(PLL_TEST_ROW_COUNT, 6)
-        guessRows = rows / 2
+        guessRows = sp.getInt(PLL_TEST_ROW_COUNT, 6) / 2
 
         imgView = findViewById<ImageView>(R.id.test_image)
         imgView.setImageDrawable(genDrawable3sidePll(10))
@@ -61,7 +60,7 @@ class PllTestGame : Activity() {
         listPagers.indices.mapTo(pllRnd) { it.toString() }
 
         updateGuessRows(guessRows, guessLinearLayouts)
-        loadNextPLL(rows)
+        loadNextPLL(guessRows)
 
     }
 
@@ -126,7 +125,6 @@ class PllTestGame : Activity() {
     private fun genDrawable3sidePll(correctAnswer: Int): LayerDrawable {
         val stringOfTopColorOfPll = pllTopLayerColor[correctAnswer]
 
-        //TODO сделать бэкграунд нормальным (залитым)
         val drw0 = ContextCompat.getDrawable(ctx, R.drawable.z_3s_background)
         val drw1 = ContextCompat.getDrawable(ctx, R.drawable.z_3s_up)
         val drw2 = ContextCompat.getDrawable(ctx, R.drawable.z_3s_left)
