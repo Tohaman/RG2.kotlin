@@ -5,6 +5,7 @@ import android.os.Build
 import android.preference.PreferenceManager
 import android.text.Html
 import android.text.Spanned
+import ru.tohaman.rg2.data.ListPager
 
 /**
  * Created by Test on 22.12.2017. Различные утилиты
@@ -52,3 +53,11 @@ fun spannedString(desc:String, imgGetter: Html.ImageGetter): Spanned {
         Html.fromHtml(desc1, imgGetter, null)
     }
 }
+
+fun getNameFromListPagers(ListPagers: List<ListPager>, i: Int): String =
+        if (ListPagers[i].comment == "") {
+            ListPagers[i].title
+        } else {
+            ListPagers[i].comment
+        }
+
