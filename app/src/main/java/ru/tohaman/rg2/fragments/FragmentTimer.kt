@@ -112,18 +112,18 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     }
 
     // на входе состояние нажатий лев и прав панели, на выходе текущее состояние в зависимости от action Up или Down
-    private fun onTouchAction(second_hand: Boolean, action: Int, handLight: ImageView): Boolean {
+    private fun onTouchAction(secondHand: Boolean, action: Int, handLight: ImageView): Boolean {
         //true если хоть что-то из этого true
-        val sec_hand = second_hand or oneHandToStart
+        val secHand = secondHand or oneHandToStart
         //вот так в котлине when может возвращать какое-то значение, в данном случае положена или отпущена рука (true или false)
         return when (action) {
         //если что-нажато (первое прикосновение)
             MotionEvent.ACTION_DOWN -> {
                 when {
                 //если обе руки прикоснулись и таймер не статован, то значит таймер "готов", обнуляем время таймера
-                    (sec_hand and !timerStart) -> {timerReady = true; textTime.text = context.getString(R.string.begin_timer_text)}           //таймер готов к запуску
+                    (secHand and !timerStart) -> {timerReady = true; textTime.text = context.getString(R.string.begin_timer_text)}           //таймер готов к запуску
                 //если обе руки прикоснулись, а таймер был запущен, значит его надо остановить
-                    (sec_hand and timerStart) -> { stopTimer()}   //останавливаем таймер
+                    (secHand and timerStart) -> { stopTimer()}   //останавливаем таймер
                 //в противном случае,
                     else -> { /**ничего не делаем */ }
                 }

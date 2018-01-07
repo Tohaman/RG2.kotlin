@@ -105,7 +105,7 @@ class PllTestGame : Activity() {
         for (row in 0 until guessRows) {
             // place Buttons in currentTableRow
             for (column in 0 until guessLinearLayouts[row].getChildCount()) {
-                // получить ссылку на Button для еонфигурации
+                // получить ссылку на Button для онфигурации
                 val newGuessButton = guessLinearLayouts[row].getChildAt(column) as Button
                 newGuessButton.isEnabled = true  // активируем кнопку
                 // пишем текст а названием алгоритма на кнопку
