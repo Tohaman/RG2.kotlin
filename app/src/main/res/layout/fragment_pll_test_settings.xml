@@ -110,7 +110,7 @@
         android:id="@+id/button_rename"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Задать свои названия для этапов"
+        android:text="@string/pll_test_select_button"
         android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

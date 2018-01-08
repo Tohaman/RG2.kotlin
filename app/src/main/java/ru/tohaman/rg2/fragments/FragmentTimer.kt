@@ -20,6 +20,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import kotlinx.coroutines.experimental.delay
 import org.jetbrains.anko.*
 import org.jetbrains.anko.support.v4.UI
 import org.jetbrains.anko.support.v4.dip
@@ -194,7 +195,19 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         timerReady = false                     // сняли "готовость" таймера
         startTime = System.currentTimeMillis()
         TimerHandler.post(timerRunnable)  //запускам хэндлер для отбражения времени, аналогично .postDelayed(timerRunnable, 0)
+//TODO сделать через корутины при помощи suspend startShowTimer
+//        startShowTimer()
         if (metronomEnabled) {TimerHandler.post(soundRunnable)}  //запускам хэндлер для метронома
+    }
+
+
+    // через корутины Котлина, понятнее, чем через таймхендлеры
+    private suspend fun startShowTimer() {
+        do {
+            showTimerTime()   //обновляем время
+            delay( 30)  // раз в 30 милисекунд
+        }
+        while (timerStart)
     }
 
     private fun showTimerTime() {

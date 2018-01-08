@@ -29,6 +29,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("BEGIN4X4",R.array.begin4_title,R.array.begin4_icon,R.array.begin4_descr,R.array.begin4_url,context)
         phaseInit("AZBUKA", R.array.azbuka_title, R.array.g2f_icon,R.array.g2f_descr,R.array.g2f_null,context)
         phaseInit("PLLTEST", R.array.pll_test_phases, R.array.pll_test_icon,R.array.pll_test_descr,R.array.pll_test_url,context)
+        phaseInit("PLLTEST_CUSTOM", R.array.pll_test_phases, R.array.pll_test_icon,R.array.pll_test_descr,R.array.pll_test_url,context)
     }
 
     //собственно сам синглет, точнее Холдер, который держит сиглетную ссылку (INSTANCE) на экземпляр класса
@@ -184,6 +185,11 @@ class ListPagerLab private constructor(context: Context){
 
     //обновляем элемент ListPagerLab (свой комментарий)
     fun updateListPager(listPager: ListPager) {
+//        // Проверяем, есть ли элемент в синглете, если нет, то добавляем
+//        val mListPager = mDatabase.getListPagerFromBase(listPager.id, listPager.phase)
+//        if (mListPager == null) {
+//            listPagers.add(listPager)
+//        }
         // Обновляем элемент ListPager в синглете listPagers
         for ((i, lp) in listPagers.withIndex()) {
             if ((listPager.phase == lp.phase) and (listPager.id == lp.id)) {

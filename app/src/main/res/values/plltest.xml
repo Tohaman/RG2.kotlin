@@ -49,51 +49,51 @@
     </integer-array>
 
     <string-array name="pll_test_descr">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
     </string-array>
 
     <string-array name="pll_test_url">
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
+        <item>Ua Perm</item>
+        <item>Ub Perm</item>
+        <item>Z Perm</item>
+        <item>H Perm</item>
+        <item>T Perm</item>
+        <item>Jb Perm</item>
+        <item>F Perm</item>
+        <item>Y Perm</item>
+        <item>Aa Perm</item>
+        <item>Ab Perm</item>
+        <item>E Perm</item>
+        <item>V Perm</item>
+        <item>Nb Perm</item>
+        <item>Na Perm</item>
+        <item>Rb Perm</item>
+        <item>Ra Perm</item>
+        <item>Ga Perm</item>
+        <item>Gc Perm</item>
+        <item>Gd Perm</item>
+        <item>Gb Perm</item>
+        <item>Ja Perm</item>
     </string-array>
 
 </resources>

@@ -40,6 +40,7 @@ class AzbukaSelectUI<in Fragment> : AnkoComponentEx<Fragment>()  {
             drawable.setBounds(0, 0, drawable.intrinsicWidth, drawable.intrinsicHeight)
             drawable
         }
+
         val listPagerLab = ListPagerLab.get(ctx)
 
         linearLayout {

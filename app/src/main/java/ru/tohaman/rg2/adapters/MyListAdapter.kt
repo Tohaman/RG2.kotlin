@@ -54,7 +54,11 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
                         }.lparams(dip(40 * m),dip(40 * m)) {margin = 5.dp}
 
                         textView {
-                            text = list[i].title
+                            text = if (list[0].phase == "PLLTEST"){
+                                list[i].comment
+                            } else {
+                                list[i].title
+                            }
                             textSize = m * 12f
                             typeface = Typeface.DEFAULT_BOLD
                         }.lparams(matchParent, wrapContent) { setMargins(20.dp, 5.dp, 5.dp, 5.dp) }

@@ -59,7 +59,15 @@ class PllTestGame : Activity() {
                     .forEach { it.setOnClickListener(guessButtonListener) }
         }
 
-        listPagers = ListPagerLab.get(ctx).getPhaseList("PLLTEST")
+        val listPagerLab = ListPagerLab.get(ctx)
+        listPagers = listPagerLab.getPhaseList("PLLTEST")
+        // Если еще нет текущих значений, значит они равны названиям Максимкиного PLL
+        if (listPagers[0].comment == "") {
+            listPagers.forEach {
+                it.comment = it.title
+                listPagerLab.updateListPager(it)
+            }
+        }
         pllRnd.clear()
         listPagers.indices.mapTo(pllRnd) { it.toString() }
 

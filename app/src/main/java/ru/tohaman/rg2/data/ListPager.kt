@@ -9,7 +9,7 @@ package ru.tohaman.rg2.data
 //        Comment: String)       // свой коммент к этапу
 
 data class ListPager constructor (
-        val phase: String,
+        var phase: String,
         val id: Int,
         var title: String = "",
         var icon: Int = 0,

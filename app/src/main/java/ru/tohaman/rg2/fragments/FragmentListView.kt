@@ -29,7 +29,6 @@ import android.os.Build
  */
 class FragmentListView : ListFragment() {
     private var mPhase: String = "BEGIN"
-
     private var mListener: OnListViewInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
