@@ -122,7 +122,7 @@
          (т.к. для переворота классическим методом использовались бы буквы Г и П)<br/>
          В этом случае делаем два антипиф-пафа, ставим второй угол в глаз (на место буфера), делаем
          два пиф-пафа и возвращаем угол на место.
-         <p style="text-align:center"><img src="blaccel_4_1.png" width="30%%"></p>
+         <p style="text-align:center"><img src="blaccel_4.png" width="30%%"></p>
          <b>Алгоритм: (U R U\' R\')(U R U\' R\') L\' (R U R\' U\')(R U R\' U\') L</b><br/><br/>
         2. <a href="rubic-activity://ytactivity?time=8:11&link=YoMKHwOr48E"><b>ГЕ</b>й</a><br/>
          Обратный Гопнику, сначала два пиф-пафа, устанавливаем в глаз второй угол (установочный ход),
@@ -160,7 +160,7 @@
          1. <a href="rubic-activity://ytactivity?time=1:29&link=rhV9ZA_mJ9I"><b>В</b>ь<b>Ё</b>т</a><br/>
             Все очень просто, сначала возвращением из Лондона переводим угол налево, делаем
             Гопника (сначала антипиф-пафы) и уезжаем в Лондон.
-         <p style="text-align:center"><img src="blaccel_5_1.png" width="30%%"></p>
+         <p style="text-align:center"><img src="blaccel_5.png" width="30%%"></p>
          <b>Алгоритм: F\' (U R U\' R\')(U R U\' R\') L\' (R U R\' U\')(R U R\' U\') L F</b><br/><br/>
 
          2. <a href="rubic-activity://ytactivity?time=3:02&link=rhV9ZA_mJ9I"><b>В</b>а<b>Ф</b>ля</a><br/>
@@ -280,7 +280,7 @@
     <p>Еще несколько ситуаций в которых можно применить трицикл Окошки.</p>
     1. <a href="rubic-activity://ytactivity?time=0:40&link=oe__ZpaAqSo">ЕЖ</a><br/>
     Делаем установочный ход <b>M\'</b>, смежные окошки, отменяем установочный ход <b>M</b>.
-    <p style="text-align:center"><img src="blaccel_9_1.png" width="30%%"></p>
+    <p style="text-align:center"><img src="blaccel_9.png" width="30%%"></p>
     <b>Алгоритм: M\' (R2 U\' S\' U2 S U\' R2) M</b><br/><br/>
 
     2. <a href="rubic-activity://ytactivity?time=1:34&link=oe__ZpaAqSo">ЖЕ</a><br/>
@@ -310,7 +310,7 @@
     Перехват <b>y</b>, белый центр на место красного (M), буфер в сторону первой наклейки, т.е.
     направо (U), возвращаем на место центры (M\'), крыша 2 раза, повторить первые 3 хода, отменить
     перехват <b>y\'</b>.
-    <p style="text-align:center"><img src="blaccel_10_1.png" width="30%%"></p>
+    <p style="text-align:center"><img src="blaccel_10.png" width="30%%"></p>
     <b><a href="rubic-activity://ytactivity?time=3:52&link=D6_k4MT6Rpk">Алгоритм:</a> y (M U M\') U2 (M U M\') y\'</b><br/><br/>
     <p>А если использовать простые установочные ходы, то данным алгоритмом решаются следующие
     <a href="rubic-activity://ytactivity?time=6:01&link=D6_k4MT6Rpk">ситуации:</a> ИЕ ИЁ ИЖ ИЗ, КЕ КЁ КЖ КЗ, ЛЕ ЛЁ ЛЖ ЛЗ, МЕ МЁ МЖ МЗ.
@@ -336,7 +336,7 @@
     <p>Еще 4 случая, которые решаются алгоритмами из Ускорения 10.</p>
     1. <a href="rubic-activity://ytactivity?time=1:21&link=qVIFq15A6DE">ЮВ</a><br/>
     Делаем установочный ход <b>M\'</b>, второй алгоритм из Ускорения 10, отменяем установочный ход <b>M</b>.
-    <p style="text-align:center"><img src="blaccel_11_1.png" width="30%%"></p>
+    <p style="text-align:center"><img src="blaccel_11.png" width="30%%"></p>
     <b>Алгоритм: M\' (y (M U\' M\') U2 (M U\' M\') y\') M</b><br/><br/>
     2. <a href="rubic-activity://ytactivity?time=2:22&link=qVIFq15A6DE">ВьЮга</a><br/>
     Делаем установочный ход <b>M\'</b>, первый алгоритм из Ускорения 10, отменяем установочный ход <b>M</b>.
@@ -358,7 +358,7 @@
     <p>Практическое применение ускорений на случайных скрамблах:</p>
     <b>1. <a href="rubic-activity://ytactivity?time=3:00&link=Q9LVVnfyZPw">Скрамбл:</a>
     L\' D R2 B F\' L B R B U\' D B2 U\' B2 F2 D\' B\' U\' B2 D2 F\' D B\' F2 U </b><br/>
-    <p style="text-align:center"><img src="blaccel_12_1.png" width="30%%"></p>
+    <p style="text-align:center"><img src="blaccel_12.png" width="30%%"></p>
     В <a href="rubic-activity://ytactivity?time=5:20&link=Q9LVVnfyZPw">сборке</a>
     данного скрамбла к сожалению не попалось ни одного из изученных трициклов, зато два ребра
     стоят на своем месте, но перевернуты.<br/>
