@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         Log.v (TAG, "MainActivity ListPagerLab init")
-        mListPagerLab = ListPagerLab.get(this)
+        mListPagerLab = ListPagerLab.get(ctx)
         Log.v (TAG, "MainActivity CreateView")
         setContentView(R.layout.activity_main)
 
@@ -164,9 +164,8 @@ class MainActivity : AppCompatActivity(),
             R.id.blind -> {
                 snackbar(contentView!!, "Blind пока недоступен","ОК") {/** Do something */}
             }
-            R.id.blind_acc -> {
-                snackbar(contentView!!, "Blind пока недоступен","ОК") {/** Do something */}
-            }
+            R.id.blind_acc -> { setListFragmentPhase("BLINDACC") }
+
 //            R.id.begin4x4 -> { setListFragmentPhase("BEGIN4X4")}
 
             R.id.timer -> {

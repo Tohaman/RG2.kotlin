@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="blindacc_title">
+        <item>@string/blindacc_st1_title</item>
+        <item>@string/blindacc_st2_title</item>
+        <item>@string/blindacc_st3_title</item>
+        <item>@string/blindacc_st4_title</item>
+        <item>@string/blindacc_st5_title</item>
+        <item>@string/blindacc_st6_title</item>
+        <item>@string/blindacc_st7_title</item>
+        <item>@string/blindacc_st8_title</item>
+        <item>@string/blindacc_st9_title</item>
+        <item>@string/blindacc_st10_title</item>
+        <item>@string/blindacc_st11_title</item>
+        <item>@string/blindacc_st12_title</item>
+    </string-array>
+
+    <integer-array name="blindacc_icon">
+        <item>@drawable/blaccel_1</item>
+        <item>@drawable/blaccel_2</item>
+        <item>@drawable/blaccel_3</item>
+        <item>@drawable/blaccel_4</item>
+        <item>@drawable/blaccel_5</item>
+        <item>@drawable/blaccel_6</item>
+        <item>@drawable/blaccel_7</item>
+        <item>@drawable/blaccel_8</item>
+        <item>@drawable/blaccel_9</item>
+        <item>@drawable/blaccel_10</item>
+        <item>@drawable/blaccel_11</item>
+        <item>@drawable/blaccel_12</item>
+    </integer-array>
+
+    <string-array name="blindacc_descr">
+        <item>@string/blindacc_st1_descr</item>
+        <item>@string/blindacc_st2_descr</item>
+        <item>@string/blindacc_st3_descr</item>
+        <item>@string/blindacc_st4_descr</item>
+        <item>@string/blindacc_st5_descr</item>
+        <item>@string/blindacc_st6_descr</item>
+        <item>@string/blindacc_st7_descr</item>
+        <item>@string/blindacc_st8_descr</item>
+        <item>@string/blindacc_st9_descr</item>
+        <item>@string/blindacc_st10_descr</item>
+        <item>@string/blindacc_st11_descr</item>
+        <item>@string/blindacc_st12_descr</item>
+    </string-array>
+
+    <string-array name="blindacc_url">
+        <item>@string/blindacc_st1_url</item>
+        <item>@string/blindacc_st2_url</item>
+        <item>@string/blindacc_st3_url</item>
+        <item>@string/blindacc_st4_url</item>
+        <item>@string/blindacc_st5_url</item>
+        <item>@string/blindacc_st6_url</item>
+        <item>@string/blindacc_st7_url</item>
+        <item>@string/blindacc_st8_url</item>
+        <item>@string/blindacc_st9_url</item>
+        <item>@string/blindacc_st10_url</item>
+        <item>@string/blindacc_st11_url</item>
+        <item>@string/blindacc_st12_url</item>
+    </string-array>
+
+    <string name="blindacc_st1_title">Ускорение №1</string>
+    <string name="blindacc_st1_descr" formatted="false"><![CDATA[
+        Ускорение для ситуации, когда одно из ребер на своем месте, но перевернуто. Или не для
+        слепой сборки - как перевернуть два ребра находящиеся друг напротив друга. <br/>
+        1. Вариант когда одно ребро на ближней грани, а другое на дальней.<br/>
+        <p style="text-align:center"><img src="blaccel_1_1.png" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=7:49&link=sWlREfNebUI">на видео 7:49</a> <br/>
+        <b>Алгоритм: (M\' U M\' U M\' U2) (M U M U M U2)</b><br/><br/>
+        2. Вриант для классического расположения буфера и корзины, т.е. можно выполнять без
+        перехвата кубика. К тому же без неудобного кручения среднего слоя, но с чередованием
+        вращения верхней грани.
+        <p style="text-align:center"><img src="blaccel_1_2.png" width="30%%"></p>
+        <b>Алгоритм: (M\' U M\' U M\' U M\' U) (M\' U\' M\' U\' M\' U\' M\' U\')</b> или <b>4(M\' U) 4(M\' U\')</b>
+    ]]></string>
+    <string name="blindacc_st1_url">sWlREfNebUI</string>
+
+    <string name="blindacc_st2_title">Ускорение №2</string>
+    <string name="blindacc_st2_descr" formatted="false"><![CDATA[
+        А теперь ускорение для переворота двух соседних ребер. Как написал в комментариях к
+        данному видео <b>A lex</b>:<br/>
+        Формулу удобно запомнить так: Первая часть - это начало из "убийства в Лондоне", потом
+        пиф-паф, третья часть - снова начало "убйства", но заканчивается двумя слоями. И последняя
+        часть - обратный "пиф-паф", заканчивающийся двумя слоями.<br/>
+        <p style="text-align:center"><img src="blaccel_2_1.png" width="60%%"></p>
+        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:10&link=COfAsfx5pAA">на видео 4:10</a> <br/>
+        <b>Алгоритм: (R\' U2 R) (R U R\' U\') (R\' U2 Rw) (U R U\' Rw\')</b><br/><br/>
+        P.S. Поскольку данный алгоритм не затрагивает угловые элементы и не перемещает ребра с места
+        на место, а только переворачивает их, то его можно использовать
+        не только для пары буфера и места белозеленого ребра, но и для пары буфер - белосинее место.
+        Для этого надо использовать дополнительный установочный ход U. И конечно же после выполнения
+        алгоритма не забыть про ход U\'.
+    ]]></string>
+    <string name="blindacc_st2_url">COfAsfx5pAA</string>
+
+    <string name="blindacc_st3_title">Ускорение №3</string>
+    <string name="blindacc_st3_descr" formatted="false"><![CDATA[
+        Ускорение для ситуаци, когда четное количество ребер находятся на своем месте, но перевернуты.
+        В этом случае, буфер не трогаем, а просто подводим одно ребро на ближнюю грань, а другое на
+        дальнюю или левую. И делаем алгоритм из ускорения №1 или №2 в зависимости, от того куда
+        поставили ребро.
+        <p style="text-align:center"><img src="blaccel_3_1.png" width="60%%"></p>
+        Вариант <a href="rubic-activity://ytactivity?time=3:28&link=e-00ucfI8DE">для дальнего</a> ребра <br/>
+        Тот же случай, <a href="rubic-activity://ytactivity?time=4:04&link=e-00ucfI8DE">для левого</a> ребра <br/>
+    ]]></string>
+    <string name="blindacc_st3_url">e-00ucfI8DE</string>
+
+    <string name="blindacc_st4_title">Ускорение №4</string>
+    <string name="blindacc_st4_descr" formatted="false"><![CDATA[
+        <p>Рассмотрим перевернутые углы на своем месте. Но для начала надо выучить один очень
+        простой алгоритм, который вам наверняка уже попадался -
+        <a href="rubic-activity://ytactivity?time=1:50&link=YoMKHwOr48E"><b>Антипиф-паф</b></a>, в котором
+        все ходы противоположны пиф-пафу.<br/>
+        <b>Алгоритм: (U R U\' R\')</b></p>
+        <p>Переходим к ускорению: данное ускорение связано с одним
+        <a href="rubic-activity://ytactivity?time=2:29&link=YoMKHwOr48E">левым</a> углом, находящимся на своем
+        месте, но перевернутым. Т.к. углы могут быть перевернуты только парой и один из пары это
+        буфер, то получается 3 угла. С учетом того, что вариантов одного перевернутого угла два,
+        получается шесть ситуаций перевернутого левого угла на своем месте.</p>
+        1. <a href="rubic-activity://ytactivity?time=2:59&link=YoMKHwOr48E"><b>Г</b>о<b>П</b>ник</a><br/>
+         (т.к. для переворота классическим методом использовались бы буквы Г и П)<br/>
+         В этом случае делаем два антипиф-пафа, ставим второй угол в глаз (на место буфера), делаем
+         два пиф-пафа и возвращаем угол на место.
+         <p style="text-align:center"><img src="blaccel_4_1.png" width="30%%"></p>
+         <b>Алгоритм: (U R U\' R\')(U R U\' R\') L\' (R U R\' U\')(R U R\' U\') L</b><br/><br/>
+        2. <a href="rubic-activity://ytactivity?time=8:11&link=YoMKHwOr48E"><b>ГЕ</b>й</a><br/>
+         Обратный Гопнику, сначала два пиф-пафа, устанавливаем в глаз второй угол (установочный ход),
+          два антипиф-пафа, возвращаем угол на место (отменяем установочный ход).
+         <p style="text-align:center"><img src="blaccel_4_2.png" width="30%%"></p>
+         <b>Алгоритм: (R U R\' U\')(R U R\' U\') L\' (U R U\' R\')(U R U\' R\') L</b><br/><br/>
+        3. <a href="rubic-activity://ytactivity?time=10:06&link=YoMKHwOr48E"><b>ЯР</b>ик</a><br/>
+          Все аналогично ГЕю, два пиф-пафа, установочный ход, два антипиф-пафа, отмена установочного хода.
+         <p style="text-align:center"><img src="blaccel_4_4.png" width="30%%"></p>
+         <b>Алгоритм: (R U R\' U\')(R U R\' U\') L2 (U R U\' R\')(U R U\' R\') L2</b><br/><br/>
+        4. <a href="rubic-activity://ytactivity?time=10:57&link=YoMKHwOr48E"><b>ЯЗ</b>ь</a><br/>
+          ЯЗь противоположность ЯРику и похож на ГоПника. Начинается с двух антипиф-пафов.
+         <p style="text-align:center"><img src="blaccel_4_3.png" width="30%%"></p>
+         <b>Алгоритм: (U R U\' R\')(U R U\' R\') L2 (R U R\' U\')(R U R\' U\') L2</b><br/><br/>
+        5. <a href="rubic-activity://ytactivity?time=12:05&link=YoMKHwOr48E"><b>Ш</b>о<b>C</b>се</a><br/>
+          Гопник с Язем идет по Шоссе.. Соответственно начинаем с антипиф-пафа.
+         <p style="text-align:center"><img src="blaccel_4_5.png" width="30%%"></p>
+         <b>Алгоритм: (U R U\' R\')(U R U\' R\') L (R U R\' U\')(R U R\' U\') L\'</b><br/><br/>
+        6. <a href="rubic-activity://ytactivity?time=12:51&link=YoMKHwOr48E"><b>ШМ</b>ель</a><br/>
+          Гея Ярика укусил Шмель. Ну или ГЕна, ЯРик и ШаМиль - нормальные парни, у них все правильно,
+          поэтому начинаем с пиф-пафа.
+         <p style="text-align:center"><img src="blaccel_4_6.png" width="30%%"></p>
+         <b>Алгоритм: (R U R\' U\')(R U R\' U\') L (U R U\' R\')(U R U\' R\') L\'</b><br/><br/>
+         <p>Чтобы не путаться что делать сначала, в следующем ускорении будет описана система
+         определения какой алгоритм делать первым</p>
+    ]]></string>
+    <string name="blindacc_st4_url">YoMKHwOr48E</string>
+
+    <string name="blindacc_st5_title">Ускорение №5</string>
+    <string name="blindacc_st5_descr" formatted="false"><![CDATA[
+            <p>Левые углы не на своем месте рассмотрели, переходим к <a href="rubic-activity://ytactivity?time=2:29&link=YoMKHwOr48E">правым.</a>
+            И поскольку буфер у нас слева, то перевернутых правых углов может быть четыре, умножаем на два
+            варианта каждого угла, получается 8 ситуаций.</p>
+
+         1. <a href="rubic-activity://ytactivity?time=1:29&link=rhV9ZA_mJ9I"><b>В</b>ь<b>Ё</b>т</a><br/>
+            Все очень просто, сначала возвращением из Лондона переводим угол налево, делаем
+            Гопника (сначала антипиф-пафы) и уезжаем в Лондон.
+         <p style="text-align:center"><img src="blaccel_5_1.png" width="30%%"></p>
+         <b>Алгоритм: F\' (U R U\' R\')(U R U\' R\') L\' (R U R\' U\')(R U R\' U\') L F</b><br/><br/>
+
+         2. <a href="rubic-activity://ytactivity?time=3:02&link=rhV9ZA_mJ9I"><b>В</b>а<b>Ф</b>ля</a><br/>
+            И снова переводим угол в левую часть (из Лондона), делаем ГЕя (сначала пиф-пафы), уезжаем в Лондон.
+         <p style="text-align:center"><img src="blaccel_5_2.png" width="30%%"></p>
+         <b>Алгоритм: F\' (R U R\' U\')(R U R\' U\') L\' (U R U\' R\')(U R U\' R\') L F</b><br/><br/>
+
+         3. <a href="rubic-activity://ytactivity?time=5:08&link=rhV9ZA_mJ9I"><b>ЮХ</b></a><br/>
+            Первым ходом конечно же переносим угол в левый слой, удобнее всего этос сделать через D\'.
+            Делаем ЯЗя (сначала антипиф-пафы) и возвращаем угол на место ходом D.
+         <p style="text-align:center"><img src="blaccel_5_3.png" width="30%%"></p>
+         <b>Алгоритм: D\' (U R U\' R\')(U R U\' R\') L2 (R U R\' U\')(R U R\' U\') L2 D</b><br/><br/>
+
+         4. <b>ЮЖный</b><br/>
+            И снова первым ходом переносим угол в левый слой (через D\'). Делаем ЯРика (сначала пиф-пафы) и возвращаем
+            угол на место ходом D.
+         <p style="text-align:center"><img src="blaccel_5_4.png" width="30%%"></p>
+         <b>Алгоритм: D\' (R U R\' U\')(R U R\' U\') L2 (U R U\' R\')(U R U\' R\') L2 D</b><br/><br/>
+
+         5. <a href="rubic-activity://ytactivity?time=6:48&link=rhV9ZA_mJ9I"><b>ЭЦ</b></a><br/>
+           Данный угол переводим на левую сторону через кручение нижней грани, ход D. В данном случае
+           Сначала делаем два пиф-пафа, ставим в буфер угол, два антипиф-пафа, возвращаем угол на место.
+         <p style="text-align:center"><img src="blaccel_5_5.png" width="30%%"></p>
+         <b>Алгоритм: D (R U R\' U\')(R U R\' U\') L (U R U\' R\')(U R U\' R\') L\' D\'</b><br/><br/>
+
+         6. <b>ЭЛ</b><br/>
+           Опять же начинаем с D. Два антипиф-пафа. Угол в буфер. Два пиф-пафа. Левую грань назад и на
+           правую сторону.
+         <p style="text-align:center"><img src="blaccel_5_6.png" width="30%%"></p>
+         <b>Алгоритм: D (U R U\' R\')(U R U\' R\') L (R U R\' U\')(R U R\' U\') L\' D\'</b><br/><br/>
+
+         <p>Чтобы не путаться какой алгоритм пиф-паф или антипиф-паф делать первым, можно воспользоваться
+         Максимкиной <a href="rubic-activity://ytactivity?time=7:55&link=rhV9ZA_mJ9I">системой запоминания.</a>
+         И применение данной системы <a href="rubic-activity://ytactivity?time=10:20&link=rhV9ZA_mJ9I">на примере.</a></p>
+
+         А теперь вернемся к бело-сине-красному углу. Который можно загонять налево двумя установочными
+         ходами (R\' F\' или R D) и тогда система распознавания пиф-паф/антипиф-паф работает. Или поступить
+         проще - выполнить перехват y\'. И тогда все наоборот (т.к. мы поменяли буфер и угол). Т.е.<br/><br/>
+
+         7. <a href="rubic-activity://ytactivity?time=12:55&link=rhV9ZA_mJ9I"><b>БУ</b>ква</a><br/>
+         Делаем перехват <b>y\'</b>. Теперь 2 пиф-пафа, установочный ход, 2 антипиф-пафа, отмена установочного
+         хода и обратный перехват <b>y</b>.
+         <p style="text-align:center"><img src="blaccel_5_7.png" width="30%%"></p>
+         <b>Алгоритм: y\' (R U R\' U\')(R U R\' U\') L\' (U R U\' R\')(U R U\' R\') L y</b><br/><br/>
+
+         8. <b>Б</b>ы<b>К</b><br/>
+         Перехват y\'. 2 антипиф-пафа, установочный ход, 2 пиф-пафа, отмена установчного хода и обратный перехват.
+         <p style="text-align:center"><img src="blaccel_5_8.png" width="30%%"></p>
+         <b>Алгоритм: y\' (U R U\' R\')(U R U\' R\') L\' (R U R\' U\')(R U R\' U\') L y</b><br/>
+    ]]></string>
+    <string name="blindacc_st5_url">rhV9ZA_mJ9I</string>
+
+    <string name="blindacc_st6_title">Ускорение №6</string>
+    <string name="blindacc_st6_descr" formatted="false"><![CDATA[
+        <p>Вернемся к ребрам. И для начала рассмотрим ситуацию, когда в буфере буква А, а на месте
+        буквы А, буква В, т.е. слово для запоминания АВатар. В этом случае можно оба ребра поставить
+        на свои места одним, уже знакомым по
+        <a href="rubic-activity://ytactivity?time=7:18&link=dUGv4WJfJGU">Ускорению для начинающих №17</a>
+        и PLL Окошки алгоритмом.
+        И казалось бы, что
+        <a href="rubic-activity://ytactivity?time=2:05&link=79IOb-vLHHE">Аватар</a>
+        попадается очень редко, НО… данное ускорение можно использовать
+        и когда после А идет П, Ф, Ю. Надо только установить соответствующее ребро
+        <a href="rubic-activity://ytactivity?time=4:05&link=79IOb-vLHHE">на место В</a>.
+        Причем в данных установочных ходах можно крутить все грани кроме правой и верхней, т.к.
+        алгоритм все углы оставляет на своих местах.</p>
+
+        <p style="text-align:center"><img src="blaccel_6_1.png" width="30%%"></p>
+        <b>Алгоритм ускорения: R2 U\' (F B\') R2 (F\' B) U\' R2 </b><br/><br/>
+        Пример применения для <a href="rubic-activity://ytactivity?time=5:46&link=79IOb-vLHHE">комбинации АП.</a><br/><br/>
+
+        Другой, мне кажется более удобный вариант исполнения этого же алгоритма из
+        <a href="rubic-activity://ytactivity?time=11:44&link=P69UVywfz04">PLL Окошки</a> <br/>
+        <b>Алгоритм: R2 U\' S\' U2 S U\' R2 </b><br/>
+    ]]></string>
+    <string name="blindacc_st6_url">79IOb-vLHHE</string>
+
+    <string name="blindacc_st7_title">Ускорение №7</string>
+    <string name="blindacc_st7_descr" formatted="false"><![CDATA[
+        <p>В данном ускорении рассмотрим другие случаи применения алгоритма из Ускорения №6. Как уже
+        многие догадались сами, другое ребро можно подставлять не только вместо В, но и вместо А.
+        Например рассмотрим <a href="rubic-activity://ytactivity?time=2:45&link=KdswbE8YIC8"><b>ШВ</b>ею</a><br/>
+        Ставим Ш на место А, делаем Окошки, возвращаем Ш на свое место.<p>
+        <p style="text-align:center"><img src="blaccel_7_1.png" width="30%%"></p>
+        <b>Алгоритм: B2 (R2 U\' S\' U2 S U\' R2) B2</b><br/><br/>
+        <p>Итого, данным алгоритмом легко решаются
+        <a href="rubic-activity://ytactivity?time=3:57&link=KdswbE8YIC8">16 случаев:</a><br/>
+        АВ АП АЮ АФ, СВ СП СЮ СФ, ЦВ ЦП ЦЮ ЦФ, ШВ ШП ШЮ ШФ</p>
+
+        Кстати, алгоритмы, которые меняют местами 3 ребра называются
+        <a href="rubic-activity://ytactivity?time=6:28&link=KdswbE8YIC8">Трициклами.</a><br/>
+    ]]></string>
+    <string name="blindacc_st7_url">KdswbE8YIC8</string>
+
+    <string name="blindacc_st8_title">Ускорение №8</string>
+    <string name="blindacc_st8_descr" formatted="false"><![CDATA[
+        <p>Рассмотрим другой алгоритм -
+        <a href="rubic-activity://ytactivity?time=1:08&link=YDxXfKXWDmI">противоположные окошки,</a>
+        который так же применяется в
+        <a href="rubic-activity://ytactivity?time=9:12&link=P69UVywfz04">PLL.</a> Для ускорения
+        сборки с закрытыми глазами, этот алгоритм можно применять в случаях, противоположных
+        случаям из Ускорения №7. Т.е. когда сначала идет буква передней грани, а потом задней.
+        Таким образом, это ускорение для еще 16 ситуаций: ВА ВС ВЦ ВШ, ПА ПС ПЦ ПШ, ЮА ЮС ЮЦ Юш, ФА ФС ФЦ ФШ.</p>
+        <b>Алгоритм: R2\' U (F B\') R2 (F\' B) U R2\' </b><br/><br/>
+
+        Например ситуация <a href="rubic-activity://ytactivity?time=4:56&link=YDxXfKXWDmI">ФэйС:</a><br/>
+        Сначала делаем два установочных хода (F\' B\'), затем Противоположные окошки и отменяем
+        установочные ходы (F B).
+        <p style="text-align:center"><img src="blaccel_8_1.png" width="60%%"></p>
+        <b>Алгоритм для ситуации: (F\' B\') (R2\' U (F B\') R2 (F\' B) U R2\') (F B)</b><br/>
+        или с фингертриксом из PLL: (F\' B\') (R2 U S\' U2 S U R2) (F B)<br/>
+    ]]></string>
+    <string name="blindacc_st8_url">YDxXfKXWDmI</string>
+
+    <string name="blindacc_st9_title">Ускорение №9</string>
+    <string name="blindacc_st9_descr" formatted="false"><![CDATA[
+    <p>Еще несколько ситуаций в которых можно применить трицикл Окошки.</p>
+    1. <a href="rubic-activity://ytactivity?time=0:40&link=oe__ZpaAqSo">ЕЖ</a><br/>
+    Делаем установочный ход <b>M\'</b>, смежные окошки, отменяем установочный ход <b>M</b>.
+    <p style="text-align:center"><img src="blaccel_9_1.png" width="30%%"></p>
+    <b>Алгоритм: M\' (R2 U\' S\' U2 S U\' R2) M</b><br/><br/>
+
+    2. <a href="rubic-activity://ytactivity?time=1:34&link=oe__ZpaAqSo">ЖЕ</a><br/>
+    Делаем установочный ход <b>M\'</b>, противоположные окошки, отменяем установочный ход <b>M</b>.
+    <p style="text-align:center"><img src="blaccel_9_2.png" width="30%%"></p>
+    <b>Алгоритм: M\' (R2 U S\' U2 S U R2) M</b><br/><br/>
+
+    3. <a href="rubic-activity://ytactivity?time=3:25&link=oe__ZpaAqSo">ЛИ</a><br/>
+    Делаем установочный ход <b>M</b>, смежные окошки, отменяем установочный ход <b>M\'</b>.
+    <p style="text-align:center"><img src="blaccel_9_3.png" width="30%%"></p>
+    <b>Алгоритм: M (R2 U\' S\' U2 S U\' R2) M\'</b><br/><br/>
+
+    4. <a href="rubic-activity://ytactivity?time=3:49&link=oe__ZpaAqSo">ИЛ</a><br/>
+    Делаем установочный ход <b>M</b>, противоположные окошки, отменяем установочный ход <b>M\'</b>.
+    <p style="text-align:center"><img src="blaccel_9_4.png" width="30%%"></p>
+    <b>Алгоритм: M (R2 U S\' U2 S U R2) M\'</b><br/><br/>
+
+    ]]></string>
+    <string name="blindacc_st9_url">oe__ZpaAqSo</string>
+
+    <string name="blindacc_st10_title">Ускорение №10</string>
+    <string name="blindacc_st10_descr" formatted="false"><![CDATA[
+    В данном ускорении рассмотрим группы, в которых основная наклейка находится не на боковой, а на передней или
+    задней <a href="rubic-activity://ytactivity?time=0:58&link=D6_k4MT6Rpk">грани.</a> И начнем с случаев,
+    когда первая наклейка (буква) на задней грани, а вторая на передней.<br/>
+    Для начала без установчных ходов, т.е. <a href="rubic-activity://ytactivity?time=2:08&link=D6_k4MT6Rpk">ИЕ</a><br/>
+    Перехват <b>y</b>, белый центр на место красного (M), буфер в сторону первой наклейки, т.е.
+    направо (U), возвращаем на место центры (M\'), крыша 2 раза, повторить первые 3 хода, отменить
+    перехват <b>y\'</b>.
+    <p style="text-align:center"><img src="blaccel_10_1.png" width="30%%"></p>
+    <b><a href="rubic-activity://ytactivity?time=3:52&link=D6_k4MT6Rpk">Алгоритм:</a> y (M U M\') U2 (M U M\') y\'</b><br/><br/>
+    <p>А если использовать простые установочные ходы, то данным алгоритмом решаются следующие
+    <a href="rubic-activity://ytactivity?time=6:01&link=D6_k4MT6Rpk">ситуации:</a> ИЕ ИЁ ИЖ ИЗ, КЕ КЁ КЖ КЗ, ЛЕ ЛЁ ЛЖ ЛЗ, МЕ МЁ МЖ МЗ.
+    Например <a href="rubic-activity://ytactivity?time=5:13&link=D6_k4MT6Rpk">МЁд.</a></p>
+
+    <p>Теперь о случаях, когда первая <a href="rubic-activity://ytactivity?time=7:20&link=D6_k4MT6Rpk">наклейка</a>
+    (буква) находится на передней грани, а вторая на задней.</p>
+    Случай без установочных ходов, т.е. <a href="rubic-activity://ytactivity?time=7:35&link=D6_k4MT6Rpk">ЕИ</a><br/>
+    Все аналогично предыдущему случаю, только буфер теперь едет в другую сторону.
+    Перехват <b>y</b>, белый центр на место красного (M), буфер в сторону первой наклейки, т.е.
+    теперь влево (U\'), возвращаем на место центры (M\'), крыша 2 раза, повторить первые 3 хода, отменить
+    перехват <b>y\'</b>.
+    <b>Алгоритм: y (M U\' M\') U2 (M U\' M\') y\'</b><br/><br/>
+    Соответственно при использовании установочных ходов (вращения передней и/или задней грани) этим
+    алгоритмом решаются: ЕИ ЕК ЕЛ ЕМ, ЁИ ЁК ЁЛ ЁМ, ЖИ ЖК ЖЛ ЖМ, ЗИ ЗК ЗЛ ЗМ.
+    Например <a href="rubic-activity://ytactivity?time=8:29&link=D6_k4MT6Rpk">ЗЛой.</a></p>
+
+    ]]></string>
+    <string name="blindacc_st10_url">D6_k4MT6Rpk</string>
+
+    <string name="blindacc_st11_title">Ускорение №11</string>
+    <string name="blindacc_st11_descr" formatted="false"><![CDATA[
+    <p>Еще 4 случая, которые решаются алгоритмами из Ускорения 10.</p>
+    1. <a href="rubic-activity://ytactivity?time=1:21&link=qVIFq15A6DE">ЮВ</a><br/>
+    Делаем установочный ход <b>M\'</b>, второй алгоритм из Ускорения 10, отменяем установочный ход <b>M</b>.
+    <p style="text-align:center"><img src="blaccel_11_1.png" width="30%%"></p>
+    <b>Алгоритм: M\' (y (M U\' M\') U2 (M U\' M\') y\') M</b><br/><br/>
+    2. <a href="rubic-activity://ytactivity?time=2:22&link=qVIFq15A6DE">ВьЮга</a><br/>
+    Делаем установочный ход <b>M\'</b>, первый алгоритм из Ускорения 10, отменяем установочный ход <b>M</b>.
+    <p style="text-align:center"><img src="blaccel_11_2.png" width="30%%"></p>
+    <b>Алгоритм: M\' (y (M U M\') U2 (M U M\') y\') M</b><br/><br/>
+    3. <a href="rubic-activity://ytactivity?time=3:36&link=qVIFq15A6DE">ША</a><br/>
+    Делаем установочный ход <b>M</b>, первый алгоритм из Ускорения 10, отменяем установочный ход <b>M\'</b>.
+    <p style="text-align:center"><img src="blaccel_11_3.png" width="30%%"></p>
+    <b>Алгоритм: M\' (y (M U M\') U2 (M U M\') y\') M</b><br/><br/>
+    4. <a href="rubic-activity://ytactivity?time=4:55&link=qVIFq15A6DE">АШ</a><br/>
+    Делаем установочный ход <b>M</b>, второй алгоритм из Ускорения 10, отменяем установочный ход <b>M\'</b>.
+    <p style="text-align:center"><img src="blaccel_11_4.png" width="30%%"></p>
+    <b>Алгоритм: M\' (y (M U\' M\') U2 (M U\' M\') y\') M</b><br/><br/>
+    ]]></string>
+    <string name="blindacc_st11_url">qVIFq15A6DE</string>
+
+    <string name="blindacc_st12_title">Ускорение №12</string>
+    <string name="blindacc_st12_descr" formatted="false"><![CDATA[
+    <p>Практическое применение ускорений на случайных скрамблах:</p>
+    <b>1. <a href="rubic-activity://ytactivity?time=3:00&link=Q9LVVnfyZPw">Скрамбл:</a>
+    L\' D R2 B F\' L B R B U\' D B2 U\' B2 F2 D\' B\' U\' B2 D2 F\' D B\' F2 U </b><br/>
+    <p style="text-align:center"><img src="blaccel_12_1.png" width="30%%"></p>
+    В <a href="rubic-activity://ytactivity?time=5:20&link=Q9LVVnfyZPw">сборке</a>
+    данного скрамбла к сожалению не попалось ни одного из изученных трициклов, зато два ребра
+    стоят на своем месте, но перевернуты.<br/>
+    <a href="rubic-activity://ytactivity?time=3:31&link=Q9LVVnfyZPw">Фраза:</a> СоЖитель ЗА ЭГейское море ЦеЛый ЁО <br/><br/>
+
+    <b>2. <a href="rubic-activity://ytactivity?time=7:48&link=Q9LVVnfyZPw">Скрамбл:</a>
+    B U\' B2 F R\' D2 U F2 L2 D2 B2 F2 L2 F\' L2 B2 R\' L2 F L\' F\' L\' U\' F2 B2 </b><br/>
+    <p style="text-align:center"><img src="blaccel_12_2.png" width="30%%"></p>
+    В <a href="rubic-activity://ytactivity?time=10:52&link=Q9LVVnfyZPw">сборке</a>
+    этого скрамбла попался один из трициклов
+    <a href="rubic-activity://ytactivity?time=11:09&link=Q9LVVnfyZPw">ЖЕ</a>
+    и один
+    <a href="rubic-activity://ytactivity?time=12:1&link=Q9LVVnfyZPw">переворот ребра,</a>
+    но уже из Ускорения №2<br/>
+    <a href="rubic-activity://ytactivity?time=9:00&link=Q9LVVnfyZPw">Фраза:</a> ШьЁт ЖЕ ОК ЭЗ СаЗан
+    ]]></string>
+    <string name="blindacc_st12_url">Q9LVVnfyZPw</string>
+
+
+</resources>
