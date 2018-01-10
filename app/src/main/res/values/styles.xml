@@ -16,16 +16,6 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
     <style name="AppTheme.Button.Colored" parent="Widget.AppCompat.Button.Colored"/>
 
-    <string-array name="entries">
-        <item>Темная тема</item>
-        <item>Светлая тема</item>
-    </string-array>
-
-    <string-array name="entry_values">
-        <item>AppTheme</item>
-        <item>AppThemeLight</item>
-    </string-array>
-
     <!-- Base application theme. -->
     <style name="AppThemeLight" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
@@ -42,5 +32,18 @@
     <style name="AppThemeLight.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="AppThemeLight.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
     <style name="AppThemeLight.Button.Colored" parent="Widget.AppCompat.Button.Colored"/>
-    
+
+
+    <!--Значения для фрагмента настроек программы-->
+
+    <string-array name="themes_title">
+        <item>Темная тема</item>
+        <item>Светлая тема</item>
+    </string-array>
+
+    <string-array name="themes_values">
+        <item>AppTheme</item>
+        <item>AppThemeLight</item>
+    </string-array>
+
 </resources>

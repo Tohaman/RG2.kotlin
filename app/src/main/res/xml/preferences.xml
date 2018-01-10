@@ -3,6 +3,15 @@
     <PreferenceCategory
         android:title="Общие">
 
+        <ListPreference
+            android:entries="@array/themes_title"
+            android:entryValues="@array/themes_values"
+            android:key="theme"
+            android:defaultValue="AppTheme"
+            android:title="Тема приложения:"
+            android:summary="Темная или светлая тема">
+        </ListPreference>
+
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="video_preview"
@@ -14,15 +23,6 @@
             android:title="Не выключать экран при просмотре видео"
             android:summary="когда в видео нажата пауза"/>
 
-        <ListPreference
-            android:entries="@array/entries"
-            android:entryValues="@array/entry_values"
-            android:key="theme"
-
-            android:title="Выберите тему приложения"
-            android:summary="Темная или светлая тема">
-        </ListPreference>
-
-    </PreferenceCategory>
+   </PreferenceCategory>
 
 </PreferenceScreen>

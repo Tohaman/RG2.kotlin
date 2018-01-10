@@ -7,11 +7,11 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "ru.tohaman.rg3"
+        applicationId "ru.tohaman.rg2"
         minSdkVersion 18
         targetSdkVersion 26
         versionCode 1
-        versionName "1.20180101"
+        versionName "1.20180110"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }

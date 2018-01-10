@@ -68,9 +68,9 @@ fun setMyTheme (context: Context) : Int {
     Log.v(TAG, "SetActivityTheme")
     val sp = PreferenceManager.getDefaultSharedPreferences(context)
     val theme = sp.getString("theme", "AppTheme")
-    var themeId = R.style.AppTheme
-    if (theme != "AppTheme") {
-        themeId = R.style.AppThemeLight
+    return if (theme == "AppTheme") {
+        R.style.AppTheme
+    } else {
+        R.style.AppThemeLight
     }
-    return themeId
 }
