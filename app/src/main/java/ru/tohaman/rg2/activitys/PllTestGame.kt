@@ -7,6 +7,7 @@ import android.graphics.drawable.LayerDrawable
 import android.preference.PreferenceManager
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -15,14 +16,12 @@ import ru.tohaman.rg2.R
 
 import org.jetbrains.anko.ctx
 import org.jetbrains.anko.find
+import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.PLL_TEST_3SIDE
 import ru.tohaman.rg2.PLL_TEST_ROW_COUNT
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
-import ru.tohaman.rg2.util.cubeColor
-import ru.tohaman.rg2.util.cubeColor4PLL
-import ru.tohaman.rg2.util.getNameFromListPagers
-import ru.tohaman.rg2.util.pllTopLayerColor
+import ru.tohaman.rg2.util.*
 import java.util.*
 
 class PllTestGame : Activity() {
@@ -36,10 +35,11 @@ class PllTestGame : Activity() {
     private var is3side = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(setMyTheme(ctx))
         super.onCreate(savedInstanceState)
+        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
         setContentView(R.layout.activity_pll_test_game)
         actionBar?.setDisplayHomeAsUpEnabled(true)
-        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
         guessRows = sp.getInt(PLL_TEST_ROW_COUNT, 6) / 2
         is3side = sp.getBoolean(PLL_TEST_3SIDE, true)
 

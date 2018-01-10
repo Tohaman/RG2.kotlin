@@ -143,8 +143,8 @@
     <string name="blind_st3_descr" formatted="false"><![CDATA[
         Первый из алгоритмов, который применяется при сборке вслепую - <b>Запад</b>.<br/>
          <p style="text-align:center"><img src="blind_3_1.png" width="30%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=3:35&link=_yWZMTIM-fA">на видео 3:35</a>
-        (<a href="rubic-activity://ytactivity?time=7:22&link=_yWZMTIM-fA">или 7:22</a>) <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=3:35&link=_yWZMTIM-fA">на видео 3:35</a>
+        (<a href="rg2://ytplay?time=7:22&link=_yWZMTIM-fA">или 7:22</a>) <br/>
         <b>Алгоритм: (R U R\' U\') R\' F R2 U\' R\' U\' (R U R\' F\') </b>
     ]]></string>
     <string name="blind_st3_url">_yWZMTIM-fA</string>
@@ -174,7 +174,7 @@
     <string name="blind_st7_descr" formatted="false"><![CDATA[
         Еще один очень нужный алгоритм для сборки ребер - <b>Юг</b>.
         <p style="text-align:center"><img src="blind_7_1.png" width="30%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=2:36&link=rzGqTZKG74o">на видео 2:36</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=2:36&link=rzGqTZKG74o">на видео 2:36</a> <br/>
         <b>Алгоритм: (R U R\' F\') (R U R\' U\' R\' F R2 U\' R\' U\')</b>
     ]]></string>
     <string name="blind_st7_url">rzGqTZKG74o</string>
@@ -274,7 +274,7 @@
     <string name="blind_st19_descr" formatted="false"><![CDATA[
         Для чего нужен еще один алгоритм - Экватор.<br/>
         <p style="text-align:center"><img src="blind_19_1.png" width="30%%"></p>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:35&link=pT72Wh8VZT4">на видео 4:35</a><br/>
+        Фингертрикс: <a href="rg2://ytplay?time=4:35&link=pT72Wh8VZT4">на видео 4:35</a><br/>
         <b>Алгоритм: (R U R\' F\') (R U2 R\' U2) (R\' F R U R) U2 R\' U\'</b>
     ]]></string>
     <string name="blind_st19_url">pT72Wh8VZT4</string>
@@ -288,7 +288,7 @@
     <string name="blind_st21_title">N21 Австралия</string>
     <string name="blind_st21_descr" formatted="false"><![CDATA[
         Где находится буфер и корзина для углов. Основной алгоритм для постановки на место углов - Австралия. <br/>
-        Фингертрикс: <a href="rubic-activity://ytactivity?time=4:07&link=artmFaxjaC0">на видео 4:07</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=4:07&link=artmFaxjaC0">на видео 4:07</a> <br/>
         <b>Алгоритм: (F R) (U\' R\' U\' R U R\' F\') (R U R\' U\') (R\' F R F\')</b>
     ]]></string>
     <string name="blind_st21_url">artmFaxjaC0</string>

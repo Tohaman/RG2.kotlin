@@ -64,6 +64,7 @@ class FragmentScrambleGen : Fragment() {
         Log.v (TAG, "FragmentScrambleGen onCreateView - start")
 
         val sp = PreferenceManager.getDefaultSharedPreferences(context)
+        //TODO сделать прием скрамбла из параметров
         val scramble = sp.getString(SCRAMBLE, "U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R")
         var chkEdgesBuffer = sp.getBoolean(CHK_BUF_EDGES, true)
         var chkCornersBuffer = sp.getBoolean(CHK_BUF_CORNERS, false)
@@ -260,6 +261,7 @@ class FragmentScrambleGen : Fragment() {
         progressText.visibility = View.VISIBLE
         textSolve.text = ""
         //запускаем в бэкграунде поиск скрамбла удовлетворяющего условиям
+        //TODO переписать без async-await используя нормальные корутины Котлина
         async(UI) {
             val data = bg {
                 // Выполняем в background, ключевое слово bg

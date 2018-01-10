@@ -20,6 +20,9 @@ import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.DebugTag.TAG
 import ru.tohaman.rg2.activitys.SlidingTabsActivity
 import ru.tohaman.rg2.fragments.*
+import android.content.SharedPreferences
+import ru.tohaman.rg2.util.setMyTheme
+
 
 // Статические переменные (верхнего уровня). Котлин в действии стр.77-78
 const val EXTRA_ID = "ru.tohaman.rubicsguide.PHASE_ID"
@@ -43,6 +46,8 @@ class MainActivity : AppCompatActivity(),
     private var curPhase: String = "BEGIN"
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(setMyTheme(ctx))
+
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         Log.v (TAG, "MainActivity ListPagerLab init")
@@ -127,6 +132,7 @@ class MainActivity : AppCompatActivity(),
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         Log.v (TAG, "onOptionsItemSelected - curPhase - $curPhase")
+        //TODO дописать обработчики хелпов для всех этапов
         when (item.itemId) {
             R.id.action_help -> {
                 when (curPhase) {
@@ -161,9 +167,8 @@ class MainActivity : AppCompatActivity(),
 
             R.id.g2f -> { setListFragmentPhase("G2F") }
 
-            R.id.blind -> {
-                snackbar(contentView!!, "Blind пока недоступен","ОК") {/** Do something */}
-            }
+            R.id.blind -> { setListFragmentPhase("BLIND") }
+
             R.id.blind_acc -> { setListFragmentPhase("BLINDACC") }
 
 //            R.id.begin4x4 -> { setListFragmentPhase("BEGIN4X4")}
@@ -182,6 +187,8 @@ class MainActivity : AppCompatActivity(),
             }
 
             R.id.basic_move -> { setListFragmentPhase("BASIC") }
+
+            R.id.settings -> setFragment(FragmentSettings.newInstance())
 
             R.id.thanks -> {
                 snackbar(contentView!!, "И вам спасибо!","ОК") {/** Do something */}

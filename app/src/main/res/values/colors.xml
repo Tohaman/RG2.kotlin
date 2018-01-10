@@ -35,4 +35,5 @@
     <color name="c_lgr">#9e9e9e</color>
     <color name="semitransparent_grey">#cc424242</color>
     <color name="ic_launcher_backgroun">#FFFDFB</color>
+    <color name="primary_dark_material_light_1">#e51313</color>
 </resources>

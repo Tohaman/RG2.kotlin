@@ -1,6 +1,7 @@
 package ru.tohaman.rg2.activitys
 
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v4.view.GravityCompat
@@ -18,14 +19,17 @@ import ru.tohaman.rg2.data.ListPagerLab
 import java.util.ArrayList
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_sliding.*
+import org.jetbrains.anko.ctx
 import ru.tohaman.rg2.EXTRA_ID
 import ru.tohaman.rg2.RUBIC_PHASE
 import ru.tohaman.rg2.fragments.FragmentPagerItem
+import ru.tohaman.rg2.util.setMyTheme
 
 
 class SlidingTabsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(setMyTheme(ctx))
         super.onCreate(savedInstanceState)
         Log.v (TAG, "SlidingTabActivity onCreate")
         setContentView(R.layout.activity_sliding_tabs)

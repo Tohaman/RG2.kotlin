@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Общие">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="video_preview"
+            android:title="Отображать превью видеофрагментов"
+            android:summary="Уберите, если не установлен YouTube Player или у вас нестабильное соединение с интернетом."/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="videoscreen_on"
+            android:title="Не выключать экран при просмотре видео"
+            android:summary="когда в видео нажата пауза"/>
+
+        <ListPreference
+            android:entries="@array/entries"
+            android:entryValues="@array/entry_values"
+            android:key="theme"
+
+            android:title="Выберите тему приложения"
+            android:summary="Темная или светлая тема">
+        </ListPreference>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

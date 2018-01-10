@@ -5,6 +5,9 @@ import android.os.Build
 import android.preference.PreferenceManager
 import android.text.Html
 import android.text.Spanned
+import android.util.Log
+import ru.tohaman.rg2.DebugTag.TAG
+import ru.tohaman.rg2.R
 import ru.tohaman.rg2.data.ListPager
 
 /**
@@ -61,3 +64,13 @@ fun getNameFromListPagers(ListPagers: List<ListPager>, i: Int): String =
             ListPagers[i].comment
         }
 
+fun setMyTheme (context: Context) : Int {
+    Log.v(TAG, "SetActivityTheme")
+    val sp = PreferenceManager.getDefaultSharedPreferences(context)
+    val theme = sp.getString("theme", "AppTheme")
+    var themeId = R.style.AppTheme
+    if (theme != "AppTheme") {
+        themeId = R.style.AppThemeLight
+    }
+    return themeId
+}
