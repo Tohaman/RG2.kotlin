@@ -191,9 +191,8 @@ class MainActivity : AppCompatActivity(),
 
             R.id.settings -> setFragment(FragmentSettings.newInstance())
 
-            R.id.thanks -> {
-                snackbar(contentView!!, "И вам спасибо!","ОК") {/** Do something */}
-            }
+            R.id.thanks -> { setListFragmentPhase("THANKS") }
+
             R.id.about -> {
                 snackbar (contentView!!, "Ну так себе программа :)", "OK") {/** Do something */}
             }
@@ -230,14 +229,18 @@ class MainActivity : AppCompatActivity(),
         //Обработка событий из FragmentListView
         Log.v(DebugTag.TAG, "onListViewInteraction Start, $phase, $id")
         val lp = mListPagerLab.getPhaseItem(id,phase)
-        val desc:String = getString(lp.description)
         when (phase) {
             //Если в листвью "Основные движения", то показать "тост",
-            "BASIC" -> { toast(desc)}
+            "BASIC" -> { toast(getString(lp.description))}
             //Если меню "переходим на Фридрих", то меняем текст листвью на соответствующую фазу
             "G2F" -> {
-                setListFragmentPhase(desc)
+                setListFragmentPhase(getString(lp.description))
                 fab.setImageResource(R.drawable.ic_fab_backward)
+            }
+            //Если выбрали какое-то "Спасибо" автору
+            "THANKS" -> {
+                toast ("Пожалуйста")
+                //TODO сделать соответствующий вызов оплаты
             }
             //в других случаях запустить SlideTab с просмотром этапов
             else -> { startActivity<SlidingTabsActivity>(RUBIC_PHASE to phase, EXTRA_ID to id)}

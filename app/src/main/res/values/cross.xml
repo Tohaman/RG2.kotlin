@@ -171,19 +171,19 @@
         креста по скрамблам, не обязательно собирать весь кубик целиком. Достаточно собранного
         креста. </p>
         <p>Вот еще несколько примеров креста:<br/>
-        <a href="rubic-activity://scramblegen?scram=R2_D_R_D_U_L_R2_D2_B\'_F\'_R\'_D\'">1. Скрамбл</a>
+        <a href="rg2://scrmbl?scram=R2_D_R_D_U_L_R2_D2_B\'_F\'_R\'_D\'">1. Скрамбл</a>
         (белой вверх, зеленой к себе): <br/><b>R2 D R D U L R2 D2 B\' F\' R\' D\' </b><br/>
         Решение (желтой вверх, красной к себе):<br/><b> B\' L\' F\' L\' R D\' R2 D</b><br/><br/>
 
-        <a href="rubic-activity://scramblegen?scram=L2_D_B2_F\'_L\'_B\'_R2_F2_B_R2_D_B">2. Скрамбл</a>
+        <a href="rg2://scrmbl?scram=L2_D_B2_F\'_L\'_B\'_R2_F2_B_R2_D_B">2. Скрамбл</a>
         (белой вверх, зеленой к себе): <br/><b>L2 D B2 F\' L\' B\' R2 F2 B R2 D B</b><br/>
         Решение (желтой вверх, зеленой к себе): <br/><b>D\' R2 F L D</b><br/><br/>
 
-        <a href="rubic-activity://scramblegen?scram=R_D\'_B2_R\'_L2_F_B\'_L\'_U_L_U_F2_L\'_R\'">3. Скрамбл</a>
+        <a href="rg2://scrmbl?scram=R_D\'_B2_R\'_L2_F_B\'_L\'_U_L_U_F2_L\'_R\'">3. Скрамбл</a>
         (белой вверх, зеленой к себе): <br/><b>R D\' B2 R\' L2 F B\' L\' U L U F2 L\' R\'</b><br/>
         Решение (желтой вверх, зеленой к себе): <br/><b>L R F B\' R2 D F2 D\'</b><br/><br/>
 
-        <a href="rubic-activity://scramblegen?scram=U2_R_L_U_L\'_B_D_R\'_F2_B_U\'_R_D_B_D">4. Скрамбл</a>
+        <a href="rg2://scrmbl?scram=U2_R_L_U_L\'_B_D_R\'_F2_B_U\'_R_D_B_D">4. Скрамбл</a>
         (белой вверх, зеленой к себе): <br/><b>U2 R L U L\' B D R\' F2 B U\' R D B D</b><br/>
         Решение (желтой вверх, зеленой к себе): <br/><b>R B\' R2 L\' D\' B</b><br/><br/>
 

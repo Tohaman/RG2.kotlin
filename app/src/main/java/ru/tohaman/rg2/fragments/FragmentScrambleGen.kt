@@ -64,8 +64,13 @@ class FragmentScrambleGen : Fragment() {
         Log.v (TAG, "FragmentScrambleGen onCreateView - start")
 
         val sp = PreferenceManager.getDefaultSharedPreferences(context)
-        //TODO сделать прием скрамбла из параметров
-        val scramble = sp.getString(SCRAMBLE, "U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R")
+        val uri = activity.intent.data
+        var scramble = sp.getString(SCRAMBLE, "U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R")
+        // Если вызван с параметром, то скрамбл взять из параметра, а не из базы
+        if (uri != null) {
+            scramble = uri.getQueryParameter("scram")
+            scramble = scramble.replace("_", " ")
+        }
         var chkEdgesBuffer = sp.getBoolean(CHK_BUF_EDGES, true)
         var chkCornersBuffer = sp.getBoolean(CHK_BUF_CORNERS, false)
         var scrambleLength = sp.getInt(SCRAMBLE_LEN, 14)
