@@ -242,9 +242,9 @@
 
     <string name="oll_st1_title">#1 Снежинка</string>
     <string name="oll_st1_descr" formatted="false"><![CDATA[
-        <p>OLL (Orientation Last Layer, ориентация последнего слоя) - предпоследний этап по методу Фридрих.
+        <p>OLL (Oriеntation Last Layer, ориентация последнего слоя) - предпоследний этап по методу Фридрих.
         Задача данного этапа - покрасить крышу в один цвет. Всего 57 алгоритмов. В данном цикле сначала
-        будут рассмотрены не знакомые по ускорениям алгоритмы. </p>
+        будут рассмотрены незнакомые по ускорениям алгоритмы. </p>
         <b>Как решать:</b>
         <p>1. Как держать Снежинку не имеет значения, главное крышей вверх. <br/>
         Серединка, два против часовой, пять по часовой, два против часовой, серединка назад. </br>
@@ -253,7 +253,7 @@
         <b>Алгоритм: S (R\' U\') (R U R U R) U\' R\' S\' </b></p>
         <p>2. Альтернативный вариант, но не такой быстрый
         <a href="rg2://ytplay?time=4:08&link=vDG7tg__FNo">на видео 4:08</a> <br/>
-        <b>Алгоритм: (M U\' M U\' M U\' M U\') (M\' U\' M\' U\' M\' U\' M\' U\') </b></p>
+        <b>Алгоритм: (M\' U\' M\' U\' M\' U\' M\' U\') (M U\' M U\' M U\' M U\')</b></p>
         <p>3. Вариант от Феликса Земдегса<br/>
         Фингертрикс: <a href="rg2://ytplay?time=11:51&link=IasVqtCHoj0">от Феликса</a> <br/>
         <b>Алгоритм: M U (R U R\' U\') M2\' (U R U\' Rw\')</b> хотя судя по исполнению, правильнее
@@ -324,7 +324,7 @@
     <string name="oll_st6_title">#6 Вектор с блоком</string>
     <string name="oll_st6_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
-        <p>1. Установить вектор как и прошлом случае на юго-восток, чтобы было легче отличить от вектора с точкой. <br/>
+        <p>1. Установить вектор как и в прошлом случае на юго-восток, чтобы было легче отличить от вектора с точкой. <br/>
         <p style="text-align:center"><img src="voll_6_1.xml" width="60%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=2:15&link=vwJYwlgnEbs">на видео 2:15</a>  <br/>
         <b>Алгоритм: M U\' Rw U2 Rw\' U\' R U\' M\' R </b></p>
@@ -337,8 +337,6 @@
     <string name="oll_st6_url">vwJYwlgnEbs</string>
 
     <string name="oll_st7_title">#7 Микки Маус с бородой</string>
-    <string name="oll_st7_descr1">\t
-    </string>
     <string name="oll_st7_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
         <p>1. Взять бородой к себе. Жирная рыбка, жирно выключить, крыша против, вкл.свет, снова
@@ -350,7 +348,7 @@
         <p style="text-align:center"><img src="voll_7_2.xml" width="60%%"></p>
         <b>Алгоритм: F (R U R\' U) y\' (R\' U2) (R\' F R F\')</b></p>
         <p>3. В предыдущем алгоритме вместо последнего хода морского пиф-пафа и перехвата (U y\')
-        крутить два нижеих слоя (Dw). Но и акценты тогда уже несколько по другому будут стоять. <br/>
+        крутить два нижних слоя (Dw). Но и акценты тогда уже несколько по другому будут стоять. <br/>
         <b>Алгоритм: (F R) (U R\') Dw (R\' U2) (R\' F R F\') </b> </p>
         <p>4. Взять бородой влево.</p>
         <p style="text-align:center"><img src="voll_7_3.xml" width="60%%"></p>
@@ -363,8 +361,6 @@
     <string name="oll_st7_url">2TKJWiA7Yzg</string>
 
     <string name="oll_st8_title">#8 Микки Маус с бакенбардами</string>
-    <string name="oll_st8_descr1">\t
-    </string>
     <string name="oll_st8_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
         <p>Ушами вверх (как на картинке). Средний слой неудобно, крыша по, пиф-паф, средний слой назад,
@@ -378,8 +374,6 @@
     <string name="oll_st8_url">VuQfVI8a6nY</string>
 
     <string name="oll_st9_title">#9 Школа</string>
-    <string name="oll_st9_descr1">\t
-    </string>
     <string name="oll_st9_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
         <p>1. Поставить буквой H. Выполнить пиф-паф, средний слой удобно, анти-пиф-паф с двойным последним кручением. <br/>
@@ -396,12 +390,10 @@
     <string name="oll_st9_url">qMGjfB8CcH0</string>
 
     <string name="oll_st10_title">#10 Летающий змей</string>
-    <string name="oll_st10_descr1">\t
-    </string>
     <string name="oll_st10_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
         <p>1. Змей улетает влево от нас. Жирный пиф-паф, средний неудобно, анти-пиф-паф.  <br/>
-        Ну и как и в прошлом случае, вместо <b>М</b> можно сделать <b>Rw\' R</b>.  </p>
+        Ну и как в прошлом случае, вместо <b>М</b> можно сделать <b>Rw\' R</b>.  </p>
         <p style="text-align:center"><img src="voll_10_1.xml" width="60%%"></p> <br/>
         Фингертрикс: <a href="rg2://ytplay?time=2:46&link=RczVF3poV4E">на видео 2:46</a> <br/>
         Фингертрикс: <a href="rg2://ytplay?time=3:18&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
@@ -414,7 +406,7 @@
     ]]></string>
     <string name="oll_st10_url">RczVF3poV4E</string>
 
-    <string name="oll_st11_title">#11 Чистый бумеранг 1-3</string>
+    <string name="oll_st11_title">#11 Чистый бумеранг 1–3</string>
     <string name="oll_st11_descr" formatted="false"><![CDATA[
 		<p>Вариантов чистого бумеранга целых шесть, чтобы понять который из них перед вами, поверните бумеранг
         на 9 и 12 часов и посмотрите на переднюю и правую грани. Сколько там желтых наклеек.
@@ -433,7 +425,7 @@
     ]]></string>
     <string name="oll_st11_url">QbXsEIoaEIY</string>
 
-    <string name="oll_st12_title">#12 Чистый бумеранг 2-1</string>
+    <string name="oll_st12_title">#12 Чистый бумеранг 2–1</string>
     <string name="oll_st12_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
         <p>Данный бумеранг можно назвать классическим, т.к. выполнить надо алгоритм
@@ -441,13 +433,13 @@
         <p style="text-align:center"><img src="voll_12_1.xml" width="60%%"></p> <br/>
         Фингертрикс: <a href="rg2://ytplay?time=1:09&link=hpKpQDXbA4Q">на видео 1:09</a> <br/>
         Фингертрикс: <a href="rg2://ytplay?time=7:42&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
-        <b>Алгоритм: F\' (R U R\' U\') (R U R\' U\') F </b> <br/><br/>
+        <b>Алгоритм: F (R U R\' U\') (R U R\' U\') F\' </b> <br/><br/>
         <b>Как смоделировать</b>: В Лондон, 4 пиф-пафа, из Лондона. Или В Лондон, 2 анти-пиф-пафа,
          из Лондона. <a href="rg2://ytplay?time=2:50&link=hpKpQDXbA4Q">На видео 2:50</a>.
     ]]></string>
     <string name="oll_st12_url">hpKpQDXbA4Q</string>
 
-    <string name="oll_st13_title">#13 Чистый бумеранг 1-2</string>
+    <string name="oll_st13_title">#13 Чистый бумеранг 1–2</string>
     <string name="oll_st13_descr" formatted="false"><![CDATA[
         <b>Как решать:</b><br/>
         <p>Является зеркальным случаем предыдущего, и поэтому все тоже, что и в бумеранге 2-1, но слева.
@@ -455,12 +447,12 @@
         <p style="text-align:center"><img src="voll_13_1.xml" width="60%%"></p> <br/>
         Фингертрикс: <a href="rg2://ytplay?time=1:20&link=CQYVqMdqpQk">на видео 1:20</a> <br/>
         Фингертрикс: <a href="rg2://ytplay?time=7:52&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
-        <b>Алгоритм: U [F (L\' U\' L U) (L\' U\' L U) F\'] </b> <br/><br/>
+        <b>Алгоритм: U [F\' (L\' U\' L U) (L\' U\' L U) F] </b> <br/><br/>
         <b>Как смоделировать</b>: Аналогично предыдущему случаю. Из Лондона, 4 пиф-пафа левой рукой, в Лондон.
     ]]></string>
     <string name="oll_st13_url">CQYVqMdqpQk</string>
 
-    <string name="oll_st14_title">#14 Чистый бумеранг 3-1</string>
+    <string name="oll_st14_title">#14 Чистый бумеранг 3–1</string>
     <string name="oll_st14_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
         <p>1. Простой и быстрый алгоритм с двойным включением/выключением света.
@@ -482,7 +474,7 @@
     ]]></string>
     <string name="oll_st14_url">Ek1Y8_vjQYw</string>
 
-    <string name="oll_st15_title">#15 Чистый бумеранг 2-3 (Официант)</string>
+    <string name="oll_st15_title">#15 Чистый бумеранг 2–3 (Официант)</string>
     <string name="oll_st15_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
         <p>1. Официант подходит к ближнему столику, принимает заказ, идет к дальнему столику,
@@ -499,7 +491,7 @@
     ]]></string>
     <string name="oll_st15_url">YBDy3ZrHy54</string>
 
-    <string name="oll_st16_title">#16 Чистый бумеранг 3-2</string>
+    <string name="oll_st16_title">#16 Чистый бумеранг 3–2</string>
     <string name="oll_st16_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
         <p>1. Противоположный алгоритму Феликса для бумеранга 2-3. Повернуть на 12 и 3 часов.
@@ -668,7 +660,7 @@
     <string name="oll_st25_title">#25 Правый петух с точкой</string>
     <string name="oll_st25_descr" formatted="false"><![CDATA[
         <p>И снова четыре похожие ситуации, которые назовем <b>петухами</b>. Т.к. если включить
-        воображение, то действительно похоже на петуха вид сбоку. Хотя на счет того, где голвова,
+        воображение, то действительно похоже на петуха вид сбоку. Хотя на счет того, где голова,
         а где хвост, я бы с Максимом поспорил :)</p>
         <p style="text-align:center"><img src="voll_25_2.xml" width="30%%"></p>
         <p>Петухи как и молнии бывают
@@ -759,7 +751,7 @@
         <p>Еще две ситуации, которые очень легко отличить от других, но немного сложнее друг от друга -
         <b>Квадраты.</b> Квадрат может быть левым или правым.</p>
         <p>Как их <a href="rg2://ytplay?time=1:01&link=mknzlNHW6_A">различать:</a>
-        Поврнуть квадратом к себе и при этом блок на противоположной боковой стороне тоже должен быть
+        Повернуть квадратом к себе и при этом блок на противоположной боковой стороне тоже должен быть
         спереди. Если он сзади, значит надо поставить квадрат с другой стороны. Или еще один вариант определения:
         К какой стороне примыкают двойные блоки, такой и квадрат. Начнем с левого квадрата.</p>
         <b>Как решать:</b>
@@ -1019,7 +1011,7 @@
         Жирно включить свет слева, крыша против, жирно выключить свет слева, левый пиф-паф, жирно включить слева, крыша по и
         жирно выключить свет слева.</p>
         <p style="text-align:center"><img src="voll_44_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rg2://ytplay?time=2:29&link=GXTtry_rdq8">на видео 2:29</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=0:48&link=GXTtry_rdq8">на видео 0:48</a> <br/>
         <b>Алгоритм: (Lw\' U\' Lw) (L\' U\' L U) (Lw\' U Lw)</b><br/>
 
         <p>Как Клюшку: Тоже похоже на предыдущий случай, но зеркалим не право и лево, а вращения граней по и против часовой стрелки.
@@ -1063,50 +1055,60 @@
         ]]></string>
     <string name="oll_st46_url">QDzT8Fe_nf8</string>
 
-    <string name="oll_st47_title">#47 Чистая палка 3-3</string>
+    <string name="oll_st47_title">#47 Чистая палка 1–1</string>
     <string name="oll_st47_descr" formatted="false"><![CDATA[
+        <p>Рассмотрим чистые палки, которые бывают 4 видов. Называть их будем по количеству наклеек
+        сверху и снизу палки. И начнем с Палки 1-1.</p>
         <b>Как решать:</b>
+        <p>Поставить палку горизонтально.</p>
         <p style="text-align:center"><img src="voll_47_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rg2://ytplay?time=4:55&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
-        <b>Алгоритм: (R\' F R U) (R U\' R2\' F\') R2 U\' R\' (U R U R\')</b><br/><br/>
+        Фингертрикс: <a href="rg2://ytplay?time=1:53&link=yXg8rKBOOgk">на видео 1:53</a> <br/>
+        <b>Алгоритм: Rw U Rw\' (U R U\' R\') (U R U\' R\') Rw U\' Rw\'</b><br/><br/>
+        <p>Или другой вариант из того же положения, но все ходы противоположные.</p>
+        Фингертрикс: <a href="rg2://ytplay?time=4:32&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: Rw\' U\' Rw (U\' R\' U R) (U\' R\' U R) Rw\' U Rw</b><br/><br/>
+
+        <b>Как смоделировать</b>: Выполнить данный алгоритм <a href="rg2://ytplay?time=3:00&link=yXg8rKBOOgk">2 раза.</a>
         ]]></string>
-    <string name="oll_st47_url"></string>
+    <string name="oll_st47_url">yXg8rKBOOgk</string>
 
-    <string name="oll_st48_title">#48 Чистая палка 1-3</string>
+    <string name="oll_st48_title">#48 Чистая палка 2–2</string>
     <string name="oll_st48_descr" formatted="false"><![CDATA[
-        <p>В этой палке есть и блок и точка, но будем считать ее палкой с точкой.</p>
         <b>Как решать:</b>
-        <p>Поставить палку вертикально, тройным блоком справа, точкой слева.</p>
+        <p>Поставить палку горизонтально глазками налево, двойным блоком справа. Жирно едем в Лондон, два пиф-пафа, жирно из Лондона.</p>
         <p style="text-align:center"><img src="voll_48_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rg2://ytplay?time=4:45&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
-        <b>Алгоритм: (R\' U\' R U\' R\' U) y\' (R\' U R) B</b><br/><br/>
-    ]]></string>
-    <string name="oll_st48_url"></string>
-
-    <string name="oll_st49_title">#49 Чистая палка 2-2</string>
-    <string name="oll_st49_descr" formatted="false"><![CDATA[
-        <p>Рассмотрим чистые палки, которые бывают 4 видов:
-        Симметричные/ассиметричные и с точкой/блоком. Первой будет ассиметричная палка с блоком.
-        Поставить ее надо горизонтально, глазками налево, ушками направо.</p>
-        <b>Как решать:</b>
-        <p>Жирно едем в Лондон, два пиф-пафа, жирно из Лондона.</p>
-        <p style="text-align:center"><img src="voll_49_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rg2://ytplay?time=1:03&link=26xcl1sXPak">на видео 1:03</a> <br/>
         Фингертрикс: <a href="rg2://ytplay?time=4:22&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: Fw (R U R\' U\') (R U R\' U\') Fw\'</b><br/><br/>
         <b>Как смоделировать</b>: Почти так же как и выполнять, только в Лондон уезжать и возвращаться надо не жирно, т.е.
-        В Лондон, два пиф-пафа, из Лондона.
+        В Лондон, два пиф-пафа, из Лондона. Ну или как в <a href="rg2://ytplay?time=1:30&link=26xcl1sXPak">видео у Максима</a>
+        жирно уехать в Лондон, два антипиф-пафа, жирно из Лондона.
         ]]></string>
-    <string name="oll_st49_url"></string>
+    <string name="oll_st48_url">26xcl1sXPak</string>
 
-    <string name="oll_st50_title">#50 Чистая палка 1-1</string>
+    <string name="oll_st49_title">#49 Чистая палка 3–3</string>
+    <string name="oll_st49_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Как и с палкой 1-1 главное поставить палку горизонтально. Алгоритмы у Максима и Феликса одинаковые, но
+        по разному расставлены акценты.</p>
+        <p style="text-align:center"><img src="voll_49_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rg2://ytplay?time=1:03&link=n52nllQkI_A">на видео 1:03</a> <br/>
+        <b>Алгоритм: (R\' F) (R U R U\') (R2\' F\' R2) (U\' R\' U) (R U R\')</b><br/><br/>
+        Фингертрикс: <a href="rg2://ytplay?time=4:55&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R\' F R U) (R U\' R2\' F\') R2 U\' R\' (U R U R\')</b><br/><br/>
+        <b>Как смоделировать</b>: Выполнить данный алгоритм <a href="rg2://ytplay?time=2:18&link=n52nllQkI_A">3 раза.</a>
+        ]]></string>
+    <string name="oll_st49_url">n52nllQkI_A</string>
+
+    <string name="oll_st50_title">#50 Чистая палка 1–3</string>
     <string name="oll_st50_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
-        <p>Поставить палку горизонтально. </p>
+        <p>Единственная палка, которую нужно поставить вертикально, причем тройным блоком справа, а точкой слева.</p>
         <p style="text-align:center"><img src="voll_50_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rg2://ytplay?time=4:32&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
-        <b>Алгоритм: Rw\' U\' Rw (U\' R\' U R) (U\' R\' U R) Rw\' U Rw</b><br/><br/>
-        ]]></string>
-    <string name="oll_st50_url">yXg8rKBOOgk</string>
+        Фингертрикс: <a href="rg2://ytplay?time=4:45&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R\' U\' R U\' R\' U) y\' (R\' U R) B</b><br/><br/>
+    ]]></string>
+    <string name="oll_st50_url">GJrGFdkBx2s</string>
 
     <string name="oll_st51_title">#51 Рыбка</string>
     <string name="oll_st51_descr" formatted="false"><![CDATA[
@@ -1185,9 +1187,9 @@
         Фингертрикс: <a href="rg2://ytplay?time=0:28&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: (R U2) (R\' U\' R U R\' U\' R U\' R\')</b></p>
         ]]></string>
-    <string name="oll_st56_url">vJS0EyEPFPY</string>
+    <string name="oll_st56_url">6Q4YACZ2TTA</string>
 
-    <string name="oll_st57_title">#57 Вертолет</string>
+    <string name="oll_st57_title">#57 Вертолет или Футбол</string>
     <string name="oll_st57_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
         <p>Ситуация из <b>Ускорения N14</b>.</p>
@@ -1197,7 +1199,7 @@
         Фингертрикс: <a href="rg2://ytplay?time=0:14&link=47JfJxU7EjM">от J Perm</a> <br/>
         <b>Алгоритм: R U2 R2\' U\' R2 U\' R2\' U2 R </b>
         ]]></string>
-    <string name="oll_st57_url">m2EkIKd6efA</string>
+    <string name="oll_st57_url">ulyplHndCnc</string>
 
 
 </resources>
