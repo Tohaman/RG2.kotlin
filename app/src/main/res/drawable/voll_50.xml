@@ -14,12 +14,12 @@
     <item android:drawable="@drawable/z_oll_33_y"/>
     <item android:drawable="@drawable/z_oll_34_y"/>
     <item android:drawable="@drawable/z_oll_35_g"/>
-    <item android:drawable="@drawable/z_oll_41_y"/>
+    <item android:drawable="@drawable/z_oll_41_g"/>
     <item android:drawable="@drawable/z_oll_42_g"/>
     <item android:drawable="@drawable/z_oll_43_g"/>
     <item android:drawable="@drawable/z_oll_44_g"/>
-    <item android:drawable="@drawable/z_oll_45_y"/>
-    <item android:drawable="@drawable/z_oll_51_g"/>
+    <item android:drawable="@drawable/z_oll_45_g"/>
+    <item android:drawable="@drawable/z_oll_51_y"/>
     <item android:drawable="@drawable/z_oll_52_y"/>
-    <item android:drawable="@drawable/z_oll_53_g"/>
+    <item android:drawable="@drawable/z_oll_53_y"/>
 </layer-list>
