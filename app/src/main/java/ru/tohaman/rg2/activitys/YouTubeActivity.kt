@@ -11,6 +11,7 @@ import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubeStandalonePlayer
 import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.DeveloperKey.DEVELOPER_KEY
+import ru.tohaman.rg2.IS_VIDEO_SCREEN_ON
 import ru.tohaman.rg2.R
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -33,7 +34,7 @@ class YouTubeActivity : Activity() {
         Log.v (DebugTag.TAG, "YouTubeActivity onCreate")
         // Проверяем значения из настроек, выключать экран или нет при прсмотре видео
         val sp = PreferenceManager.getDefaultSharedPreferences(this)
-        val sleepOnYouTube = sp.getBoolean("videoscreen_on", false)
+        val sleepOnYouTube = sp.getBoolean(IS_VIDEO_SCREEN_ON, false)
         if (sleepOnYouTube) {
             window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         } else {

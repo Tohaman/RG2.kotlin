@@ -1,5 +1,6 @@
 package ru.tohaman.rg2.activitys
 
+import android.graphics.Color
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
@@ -19,6 +20,8 @@ import ru.tohaman.rg2.data.ListPagerLab
 import java.util.ArrayList
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_sliding.*
+import org.jetbrains.anko.backgroundColor
+import org.jetbrains.anko.backgroundResource
 import org.jetbrains.anko.ctx
 import ru.tohaman.rg2.EXTRA_ID
 import ru.tohaman.rg2.RUBIC_PHASE
@@ -58,13 +61,6 @@ class SlidingTabsActivity : AppCompatActivity() {
         val mListPagerLab = ListPagerLab.get(this)
         val mListPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList(mPhase)
 
-        Log.v (TAG, "SlidingTabActivity onCreate Настраиваем ListView для списка слева")
-        // Настраиваем листвью для выезжающего слева списка
-        val mListAdapter = MyListAdapter(mListPagers)
-        val mDrawerListView  = findViewById<ListView>(R.id.left_drawer)
-        // подключим адаптер для выезжающего слева списка
-        mDrawerListView.adapter = mListAdapter
-
         Log.v (TAG, "SlidingTabActivity onCreate Настраиваем SlidingTab")
         val mViewPagerSlidingTabs = findViewById<ViewPager>(R.id.viewPagerSlidingTabs)
         // подключим адаптер для слайдингтаба (основного текста)
@@ -86,11 +82,17 @@ class SlidingTabsActivity : AppCompatActivity() {
         mViewPagerSlidingTabs.currentItem = id
         tabs.setViewPager(mViewPagerSlidingTabs)
 
+        Log.v (TAG, "SlidingTabActivity onCreate Настраиваем ListView для списка слева")
+        // Настраиваем листвью для выезжающего слева списка
+        val mListAdapter = MyListAdapter(mListPagers)
+        val mDrawerListView  = findViewById<ListView>(R.id.left_drawer)
+        // подключим адаптер для выезжающего слева списка
+//        mDrawerListView.setBackgroundResource(R.color.background_material_light)
+        mDrawerListView.adapter = mListAdapter
+
         mDrawerListView.setOnItemClickListener { _, _, position, _ ->
             mViewPagerSlidingTabs.currentItem = position
             drawer_layout.closeDrawer(GravityCompat.START)
         }
-
     }
-
 }

@@ -28,6 +28,7 @@ import ru.tohaman.rg2.util.setMyTheme
 const val EXTRA_ID = "ru.tohaman.rubicsguide.PHASE_ID"
 const val RUBIC_PHASE = "ru.tohaman.rubicsguide.PHASE"
 const val VIDEO_PREVIEW = "video_preview"   //наименования ключа для сохранения/извлечения значения из файла настроек
+const val IS_VIDEO_SCREEN_ON = "videoscreen_on"  //ключ для гашения/не гашения экрана когда видео на паузе
 const val ONE_HAND_TO_START = "oneHandToStart"
 const val METRONOM_ENABLED = "metronomEnabled"
 const val METRONOM_TIME = "metronomTime"

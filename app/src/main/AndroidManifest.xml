@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
 
     <application
         android:allowBackup="true"
@@ -36,10 +37,9 @@
         </activity>
         <activity
             android:name=".activitys.SlidingTabsActivity"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppThemeLight"/>
         <activity
-            android:name=".activitys.TimerActivity"
-            android:theme="@style/AppTheme"/>
+            android:name=".activitys.TimerActivity"/>
         <activity
             android:name=".activitys.PllTestGame"
             android:label="@string/title_activity_pll_test_game"

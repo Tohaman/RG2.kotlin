@@ -68,9 +68,9 @@ fun setMyTheme (context: Context) : Int {
     Log.v(TAG, "SetActivityTheme")
     val sp = PreferenceManager.getDefaultSharedPreferences(context)
     val theme = sp.getString("theme", "AppTheme")
-    return if (theme == "AppTheme") {
-        R.style.AppTheme
-    } else {
-        R.style.AppThemeLight
+    return when (theme)  {
+        "AppThemeLight" -> R.style.AppThemeLight
+        "AppThemeDayNight" -> R.style.AppThemeDayNight
+        else -> R.style.AppTheme
     }
 }
