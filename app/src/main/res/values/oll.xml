@@ -111,13 +111,13 @@
         <item>@drawable/voll_48</item>
         <item>@drawable/voll_49</item>
         <item>@drawable/voll_50</item>
-        <item>@drawable/voll_51</item>
-        <item>@drawable/voll_52</item>
-        <item>@drawable/voll_53_11</item>
+        <item>@drawable/voll_53</item>
         <item>@drawable/voll_54</item>
-        <item>@drawable/voll_55</item>
         <item>@drawable/voll_56</item>
+        <item>@drawable/voll_55</item>
         <item>@drawable/voll_57</item>
+        <item>@drawable/voll_56_11</item>
+        <item>@drawable/voll_52</item>
     </integer-array>
 
     <string-array name="oll_descr">
@@ -1103,103 +1103,129 @@
     <string name="oll_st50_title">#50 Чистая палка 1–3</string>
     <string name="oll_st50_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
-        <p>Единственная палка, которую нужно поставить вертикально, причем тройным блоком справа, а точкой слева.</p>
+        <p>Единственная палка, которую нужно поставить вертикально, причем тройным блоком справа, а точкой слева.
+        </p>
         <p style="text-align:center"><img src="voll_50_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rg2://ytplay?time=0:47&link=GJrGFdkBx2s">на видео 0:47</a> <br/>
+        <b>Алгоритм: (R U R\' U R) Dw\' (R U\' R\' F\')</b><br/><br/>
+        <p>Или другой вариант из того же положения, но все в другую сторону. Смотрите видео и выбирайте
+        вариант фингертрикса, который вам больше подходит.</p>
         Фингертрикс: <a href="rg2://ytplay?time=4:45&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: (R\' U\' R U\' R\' U) y\' (R\' U R) B</b><br/><br/>
+        <b>Как смоделировать</b>: Выполнить данный алгоритм <a href="rg2://ytplay?time=1:40&link=GJrGFdkBx2s">еще раз.</a>
     ]]></string>
     <string name="oll_st50_url">GJrGFdkBx2s</string>
 
-    <string name="oll_st51_title">#51 Рыбка</string>
+    <string name="oll_st51_title">#51 НТВ+</string>
     <string name="oll_st51_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
-        <p>Ситуация из <b>Ускорения N2</b>.</p>
+        <p>Ситуация из <b>Ускорения N4</b>. Взять глазками к себе, Уехать в Лондон, три пиф-пафа, вернуться из Лондона.</p>
         <p style="text-align:center"><img src="voll_51_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rg2://ytplay?time=0:20&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
-        Фингертрикс: <a href="rg2://ytplay?time=7:04&link=PUTeFKC9R2Y">от Максима</a><br/>
-        <b>Алгоритм: (R U R\' U) R U2 R\'</b><br/><br/>
+        Фингертрикс: <a href="rg2://ytplay?time=1:58&link=6Q4YACZ2TTA">на видео 1:58</a> <br/>
+        <b>Алгоритм: F (R U R\' U\') (R U R\' U\') (R U R\' U\') F\' </b>
+        <p>Альтернативный вариант, без кручения передней грани:<br/>
+        Фингертрикс: <a href="rg2://ytplay?time=0:28&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R U2) (R\' U\' R U R\' U\' R U\' R\')</b></p>
+        <p><a href="rg2://ytplay?time=0:26&link=t3KcPrjmJJ4">Бонус от JPerm:</a>
+        если углы стоят парами</p>
+        <p style="text-align:center"><img src="vaccel_4_2.xml" width="60%%"></p>
+        <p>как на данных картинках, то в первом случае лучше использовать первый алгоритм,
+        а во втором - второй. Т.е. первый ход делать параллельно паре. В этом случае углы для
+        PLL у вас встанут на свои места.</p>
+        <b>Как смоделировать</b>: Выполнить данный алгоритм <a href="rg2://ytplay?time=2:15&link=6Q4YACZ2TTA">еще раз.</a>
         ]]></string>
-    <string name="oll_st51_url">PUTeFKC9R2Y</string>
+    <string name="oll_st51_url">6Q4YACZ2TTA</string>
 
-    <string name="oll_st52_title">#52 Акула</string>
+    <string name="oll_st52_title">#52 Вертолет (Футбол)</string>
     <string name="oll_st52_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
-        <p>Ситуация из <b>Ускорения N11</b>.<br/>
-        1. Акула уплывает вправо:</p>
+        <p>Ситуация из <b>Ускорения N14</b>. Можно воспользоваться простой для запоминания, но не
+        очень удобной для исполнения методикой Максима, а можно фингертриксами от JPerm или Феликса.</p>
         <p style="text-align:center"><img src="voll_52_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rg2://ytplay?time=0:48&link=ulyplHndCnc">от Максима</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=0:41&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=0:14&link=47JfJxU7EjM">от J Perm</a> <br/>
+        <b>Алгоритм: R U2 R2\' U\' R2 U\' R2\' U2 R </b>
+        <b>Как смоделировать</b>: Выполнить данный алгоритм <a href="rg2://ytplay?time=2:15&link=ulyplHndCnc">еще раз.</a>
+        ]]></string>
+    <string name="oll_st52_url">ulyplHndCnc</string>
+
+    <string name="oll_st53_title">#53 Рыбка</string>
+    <string name="oll_st53_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Ситуация из <b>Ускорения N2</b>. Морской пиф-паф, вкл.свет, крыша 2 раза, выкл.свет</p>
+        <p style="text-align:center"><img src="voll_53_1.xml" width="60%%"></p>
+        Фингертрикс: <a href="rg2://ytplay?time=1:30&link=bPR7Js-JO5g">от Максима</a><br/>
+        Фингертрикс: <a href="rg2://ytplay?time=0:20&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: (R U R\' U) R U2 R\'</b><br/><br/>
+        <b>Как смоделировать</b>: Выполнить данный алгоритм 5 раз.</a>
+        ]]></string>
+    <string name="oll_st53_url">bPR7Js-JO5g</string>
+
+    <string name="oll_st54_title">#54 Акула</string>
+    <string name="oll_st54_descr" formatted="false"><![CDATA[
+        <b>Как решать:</b>
+        <p>Ситуация из <b>Ускорения N11</b>.<br/>
+        1. Акула, как и рыбка плывет к нам:</p>
+        <p style="text-align:center"><img src="voll_54_3.xml" width="60%%"></p>
+        Фингертрикс: <a href="rg2://ytplay?time=1:06&link=bPR7Js-JO5g">на видео 1:06</a><br/>
+        <b>Алгоритм: U2 (R U2 R\' U\' R U\' R\')</b><br/><br/>
+        <p>2. Вариант сразу из правильного положения, без установочных вращений верхней грани.</p>
+        <p style="text-align:center"><img src="voll_54_1.xml" width="60%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=0:08&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: R U2 R\' U\' R U\' R\'</b><br/><br/>
-        <p>2. Акула уплывает влево:</p>
-        <p style="text-align:center"><img src="voll_52_2.xml" width="60%%"></p>
+        <p>3. Ну и еще один вариант, когда Акула уплывает влево от нас:</p>
+        <p style="text-align:center"><img src="voll_54_2.xml" width="60%%"></p>
         Алгоритм: <b>R\' U\' R U\' R\' U2 R</b><br/>
         Для этого алгоритма очень удобный и быстрый фингертрикс с начальным положением большого пальца правой руки
         сверху. Т.е. стандартное положение рук получается после первого хода и двойное кручение крыши
         можно делать указательным и средним пальцами правой руки. Но почему-то в видео ни у кого этого варианта
         не приведено.
         ]]></string>
-    <string name="oll_st52_url">blOgwHue1PE</string>
+    <string name="oll_st54_url"></string>
 
-    <string name="oll_st53_title">#53 Носик</string>
-    <string name="oll_st53_descr" formatted="false"><![CDATA[
+
+
+
+    <string name="oll_st56_title">#56 Носик</string>
+    <string name="oll_st56_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
         <p>Ситуация из <b>Ускорения N9</b>.<br/>
-        <p style="text-align:center"><img src="voll_53_1.xml" width="60%%"></p>
+        <p style="text-align:center"><img src="voll_56_1.xml" width="60%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=1:00&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: F\' (Rw U R\' U\') Rw\' F R</b><br/><br/>
-        <p style="text-align:center"><img src="voll_53_2.xml" width="60%%"></p>
+        <p style="text-align:center"><img src="voll_56_2.xml" width="60%%"></p>
         <b>Алгоритм: (R\' F R B\') (R\' F\' R B)</b><br/><br/>
         ]]></string>
-    <string name="oll_st53_url">ICMhcSF54OM</string>
+    <string name="oll_st56_url"></string>
 
-    <string name="oll_st54_title">#54 Ушки</string>
-    <string name="oll_st54_descr" formatted="false"><![CDATA[
+    <string name="oll_st55_title">#55 Ушки</string>
+    <string name="oll_st55_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
         <p>Ушками слева. Простой для запоминания и исполнения алгоритм, к тому же без перехватов.
         Пиф-паф с первым жирным ходом, английский пиф-паф опять же с первым жирным ходом.</p>
-        <p style="text-align:center"><img src="voll_54_1.xml" width="60%%"></p>
+        <p style="text-align:center"><img src="voll_55_1.xml" width="60%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=0:51&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: (Rw U R\' U\') (Rw\' F R F\')</b><br/><br/>
         <p>Вариант из <b>Ускорения N8</b> от Максима. Ушками назад, да еще нижней гранью к себе.</p>
-        <p style="text-align:center"><img src="voll_54_2.xml" width="60%%"></p>
+        <p style="text-align:center"><img src="voll_55_2.xml" width="60%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=6:50&link=gbuLeCv_fRM">от Максима</a> <br/>
         <b>Алгоритм: x D\' R\' U R D R\' U\' R x\'</b>
         ]]></string>
-    <string name="oll_st54_url">gbuLeCv_fRM</string>
+    <string name="oll_st55_url"></string>
 
-    <string name="oll_st55_title">#55 Глазки</string>
-    <string name="oll_st55_descr" formatted="false"><![CDATA[
+    <string name="oll_st57_title">#57 Глазки</string>
+    <string name="oll_st57_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
         <p>Ситуация из <b>Ускорения N13</b>.<br/>
-        <p style="text-align:center"><img src="voll_55_1.xml" width="60%%"></p>
+        <p style="text-align:center"><img src="voll_57_1.xml" width="60%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=6:15&link=dzINk50Y1jI">от Максима</a> <br/>
         Фингертрикс: <a href="rg2://ytplay?time=1:08&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: R2 D R\' U2 R D\' R\' U2 R\'</b><br/><br/>
         ]]></string>
-    <string name="oll_st55_url">dzINk50Y1jI</string>
+    <string name="oll_st57_url"></string>
 
-    <string name="oll_st56_title">#56 НТВ+</string>
-    <string name="oll_st56_descr" formatted="false"><![CDATA[
-        <b>Как решать:</b>
-        <p>Ситуация из <b>Ускорения N4</b>. Взять глазками к себе, Уехать в Лондон, три пиф-пафа, вернуться из Лондона.</p>
-        <p style="text-align:center"><img src="voll_56_1.xml" width="60%%"></p>
-        <b>Алгоритм: F (R U R\' U\') (R U R\' U\') (R U R\' U\') F\' </b>
-        <p>Альтернативный вариант, без кручения передней грани:<br/>
-        Фингертрикс: <a href="rg2://ytplay?time=0:28&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
-        <b>Алгоритм: (R U2) (R\' U\' R U R\' U\' R U\' R\')</b></p>
-        ]]></string>
-    <string name="oll_st56_url">6Q4YACZ2TTA</string>
 
-    <string name="oll_st57_title">#57 Вертолет или Футбол</string>
-    <string name="oll_st57_descr" formatted="false"><![CDATA[
-        <b>Как решать:</b>
-        <p>Ситуация из <b>Ускорения N14</b>.</p>
-        <p style="text-align:center"><img src="voll_57_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rg2://ytplay?time=3:08&link=m2EkIKd6efA">от Максима</a> <br/>
-        Фингертрикс: <a href="rg2://ytplay?time=0:41&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
-        Фингертрикс: <a href="rg2://ytplay?time=0:14&link=47JfJxU7EjM">от J Perm</a> <br/>
-        <b>Алгоритм: R U2 R2\' U\' R2 U\' R2\' U2 R </b>
-        ]]></string>
-    <string name="oll_st57_url">ulyplHndCnc</string>
 
 
 </resources>

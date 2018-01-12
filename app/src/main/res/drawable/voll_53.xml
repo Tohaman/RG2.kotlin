@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/z_oll_background"/>
-    <item android:drawable="@drawable/z_oll_11_g"/>
+    <item android:drawable="@drawable/z_oll_11_y"/>
     <item android:drawable="@drawable/z_oll_12_g"/>
     <item android:drawable="@drawable/z_oll_13_g"/>
-    <item android:drawable="@drawable/z_oll_21_y"/>
+    <item android:drawable="@drawable/z_oll_21_g"/>
     <item android:drawable="@drawable/z_oll_22_g"/>
     <item android:drawable="@drawable/z_oll_23_y"/>
-    <item android:drawable="@drawable/z_oll_24_y"/>
-    <item android:drawable="@drawable/z_oll_25_g"/>
+    <item android:drawable="@drawable/z_oll_24_g"/>
+    <item android:drawable="@drawable/z_oll_25_y"/>
     <item android:drawable="@drawable/z_oll_31_g"/>
     <item android:drawable="@drawable/z_oll_32_y"/>
     <item android:drawable="@drawable/z_oll_33_y"/>
