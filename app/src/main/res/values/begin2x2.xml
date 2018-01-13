@@ -102,13 +102,13 @@
     ]]></string>
     <string name="begin2x2_st1_url">igBNp6IVDW4</string>
 
-    <string name="begin2x2_st2_title">Этап 2. Верхний слой</string>
+    <string name="begin2x2_st2_title">Этап 2. Расстановка углов верхнего слоя</string>
     <string name="begin2x2_st2_descr" formatted="false"><![CDATA[
         <p>Второй этап так же делается в один алгоритм.</p>
     ]]></string>
     <string name="begin2x2_st2_url">FKsaAVXu6bI</string>
 
-    <string name="begin2x2_st3_title">Этап 3. ХЗ</string>
+    <string name="begin2x2_st3_title">Этап 3. Разворот углов верхнего слоя</string>
     <string name="begin2x2_st3_descr" formatted="false"><![CDATA[
         <p>А это я еще не смотрел, но видео есть</p>
     ]]></string>
