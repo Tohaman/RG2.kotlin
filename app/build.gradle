@@ -10,8 +10,8 @@ android {
         applicationId "ru.tohaman.rg2"
         minSdkVersion 18
         targetSdkVersion 26
-        versionCode 4
-        versionName "2.201801122"
+        versionCode 5
+        versionName "2.201801131"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
