@@ -111,13 +111,13 @@
         <item>@drawable/voll_48</item>
         <item>@drawable/voll_49</item>
         <item>@drawable/voll_50</item>
+        <item>@drawable/voll_51</item>
+        <item>@drawable/voll_52</item>
         <item>@drawable/voll_53</item>
         <item>@drawable/voll_54</item>
-        <item>@drawable/voll_56</item>
         <item>@drawable/voll_55</item>
-        <item>@drawable/voll_57</item>
         <item>@drawable/voll_56_11</item>
-        <item>@drawable/voll_52</item>
+        <item>@drawable/voll_57</item>
     </integer-array>
 
     <string-array name="oll_descr">
