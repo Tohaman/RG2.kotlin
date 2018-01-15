@@ -17,6 +17,7 @@ import ru.tohaman.rg2.data.ListPagerLab
 import java.util.ArrayList
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
+import org.jetbrains.anko.support.v4.ctx
 
 
 /**
@@ -46,9 +47,8 @@ class FragmentListView : ListFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         Log.v (DebugTag.TAG, "FragmentListView onActivityCreated $mPhase")
         super.onActivityCreated(savedInstanceState)
-        val mListPagers : ArrayList<ListPager> = ListPagerLab.get(context!!).getPhaseList(mPhase)
-        val mListAdapter = MyListAdapter(mListPagers,1.5f)
-        listAdapter = mListAdapter
+        val listPagers : ArrayList<ListPager> = ListPagerLab.get(ctx).getPhaseList(mPhase)
+        listAdapter = MyListAdapter(listPagers,1.5f)
         //толщина разделителя между пунктами меню
         listView.dividerHeight = 1
         //цвет разделителя между пунктами меню

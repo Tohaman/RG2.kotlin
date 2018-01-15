@@ -10,6 +10,8 @@ import android.support.v4.view.ViewPager
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ListView
 import ru.tohaman.rg2.DebugTag.TAG
 
@@ -19,13 +21,14 @@ import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
 import java.util.ArrayList
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.app_bar_sliding.*
-import org.jetbrains.anko.backgroundColor
-import org.jetbrains.anko.backgroundResource
-import org.jetbrains.anko.ctx
+import org.jetbrains.anko.*
+import org.jetbrains.anko.sdk25.coroutines.onItemClick
 import ru.tohaman.rg2.EXTRA_ID
 import ru.tohaman.rg2.RUBIC_PHASE
 import ru.tohaman.rg2.fragments.FragmentPagerItem
+import ru.tohaman.rg2.ui.styledButton
 import ru.tohaman.rg2.util.setMyTheme
 
 
@@ -63,6 +66,7 @@ class SlidingTabsActivity : AppCompatActivity() {
 
         Log.v (TAG, "SlidingTabActivity onCreate Настраиваем SlidingTab")
         val mViewPagerSlidingTabs = findViewById<ViewPager>(R.id.viewPagerSlidingTabs)
+
         // подключим адаптер для слайдингтаба (основного текста)
         mViewPagerSlidingTabs.adapter = object : FragmentStatePagerAdapter(supportFragmentManager) {
 
@@ -95,4 +99,40 @@ class SlidingTabsActivity : AppCompatActivity() {
             drawer_layout.closeDrawer(GravityCompat.START)
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.sliding_tab_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        //Если нажали на ? в правом верхнем углу, то вызываем АлертДиалог
+        //со списком основных движений
+        Log.v (TAG, "onOptionsItemSelected")
+        when (item.itemId) {
+            R.id.basic_move_help -> {
+                alert {
+                    customView {
+                        positiveButton("Закрыть окно") {
+                        }
+                        verticalLayout {
+                            val listPagers : ArrayList<ListPager> = ListPagerLab.get(ctx).getPhaseList("BASIC")
+                            val lstView = listView {
+                                adapter = MyListAdapter(listPagers)
+                            }
+                            lstView.onItemClick { p0, p1, p2, p3 ->
+                                toast(listPagers[p2].description)
+                            }
+                        }
+                    }
+                }.show()
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
+    }
+
+
+
 }

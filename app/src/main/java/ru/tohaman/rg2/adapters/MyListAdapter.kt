@@ -38,8 +38,7 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
                             rightPadding = dip(30)
                             typeface = Typeface.DEFAULT_BOLD
                         }
-
-                        imageView(taskNum).lparams(height = dip(75)) {
+                        imageView(taskNum).lparams(height = dip(70)) {
                             padding = dip(5)
                         }
                     }

@@ -96,27 +96,27 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun onBackPressed() {
-        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-            drawer_layout.closeDrawer(GravityCompat.START)
-        } else {
-            when (curPhase) {
-                "ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL" -> {
-                    curPhase = "G2F"
-                    setListFragmentPhase(curPhase)
-                    fab.setImageResource(R.drawable.ic_fab_forward)
-                }
-                "AZBUKA" -> {
-                    curPhase = "SCRAMBLEGEN"
-                    setFragment(FragmentScrambleGen.newInstance())
-                    fab.setImageResource(R.drawable.ic_fab_forward)
-                }
-                else -> {
-                    if (backPressedTime + 1000 > System.currentTimeMillis()) {
+        when (curPhase) {
+            "ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL" -> {
+                curPhase = "G2F"
+                setListFragmentPhase(curPhase)
+                fab.setImageResource(R.drawable.ic_fab_forward)
+            }
+            "AZBUKA" -> {
+                curPhase = "SCRAMBLEGEN"
+                setFragment(FragmentScrambleGen.newInstance())
+                fab.setImageResource(R.drawable.ic_fab_forward)
+            }
+            else -> {
+                if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+                    if (backPressedTime + 500 > System.currentTimeMillis()) {
                         super.onBackPressed()
                     } else {
                         toast("Нажмите еще раз для выхода")
                         backPressedTime = System.currentTimeMillis()
                     }
+                } else {
+                    drawer_layout.openDrawer(GravityCompat.START)
                 }
             }
         }
@@ -189,9 +189,15 @@ class MainActivity : AppCompatActivity(),
 
             R.id.basic_move -> { setListFragmentPhase("BASIC") }
 
-            R.id.settings -> setFragment(FragmentSettings.newInstance())
+            R.id.settings -> {
+                setFragment(FragmentSettings.newInstance())
+                curPhase = "SETTINGS"
+            }
 
-            R.id.thanks -> { setListFragmentPhase("THANKS") }
+            R.id.thanks -> {
+                setListFragmentPhase("THANKS")
+                curPhase = "THANKS"
+            }
 
             R.id.about -> {
                 snackbar (contentView!!, "Ну так себе программа :)", "OK") {/** Do something */}
