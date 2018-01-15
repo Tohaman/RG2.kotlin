@@ -71,8 +71,8 @@ class AboutUI<in Fragment> : AnkoComponentEx<Fragment>() {
                     }.lparams {setMargins(0,dip(20),0,dip(20))}
                     val fiveStarButton = btn_colored
 
-//                    TODO Раскоментировать когда `themed-` is fixed.
-//                    val fiveStarButton = styledButton(R.style.AppTheme_Button_Colored) {
+//                    TODO Раскоментировать когда `themedButton` is fixed.
+//                    val fiveStarButton = themedButton(theme = R.style.AppTheme_Button_Colored) {
 //                        text = context.getString(R.string.fiveStarButtonText)
 //                        textSize = 16F
 //                        padding = 20.dp
@@ -84,9 +84,7 @@ class AboutUI<in Fragment> : AnkoComponentEx<Fragment>() {
                     }
                     fiveStarButton.onClick {
                         val appPackageName = ctx.packageName // getPackageName() from Context or Activity object
-                        try {
-                            browse("market://details?id=" + appPackageName)
-                        } catch (anfe: android.content.ActivityNotFoundException) {
+                        if (!browse("market://details?id=" + appPackageName, false)) {
                             browse("https://play.google.com/store/apps/details?id=" + appPackageName)
                         }
                     }
