@@ -3,6 +3,7 @@ package ru.tohaman.rg2.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
 import android.text.Html
 import android.text.method.LinkMovementMethod
 import android.util.Log
@@ -57,7 +58,7 @@ class AboutUI<in Fragment> : AnkoComponentEx<Fragment>() {
                     textView {
                         var txt = "<html><body style=\"text-align:justify\"> %s </body></html>"
                         val st: String = resources.getString(R.string.about)
-                        val imgGetter = Html.ImageGetter { resources.getDrawable(0) }
+                        val imgGetter = Html.ImageGetter { ContextCompat.getDrawable(ctx,0) }
                         txt = String.format(txt, st)
                         text = spannedString(txt, imgGetter)
                         // Делаем ссылки кликабельными

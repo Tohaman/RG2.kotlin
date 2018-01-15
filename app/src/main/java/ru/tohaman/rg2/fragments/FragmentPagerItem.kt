@@ -6,6 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
 import android.text.Html
 import android.util.Log
 import android.view.LayoutInflater
@@ -20,6 +21,7 @@ import com.google.android.youtube.player.YouTubeThumbnailLoader
 import com.google.android.youtube.player.YouTubeThumbnailView
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.imageResource
+import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.toast
 import org.jetbrains.anko.support.v4.withArguments
 import ru.tohaman.rg2.DebugTag
@@ -129,11 +131,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         if (resID == 0) {
             resID = resources.getIdentifier("ic_warning", "drawable", activity.packageName)
         }
-        drawable = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            resources.getDrawable(resID, null)
-        } else {
-            resources.getDrawable(resID)
-        }
+        drawable = ContextCompat.getDrawable(ctx,resID)
 
         drawable.setBounds(0, 0, drawable.intrinsicWidth, drawable.intrinsicHeight)
         drawable

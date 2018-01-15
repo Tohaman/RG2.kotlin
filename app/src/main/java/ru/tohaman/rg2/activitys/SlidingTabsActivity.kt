@@ -9,6 +9,7 @@ import android.support.v4.view.GravityCompat
 import android.support.v4.view.ViewPager
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.app.AppCompatDelegate
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -37,6 +38,7 @@ class SlidingTabsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(setMyTheme(ctx))
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         Log.v (TAG, "SlidingTabActivity onCreate")
         setContentView(R.layout.activity_sliding_tabs)
         setSupportActionBar(toolbar)
