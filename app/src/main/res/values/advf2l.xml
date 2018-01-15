@@ -2,7 +2,6 @@
 <resources>
     <string-array name="advf2l_title">
         <item>@string/advf2l_st1_title</item>
-        <item>@string/advf2l_max_title</item>
         <item>@string/advf2l_st2_title</item>
         <item>@string/advf2l_st3_title</item>
         <item>@string/advf2l_st4_title</item>
@@ -10,7 +9,6 @@
     </string-array>
 
     <integer-array name="advf2l_icon">
-        <item>@drawable/vf2l</item>
         <item>@drawable/vf2l</item>
         <item>@drawable/vf2l1</item>
         <item>@drawable/vf2l2_1</item>
@@ -20,7 +18,6 @@
 
     <string-array name="advf2l_descr">
         <item>@string/advf2l_st1_descr</item>
-        <item>@string/advf2l_max_descr</item>
         <item>@string/advf2l_st2_descr</item>
         <item>@string/advf2l_st3_descr</item>
         <item>@string/advf2l_st4_descr</item>
@@ -29,7 +26,6 @@
 
     <string-array name="advf2l_url">
         <item>@string/advf2l_st1_url</item>
-        <item>F2L</item>
         <item>@string/advf2l_st2_url</item>
         <item>@string/advf2l_st3_url</item>
         <item>@string/advf2l_st4_url</item>
