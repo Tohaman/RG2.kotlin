@@ -2,6 +2,7 @@
 <resources>
     <string-array name="advf2l_title">
         <item>@string/advf2l_st1_title</item>
+        <item>@string/advf2l_max_title</item>
         <item>@string/advf2l_st2_title</item>
         <item>@string/advf2l_st3_title</item>
         <item>@string/advf2l_st4_title</item>
@@ -9,6 +10,7 @@
     </string-array>
 
     <integer-array name="advf2l_icon">
+        <item>@drawable/vf2l</item>
         <item>@drawable/vf2l</item>
         <item>@drawable/vf2l1</item>
         <item>@drawable/vf2l2_1</item>
@@ -18,6 +20,7 @@
 
     <string-array name="advf2l_descr">
         <item>@string/advf2l_st1_descr</item>
+        <item>@string/advf2l_max_descr</item>
         <item>@string/advf2l_st2_descr</item>
         <item>@string/advf2l_st3_descr</item>
         <item>@string/advf2l_st4_descr</item>
@@ -26,6 +29,7 @@
 
     <string-array name="advf2l_url">
         <item>@string/advf2l_st1_url</item>
+        <item>F2L</item>
         <item>@string/advf2l_st2_url</item>
         <item>@string/advf2l_st3_url</item>
         <item>@string/advf2l_st4_url</item>
@@ -284,7 +288,7 @@
     <a href="rg2://ytplay?time=2:26&link=WIFh0sXDkMM">быстрее,</a> чем алгоритм из
     <a href="rg2://ytplay?time=2:39&link=WIFh0sXDkMM"><b>Части Ж</b></a>, хотя, когда
     квартира находится справа сзади, лучше использовать алгоритм с двойным кручением, а не
-    делать перхват <b>y</b>.</p>
+    делать перехват <b>y</b>.</p>
     <p style="text-align:center"><img src="vf2l1_6.xml" width="60%%"></p>
     <b><a href="rg2://ytplay?time=2:14&link=WIFh0sXDkMM">Алгоритм:</a> (F U R U\' R\' F\') R U\' R\'</b><br/>
     <b><a href="rg2://ytplay?time=2:32&link=WIFh0sXDkMM">Алгоритм для квартиры сзади:</a> (U2 R2 U2 R) U R\' U R2</b>
@@ -355,11 +359,10 @@
     <p style="text-align:center"><img src="vf2l3_4.xml" width="30%%"></p>
     <b><a href="rg2://ytplay?time=1:21&link=IL7VMSTatAA">Алгоритм:</a> (Rw U\' Rw\') U2 (Rw U Rw\')</b>
 
-
     <p>15. Пятнадцатая <a href="rg2://ytplay?time=5:44&link=WIFh0sXDkMM">ситуация</a>
     ускорение для <b>Ромашки направо</b>, т.е. одной из ситуаций, когда парень уже на своем месте,
     а девушка на третьем этаже. Вот только стебель ромашки должен быть слева (на картинке не видно).
-    Очень простой и быстрый алгоритм: жирный пиф-паф, жирнный английский пиф-паф.
+    Очень простой и быстрый алгоритм: жирный пиф-паф, жирный английский пиф-паф.
     <p style="text-align:center"><img src="vf2l1_15.xml" width="30%%"></p>
     <b><a href="rg2://ytplay?time=5:54&link=WIFh0sXDkMM">Алгоритм:</a> (Rw U Rw\' U\') (Rw\' F Rw F\')</b>
 
@@ -368,7 +371,7 @@
 
     <string name="advf2l_st3_title">Advanced F2L 2.0</string>
     <string name="advf2l_st3_descr" formatted="false"><![CDATA[
-    <p>Вторая часть усорений F2L от Кристофера Олсона <a href="http://www.cyotheking.com/about">Christopher Olson.</a></p>
+    <p>Вторая часть ускорений F2L от Кристофера Олсона <a href="http://www.cyotheking.com/about">Christopher Olson.</a></p>
 
     <p>1. Первая <a href="rg2://ytplay?time=0:12&link=28Ln2lfkD9U">ситуация.</a>
     Ускорение для классической \"ромашки налево\", но только для случая, когда задняя правая пара
@@ -403,7 +406,7 @@
     <b><a href="rg2://ytplay?time=1:35&link=28Ln2lfkD9U">Алгоритм:</a> R\' F R2 U R\' U\' F\'</b>
 
     <p>6. Шестая <a href="rg2://ytplay?time=1:41&link=28Ln2lfkD9U">ситуация.</a>
-    Можно ходом U\' привести ситуацию к первому ускорению перовой части, но в данном случае, обратите
+    Можно ходом U\' привести ситуацию к первому ускорению первой части, но в данном случае, обратите
     внимание еще и на ребра, т.е. снова EO - в действии. Если ориентировано только одно дальнее ребро,
     то все ребра для OLL встанут на место.<br/>
     К тому же, алгоритм без перехватов и с очень удобным
@@ -426,7 +429,7 @@
     <b><a href="rg2://ytplay?time=2:22&link=28Ln2lfkD9U">Алгоритм:</a> (R\' D\' R U\' R\' D R) (U R U\' R\')</b>
 
     <p>9. Девятая <a href="rg2://ytplay?time=2:28&link=28Ln2lfkD9U">ситуация.</a>
-    Еще одна ситуация, когда легко пропустить OLL. Быстрый и удобный алгоритм, который можно испоьзовать
+    Еще одна ситуация, когда легко пропустить OLL. Быстрый и удобный алгоритм, который можно использовать
     и как основной для <b>Части Е</b>.</p>
     <p style="text-align:center"><img src="vf2l2_9.xml" width="30%%"></p>
     <b><a href="rg2://ytplay?time=2:38&link=28Ln2lfkD9U">Алгоритм:</a> (R U\' R2 D\' R U2 R\' D R)</b>
@@ -453,7 +456,7 @@
 
     <string name="advf2l_st4_title">Advanced F2L 3.0</string>
     <string name="advf2l_st4_descr" formatted="false"><![CDATA[
-    <p>Третья часть усорений F2L от Кристофера Олсона <a href="http://www.cyotheking.com/about">Christopher Olson.</a></p>
+    <p>Третья часть ускорений F2L от Кристофера Олсона <a href="http://www.cyotheking.com/about">Christopher Olson.</a></p>
 
     <p>1. Первая <a href="rg2://ytplay?time=0:40&link=IL7VMSTatAA">ситуация.</a>
     Очень полезное ускорение, позволяющее обойтись без перехвата когда квартира справа сзади, угол над
@@ -493,7 +496,7 @@
 
     <p>7. Седьмая <a href="rg2://ytplay?time=1:57&link=IL7VMSTatAA">ситуация.</a>
     В классическом F2L надо либо поднять пару наверх неудобно (F F\') либо ставить неудобно через (B B\').
-    Поэтому лучше вот таким алгоритмом, ну или поднять левой (опусть жирно правую) и воспользоваться
+    Поэтому лучше вот таким алгоритмом, ну или поднять левой (опустить жирно правую) и воспользоваться
     ускорением 1.2</p>
     <p style="text-align:center"><img src="vf2l3_7.xml" width="30%%"></p>
     <b><a href="rg2://ytplay?time=2:01&link=IL7VMSTatAA">Алгоритм:</a> R\' (F U\' F\') R</b><br/>
