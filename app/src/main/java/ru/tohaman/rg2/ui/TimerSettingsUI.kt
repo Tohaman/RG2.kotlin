@@ -4,7 +4,9 @@ import android.preference.PreferenceManager
 import android.util.Log
 import android.view.Gravity
 import android.view.View
+import android.widget.Button
 import android.widget.LinearLayout
+import kotlinx.android.synthetic.main.button_colored.view.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import ru.tohaman.rg2.*
@@ -68,11 +70,20 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                     }
                 }.lparams(0,wrapContent)
 
-                val startButton = styledButton(R.style.AppTheme_Button_Colored) {
+                include<Button>(R.layout.button_colored) {
                     text = "Запустить таймер"
                     textSize = 16F
                     padding = 20.dp
-                }.lparams (0,wrapContent)
+                }
+                val startButton = btn_colored
+
+
+//              //TODO Раскоментировать когда `themed-` is fixed.
+//                val startButton = themedButton(theme = R.style.Widget_AppCompat_Button_Borderless_Colored) {
+//                    text = "Запустить таймер"
+//                    textSize = 16F
+//                    padding = 20.dp
+//                }.lparams (0,wrapContent)
 
                 startButton.onClick { startActivity<TimerActivity>() }
 

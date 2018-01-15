@@ -200,7 +200,9 @@ class MainActivity : AppCompatActivity(),
             }
 
             R.id.about -> {
-                snackbar (contentView!!, "Ну так себе программа :)", "OK") {/** Do something */}
+                setFragment(FragmentAbout.newInstance())
+                curPhase = "THANKS"
+
             }
             R.id.exit -> {
                 finish()

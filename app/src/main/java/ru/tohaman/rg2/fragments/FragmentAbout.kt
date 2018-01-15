@@ -1,29 +1,25 @@
 package ru.tohaman.rg2.fragments
 
 
-import android.graphics.drawable.Drawable
-import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.text.Html
+import android.text.method.LinkMovementMethod
 import android.util.Log
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
+import android.widget.Button
 import android.widget.LinearLayout
-import kotlinx.android.synthetic.main.fragment_azbuka.view.*
+import kotlinx.android.synthetic.main.button_colored.view.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.support.v4.ctx
+import ru.tohaman.rg2.BuildConfig
 import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.adapters.MyGridAdapter
-import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.ui.AnkoComponentEx
-import ru.tohaman.rg2.ui.AzbukaSelectUI
-import ru.tohaman.rg2.util.prepareAzbukaToShowInGridView
 import ru.tohaman.rg2.util.spannedString
 
 /**
@@ -55,11 +51,48 @@ class AboutUI<in Fragment> : AnkoComponentEx<Fragment>() {
         Log.v(DebugTag.TAG, "AboutUI create start")
 
         linearLayout {
-            linearLayout {
-                orientation = LinearLayout.VERTICAL
-                textView {
-                    text = ""
+            scrollView {
+                linearLayout {
+                    orientation = LinearLayout.VERTICAL
+                    textView {
+                        var txt = "<html><body style=\"text-align:justify\"> %s </body></html>"
+                        val st: String = resources.getString(R.string.about)
+                        val imgGetter = Html.ImageGetter { resources.getDrawable(0) }
+                        txt = String.format(txt, st)
+                        text = spannedString(txt, imgGetter)
+                        // Делаем ссылки кликабельными
+                        movementMethod = LinkMovementMethod.getInstance()
+                    }
+
+                    include<Button>(R.layout.button_colored) {
+                        text = context.getString(R.string.fiveStarButtonText)
+                        textSize = 16F
+                        padding = 20.dp
+                    }.lparams {setMargins(0,dip(20),0,dip(20))}
+                    val fiveStarButton = btn_colored
+
+//                    TODO Раскоментировать когда `themed-` is fixed.
+//                    val fiveStarButton = styledButton(R.style.AppTheme_Button_Colored) {
+//                        text = context.getString(R.string.fiveStarButtonText)
+//                        textSize = 16F
+//                        padding = 20.dp
+//                    }.lparams {setMargins(0,dip(20),0,dip(20))}
+
+                    textView {
+                        text = BuildConfig.VERSION_NAME
+                        textSize = 8F
+                    }
+                    fiveStarButton.onClick {
+                        val appPackageName = ctx.packageName // getPackageName() from Context or Activity object
+                        try {
+                            browse("market://details?id=" + appPackageName)
+                        } catch (anfe: android.content.ActivityNotFoundException) {
+                            browse("https://play.google.com/store/apps/details?id=" + appPackageName)
+                        }
+                    }
                 }
+            }.lparams {
+                margin = dip(16)
             }
         }
 

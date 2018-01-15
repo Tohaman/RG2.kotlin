@@ -1,6 +1,7 @@
 package ru.tohaman.rg2.ui
 
 import android.content.Context
+import android.content.res.Resources
 import android.os.Build
 import android.transition.TransitionManager
 import android.view.ContextThemeWrapper
@@ -13,6 +14,7 @@ import android.widget.TextView
 import com.google.android.youtube.player.YouTubeThumbnailView
 import org.jetbrains.anko.*
 import org.jetbrains.anko.custom.ankoView
+import ru.tohaman.rg2.R
 
 
 abstract class AnkoComponentEx<in T>: AnkoComponent<T> {
@@ -44,6 +46,19 @@ abstract class AnkoComponentEx<in T>: AnkoComponent<T> {
         }
     }
 
+    protected fun ViewManager.coloredButton(txt: CharSequence, init: Button.() -> Unit): Button {
+        return button {
+            text = txt
+            textSize = 16F
+//            padding = 20.dp
+            height = matchParent
+            width = matchParent
+//            backgroundResource = R.color.colorAccent
+            init()
+        }
+    }
+
+
     final override fun createView(ui: AnkoContext<T>): View {
         this.context = ui.ctx
         return create(ui)
@@ -61,9 +76,9 @@ inline fun ViewManager.youTubeThumbnailView (init: YouTubeThumbnailView.() -> Un
 }
 
 inline fun ViewManager.styledButton(styleRes: Int = 0, init: Button.() -> Unit): Button {
-    return ankoView({ if (styleRes == 0) Button(it) else Button(ContextThemeWrapper(it, styleRes), null, 0) }, 0) {
-        init()
-    }
+    return ankoView({
+        if (styleRes == 0) Button(it)
+            else Button(ContextThemeWrapper(it, styleRes), null, 0) }, 0) { init() }
 }
 
 inline fun ViewManager.styledButton(styleRes: Int = 0): Button = styledButton(styleRes) {}
