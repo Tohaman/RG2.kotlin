@@ -146,9 +146,14 @@ class MainActivity : AppCompatActivity(),
                     "BEGIN" -> {
                         alert(getString(R.string.help_begin)) { okButton { } }.show()
                     }
+
                     "TIMER" -> {
                         alert(getString(R.string.help_timer)) { okButton { } }.show()
                     }
+                    "SETTINGS" -> {
+                        alert(getString(R.string.help_settings)) { okButton { } }.show()
+                    }
+
                   }
                 return true}
             else -> return super.onOptionsItemSelected(item)

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="help_begin2x2">Очень простой метод сборки кубика 2х2, всего в 2 алгоритма.</string>
+    <string name="help_begin2x2">Очень простой метод сборки кубика 2х2 от канала Cubeday, с
+        использованием всего 2-х алгоритмов.</string>
 
     <string name="help_adv2x2">Продвинутый метод сборки кубика 2х2, представляющий собой
         вариант метода Фридрих для двушки.</string>
@@ -13,4 +14,5 @@
 
     <string name="help_timer">Для обнуления таймера, дважды щелкните по панели отображающей время.</string>
 
+    <string name="help_settings">Тут можно задать свои настройки для программы.</string>
 </resources>

@@ -45,4 +45,5 @@
     <string name="pll_test_select_button">Задать свои названия для этапов</string>
     <string name="settings">Настройки</string>
     <string name="fiveStarButtonText">Оценить приложение в GooglePlay</string>
+
 </resources>
