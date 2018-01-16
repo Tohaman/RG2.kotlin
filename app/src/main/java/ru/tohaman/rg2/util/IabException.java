@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package ru.tohaman.rubicsguide.util;
+package ru.tohaman.rg2.util;
 
 /**
  * Exception thrown when something went wrong with in-app billing.

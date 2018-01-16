@@ -1,5 +1,8 @@
 package ru.tohaman.rg2
 
+import android.app.AlertDialog
+import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.design.widget.NavigationView
@@ -21,7 +24,11 @@ import ru.tohaman.rg2.DebugTag.TAG
 import ru.tohaman.rg2.activitys.SlidingTabsActivity
 import ru.tohaman.rg2.fragments.*
 import android.content.SharedPreferences
-import ru.tohaman.rg2.util.setMyTheme
+import android.view.View
+import android.widget.FrameLayout
+import android.widget.ImageView
+import ru.tohaman.rg2.DeveloperKey.base64EncodedPublicKey
+import ru.tohaman.rg2.util.*
 
 
 // Статические переменные (верхнего уровня). Котлин в действии стр.77-78
@@ -34,12 +41,31 @@ const val METRONOM_ENABLED = "metronomEnabled"
 const val METRONOM_TIME = "metronomTime"
 const val PLL_TEST_ROW_COUNT = "pllTestRowCount"
 const val PLL_TEST_3SIDE = "isPllTest3Side"
-
+// SKUs для продуктов: при изменении не забыть поправить в sayThanks
+const val BIG_DONATION = "big_donation"
+const val MEDIUM_DONATION = "medium_donation"
+const val SMALL_DONATION = "small_donation"
 
 class MainActivity : AppCompatActivity(),
         NavigationView.OnNavigationItemSelectedListener,
         FragmentListView.OnListViewInteractionListener,
-        FragmentScrambleGen.OnSrambleGenInteractionListener {
+        FragmentScrambleGen.OnSrambleGenInteractionListener,
+        IabBroadcastReceiver.IabBroadcastListener {
+
+    // Пробуем добавить платежи внутри программы https://xakep.ru/2017/05/23/android-in-apps/
+    // Пользователь уже платил?
+    private var mIsPremium = false
+
+    // (arbitrary) request code for the purchase flow
+    private val RC_REQUEST = 10001
+    // Тут будем подсчитывать сколько пользователь уже заплатил, пока не знаю для чего
+    private var mCoins: Int = 0
+    // Все ли хрошо с запуском GooglePlay, если нет, то оплату не запускаем
+    private var mGooglePlayOK: Boolean = true
+    // The helper object
+    private var mHelper: IabHelper? = null
+    // Provides purchase notification while this app is running
+    private var mBroadcastReceiver: IabBroadcastReceiver? = null
 
     private lateinit var fragListView: FragmentListView
     private var backPressedTime: Long = 0
@@ -53,15 +79,24 @@ class MainActivity : AppCompatActivity(),
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         Log.v (TAG, "MainActivity ListPagerLab init")
         mListPagerLab = ListPagerLab.get(ctx)
+
+        //Если повернули экран или вернулись в активность, то открываем ту фазу, которая была, иначе - берем данные из SharedPreference
+        curPhase = if (savedInstanceState != null) {
+            savedInstanceState.getString("phase")
+        } else {
+            loadStartPhase()
+        }
+
         Log.v (TAG, "MainActivity CreateView")
         setContentView(R.layout.activity_main)
 
-        curPhase = loadStartPhase()
         fragListView = FragmentListView.newInstance("BEGIN")
         when (curPhase) {
             "TIMER" -> {setFragment(FragmentTimerSettings.newInstance())}
             "SCRAMBLEGEN" -> {setFragment(FragmentScrambleGen.newInstance())}
             "TESTPLL" -> {setFragment(FragmentTestPLLSettings.newInstance())}
+            "SETTINGS" -> {setFragment(FragmentSettings.newInstance())}
+            "ABOUT" -> {setFragment(FragmentAbout.newInstance())}
             else -> { setListFragmentPhase(curPhase) }
         }
 
@@ -88,6 +123,8 @@ class MainActivity : AppCompatActivity(),
                 this, drawer_layout, maintoolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
+
+        loadDataFromPlayMarket()
     }
 
     private fun setFragment (fragment: Fragment) {
@@ -127,6 +164,12 @@ class MainActivity : AppCompatActivity(),
         menuInflater.inflate(R.menu.main, menu)
         return true
     }
+
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        super.onSaveInstanceState(savedInstanceState)
+        savedInstanceState.putString("phase", curPhase)
+    }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
@@ -249,9 +292,9 @@ class MainActivity : AppCompatActivity(),
 
             R.id.about -> {
                 setFragment(FragmentAbout.newInstance())
-                curPhase = "THANKS"
-
+                curPhase = "ABOUT"
             }
+
             R.id.exit -> {
                 finish()
             }
@@ -287,7 +330,9 @@ class MainActivity : AppCompatActivity(),
         val lp = mListPagerLab.getPhaseItem(id,phase)
         when (phase) {
             //Если в листвью "Основные движения", то показать "тост",
-            "BASIC" -> { toast(getString(lp.description))}
+            "BASIC" -> {
+                toast(getString(lp.description))
+            }
             //Если меню "переходим на Фридрих", то меняем текст листвью на соответствующую фазу
             "G2F" -> {
                 setListFragmentPhase(getString(lp.description))
@@ -295,8 +340,8 @@ class MainActivity : AppCompatActivity(),
             }
             //Если выбрали какое-то "Спасибо" автору
             "THANKS" -> {
-                toast ("Пожалуйста")
                 //TODO сделать соответствующий вызов оплаты
+                sayThanks(id)
             }
             //в других случаях запустить SlideTab с просмотром этапов
             else -> { startActivity<SlidingTabsActivity>(RUBIC_PHASE to phase, EXTRA_ID to id)}
@@ -310,6 +355,258 @@ class MainActivity : AppCompatActivity(),
             fab.setImageResource(R.drawable.ic_fab_backward)
             curPhase = "AZBUKA"
         }
+    }
+
+    //Далее все для покупок внутри приложения
+
+    private fun sayThanks( donationNumber : Int ) {
+        var donationString = ""
+
+        when (donationNumber) {
+            0 -> {donationString = SMALL_DONATION}
+            1 -> {donationString = MEDIUM_DONATION}
+            2 -> {donationString = BIG_DONATION}
+        }
+
+        Log.d(TAG, "Pay button clicked; launching purchase flow for pay 100rub.")
+        setWaitScreen(true)
+        /* TO DO: for security, generate your payload here for verification. See the comments on
+                 *        verifyDeveloperPayload() for more info. Since this is a SAMPLE, we just use
+                 *        an empty string, but on a production app you should carefully generate this. */
+        val payload2 = ""
+
+        if (mGooglePlayOK) {
+            try {
+                mHelper!!.launchPurchaseFlow(this, donationString, RC_REQUEST,
+                        mPurchaseFinishedListener, payload2)
+            } catch (e: IabHelper.IabAsyncInProgressException) {
+                complain("Ошибка запуска потока оплаты. Другая асинхронная операция запущена.")
+                setWaitScreen(false)
+            }
+        } else {
+            complain("Пожалуйста обновите Google Play App до последней версии ")
+            setWaitScreen(false)
+        }
+    }
+
+    private fun loadDataFromPlayMarket() {
+        // load game data from PlayMarket
+        loadData()
+        // Создаем helper, передаем context и public key to verify signatures with
+        Log.d(TAG, "Creating IAB helper.")
+        mHelper = IabHelper(this, base64EncodedPublicKey)
+
+        //TO DO enable debug logging (Для полноценной версии надо поставить в false).
+        mHelper!!.enableDebugLogging(false)
+
+        // Start setup. This is asynchronous and the specified listener
+        // will be called once setup completes.
+        Log.d(TAG, "Starting setup.")
+        mGooglePlayOK = true // изначально считаем что все ОК
+        mHelper!!.startSetup(IabHelper.OnIabSetupFinishedListener { result ->
+            Log.d(TAG, "Setup finished.")
+
+            if (!result.isSuccess()) {
+                // Хьюстон, у нас проблемы с Google Play
+                //complain("Пожалуйста обновите Google Play App до последней версии "); // + result
+                mGooglePlayOK = false
+                return@OnIabSetupFinishedListener
+            }
+
+            // Have we been disposed of in the meantime? If so, quit.
+            if (mHelper == null) return@OnIabSetupFinishedListener
+
+            // Важно: Динамически сгенерированный слушатель броадкастовых сообщений о покупках.
+            // Создаем его динамически, а не через <receiver> in the Manifest
+            // потому что мы всегда вызываем getPurchases() при старте программы, этим мы можем
+            // игнорировать любые броадкасты пока приложение не запущено.
+            // Note: registering this listener in an Activity is a bad idea, but is done here
+            // because this is a SAMPLE. Regardless, the receiver must be registered after
+            // IabHelper is setup, but before first call to getPurchases().
+            mBroadcastReceiver = IabBroadcastReceiver(this@MainActivity)
+            val broadcastFilter = IntentFilter(IabBroadcastReceiver.ACTION)
+            registerReceiver(mBroadcastReceiver, broadcastFilter)
+
+            // IAB is fully set up. Now, let's get an inventory of stuff we own.
+            Log.d(TAG, "Setup successful. Querying inventory.")
+            try {
+                mHelper!!.queryInventoryAsync(mGotInventoryListener)
+            } catch (e: IabHelper.IabAsyncInProgressException) {
+                complain("Error querying inventory. Another async operation in progress.")
+            }
+        })
+    }
+
+    // We're being destroyed. It's important to dispose of the helper here!
+    override fun onDestroy() {
+        super.onDestroy()
+
+        // very important:
+        if (mBroadcastReceiver != null) {
+            unregisterReceiver(mBroadcastReceiver)
+        }
+
+        // very important:
+        Log.d(TAG, "Destroying helper.")
+        if (mHelper != null) {
+            mHelper!!.disposeWhenFinished()
+            mHelper = null
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+        Log.d(TAG, "onActivityResult($requestCode,$resultCode,$data")
+        if (mHelper == null) return
+
+        // Pass on the activity result to the helper for handling
+        if (!mHelper!!.handleActivityResult(requestCode, resultCode, data)) {
+            // not handled, so handle it ourselves (here's where you'd
+            // perform any handling of activity results not related to in-app
+            // billing...
+            super.onActivityResult(requestCode, resultCode, data)
+        } else {
+            Log.d(TAG, "onActivityResult handled by IABUtil.")
+        }
+    }
+
+    override fun receivedBroadcast() {
+        // Received a broadcast notification that the inventory of items has changed
+        Log.d(TAG, "Received broadcast notification. Querying inventory.")
+        try {
+            mHelper!!.queryInventoryAsync(mGotInventoryListener)
+        } catch (e: IabHelper.IabAsyncInProgressException) {
+            complain("Error querying inventory. Another async operation in progress.")
+        }
+
+    }
+
+    /** Verifies the developer payload of a purchase.  */
+    private fun verifyDeveloperPayload(p: Purchase): Boolean {
+        val payload = p.developerPayload
+        return true
+    }
+
+    // Callback for when a purchase is finished
+    private var mPurchaseFinishedListener: IabHelper.OnIabPurchaseFinishedListener = IabHelper.OnIabPurchaseFinishedListener { result, purchase ->
+        Log.d(TAG, "Покупка завершена: $result, куплено: $purchase")
+
+        // if we were disposed of in the meantime, quit.
+        if (mHelper == null) return@OnIabPurchaseFinishedListener
+
+        if (result.isFailure) {
+            complain("Ошибка покупки: " + result)
+            setWaitScreen(false)
+            return@OnIabPurchaseFinishedListener
+        }
+        if (!verifyDeveloperPayload(purchase)) {
+            complain("Ошибка покупки. Ошибка авторизации.")
+            setWaitScreen(false)
+            return@OnIabPurchaseFinishedListener
+        }
+
+        Log.d(TAG, "Покупка прошла успешно.")
+
+        when {
+            purchase.sku == SMALL_DONATION -> {
+                // Пользователь задонатил 50 руб.
+                Log.d(TAG, "Покупка = донат 50 руб.")
+                alert("Спасибо за поддержку")
+                mCoins += 50
+            }
+            purchase.sku == MEDIUM_DONATION -> {
+                // Пользователь задонатил 100 руб.
+                Log.d(TAG, "Покупка = донат 100 руб.")
+                alert("Большое спасибо за поддержку")
+                mIsPremium = true
+                mCoins += 100
+            }
+            purchase.sku == BIG_DONATION -> {
+                // Пользователь задонатил 200 руб.
+                Log.d(TAG, "Покупка = донат 200 руб.")
+                alert("Огромное спасибо за поддержку")
+                mIsPremium = true
+                mCoins += 200
+            }
+        }
+        saveData()
+        setWaitScreen(false)
+    }
+
+    // Called when consumption is complete
+    private var mConsumeFinishedListener: IabHelper.OnConsumeFinishedListener = IabHelper.OnConsumeFinishedListener { purchase, result ->
+        Log.d(TAG, "Consumption finished. Purchase: $purchase, result: $result")
+
+        // if we were disposed of in the meantime, quit.
+        if (mHelper == null) return@OnConsumeFinishedListener
+
+        setWaitScreen(false)
+        Log.d(TAG, "End consumption flow.")
+    }
+
+
+    // Слушатель, который вызывается, когда мы законичили запрос к серверу о купленных товарах
+    private var mGotInventoryListener: IabHelper.QueryInventoryFinishedListener = IabHelper.QueryInventoryFinishedListener { result, inventory ->
+        Log.d(TAG, "Query inventory finished.")
+
+        // Хелпер был ликвидирован? If so, выходим.
+        if (mHelper == null) return@QueryInventoryFinishedListener
+
+        // Не получилось?
+        if (result.isFailure) {
+            complain("Failed to query inventory: " + result)
+            return@QueryInventoryFinishedListener
+        }
+
+        Log.d(TAG, "Query inventory was successful.")
+
+        /*
+         * Проверяем купленные товары. Обратите внимание, что проверяем для каждой покупки
+         * to see if it's correct! See verifyDeveloperPayload().
+         */
+
+        // Do we have the premium upgrade?
+        // Проверяем, платил ли пользователь уже 100руб.
+        val premiumPurchase = inventory.getPurchase(MEDIUM_DONATION)
+        mIsPremium = premiumPurchase != null && verifyDeveloperPayload(premiumPurchase)
+        Log.d(TAG, "User is " + if (mIsPremium) "PREMIUM" else "NOT PREMIUM")
+
+        // Проверяем платил ли 50 руб
+        val gasPurchase = inventory.getPurchase(SMALL_DONATION)
+
+        setWaitScreen(false)
+        Log.d(TAG, "Initial inventory query finished; enabling main UI.")
+    }
+
+    // Enables or disables the "please wait" screen.
+    private fun setWaitScreen(set: Boolean) {
+        findViewById<FrameLayout>(R.id.frame_container).visibility = if (set) View.GONE else View.VISIBLE
+        findViewById<ImageView>(R.id.screen_wait).visibility = if (set) View.VISIBLE else View.GONE
+    }
+
+    private fun complain(message: String) {
+        Log.e(TAG, "**** TrivialDrive Error: " + message)
+        alert("Error: " + message)
+    }
+
+    private fun alert(message: String) {
+        val bld = AlertDialog.Builder(this)
+        bld.setMessage(message)
+        bld.setNeutralButton("OK", null)
+        Log.d(TAG, "Showing alert dialog: " + message)
+        bld.create().show()
+    }
+
+    private fun saveData() {
+        val spe = getPreferences(MODE_PRIVATE).edit()
+        spe.putInt("payCoins", mCoins)
+        spe.apply()
+        Log.d(TAG, "Saved data: tank = " + mCoins.toString())
+    }
+
+    private fun loadData() {
+        val sp = getPreferences(MODE_PRIVATE)
+        mCoins = sp.getInt("payCoins", 0)
+        Log.d(TAG, "Пользователь уже оплатил = " + mCoins.toString())
     }
 
 }

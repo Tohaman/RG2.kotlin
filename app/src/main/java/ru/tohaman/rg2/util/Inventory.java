@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package ru.tohaman.rubicsguide.util;
+package ru.tohaman.rg2.util;
 
 import java.util.ArrayList;
 import java.util.HashMap;

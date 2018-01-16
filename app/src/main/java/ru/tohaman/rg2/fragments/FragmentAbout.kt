@@ -58,7 +58,7 @@ class AboutUI<in Fragment> : AnkoComponentEx<Fragment>() {
                     textView {
                         var txt = "<html><body style=\"text-align:justify\"> %s </body></html>"
                         val st: String = resources.getString(R.string.about)
-                        val imgGetter = Html.ImageGetter { ContextCompat.getDrawable(ctx,0) }
+                        val imgGetter = Html.ImageGetter { ContextCompat.getDrawable(ctx, 0) }
                         txt = String.format(txt, st)
                         text = spannedString(txt, imgGetter)
                         // Делаем ссылки кликабельными
@@ -69,7 +69,7 @@ class AboutUI<in Fragment> : AnkoComponentEx<Fragment>() {
                         text = context.getString(R.string.fiveStarButtonText)
                         textSize = 16F
                         padding = 20.dp
-                    }.lparams {setMargins(0,dip(20),0,dip(20))}
+                    }.lparams { setMargins(0, dip(20), 0, dip(20)) }
                     val fiveStarButton = btn_colored
 
 //                    TODO Раскоментировать когда `themedButton` is fixed.
@@ -90,7 +90,7 @@ class AboutUI<in Fragment> : AnkoComponentEx<Fragment>() {
                         }
                     }
                 }
-            }.lparams {
+            }.lparams (matchParent, matchParent){
                 margin = dip(16)
             }
         }

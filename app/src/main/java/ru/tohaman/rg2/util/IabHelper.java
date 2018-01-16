@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package ru.tohaman.rubicsguide.util;
+package ru.tohaman.rg2.util;
 
 import android.app.Activity;
 import android.app.PendingIntent;
