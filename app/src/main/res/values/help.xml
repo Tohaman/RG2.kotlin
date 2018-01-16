@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="help_blank">Свои предложения, что тут написать, присылайте на rubicsguide@yandex.ru</string>
+
     <string name="help_begin2x2">Очень простой метод сборки кубика 2х2 от канала Cubeday, с
         использованием всего 2-х алгоритмов.</string>
 

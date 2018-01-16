@@ -146,14 +146,57 @@ class MainActivity : AppCompatActivity(),
                     "BEGIN" -> {
                         alert(getString(R.string.help_begin)) { okButton { } }.show()
                     }
-
+                    "G2F" -> {
+                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                    }
+                    "ACCEL" -> {
+                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                    }
+                    "CROSS" -> {
+                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                    }
+                    "F2L" -> {
+                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                    }
+                    "ADVF2L" -> {
+                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                    }
+                    "OLL" -> {
+                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                    }
+                    "PLL" -> {
+                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                    }
+                    "BLIND" -> {
+                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                    }
+                    "BLINDACC" -> {
+                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                    }
+                    "BEGIN4X4" -> {
+                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                    }
                     "TIMER" -> {
                         alert(getString(R.string.help_timer)) { okButton { } }.show()
+                    }
+                    "SCRAMBLEGEN" -> {
+                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                    }
+                    "TESTPLL" -> {
+                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                    }
+                    "BASIC" -> {
+                        alert(getString(R.string.help_blank)) { okButton { } }.show()
                     }
                     "SETTINGS" -> {
                         alert(getString(R.string.help_settings)) { okButton { } }.show()
                     }
-
+                    "THANKS" -> {
+                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                    }
+                    "ABOUT" -> {
+                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                    }
                   }
                 return true}
             else -> return super.onOptionsItemSelected(item)

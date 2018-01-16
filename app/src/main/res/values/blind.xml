@@ -222,7 +222,7 @@
     <string name="blind_st14_title">N14 Пробуем закрыть глаза</string>
     <string name="blind_st14_descr" formatted="false"><![CDATA[
         Цепочку (фразу) создали, пробуем собрать ребра по запомненной фразе с закрытыми глазами.<br/>
-        <b>Скармбл в видео: U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R </b><br/>
+        <b>Скрамбл в видео: U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R </b><br/>
         Фраза: КЁрлинг ПО МоВе ЛИ Желтые Яблоки Э<br/><br/>
         Показать кубик в <a href="rg2://scrmbl?scram=U2_F2_L\'_D2_R_U_F\'_L2_B2_R_L2_B2_U_R">генераторе скрамблов.</a>
     ]]></string>
