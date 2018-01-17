@@ -9,12 +9,16 @@ import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.button_colored.view.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onClick
+import org.jetbrains.anko.sdk15.coroutines.onLongClick
 import ru.tohaman.rg2.*
 import ru.tohaman.rg2.DebugTag.TAG
 import ru.tohaman.rg2.activitys.TimerActivity
 import ru.tohaman.rg2.ankoconstraintlayout.constraintLayout
 import ru.tohaman.rg2.util.saveBoolean2SP
 import ru.tohaman.rg2.util.saveInt2SP
+import android.view.MotionEvent
+
+
 
 
 /**
@@ -68,6 +72,35 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                         saveInt2SP(metronomTime, METRONOM_TIME, view!!.context)
                         textHz.text = metronomTime.toString()
                     }
+
+                    //TODO Сделать обработчик долгого нажатия на кнопку, что-то на базе этого
+//                    buttonPlus.setOnTouchListener(object : View.OnTouchListener {
+//
+//                        internal var startTime: Long = 0
+//
+//                        override fun onTouch(v: View, event: MotionEvent): Boolean {
+//                            when (event.action) {
+//                                MotionEvent.ACTION_DOWN // нажатие
+//                                -> startTime = System.currentTimeInMills()
+//                                MotionEvent.ACTION_MOVE // движение
+//                                -> {
+//                                }
+//                                MotionEvent.ACTION_UP // отпускание
+//                                    , MotionEvent.ACTION_CANCEL -> {
+//                                    val totalTime = System.currentTimeInMills() - startTime
+//                                    val totalSecunds = totalTime / 1000
+//                                    if (totalSecunds >= 3) {
+//                                        //ВОТ тут прошло 3 или больше секунды с начала нажатия
+//                                        //можно что-то запустить
+//                                        println("Три секунды прошло с нажатия!")
+//                                    }
+//                                }
+//                            }
+//                            return true
+//                        }
+//                    })
+//
+
                 }.lparams(0,wrapContent)
 
                 include<Button>(R.layout.button_colored) {

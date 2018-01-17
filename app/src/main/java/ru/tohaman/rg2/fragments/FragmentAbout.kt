@@ -34,7 +34,9 @@ class FragmentAbout : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return AboutUI<Fragment>().createView(AnkoContext.create(ctx, this))
-}
+    }
+
+    //TODO дописать текст к окну "О Программе"
 
     companion object {
         fun newInstance(): FragmentAbout {

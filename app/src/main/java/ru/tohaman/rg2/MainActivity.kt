@@ -350,7 +350,6 @@ class MainActivity : AppCompatActivity(),
             }
             //Если выбрали какое-то "Спасибо" автору
             "THANKS" -> {
-                //TODO сделать соответствующий вызов оплаты
                 sayThanks(id)
             }
             //в других случаях запустить SlideTab с просмотром этапов
@@ -380,15 +379,13 @@ class MainActivity : AppCompatActivity(),
     //Далее все для покупок внутри приложения
 
     private fun sayThanks( donationNumber : Int ) {
-        var donationString = ""
-
-        when (donationNumber) {
-            0 -> {donationString = SMALL_DONATION}
-            1 -> {donationString = MEDIUM_DONATION}
-            2 -> {donationString = BIG_DONATION}
+        val donationString = when (donationNumber) {
+            1 -> { MEDIUM_DONATION }
+            2 -> { BIG_DONATION }
+            else -> {SMALL_DONATION }
         }
 
-        Log.d(TAG, "Pay button clicked; launching purchase flow for pay 100rub.")
+        Log.d(TAG, "Pay button clicked; launching purchase flow for pay.")
         setWaitScreen(true)
         /* TO DO: for security, generate your payload here for verification. See the comments on
                  *        verifyDeveloperPayload() for more info. Since this is a SAMPLE, we just use
@@ -426,7 +423,7 @@ class MainActivity : AppCompatActivity(),
         mHelper!!.startSetup(IabHelper.OnIabSetupFinishedListener { result ->
             Log.d(TAG, "Setup finished.")
 
-            if (!result.isSuccess()) {
+            if (!result.isSuccess) {
                 // Хьюстон, у нас проблемы с Google Play
                 //complain("Пожалуйста обновите Google Play App до последней версии "); // + result
                 mGooglePlayOK = false
@@ -503,6 +500,8 @@ class MainActivity : AppCompatActivity(),
     /** Verifies the developer payload of a purchase.  */
     private fun verifyDeveloperPayload(p: Purchase): Boolean {
         val payload = p.developerPayload
+        // тут можно проверить ответ от гугла, но нам в данном случае фиолетово,
+        // ибо пользователь за свою покупку ничего в приложении получить не должен
         return true
     }
 
