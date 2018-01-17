@@ -9,6 +9,7 @@ import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.button_colored.view.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onClick
+import org.jetbrains.anko.sdk15.coroutines.onLongClick
 import ru.tohaman.rg2.*
 import ru.tohaman.rg2.DebugTag.TAG
 import ru.tohaman.rg2.activitys.TimerActivity
@@ -68,6 +69,7 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                         saveInt2SP(metronomTime, METRONOM_TIME, view!!.context)
                         textHz.text = metronomTime.toString()
                     }
+
                 }.lparams(0,wrapContent)
 
                 include<Button>(R.layout.button_colored) {

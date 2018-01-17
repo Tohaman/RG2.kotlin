@@ -20,9 +20,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import kotlinx.coroutines.experimental.CommonPool
+import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.delay
+import kotlinx.coroutines.experimental.launch
 import org.jetbrains.anko.*
 import org.jetbrains.anko.support.v4.UI
+import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.dip
 import ru.tohaman.rg2.*
 import ru.tohaman.rg2.ankoconstraintlayout.constraintLayout
@@ -30,11 +34,11 @@ import ru.tohaman.rg2.ankoconstraintlayout.constraintLayout
 
 class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadCompleteListener {
     private var startTime: Long = 0
-    private var reset_pressed_time: Long = 0
+    private var resetPressedTime: Long = 0
     private var leftHandDown = false
     private var rightHandDown = false
-    private var timerReady = false
-    private var timerStart = false
+    private var isTimerReady = false
+    private var isTimerStart = false
 
     private lateinit var leftPad: LinearLayout
     private lateinit var rightPad: LinearLayout
@@ -78,7 +82,8 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
 
     override fun onPause() {
         super.onPause()
-        stopTimer()
+        isTimerStart = false
+        isTimerReady = false
     }
 
     override fun onResume() {
@@ -100,10 +105,10 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
             topLayout.id -> {
                 //нажали или отпустили панель таймера
                 if (action == MotionEvent.ACTION_DOWN) {
-                    if (reset_pressed_time + 300 > System.currentTimeMillis()) {
+                    if (resetPressedTime + 300 > System.currentTimeMillis()) {
                         timerReset()
                     } else {
-                        reset_pressed_time = System.currentTimeMillis()
+                        resetPressedTime = System.currentTimeMillis()
                     }
                 }
             }
@@ -122,9 +127,10 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
             MotionEvent.ACTION_DOWN -> {
                 when {
                 //если обе руки прикоснулись и таймер не статован, то значит таймер "готов", обнуляем время таймера
-                    (secHand and !timerStart) -> {timerReady = true; textTime.text = context.getString(R.string.begin_timer_text)}           //таймер готов к запуску
+                    (secHand and !isTimerStart) -> {
+                        isTimerReady = true; textTime.text = context.getString(R.string.begin_timer_text)}           //таймер готов к запуску
                 //если обе руки прикоснулись, а таймер был запущен, значит его надо остановить
-                    (secHand and timerStart) -> { stopTimer()}   //останавливаем таймер
+                    (secHand and isTimerStart) -> { stopTimer()}   //останавливаем таймер
                 //в противном случае,
                     else -> { /**ничего не делаем */ }
                 }
@@ -136,7 +142,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         // если отпустили палец
             MotionEvent.ACTION_UP -> {
                 // Если таймер "готов", то запускаем таймер и
-                if (timerReady) { startTimer() }
+                if (isTimerReady) { startTimer() }
                 // красим кружочек/чки готовности в красный
                 setCircleColor(handLight, R.color.red)
                 false       //вернем что текущая рука убрана
@@ -158,16 +164,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         }
     }
 
-    var timerRunnable: Runnable = object : Runnable {
-        override fun run() {
-            //выводим время на экран
-            showTimerTime()
-            //и планируем зауск себя через 30 милисекунд
-            TimerHandler.postDelayed(this, 30)
-        }
-    }
-
-    var soundRunnable: Runnable = object : Runnable {
+    private var soundRunnable: Runnable = object : Runnable {
         override fun run() {
             spl.play(soundIdTick, 1F, 1F, 0, 0, 1F)
             TimerHandler.postDelayed(this, (60000/metronomTime).toLong())
@@ -176,38 +173,47 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
 
     private fun timerReset() {
         Log.v (DebugTag.TAG, "TimerUI timerReset")
-        stopTimer()
-        textTime.text = context.getString(R.string.begin_timer_text)
+        isTimerStart = false
+        isTimerReady = false
+        textTime.text = ctx.getString(R.string.begin_timer_text)
     }
 
-    fun stopTimer() {
+    private fun stopTimer() {
         Log.v (DebugTag.TAG, "TimerUI stopTimer")
         showTimerTime()
-        TimerHandler.removeCallbacks(timerRunnable)
-        TimerHandler.removeCallbacks(soundRunnable)
-        timerStart = false
-        timerReady = false
+        isTimerStart = false
+        isTimerReady = false
     }
 
     private fun startTimer() {
         Log.v (DebugTag.TAG, "TimerUI startTimer with metronomTime $metronomTime")
-        timerStart = true                      // поставили признак, что таймер запущен
-        timerReady = false                     // сняли "готовость" таймера
+        isTimerReady = false                     // сняли "готовость" таймера
         startTime = System.currentTimeMillis()
-        TimerHandler.post(timerRunnable)  //запускам хэндлер для отбражения времени, аналогично .postDelayed(timerRunnable, 0)
-//TODO сделать через корутины при помощи suspend startShowTimer
-//        startShowTimer()
-        if (metronomEnabled) {TimerHandler.post(soundRunnable)}  //запускам хэндлер для метронома
+        isTimerStart = true                      // поставили признак, что таймер запущен
+        startShowTime()                         // запускаем фоновое отображение времени в фоне
+        startMetronom()                         // запускаем метроном в фоне
     }
 
-
-    // через корутины Котлина, понятнее, чем через таймхендлеры
-    private suspend fun startShowTimer() {
-        do {
-            showTimerTime()   //обновляем время
-            delay( 30)  // раз в 30 милисекунд
+    private fun startShowTime () {
+        //Используя корутины Котлина, отображаем время таймера, пока isTimerStart не станет false
+        launch(UI) {
+            do {
+                showTimerTime()
+                delay(30)
+            } while (isTimerStart)
         }
-        while (timerStart)
+    }
+
+    private fun startMetronom() {
+        if (metronomEnabled) {
+            //Используя корутины Котлина, воспроизводим звук метронома, пока isTimerStart не станет false
+            launch(CommonPool) {
+                do {
+                    spl.play(soundIdTick, 1F, 1F, 0, 0, 1F)
+                    delay((60000/metronomTime).toLong())
+                } while (isTimerStart)
+            }
+        }
     }
 
     private fun showTimerTime() {
@@ -224,10 +230,10 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
 
     private fun getColorFromResources(colorRes:Int):Int {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            context.resources.getColor(colorRes,null)
+            ctx.resources.getColor(colorRes,null)
         } else {
             @Suppress("DEPRECATION")
-            context.resources.getColor(colorRes)
+            ctx.resources.getColor(colorRes)
         }
     }
 
@@ -287,7 +293,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                     val timeLayout = linearLayout {
                         backgroundColorResource = R.color.white
                         textTime = textView {
-                            text = context.getString(R.string.begin_timer_text)
+                            text = ctx.getString(R.string.begin_timer_text)
                             textSize = timerTextSize
                             padding = m
                             typeface = Typeface.MONOSPACE

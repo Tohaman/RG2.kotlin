@@ -15,6 +15,7 @@ import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.async
 import org.jetbrains.anko.*
 import org.jetbrains.anko.coroutines.experimental.bg
+import org.jetbrains.anko.custom.async
 import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.support.v4.alert
@@ -258,7 +259,8 @@ class FragmentScrambleGen : Fragment() {
         return Triple(solve,isEdgeMelted,isCornerMelted)
     }
 
-    private fun scrambleGenerate(chkEdgesBuffer: Boolean, chkCornersBuffer: Boolean, scrambleLength: Int) {
+
+    private suspend fun scrambleGenerate(chkEdgesBuffer: Boolean, chkCornersBuffer: Boolean, scrambleLength: Int) {
         Log.v(TAG, "FragmentScrambleGen scrambleGenerate")
         // делаем кнопку "Генерерировать" не активной, прогресбар активным и убираем решение скрамбла
         button_generate.isEnabled = false
@@ -266,15 +268,11 @@ class FragmentScrambleGen : Fragment() {
         progressText.visibility = View.VISIBLE
         textSolve.text = ""
         //запускаем в бэкграунде поиск скрамбла удовлетворяющего условиям
-        //TODO переписать без async-await используя нормальные корутины Котлина
-        async(UI) {
-            val data = bg {
-                // Выполняем в background, ключевое слово bg
-                generateScrambleWithParam(chkEdgesBuffer, chkCornersBuffer, scrambleLength)
-            }
-            // А этот код будет уже в UI потоке, отображаем результаты поиска
-            showScrambleGenResult(data.await())
+        val scramble = async(UI) {
+            generateScrambleWithParam(chkEdgesBuffer, chkCornersBuffer, scrambleLength)
         }
+        // ждем результат генерации и выводим его
+        showScrambleGenResult(scramble.await())
     }
 
     private fun showScrambleGenResult(genRes: String) {
