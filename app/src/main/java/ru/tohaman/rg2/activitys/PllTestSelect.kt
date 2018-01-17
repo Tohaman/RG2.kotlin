@@ -1,7 +1,6 @@
 package ru.tohaman.rg2.activitys
 
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -15,14 +14,14 @@ import ru.tohaman.rg2.adapters.MyListAdapter
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.fragments.FragmentListView
-import ru.tohaman.rg2.util.setMyTheme
+import ru.tohaman.rg2.util.getThemeFromSharedPreference
 
 class PllTestSelect : AppCompatActivity(), FragmentListView.OnListViewInteractionListener {
     private lateinit var fragListView: FragmentListView
     private lateinit var listPagers: ArrayList<ListPager>
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(setMyTheme(ctx))
+        setTheme(getThemeFromSharedPreference(ctx))
         super.onCreate(savedInstanceState)
         Log.v (DebugTag.TAG, "PLLTestSelect onCreate start")
         setContentView(R.layout.activity_test_select_pll)

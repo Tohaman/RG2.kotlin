@@ -2,12 +2,10 @@ package ru.tohaman.rg2.activitys
 
 import android.os.Bundle
 import android.app.Activity
-import android.graphics.drawable.Drawable
 import android.graphics.drawable.LayerDrawable
 import android.preference.PreferenceManager
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -16,7 +14,6 @@ import ru.tohaman.rg2.R
 
 import org.jetbrains.anko.ctx
 import org.jetbrains.anko.find
-import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.PLL_TEST_3SIDE
 import ru.tohaman.rg2.PLL_TEST_ROW_COUNT
 import ru.tohaman.rg2.data.ListPager
@@ -35,7 +32,7 @@ class PllTestGame : Activity() {
     private var is3side = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(setMyTheme(ctx))
+        setTheme(getThemeFromSharedPreference(ctx))
         super.onCreate(savedInstanceState)
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
         setContentView(R.layout.activity_pll_test_game)

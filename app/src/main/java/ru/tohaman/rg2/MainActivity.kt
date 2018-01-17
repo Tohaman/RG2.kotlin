@@ -1,8 +1,11 @@
 package ru.tohaman.rg2
 
+import android.app.Activity
+import android.app.ActivityManager
 import android.app.AlertDialog
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.design.widget.NavigationView
@@ -18,12 +21,10 @@ import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import org.jetbrains.anko.*
-import org.jetbrains.anko.design.snackbar
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.DebugTag.TAG
 import ru.tohaman.rg2.activitys.SlidingTabsActivity
 import ru.tohaman.rg2.fragments.*
-import android.content.SharedPreferences
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity(),
         NavigationView.OnNavigationItemSelectedListener,
         FragmentListView.OnListViewInteractionListener,
         FragmentScrambleGen.OnSrambleGenInteractionListener,
+        SharedPreferences.OnSharedPreferenceChangeListener,
         IabBroadcastReceiver.IabBroadcastListener {
 
     // Пробуем добавить платежи внутри программы https://xakep.ru/2017/05/23/android-in-apps/
@@ -70,15 +72,19 @@ class MainActivity : AppCompatActivity(),
     private lateinit var fragListView: FragmentListView
     private var backPressedTime: Long = 0
     lateinit private var mListPagerLab: ListPagerLab
-    private var curPhase: String = "BEGIN"
+    private var curPhase = "BEGIN"
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(setMyTheme(ctx))
+        setTheme(getThemeFromSharedPreference(ctx))
 
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         Log.v (TAG, "MainActivity ListPagerLab init")
         mListPagerLab = ListPagerLab.get(ctx)
+
+        // Регистрируем слушатель OnSharedPreferenceChangeListener (Изменеия в настройках)
+        val prefs = PreferenceManager.getDefaultSharedPreferences(ctx)
+        prefs.registerOnSharedPreferenceChangeListener(this)
 
         //Если повернули экран или вернулись в активность, то открываем ту фазу, которая была, иначе - берем данные из SharedPreference
         curPhase = if (savedInstanceState != null) {
@@ -126,6 +132,10 @@ class MainActivity : AppCompatActivity(),
 
         loadDataFromPlayMarket()
     }
+
+//    override fun onApplyThemeResource(theme: Resources.Theme, resId: Int, first: Boolean) {
+//        theme.applyStyle(getThemeFromSharedPreference(ctx), true)
+//    }
 
     private fun setFragment (fragment: Fragment) {
         val transaction : FragmentTransaction = supportFragmentManager.beginTransaction()
@@ -356,6 +366,16 @@ class MainActivity : AppCompatActivity(),
             curPhase = "AZBUKA"
         }
     }
+
+    // Слушаем изменения в настройках программы
+    override fun onSharedPreferenceChanged(sp: SharedPreferences, key: String?) {
+        //Если изменилась тема в настройках, то меняем ее в программе
+        if (key == "theme") {
+            Log.v(DebugTag.TAG, "Theme set to - ${sp.getString(key, "AppTheme")}")
+            this.recreate()
+        }
+    }
+
 
     //Далее все для покупок внутри приложения
 

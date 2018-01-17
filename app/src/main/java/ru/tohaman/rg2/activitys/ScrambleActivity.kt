@@ -9,12 +9,12 @@ import org.jetbrains.anko.toast
 import ru.tohaman.rg2.DebugTag.TAG
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.fragments.FragmentScrambleGen
-import ru.tohaman.rg2.util.setMyTheme
+import ru.tohaman.rg2.util.getThemeFromSharedPreference
 
 class ScrambleActivity : AppCompatActivity(), FragmentScrambleGen.OnSrambleGenInteractionListener  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(setMyTheme(ctx))
+        setTheme(getThemeFromSharedPreference(ctx))
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fragment)
         Log.v (TAG, "ScrambleActivity Start")

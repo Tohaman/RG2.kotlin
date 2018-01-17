@@ -64,7 +64,7 @@ fun getNameFromListPagers(ListPagers: List<ListPager>, i: Int): String =
             ListPagers[i].comment
         }
 
-fun setMyTheme (context: Context) : Int {
+fun getThemeFromSharedPreference(context: Context) : Int {
     Log.v(TAG, "SetActivityTheme")
     val sp = PreferenceManager.getDefaultSharedPreferences(context)
     val theme = sp.getString("theme", "AppTheme")
