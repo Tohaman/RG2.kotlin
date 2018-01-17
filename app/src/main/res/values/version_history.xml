@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="history">
+        Что нового в этой версии: \n\n
+
+        Предыдущие обновления: \n\n
+
+    </string>
+</resources>
