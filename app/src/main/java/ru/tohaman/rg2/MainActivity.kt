@@ -583,14 +583,14 @@ class MainActivity : AppCompatActivity(),
          * to see if it's correct! See verifyDeveloperPayload().
          */
 
-        // Do we have the premium upgrade?
+        // Пример пока нам ненужного функционала, поэтому закоментировал
         // Проверяем, платил ли пользователь уже 100руб.
-        val premiumPurchase = inventory.getPurchase(MEDIUM_DONATION)
-        mIsPremium = premiumPurchase != null && verifyDeveloperPayload(premiumPurchase)
-        Log.d(TAG, "User is " + if (mIsPremium) "PREMIUM" else "NOT PREMIUM")
-
-        // Проверяем платил ли 50 руб
-        val gasPurchase = inventory.getPurchase(SMALL_DONATION)
+//        val premiumPurchase = inventory.getPurchase(MEDIUM_DONATION)
+//        mIsPremium = premiumPurchase != null && verifyDeveloperPayload(premiumPurchase)
+//        Log.d(TAG, "User is " + if (mIsPremium) "PREMIUM" else "NOT PREMIUM")
+//
+//        // Проверяем платил ли 50 руб
+//        val gasPurchase = inventory.getPurchase(SMALL_DONATION)
 
         setWaitScreen(false)
         Log.d(TAG, "Initial inventory query finished; enabling main UI.")

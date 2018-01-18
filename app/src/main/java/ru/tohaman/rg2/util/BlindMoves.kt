@@ -7,17 +7,17 @@ package ru.tohaman.rg2.util
  */
 
 fun runScramble(cube: IntArray, scrm: String): IntArray {
-    var scrm = scrm
-    scrm = scrm.replace("'", "1")
-    scrm = scrm.replace("r", "Rw")
-    scrm = scrm.replace("l", "Lw")
-    scrm = scrm.replace("u", "Uw")
-    scrm = scrm.replace("d", "Dw")
-    scrm = scrm.replace("f", "Fw")
-    scrm = scrm.replace("b", "Bw")
-    val ArScrm = scrm.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-    for (i in ArScrm.indices) {
-        val hod = ArScrm[i]
+    var scrambleString = scrm
+    scrambleString = scrambleString.replace("'", "1")
+    scrambleString = scrambleString.replace("r", "Rw")
+    scrambleString = scrambleString.replace("l", "Lw")
+    scrambleString = scrambleString.replace("u", "Uw")
+    scrambleString = scrambleString.replace("d", "Dw")
+    scrambleString = scrambleString.replace("f", "Fw")
+    scrambleString = scrambleString.replace("b", "Bw")
+    val arrayOfScramble = scrambleString.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+    for (i in arrayOfScramble.indices) {
+        val hod = arrayOfScramble[i]
         when (hod) {
             "R" -> moveR(cube)
             "R1" -> moveRb(cube)
