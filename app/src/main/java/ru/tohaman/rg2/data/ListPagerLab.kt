@@ -49,44 +49,28 @@ class ListPagerLab private constructor(context: Context){
 
     //--------функции класса ----------------
 
-    private fun menuAdd(phase:String, titleArray:Int, iconArray:Int, context: Context, phaseArray:Int = 0){
-        val mTitles = context.resources.getStringArray(titleArray)
-        val resID = context.resources.obtainTypedArray(iconArray)
-        for (i in mTitles.indices) {
-            when (phaseArray) {
-                0 -> {listPagers.add(ListPager(phase, i, mTitles[i], resID.getResourceId(i, 0)))}
-                else -> {
-                    listPagers.add(ListPager(phase, i, mTitles[i], resID.getResourceId(i, 0), comment = context.resources.getStringArray(phaseArray)[i]))
-                }
-            }
-        }
-        resID.recycle()
-    }
-
     // Инициализация фазы, с заданными массивами Заголовков, Иконок, Описаний, ютуб-ссылок
     private fun phaseInit(phase: String, titleArray: Int, iconArray: Int, descrArray: Int, urlArray: Int, context: Context) {
-        val mTitles =  context.resources.getStringArray(titleArray)
-        val mIcon = context.resources.obtainTypedArray (iconArray)
-        val mDescr = context.resources.obtainTypedArray (descrArray)
-        val mUrl = context.resources.getStringArray(urlArray)
-        for (i in mTitles.indices) {
-            var mListPager = mDatabase.getListPagerFromBase(i, phase)
-            if (mListPager == null) {
-                mListPager = ListPager(phase, i, mTitles[i], mIcon.getResourceId(i, 0), mDescr.getResourceId(i, 0), mUrl[i])
-                mDatabase.addListPager2Base(mListPager)
+        val titles =  context.resources.getStringArray(titleArray)
+        val icon = context.resources.obtainTypedArray (iconArray)
+        val descr = context.resources.obtainTypedArray (descrArray)
+        val url = context.resources.getStringArray(urlArray)
+        for (i in titles.indices) {
+            var listPager = mDatabase.getListPagerFromBase(i, phase)
+            if (listPager == null) {
+                listPager = ListPager(phase, i, titles[i], icon.getResourceId(i, 0), descr.getResourceId(i, 0), url[i])
+                mDatabase.addListPager2Base(listPager)
             } else {
-                mListPager.title = mTitles[i]
-                mListPager.icon= mIcon.getResourceId(i,0)
-                mListPager.description = mDescr.getResourceId(i,0)
-                mListPager.url = mUrl[i]
+                listPager.title = titles[i]
+                listPager.icon= icon.getResourceId(i,0)
+                listPager.description = descr.getResourceId(i,0)
+                listPager.url = url[i]
             }
-            listPagers.add(mListPager)
+            listPagers.add(listPager)
         }
-        mIcon.recycle()
-        mDescr.recycle()
+        icon.recycle()
+        descr.recycle()
     }
-
-
 
     //возвращает из ListPagerLab список ListPager'ов с заданной фазой (все записи для данной фазы)
     fun getPhaseList(phase: String): ArrayList<ListPager> {
@@ -95,15 +79,25 @@ class ListPagerLab private constructor(context: Context){
 
     //возвращает из ListPagerLab один ListPager с заданными фазой и номером
     fun getPhaseItem(id: Int, phase: String): ListPager {
-        var mPagerList = ListPager("", 0, "", 0)
+        var listPager = ListPager("", 0, "", 0)
 
-        for (listPager in listPagers) {
-            if ((phase == listPager.phase) and (id == listPager.id)) {
-                mPagerList = listPager
-            }
-        }
-        return mPagerList
+        listPagers
+                .filter { (phase == it.phase) and (id == it.id) }
+                .forEach { listPager = it }
+        return listPager
     }
+
+    //возвращает из ListPagerLab один ListPager с заданными фазой и title
+    fun getPhaseItemByTitle(phase: String, title: String): ListPager {
+        var pagerList = ListPager("", 0, "", 0)
+
+        listPagers
+                .asSequence()
+                .filter { (phase == it.phase) and (title == it.title) }
+                .forEach { pagerList = it }
+        return pagerList
+    }
+
 
     fun getMaximAzbuka(): Array<String> =  arrayOf(
             "М","Л","Л",

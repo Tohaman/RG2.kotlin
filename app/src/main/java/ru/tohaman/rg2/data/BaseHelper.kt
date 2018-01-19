@@ -2,6 +2,7 @@ package ru.tohaman.rg2.data
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
+import android.provider.SyncStateContract.Helpers.update
 import org.jetbrains.anko.ctx
 import org.jetbrains.anko.db.*
 
@@ -75,9 +76,9 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
         curCursor.use { cursor ->
             if (cursor.count != 0) {
                 cursor.moveToFirst()
-                listPager = ListPager(cursor.getString(cursor.getColumnIndex(PHASE)),
-                        cursor.getInt(cursor.getColumnIndex(ID)),
-                        cursor.getString(cursor.getColumnIndex(COMMENT))
+                listPager = ListPager(phase = cursor.getString(cursor.getColumnIndex(PHASE)),
+                        id = cursor.getInt(cursor.getColumnIndex(ID)),
+                        comment = cursor.getString(cursor.getColumnIndex(COMMENT))
                 )
             }
         }
@@ -93,9 +94,9 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
 
     fun updateListPagerInBase(listPager: ListPager) {
         this.writableDatabase.update(TABLE_NAME,
-                PHASE to listPager.phase,
-                ID to listPager.id,
                 COMMENT to listPager.comment)
+                .whereSimple("PHASE = ? AND ID = ?", listPager.phase, listPager.id.toString())
+                .exec()
     }
 
 

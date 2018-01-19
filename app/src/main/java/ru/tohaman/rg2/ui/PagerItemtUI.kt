@@ -6,6 +6,7 @@ import android.text.method.LinkMovementMethod
 import android.view.Gravity
 import android.widget.LinearLayout
 import org.jetbrains.anko.*
+import org.jetbrains.anko.sdk15.coroutines.onClick
 import ru.tohaman.rg2.R
 
 /**
@@ -77,7 +78,7 @@ class PagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
                     textView {
                         id = Ids.commentText
                         textSize = 16f
-                        text = "Свой комментарий:"
+                        text = ctx.getString(R.string.commentText)
                     }.lparams(matchParent, wrapContent) {setMargins(0.dp, 8.dp, 0.dp, 32.dp)}
 
                 }.lparams(matchParent, wrapContent) {setMargins(16.dp, 0.dp, 16.dp, 0.dp)}
@@ -86,13 +87,13 @@ class PagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
     }
 
     object Ids {
-        val pagerTitleText = 1
-        val pagerImageView = 2
-        val descriptionText = 3
-        val ytThumbnailView = 5
-        val commentText = 6
-        val youTubeLayout = 7
-        val youTubeTextView = 8
-        val icPlayPreview = 9
+        const val pagerTitleText = 1
+        const val pagerImageView = 2
+        const val descriptionText = 3
+        const val ytThumbnailView = 5
+        const val commentText = 6
+        const val youTubeLayout = 7
+        const val youTubeTextView = 8
+        const val icPlayPreview = 9
     }
 }

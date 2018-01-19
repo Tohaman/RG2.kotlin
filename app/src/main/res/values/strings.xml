@@ -46,5 +46,6 @@
     <string name="settings">Настройки</string>
     <string name="fiveStarButtonText">Оценить приложение в GooglePlay</string>
     <string name="content_description_app_loading_image">Пожалуйста подождите</string>
+    <string name="commentText">Свой комментарий: </string>
 
 </resources>

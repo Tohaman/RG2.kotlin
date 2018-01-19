@@ -19,8 +19,10 @@ import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubeStandalonePlayer
 import com.google.android.youtube.player.YouTubeThumbnailLoader
 import com.google.android.youtube.player.YouTubeThumbnailView
-import org.jetbrains.anko.AnkoContext
-import org.jetbrains.anko.imageResource
+import org.jetbrains.anko.*
+import org.jetbrains.anko.sdk15.coroutines.onClick
+import org.jetbrains.anko.sdk25.coroutines.onItemClick
+import org.jetbrains.anko.support.v4.alert
 import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.toast
 import org.jetbrains.anko.support.v4.withArguments
@@ -28,9 +30,12 @@ import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.DeveloperKey.DEVELOPER_KEY
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.VIDEO_PREVIEW
+import ru.tohaman.rg2.adapters.MyListAdapter
 import ru.tohaman.rg2.data.ListPager
+import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.ui.PagerItemtUI
 import ru.tohaman.rg2.util.spannedString
+import java.util.ArrayList
 
 class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener {
     // Константы для YouTubePlayer
@@ -46,9 +51,12 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         val view = PagerItemtUI<Fragment>().createView(AnkoContext.create(context, this))
 
         //Данные во фрагмент передаются через фабричный метод newInstance данного фрагмента
+        //TODO переделать на передачу через uri
+        val phase = arguments.getString("phase")
         val message = arguments.getString("title")
         val topImage = arguments.getInt("topImage")
         val description = arguments.getInt("desc")
+        val comment  = arguments.getString("comment")
         url = arguments.getString("url")
 
         var text = "<html><body style=\"text-align:justify\"> %s </body></html>"
@@ -78,6 +86,28 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
             showYouTubePreview(thumbnailView, ytTextView, playPreviewImage)
         } else {
             hideYouTubePreview(thumbnailView, ytTextView, playPreviewImage)  //скрыть превью, отобразить текстовой ссылкой
+        }
+
+        val commentText = view.findViewById<TextView>(PagerItemtUI.Ids.commentText)
+        commentText.text = (ctx.getString(R.string.commentText) + " " + comment)
+        commentText.onClick {
+            alert {
+                customView {
+                    val editTxt = editText {
+                        text = comment
+                    }
+                    positiveButton("OK") {
+                        //TODO обновить коммент в базе
+                        val lpLab = ListPagerLab.get(ctx)
+                        val lps = lpLab.getPhaseItemByTitle(phase, message)
+                        val cmnt = editTxt.text.toString()
+                        lps.comment = cmnt
+                        lpLab.updateListPager(lps)
+                        commentText.text = (ctx.getString(R.string.commentText) + " " + cmnt)
+                    }
+                    negativeButton("Отмена") {}
+                }
+            }.show()
         }
 
         return view
@@ -163,10 +193,12 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
     companion object {
         fun newInstance(lp: ListPager): FragmentPagerItem {
-            return FragmentPagerItem().withArguments("title" to lp.title,
+            return FragmentPagerItem().withArguments("phase" to lp.phase,
+                    "title" to lp.title,
                     "topImage" to lp.icon,
                     "desc" to lp.description,
-                    "url" to lp.url)
+                    "url" to lp.url,
+                    "comment" to lp.comment)
         }
     }
 }
