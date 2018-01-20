@@ -231,8 +231,13 @@
         часовой. Т.е. низ против часовой, правую вниз, верх против часовой, правую вверх,
         низ по часовой, правую вниз, верх по часовой, правую вверх.
         <p style="text-align:center"><img src="vaccel_9_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rg2://ytplay?time=7:36&link=gbuLeCv_fRM">на видео 7:36</a> <br/>
-        <b>Алгоритм: D\' R\' U\' R D R\' U R </b>
+        Фингертрикс: <a href="rg2://ytplay?time=7:36&link=gbuLeCv_fRM">на видео 7:36</a><br/>
+        <b>Алгоритм: x (D\' R\') U\' R (D R\') U R x\'</b><br/><br/>
+
+        Но есть способ лучше. Изначально держать кубик так же, но НЕ наклонять.<br/>
+        Фингертрикс: <a href="rg2://ytplay?time=1:31&link=VLwoXOWd0Pc">от Максима</a><br/>
+        Фингертрикс: <a href="rg2://ytplay?time=1:00&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
+        <b>Алгоритм: F\' (Rw U R\' U\') (Rw\' F R)</b><br/><br/>
     ]]></string>
     <string name="accel_st9_url">ICMhcSF54OM</string>
 

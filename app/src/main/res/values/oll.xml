@@ -1205,14 +1205,12 @@
     <string name="oll_st56_title">#56 Носик</string>
     <string name="oll_st56_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
-        <p>Ситуация знакомая по <b>Ускорению N9</b>. Очень похоже на Ушки: Последний ход Ушек (Из Лондона),
-        и Ушки без последнего хода.<br/><p>
+        <p>Ситуация знакомая по <b>Ускорению N9</b>. Но можно выполнить удобнее и быстрее, чем в ускорении.
+        Так же взять глазиком к себе справа, но никуда наклонять не нужно. Очень удобный и быстрый алгоритм.<br/><p>
         <p style="text-align:center"><img src="voll_56_1.xml" width="60%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=1:31&link=VLwoXOWd0Pc">на видео 1:31</a><br/>
-        <b>Алгоритм: F\' (Rw U R\' U\') (Rw\' F R)</b><br/><br/>
-        <p style="text-align:center"><img src="voll_56_2.xml" width="60%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=1:00&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
-        <b>Алгоритм: (R\' F R B\') (R\' F\' R B)</b><br/><br/>
+        <b>Алгоритм: F\' (Rw U R\' U\') (Rw\' F R)</b><br/><br/>
         <b>Как смоделировать</b>: Выполнить <a href="rg2://ytplay?time=1:59&link=VLwoXOWd0Pc">Ушки.</a>
         ]]></string>
     <string name="oll_st56_url">VLwoXOWd0Pc</string>
