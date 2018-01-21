@@ -260,7 +260,7 @@
         <p style="text-align:center"><img src="vpll_8_1.xml" width="60%%"></p>
         Одним двойным блоком к себе, другим справа. 2 хода (в Лондон, включили свет), потом последние 7 ходов Запада, пиф-паф и английский пиф-паф. <br/>
         Фингертрикс: <a href="rg2://ytplay?time=9:35&link=B3iSPvlr7PA">на видео 9:35</a> <br/>
-        <b>Алгоритм: (F R) (U\' R\' U\' R U R\' F\') (R U R\' U\') (R\' F R F\') </b>
+        <b>Алгоритм: (F R) (U\' R\' U\' R U R\' F\') (R U R\' U\') (R\' F R F\')</b>
     ]]></string>
     <string name="pll_st8_url">B3iSPvlr7PA</string>
 

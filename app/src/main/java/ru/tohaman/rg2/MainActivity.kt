@@ -248,7 +248,7 @@ class MainActivity : AppCompatActivity(),
                         alert(getString(R.string.help_blank)) { okButton { } }.show()
                     }
                     "ABOUT" -> {
-                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                        alert(getString(R.string.history)) { okButton { } }.show()
                     }
                   }
                 return true}
