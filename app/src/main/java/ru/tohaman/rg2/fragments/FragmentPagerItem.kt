@@ -7,12 +7,14 @@ import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
+import android.text.Editable
 import android.text.Html
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.google.android.youtube.player.YouTubeInitializationResult
@@ -59,10 +61,10 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         val comment  = arguments.getString("comment")
         url = arguments.getString("url")
 
-        var text = "<html><body style=\"text-align:justify\"> %s </body></html>"
+        var textString = "<html><body style=\"text-align:justify\"> %s </body></html>"
         val st = getString(description)
-        text = String.format(text, st)
-        val spanText = spannedString(text, imgGetter)
+        textString = String.format(textString, st)
+        val spanText = spannedString(textString, imgGetter)
 
         (view.findViewById(PagerItemtUI.Ids.pagerTitleText) as TextView).text = message
         (view.findViewById(PagerItemtUI.Ids.pagerImageView) as ImageView).imageResource = topImage
@@ -93,19 +95,26 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         commentText.onClick {
             alert {
                 customView {
-                    val editTxt = editText {
-                        text = comment
+                    linearLayout {
+                        orientation = LinearLayout.VERTICAL
+                        textView {
+                            textResource = R.string.commentText
+                            textSize = 18F
+                        }
+                        val editTxt = editText {
+
+                        }
+
+                        positiveButton("OK") {
+                            val lpLab = ListPagerLab.get(ctx)
+                            val lps = lpLab.getPhaseItemByTitle(phase, message)
+                            val cmnt = editTxt.text.toString()
+                            lps.comment = cmnt
+                            lpLab.updateListPager(lps)
+                            commentText.text = (ctx.getString(R.string.commentText) + " " + cmnt)
+                        }
+                        negativeButton("Отмена") {}
                     }
-                    positiveButton("OK") {
-                        //TODO обновить коммент в базе
-                        val lpLab = ListPagerLab.get(ctx)
-                        val lps = lpLab.getPhaseItemByTitle(phase, message)
-                        val cmnt = editTxt.text.toString()
-                        lps.comment = cmnt
-                        lpLab.updateListPager(lps)
-                        commentText.text = (ctx.getString(R.string.commentText) + " " + cmnt)
-                    }
-                    negativeButton("Отмена") {}
                 }
             }.show()
         }
@@ -193,6 +202,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
     companion object {
         fun newInstance(lp: ListPager): FragmentPagerItem {
+            //TODO сделать передачу через uri
             return FragmentPagerItem().withArguments("phase" to lp.phase,
                     "title" to lp.title,
                     "topImage" to lp.icon,

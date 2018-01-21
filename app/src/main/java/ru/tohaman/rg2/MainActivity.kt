@@ -233,7 +233,7 @@ class MainActivity : AppCompatActivity(),
                         alert(getString(R.string.help_timer)) { okButton { } }.show()
                     }
                     "SCRAMBLEGEN" -> {
-                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                        alert(getString(R.string.help_scramble_gen)) { okButton { } }.show()
                     }
                     "TESTPLL" -> {
                         alert(getString(R.string.help_blank)) { okButton { } }.show()
