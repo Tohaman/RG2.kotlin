@@ -58,7 +58,7 @@
         <item>@string/begin_st9_url</item>
     </string-array>
 
-    <string name="begin_st0_title">Обязательно к прочтению!</string>
+    <string name="begin_st0_title">Читать обязательно!</string>
     <string name="begin_st0_descr" formatted="false"><![CDATA[
         <p>Здравствуйте, если вы уже умеете или когда-то учились собирать кубик Рубика, то обязательно
         прочтите этот текст до конца.</p>
