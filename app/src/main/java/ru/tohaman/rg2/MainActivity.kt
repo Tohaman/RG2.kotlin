@@ -278,9 +278,19 @@ class MainActivity : AppCompatActivity(),
                         alert(getString(R.string.help_blank)) { okButton { } }.show()
                     }
                     "ABOUT" -> {
-                        alert(getString(R.string.history)) { okButton { } }.show()
+                        alert {
+                            customView {
+                                scrollView {
+                                    textView {
+                                        text = getString(R.string.history)
+                                        textSize = 12F
+                                    }.lparams() {margin = dip (8)}
+                                }
+                            }
+                            okButton { }
+                        }.show()
                     }
-                  }
+                }
                 return true}
             else -> return super.onOptionsItemSelected(item)
         }
