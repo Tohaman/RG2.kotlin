@@ -34,7 +34,6 @@
         <item>@string/begin4_st8_descr</item>
     </string-array>
 
-
     <string-array name="begin4_url">
         <item>@string/begin4_st1_url</item>
         <item>@string/begin4_st2_url</item>
