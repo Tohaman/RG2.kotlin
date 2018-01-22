@@ -28,10 +28,10 @@
             android:id="@+id/blind_acc"
             android:icon="@drawable/ic_icon3"
             android:title="@string/blind_acc_3x3"/>
-        <!--<item-->
-            <!--android:id="@+id/begin4x4"-->
-            <!--android:icon="@drawable/ic_icon4"-->
-            <!--android:title="@string/begin_4x4"/>-->
+        <item
+            android:id="@+id/begin4x4"
+            android:icon="@drawable/ic_icon4"
+            android:title="@string/begin_4x4"/>
         <item
             android:id="@+id/timer"
             android:icon="@drawable/ic_menu_timer"

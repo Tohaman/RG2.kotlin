@@ -6,19 +6,15 @@
         <item>@string/begin4_st2_title</item>
         <item>@string/begin4_st3_title</item>
         <item>@string/begin4_st4_title</item>
-        <item>@string/begin4_st5a_title</item>
-        <item>@string/begin4_st5b_title</item>
+        <item>@string/begin4_st5_title</item>
         <item>@string/begin4_st6_title</item>
         <item>@string/begin4_st7_title</item>
         <item>@string/begin4_st8_title</item>
-        <item>@string/begin4_st9_title</item>
     </string-array>
 
     <integer-array name="begin4_icon">
-        <item>@drawable/main4x4</item>
-        <item>@drawable/main4x4</item>
-        <item>@drawable/main4x4</item>
-        <item>@drawable/main4x4</item>
+        <item>@drawable/v4x4_begin_1</item>
+        <item>@drawable/v4x4_begin_2</item>
         <item>@drawable/main4x4</item>
         <item>@drawable/main4x4</item>
         <item>@drawable/main4x4</item>
@@ -32,12 +28,10 @@
         <item>@string/begin4_st2_descr</item>
         <item>@string/begin4_st3_descr</item>
         <item>@string/begin4_st4_descr</item>
-        <item>@string/begin4_st5a_descr</item>
-        <item>@string/begin4_st5b_descr</item>
+        <item>@string/begin4_st5_descr</item>
         <item>@string/begin4_st6_descr</item>
         <item>@string/begin4_st7_descr</item>
         <item>@string/begin4_st8_descr</item>
-        <item>@string/begin4_st9_descr</item>
     </string-array>
 
 
@@ -46,85 +40,66 @@
         <item>@string/begin4_st2_url</item>
         <item>@string/begin4_st3_url</item>
         <item>@string/begin4_st4_url</item>
-        <item>@string/begin4_st5a_url</item>
-        <item>@string/begin4_st5b_url</item>
+        <item>@string/begin4_st5_url</item>
         <item>@string/begin4_st6_url</item>
         <item>@string/begin4_st7_url</item>
         <item>@string/begin4_st8_url</item>
-        <item>@string/begin4_st9_url</item>
     </string-array>
     
-    <string name="begin4_st1_title">Этап 1. Основные отличия от 3х3</string>
+    <string name="begin4_st1_title">Этап 1. Первый центр. Основные отличия от 3х3.</string>
     <string name="begin4_st1_descr" formatted="false"><![CDATA[
-        <p>Существует несколько методов сборки кубика Рубика для начинающих.
-        <a href="rg2://ytplay?time=8:16&link=ku-FyZvD48Q"><b>пиф-паф</b>.</a>
+        <p>Текстовое описание данного этапа будет добавлено в ближайших версиях программы.
         </p>
     ]]></string>
-    <string name="begin4_st1_url">ku-FyZvD48Q</string>
+    <string name="begin4_st1_url">wRXrnadvnq8</string>
 
-    <string name="begin4_st2_title">Этап 2. Нижний крест</string>
+    <string name="begin4_st2_title">Этап 2. Второй центр</string>
     <string name="begin4_st2_descr" formatted="false"><![CDATA[
-        <p>На данном этапе обращаем внимание только на <b>ребра</b> кубика,
-        <a href="rg2://ytplay?time=8:16&link=ku-FyZvD48Q"><b>пиф-паф</b>.</a>
+        <p>Текстовое описание данного этапа будет добавлено в ближайших версиях программы.
         </p>
     ]]></string>
-    <string name="begin4_st2_url"></string>
+    <string name="begin4_st2_url">kWb3UTTjpjE</string>
 
-    <string name="begin4_st3_title">Этап 3. Правильный крест</string>
+    <string name="begin4_st3_title">Этап 3. Третий центр</string>
     <string name="begin4_st3_descr" formatted="false"><![CDATA[
-        <p>Теперь надо совместить ребра со своими центрами. Договоримся,
+        <p>Текстовое описание данного этапа будет добавлено в ближайших версиях программы.
         </p>
     ]]></string>
-    <string name="begin4_st3_url"></string>
+    <string name="begin4_st3_url">vgNvoLBI_c4</string>
 
-    <string name="begin4_st4_title">Этап 4. Первый (нижний) слой</string>
+    <string name="begin4_st4_title">Этап 4. Четвертый центр</string>
     <string name="begin4_st4_descr" formatted="false"><![CDATA[
-        <p>На этом этапе ставим на место углы выбранной на первом этапе стороны.
+        <p>Текстовое описание данного этапа будет добавлено в ближайших версиях программы.
         </p>
     ]]></string>
-    <string name="begin4_st4_url"></string>
+    <string name="begin4_st4_url">s8PaTn-YaPg</string>
 
-    <string name="begin4_st5a_title">Этап 5а. Два нижних слоя (Ромашки)</string>
-    <string name="begin4_st5a_descr" formatted="false"><![CDATA[
-        <p>На этом этапе занимаемся ребрами которые должны находится на
+    <string name="begin4_st5_title">Этап 5. Пятый и шестой центры</string>
+    <string name="begin4_st5_descr" formatted="false"><![CDATA[
+        <p>Текстовое описание данного этапа будет добавлено в ближайших версиях программы.
         </p>
     ]]></string>
-    <string name="begin4_st5a_url"></string>
+    <string name="begin4_st5_url">t3fXlAw3q08</string>
 
-    <string name="begin4_st5b_title">Этап 5б. Два нижних слоя (Желтый одуванчик)</string>
-    <string name="begin4_st5b_descr" formatted="false"><![CDATA[
-        <p>Если на третьем этаже (крыше) все ребра с наклейками с цветом крыши,
-        </p>
-    ]]></string>
-    <string name="begin4_st5b_url"></string>
-
-    <string name="begin4_st6_title">Этап 6. Верхний крест (Оружие)</string>
+    <string name="begin4_st6_title">Этап 6. Ребра</string>
     <string name="begin4_st6_descr" formatted="false"><![CDATA[
-        <p>И снова занимаемся ребрами, но уже ребрами цвета крыши.
+        <p>Текстовое описание данного этапа будет добавлено в ближайших версиях программы.
         </p>
     ]]></string>
-    <string name="begin4_st6_url"></string>
+    <string name="begin4_st6_url">G0QoKgkXC4s</string>
 
-    <string name="begin4_st7_title">Этап 7. Красим крышу</string>
+    <string name="begin4_st7_title">Этап 7. Предатель</string>
     <string name="begin4_st7_descr" formatted="false"><![CDATA[
-        <p>А теперь займемся углами и сделаем всю крышу одного цвета (покрасим ее),
+        <p>Текстовое описание данного этапа будет добавлено в ближайших версиях программы.
         </p>
     ]]></string>
-    <string name="begin4_st7_url"></string>
+    <string name="begin4_st7_url">w4kdRGrGrHM</string>
 
-    <string name="begin4_st8_title">Этап 8. Ставим грани (Убийство в Лондоне)</string>
+    <string name="begin4_st8_title">Этап 8. Шпион</string>
     <string name="begin4_st8_descr" formatted="false"><![CDATA[
-        <p>Теперь расставим на свои места ребра на верхней грани (сделаем верхний
+        <p>Текстовое описание данного этапа будет добавлено в ближайших версиях программы.
         </p>
     ]]></string>
-    <string name="begin4_st8_url"></string>
-
-    <string name="begin4_st9_title">Этап 9. Треугольники (Инфаркт)</string>
-    <string name="begin4_st9_descr" formatted="false"><![CDATA[
-        <p>Ну и на последнем этапе мы ставим на место углы верхней грани (крыши).
-        </p>
-    ]]></string>
-    <string name="begin4_st9_url"></string>
-
+    <string name="begin4_st8_url">1BXrRXQ0alg</string>
 
 </resources>

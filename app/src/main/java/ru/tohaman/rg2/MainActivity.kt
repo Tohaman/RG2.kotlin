@@ -273,7 +273,7 @@ class MainActivity : AppCompatActivity(),
 
             R.id.blind_acc -> { setListFragmentPhase("BLINDACC") }
 
-//            R.id.begin4x4 -> { setListFragmentPhase("BEGIN4X4")}
+            R.id.begin4x4 -> { setListFragmentPhase("BEGIN4X4")}
 
             R.id.timer -> {
                 setFragment(FragmentTimerSettings.newInstance())
