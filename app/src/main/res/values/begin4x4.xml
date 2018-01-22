@@ -15,12 +15,12 @@
     <integer-array name="begin4_icon">
         <item>@drawable/v4x4_begin_1</item>
         <item>@drawable/v4x4_begin_2</item>
-        <item>@drawable/main4x4</item>
-        <item>@drawable/main4x4</item>
-        <item>@drawable/main4x4</item>
-        <item>@drawable/main4x4</item>
-        <item>@drawable/main4x4</item>
-        <item>@drawable/main4x4</item>
+        <item>@drawable/v4x4_begin_3</item>
+        <item>@drawable/v4x4_begin_4</item>
+        <item>@drawable/v4x4_begin_5</item>
+        <item>@drawable/v4x4_begin_6</item>
+        <item>@drawable/v4x4_begin_7</item>
+        <item>@drawable/v4x4_begin_8</item>
     </integer-array>
     
     <string-array name="begin4_descr">
@@ -48,8 +48,16 @@
     
     <string name="begin4_st1_title">Этап 1. Первый центр. Основные отличия от 3х3.</string>
     <string name="begin4_st1_descr" formatted="false"><![CDATA[
-        <p>Текстовое описание данного этапа будет добавлено в ближайших версиях программы.
-        </p>
+        <p>Для начала немного об особенностях кубика 4х4.
+        Прежде всего кубик 4х4 (как и любой четный кубик) не имеет центров (2:30) - это первая проблема.
+        Вторая проблема в том, что \"этажей\" в нем не 3, а 4 и собирать их надо не в таком же порядке,
+        как и для 3х3 (хотя теоретически это сделать возможно).</p>
+
+        Первое время, очень неплохо будет иметь под рукой собранный кубик 3х3.
+
+        И как было уже сказано, поскольку центров на этом кубике нет, то первое, что нужно сделать это
+        не собрать крест (4:27), а собрать хотя бы один центр. Центр в данном кубике состоит из четырех элементов.
+
     ]]></string>
     <string name="begin4_st1_url">wRXrnadvnq8</string>
 
