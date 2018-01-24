@@ -99,6 +99,33 @@ class MainActivity : AppCompatActivity(),
         Log.v (TAG, "MainActivity CreateView")
         setContentView(R.layout.activity_main)
 
+        //номер текущей версии программы
+        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
+        var version = sp.getInt("version", 1)
+        val curVersion = BuildConfig.VERSION_CODE
+
+        //Увеличиваем счетчик запусков программы
+        var count = sp.getInt("startcount", 0)
+        // Увеличиваем число запусков программы на 1 и сохраняем результат.
+        count++
+        //если это первый запуск
+        if (count == 1) {
+            //выводим окно с приветствием
+            alert(getString(R.string.first_start)) { okButton { } }.show()
+            //и отменяем вывод окна что нового в данной версии
+            version = curVersion
+            curPhase = "BEGIN"
+            saveInt2SP(curVersion,"version",ctx)
+        }
+        saveInt2SP(count,"startcount",ctx)
+
+        // проверяем версию программы в файле настроек, если она отлична от текущей, то выводим окно с описанием обновлений
+        if (curVersion != version) { //если версии разные
+            alert(getString(R.string.whatsnew)) { okButton { } }.show()
+            saveInt2SP(curVersion,"version",ctx)
+        }
+
+
         fragListView = FragmentListView.newInstance("BEGIN")
         when (curPhase) {
             "TIMER" -> {setFragment(FragmentTimerSettings.newInstance())}
@@ -132,31 +159,6 @@ class MainActivity : AppCompatActivity(),
                 this, drawer_layout, maintoolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
-
-        //номер текущей версии программы
-        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
-        var version = sp.getInt("version", 1)
-        val curVersion = BuildConfig.VERSION_CODE
-
-        //Увеличиваем счетчик запусков программы
-        var count = sp.getInt("startcount", 0)
-        // Увеличиваем число запусков программы на 1 и сохраняем результат.
-        count++
-        //если это первый запуск
-        if (count == 1) {
-            //выводим окно с приветствием
-            alert(getString(R.string.first_start)) { okButton { } }.show()
-            //и отменяем вывод окна что нового в данной версии
-            version = curVersion
-            saveInt2SP(curVersion,"version",ctx)
-        }
-        saveInt2SP(count,"startcount",ctx)
-
-        // проверяем версию программы в файле настроек, если она отлична от текущей, то выводим окно с описанием обновлений
-        if (curVersion != version) { //если версии разные
-            alert(getString(R.string.whatsnew)) { okButton { } }.show()
-            saveInt2SP(curVersion,"version",ctx)
-        }
 
         //Для данной программы не актуально, т.к. пользователь ничего в программе по сути не покупает
         //но если бы нужно было отключение рекламы, то данный вызов обязателен
