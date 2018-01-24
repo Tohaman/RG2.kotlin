@@ -220,4 +220,24 @@
         android:strokeWidth="3.77952743"
         android:strokeLineJoin="miter"
         android:strokeAlpha="1"/>
+    <path
+        android:pathData="m322,1916c48,97 97,194 145,291 4,-33 17,-63 36,-89L1807,3348c-24,20 -54,35 -86,40 100,44 200,85 299,128 -48,-97 -97,-194 -145,-291 -4,33 -17,63 -36,89L535,2084c24,-20 54,-35 86,-40 -100,-44 -200,-85 -299,-128z"
+        android:strokeLineCap="butt"
+        android:fillAlpha="1"
+        android:fillType="nonZero"
+        android:strokeColor="#00000000"
+        android:fillColor="#000000"
+        android:strokeWidth="3.77952743"
+        android:strokeLineJoin="miter"
+        android:strokeAlpha="1"/>
+    <path
+        android:pathData="m685,2529c-104,33 -207,67 -310,100 100,42 200,83 301,125 -18,-28 -29,-59 -31,-91l1103,44c-5,31 -18,61 -39,87 104,-33 207,-67 310,-100 -100,-42 -200,-83 -301,-125 18,28 29,59 31,91l-1103,-44c5,-31 18,-61 39,-87z"
+        android:strokeLineCap="butt"
+        android:fillAlpha="1"
+        android:fillType="nonZero"
+        android:strokeColor="#00000000"
+        android:fillColor="#000000"
+        android:strokeWidth="3.77952743"
+        android:strokeLineJoin="miter"
+        android:strokeAlpha="1"/>
 </vector>
