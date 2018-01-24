@@ -13,7 +13,7 @@
     <path android:fillColor="@color/c_gr" android:pathData="M2459,1100l445,-155l497,185l-436,164z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M3050,896l407,-141l495,166l-410,156z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M1227,1097l508,-171l436,168l-513,179z"/>
-    <path android:fillColor="@color/c_lgr" android:pathData="M1883,878l437,-146l435,160l-441,154z"/>
+    <path android:fillColor="@color/c_gr" android:pathData="M1883,878l437,-146l435,160l-441,154z"/>
     <path android:fillColor="@color/c_b" android:pathData="M2469,682l381,-129l447,150l-396,139z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M3004,503l317,-105l462,137l-331,117z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M711,888l509,-157l367,142l-502,168z"/>
@@ -35,7 +35,7 @@
     <path android:fillColor="@color/c_b" android:pathData="M644,1737l408,181l21,663l-398,-195z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M162,1521l383,171l30,643l-369,-181z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M1735,3013l536,269l3,608l-528,-285z"/>
-    <path android:fillColor="@color/c_lgr" android:pathData="M1170,2735l466,235l9,573l-457,-249z"/>
+    <path android:fillColor="@color/c_gr" android:pathData="M1170,2735l466,235l9,573l-457,-249z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M680,2495l397,198l15,548l-388,-210z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M212,2265l368,182l25,528l-357,-193z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M1192,3406l455,251l8,541l-448,-268z"/>
@@ -58,4 +58,6 @@
     <path android:fillColor="@color/c_gr" android:pathData="M4107,2429l378,-194l-23,589l-380,198z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M2973,3709l486,-256l-7,515l-489,276z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M3556,3400l424,-218l-15,494l-419,236z"/>
+
+    <path android:fillColor="@color/c_w" android:pathData="M1500,645C1527,664 1547,688 1561,716C1371,776 1228,816 1119,859C975,916 888,982 844,1102C801,1222 797,1392 804,1666C811,1939 828,2317 831,2850L878,2849C875,2316 857,1937 850,1665C844,1392 849,1225 888,1118C927,1010 997,957 1136,902C1242,861 1385,820 1576,760C1583,792 1582,825 1572,857L1772,697C1773,696 1774,696 1775,696L1775,695L1826,653L1760,652L1760,652C1760,652 1760,652 1760,652L1500,645z"/>
 </vector>
