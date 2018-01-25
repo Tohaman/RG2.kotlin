@@ -37,6 +37,12 @@
         <item>@string/basic_st34_title</item>
         <item>@string/basic_st35_title</item>
         <item>@string/basic_st36_title</item>
+        <item>@string/basic_st37_title</item>
+        <item>@string/basic_st38_title</item>
+        <item>@string/basic_st39_title</item>
+        <item>@string/basic_st40_title</item>
+        <item>@string/basic_st41_title</item>
+        <item>@string/basic_st42_title</item>
     </string-array>
 
     <integer-array name="basic_icon">
@@ -76,6 +82,12 @@
         <item>@drawable/vbasic_34</item>
         <item>@drawable/vbasic_35</item>
         <item>@drawable/vbasic_36</item>
+        <item>@drawable/vbasic_37</item>
+        <item>@drawable/vbasic_38</item>
+        <item>@drawable/vbasic_39</item>
+        <item>@drawable/vbasic_40</item>
+        <item>@drawable/vbasic_41</item>
+        <item>@drawable/vbasic_42</item>
     </integer-array>
 
     <string-array name="basic_descr">
@@ -115,6 +127,12 @@
         <item>@string/basic_st34_descr</item>
         <item>@string/basic_st35_descr</item>
         <item>@string/basic_st36_descr</item>
+        <item>@string/basic_st37_descr</item>
+        <item>@string/basic_st38_descr</item>
+        <item>@string/basic_st39_descr</item>
+        <item>@string/basic_st40_descr</item>
+        <item>@string/basic_st41_descr</item>
+        <item>@string/basic_st42_descr</item>
     </string-array>
 
     <string-array name="basic_url">
@@ -154,6 +172,12 @@
         <item>34_url</item>
         <item>35_url</item>
         <item>36_url</item>
+        <item>37_url</item>
+        <item>38_url</item>
+        <item>39_url</item>
+        <item>40_url</item>
+        <item>41_url</item>
+        <item>42_url</item>
     </string-array>
 
     <string name="basic_st1_title">R</string>
@@ -228,5 +252,17 @@
     <string name="basic_st35_descr">По оси Z</string>
     <string name="basic_st36_title">z\'</string>
     <string name="basic_st36_descr">Против оси Z</string>
+    <string name="basic_st37_title">r</string>
+    <string name="basic_st37_descr">Правый средний по</string>
+    <string name="basic_st38_title">R</string>
+    <string name="basic_st38_descr">Включить свет</string>
+    <string name="basic_st39_title">rR</string>
+    <string name="basic_st39_descr">Ярко включить свет</string>
+    <string name="basic_st40_title">r\'</string>
+    <string name="basic_st40_descr">Правый средний против</string>
+    <string name="basic_st41_title">R\'</string>
+    <string name="basic_st41_descr">Выключить свет</string>
+    <string name="basic_st42_title">rR\'</string>
+    <string name="basic_st42_descr">Жирно выключить свет</string>
 
 </resources>
