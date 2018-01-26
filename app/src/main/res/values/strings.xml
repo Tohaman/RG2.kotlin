@@ -47,5 +47,14 @@
     <string name="fiveStarButtonText">Оценить приложение в GooglePlay</string>
     <string name="content_description_app_loading_image">Пожалуйста подождите</string>
     <string name="commentText">Свой комментарий: </string>
+    <string name="help_g2f">Данный раздел программы поможет вам научится собирать кубик быстро. Рекомендую начать с ускорений для начинающих</string>
+    <string name="help_accel">То с чего стоит начать ускорять свою сборку кубика. Наиболее полезные алгоритмы.</string>
+    <string name="help_cross">Советы по ускорению сборки самого первого этапа. Рекомендую советы от J Perm.</string>
+    <string name="help_begin4x4">Простой метод сборки кубика 4х4, основанный на редукции кубика в кубик 3х3.</string>
+    <string name="help_basic">Базовые движения кубика. Кликнув по картинке можно увидеть название движения в трактовке Максима.</string>
+    <string name="help_thanks">Если вам понравилось приложение, пожалуйста поддержите проект материально.</string>
+    <string name="help_blind">Методика сборки кубика с закрытыми глазами на основе методики Стефана Похмана.</string>
+    <string name="help_blind_acc">Ускорения для сборки с закрытыми глазами.</string>
+    <string name="help_pll">Permutation in Last Layer. 21 ситуация для перестановки элементов на последнем слое.</string>
 
 </resources>

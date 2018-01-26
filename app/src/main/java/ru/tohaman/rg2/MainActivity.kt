@@ -232,34 +232,34 @@ class MainActivity : AppCompatActivity(),
                         alert(getString(R.string.help_begin)) { okButton { } }.show()
                     }
                     "G2F" -> {
-                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                        alert(getString(R.string.help_g2f)) { okButton { } }.show()
                     }
                     "ACCEL" -> {
-                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                        alert(getString(R.string.help_accel)) { okButton { } }.show()
                     }
                     "CROSS" -> {
-                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                        alert(getString(R.string.help_cross)) { okButton { } }.show()
                     }
                     "F2L" -> {
-                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                        alert(getString(R.string.help_f2l)) { okButton { } }.show()
                     }
                     "ADVF2L" -> {
-                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                        alert(getString(R.string.help_advf2l)) { okButton { } }.show()
                     }
                     "OLL" -> {
-                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                        alert(getString(R.string.help_oll)) { okButton { } }.show()
                     }
                     "PLL" -> {
-                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                        alert(getString(R.string.help_pll)) { okButton { } }.show()
                     }
                     "BLIND" -> {
-                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                        alert(getString(R.string.help_blind)) { okButton { } }.show()
                     }
                     "BLINDACC" -> {
-                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                        alert(getString(R.string.help_blind_acc)) { okButton { } }.show()
                     }
                     "BEGIN4X4" -> {
-                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                        alert(getString(R.string.help_begin4x4)) { okButton { } }.show()
                     }
                     "TIMER" -> {
                         alert(getString(R.string.help_timer)) { okButton { } }.show()
@@ -271,13 +271,13 @@ class MainActivity : AppCompatActivity(),
                         alert(getString(R.string.help_blank)) { okButton { } }.show()
                     }
                     "BASIC" -> {
-                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                        alert(getString(R.string.help_basic)) { okButton { } }.show()
                     }
                     "SETTINGS" -> {
                         alert(getString(R.string.help_settings)) { okButton { } }.show()
                     }
                     "THANKS" -> {
-                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                        alert(getString(R.string.help_thanks)) { okButton { } }.show()
                     }
                     "ABOUT" -> {
                         alert {
