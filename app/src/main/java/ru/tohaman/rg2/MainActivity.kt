@@ -133,6 +133,10 @@ class MainActivity : AppCompatActivity(),
             "TESTPLL" -> {setFragment(FragmentTestPLLSettings.newInstance())}
             "SETTINGS" -> {setFragment(FragmentSettings.newInstance())}
             "ABOUT" -> {setFragment(FragmentAbout.newInstance())}
+            "ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL" -> {
+                fab.setImageResource(R.drawable.ic_fab_backward)
+                setListFragmentPhase(curPhase)
+            }
             else -> { setListFragmentPhase(curPhase) }
         }
 
@@ -164,10 +168,6 @@ class MainActivity : AppCompatActivity(),
         //но если бы нужно было отключение рекламы, то данный вызов обязателен
         loadDataFromPlayMarket()
     }
-
-//    override fun onApplyThemeResource(theme: Resources.Theme, resId: Int, first: Boolean) {
-//        theme.applyStyle(getThemeFromSharedPreference(ctx), true)
-//    }
 
     private fun setFragment (fragment: Fragment) {
         val transaction : FragmentTransaction = supportFragmentManager.beginTransaction()
@@ -369,6 +369,7 @@ class MainActivity : AppCompatActivity(),
     }
 
     private fun setListFragmentPhase(phase: String){
+
         curPhase = phase
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame_container, FragmentListView.newInstance(curPhase)).commit()
