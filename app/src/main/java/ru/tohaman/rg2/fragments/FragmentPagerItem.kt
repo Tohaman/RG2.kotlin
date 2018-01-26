@@ -2,12 +2,10 @@ package ru.tohaman.rg2.fragments
 
 import android.content.Intent
 import android.graphics.drawable.Drawable
-import android.os.Build
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
-import android.text.Editable
 import android.text.Html
 import android.util.Log
 import android.view.LayoutInflater
@@ -23,7 +21,6 @@ import com.google.android.youtube.player.YouTubeThumbnailLoader
 import com.google.android.youtube.player.YouTubeThumbnailView
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onClick
-import org.jetbrains.anko.sdk25.coroutines.onItemClick
 import org.jetbrains.anko.support.v4.alert
 import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.toast
@@ -32,12 +29,10 @@ import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.DeveloperKey.DEVELOPER_KEY
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.VIDEO_PREVIEW
-import ru.tohaman.rg2.adapters.MyListAdapter
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.ui.PagerItemtUI
 import ru.tohaman.rg2.util.spannedString
-import java.util.ArrayList
 
 class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener {
     // Константы для YouTubePlayer
@@ -127,7 +122,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         playPreviewImage.visibility = View.GONE
         ytTextView.visibility = View.VISIBLE
         var text1 = "<html><body> <a href=\"rg2://ytplay?time=0:00&link=%s\"> %s </a></body></html>"
-        text1 = kotlin.String.format(text1, url, getString(R.string.pager_youtubetext))
+        text1 = kotlin.String.format(text1, url, getString(R.string.pager_youtube_text))
         ytTextView.text = spannedString(text1, imgGetter)
     }
 

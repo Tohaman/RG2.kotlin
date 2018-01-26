@@ -11,7 +11,7 @@
     <string name="g2f_3x3">3х3 Фридрих</string>
     <string name="blind_3x3">3х3 Вслепую</string>
     <string name="blind_acc_3x3">Ускорения слепой сборки</string>
-    <string name="dopolnitelno">Дополнительно:</string>
+    <string name="addition">Дополнительно:</string>
     <string name="timer_st">Таймер</string>
     <string name="scramble_st">Генератор скрамблов</string>
 
@@ -20,7 +20,7 @@
     <string name="pll_game">Угадай PLL</string>
     <string name="basic_moves">Основные движения</string>
     <string name="st_about">О программе</string>
-    <string name="pager_youtubetext">Ссылка на YouTube видео</string>
+    <string name="pager_youtube_text">Ссылка на YouTube видео</string>
     <string name="error_player">Ошибка инициализации YouTubePlayer (%1$s)</string>
     <string name="begin_timer_text">0:00:00</string>
     <string name="action_help">Помощь</string>
@@ -28,7 +28,7 @@
     <string name="azbuka_button">Выбрать азбуку</string>
     <string name="generate_button">Генерировать скрамбл</string>
     <string name="scram_waiting">Ищем подходящий скрамбл</string>
-    <string name="contentdescription">contentDescription</string>
+    <string name="content_description">contentDescription</string>
     <string name="buttonScrambleGen">Генерировать скрамбл</string>
     <string name="chkBoxEdgeBuffer">Без переплавки буфера ребер</string>
     <string name="chkBoxCornerBuffer">Без переплавки буфера углов</string>

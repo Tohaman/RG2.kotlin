@@ -50,7 +50,7 @@
             android:title="@string/basic_moves"/>
     </group>
 
-    <item android:title="@string/dopolnitelno">
+    <item android:title="@string/addition">
         <menu>
             <item
                 android:id="@+id/settings"
