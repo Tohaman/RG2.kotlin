@@ -25,7 +25,7 @@ import ru.tohaman.rg2.util.saveBoolean2SP
 import ru.tohaman.rg2.util.saveInt2SP
 
 /**
- * Фрагмент с выбором Азбуки, UI создается в [onCreateView]
+ * Фрагмент с выбором настроек для игры Угадай PLL, UI создается в [onCreateView]
  * в этом UI вся логики работы фрагмента
  * фабричный метод [newInstance] для создания фрагмента
  */
