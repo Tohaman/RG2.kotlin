@@ -40,7 +40,7 @@ class PllTestGame : Activity() {
         guessRows = sp.getInt(PLL_TEST_ROW_COUNT, 6) / 2
         is3side = sp.getBoolean(PLL_TEST_3SIDE, true)
 
-        imgView = findViewById<ImageView>(R.id.test_image)
+        imgView = findViewById(R.id.test_image)
         imgView.setImageDrawable(genDrawable3sidePll(10))
 
         guessLinearLayouts = arrayOf(
@@ -114,8 +114,8 @@ class PllTestGame : Activity() {
                 val newGuessButton = guessLinearLayouts[row].getChildAt(column) as Button
                 newGuessButton.isEnabled = true  // активируем кнопку
                 // пишем текст а названием алгоритма на кнопку
-                val numOfalg = Integer.parseInt(pllRnd.get(row * 2 + column))
-                newGuessButton.text = getNameFromListPagers(listPagers, numOfalg)
+                val countOfAlg = Integer.parseInt(pllRnd.get(row * 2 + column))
+                newGuessButton.text = getNameFromListPagers(listPagers, countOfAlg)
             }
         }
 
