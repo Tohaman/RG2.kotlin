@@ -3,6 +3,7 @@ package ru.tohaman.rg2.util
 import android.content.Context
 import android.os.Build
 import android.preference.PreferenceManager
+import android.text.Editable
 import android.text.Html
 import android.text.Spanned
 import android.util.Log
@@ -13,6 +14,8 @@ import ru.tohaman.rg2.data.ListPager
 /**
  * Created by Test on 22.12.2017. Различные утилиты
  */
+
+fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
 
 fun saveBoolean2SP(value: Boolean, key: String, context: Context) {
     val sp = PreferenceManager.getDefaultSharedPreferences(context)

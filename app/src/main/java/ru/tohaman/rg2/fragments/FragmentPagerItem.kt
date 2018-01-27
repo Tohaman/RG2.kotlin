@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
+import android.text.Editable
 import android.text.Html
+import android.text.InputType
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -33,6 +35,7 @@ import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.ui.PagerItemtUI
 import ru.tohaman.rg2.util.spannedString
+import ru.tohaman.rg2.util.toEditable
 
 class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener {
     // Константы для YouTubePlayer
@@ -97,7 +100,8 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
                             textSize = 18F
                         }
                         val editTxt = editText {
-
+                            inputType = InputType.TYPE_TEXT_FLAG_CAP_WORDS
+                            text = comment.toEditable()
                         }
 
                         positiveButton("OK") {
