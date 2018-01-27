@@ -24,6 +24,12 @@
             android:title="Не выключать экран при просмотре видео"
             android:summary="когда в видео нажата пауза"/>
 
-   </PreferenceCategory>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="fab_on"
+            android:title="Большая зеленая кнопка"
+            android:summary="Отображение \'умной\' кнопки в интефейсе программы"/>
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

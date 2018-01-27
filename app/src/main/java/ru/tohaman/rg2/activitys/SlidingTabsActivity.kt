@@ -1,6 +1,7 @@
 package ru.tohaman.rg2.activitys
 
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v4.view.GravityCompat
@@ -11,6 +12,7 @@ import android.support.v7.app.AppCompatDelegate
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.ListView
 import ru.tohaman.rg2.DebugTag.TAG
 
@@ -20,6 +22,7 @@ import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
 import java.util.ArrayList
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.app_bar_sliding.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk25.coroutines.onItemClick
@@ -39,6 +42,12 @@ class SlidingTabsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sliding_tabs)
         setSupportActionBar(toolbar)
 
+        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
+        if (!sp.getBoolean("fab_on", true)) {
+            fab_sl.visibility = View.GONE
+        } else {
+            fab_sl.visibility = View.VISIBLE
+        }
         fab_sl.setOnClickListener {
             onBackPressed()
         }

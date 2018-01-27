@@ -141,6 +141,11 @@ class MainActivity : AppCompatActivity(),
         }
 
         nav_view.setNavigationItemSelectedListener(this)
+        if (!sp.getBoolean("fab_on", true)) {
+            fab.visibility = View.GONE
+        } else {
+            fab.visibility = View.VISIBLE
+        }
         fab.setOnClickListener { _ ->
             when (curPhase) {
                 "ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL" -> {
@@ -412,9 +417,18 @@ class MainActivity : AppCompatActivity(),
     // Слушаем изменения в настройках программы
     override fun onSharedPreferenceChanged(sp: SharedPreferences, key: String?) {
         //Если изменилась тема в настройках, то меняем ее в программе
-        if (key == "theme") {
-            Log.v(DebugTag.TAG, "Theme set to - ${sp.getString(key, "AppTheme")}")
-            this.recreate()
+        when (key) {
+            "theme" -> {
+                Log.v(DebugTag.TAG, "Theme set to - ${sp.getString(key, "AppTheme")}")
+                this.recreate()
+            }
+            "fab_on" -> {
+                if (!sp.getBoolean("fab_on", true)) {
+                    fab.visibility = View.GONE
+                } else {
+                    fab.visibility = View.VISIBLE
+                }
+            }
         }
     }
 
