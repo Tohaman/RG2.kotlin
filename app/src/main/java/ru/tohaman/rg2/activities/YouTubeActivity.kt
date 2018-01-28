@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.app.AppCompatDelegate
 import android.util.Log
 import android.view.WindowManager
@@ -28,7 +29,7 @@ import java.util.*
  * а манифест перед <application добавить строку></application><uses-permission android:name="android.permission.INTERNET"></uses-permission>
   </intent-filter> */
 
-class YouTubeActivity : Activity() {
+class YouTubeActivity : AppCompatActivity() {
     private var date: Date? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

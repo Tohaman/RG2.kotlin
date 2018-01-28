@@ -6,6 +6,7 @@ import android.graphics.drawable.LayerDrawable
 import android.preference.PreferenceManager
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.app.AppCompatDelegate
 import android.view.View
 import android.view.WindowManager
@@ -24,7 +25,7 @@ import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.util.*
 import java.util.*
 
-class PllTestGame : Activity() {
+class PllTestGame : AppCompatActivity() {
     private val random = Random()
     private lateinit var listPagers : List<ListPager>
     private lateinit var guessLinearLayouts : Array<LinearLayout>
