@@ -24,7 +24,7 @@
         </activity>
 
         <activity
-            android:name=".activitys.YouTubeActivity"
+            android:name=".activities.YouTubeActivity"
             android:theme="@style/Theme.AppCompat.Dialog">
             <intent-filter>
                 <data
@@ -37,12 +37,12 @@
         </activity>
 
         <activity
-            android:name=".activitys.SlidingTabsActivity"
+            android:name=".activities.SlidingTabsActivity"
             android:theme="@style/AppThemeLight"/>
 
-        <activity android:name=".activitys.TimerActivity"/>
+        <activity android:name=".activities.TimerActivity"/>
 
-        <activity android:name=".activitys.ScrambleActivity">
+        <activity android:name=".activities.ScrambleActivity">
             <intent-filter>
                 <data
                     android:host="scrmbl"
@@ -55,23 +55,13 @@
         </activity>
 
         <activity
-            android:name=".activitys.PllTestGame"
-            android:label="@string/title_activity_pll_test_game"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="ru.tohaman.rg2.MainActivity"
-                />
+            android:name=".activities.PllTestGame"
+            android:label="@string/title_activity_pll_test_game">
         </activity>
 
         <activity
-            android:name=".activitys.PllTestSelect"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.PllTestSelect"
             android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="ru.tohaman.rg2.MainActivity"
-                />
         </activity>
 
     </application>

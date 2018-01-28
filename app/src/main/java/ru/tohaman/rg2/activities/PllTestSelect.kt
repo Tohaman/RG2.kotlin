@@ -1,4 +1,4 @@
-package ru.tohaman.rg2.activitys
+package ru.tohaman.rg2.activities
 
 import android.os.Bundle
 import android.preference.PreferenceManager

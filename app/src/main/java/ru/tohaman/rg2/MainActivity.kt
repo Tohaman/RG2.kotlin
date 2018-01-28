@@ -1,7 +1,5 @@
 package ru.tohaman.rg2
 
-import android.app.Activity
-import android.app.ActivityManager
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
@@ -12,6 +10,7 @@ import android.preference.PreferenceManager
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction
+import android.support.v4.content.ContextCompat
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
@@ -24,11 +23,10 @@ import kotlinx.android.synthetic.main.app_bar_main.*
 import org.jetbrains.anko.*
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.DebugTag.TAG
-import ru.tohaman.rg2.activitys.SlidingTabsActivity
+import ru.tohaman.rg2.activities.SlidingTabsActivity
 import ru.tohaman.rg2.fragments.*
 import android.view.View
 import android.view.WindowManager
-import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageView
 import ru.tohaman.rg2.DeveloperKey.base64EncodedPublicKey
@@ -176,6 +174,7 @@ class MainActivity : AppCompatActivity(),
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
+        val drw0 = ContextCompat.getDrawable(ctx, R.drawable.vpll)
         //Для данной программы не актуально, т.к. пользователь ничего в программе по сути не покупает
         //но если бы нужно было отключение рекламы, то данный вызов обязателен
         loadDataFromPlayMarket()

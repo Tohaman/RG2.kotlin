@@ -9,16 +9,12 @@ import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.button_colored.view.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onClick
-import org.jetbrains.anko.sdk15.coroutines.onLongClick
 import ru.tohaman.rg2.*
 import ru.tohaman.rg2.DebugTag.TAG
-import ru.tohaman.rg2.activitys.TimerActivity
+import ru.tohaman.rg2.activities.TimerActivity
 import ru.tohaman.rg2.ankoconstraintlayout.constraintLayout
 import ru.tohaman.rg2.util.saveBoolean2SP
 import ru.tohaman.rg2.util.saveInt2SP
-import android.view.MotionEvent
-
-
 
 
 /**

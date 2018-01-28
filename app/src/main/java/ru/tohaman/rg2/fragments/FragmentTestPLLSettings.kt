@@ -19,8 +19,8 @@ import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.PLL_TEST_3SIDE
 import ru.tohaman.rg2.PLL_TEST_ROW_COUNT
 import ru.tohaman.rg2.R
-import ru.tohaman.rg2.activitys.PllTestGame
-import ru.tohaman.rg2.activitys.PllTestSelect
+import ru.tohaman.rg2.activities.PllTestGame
+import ru.tohaman.rg2.activities.PllTestSelect
 import ru.tohaman.rg2.ui.AnkoComponentEx
 import ru.tohaman.rg2.util.saveBoolean2SP
 import ru.tohaman.rg2.util.saveInt2SP

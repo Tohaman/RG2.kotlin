@@ -1,4 +1,4 @@
-package ru.tohaman.rg2.activitys
+package ru.tohaman.rg2.activities
 
 import android.os.Bundle
 import android.app.Activity
@@ -208,8 +208,7 @@ class PllTestGame : Activity() {
         val topLayColorOffSet = random.nextInt(4)                   //генерируем число от 0 до 3 смещение цвета для 3-го этажа
         val topLayerOffset = random.nextInt(4)                      //генерируем число от 0 до 3 смещение грани для 3-го этажа
 
-//        val drw0 = ContextCompat.getDrawable(ctx, R.drawable.z_cube_back_black)
-        val drw0 = ContextCompat.getDrawable(ctx, R.drawable.vpll)
+        val drw0 = ContextCompat.getDrawable(ctx, R.drawable.z_cube_back_black)
         val drw1 = ContextCompat.getDrawable(ctx, R.drawable.z_cube_up_y)
         val drw2 = ContextCompat.getDrawable(ctx, R.drawable.z_cube_left_r)
         val drw3 = ContextCompat.getDrawable(ctx, R.drawable.z_cube_right_g)
