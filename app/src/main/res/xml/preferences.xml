@@ -25,10 +25,22 @@
             android:summary="когда в видео нажата пауза"/>
 
         <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="screen_always_on"
+            android:title="Не выключать экран"
+            android:summary="когда запущено приложение"/>
+
+        <CheckBoxPreference
             android:defaultValue="true"
             android:key="fab_on"
             android:title="Большая зеленая кнопка"
-            android:summary="Отображение \'умной\' кнопки в интефейсе программы"/>
+            android:summary="отображение \'умной\' кнопки в интефейсе программы"/>
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="is_text_selectable"
+            android:title="Выделение текста"
+            android:summary="возможность выделения и копирования текста из обучалок"/>
 
     </PreferenceCategory>
 

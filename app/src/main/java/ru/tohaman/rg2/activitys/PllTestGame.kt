@@ -7,6 +7,7 @@ import android.preference.PreferenceManager
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.view.View
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -14,6 +15,7 @@ import ru.tohaman.rg2.R
 
 import org.jetbrains.anko.ctx
 import org.jetbrains.anko.find
+import ru.tohaman.rg2.IS_SCREEN_ALWAYS_ON
 import ru.tohaman.rg2.PLL_TEST_3SIDE
 import ru.tohaman.rg2.PLL_TEST_ROW_COUNT
 import ru.tohaman.rg2.data.ListPager
@@ -35,6 +37,15 @@ class PllTestGame : Activity() {
         setTheme(getThemeFromSharedPreference(ctx))
         super.onCreate(savedInstanceState)
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
+
+        val isScreenAlwaysOn = sp.getBoolean(IS_SCREEN_ALWAYS_ON, false)
+        if (isScreenAlwaysOn) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        } else {
+            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        }
+
+
         setContentView(R.layout.activity_pll_test_game)
         actionBar?.setDisplayHomeAsUpEnabled(true)
         guessRows = sp.getInt(PLL_TEST_ROW_COUNT, 6) / 2

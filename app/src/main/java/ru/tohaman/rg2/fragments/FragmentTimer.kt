@@ -65,7 +65,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
 
         spl = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             SoundPool.Builder()
-                    .setMaxStreams(10)
+                    .setMaxStreams(2)
                     .build()
         } else {
             @Suppress("DEPRECATION")
@@ -143,8 +143,8 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
             MotionEvent.ACTION_UP -> {
                 // Если таймер "готов", то запускаем таймер и
                 if (isTimerReady) { startTimer() }
-                // красим кружочек/чки готовности в красный
-                setCircleColor(handLight, R.color.red)
+                // красим кружочек/чки готовности в красный если таймер не запущен
+                if (!isTimerStart) { setCircleColor(handLight, R.color.red)}
                 false       //вернем что текущая рука убрана
             }
         // если не отпустили, то считаем что нажата(положена)
@@ -192,6 +192,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         isTimerStart = true                      // поставили признак, что таймер запущен
         startShowTime()                         // запускаем фоновое отображение времени в фоне
         startMetronom()                         // запускаем метроном в фоне
+
     }
 
     private fun startShowTime () {

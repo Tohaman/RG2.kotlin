@@ -1,5 +1,6 @@
 package ru.tohaman.rg2.activitys
 
+import android.content.Context
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
@@ -13,10 +14,10 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.WindowManager
 import android.widget.ListView
 import ru.tohaman.rg2.DebugTag.TAG
 
-import ru.tohaman.rg2.R
 import ru.tohaman.rg2.adapters.MyListAdapter
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
@@ -26,8 +27,7 @@ import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.app_bar_sliding.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk25.coroutines.onItemClick
-import ru.tohaman.rg2.EXTRA_ID
-import ru.tohaman.rg2.RUBIC_PHASE
+import ru.tohaman.rg2.*
 import ru.tohaman.rg2.fragments.FragmentPagerItem
 import ru.tohaman.rg2.util.getThemeFromSharedPreference
 
@@ -41,7 +41,6 @@ class SlidingTabsActivity : AppCompatActivity() {
         Log.v (TAG, "SlidingTabActivity onCreate")
         setContentView(R.layout.activity_sliding_tabs)
         setSupportActionBar(toolbar)
-
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
         if (!sp.getBoolean("fab_on", true)) {
             fab_sl.visibility = View.GONE
@@ -51,6 +50,14 @@ class SlidingTabsActivity : AppCompatActivity() {
         fab_sl.setOnClickListener {
             onBackPressed()
         }
+
+        val isScreenAlwaysOn = sp.getBoolean(IS_SCREEN_ALWAYS_ON, false)
+        if (isScreenAlwaysOn) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        } else {
+            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        }
+
 
         //Инициируем фазу и номер этапа, должны быть переданы из другой активности, если нет, то используем значения по-умолчанию
         var mPhase = "BEGIN"

@@ -7,6 +7,7 @@ import android.text.Editable
 import android.text.Html
 import android.text.Spanned
 import android.util.Log
+import android.view.WindowManager
 import ru.tohaman.rg2.DebugTag.TAG
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.data.ListPager

@@ -3,6 +3,7 @@ package ru.tohaman.rg2
 import android.app.Activity
 import android.app.ActivityManager
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.SharedPreferences
@@ -26,6 +27,7 @@ import ru.tohaman.rg2.DebugTag.TAG
 import ru.tohaman.rg2.activitys.SlidingTabsActivity
 import ru.tohaman.rg2.fragments.*
 import android.view.View
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageView
@@ -38,6 +40,7 @@ const val EXTRA_ID = "ru.tohaman.rubicsguide.PHASE_ID"
 const val RUBIC_PHASE = "ru.tohaman.rubicsguide.PHASE"
 const val VIDEO_PREVIEW = "video_preview"   //наименования ключа для сохранения/извлечения значения из файла настроек
 const val IS_VIDEO_SCREEN_ON = "videoscreen_on"  //ключ для гашения/не гашения экрана когда видео на паузе
+const val IS_SCREEN_ALWAYS_ON = "screen_always_on"  //ключ для гашения/не гашения экрана когда видео на паузе
 const val ONE_HAND_TO_START = "oneHandToStart"
 const val METRONOM_ENABLED = "metronomEnabled"
 const val METRONOM_TIME = "metronomTime"
@@ -80,6 +83,10 @@ class MainActivity : AppCompatActivity(),
         setTheme(getThemeFromSharedPreference(ctx))
 
         super.onCreate(savedInstanceState)
+
+        //Устанавливаем параметр отключения экрана в зависимости от настроек программы
+        setScreenOn(IS_SCREEN_ALWAYS_ON, ctx)
+
         //Включаем поддержку векторной графики на устройствах ниже Лилипопа (5.0)
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         Log.v (TAG, "MainActivity ListPagerLab init")
@@ -429,6 +436,20 @@ class MainActivity : AppCompatActivity(),
                     fab.visibility = View.VISIBLE
                 }
             }
+            "screen_always_on" -> {
+                setScreenOn(IS_SCREEN_ALWAYS_ON, ctx)
+            }
+        }
+    }
+
+
+    fun setScreenOn (parameterName: String, context: Context){
+        val sp = PreferenceManager.getDefaultSharedPreferences(context)
+        val isScreenAlwaysOn = sp.getBoolean(parameterName, false)
+        if (isScreenAlwaysOn) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        } else {
+            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         }
     }
 
