@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.LinearLayout.HORIZONTAL
+import android.widget.LinearLayout.VERTICAL
 import org.jetbrains.anko.*
 import ru.tohaman.rg2.data.ListPager
 
@@ -47,20 +48,31 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
                     val taskNum: Int = list[i].icon
                     linearLayout {
                         orientation = HORIZONTAL
-                        gravity = Gravity.CENTER
+//                        gravity = Gravity.CENTER
 
                         imageView(taskNum) {
                         }.lparams(dip(40 * m),dip(40 * m)) {margin = 5.dp}
 
-                        textView {
-                            text = if (list[0].phase == "PLLTEST"){
-                                list[i].comment
-                            } else {
-                                list[i].title
-                            }
-                            textSize = m * 12f
-                            typeface = Typeface.DEFAULT_BOLD
-                        }.lparams(matchParent, wrapContent) { setMargins(20.dp, 5.dp, 5.dp, 5.dp) }
+                        linearLayout() {
+                            orientation = VERTICAL
+                            textView {
+                                text = if (list[0].phase == "PLLTEST"){
+                                    list[i].comment
+                                } else {
+                                    list[i].title
+                                }
+                                textSize = m * 12f
+                                typeface = Typeface.DEFAULT_BOLD
+                            }.lparams(matchParent, wrapContent) { setMargins(15.dp, 5.dp, 5.dp, 5.dp) }
+                            textView {
+                                textSize = m *8F
+                                text = if (list[0].phase == "PLLTEST"){
+                                    ""
+                                } else {
+                                    list[i].comment
+                                }
+                            }.lparams(matchParent, wrapContent) { setMargins(15.dp, 5.dp, 5.dp, 5.dp) }
+                        }
                     }
                 }
             }
