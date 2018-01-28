@@ -174,7 +174,6 @@ class MainActivity : AppCompatActivity(),
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
-        val drw0 = ContextCompat.getDrawable(ctx, R.drawable.vpll)
         //Для данной программы не актуально, т.к. пользователь ничего в программе по сути не покупает
         //но если бы нужно было отключение рекламы, то данный вызов обязателен
         loadDataFromPlayMarket()
@@ -488,7 +487,7 @@ class MainActivity : AppCompatActivity(),
         loadData()
         // Создаем helper, передаем context и public key to verify signatures with
         Log.d(TAG, "Creating IAB helper.")
-        mHelper = IabHelper(this, base64EncodedPublicKey)
+        mHelper = IabHelper(ctx, base64EncodedPublicKey)
 
         //TO DO enable debug logging (Для полноценной версии надо поставить в false).
         mHelper!!.enableDebugLogging(false)
