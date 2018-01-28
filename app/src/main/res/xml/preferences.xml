@@ -40,7 +40,7 @@
             android:defaultValue="false"
             android:key="is_text_selectable"
             android:title="Выделение текста"
-            android:summary="возможность выделения и копирования текста из обучалок"/>
+            android:summary="возможность выделения и копирования текста из обучалок. Возможна некорректная работа на некоторых устройствах, например Meizu M3 Note"/>
 
     </PreferenceCategory>
 

@@ -64,9 +64,12 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         textString = String.format(textString, st)
         val spanText = spannedString(textString, imgGetter)
 
+        val mainTextView = view.findViewById<TextView>(PagerItemtUI.Ids.descriptionText)
+
         (view.findViewById(PagerItemtUI.Ids.pagerTitleText) as TextView).text = message
         (view.findViewById(PagerItemtUI.Ids.pagerImageView) as ImageView).imageResource = topImage
-        (view.findViewById(PagerItemtUI.Ids.descriptionText) as TextView).text = spanText
+        mainTextView.text = spanText
+        mainTextView.isSelectable = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean("is_text_selectable", false)
 
         val ytTextView = view.findViewById(PagerItemtUI.Ids.youTubeTextView) as TextView
 
