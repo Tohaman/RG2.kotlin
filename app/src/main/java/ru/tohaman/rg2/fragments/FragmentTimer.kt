@@ -48,17 +48,16 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     private lateinit var textTime: TextView
 
     private val MAX_STREAMS = 2
-    lateinit var spl: SoundPool
-    var soundIdTick: Int = 0
+    private lateinit var spl: SoundPool
+    private var soundIdTick: Int = 0
 
     private var oneHandToStart = true      //управление таймером одной рукой? или для старта надо положить обе
     private var metronomEnabled = true
     private var metronomTime = 60
 
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        val sp = PreferenceManager.getDefaultSharedPreferences(context)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
         oneHandToStart = sp.getBoolean(ONE_HAND_TO_START, false)
         metronomEnabled = sp.getBoolean(METRONOM_ENABLED, true)
         metronomTime = sp.getInt(METRONOM_TIME, 60)
@@ -128,7 +127,8 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                 when {
                 //если обе руки прикоснулись и таймер не статован, то значит таймер "готов", обнуляем время таймера
                     (secHand and !isTimerStart) -> {
-                        isTimerReady = true; textTime.text = context.getString(R.string.begin_timer_text)}           //таймер готов к запуску
+                        isTimerReady = true
+                        textTime.text = ctx.getString(R.string.begin_timer_text)}           //таймер готов к запуску
                 //если обе руки прикоснулись, а таймер был запущен, значит его надо остановить
                     (secHand and isTimerStart) -> { stopTimer()}   //останавливаем таймер
                 //в противном случае,
@@ -153,7 +153,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     }
 
     private fun setCircleColor(handLight: ImageView, colorId: Int) {
-        val icon = ContextCompat.getDrawable(context, R.drawable.timer_circle)
+        val icon = ContextCompat.getDrawable(ctx, R.drawable.timer_circle)!!
         DrawableCompat.setTint(icon, getColorFromResources(colorId))
         //красим кружки, только текущий или оба в зависимости от одно- или дву-рукого управления
         if (oneHandToStart) {
@@ -161,13 +161,6 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
             rightCircle.setImageDrawable(icon)
         } else {
             handLight.setImageDrawable(icon)
-        }
-    }
-
-    private var soundRunnable: Runnable = object : Runnable {
-        override fun run() {
-            spl.play(soundIdTick, 1F, 1F, 0, 0, 1F)
-            TimerHandler.postDelayed(this, (60000/metronomTime).toLong())
         }
     }
 

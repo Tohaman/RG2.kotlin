@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.app.AppCompatDelegate
 import android.util.Log
 import android.view.WindowManager
 import kotlinx.android.synthetic.main.activity_test_select_pll.*
@@ -27,6 +28,9 @@ class PllTestSelect : AppCompatActivity(), FragmentListView.OnListViewInteractio
         setTheme(getThemeFromSharedPreference(ctx))
         super.onCreate(savedInstanceState)
         Log.v (DebugTag.TAG, "PLLTestSelect onCreate start")
+        //Включаем поддержку векторной графики на устройствах ниже Лилипопа (5.0)
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
+
         setContentView(R.layout.activity_test_select_pll)
         actionBar?.setDisplayHomeAsUpEnabled(true)
         val listPagerLab = ListPagerLab.get(ctx)

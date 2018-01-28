@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import org.jetbrains.anko.*
+import org.jetbrains.anko.support.v4.ctx
 import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.ui.AzbukaSelectUI
 
@@ -19,9 +20,8 @@ import ru.tohaman.rg2.ui.AzbukaSelectUI
 
 class FragmentAzbukaSelect : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return AzbukaSelectUI<Fragment>().createView(AnkoContext.create(context, this))
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return AzbukaSelectUI<Fragment>().createView(AnkoContext.create (ctx, this))
 }
 
     companion object {

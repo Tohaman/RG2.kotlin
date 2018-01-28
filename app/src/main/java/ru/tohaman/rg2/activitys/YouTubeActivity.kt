@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.support.v7.app.AppCompatDelegate
 import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
@@ -32,6 +33,8 @@ class YouTubeActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //Включаем поддержку векторной графики на устройствах ниже Лилипопа (5.0)
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         Log.v (DebugTag.TAG, "YouTubeActivity onCreate")
         // Проверяем значения из настроек, выключать экран или нет при прсмотре видео
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)

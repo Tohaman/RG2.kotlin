@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v4.app.FragmentTransaction
+import android.support.v7.app.AppCompatDelegate
 import android.util.Log
 import android.view.WindowManager
 import org.jetbrains.anko.ctx
@@ -23,7 +24,8 @@ class ScrambleActivity : AppCompatActivity(), FragmentScrambleGen.OnSrambleGenIn
         Log.v (TAG, "ScrambleActivity Start")
         val transaction : FragmentTransaction? = supportFragmentManager.beginTransaction()
         transaction?.replace(R.id.fragment_container, FragmentScrambleGen())?.commit()
-
+        //Включаем поддержку векторной графики на устройствах ниже Лилипопа (5.0)
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
         val isScreenAlwaysOn = sp.getBoolean(IS_SCREEN_ALWAYS_ON, false)
         if (isScreenAlwaysOn) {

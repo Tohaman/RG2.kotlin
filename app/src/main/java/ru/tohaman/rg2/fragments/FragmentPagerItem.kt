@@ -45,19 +45,19 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
     var url:String = ""
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         // Создаем Вью
-        val view = PagerItemtUI<Fragment>().createView(AnkoContext.create(context, this))
+        val view = PagerItemtUI<Fragment>().createView(AnkoContext.create(ctx, this))
 
         //Данные во фрагмент передаются через фабричный метод newInstance данного фрагмента
         //TODO переделать на передачу через uri
-        val phase = arguments.getString("phase")
-        val message = arguments.getString("title")
-        val topImage = arguments.getInt("topImage")
-        val description = arguments.getInt("desc")
-        val comment  = arguments.getString("comment")
-        url = arguments.getString("url")
+        val phase = arguments!!.getString("phase")
+        val message = arguments!!.getString("title")
+        val topImage = arguments!!.getInt("topImage")
+        val description = arguments!!.getInt("desc")
+        val comment  = arguments!!.getString("comment")
+        url = arguments!!.getString("url")
 
         var textString = "<html><body style=\"text-align:justify\"> %s </body></html>"
         val st = getString(description)
@@ -167,12 +167,12 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         val drawable: Drawable
         sourceString = sourceString.replace(".png", "")
         sourceString = sourceString.replace(".xml", "")
-        var resID = resources.getIdentifier(sourceString, "drawable", activity.packageName)
+        var resID = resources.getIdentifier(sourceString, "drawable", activity?.packageName)
         //если картинка в drawable не найдена, то подсовываем заведомо существующую картинку
         if (resID == 0) {
-            resID = resources.getIdentifier("ic_warning", "drawable", activity.packageName)
+            resID = resources.getIdentifier("ic_warning", "drawable", activity?.packageName)
         }
-        drawable = ContextCompat.getDrawable(ctx,resID)
+        drawable = ContextCompat.getDrawable(ctx,resID)!!
 
         drawable.setBounds(0, 0, drawable.intrinsicWidth, drawable.intrinsicHeight)
         drawable
@@ -180,7 +180,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
     // И еще один метод для ЮТплеера = true, если есть приложение, которое может обрабоать наше намерение (интент)
     private fun canResolveIntent(intent: Intent): Boolean {
-        val resolveInfo = activity.packageManager.queryIntentActivities(intent, 0)
+        val resolveInfo = activity!!.packageManager.queryIntentActivities(intent, 0)
         return resolveInfo != null && !resolveInfo.isEmpty()
     }
 

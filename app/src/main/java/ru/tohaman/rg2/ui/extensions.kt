@@ -21,7 +21,7 @@ abstract class AnkoComponentEx<in T>: AnkoComponent<T> {
 
     protected lateinit var context: Context
     protected val Int.dp: Int get() = this.dpf.toInt()
-    protected val Int.dpf: Float get() = this * context.resources.displayMetrics.density
+    private val Int.dpf: Float get() = this * context.resources.displayMetrics.density
 
     protected fun beginDelayedTransition(sceneRoot: ViewGroup) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -64,7 +64,7 @@ abstract class AnkoComponentEx<in T>: AnkoComponent<T> {
         return create(ui)
     }
 
-    abstract protected fun create(ui: AnkoContext<T>): View
+    protected abstract fun create(ui: AnkoContext<T>): View
 
 }
 

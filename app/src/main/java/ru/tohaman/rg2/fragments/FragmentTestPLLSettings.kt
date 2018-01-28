@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.fragment_pll_test_settings.view.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
 import org.jetbrains.anko.sdk15.coroutines.onClick
+import org.jetbrains.anko.support.v4.ctx
 import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.PLL_TEST_3SIDE
 import ru.tohaman.rg2.PLL_TEST_ROW_COUNT
@@ -32,9 +33,8 @@ import ru.tohaman.rg2.util.saveInt2SP
 
 class FragmentTestPLLSettings : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return TestPllUI<Fragment>().createView(AnkoContext.create(context, this))
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return TestPllUI<Fragment>().createView(AnkoContext.create(ctx, this))
 }
 
     companion object {

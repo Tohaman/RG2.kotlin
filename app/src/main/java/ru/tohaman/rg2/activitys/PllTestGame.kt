@@ -6,6 +6,7 @@ import android.graphics.drawable.LayerDrawable
 import android.preference.PreferenceManager
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
+import android.support.v7.app.AppCompatDelegate
 import android.view.View
 import android.view.WindowManager
 import android.widget.Button
@@ -35,6 +36,9 @@ class PllTestGame : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(getThemeFromSharedPreference(ctx))
+        //Включаем поддержку векторной графики на устройствах ниже Лилипопа (5.0)
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
+
         super.onCreate(savedInstanceState)
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
 
@@ -45,14 +49,13 @@ class PllTestGame : Activity() {
             window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         }
 
-
         setContentView(R.layout.activity_pll_test_game)
         actionBar?.setDisplayHomeAsUpEnabled(true)
         guessRows = sp.getInt(PLL_TEST_ROW_COUNT, 6) / 2
         is3side = sp.getBoolean(PLL_TEST_3SIDE, true)
 
         imgView = findViewById(R.id.test_image)
-        imgView.setImageDrawable(genDrawable3sidePll(10))
+        //imgView.setImageDrawable(genDrawable3sidePll(10))
 
         guessLinearLayouts = arrayOf(
                 find(R.id.row1LinearLayout),
@@ -137,7 +140,11 @@ class PllTestGame : Activity() {
         val algName = getNameFromListPagers(listPagers, correctAnswer)
         (randomRow.getChildAt(column) as Button).text = algName
 
-        val drw0 = if (is3side) {genDrawable3sidePll(correctAnswer)} else { genDrawable2sidePll(correctAnswer)}
+        val drw0 = if (is3side) {
+            genDrawable3sidePll(correctAnswer)
+        } else {
+            genDrawable2sidePll(correctAnswer)
+        }
         imgView.setImageDrawable(drw0)
 
     }
@@ -175,20 +182,20 @@ class PllTestGame : Activity() {
 //            cube3[i] = Integer.parseInt(Character.toString(temp))
 //        }
 
-        DrawableCompat.setTint(drw1, ContextCompat.getColor(ctx,cubeColor[4]))  //верх желтый
-        DrawableCompat.setTint(drw2, ContextCompat.getColor(ctx,cubeColor4PLL[f2lColorOffSet]))
-        DrawableCompat.setTint(drw3, ContextCompat.getColor(ctx,cubeColor4PLL[1 + f2lColorOffSet]))
-        DrawableCompat.setTint(drw4, ContextCompat.getColor(ctx,cubeColor4PLL[2 + f2lColorOffSet]))
+        DrawableCompat.setTint(drw1!!, ContextCompat.getColor(ctx,cubeColor[4]))  //верх желтый
+        DrawableCompat.setTint(drw2!!, ContextCompat.getColor(ctx,cubeColor4PLL[f2lColorOffSet]))
+        DrawableCompat.setTint(drw3!!, ContextCompat.getColor(ctx,cubeColor4PLL[1 + f2lColorOffSet]))
+        DrawableCompat.setTint(drw4!!, ContextCompat.getColor(ctx,cubeColor4PLL[2 + f2lColorOffSet]))
 
-        DrawableCompat.setTint(drw5, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[0] + topLayColorOffSet]))
-        DrawableCompat.setTint(drw6, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[1] + topLayColorOffSet]))
-        DrawableCompat.setTint(drw7, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[2] + topLayColorOffSet]))
-        DrawableCompat.setTint(drw8, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[3] + topLayColorOffSet]))
-        DrawableCompat.setTint(drw9, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[4] + topLayColorOffSet]))
-        DrawableCompat.setTint(drw10, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[5] + topLayColorOffSet]))
-        DrawableCompat.setTint(drw11, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[6] + topLayColorOffSet]))
-        DrawableCompat.setTint(drw12, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[7] + topLayColorOffSet]))
-        DrawableCompat.setTint(drw13, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[8] + topLayColorOffSet]))
+        DrawableCompat.setTint(drw5!!, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[0] + topLayColorOffSet]))
+        DrawableCompat.setTint(drw6!!, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[1] + topLayColorOffSet]))
+        DrawableCompat.setTint(drw7!!, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[2] + topLayColorOffSet]))
+        DrawableCompat.setTint(drw8!!, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[3] + topLayColorOffSet]))
+        DrawableCompat.setTint(drw9!!, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[4] + topLayColorOffSet]))
+        DrawableCompat.setTint(drw10!!, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[5] + topLayColorOffSet]))
+        DrawableCompat.setTint(drw11!!, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[6] + topLayColorOffSet]))
+        DrawableCompat.setTint(drw12!!, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[7] + topLayColorOffSet]))
+        DrawableCompat.setTint(drw13!!, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[8] + topLayColorOffSet]))
 
         val drawableArray = arrayOf(drw0, drw1, drw2, drw3, drw4, drw5, drw6, drw7, drw8, drw9, drw10, drw11, drw12, drw13)
         return LayerDrawable(drawableArray)
@@ -201,7 +208,8 @@ class PllTestGame : Activity() {
         val topLayColorOffSet = random.nextInt(4)                   //генерируем число от 0 до 3 смещение цвета для 3-го этажа
         val topLayerOffset = random.nextInt(4)                      //генерируем число от 0 до 3 смещение грани для 3-го этажа
 
-        val drw0 = ContextCompat.getDrawable(ctx, R.drawable.z_cube_back_black)
+//        val drw0 = ContextCompat.getDrawable(ctx, R.drawable.z_cube_back_black)
+        val drw0 = ContextCompat.getDrawable(ctx, R.drawable.vpll)
         val drw1 = ContextCompat.getDrawable(ctx, R.drawable.z_cube_up_y)
         val drw2 = ContextCompat.getDrawable(ctx, R.drawable.z_cube_left_r)
         val drw3 = ContextCompat.getDrawable(ctx, R.drawable.z_cube_right_g)
@@ -223,16 +231,16 @@ class PllTestGame : Activity() {
 //            cube3[i] = Integer.parseInt(Character.toString(temp))
 //        }
 
-        DrawableCompat.setTint(drw1, ContextCompat.getColor(ctx,cubeColor[4]))  //верх желтый
-        DrawableCompat.setTint(drw2, ContextCompat.getColor(ctx,cubeColor4PLL[f2lColorOffSet]))
-        DrawableCompat.setTint(drw3, ContextCompat.getColor(ctx,cubeColor4PLL[f2lColorOffSet + 1]))
+        DrawableCompat.setTint(drw1!!, ContextCompat.getColor(ctx,cubeColor[4]))  //верх желтый
+        DrawableCompat.setTint(drw2!!, ContextCompat.getColor(ctx,cubeColor4PLL[f2lColorOffSet]))
+        DrawableCompat.setTint(drw3!!, ContextCompat.getColor(ctx,cubeColor4PLL[f2lColorOffSet + 1]))
 
-        DrawableCompat.setTint(drw4, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[0] + topLayColorOffSet]))
-        DrawableCompat.setTint(drw5, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[1] + topLayColorOffSet]))
-        DrawableCompat.setTint(drw6, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[2] + topLayColorOffSet]))
-        DrawableCompat.setTint(drw7, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[3] + topLayColorOffSet]))
-        DrawableCompat.setTint(drw8, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[4] + topLayColorOffSet]))
-        DrawableCompat.setTint(drw9, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[5] + topLayColorOffSet]))
+        DrawableCompat.setTint(drw4!!, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[0] + topLayColorOffSet]))
+        DrawableCompat.setTint(drw5!!, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[1] + topLayColorOffSet]))
+        DrawableCompat.setTint(drw6!!, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[2] + topLayColorOffSet]))
+        DrawableCompat.setTint(drw7!!, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[3] + topLayColorOffSet]))
+        DrawableCompat.setTint(drw8!!, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[4] + topLayColorOffSet]))
+        DrawableCompat.setTint(drw9!!, ContextCompat.getColor(ctx,cubeColor4PLL[cube3[5] + topLayColorOffSet]))
 
         val drawableArray = arrayOf(drw0, drw1, drw2, drw3, drw4, drw5, drw6, drw7, drw8, drw9)
 

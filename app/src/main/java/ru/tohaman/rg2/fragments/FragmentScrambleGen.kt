@@ -19,6 +19,7 @@ import org.jetbrains.anko.custom.async
 import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.support.v4.alert
+import org.jetbrains.anko.support.v4.ctx
 import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.DebugTag.TAG
 import ru.tohaman.rg2.R
@@ -61,11 +62,11 @@ class FragmentScrambleGen : Fragment() {
     private var listEdgesOnPlace: SortedMap<Int,Int> = sortedMapOf(0 to 0)
     private var listCornersOnPlace: SortedMap<Int,Int> = sortedMapOf(0 to 0)
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Log.v (TAG, "FragmentScrambleGen onCreateView - start")
 
         val sp = PreferenceManager.getDefaultSharedPreferences(context)
-        val uri = activity.intent.data
+        val uri = activity?.intent?.data
         var scramble = sp.getString(SCRAMBLE, "U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R")
         // Если вызван с параметром, то скрамбл взять из параметра, а не из базы
         if (uri != null) {
@@ -77,7 +78,7 @@ class FragmentScrambleGen : Fragment() {
         var scrambleLength = sp.getInt(SCRAMBLE_LEN, 14)
         var chkShowSolve = sp.getBoolean(CHK_SHOW_SOLVE, true)
 
-        val view = inflater?.inflate(R.layout.fragment_scramble_gen, container, false)
+        val view = inflater.inflate(R.layout.fragment_scramble_gen, container, false)
 
         Log.v (TAG, "FragmentScrambleGen onCreateView - hide ProgressBar & ProgressText")
         progressBar = view!!.findViewById<ProgressBar>(R.id.progressBar)
@@ -539,7 +540,7 @@ class FragmentScrambleGen : Fragment() {
     }
 
     private fun findLetter(c: Int): String {     //Доработать функцию поиска буквы из азбуки, пока просто цифра
-        val listPagerLab = ListPagerLab.get(context)
+        val listPagerLab = ListPagerLab.get(ctx)
         val azbuka = listPagerLab.getCurrentAzbuka()
         return azbuka[c]
     }

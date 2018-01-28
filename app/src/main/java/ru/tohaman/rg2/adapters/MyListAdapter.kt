@@ -63,16 +63,17 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
                                 }
                                 textSize = m * 12f
                                 typeface = Typeface.DEFAULT_BOLD
-                            }.lparams(matchParent, wrapContent) { setMargins(15.dp, 5.dp, 5.dp, 5.dp) }
+                            }.lparams(matchParent, wrapContent) { setMargins(15.dp, 5.dp, 5.dp, 0.dp) }
                             textView {
                                 textSize = m *8F
+                                singleLine = true
                                 text = if (list[0].phase == "PLLTEST"){
                                     ""
                                 } else {
                                     list[i].comment
                                 }
-                            }.lparams(matchParent, wrapContent) { setMargins(15.dp, 5.dp, 5.dp, 5.dp) }
-                        }
+                            }.lparams(matchParent, wrapContent) { setMargins(15.dp, 0.dp, 5.dp, 5.dp) }
+                        }.lparams(matchParent, matchParent)
                     }
                 }
             }

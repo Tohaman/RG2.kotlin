@@ -37,10 +37,10 @@ class FragmentListView : ListFragment() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         loadSavedState()
         //Берем layout listview_4_fragment, чтобы небольшие литсвью располагались по центру фрагмента, а не по верхнему краю
-        return inflater!!.inflate(R.layout.listview_4_fragment, null)
+        return inflater.inflate(R.layout.listview_4_fragment, null)
     }
 
 
@@ -92,16 +92,14 @@ class FragmentListView : ListFragment() {
         mListener = null
     }
 
-    override fun onSaveInstanceState(state: Bundle?) {
-        if (state != null) {
-            state.putString("phase", mPhase)
-            Log.v (DebugTag.TAG, "Save InstanceState = $mPhase")
-        }
+    override fun onSaveInstanceState(state: Bundle) {
+        state.putString("phase", mPhase)
+        Log.v(DebugTag.TAG, "Save InstanceState = $mPhase")
         super.onSaveInstanceState(state)
     }
 
     private fun loadSavedState() {
-        mPhase = arguments.getString("phase")
+        mPhase = arguments!!.getString("phase")
         Log.v (DebugTag.TAG, "Load SavedState = $mPhase")
     }
 
