@@ -51,7 +51,7 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
 //                        gravity = Gravity.CENTER
 
                         imageView(taskNum) {
-                        }.lparams(dip(40 * m),dip(40 * m)) {margin = 5.dp}
+                        }.lparams(dip(42 * m),dip(42 * m)) {margin = 5.dp}
 
                         linearLayout() {
                             orientation = VERTICAL

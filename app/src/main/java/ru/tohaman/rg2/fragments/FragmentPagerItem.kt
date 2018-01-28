@@ -9,6 +9,7 @@ import android.support.v4.content.ContextCompat
 import android.text.Editable
 import android.text.Html
 import android.text.InputType
+import android.text.method.LinkMovementMethod
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -70,6 +71,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         (view.findViewById(PagerItemtUI.Ids.pagerImageView) as ImageView).imageResource = topImage
         mainTextView.text = spanText
         mainTextView.isSelectable = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean("is_text_selectable", false)
+        mainTextView.movementMethod = LinkMovementMethod.getInstance()
 
         val ytTextView = view.findViewById(PagerItemtUI.Ids.youTubeTextView) as TextView
 
