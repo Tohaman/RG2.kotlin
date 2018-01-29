@@ -268,6 +268,10 @@ class MainActivity : AppCompatActivity(),
                     "BLINDACC" -> {
                         alert(getString(R.string.help_blind_acc)) { okButton { } }.show()
                     }
+                    "PYRAMINX" -> {
+                        alert(getString(R.string.help_pyraminx)) { okButton { } }.show()
+                    }
+
                     "BEGIN4X4" -> {
                         alert(getString(R.string.help_begin4x4)) { okButton { } }.show()
                     }
@@ -324,6 +328,8 @@ class MainActivity : AppCompatActivity(),
             R.id.blind -> { setListFragmentPhase("BLIND") }
 
             R.id.blind_acc -> { setListFragmentPhase("BLINDACC") }
+
+            R.id.pyraminx -> { setListFragmentPhase("PYRAMINX") }
 
             R.id.begin4x4 -> { setListFragmentPhase("BEGIN4X4")}
 
