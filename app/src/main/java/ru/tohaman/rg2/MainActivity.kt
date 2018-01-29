@@ -278,7 +278,7 @@ class MainActivity : AppCompatActivity(),
                         alert(getString(R.string.help_scramble_gen)) { okButton { } }.show()
                     }
                     "TESTPLL" -> {
-                        alert(getString(R.string.help_blank)) { okButton { } }.show()
+                        alert(getString(R.string.help_test_pll)) { okButton { } }.show()
                     }
                     "BASIC" -> {
                         alert(getString(R.string.help_basic)) { okButton { } }.show()

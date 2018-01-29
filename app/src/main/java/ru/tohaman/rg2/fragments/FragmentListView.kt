@@ -31,6 +31,7 @@ import org.jetbrains.anko.support.v4.ctx
 class FragmentListView : ListFragment() {
     private var mPhase: String = "BEGIN"
     private var mListener: OnListViewInteractionListener? = null
+    private lateinit var myListAdapter: MyListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.v (DebugTag.TAG, "FragmentListView onCreate")
@@ -48,7 +49,8 @@ class FragmentListView : ListFragment() {
         Log.v (DebugTag.TAG, "FragmentListView onActivityCreated $mPhase")
         super.onActivityCreated(savedInstanceState)
         val listPagers : ArrayList<ListPager> = ListPagerLab.get(ctx).getPhaseList(mPhase)
-        listAdapter = MyListAdapter(listPagers,1.5f)
+        myListAdapter = MyListAdapter(listPagers,1.5f)
+        listAdapter = myListAdapter
         //толщина разделителя между пунктами меню
         listView.dividerHeight = 1
         //цвет разделителя между пунктами меню
@@ -90,6 +92,12 @@ class FragmentListView : ListFragment() {
         Log.v (DebugTag.TAG, "FragmentListView onDetach")
         super.onDetach()
         mListener = null
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.v (DebugTag.TAG, "FragmentListView onResume")
+        myListAdapter.notifyDataSetChanged()
     }
 
     override fun onSaveInstanceState(state: Bundle) {
