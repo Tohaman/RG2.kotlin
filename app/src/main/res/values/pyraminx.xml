@@ -72,15 +72,16 @@
     ]]></string>
     <string name="pyraminx_st1_url">Tcg2BMHxFY8</string>
 
-    <string name="pyraminx_st2_title">Этап 2. Расстановка радиаторов</string>
+    <string name="pyraminx_st2_title">Этап 2. Расстановка радиаторов.</string>
     <string name="pyraminx_st2_descr" formatted="false"><![CDATA[
         <p>На этом этапе, как уже многие догадались, мы будем расставлять радиаторы, а вместе с ними и уголки,
-        одного цвета на свои места. У нас должно получится
+        на свои места. У нас должно получится
         <a href="rg2://ytplay?time=7:42&link=Azxl2S_FVpk">некое подобие креста</a> кубика 3х3.
         <p style="text-align:center"><img src="pyraminx_2_1.xml"></p>
 
         <p>Для начала выберем цвет грани с которой начнем сборку.
-        Например красный(0:52). Теперь найдем три радиатора с углами выбранного цвета,
+        <a href="rg2://ytplay?time=0:52&link=Azxl2S_FVpk">Например красный.</a>
+        Теперь найдем три радиатора с углами выбранного цвета,
         т.к. углы у нас уже совмещены со своими радиаторами. Теперь поставьте пальцы
         <a href="rg2://ytplay?time=1:05&link=Azxl2S_FVpk">на эти уголки.</a>
         Нам это нужно чтобы найти сторону, на которой будут находится наши радиаторы.
@@ -93,8 +94,9 @@
         <p>Желтыми точками отмечены места для пальцев. Сторона на которой стоят все три пальца
         и будет <a href="rg2://ytplay?time=3:41&link=Azxl2S_FVpk">нужной нам стороной.</a></p>
 
-        <p>Теперь все что нам осталось сделать - повернуть большие углы с радиаторами так, чтобы каждый
-        радиатор стоял на своём месте <a href="rg2://ytplay?time=4:40&link=Azxl2S_FVpk">(встал на свою сторону).</a>
+        <p>Теперь все что нам осталось сделать -
+        <a href="rg2://ytplay?time=4:40&link=Azxl2S_FVpk">повернуть большие углы</a> с радиаторами так, чтобы каждый
+        радиатор стоял на своём месте <a href="rg2://ytplay?time=5:13&link=Azxl2S_FVpk">(встал на свою сторону).</a>
 
         <p style="text-align:center"><img src="pyraminx_2_3.xml"> => <img src="pyraminx_2_4.xml"></p>
 
@@ -102,7 +104,7 @@
     ]]></string>
     <string name="pyraminx_st2_url">Azxl2S_FVpk</string>
 
-    <string name="pyraminx_st3_title">Этап 3. </string>
+    <string name="pyraminx_st3_title">Этап 3. Ребра первой стороны</string>
     <string name="pyraminx_st3_descr" formatted="false"><![CDATA[
         В процессе написания
 
