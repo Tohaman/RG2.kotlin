@@ -48,5 +48,8 @@
     <string name="content_description_app_loading_image">Пожалуйста подождите</string>
     <string name="commentText">Свой комментарий: </string>
     <string name="pyraminx">Пирамидка (Pyraminx)</string>
+    <string name="other_puzzle">Другие головоломки</string>
+    <string name="programm_name">RubicsGuide 2 (RG2)</string>
+    <string name="support_email">rubicsguide@yandex.ru</string>
 
 </resources>

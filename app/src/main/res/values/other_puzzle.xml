@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="other_title">
+        <item>Пирамидка (Pyraminx)</item>
+        <item>Мегаминкс</item>
+        <item>Скьюб</item>
+    </string-array>
+
+    <integer-array name="other_icon">
+        <item>@drawable/pyraminx</item>
+        <item>@drawable/megaminx</item>
+        <item>@drawable/skewb</item>
+    </integer-array>
+
+    <string-array name="other_descr">
+        <item>@string/other_st1_descr</item>
+        <item>@string/other_st2_descr</item>
+        <item>@string/other_st3_descr</item>
+    </string-array>
+
+    <string-array name="other_null">
+        <item> </item>
+        <item> </item>
+        <item> </item>
+    </string-array>
+
+    <string name="other_st1_descr">PYRAMINX</string>
+    <string name="other_st2_descr">MEGAMINX</string>
+    <string name="other_st3_descr">SKEWB</string>
+
+</resources>
+

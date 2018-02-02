@@ -31,6 +31,7 @@ import ru.tohaman.rg2.util.getThemeFromSharedPreference
 
 
 class SlidingTabsActivity : AppCompatActivity() {
+    private var mPhase = "BEGIN"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(getThemeFromSharedPreference(ctx))
@@ -58,7 +59,6 @@ class SlidingTabsActivity : AppCompatActivity() {
 
 
         //Инициируем фазу и номер этапа, должны быть переданы из другой активности, если нет, то используем значения по-умолчанию
-        var mPhase = "BEGIN"
         var id = 0
         if (intent.hasExtra(RUBIC_PHASE)){
             mPhase = intent.extras.getString(RUBIC_PHASE)
@@ -129,7 +129,11 @@ class SlidingTabsActivity : AppCompatActivity() {
                         positiveButton("Закрыть окно") {
                         }
                         verticalLayout {
-                            val listPagers : ArrayList<ListPager> = ListPagerLab.get(ctx).getPhaseList("BASIC")
+                            val listPagers : ArrayList<ListPager> =
+                                    when (mPhase) {
+                                        "PYRAMINX" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_PYR")}
+                                        else -> {ListPagerLab.get(ctx).getPhaseList("BASIC")}
+                                    }
                             val lstView = listView {
                                 adapter = MyListAdapter(listPagers)
                             }

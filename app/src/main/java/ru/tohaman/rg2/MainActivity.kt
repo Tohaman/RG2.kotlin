@@ -10,7 +10,6 @@ import android.preference.PreferenceManager
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction
-import android.support.v4.content.ContextCompat
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
@@ -75,6 +74,8 @@ class MainActivity : AppCompatActivity(),
     private var backPressedTime: Long = 0
     lateinit private var mListPagerLab: ListPagerLab
     private var curPhase = "BEGIN"
+    private val listOfGo2Fridrich = listOf("ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL")
+    private val listOfOtherPuzzle = listOf("PYRAMINX", "MEGAMINX", "SKEWB")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //Устанавливаем тему взятую из шаредпреференс
@@ -138,7 +139,11 @@ class MainActivity : AppCompatActivity(),
             "TESTPLL" -> {setFragment(FragmentTestPLLSettings.newInstance())}
             "SETTINGS" -> {setFragment(FragmentSettings.newInstance())}
             "ABOUT" -> {setFragment(FragmentAbout.newInstance())}
-            "ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL" -> {
+            in listOfGo2Fridrich -> {
+                fab.setImageResource(R.drawable.ic_fab_backward)
+                setListFragmentPhase(curPhase)
+            }
+            in listOfOtherPuzzle -> {
                 fab.setImageResource(R.drawable.ic_fab_backward)
                 setListFragmentPhase(curPhase)
             }
@@ -153,8 +158,13 @@ class MainActivity : AppCompatActivity(),
         }
         fab.setOnClickListener { _ ->
             when (curPhase) {
-                "ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL" -> {
+                in listOfGo2Fridrich -> {
                     curPhase = "G2F"
+                    setListFragmentPhase(curPhase)
+                    fab.setImageResource(R.drawable.ic_fab_forward)
+                }
+                in listOfOtherPuzzle -> {
+                    curPhase = "OTHER"
                     setListFragmentPhase(curPhase)
                     fab.setImageResource(R.drawable.ic_fab_forward)
                 }
@@ -186,8 +196,13 @@ class MainActivity : AppCompatActivity(),
 
     override fun onBackPressed() {
         when (curPhase) {
-            "ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL" -> {
+            in listOfGo2Fridrich -> {
                 curPhase = "G2F"
+                setListFragmentPhase(curPhase)
+                fab.setImageResource(R.drawable.ic_fab_forward)
+            }
+            in listOfOtherPuzzle -> {
+                curPhase = "OTHER"
                 setListFragmentPhase(curPhase)
                 fab.setImageResource(R.drawable.ic_fab_forward)
             }
@@ -228,7 +243,6 @@ class MainActivity : AppCompatActivity(),
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         Log.v (TAG, "onOptionsItemSelected - curPhase - $curPhase")
-        //TODO дописать обработчики хелпов для всех этапов
         when (item.itemId) {
             R.id.action_help -> {
                 when (curPhase) {
@@ -268,13 +282,19 @@ class MainActivity : AppCompatActivity(),
                     "BLINDACC" -> {
                         alert(getString(R.string.help_blind_acc)) { okButton { } }.show()
                     }
-                    "PYRAMINX" -> {
-                        alert(getString(R.string.help_pyraminx)) { okButton { } }.show()
-                    }
-
                     "BEGIN4X4" -> {
                         alert(getString(R.string.help_begin4x4)) { okButton { } }.show()
                     }
+                    "PYRAMINX" -> {
+                        alert(getString(R.string.help_pyraminx)) { okButton { } }.show()
+                    }
+                    "MEGAMINX" -> {
+                        alert(getString(R.string.help_megaminx)) { okButton { } }.show()
+                    }
+                    "SKEWB" -> {
+                        alert(getString(R.string.help_skewb)) { okButton { } }.show()
+                    }
+
                     "TIMER" -> {
                         alert(getString(R.string.help_timer)) { okButton { } }.show()
                     }
@@ -329,9 +349,11 @@ class MainActivity : AppCompatActivity(),
 
             R.id.blind_acc -> { setListFragmentPhase("BLINDACC") }
 
-            R.id.pyraminx -> { setListFragmentPhase("PYRAMINX") }
-
             R.id.begin4x4 -> { setListFragmentPhase("BEGIN4X4")}
+
+//            R.id.pyraminx -> { setListFragmentPhase("PYRAMINX") }
+
+            R.id.other_puzzle -> {setListFragmentPhase("OTHER")}
 
             R.id.timer -> {
                 setFragment(FragmentTimerSettings.newInstance())
@@ -402,8 +424,8 @@ class MainActivity : AppCompatActivity(),
             "BASIC" -> {
                 toast(getString(lp.description))
             }
-            //Если меню "переходим на Фридрих", то меняем текст листвью на соответствующую фазу
-            "G2F" -> {
+            //Если меню "переходим на Фридрих" или "Другие головоломки", то меняем текст листвью на соответствующую фазу
+            "OTHER","G2F" -> {
                 setListFragmentPhase(getString(lp.description))
                 fab.setImageResource(R.drawable.ic_fab_backward)
             }
