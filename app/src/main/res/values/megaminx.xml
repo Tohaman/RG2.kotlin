@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="megaminx_title">
+        <item>@string/megaminx_st1_title</item>
+        <item>@string/megaminx_st2_title</item>
+        <item>@string/megaminx_st3_title</item>
+        <item>@string/megaminx_st4_title</item>
+        <item>@string/megaminx_st5_title</item>
+    </string-array>
+
+    <integer-array name="megaminx_icon">
+        <item>@drawable/megaminx_1</item>
+        <item>@drawable/megaminx_1</item>
+        <item>@drawable/megaminx_1</item>
+        <item>@drawable/megaminx_1</item>
+        <item>@drawable/megaminx_1</item>
+    </integer-array>
+    
+    <string-array name="megaminx_descr">
+        <item>@string/megaminx_st1_descr</item>
+        <item>@string/megaminx_st2_descr</item>
+        <item>@string/megaminx_st3_descr</item>
+        <item>@string/megaminx_st4_descr</item>
+        <item>@string/megaminx_st5_descr</item>
+    </string-array>
+
+
+    <string-array name="megaminx_url">
+        <item>@string/megaminx_st1_url</item>
+        <item>@string/megaminx_st2_url</item>
+        <item>@string/megaminx_st3_url</item>
+        <item>@string/megaminx_st4_url</item>
+        <item>@string/megaminx_st5_url</item>
+    </string-array>
+    
+    <string name="megaminx_st1_title">Этап 1. </string>
+    <string name="megaminx_st1_descr" formatted="false"><![CDATA[
+        В процессе написания.
+    ]]></string>
+    <string name="megaminx_st1_url">6E3PVIiczSA</string>
+
+    <string name="megaminx_st2_title">Этап 2. </string>
+    <string name="megaminx_st2_descr" formatted="false"><![CDATA[
+        В процессе написания.
+    ]]></string>
+    <string name="megaminx_st2_url">dc8UhZ1gNFE</string>
+
+    <string name="megaminx_st3_title">Этап 3. </string>
+    <string name="megaminx_st3_descr" formatted="false"><![CDATA[
+        В процессе написания.
+    ]]></string>
+    <string name="megaminx_st3_url">XixJxscCkgY</string>
+
+    <string name="megaminx_st4_title">Этап 4. OLL</string>
+    <string name="megaminx_st4_descr" formatted="false"><![CDATA[
+        В процессе написания.
+    ]]></string>
+    <string name="megaminx_st4_url">af87b9xiwmg</string>
+
+    <string name="megaminx_st5_title">Этап 5. PLL</string>
+    <string name="megaminx_st5_descr" formatted="false"><![CDATA[
+        В процессе написания.
+    ]]></string>
+    <string name="megaminx_st5_url">e1kxrYYZ08Y</string>
+
+
+
+</resources>

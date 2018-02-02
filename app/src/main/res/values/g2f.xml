@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="g2f_title">
-        <item>Ускорения для начинающих</item>
-        <item>Ускоряем крест</item>
-        <item>Интуитивный + Adv.F2L</item>
-        <item>Жизненный F2L</item>
-        <item>Максимкин PLL</item>
-        <item>Долгожданный OLL</item>
-    </string-array>
+<string-array name="g2f_title">
+    <item>Ускорения для начинающих</item>
+    <item>Ускоряем крест</item>
+    <item>Интуитивный + Adv.F2L</item>
+    <item>Жизненный F2L</item>
+    <item>Максимкин PLL</item>
+    <item>Долгожданный OLL</item>
+</string-array>
 
-    <integer-array name="g2f_icon">
-        <item>@drawable/vaccel_2</item>
-        <item>@drawable/vcross</item>
-        <item>@drawable/vf2l</item>
-        <item>@drawable/vf2l</item>
-        <item>@drawable/vpll</item>
-        <item>@drawable/voll_51</item>
-    </integer-array>
+<integer-array name="g2f_icon">
+    <item>@drawable/vaccel_2</item>
+    <item>@drawable/vcross</item>
+    <item>@drawable/vf2l</item>
+    <item>@drawable/vf2l</item>
+    <item>@drawable/vpll</item>
+    <item>@drawable/voll_51</item>
+</integer-array>
 
-    <string-array name="g2f_descr">
-        <item>@string/g2f_st1_descr</item>
-        <item>@string/g2f_st2_descr</item>
-        <item>@string/g2f_st3_descr</item>
-        <item>@string/g2f_st4_descr</item>
-        <item>@string/g2f_st5_descr</item>
-        <item>@string/g2f_st6_descr</item>
-    </string-array>
+<string-array name="g2f_descr">
+    <item>@string/g2f_st1_descr</item>
+    <item>@string/g2f_st2_descr</item>
+    <item>@string/g2f_st3_descr</item>
+    <item>@string/g2f_st4_descr</item>
+    <item>@string/g2f_st5_descr</item>
+    <item>@string/g2f_st6_descr</item>
+</string-array>
 
-    <string-array name="g2f_null">
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-    </string-array>
+<string-array name="g2f_null">
+    <item> </item>
+    <item> </item>
+    <item> </item>
+    <item> </item>
+    <item> </item>
+    <item> </item>
+</string-array>
 
-    <string name="g2f_st1_descr">ACCEL</string>
-    <string name="g2f_st2_descr">CROSS</string>
-    <string name="g2f_st3_descr">ADVF2L</string>
-    <string name="g2f_st4_descr">F2L</string>
-    <string name="g2f_st5_descr">PLL</string>
-    <string name="g2f_st6_descr">OLL</string>
+<string name="g2f_st1_descr">ACCEL</string>
+<string name="g2f_st2_descr">CROSS</string>
+<string name="g2f_st3_descr">ADVF2L</string>
+<string name="g2f_st4_descr">F2L</string>
+<string name="g2f_st5_descr">PLL</string>
+<string name="g2f_st6_descr">OLL</string>
 
 </resources>
