@@ -46,5 +46,6 @@
     </string>
     <string name="help_pyraminx">Простой способ собрать пирамидку</string>
     <string name="help_megaminx">Простой способ собрать мегаминкс</string>
+    <string name="help_skewb">Простой способ собрать скьюб</string>
 
 </resources>

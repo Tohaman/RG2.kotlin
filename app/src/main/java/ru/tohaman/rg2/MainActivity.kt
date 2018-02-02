@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity(),
     private var curPhase = "BEGIN"
     private val listOfGo2Fridrich = listOf("ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL")
     //TODO После добавления мегаминкса убрать 1 для пирамидки
-    private val listOfOtherPuzzle = listOf("PYRAMINX", "MEGAMINX", "SKEWB")
+    private val listOfOtherPuzzle = listOf("PYRAMINX1", "MEGAMINX", "SKEWB")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //Устанавливаем тему взятую из шаредпреференс
@@ -292,6 +292,9 @@ class MainActivity : AppCompatActivity(),
                     "MEGAMINX" -> {
                         alert(getString(R.string.help_megaminx)) { okButton { } }.show()
                     }
+                    "SKEWB" -> {
+                        alert(getString(R.string.help_skewb)) { okButton { } }.show()
+                    }
 
                     "TIMER" -> {
                         alert(getString(R.string.help_timer)) { okButton { } }.show()
@@ -351,8 +354,8 @@ class MainActivity : AppCompatActivity(),
 
             R.id.pyraminx -> { setListFragmentPhase("PYRAMINX") }
 
-//TODO Раскоментировать, когда добавлю мегаминкс
-            R.id.other_puzzle -> {setListFragmentPhase("OTHER")}
+//TODO Раскоментировать, когда добавлю мегаминкс и скьюб
+//            R.id.other_puzzle -> {setListFragmentPhase("OTHER")}
 
             R.id.timer -> {
                 setFragment(FragmentTimerSettings.newInstance())
