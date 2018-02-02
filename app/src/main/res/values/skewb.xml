@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="skewb_title">
+        <item>@string/skewb_st1_title</item>
+        <item>@string/skewb_st2_title</item>
+        <item>@string/skewb_st3_title</item>
+        <item>@string/skewb_st4_title</item>
+        <item>@string/skewb_st5_title</item>
+        <item>@string/skewb_st6_title</item>
+    </string-array>
+
+    <integer-array name="skewb_icon">
+        <item>@drawable/skewb</item>
+        <item>@drawable/skewb</item>
+        <item>@drawable/skewb</item>
+        <item>@drawable/skewb</item>
+        <item>@drawable/skewb</item>
+        <item>@drawable/skewb</item>
+    </integer-array>
+    
+    <string-array name="skewb_descr">
+        <item>@string/skewb_st1_descr</item>
+        <item>@string/skewb_st2_descr</item>
+        <item>@string/skewb_st3_descr</item>
+        <item>@string/skewb_st4_descr</item>
+        <item>@string/skewb_st5_descr</item>
+        <item>@string/skewb_st6_descr</item>
+    </string-array>
+
+
+    <string-array name="skewb_url">
+        <item>@string/skewb_st1_url</item>
+        <item>@string/skewb_st2_url</item>
+        <item>@string/skewb_st3_url</item>
+        <item>@string/skewb_st4_url</item>
+        <item>@string/skewb_st5_url</item>
+        <item>@string/skewb_st6_url</item>
+    </string-array>
+    
+    <string name="skewb_st1_title">Этап 1. </string>
+    <string name="skewb_st1_descr" formatted="false"><![CDATA[
+        В процессе написания.
+    ]]></string>
+    <string name="skewb_st1_url">ItI4X9YXCJ8</string>
+
+    <string name="skewb_st2_title">Этап 2. </string>
+    <string name="skewb_st2_descr" formatted="false"><![CDATA[
+        В процессе написания.
+    ]]></string>
+    <string name="skewb_st2_url">93Sp66a5Q6o</string>
+
+    <string name="skewb_st3_title">Этап 3. </string>
+    <string name="skewb_st3_descr" formatted="false"><![CDATA[
+        В процессе написания.
+    ]]></string>
+    <string name="skewb_st3_url">gysLJfKILHo</string>
+
+    <string name="skewb_st4_title">Этап 4.</string>
+    <string name="skewb_st4_descr" formatted="false"><![CDATA[
+        В процессе написания.
+    ]]></string>
+    <string name="skewb_st4_url">a5o-pUzGqwg</string>
+
+    <string name="skewb_st5_title">Этап 5.</string>
+    <string name="skewb_st5_descr" formatted="false"><![CDATA[
+        В процессе написания.
+    ]]></string>
+    <string name="skewb_st5_url">79IjFrvr774</string>
+
+    <string name="skewb_st6_title">Этап 6.</string>
+    <string name="skewb_st6_descr" formatted="false"><![CDATA[
+        В процессе написания.
+    ]]></string>
+    <string name="skewb_st6_url">WFK69SoXcak</string>
+
+
+</resources>

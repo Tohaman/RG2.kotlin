@@ -9,7 +9,7 @@
     <integer-array name="other_icon">
         <item>@drawable/pyraminx</item>
         <item>@drawable/megaminx</item>
-        <item>@drawable/vbegin_9</item>
+        <item>@drawable/skewb</item>
     </integer-array>
 
     <string-array name="other_descr">
@@ -26,7 +26,7 @@
 
     <string name="other_st1_descr">PYRAMINX</string>
     <string name="other_st2_descr">MEGAMINX</string>
-    <string name="other_st3_descr">SQUBE</string>
+    <string name="other_st3_descr">SKEWB</string>
 
 </resources>
 

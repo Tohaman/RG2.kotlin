@@ -36,10 +36,10 @@
             android:id="@+id/pyraminx"
             android:icon="@drawable/ic_pyraminx"
             android:title="@string/pyraminx"/>
-        <!--<item-->
-            <!--android:id="@+id/other_puzzle"-->
-            <!--android:icon="@drawable/ic_megaminx"-->
-            <!--android:title="@string/other_puzzle"/>-->
+        <item
+            android:id="@+id/other_puzzle"
+            android:icon="@drawable/ic_megaminx"
+            android:title="@string/other_puzzle"/>
         <item
             android:id="@+id/timer"
             android:icon="@drawable/ic_menu_timer"
