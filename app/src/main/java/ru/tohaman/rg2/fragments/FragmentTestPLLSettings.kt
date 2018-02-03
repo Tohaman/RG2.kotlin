@@ -35,7 +35,7 @@ class FragmentTestPLLSettings : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return TestPllUI<Fragment>().createView(AnkoContext.create(ctx, this))
-}
+    }
 
     companion object {
         fun newInstance(): FragmentTestPLLSettings {
@@ -84,7 +84,7 @@ class TestPllUI<in Fragment> : AnkoComponentEx<Fragment>() {
                 text_row_count.text = rowCount.toString()
             }
 
-            radio_group_difficulty.onCheckedChange { group, checkedId ->
+            ch_box_layout.onCheckedChange { group, checkedId ->
                 when (checkedId) {
                     rb_2side.id -> { is3side = false }
                     rb_3side.id -> { is3side = true }

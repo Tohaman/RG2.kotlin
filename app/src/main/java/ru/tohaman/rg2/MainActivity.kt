@@ -29,6 +29,7 @@ import android.view.WindowManager
 import android.widget.FrameLayout
 import android.widget.ImageView
 import ru.tohaman.rg2.DeveloperKey.base64EncodedPublicKey
+import ru.tohaman.rg2.activities.BlindGameActivity
 import ru.tohaman.rg2.util.*
 
 
@@ -137,6 +138,7 @@ class MainActivity : AppCompatActivity(),
             "TIMER" -> {setFragment(FragmentTimerSettings.newInstance())}
             "SCRAMBLEGEN" -> {setFragment(FragmentScrambleGen.newInstance())}
             "TESTPLL" -> {setFragment(FragmentTestPLLSettings.newInstance())}
+            "BLINDGAME" -> {setFragment(FragmentBlindGameSettings.newInstance())}
             "SETTINGS" -> {setFragment(FragmentSettings.newInstance())}
             "ABOUT" -> {setFragment(FragmentAbout.newInstance())}
             in listOfGo2Fridrich -> {
@@ -366,6 +368,11 @@ class MainActivity : AppCompatActivity(),
             R.id.pll_game -> {
                 setFragment(FragmentTestPLLSettings.newInstance())
                 saveStartPhase("TESTPLL")
+            }
+
+            R.id.blind_game -> {
+                setFragment(FragmentBlindGameSettings.newInstance())
+                saveStartPhase("BLINDGAME")
             }
 
             R.id.basic_move -> { setListFragmentPhase("BASIC") }

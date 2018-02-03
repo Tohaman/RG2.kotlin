@@ -51,5 +51,6 @@
     <string name="other_puzzle">Другие головоломки</string>
     <string name="programm_name">RubicsGuide 2 (RG2)</string>
     <string name="support_email">rubicsguide@yandex.ru</string>
+    <string name="blind_game">Тренировка Азбуки</string>
 
 </resources>
