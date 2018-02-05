@@ -8,8 +8,12 @@
     <color name="transparent">#00888888</color>     //прозрачный серый :)
     <color name="blue">#008DD2</color>
     <color name="green">#00F200</color>
+    <color name="c_lg">#00F200</color>
+    <color name="pink">#ea80fc</color>
+    <color name="c_p">#ea80fc</color>
     <color name="red">#F20000</color>
     <color name="yellow">#ffff00</color>
+    <color name="c_ly">#fff59d</color>
     <color name="white">#FFFFFF</color>
     <color name="orange">#FF9800</color>
     <color name="black">#FF000000</color>
