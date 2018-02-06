@@ -7,6 +7,7 @@
     <color name="gray">#424242</color>
     <color name="transparent">#00888888</color>     //прозрачный серый :)
     <color name="blue">#008DD2</color>
+    <color name="c_lb">#4fc3f7</color>
     <color name="green">#00F200</color>
     <color name="c_lg">#00F200</color>
     <color name="pink">#ea80fc</color>
@@ -37,7 +38,7 @@
     <color name="cube_ollgray">#696969</color>
     <color name="c_gr">#696969</color>
     <color name="cube_litegray">#9e9e9e</color>
-    <color name="c_lgr">#9e9e9e</color>
+    <color name="c_lgr">#bdbdbd</color>
     <color name="semitransparent_grey">#cc424242</color>
     <color name="ic_launcher_backgroun">#FFFDFB</color>
     <color name="primary_dark_material_light_1">#e51313</color>
