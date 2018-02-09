@@ -3,7 +3,7 @@
     <string-array name="other_title">
         <item>Пирамидка (Pyraminx)</item>
         <item>Мегаминкс</item>
-        <item>Скьюб</item>
+        <!--<item>Скьюб</item>-->
     </string-array>
 
     <integer-array name="other_icon">

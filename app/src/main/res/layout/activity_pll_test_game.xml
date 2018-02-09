@@ -25,7 +25,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/z_3s_complete"/>
+            app:srcCompat="@drawable/z_cube_back_black"/>
 
     </android.support.constraint.ConstraintLayout>
 

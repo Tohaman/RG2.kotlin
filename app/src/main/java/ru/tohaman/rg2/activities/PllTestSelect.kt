@@ -14,22 +14,20 @@ import ru.tohaman.rg2.R
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.IS_SCREEN_ALWAYS_ON
+import ru.tohaman.rg2.MyDefaultActivity
 import ru.tohaman.rg2.adapters.MyListAdapter
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.fragments.FragmentListView
 import ru.tohaman.rg2.util.getThemeFromSharedPreference
 
-class PllTestSelect : AppCompatActivity(), FragmentListView.OnListViewInteractionListener {
+class PllTestSelect : MyDefaultActivity(), FragmentListView.OnListViewInteractionListener {
     private lateinit var fragListView: FragmentListView
     private lateinit var listPagers: ArrayList<ListPager>
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(getThemeFromSharedPreference(ctx))
         super.onCreate(savedInstanceState)
         Log.v (DebugTag.TAG, "PLLTestSelect onCreate start")
-        //Включаем поддержку векторной графики на устройствах ниже Лилипопа (5.0)
-        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
 
         setContentView(R.layout.activity_test_select_pll)
         actionBar?.setDisplayHomeAsUpEnabled(true)
@@ -45,14 +43,6 @@ class PllTestSelect : AppCompatActivity(), FragmentListView.OnListViewInteractio
         fragListView = FragmentListView.newInstance("PLLTEST")
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.pll_list_view, fragListView).commit()
-
-        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
-        val isScreenAlwaysOn = sp.getBoolean(IS_SCREEN_ALWAYS_ON, false)
-        if (isScreenAlwaysOn) {
-            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        } else {
-            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        }
 
         select_maxim_pll.onClick {
             Log.v (DebugTag.TAG, "PLLTestSelect select_maxim_pll.onClick start")

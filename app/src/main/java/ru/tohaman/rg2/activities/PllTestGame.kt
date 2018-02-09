@@ -13,19 +13,16 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
-import ru.tohaman.rg2.R
 
 import org.jetbrains.anko.ctx
 import org.jetbrains.anko.find
-import ru.tohaman.rg2.IS_SCREEN_ALWAYS_ON
-import ru.tohaman.rg2.PLL_TEST_3SIDE
-import ru.tohaman.rg2.PLL_TEST_ROW_COUNT
+import ru.tohaman.rg2.*
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.util.*
 import java.util.*
 
-class PllTestGame : AppCompatActivity() {
+class PllTestGame : MyDefaultActivity() {
     private val random = Random()
     private lateinit var listPagers : List<ListPager>
     private lateinit var guessLinearLayouts : Array<LinearLayout>
@@ -36,27 +33,17 @@ class PllTestGame : AppCompatActivity() {
     private var is3side = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(getThemeFromSharedPreference(ctx))
-        //Включаем поддержку векторной графики на устройствах ниже Лилипопа (5.0)
-        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
 
         super.onCreate(savedInstanceState)
-        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
-
-        val isScreenAlwaysOn = sp.getBoolean(IS_SCREEN_ALWAYS_ON, false)
-        if (isScreenAlwaysOn) {
-            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        } else {
-            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        }
 
         setContentView(R.layout.activity_pll_test_game)
         actionBar?.setDisplayHomeAsUpEnabled(true)
+
+        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
         guessRows = sp.getInt(PLL_TEST_ROW_COUNT, 6) / 2
         is3side = sp.getBoolean(PLL_TEST_3SIDE, true)
 
         imgView = findViewById(R.id.test_image)
-        //imgView.setImageDrawable(genDrawable3sidePll(10))
 
         guessLinearLayouts = arrayOf(
                 find(R.id.row1LinearLayout),

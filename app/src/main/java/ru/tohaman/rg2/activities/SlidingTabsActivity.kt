@@ -30,13 +30,11 @@ import ru.tohaman.rg2.fragments.FragmentPagerItem
 import ru.tohaman.rg2.util.getThemeFromSharedPreference
 
 
-class SlidingTabsActivity : AppCompatActivity() {
+class SlidingTabsActivity : MyDefaultActivity() {
     private var mPhase = "BEGIN"
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(getThemeFromSharedPreference(ctx))
         super.onCreate(savedInstanceState)
-        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         Log.v (TAG, "SlidingTabActivity onCreate")
         setContentView(R.layout.activity_sliding_tabs)
         setSupportActionBar(toolbar)
@@ -49,14 +47,6 @@ class SlidingTabsActivity : AppCompatActivity() {
         fab_sl.setOnClickListener {
             onBackPressed()
         }
-
-        val isScreenAlwaysOn = sp.getBoolean(IS_SCREEN_ALWAYS_ON, false)
-        if (isScreenAlwaysOn) {
-            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        } else {
-            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        }
-
 
         //Инициируем фазу и номер этапа, должны быть переданы из другой активности, если нет, то используем значения по-умолчанию
         var id = 0

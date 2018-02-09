@@ -49,7 +49,7 @@ const val BIG_DONATION = "big_donation"
 const val MEDIUM_DONATION = "medium_donation"
 const val SMALL_DONATION = "small_donation"
 
-class MainActivity : AppCompatActivity(),
+class MainActivity : MyDefaultActivity(),
         NavigationView.OnNavigationItemSelectedListener,
         FragmentListView.OnListViewInteractionListener,
         FragmentScrambleGen.OnSrambleGenInteractionListener,
@@ -79,16 +79,9 @@ class MainActivity : AppCompatActivity(),
     private val listOfOtherPuzzle = listOf("PYRAMINX", "MEGAMINX", "SKEWB")
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        //Устанавливаем тему взятую из шаредпреференс
-        setTheme(getThemeFromSharedPreference(ctx))
 
         super.onCreate(savedInstanceState)
 
-        //Устанавливаем параметр отключения экрана в зависимости от настроек программы
-        setScreenOn(IS_SCREEN_ALWAYS_ON, ctx)
-
-        //Включаем поддержку векторной графики на устройствах ниже Лилипопа (5.0)
-        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         Log.v (TAG, "MainActivity ListPagerLab init")
         mListPagerLab = ListPagerLab.get(ctx)
 
@@ -476,7 +469,7 @@ class MainActivity : AppCompatActivity(),
     }
 
 
-    fun setScreenOn (parameterName: String, context: Context){
+    private fun setScreenOn (parameterName: String, context: Context){
         val sp = PreferenceManager.getDefaultSharedPreferences(context)
         val isScreenAlwaysOn = sp.getBoolean(parameterName, false)
         if (isScreenAlwaysOn) {

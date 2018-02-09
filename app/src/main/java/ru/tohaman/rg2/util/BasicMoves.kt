@@ -615,3 +615,45 @@ fun moveBw2(cube: IntArray): IntArray {   //Uw2 - верхние два слоя
     tmpCube = moveBw(tmpCube)
     return tmpCube
 }
+
+fun moveZ(cube: IntArray): IntArray {   //Uw2 - верхние два слоя
+    var tmpCube = cube
+    tmpCube = moveFw(tmpCube)
+    tmpCube = moveBb(tmpCube)
+    return tmpCube
+}
+
+fun moveZb(cube: IntArray): IntArray {   //Uw2 - верхние два слоя
+    var tmpCube = cube
+    tmpCube = moveBw(tmpCube)
+    tmpCube = moveFb(tmpCube)
+    return tmpCube
+}
+
+fun moveY(cube: IntArray): IntArray {   //Uw2 - верхние два слоя
+    var tmpCube = cube
+    tmpCube = moveUw(tmpCube)
+    tmpCube = moveDb(tmpCube)
+    return tmpCube
+}
+
+fun moveYb(cube: IntArray): IntArray {   //Uw2 - верхние два слоя
+    var tmpCube = cube
+    tmpCube = moveDw(tmpCube)
+    tmpCube = moveUb(tmpCube)
+    return tmpCube
+}
+
+fun moveX(cube: IntArray): IntArray {   //Uw2 - верхние два слоя
+    var tmpCube = cube
+    tmpCube = moveRw(tmpCube)
+    tmpCube = moveLb(tmpCube)
+    return tmpCube
+}
+
+fun moveXb(cube: IntArray): IntArray {   //Uw2 - верхние два слоя
+    var tmpCube = cube
+    tmpCube = moveLw(tmpCube)
+    tmpCube = moveRb(tmpCube)
+    return tmpCube
+}

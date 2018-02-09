@@ -18,21 +18,11 @@ import ru.tohaman.rg2.util.getThemeFromSharedPreference
 class ScrambleActivity : AppCompatActivity(), FragmentScrambleGen.OnSrambleGenInteractionListener  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(getThemeFromSharedPreference(ctx))
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fragment)
         Log.v (TAG, "ScrambleActivity Start")
         val transaction : FragmentTransaction? = supportFragmentManager.beginTransaction()
         transaction?.replace(R.id.fragment_container, FragmentScrambleGen())?.commit()
-        //Включаем поддержку векторной графики на устройствах ниже Лилипопа (5.0)
-        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
-        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
-        val isScreenAlwaysOn = sp.getBoolean(IS_SCREEN_ALWAYS_ON, false)
-        if (isScreenAlwaysOn) {
-            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        } else {
-            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        }
     }
 
     override fun onScrambleGenInteraction(button: String) {
