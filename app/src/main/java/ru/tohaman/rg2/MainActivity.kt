@@ -346,8 +346,6 @@ class MainActivity : MyDefaultActivity(),
 
             R.id.begin4x4 -> { setListFragmentPhase("BEGIN4X4")}
 
-//            R.id.pyraminx -> { setListFragmentPhase("PYRAMINX") }
-
             R.id.other_puzzle -> {setListFragmentPhase("OTHER")}
 
             R.id.timer -> {
@@ -363,10 +361,10 @@ class MainActivity : MyDefaultActivity(),
                 saveStartPhase("TESTPLL")
             }
 
-            R.id.blind_game -> {
-                setFragment(FragmentBlindGameSettings.newInstance())
-                saveStartPhase("BLINDGAME")
-            }
+//            R.id.blind_game -> {
+//                setFragment(FragmentBlindGameSettings.newInstance())
+//                saveStartPhase("BLINDGAME")
+//            }
 
             R.id.basic_move -> { setListFragmentPhase("BASIC") }
 

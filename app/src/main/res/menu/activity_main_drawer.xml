@@ -32,10 +32,6 @@
             android:id="@+id/begin4x4"
             android:icon="@drawable/ic_icon4"
             android:title="@string/begin_4x4"/>
-        <!--<item-->
-            <!--android:id="@+id/pyraminx"-->
-            <!--android:icon="@drawable/ic_pyraminx"-->
-            <!--android:title="@string/pyraminx"/>-->
         <item
             android:id="@+id/other_puzzle"
             android:icon="@drawable/ic_megaminx"
@@ -52,10 +48,10 @@
             android:id="@+id/pll_game"
             android:icon="@drawable/ic_menu_game"
             android:title="@string/pll_game"/>
-        <item
-            android:id="@+id/blind_game"
-            android:icon="@drawable/ic_menu_game"
-            android:title="@string/blind_game"/>
+        <!--<item-->
+            <!--android:id="@+id/blind_game"-->
+            <!--android:icon="@drawable/ic_menu_game"-->
+            <!--android:title="@string/blind_game"/>-->
         <item
             android:id="@+id/basic_move"
             android:icon="@drawable/ic_menu_basic"
