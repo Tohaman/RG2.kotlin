@@ -6,6 +6,7 @@
 
     <color name="gray">#424242</color>
     <color name="transparent">#00888888</color>     //прозрачный серый :)
+    <color name="semitransparent">#22888888</color>     //полупрозрачный серый :)
     <color name="blue">#008DD2</color>
     <color name="c_lb">#4fc3f7</color>
     <color name="green">#00F200</color>

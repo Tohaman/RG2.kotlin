@@ -361,10 +361,10 @@ class MainActivity : MyDefaultActivity(),
                 saveStartPhase("TESTPLL")
             }
 
-//            R.id.blind_game -> {
-//                setFragment(FragmentBlindGameSettings.newInstance())
-//                saveStartPhase("BLINDGAME")
-//            }
+            R.id.blind_game -> {
+                setFragment(FragmentBlindGameSettings.newInstance())
+                saveStartPhase("BLINDGAME")
+            }
 
             R.id.basic_move -> { setListFragmentPhase("BASIC") }
 
