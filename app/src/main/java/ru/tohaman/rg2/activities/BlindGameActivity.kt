@@ -20,7 +20,9 @@ import java.util.*
 import android.graphics.Color
 import android.graphics.drawable.shapes.OvalShape
 import android.graphics.drawable.ShapeDrawable
-
+import android.view.View
+import android.widget.Button
+import ru.tohaman.rg2.util.getNameFromListPagers
 
 
 class BlindGameActivity : MyDefaultActivity() {
@@ -30,6 +32,7 @@ class BlindGameActivity : MyDefaultActivity() {
     private var guessRows = 2
     private lateinit var imgView: ImageView
     val DEFAULT_DRAWABLE_SIZE = 1
+    private var correctAnswer = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,9 +47,38 @@ class BlindGameActivity : MyDefaultActivity() {
                 find(R.id.row3LinearLayout),
                 find(R.id.row4LinearLayout))
 
+        // настраиваем слушателя, для каждой кнопки
+        for (row in guessLinearLayouts) {
+            (0 until row.childCount)
+                    .map { row.getChildAt(it) as Button }
+                    .forEach { it.setOnClickListener(guessButtonListener) }
+        }
+
+        updateGuessRows(guessRows, guessLinearLayouts)
+
         imgView = findViewById(R.id.test_image)
         imgView.image = maskedDrawable(200)
 
+    }
+
+    private fun updateGuessRows(guessRows: Int, guessLinearLayouts: Array<LinearLayout>) {
+        // Сначала скрываем все кнопки (точнее ряды) скрытыми
+        for (layout in guessLinearLayouts)
+            layout.visibility = View.GONE
+        // Делаем видимыми только нужное кол-во рядов
+        for (row in 0 until guessRows)
+            guessLinearLayouts[row].visibility = View.VISIBLE
+    }
+
+    private val guessButtonListener = View.OnClickListener { v ->
+        val guessButton = v as Button
+
+        val guess = guessButton.text.toString()
+        if (guess == getNameFromListPagers(listPagers, correctAnswer)) {   //верный ответ
+            //loadNextPLL(guessRows)
+        } else {    //неправильный ответ
+            guessButton.isEnabled = false
+        }
     }
 
 
