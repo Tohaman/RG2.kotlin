@@ -20,6 +20,7 @@ import java.util.*
 import android.graphics.Color
 import android.graphics.drawable.shapes.OvalShape
 import android.graphics.drawable.ShapeDrawable
+import android.support.v4.graphics.drawable.DrawableCompat
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -78,6 +79,9 @@ class BlindGameActivity : MyDefaultActivity() {
             val name = "z_2s_0$i"
             ContextCompat.getDrawable(ctx, resources.getIdentifier(name, "drawable", this.packageName))
         })
+        for (i in 1..27) {
+            DrawableCompat.setTint(drawableArray[i]!!, ContextCompat.getColor(ctx,cubeColor[i/6]))  //верх желтый
+        }
         return LayerDrawable(drawableArray)
     }
 
