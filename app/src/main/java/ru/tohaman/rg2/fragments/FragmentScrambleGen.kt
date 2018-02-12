@@ -14,8 +14,6 @@ import kotlinx.android.synthetic.main.fragment_scramble_gen.*
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.async
 import org.jetbrains.anko.*
-import org.jetbrains.anko.coroutines.experimental.bg
-import org.jetbrains.anko.custom.async
 import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.support.v4.alert
@@ -211,9 +209,9 @@ class FragmentScrambleGen : Fragment() {
     }
 
     //Возвращаем решение, была ли переплавка буф.ребер, была ли переплавка буф.углов
-    private fun getSolve(maincube: IntArray):  Triple<String, Boolean, Boolean>  {
+    private fun getSolve(mainCube: IntArray):  Triple<String, Boolean, Boolean>  {
         var solve = "("
-        var cube = maincube.clone()
+        var cube = mainCube.clone()
         var isEdgeMelted = false
         var isCornerMelted = false
 
@@ -307,40 +305,6 @@ class FragmentScrambleGen : Fragment() {
         } while (!result)
         Log.v(TAG, "Таки скрамбл $scramble подошел под наши условия")
 
-        return scramble
-    }
-
-    //Генерация скрамбла определенной длинны (без учета переплавки буфера)
-    private fun generateScramble(length: Int): String {
-        Log.v(TAG, "FragmentScrambleGen generateScramble $length")
-        val random = Random()
-        var scramble = ""
-        var i = 0
-        var prevRandom = random.nextInt(0..6)                     //генерируем число от 0 до 5
-        var prevPrevRandom = random.nextInt(0..6)                 //генерируем число от 0 до 5
-        val map = hashMapOf(0 to "R", 1 to "L", 2 to "F", 3 to "B", 4 to "U", 5 to "D")
-
-        do {
-            val curRandom = random.nextInt(0..6)                     //генерируем число от 0 до 5
-            if (curRandom != prevRandom) {
-                if ((curRandom / 2 != prevRandom / 2) or (curRandom != prevPrevRandom)) {
-                    i++                                                 //увеличиваем счетчик на 1
-                    // ход будет по часовой, против или двойной
-                    when (random.nextInt(3)) {
-                    //по часовой
-                        0 -> { scramble = "$scramble${map[curRandom]} "  }      //просто добавляем букву
-                    //против часовой
-                        1 -> { scramble = "$scramble${map[curRandom]}' " }      //добавляем букву c '
-                    //двойной
-                        2 -> { scramble = "$scramble${map[curRandom]}2 " }      //добавляем двойку
-                    }
-                    prevPrevRandom = prevRandom                         // запоминаем -2 позиции от текущего числа
-                    prevRandom = curRandom                              //запоминаем это число в prevRandom
-                }
-            }
-        } while (i < length)
-
-        scramble = scramble.trim (' ')                 //убираем лишние пробелы
         return scramble
     }
 
@@ -543,10 +507,6 @@ class FragmentScrambleGen : Fragment() {
         val listPagerLab = ListPagerLab.get(ctx)
         val azbuka = listPagerLab.getCurrentAzbuka()
         return azbuka[c]
-    }
-
-    fun Random.nextInt(range: IntRange): Int {
-        return range.start + nextInt(range.last - range.start)
     }
 
     override fun onAttach(context: Context?) {

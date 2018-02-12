@@ -1,10 +1,52 @@
 package ru.tohaman.rg2.util
 
+import android.util.Log
+import ru.tohaman.rg2.DebugTag
+import java.util.*
+
 /**
  * Created by Toha on 22.12.2017. Внеклассовые методы, для ходов кубика Рубика
  * Алгоритмы постановки на место элементов для слепой сборки кубика
  *
  */
+
+//Генерация скрамбла определенной длинны (без учета переплавки буфера)
+fun generateScramble(length: Int): String {
+    Log.v(DebugTag.TAG, "FragmentScrambleGen generateScramble $length")
+    val random = Random()
+    var scramble = ""
+    var i = 0
+    var prevRandom = random.nextInt(0..6)                     //генерируем число от 0 до 5
+    var prevPrevRandom = random.nextInt(0..6)                 //генерируем число от 0 до 5
+    val map = hashMapOf(0 to "R", 1 to "L", 2 to "F", 3 to "B", 4 to "U", 5 to "D")
+
+    do {
+        val curRandom = random.nextInt(0..6)                     //генерируем число от 0 до 5
+        if (curRandom != prevRandom) {
+            if ((curRandom / 2 != prevRandom / 2) or (curRandom != prevPrevRandom)) {
+                i++                                                 //увеличиваем счетчик на 1
+                // ход будет по часовой, против или двойной
+                when (random.nextInt(3)) {
+                //по часовой
+                    0 -> { scramble = "$scramble${map[curRandom]} "  }      //просто добавляем букву
+                //против часовой
+                    1 -> { scramble = "$scramble${map[curRandom]}' " }      //добавляем букву c '
+                //двойной
+                    2 -> { scramble = "$scramble${map[curRandom]}2 " }      //добавляем двойку
+                }
+                prevPrevRandom = prevRandom                         // запоминаем -2 позиции от текущего числа
+                prevRandom = curRandom                              //запоминаем это число в prevRandom
+            }
+        }
+    } while (i < length)
+
+    scramble = scramble.trim (' ')                 //убираем лишние пробелы
+    return scramble
+}
+
+fun Random.nextInt(range: IntRange): Int {
+    return range.start + nextInt(range.last - range.start)
+}
 
 fun runScramble(cube: IntArray, scrm: String): IntArray {
     var scrambleString = scrm

@@ -20,9 +20,13 @@ import java.util.*
 import android.graphics.Color
 import android.graphics.drawable.shapes.OvalShape
 import android.graphics.drawable.ShapeDrawable
+import android.util.Log
 import android.view.View
 import android.widget.Button
-import ru.tohaman.rg2.util.getNameFromListPagers
+import ru.tohaman.rg2.DebugTag
+import ru.tohaman.rg2.data.ListPagerLab
+import ru.tohaman.rg2.fragments.FragmentScrambleGen
+import ru.tohaman.rg2.util.*
 
 
 class BlindGameActivity : MyDefaultActivity() {
@@ -54,11 +58,27 @@ class BlindGameActivity : MyDefaultActivity() {
                     .forEach { it.setOnClickListener(guessButtonListener) }
         }
 
+        val listPagerLab = ListPagerLab.get(ctx)
+        val azbuka = listPagerLab.getCurrentAzbuka()
+        Log.v (DebugTag.TAG, "BlindGameActivity  onCreate gridList $azbuka")
         updateGuessRows(guessRows, guessLinearLayouts)
+
+        //сгенерируем скрамбл длинны указанной в поле ScrambleLength
+        val scramble = generateScramble(14)
+        //разбираем кубик по скрамблу
+        val genScrambleCube = runScramble(resetCube(), scramble)
 
         imgView = findViewById(R.id.test_image)
         imgView.image = maskedDrawable(200)
 
+    }
+
+    fun getCompleteDrawable ():LayerDrawable {
+        val drawableArray =  Array(28, { i ->
+            val name = "z_2s_0$i"
+            ContextCompat.getDrawable(ctx, resources.getIdentifier(name, "drawable", this.packageName))
+        })
+        return LayerDrawable(drawableArray)
     }
 
     private fun updateGuessRows(guessRows: Int, guessLinearLayouts: Array<LinearLayout>) {
@@ -82,8 +102,9 @@ class BlindGameActivity : MyDefaultActivity() {
     }
 
 
-    private fun maskedDrawable(width:Int): LayerDrawable? {
-        var drw1 = ContextCompat.getDrawable(ctx, R.drawable.z_2s_complete)
+    private fun maskedDrawable(width:Int): LayerDrawable {
+        //var drw1 = ContextCompat.getDrawable(ctx, R.drawable.z_2s_complete)
+        var drw1 = getCompleteDrawable()
         //val scaledBitmap:Bitmap = BitmapFactory.decodeResource(this.resources, R.drawable.wait)
         val scaledBitmap = getBitmapFromDrawable(drw1!!, width)
         val targetBitmap = Bitmap.createBitmap(width, width, Bitmap.Config.ARGB_8888)
@@ -118,7 +139,7 @@ class BlindGameActivity : MyDefaultActivity() {
 
         //val drawableArray =  arrayOf (drw1, BitmapDrawable(resources, targetBitmap))
         val drawableArray =  arrayOf (bitmapDrawable)
-        return LayerDrawable(drawableArray)
+        return LayerDrawable (drawableArray)
     }
 
     /**
