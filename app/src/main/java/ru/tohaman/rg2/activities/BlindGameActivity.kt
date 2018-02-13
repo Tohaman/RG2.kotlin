@@ -70,26 +70,24 @@ class BlindGameActivity : MyDefaultActivity() {
         val genScrambleCube = runScramble(resetCube(), scramble)
 
         imgView = findViewById(R.id.test_image)
-        imgView.image = maskedDrawable(200)
+        imgView.image = maskedDrawable(scramble)
 
     }
 
-    private fun getCompleteDrawable ():LayerDrawable {
-        //Временно генерируем разобранный кубик здесь
-        val scramble = "R L U"
-        //разбираем кубик по скрамблу
+    // возвращает внешний вид кубика разобранного по скрамблу (в виде 28-ми слойного Drawable)
+    private fun getCompleteDrawable (scramble:String):LayerDrawable {
         val genScrambleCube = runScramble(resetCube(), scramble)
 
-        val drawableArray =  Array(28, { i ->
-            //имя файла с картинкой нужного элемента кубика
-            val name = "z_2s_0$i"
-            ContextCompat.getDrawable(ctx, resources.getIdentifier(name, "drawable", this.packageName))
-        })
-        for (i in 1..27) {
-            //раскрашиваем кубик
-            DrawableCompat.setTint(drawableArray[i]!!, ContextCompat.getColor(ctx,cubeColor[genScrambleCube[27-i]]))
-        }
-        return LayerDrawable(drawableArray)
+        //цвет фона кубика
+        genScrambleCube[27] = 6
+
+        return LayerDrawable( Array(28, { i ->
+            //получаем drawable по имени "z_2s_0$i"
+            val drw = ContextCompat.getDrawable(ctx, resources.getIdentifier("z_2s_0$i", "drawable", this.packageName))
+            //раскрашиваем цветом кубика
+            DrawableCompat.setTint(drw!!, ContextCompat.getColor(ctx,cubeColor[genScrambleCube[27-i]]))
+            drw
+        }))
     }
 
     private fun updateGuessRows(guessRows: Int, guessLinearLayouts: Array<LinearLayout>) {
@@ -113,11 +111,12 @@ class BlindGameActivity : MyDefaultActivity() {
     }
 
 
-    private fun maskedDrawable(width:Int): LayerDrawable {
+    private fun maskedDrawable(scramble: String): LayerDrawable {
+        val width = 200
         //var drw1 = ContextCompat.getDrawable(ctx, R.drawable.z_2s_complete)
-        var drw1 = getCompleteDrawable()
+        var drw1 = getCompleteDrawable(scramble)
         //val scaledBitmap:Bitmap = BitmapFactory.decodeResource(this.resources, R.drawable.wait)
-        val scaledBitmap = getBitmapFromDrawable(drw1!!, width)
+        val scaledBitmap = getBitmapFromDrawable(drw1, width)
         val targetBitmap = Bitmap.createBitmap(width, width, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(targetBitmap)
         val paint = Paint(Paint.ANTI_ALIAS_FLAG)
