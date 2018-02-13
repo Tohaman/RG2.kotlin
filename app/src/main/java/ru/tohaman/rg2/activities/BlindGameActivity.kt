@@ -8,8 +8,6 @@ import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.widget.ImageView
 import android.widget.LinearLayout
-import kotlinx.android.synthetic.main.nav_header_main.*
-import org.jetbrains.anko.backgroundResource
 import org.jetbrains.anko.ctx
 import org.jetbrains.anko.find
 import org.jetbrains.anko.image
@@ -17,16 +15,12 @@ import ru.tohaman.rg2.MyDefaultActivity
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.data.ListPager
 import java.util.*
-import android.graphics.Color
-import android.graphics.drawable.shapes.OvalShape
-import android.graphics.drawable.ShapeDrawable
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.data.ListPagerLab
-import ru.tohaman.rg2.fragments.FragmentScrambleGen
 import ru.tohaman.rg2.util.*
 
 
@@ -34,17 +28,16 @@ class BlindGameActivity : MyDefaultActivity() {
     private val random = Random()
     private lateinit var listPagers : List<ListPager>
     private lateinit var guessLinearLayouts : Array<LinearLayout>
-    private var guessRows = 2
+    private val azbukaRnd = mutableSetOf<String>()
     private lateinit var imgView: ImageView
     val DEFAULT_DRAWABLE_SIZE = 1
     private var correctAnswer = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.v (DebugTag.TAG, "BlindGameActivity onCreate")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pll_test_game)
         actionBar?.setDisplayHomeAsUpEnabled(true)
-
-        guessRows = 2
 
         guessLinearLayouts = arrayOf(
                 find(R.id.row1LinearLayout),
@@ -58,24 +51,61 @@ class BlindGameActivity : MyDefaultActivity() {
                     .map { row.getChildAt(it) as Button }
                     .forEach { it.setOnClickListener(guessButtonListener) }
         }
+        //Скрываем ненужные кнопки
+        val guessRows = 2
+        updateGuessRows(guessRows, guessLinearLayouts)
 
         val listPagerLab = ListPagerLab.get(ctx)
         val azbuka = listPagerLab.getCurrentAzbuka()
-        Log.v (DebugTag.TAG, "BlindGameActivity  onCreate gridList $azbuka")
-        updateGuessRows(guessRows, guessLinearLayouts)
+        Log.v (DebugTag.TAG, "BlindGameActivity onCreate azbuka = $azbuka")
+        azbukaRnd.clear()
+        //берем из азбуки только уникальные значения
+        azbukaRnd += azbuka
+        azbukaRnd.remove("-")
 
         //сгенерируем скрамбл длинны указанной в поле ScrambleLength
-        val scramble = generateScramble(14)
+        var scramble = generateScramble(14)
+        //TODO развернуть кубик случайным образом, пока белозеленокрасной стороной к себе
+        scramble += " y y"
         //разбираем кубик по скрамблу
-        val genScrambleCube = runScramble(resetCube(), scramble)
+        val scrambledCube = runScramble(resetCube(), scramble)
+
+        //выбираем случайный слот и смотрим, какой там элемент (буква)
+        val slot = random.nextInt(0..6)
+        val colorOfElement = getColorOfElement(scrambledCube, slotElementNumbers[slot]!!.first, slotElementNumbers[slot]!!.second)
+        val letter = azbuka[mainEdge[colorOfElement]!!]
+        Log.v (DebugTag.TAG, "BlindGameActivity onCreate letter = $letter")
 
         imgView = findViewById(R.id.test_image)
-        imgView.image = maskedDrawable(scramble)
+        imgView.image = maskedDrawable(scramble, slot)
+
+    }
+
+    fun loadNextBlind (guessRows: Int){
+        val listPagerLab = ListPagerLab.get(ctx)
+        val azbuka = listPagerLab.getCurrentAzbuka()
+        //сгенерируем скрамбл длинны указанной в поле ScrambleLength
+        var scramble = generateScramble(14)
+        //TODO развернуть кубик случайным образом, пока белозеленокрасной стороной к себе
+        scramble += " y y"
+        //разбираем кубик по скрамблу
+        val scrambledCube = runScramble(resetCube(), scramble)
+
+        //выбираем случайный слот и смотрим, какой там элемент (буква)
+        val slot = random.nextInt(0..6)
+        val colorOfElement = getColorOfElement(scrambledCube, slotElementNumbers[slot]!!.first, slotElementNumbers[slot]!!.second)
+        val letter = azbuka[mainEdge[colorOfElement]!!]
+        Log.v (DebugTag.TAG, "BlindGameActivity onCreate letter = $letter")
+
+        if (letter in azbukaRnd) {
+
+        }
 
     }
 
     // возвращает внешний вид кубика разобранного по скрамблу (в виде 28-ми слойного Drawable)
     private fun getCompleteDrawable (scramble:String):LayerDrawable {
+        Log.v (DebugTag.TAG, "BlindGameActivity getCompleteDrawable")
         val genScrambleCube = runScramble(resetCube(), scramble)
 
         //цвет фона кубика
@@ -91,6 +121,7 @@ class BlindGameActivity : MyDefaultActivity() {
     }
 
     private fun updateGuessRows(guessRows: Int, guessLinearLayouts: Array<LinearLayout>) {
+        Log.v (DebugTag.TAG, "BlindGameActivity updateGuessRows")
         // Сначала скрываем все кнопки (точнее ряды) скрытыми
         for (layout in guessLinearLayouts)
             layout.visibility = View.GONE
@@ -111,7 +142,8 @@ class BlindGameActivity : MyDefaultActivity() {
     }
 
 
-    private fun maskedDrawable(scramble: String): LayerDrawable {
+    private fun maskedDrawable(scramble: String, slot: Int): LayerDrawable {
+        //ширина картинки 200dp
         val width = 200
         //var drw1 = ContextCompat.getDrawable(ctx, R.drawable.z_2s_complete)
         var drw1 = getCompleteDrawable(scramble)
@@ -120,25 +152,16 @@ class BlindGameActivity : MyDefaultActivity() {
         val targetBitmap = Bitmap.createBitmap(width, width, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(targetBitmap)
         val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-        //заливаем канву полупрозрачным
-        canvas.drawARGB(100, 0, 0, 0) //прозрачность 100 (0 - непрозрачный, 255 - полностью прозрачный)
+        //заливаем канву (фон) полупрозрачным
+        canvas.drawARGB(100, 0, 0, 0) //прозрачность 100 (0 - в итоге фон будет непрозрачный, 255 - полностью прозрачный)
 
-        //правый угол (координаты x - 0.57, y - 0.42, radius - 0.16)
-        //canvas.drawCircle(width*0.57.toFloat(), width*0.42.toFloat(), width*0.16.toFloat(), paint)
-        //передний угол
-        //canvas.drawCircle(width*0.43.toFloat(), width*0.41.toFloat(), width*0.16.toFloat(), paint)
-        //верхний угол
-        //canvas.drawCircle(width*0.5.toFloat(), width*0.32.toFloat(), width*0.15.toFloat(), paint)
-
-        //верхнее правое ребро
-        //canvas.drawCircle(width*0.67.toFloat(), width*0.25.toFloat(), width*0.13.toFloat(), paint)
-        //нижнее правое ребро
-        //canvas.drawCircle(width*0.74.toFloat(), width*0.34.toFloat(), width*0.14.toFloat(), paint)
-
-        //верхнее левое ребро
-        canvas.drawCircle(width*0.3.toFloat(), width*0.25.toFloat(), width*0.13.toFloat(), paint)
-        //нижнее левое ребро
-        //canvas.drawCircle(width*0.25.toFloat(), width*0.32.toFloat(), width*0.14.toFloat(), paint)
+        //получаем координаты и радиус круга подсветки для слота из массива констант ArraysForScramble.kt
+        val tripleCords = slotLightingCoordinate[slot]
+        //рисуем круг подсветки
+        canvas.drawCircle(width*tripleCords!!.first.toFloat(),
+                        width*tripleCords.second.toFloat(),
+                    width*tripleCords.third.toFloat(),
+                    paint)
 
         //накладываем маску из цвета фона (полупрозрачного) и непрозрачного кружка
         paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
@@ -213,5 +236,4 @@ class BlindGameActivity : MyDefaultActivity() {
         else
             expected / height.toFloat()
     }
-
 }

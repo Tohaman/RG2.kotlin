@@ -308,10 +308,6 @@ class FragmentScrambleGen : Fragment() {
         return scramble
     }
 
-    //получаем цвет переданных ячеек куба (двузначное число, первая и вторая цифры которого соответствую икомым цветам)
-    private fun getColorOfElement(cube: IntArray, firstElement: Int, secondElement: Int): Int
-            = (cube[firstElement] + 1) * 10 + cube[secondElement] + 1
-
     // Установка на свое место элемента цвета colorOfElement находящегося в буфере ребер
     // Возвращает SolveCube = куб после выполнения установки и решение solve + текущий ход
     private fun edgeBufferSolve(cube: IntArray, colorOfElement: Int, solve: String): SolveCube {
@@ -503,6 +499,7 @@ class FragmentScrambleGen : Fragment() {
         return result
     }
 
+    //поиск буквы в азбуке
     private fun findLetter(c: Int): String {     //Доработать функцию поиска буквы из азбуки, пока просто цифра
         val listPagerLab = ListPagerLab.get(ctx)
         val azbuka = listPagerLab.getCurrentAzbuka()

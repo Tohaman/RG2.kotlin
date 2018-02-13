@@ -10,6 +10,10 @@ import java.util.*
  *
  */
 
+//получаем цвет переданных ячеек куба (двузначное число, первая и вторая цифры которого соответствую икомым цветам)
+fun getColorOfElement(cube: IntArray, firstElement: Int, secondElement: Int): Int
+        = (cube[firstElement] + 1) * 10 + cube[secondElement] + 1
+
 //Генерация скрамбла определенной длинны (без учета переплавки буфера)
 fun generateScramble(length: Int): String {
     Log.v(DebugTag.TAG, "FragmentScrambleGen generateScramble $length")
@@ -106,6 +110,13 @@ fun runScramble(cube: IntArray, scrm: String): IntArray {
             "Bw" -> moveBw(cube)
             "Bw1" -> moveBwb(cube)
             "Bw2" -> moveBw2(cube)
+            "z" -> moveZ(cube)
+            "z1" -> moveZb(cube)
+            "x" -> moveX(cube)
+            "x1" -> moveXb(cube)
+            "y" -> moveY(cube)
+            "y1" -> moveYb(cube)
+
         }
     }
     return cube
