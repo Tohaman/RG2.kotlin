@@ -68,8 +68,8 @@ class BlindGameActivity : MyDefaultActivity() {
 
     private fun loadNextBlind (guessRows: Int){
         //сгенерируем скрамбл длинны указанной в поле ScrambleLength
-        //var scramble = generateScramble(14)
-        var scramble = "y"
+        var scramble = generateScramble(14)
+        //var scramble = "y"
 
         //TODO развернуть кубик случайным образом, пока белозеленокрасной стороной к себе
         scramble += " y y"
