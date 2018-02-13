@@ -9,22 +9,23 @@ import ru.tohaman.rg2.R
 
 // Табличка цветов кубика 0-синий, 1-оранжевый и т.д.
 val cubeColor = intArrayOf(
-        R.color.cube_blue,
-        R.color.cube_orange,
-        R.color.cube_white,
-        R.color.cube_red,
-        R.color.cube_yellow,
-        R.color.cube_green)
+        R.color.c_b,
+        R.color.c_o,
+        R.color.c_w,
+        R.color.c_r,
+        R.color.c_y,
+        R.color.c_g,
+        R.color.c_bl)
 
 val cubeColor4PLL = intArrayOf(
-        R.color.cube_red,
-        R.color.cube_green,
-        R.color.cube_orange,
-        R.color.cube_blue,
-        R.color.cube_red,
-        R.color.cube_green,
-        R.color.cube_orange,
-        R.color.cube_blue
+        R.color.c_r,
+        R.color.c_g,
+        R.color.c_o,
+        R.color.c_b,
+        R.color.c_r,
+        R.color.c_g,
+        R.color.c_o,
+        R.color.c_b
 )
 
 //Создаем табличку (словарь) номеров основных ребер, для определенных сочетаний цветов, остальные элементы равны null

@@ -65,8 +65,7 @@ class BlindGameActivity : MyDefaultActivity() {
         updateGuessRows(guessRows, guessLinearLayouts)
 
         //сгенерируем скрамбл длинны указанной в поле ScrambleLength
-        //val scramble = generateScramble(14)
-        val scramble = "R L S"
+        val scramble = generateScramble(14)
         //разбираем кубик по скрамблу
         val genScrambleCube = runScramble(resetCube(), scramble)
 
@@ -77,10 +76,9 @@ class BlindGameActivity : MyDefaultActivity() {
 
     private fun getCompleteDrawable ():LayerDrawable {
         //Временно генерируем разобранный кубик здесь
-        val scramble = "R L S"
+        val scramble = "R L U"
         //разбираем кубик по скрамблу
         val genScrambleCube = runScramble(resetCube(), scramble)
-
 
         val drawableArray =  Array(28, { i ->
             //имя файла с картинкой нужного элемента кубика
@@ -89,7 +87,7 @@ class BlindGameActivity : MyDefaultActivity() {
         })
         for (i in 1..27) {
             //раскрашиваем кубик
-            DrawableCompat.setTint(drawableArray[i]!!, ContextCompat.getColor(ctx,cubeColor[genScrambleCube[27-i]]))  //верх желтый
+            DrawableCompat.setTint(drawableArray[i]!!, ContextCompat.getColor(ctx,cubeColor[genScrambleCube[27-i]]))
         }
         return LayerDrawable(drawableArray)
     }
