@@ -4,5 +4,5 @@
     android:viewportHeight="228.0"
     android:viewportWidth="222.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <path android:fillColor="@color/c_g" android:pathData="M179,185l-29,16l0,-37l30,-15z"/>
+    <path android:fillColor="@color/c_g" android:pathData="M144,160l-31,16l0,-44l32,-13z"/>
 </vector>
