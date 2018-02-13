@@ -58,6 +58,7 @@ class MainActivity : MyDefaultActivity(),
         FragmentListView.OnListViewInteractionListener,
         FragmentScrambleGen.OnSrambleGenInteractionListener,
         SharedPreferences.OnSharedPreferenceChangeListener,
+        FragmentBlindGameSettings.OnBlindGameInteractionListener,
         IabBroadcastReceiver.IabBroadcastListener {
 
     // Пробуем добавить платежи внутри программы https://xakep.ru/2017/05/23/android-in-apps/
@@ -77,7 +78,7 @@ class MainActivity : MyDefaultActivity(),
 
     private lateinit var fragListView: FragmentListView
     private var backPressedTime: Long = 0
-    lateinit private var mListPagerLab: ListPagerLab
+    private lateinit var mListPagerLab: ListPagerLab
     private var curPhase = "BEGIN"
     private val listOfGo2Fridrich = listOf("ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL")
     private val listOfOtherPuzzle = listOf("PYRAMINX", "MEGAMINX", "SKEWB")
@@ -138,6 +139,7 @@ class MainActivity : MyDefaultActivity(),
             "BLINDGAME" -> {setFragment(FragmentBlindGameSettings.newInstance())}
             "SETTINGS" -> {setFragment(FragmentSettings.newInstance())}
             "ABOUT" -> {setFragment(FragmentAbout.newInstance())}
+            "AZBUKA","AZBUKA2" -> {setFragment(FragmentAzbukaSelect.newInstance())}
             in listOfGo2Fridrich -> {
                 fab.setImageResource(R.drawable.ic_fab_backward)
                 setListFragmentPhase(curPhase)
@@ -172,6 +174,12 @@ class MainActivity : MyDefaultActivity(),
                     setFragment(FragmentScrambleGen.newInstance())
                     fab.setImageResource(R.drawable.ic_fab_forward)
                 }
+                "AZBUKA2" -> {
+                    curPhase = "BLINDGAME"
+                    setFragment(FragmentScrambleGen.newInstance())
+                    fab.setImageResource(R.drawable.ic_fab_forward)
+                }
+
                 else -> {
                     drawer_layout.openDrawer(GravityCompat.START)
                 }
@@ -210,6 +218,12 @@ class MainActivity : MyDefaultActivity(),
                 setFragment(FragmentScrambleGen.newInstance())
                 fab.setImageResource(R.drawable.ic_fab_forward)
             }
+            "AZBUKA2" -> {
+                curPhase = "BLINDGAME"
+                setFragment(FragmentBlindGameSettings.newInstance())
+                fab.setImageResource(R.drawable.ic_fab_forward)
+            }
+
             else -> {
                 if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
                     if (backPressedTime + 500 > System.currentTimeMillis()) {
@@ -319,7 +333,7 @@ class MainActivity : MyDefaultActivity(),
                                     textView {
                                         text = getString(R.string.history)
                                         textSize = 12F
-                                    }.lparams() {margin = dip (8)}
+                                    }.lparams {margin = dip (8)}
                                 }
                             }
                             okButton { }
@@ -448,6 +462,16 @@ class MainActivity : MyDefaultActivity(),
             curPhase = "AZBUKA"
         }
     }
+
+    override fun onBlindGameInteraction(button: String) {
+        super.onBlindGameInteraction(button)
+        if (button == "AZBUKA2") {
+            setFragment(FragmentAzbukaSelect.newInstance())
+            fab.setImageResource(R.drawable.ic_fab_backward)
+            curPhase = "AZBUKA2"
+        }
+    }
+
 
     // Слушаем изменения в настройках программы
     override fun onSharedPreferenceChanged(sp: SharedPreferences, key: String?) {
