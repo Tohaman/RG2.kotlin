@@ -111,12 +111,12 @@ class PllTestGame : MyDefaultActivity() {
         // т.к. верное название у нас последнее в pllrnd (списке)
         for (row in 0 until guessRows) {
             // place Buttons in currentTableRow
-            for (column in 0 until guessLinearLayouts[row].getChildCount()) {
+            for (column in 0 until guessLinearLayouts[row].childCount) {
                 // получить ссылку на Button для онфигурации
                 val newGuessButton = guessLinearLayouts[row].getChildAt(column) as Button
                 newGuessButton.isEnabled = true  // активируем кнопку
                 // пишем текст а названием алгоритма на кнопку
-                val countOfAlg = Integer.parseInt(pllRnd.get(row * 2 + column))
+                val countOfAlg = Integer.parseInt(pllRnd[row * 2 + column])
                 newGuessButton.text = getNameFromListPagers(listPagers, countOfAlg)
             }
         }

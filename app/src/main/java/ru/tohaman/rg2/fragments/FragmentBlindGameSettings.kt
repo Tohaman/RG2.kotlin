@@ -1,7 +1,5 @@
 package ru.tohaman.rg2.fragments
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
@@ -17,11 +15,8 @@ import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.support.v4.ctx
-import ru.tohaman.rg2.DebugTag
-import ru.tohaman.rg2.PLL_TEST_3SIDE
-import ru.tohaman.rg2.PLL_TEST_ROW_COUNT
+import ru.tohaman.rg2.*
 
-import ru.tohaman.rg2.R
 import ru.tohaman.rg2.activities.BlindGameActivity
 import ru.tohaman.rg2.activities.PllTestGame
 import ru.tohaman.rg2.activities.PllTestSelect
@@ -31,9 +26,6 @@ import ru.tohaman.rg2.util.saveInt2SP
 
 /**
  * A simple [Fragment] subclass.
- * Activities that contain this fragment must implement the
- * [FragmentBlindGameSettings.OnFragmentInteractionListener] interface
- * to handle interaction events.
  * Use the [FragmentBlindGameSettings.newInstance] factory method to
  * create an instance of this fragment.
  */
@@ -60,8 +52,7 @@ class BlindGameSttingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
     override fun create(ui: AnkoContext<Fragment>): View = with(ui) {
         Log.v(DebugTag.TAG, "BlindGameSettingsUI create start")
         val sp = PreferenceManager.getDefaultSharedPreferences(context)
-//        var rowCount = sp.getInt(PLL_TEST_ROW_COUNT, 6)
-//        var is3side = sp.getBoolean(PLL_TEST_3SIDE, true)
+        var blindRowCount = sp.getInt(BLIND_ROW_COUNT, 6)
 
         linearLayout {
             gravity = Gravity.CENTER
@@ -73,6 +64,33 @@ class BlindGameSttingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                 leftMargin = 16.dp
                 rightMargin = 16.dp
             }
+
+            text_row_count.text = blindRowCount.toString()
+
+            button_minus.onClick {
+                blindRowCount -= 2
+                if (blindRowCount < 2) {
+                    blindRowCount = 2
+                }
+                saveInt2SP(blindRowCount, BLIND_ROW_COUNT, view.context)
+                text_row_count.text = blindRowCount.toString()
+            }
+            button_plus.onClick {
+                blindRowCount += 2
+                if (blindRowCount > 8) {
+                    blindRowCount = 8
+                }
+                saveInt2SP(blindRowCount, BLIND_ROW_COUNT, view.context)
+                text_row_count.text = blindRowCount.toString()
+            }
+
+//            ch_box_corner.onCheckedChange { group, checkedId ->
+//                when (checkedId) {
+//                    rb_2side.id -> { is3side = false }
+//                    rb_3side.id -> { is3side = true }
+//                }
+//                saveBoolean2SP(is3side, PLL_TEST_3SIDE,group!!.context)
+//            }
 
             start_game_button.onClick { startActivity<BlindGameActivity>()}
         }

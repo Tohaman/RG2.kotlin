@@ -19,11 +19,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <CheckBox
+            android:id="@+id/ch_box_edge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ребра"/>
 
         <CheckBox
+            android:id="@+id/ch_box_corner"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Углы"/>
@@ -35,7 +37,7 @@
         style="@style/AppTheme.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Начать игру"
+        android:text="@string/start_game"
         android:paddingTop="@dimen/big_margin"
         android:paddingBottom="@dimen/big_margin"
         android:textSize="18sp"
@@ -49,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="Количество вариантов ответа"
+        android:text="@string/answers_count"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/lin_lay_answer_count"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="2"
+            android:text="@string/defValue"
             android:textAlignment="center"
             android:textSize="24sp"/>
 

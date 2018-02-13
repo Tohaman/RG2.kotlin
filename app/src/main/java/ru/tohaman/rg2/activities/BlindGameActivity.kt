@@ -5,21 +5,21 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.LayerDrawable
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.v4.content.ContextCompat
 import android.widget.ImageView
 import android.widget.LinearLayout
 import org.jetbrains.anko.ctx
 import org.jetbrains.anko.find
 import org.jetbrains.anko.image
-import ru.tohaman.rg2.MyDefaultActivity
-import ru.tohaman.rg2.R
 import ru.tohaman.rg2.data.ListPager
 import java.util.*
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.util.Log
 import android.view.View
 import android.widget.Button
-import ru.tohaman.rg2.DebugTag
+import org.jetbrains.anko.lines
+import ru.tohaman.rg2.*
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.util.*
 
@@ -30,6 +30,10 @@ class BlindGameActivity : MyDefaultActivity() {
     private lateinit var guessLinearLayouts : Array<LinearLayout>
     private val azbukaRnd = mutableSetOf<String>()
     private lateinit var imgView: ImageView
+    private var guessRows = 2
+    private var isCornerChecked = true
+    private var isEdgeChecked = true
+    private var letter = "A"
     val DEFAULT_DRAWABLE_SIZE = 1
     private var correctAnswer = 1
 
@@ -38,6 +42,7 @@ class BlindGameActivity : MyDefaultActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pll_test_game)
         actionBar?.setDisplayHomeAsUpEnabled(true)
+        imgView = findViewById(R.id.test_image)
 
         guessLinearLayouts = arrayOf(
                 find(R.id.row1LinearLayout),
@@ -52,55 +57,74 @@ class BlindGameActivity : MyDefaultActivity() {
                     .forEach { it.setOnClickListener(guessButtonListener) }
         }
         //Скрываем ненужные кнопки
-        val guessRows = 2
+        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
+        guessRows = sp.getInt(BLIND_ROW_COUNT, 6) / 2
+        isCornerChecked = sp.getBoolean(BLIND_IS_CORNER_CHECKED, true)
+        isEdgeChecked = sp.getBoolean(BLIND_IS_EDGE_CHECKED, true)
         updateGuessRows(guessRows, guessLinearLayouts)
 
-        val listPagerLab = ListPagerLab.get(ctx)
-        val azbuka = listPagerLab.getCurrentAzbuka()
-        Log.v (DebugTag.TAG, "BlindGameActivity onCreate azbuka = $azbuka")
-        azbukaRnd.clear()
-        //берем из азбуки только уникальные значения
-        azbukaRnd += azbuka
-        azbukaRnd.remove("-")
-
-        //сгенерируем скрамбл длинны указанной в поле ScrambleLength
-        var scramble = generateScramble(14)
-        //TODO развернуть кубик случайным образом, пока белозеленокрасной стороной к себе
-        scramble += " y y"
-        //разбираем кубик по скрамблу
-        val scrambledCube = runScramble(resetCube(), scramble)
-
-        //выбираем случайный слот и смотрим, какой там элемент (буква)
-        val slot = random.nextInt(0..6)
-        val colorOfElement = getColorOfElement(scrambledCube, slotElementNumbers[slot]!!.first, slotElementNumbers[slot]!!.second)
-        val letter = azbuka[mainEdge[colorOfElement]!!]
-        Log.v (DebugTag.TAG, "BlindGameActivity onCreate letter = $letter")
-
-        imgView = findViewById(R.id.test_image)
-        imgView.image = maskedDrawable(scramble, slot)
-
+        loadNextBlind(guessRows)
     }
 
-    fun loadNextBlind (guessRows: Int){
-        val listPagerLab = ListPagerLab.get(ctx)
-        val azbuka = listPagerLab.getCurrentAzbuka()
+    private fun loadNextBlind (guessRows: Int){
         //сгенерируем скрамбл длинны указанной в поле ScrambleLength
-        var scramble = generateScramble(14)
+        //var scramble = generateScramble(14)
+        var scramble = "y"
+
         //TODO развернуть кубик случайным образом, пока белозеленокрасной стороной к себе
         scramble += " y y"
         //разбираем кубик по скрамблу
         val scrambledCube = runScramble(resetCube(), scramble)
 
-        //выбираем случайный слот и смотрим, какой там элемент (буква)
-        val slot = random.nextInt(0..6)
+        val listPagerLab = ListPagerLab.get(ctx)
+        val azbuka = listPagerLab.getCurrentAzbuka()
+        azbukaRnd.clear()
+        //берем из азбуки только уникальные значения Set
+        azbuka.indices.mapTo(azbukaRnd) { azbuka[it] }
+        azbukaRnd.remove("-")
+        // создаем Mutable List из перемешанного Set
+        val rndAzbuka = azbukaRnd.shuffled().toMutableList()
+
+        //выбираем случайный слот из диапазона и смотрим, какой там элемент (буква)
+
+        val fromX = if (isCornerChecked) {0} else {3}
+        val toY = if (isEdgeChecked) {6} else {2}
+        val slot = random.nextInt(fromX..toY)
         val colorOfElement = getColorOfElement(scrambledCube, slotElementNumbers[slot]!!.first, slotElementNumbers[slot]!!.second)
-        val letter = azbuka[mainEdge[colorOfElement]!!]
-        Log.v (DebugTag.TAG, "BlindGameActivity onCreate letter = $letter")
 
-        if (letter in azbukaRnd) {
-
+        letter = if (slot < 3) {
+            azbuka[mainCorner[colorOfElement]!!]
+        } else {
+            azbuka[mainEdge[colorOfElement]!!]
         }
 
+
+        // находим наш случаный в перемешенном списке и помещаем его в конец списка
+        val correct = rndAzbuka.indexOf(letter)
+        rndAzbuka.add(rndAzbuka.removeAt(correct))
+
+        // add 2, 4, 6 or 8 кнопок в зависимости от значения guessRows
+        // и заполняем эти кнопки случайными заведомо неверными названиями алгоритмов,
+        // т.к. верное название у нас последнее в rndAzbuka (списке)
+        for (row in 0 until guessRows) {
+            // place Buttons in currentTableRow
+            for (column in 0 until guessLinearLayouts[row].childCount) {
+                // получить ссылку на Button для конфигурации
+                val newGuessButton = guessLinearLayouts[row].getChildAt(column) as Button
+                newGuessButton.isEnabled = true  // активируем кнопку
+                newGuessButton.lines = 1
+                // пишем текст а названием алгоритма на кнопку
+                newGuessButton.text = rndAzbuka[row * 2 + column]
+            }
+        }
+
+        // заменяем случайную кнопку (текст) на правильный
+        val row = random.nextInt(guessRows)
+        val column = random.nextInt(2)
+        val randomRow = guessLinearLayouts[row] // получить строку
+        (randomRow.getChildAt(column) as Button).text = letter
+
+        imgView.image = maskedDrawable(scramble, slot)
     }
 
     // возвращает внешний вид кубика разобранного по скрамблу (в виде 28-ми слойного Drawable)
@@ -134,8 +158,8 @@ class BlindGameActivity : MyDefaultActivity() {
         val guessButton = v as Button
 
         val guess = guessButton.text.toString()
-        if (guess == getNameFromListPagers(listPagers, correctAnswer)) {   //верный ответ
-            //loadNextPLL(guessRows)
+        if (guess == letter) {   //верный ответ
+            loadNextBlind(guessRows)
         } else {    //неправильный ответ
             guessButton.isEnabled = false
         }
@@ -146,7 +170,7 @@ class BlindGameActivity : MyDefaultActivity() {
         //ширина картинки 200dp
         val width = 200
         //var drw1 = ContextCompat.getDrawable(ctx, R.drawable.z_2s_complete)
-        var drw1 = getCompleteDrawable(scramble)
+        val drw1 = getCompleteDrawable(scramble)
         //val scaledBitmap:Bitmap = BitmapFactory.decodeResource(this.resources, R.drawable.wait)
         val scaledBitmap = getBitmapFromDrawable(drw1, width)
         val targetBitmap = Bitmap.createBitmap(width, width, Bitmap.Config.ARGB_8888)

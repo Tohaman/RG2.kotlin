@@ -43,7 +43,11 @@ const val ONE_HAND_TO_START = "oneHandToStart"
 const val METRONOM_ENABLED = "metronomEnabled"
 const val METRONOM_TIME = "metronomTime"
 const val PLL_TEST_ROW_COUNT = "pllTestRowCount"
+const val BLIND_ROW_COUNT = "blindRowCount"
 const val PLL_TEST_3SIDE = "isPllTest3Side"
+const val BLIND_IS_EDGE_CHECKED = "isBlindEdgeChecked"
+const val BLIND_IS_CORNER_CHECKED = "isBlindCornerChecked"
+
 // SKUs для продуктов: при изменении не забыть поправить в sayThanks
 const val BIG_DONATION = "big_donation"
 const val MEDIUM_DONATION = "medium_donation"
@@ -601,7 +605,7 @@ class MainActivity : MyDefaultActivity(),
 
     /** Verifies the developer payload of a purchase.  */
     private fun verifyDeveloperPayload(p: Purchase): Boolean {
-        val payload = p.developerPayload
+        //val payload = p.developerPayload
         // тут можно проверить ответ от гугла, но нам в данном случае фиолетово,
         // ибо пользователь за свою покупку ничего в приложении получить не должен
         return true

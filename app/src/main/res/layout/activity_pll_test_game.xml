@@ -33,7 +33,6 @@
         android:id="@+id/row1LinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/small_margin"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -63,7 +62,6 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/small_margin"
         app:layout_constraintBottom_toTopOf="@+id/row1LinearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/row2LinearLayout">
@@ -93,7 +91,6 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/small_margin"
         app:layout_constraintBottom_toTopOf="@+id/row2LinearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/row3LinearLayout">
@@ -123,7 +120,6 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/small_margin"
         app:layout_constraintBottom_toTopOf="@+id/row3LinearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/row4LinearLayout">
