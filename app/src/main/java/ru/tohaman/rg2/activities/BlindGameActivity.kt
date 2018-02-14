@@ -26,7 +26,6 @@ import ru.tohaman.rg2.util.*
 
 class BlindGameActivity : MyDefaultActivity() {
     private val random = Random()
-    private lateinit var listPagers : List<ListPager>
     private lateinit var guessLinearLayouts : Array<LinearLayout>
     private val azbukaRnd = mutableSetOf<String>()
     private lateinit var imgView: ImageView
@@ -35,7 +34,6 @@ class BlindGameActivity : MyDefaultActivity() {
     private var isEdgeChecked = true
     private var letter = "A"
     val DEFAULT_DRAWABLE_SIZE = 1
-    private var correctAnswer = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.v (DebugTag.TAG, "BlindGameActivity onCreate")
@@ -88,7 +86,7 @@ class BlindGameActivity : MyDefaultActivity() {
         //выбираем случайный слот из диапазона и смотрим, какой там элемент (буква)
 
         val fromX = if (isCornerChecked) {0} else {3}
-        val toY = if (isEdgeChecked) {6} else {2}
+        val toY = if (isEdgeChecked) {7} else {3}
         val slot = random.nextInt(fromX..toY)
         val colorOfElement = getColorOfElement(scrambledCube, slotElementNumbers[slot]!!.first, slotElementNumbers[slot]!!.second)
 

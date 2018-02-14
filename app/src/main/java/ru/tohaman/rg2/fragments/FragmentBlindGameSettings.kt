@@ -81,8 +81,8 @@ class BlindGameSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
         Log.v(DebugTag.TAG, "BlindGameSettingsUI create start")
         val sp = PreferenceManager.getDefaultSharedPreferences(context)
         var blindRowCount = sp.getInt(BLIND_ROW_COUNT, 6)
-        var isCheckedBlindEdge = sp.getBoolean(BLIND_IS_EDGE_CHECKED, true)
-        var isCheckedBlindCorner = sp.getBoolean(BLIND_IS_CORNER_CHECKED, true)
+        var isCornerChecked = sp.getBoolean(BLIND_IS_CORNER_CHECKED, true)
+        var isEdgeChecked = sp.getBoolean(BLIND_IS_EDGE_CHECKED, true)
 
         linearLayout {
             gravity = Gravity.CENTER
@@ -96,8 +96,8 @@ class BlindGameSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
             }
 
             text_blind_row_count.text = blindRowCount.toString()
-            ch_box_edge.isChecked = isCheckedBlindEdge
-            ch_box_corner.isChecked = isCheckedBlindCorner
+            ch_box_edge.isChecked = isEdgeChecked
+            ch_box_corner.isChecked = isCornerChecked
 
             button_blind_minus.onClick {
                 blindRowCount -= 2
@@ -117,17 +117,23 @@ class BlindGameSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
             }
 
             ch_box_edge.onCheckedChange { _, isChecked ->
-                when (isChecked) {
-
+                isEdgeChecked = isChecked
+                if (!isEdgeChecked and !isCornerChecked) {
+                    isCornerChecked = true
+                    ch_box_corner.isChecked = isCornerChecked
                 }
-                saveBoolean2SP(isChecked, BLIND_IS_EDGE_CHECKED, ctx)
+                saveBoolean2SP(isEdgeChecked, BLIND_IS_EDGE_CHECKED, ctx)
+                saveBoolean2SP(isCornerChecked, BLIND_IS_CORNER_CHECKED, ctx)
             }
 
             ch_box_corner.onCheckedChange { _, isChecked ->
-                when (isChecked) {
-
+                isCornerChecked = isChecked
+                if (!isEdgeChecked and !isCornerChecked) {
+                    isEdgeChecked = true
+                    ch_box_edge.isChecked = isEdgeChecked
                 }
-                saveBoolean2SP(isChecked, BLIND_IS_CORNER_CHECKED, ctx)
+                saveBoolean2SP(isEdgeChecked, BLIND_IS_EDGE_CHECKED, ctx)
+                saveBoolean2SP(isCornerChecked, BLIND_IS_CORNER_CHECKED, ctx)
             }
 
             start_blind_game_button.onClick { startActivity<BlindGameActivity>()}
