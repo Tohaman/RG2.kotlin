@@ -122,6 +122,7 @@ class SlidingTabsActivity : MyDefaultActivity() {
                             val listPagers : ArrayList<ListPager> =
                                     when (mPhase) {
                                         "PYRAMINX" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_PYR")}
+                                        "SKEWB" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_SKEWB")}
                                         else -> {ListPagerLab.get(ctx).getPhaseList("BASIC")}
                                     }
                             val lstView = listView {

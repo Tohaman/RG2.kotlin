@@ -69,9 +69,9 @@
     <string name="basic_skewb_st4_title">L\'</string>
     <string name="basic_skewb_st4_descr">Левая против часовой</string>
     <string name="basic_skewb_st5_title">U</string>
-    <string name="basic_skewb_st5_descr">Крыша по часовой</string>
+    <string name="basic_skewb_st5_descr">Верх по часовой</string>
     <string name="basic_skewb_st6_title">U\'</string>
-    <string name="basic_skewb_st6_descr">Крыша против часовой</string>
+    <string name="basic_skewb_st6_descr">Верх против часовой</string>
     <string name="basic_skewb_st7_title">B</string>
     <string name="basic_skewb_st7_descr">Задняя по часовой</string>
     <string name="basic_skewb_st8_title">B\'</string>
