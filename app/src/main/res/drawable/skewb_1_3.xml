@@ -6,7 +6,7 @@
     <path android:fillColor="@color/c_bl" android:pathData="M313.76,50.71l-5.95,184.58c-0.04,1.17 -0.57,2.31 -1.57,3.09l-123.45,96.47c-1.23,0.95 -2.8,1.12 -4.23,0.48l-161.89,-72.21c-1.42,-0.64 -2.3,-1.99 -2.41,-3.44l-14.09,-189.58c-0.13,-1.84 0.98,-3.48 2.62,-4.11l139.84,-65.38c0.88,-0.45 1.93,-0.59 2.96,-0.31l164.95,46.01c2.04,0.43 3.42,2.33 3.22,4.4z"/>
 
     <path android:fillColor="@color/c_w" android:pathData="M90.46,93.07l-5.15,-54.85l132.39,-8.44l23.44,48.78z"/>
-    <path android:fillColor="@color/c_gr" android:pathData="M15.03,69.63l60.97,-28.51l3.85,51.36z"/>
+    <path android:fillColor="@color/c_w" android:pathData="M15.03,69.63l60.97,-28.51l3.85,51.36z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M101.66,29.13l43.2,-20.2l57.3,15.25z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M251.66,80.6l-21.5,-47.88l69.29,19.32z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M99.11,99.7l76.9,26.67l65.85,-39.65z"/>
