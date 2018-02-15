@@ -12,8 +12,8 @@
 
     <integer-array name="skewb_icon">
         <item>@drawable/skewb_1</item>
-        <item>@drawable/skewb</item>
-        <item>@drawable/skewb</item>
+        <item>@drawable/skewb_2</item>
+        <item>@drawable/skewb_3</item>
         <item>@drawable/skewb</item>
         <item>@drawable/skewb</item>
         <item>@drawable/skewb</item>
