@@ -27,19 +27,19 @@
     <path android:fillColor="@color/c_w" android:pathData="M190,43l32,-14l2,26z"/>
     <path android:fillColor="@color/c_w" android:pathData="M235,23l22,-11l30,8z"/>
     <path android:fillColor="@color/c_w" android:pathData="M312,49l-11,-25l36,10z"/>
-    <path android:fillColor="@color/c_w" android:pathData="M234,59l39,14l34,-21z"/>
+    <path android:fillColor="@color/c_b" android:pathData="M234,59l39,14l34,-21z"/>
 
-    <path android:fillColor="@color/c_g" android:pathData="M230,155l-39,-59l34,-34l44,66z"/>
+    <path android:fillColor="@color/c_r" android:pathData="M230,155l-39,-59l34,-34l44,66z"/>
     <path android:fillColor="@color/c_g" android:pathData="M190,91l-3,-44l35,12z"/>
-    <path android:fillColor="@color/c_g" android:pathData="M273,123l-42,-61l41,15z"/>
-    <path android:fillColor="@color/c_g" android:pathData="M274,175l-40,-17l39,-27z"/>
-    <path android:fillColor="@color/c_g" android:pathData="M194,140l-3,-36l33,50z"/>
+    <path android:fillColor="@color/c_r" android:pathData="M273,123l-42,-61l41,15z"/>
+    <path android:fillColor="@color/c_r" android:pathData="M274,175l-40,-17l39,-27z"/>
+    <path android:fillColor="@color/c_r" android:pathData="M194,140l-3,-36l33,50z"/>
 
-    <path android:fillColor="@color/c_r" android:pathData="M280,128l34,-71l25,25l-28,65z"/>
-    <path android:fillColor="@color/c_r" android:pathData="M277,124l-1,-48l34,-20z"/>
+    <path android:fillColor="@color/c_y" android:pathData="M280,128l34,-71l25,25l-28,65z"/>
+    <path android:fillColor="@color/c_y" android:pathData="M277,124l-1,-48l34,-20z"/>
     <path android:fillColor="@color/c_r" android:pathData="M339,76l-24,-23l25,-16z"/>
-    <path android:fillColor="@color/c_r" android:pathData="M338,128l-21,16l22,-53z"/>
-    <path android:fillColor="@color/c_r" android:pathData="M278,174l-1,-43l32,19z"/>
+    <path android:fillColor="@color/c_y" android:pathData="M338,128l-21,16l22,-53z"/>
+    <path android:fillColor="@color/c_y" android:pathData="M278,174l-1,-43l32,19z"/>
 
     <path android:fillColor="@color/c_bl" android:pathData="M48,95c4,-8 10,-16 16,-22 5,-4 10,-8 17,-10 5,-1 10,-2 16,0 7,2 13,6 18,12 6,6 10,13 13,21l2,-1c-1,-3 -3,-6 -5,-10 -2,-3 -3,-5 -5,-8 -2,-3 -5,-6 -8,-9 -5,-4 -10,-7 -15,-8 -4,-1 -7,1 -11,0 -8,1 -17,5 -22,10 -7,6 -15,13 -18,22 0,1 -1,2 -1,2 -2,-1 -3,-2 -4,-4l0,16 12,-11c-2,0 -4,0 -5,-1z"/>
 </vector>
