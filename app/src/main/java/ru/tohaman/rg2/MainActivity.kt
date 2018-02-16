@@ -320,6 +320,9 @@ class MainActivity : MyDefaultActivity(),
                     "BASIC" -> {
                         alert(getString(R.string.help_basic)) { okButton { } }.show()
                     }
+                    "BLINDGAME" -> {
+                        alert(getString(R.string.help_blind_game)) { okButton { } }.show()
+                    }
                     "SETTINGS" -> {
                         alert(getString(R.string.help_settings)) { okButton { } }.show()
                     }
