@@ -15,6 +15,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import android.widget.ListView
+import com.google.gson.GsonBuilder
 import ru.tohaman.rg2.DebugTag.TAG
 
 import ru.tohaman.rg2.adapters.MyListAdapter
@@ -26,12 +27,15 @@ import kotlinx.android.synthetic.main.app_bar_sliding.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk25.coroutines.onItemClick
 import ru.tohaman.rg2.*
+import ru.tohaman.rg2.data.Favorite
 import ru.tohaman.rg2.fragments.FragmentPagerItem
 import ru.tohaman.rg2.util.getThemeFromSharedPreference
+import ru.tohaman.rg2.util.saveString2SP
 
 
 class SlidingTabsActivity : MyDefaultActivity() {
     private var mPhase = "BEGIN"
+    private lateinit var mListPagerLab: ListPagerLab
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,14 +67,14 @@ class SlidingTabsActivity : MyDefaultActivity() {
         toggle.syncState()
 
         Log.v (TAG, "SlidingTabActivity onCreate Инициализируем ListPagers и передаем его адаптерам")
-        val mListPagerLab = ListPagerLab.get(this)
-        val mListPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList(mPhase)
+        mListPagerLab = ListPagerLab.get(this)
+        var mListPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList(mPhase)
 
         Log.v (TAG, "SlidingTabActivity onCreate Настраиваем SlidingTab")
         val mViewPagerSlidingTabs = findViewById<ViewPager>(R.id.viewPagerSlidingTabs)
 
         // подключим адаптер для слайдингтаба (основного текста)
-        mViewPagerSlidingTabs.adapter = object : FragmentStatePagerAdapter(supportFragmentManager) {
+        val adapter = object : FragmentStatePagerAdapter(supportFragmentManager) {
 
             override fun getPageTitle(position: Int): CharSequence {
                 return mListPagers[position].title
@@ -85,20 +89,34 @@ class SlidingTabsActivity : MyDefaultActivity() {
             }
 
         }
+        mViewPagerSlidingTabs.adapter = adapter
         mViewPagerSlidingTabs.currentItem = id
         tabs.setViewPager(mViewPagerSlidingTabs)
 
         Log.v (TAG, "SlidingTabActivity onCreate Настраиваем ListView для списка слева")
         // Настраиваем листвью для выезжающего слева списка
-        val mListAdapter = MyListAdapter(mListPagers)
-        val mDrawerListView  = findViewById<ListView>(R.id.left_drawer)
+        val listAdapter = MyListAdapter(mListPagers)
+        val drawerListView  = findViewById<ListView>(R.id.left_drawer)
+        val rightDrawerListView  = findViewById<ListView>(R.id.right_drawer)
         // подключим адаптер для выезжающего слева списка
 //        mDrawerListView.setBackgroundResource(R.color.background_material_light)
-        mDrawerListView.adapter = mListAdapter
-
-        mDrawerListView.setOnItemClickListener { _, _, position, _ ->
+        drawerListView.adapter = listAdapter
+        drawerListView.setOnItemClickListener { _, _, position, _ ->
             mViewPagerSlidingTabs.currentItem = position
             drawer_layout.closeDrawer(GravityCompat.START)
+        }
+
+        val favList = mListPagerLab.getPhaseList("FAVORITES")
+        rightDrawerListView.adapter = MyListAdapter(favList)
+        rightDrawerListView.setOnItemClickListener { _, _, i, _ ->
+            //TODO сделать смену фазы в основной активности
+            saveString2SP(favList[i].url,"startPhase",ctx) //не работает
+            mListPagers  = mListPagerLab.getPhaseList(favList[i].url)
+            adapter.notifyDataSetChanged()
+            mViewPagerSlidingTabs.adapter = adapter
+            tabs.setViewPager(mViewPagerSlidingTabs)
+            mViewPagerSlidingTabs.currentItem = favList[i].id
+            drawer_layout.closeDrawer(GravityCompat.END)
         }
     }
 
@@ -139,7 +157,6 @@ class SlidingTabsActivity : MyDefaultActivity() {
             else -> return super.onOptionsItemSelected(item)
         }
     }
-
 
 
 }

@@ -1,5 +1,6 @@
 package ru.tohaman.rg2.ui
 
+import android.graphics.Color
 import android.graphics.Typeface
 import android.support.v4.content.ContextCompat
 import android.text.method.LinkMovementMethod
@@ -31,6 +32,7 @@ class PagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
 
                         imageView {
                             id = Ids.pagerImageView
+//                            backgroundColor = Color.GREEN
                             padding = 8.dp
                         }.lparams(80.dp, 80.dp)
 
@@ -45,7 +47,9 @@ class PagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
                             padding = 10.dp
 
                         }.lparams(matchParent, wrapContent)
-                    }.lparams(matchParent, wrapContent) {setMargins(16.dp, 10.dp, 16.dp, 10.dp)}
+
+
+                    }.lparams(matchParent, wrapContent) {setMargins(0.dp, 10.dp, 0.dp, 10.dp)}
 
                     textView {
                         id = Ids.descriptionText

@@ -17,7 +17,7 @@ import ru.tohaman.rg2.data.ListPager
  * а ListUI сделать наследником AnkoComponentEx, хотя кода не много и так наверно проще
  */
 
-class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m: Float = 1f) : BaseAdapter() {
+class MyListAdapter(val listOfLP: ArrayList<ListPager> = ArrayList(), private val m: Float = 1f) : BaseAdapter() {
     lateinit var context: Context
     private val Int.dp: Int get() = this.dpf.toInt()
     private val Int.dpf: Float get() = this * context.resources.displayMetrics.density
@@ -25,15 +25,15 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
     override fun getView(i: Int, v: View?, parent: ViewGroup?): View {
         context = parent!!.context
         return with(context) {
-            when (list[0].phase) {
+            when (listOfLP[0].phase) {
                 "BASIC", "BASIC_PYR", "BASIC_SKEWB" -> {
-                    val taskNum: Int = list[i].icon
+                    val taskNum: Int = listOfLP[i].icon
                     linearLayout {
                         orientation = HORIZONTAL
                         gravity = Gravity.CENTER
 
                         textView {
-                            text = list[i].title
+                            text = listOfLP[i].title
                             textSize = 30f
                             padding = dip(5)
                             rightPadding = dip(30)
@@ -45,7 +45,7 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
                     }
                 }
                 else -> {
-                    val taskNum: Int = list[i].icon
+                    val taskNum: Int = listOfLP[i].icon
                     linearLayout {
                         orientation = HORIZONTAL
 //                        gravity = Gravity.CENTER
@@ -56,10 +56,10 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
                         linearLayout() {
                             orientation = VERTICAL
                             textView {
-                                text = if (list[0].phase == "PLLTEST"){
-                                    list[i].comment
+                                text = if (listOfLP[0].phase == "PLLTEST"){
+                                    listOfLP[i].comment
                                 } else {
-                                    list[i].title
+                                    listOfLP[i].title
                                 }
                                 textSize = m * 12f
                                 typeface = Typeface.DEFAULT_BOLD
@@ -67,10 +67,10 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
                             textView {
                                 textSize = m *8F
                                 singleLine = true
-                                text = if (list[0].phase == "PLLTEST"){
+                                text = if (listOfLP[0].phase == "PLLTEST"){
                                     ""
                                 } else {
-                                    list[i].comment
+                                    listOfLP[i].comment
                                 }
                             }.lparams(matchParent, wrapContent) { setMargins(15.dp, 0.dp, 5.dp, 5.dp) }
                         }.lparams(matchParent, matchParent)
@@ -81,7 +81,7 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
     }
 
     override fun getItem(position: Int): ListPager {
-        return list[position]
+        return listOfLP[position]
     }
 
     override fun getItemId(position: Int): Long {
@@ -89,7 +89,7 @@ class MyListAdapter(val list: ArrayList<ListPager> = ArrayList(), private val m:
     }
 
     override fun getCount(): Int {
-        return list.size
+        return listOfLP.size
     }
 
 }

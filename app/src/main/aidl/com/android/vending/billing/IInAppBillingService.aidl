@@ -56,9 +56,9 @@ interface IInAppBillingService {
     int isBillingSupported(int apiVersion, String packageName, String type);
 
     /**
-     * Provides details of a list of SKUs
-     * Given a list of SKUs of a valid type in the skusBundle, this returns a bundle
-     * with a list JSON strings containing the productId, price, title and description.
+     * Provides details of a listOfLP of SKUs
+     * Given a listOfLP of SKUs of a valid type in the skusBundle, this returns a bundle
+     * with a listOfLP JSON strings containing the productId, price, title and description.
      * This API can be called with a maximum of 20 SKUs.
      * @param apiVersion billing API version that the app is using
      * @param packageName the package name of the calling app
@@ -128,13 +128,13 @@ interface IInAppBillingService {
      * @return Bundle containing the following key-value pairs
      *         "RESPONSE_CODE" with int value, RESULT_OK(0) if success, appropriate response codes
                                on failures.
-     *         "INAPP_PURCHASE_ITEM_LIST" - StringArrayList containing the list of SKUs
+     *         "INAPP_PURCHASE_ITEM_LIST" - StringArrayList containing the listOfLP of SKUs
      *         "INAPP_PURCHASE_DATA_LIST" - StringArrayList containing the purchase information
      *         "INAPP_DATA_SIGNATURE_LIST"- StringArrayList containing the signatures
      *                                      of the purchase information
      *         "INAPP_CONTINUATION_TOKEN" - String containing a continuation token for the
      *                                      next set of in-app purchases. Only set if the
-     *                                      user has more owned skus than the current list.
+     *                                      user has more owned skus than the current listOfLP.
      */
     Bundle getPurchases(int apiVersion, String packageName, String type, String continuationToken);
 
@@ -253,13 +253,13 @@ interface IInAppBillingService {
      *         "RESPONSE_CODE" with int value: RESULT_OK(0) if success,
      *         {@link IabHelper#BILLING_RESPONSE_RESULT_*} response codes on failures.
      *
-     *         "INAPP_PURCHASE_ITEM_LIST" - ArrayList<String> containing the list of SKUs
+     *         "INAPP_PURCHASE_ITEM_LIST" - ArrayList<String> containing the listOfLP of SKUs
      *         "INAPP_PURCHASE_DATA_LIST" - ArrayList<String> containing the purchase information
      *         "INAPP_DATA_SIGNATURE_LIST"- ArrayList<String> containing the signatures
      *                                      of the purchase information
      *         "INAPP_CONTINUATION_TOKEN" - String containing a continuation token for the
      *                                      next set of in-app purchases. Only set if the
-     *                                      user has more owned skus than the current list.
+     *                                      user has more owned skus than the current listOfLP.
      */
     Bundle getPurchaseHistory(int apiVersion, String packageName, String type,
         String continuationToken, in Bundle extraParams);

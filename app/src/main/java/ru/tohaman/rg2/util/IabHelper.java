@@ -421,7 +421,7 @@ public class IabHelper {
      * @param sku The sku of the item to purchase.
      * @param itemType indicates if it's a product or a subscription (ITEM_TYPE_INAPP or
      *      ITEM_TYPE_SUBS)
-     * @param oldSkus A list of SKUs which the new SKU is replacing or null if there are none
+     * @param oldSkus A listOfLP of SKUs which the new SKU is replacing or null if there are none
      * @param requestCode A request code (to differentiate from other responses -- as in
      *      {@link android.app.Activity#startActivityForResult}).
      * @param listener The listener to notify when the purchase process finishes
@@ -809,7 +809,7 @@ public class IabHelper {
 
     /**
      * Same as {@link #consumeAsync}, but for multiple items at once.
-     * @param purchases The list of PurchaseInfo objects representing the purchases to consume.
+     * @param purchases The listOfLP of PurchaseInfo objects representing the purchases to consume.
      * @param listener The listener to notify when the consumption operation finishes.
      */
     public void consumeAsync(List<Purchase> purchases, OnConsumeMultiFinishedListener listener)
@@ -1014,7 +1014,7 @@ public class IabHelper {
             return BILLING_RESPONSE_RESULT_OK;
         }
 
-        // Split the sku list in blocks of no more than 20 elements.
+        // Split the sku listOfLP in blocks of no more than 20 elements.
         ArrayList<ArrayList<String>> packs = new ArrayList<ArrayList<String>>();
         ArrayList<String> tempList;
         int n = skuList.size() / 20;
@@ -1046,7 +1046,7 @@ public class IabHelper {
                     logDebug("getSkuDetails() failed: " + getResponseDesc(response));
                     return response;
                 } else {
-                    logError("getSkuDetails() returned a bundle with neither an error nor a detail list.");
+                    logError("getSkuDetails() returned a bundle with neither an error nor a detail listOfLP.");
                     return IABHELPER_BAD_RESPONSE;
                 }
             }

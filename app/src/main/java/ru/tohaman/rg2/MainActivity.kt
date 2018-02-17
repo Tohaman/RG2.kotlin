@@ -28,8 +28,10 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.FrameLayout
 import android.widget.ImageView
+import com.google.gson.GsonBuilder
 import ru.tohaman.rg2.DeveloperKey.base64EncodedPublicKey
 import ru.tohaman.rg2.activities.BlindGameActivity
+import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.util.*
 
 
@@ -47,6 +49,7 @@ const val BLIND_ROW_COUNT = "blindRowCount"
 const val PLL_TEST_3SIDE = "isPllTest3Side"
 const val BLIND_IS_EDGE_CHECKED = "isBlindEdgeChecked"
 const val BLIND_IS_CORNER_CHECKED = "isBlindCornerChecked"
+const val FAVORITES = "favorites"
 
 // SKUs для продуктов: при изменении не забыть поправить в sayThanks
 const val BIG_DONATION = "big_donation"
@@ -80,6 +83,7 @@ class MainActivity : MyDefaultActivity(),
     private var backPressedTime: Long = 0
     private lateinit var mListPagerLab: ListPagerLab
     private var curPhase = "BEGIN"
+    private var changedPhase = "BEGIN"
     private val listOfGo2Fridrich = listOf("ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL")
     private val listOfOtherPuzzle = listOf("PYRAMINX", "MEGAMINX", "SKEWB")
 
@@ -91,8 +95,8 @@ class MainActivity : MyDefaultActivity(),
         mListPagerLab = ListPagerLab.get(ctx)
 
         // Регистрируем слушатель OnSharedPreferenceChangeListener (Изменеия в настройках)
-        val prefs = PreferenceManager.getDefaultSharedPreferences(ctx)
-        prefs.registerOnSharedPreferenceChangeListener(this)
+        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
+        sp.registerOnSharedPreferenceChangeListener(this)
 
         //Если повернули экран или вернулись в активность, то открываем ту фазу, которая была, иначе - берем данные из SharedPreference
         curPhase = if (savedInstanceState != null) {
@@ -100,12 +104,13 @@ class MainActivity : MyDefaultActivity(),
         } else {
             loadStartPhase()
         }
+        //Чтобы при onResume не пришлось менять фазу
+        changedPhase = curPhase
 
         Log.v (TAG, "MainActivity CreateView")
         setContentView(R.layout.activity_main)
 
         //номер текущей версии программы
-        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
         var version = sp.getInt("version", 1)
         val curVersion = BuildConfig.VERSION_CODE
 
@@ -249,7 +254,6 @@ class MainActivity : MyDefaultActivity(),
         super.onSaveInstanceState(savedInstanceState)
         savedInstanceState.putString("phase", curPhase)
     }
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
@@ -412,6 +416,22 @@ class MainActivity : MyDefaultActivity(),
         return true
     }
 
+    override fun onPause() {
+        super.onPause()
+        Log.v (TAG, "onPause - curPhase - $curPhase")
+        changedPhase = curPhase
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.v (TAG, "onResume - curPhase - $curPhase")
+        if (changedPhase != curPhase) {
+            Log.v(DebugTag.TAG, "Change Phase from $curPhase to $changedPhase")
+            setListFragmentPhase(changedPhase)
+        }
+    }
+
+
     private fun loadStartPhase():String {
         val sp = PreferenceManager.getDefaultSharedPreferences(this)
         return sp.getString("startPhase", "BEGIN")
@@ -485,7 +505,7 @@ class MainActivity : MyDefaultActivity(),
                 this.recreate()
             }
             "fab_on" -> {
-                if (!sp.getBoolean("fab_on", true)) {
+                if (!sp.getBoolean(key, true)) {
                     fab.visibility = View.GONE
                 } else {
                     fab.visibility = View.VISIBLE
@@ -493,6 +513,12 @@ class MainActivity : MyDefaultActivity(),
             }
             "screen_always_on" -> {
                 setScreenOn(IS_SCREEN_ALWAYS_ON, ctx)
+            }
+            "startPhase" -> {
+                val phase = sp.getString(key, "BEGIN")
+                if (curPhase !=  phase) {
+                    changedPhase = phase
+                }
             }
         }
     }
@@ -508,8 +534,11 @@ class MainActivity : MyDefaultActivity(),
         }
     }
 
-
-    //Далее все для покупок внутри приложения
+    /**
+     *  Далее все для покупок внутри приложения
+     *  основано на гугловском стандартном приложении TrivialDrive
+     *  File - New - ImportSamle - TrivialDrive
+     */
 
     private fun sayThanks( donationNumber : Int ) {
         val donationString = when (donationNumber) {

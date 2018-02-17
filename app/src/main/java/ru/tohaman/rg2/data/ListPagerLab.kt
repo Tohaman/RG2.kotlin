@@ -39,6 +39,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("PLLTEST", R.array.pll_test_phases, R.array.pll_test_icon,R.array.pll_test_descr,R.array.pll_test_url,context)
         phaseInit("PLLTEST_CUSTOM", R.array.pll_test_phases, R.array.pll_test_icon,R.array.pll_test_descr,R.array.pll_test_url,context)
         phaseInit("THANKS", R.array.thanks_title, R.array.thanks_icon,R.array.thanks_descr,R.array.thanks_url,context)
+        favoritesInit(context)
     }
 
     //собственно сам синглет, точнее Холдер, который держит сиглетную ссылку (INSTANCE) на экземпляр класса
@@ -77,6 +78,29 @@ class ListPagerLab private constructor(context: Context){
         icon.recycle()
         descr.recycle()
     }
+
+    private fun favoritesInit(context: Context) {
+        val listOfFavorite = getFavoriteListFromSharedPref(context)
+        for (i in listOfFavorite.indices) {
+            val lp = makeListPagerFromFavorite(listOfFavorite, i)
+            listPagers.add(lp)
+        }
+    }
+
+    private fun makeListPagerFromFavorite(listOfFavorite: List<Favorite>, i: Int): ListPager {
+        val lp = getPhaseItem(listOfFavorite[i].id, listOfFavorite[i].phase).copy()
+        lp.comment = listOfFavorite[i].comment
+        lp.url = lp.phase
+        lp.phase = "FAVORITES"
+        return lp
+    }
+
+    private fun getFavoriteListFromSharedPref(context: Context) : List<Favorite> {
+        val listOfFavorite = listOf(Favorite("BEGIN",3,"пиф-паф"), Favorite("PLL",5),Favorite("MEGAMINX", 1))
+
+        return listOfFavorite
+    }
+
 
     //возвращает из ListPagerLab список ListPager'ов с заданной фазой (все записи для данной фазы)
     fun getPhaseList(phase: String): ArrayList<ListPager> {
