@@ -109,8 +109,9 @@ class SlidingTabsActivity : MyDefaultActivity() {
         val favList = mListPagerLab.getPhaseList("FAVORITES")
         rightDrawerListView.adapter = MyListAdapter(favList)
         rightDrawerListView.setOnItemClickListener { _, _, i, _ ->
-            //TODO сделать смену фазы в основной активности
-            saveString2SP(favList[i].url,"startPhase",ctx) //не работает
+            //Меняем фазу для выхода в основную активность
+            saveString2SP(favList[i].url,"startPhase",ctx)
+
             mListPagers  = mListPagerLab.getPhaseList(favList[i].url)
             adapter.notifyDataSetChanged()
             mViewPagerSlidingTabs.adapter = adapter

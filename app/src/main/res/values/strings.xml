@@ -56,5 +56,11 @@
     <string name="blind_game">Тренировка Азбуки</string>
     <string name="answers_count">Количество вариантов ответа</string>
     <string name="start_game">Начать игру</string>
+    <string name="favoriteSetText"><b>Добавить данный этап в избранное?</b>\n\n
+            С комментарием:
+    </string>
+    <string name="favoriteUnSetText"><b>Удалить данный этап из избранного?</b>
+    </string>
+
 
 </resources>

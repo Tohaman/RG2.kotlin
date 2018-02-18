@@ -13,6 +13,7 @@ import java.util.ArrayList
 class ListPagerLab private constructor(context: Context){
     private val mDatabase = BaseHelper(context)
     var listPagers = arrayListOf<ListPager>()
+    var favorites = listOf<Favorite>()
 
     init { // тут пишем то, что выполнится при инициализации синглета
         phaseInit("BEGIN2X2",R.array.begin2x2_title,R.array.begin2x2_icon,R.array.begin2x2_descr,R.array.begin2x2_url,context)
@@ -96,9 +97,9 @@ class ListPagerLab private constructor(context: Context){
     }
 
     private fun getFavoriteListFromSharedPref(context: Context) : List<Favorite> {
-        val listOfFavorite = listOf(Favorite("BEGIN",3,"пиф-паф"), Favorite("PLL",5),Favorite("MEGAMINX", 1))
+        favorites = listOf(Favorite("BEGIN",3,"свет и пиф-паф"), Favorite("PLL",5, "Тестовый пункт"),Favorite("MEGAMINX", 1, "Пока не редактируется"))
 
-        return listOfFavorite
+        return favorites
     }
 
 

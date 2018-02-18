@@ -13,15 +13,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
-import android.widget.TextView
+import android.widget.*
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubeStandalonePlayer
 import com.google.android.youtube.player.YouTubeThumbnailLoader
 import com.google.android.youtube.player.YouTubeThumbnailView
 import org.jetbrains.anko.*
+import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.support.v4.alert
 import org.jetbrains.anko.support.v4.ctx
@@ -31,11 +29,13 @@ import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.DeveloperKey.DEVELOPER_KEY
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.VIDEO_PREVIEW
+import ru.tohaman.rg2.data.Favorite
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.ui.PagerItemtUI
 import ru.tohaman.rg2.util.spannedString
 import ru.tohaman.rg2.util.toEditable
+import kotlin.math.truncate
 
 class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener {
     // Константы для YouTubePlayer
@@ -53,7 +53,8 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         //Данные во фрагмент передаются через фабричный метод newInstance данного фрагмента
         //TODO переделать на передачу через uri
         val phase = arguments!!.getString("phase")
-        val message = arguments!!.getString("title")
+        val id = arguments!!.getInt("id")
+        var title = arguments!!.getString("title")
         val topImage = arguments!!.getInt("topImage")
         val description = arguments!!.getInt("desc")
         val comment  = arguments!!.getString("comment")
@@ -66,7 +67,72 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         val mainTextView = view.findViewById<TextView>(PagerItemtUI.Ids.descriptionText)
 
-        (view.findViewById(PagerItemtUI.Ids.pagerTitleText) as TextView).text = message
+        val listPagerLab = ListPagerLab.get(ctx)
+        val favoritesList = listPagerLab.favorites
+        val favCheckBox = view.findViewById<CheckBox>(PagerItemtUI.Ids.checkBox)
+        //Пришлось делать вот так, а не через xml, которая задает изображение в зависимости от статуса,
+        //т.к. иначе при смене через избранное кэшеруется не то изображение
+        favCheckBox.isChecked = false
+        favCheckBox.buttonDrawableResource = R.drawable.ic_favorite
+
+        favoritesList.indices.forEach { i ->
+            if ((favoritesList[i].phase == phase) and (favoritesList[i].id == id)) {
+                favCheckBox.buttonDrawableResource = R.drawable.ic_favorite_checked
+                favCheckBox.isChecked = true
+            }
+        }
+
+        //Используем onClick, а не onCheckedChange, чтобы не зацикливаться по нажатию кнопки "Отмена"
+        favCheckBox.onClick {
+            if (favCheckBox.isChecked) {
+                alert {
+                    customView {
+                        linearLayout {
+                            orientation = LinearLayout.VERTICAL
+                            textView {
+                                textResource = R.string.favoriteSetText
+                                textSize = 18F
+                            }.lparams {setMargins(dip(8), dip(8),dip(8), dip(8))}
+                            val editTxt = editText {
+                                text = comment.toEditable()
+                            }
+
+                            positiveButton("OK") {
+                                favCheckBox.buttonDrawableResource = R.drawable.ic_favorite_checked
+                                listPagerLab.favorites.plus(Favorite(phase,id, editTxt.text.toString()))
+                            }
+                            negativeButton("Отмена") {
+                                favCheckBox.isChecked = false
+                            }
+                        }
+                    }
+                }.show()
+
+            } else {
+                alert {
+                    customView {
+                        linearLayout {
+                            orientation = LinearLayout.VERTICAL
+                            textView {
+                                textResource = R.string.favoriteUnSetText
+                                textSize = 18F
+                            }.lparams {setMargins(dip(8), dip(8),dip(8), dip(8))}
+
+                            positiveButton("OK") {
+                                favCheckBox.buttonDrawableResource = R.drawable.ic_favorite
+                            }
+                            negativeButton("Отмена") {
+                                favCheckBox.isChecked = true
+                            }
+                        }
+                    }
+                }.show()
+
+            }
+        }
+
+
+        (view.findViewById(PagerItemtUI.Ids.pagerTitleText) as TextView).text = title
         (view.findViewById(PagerItemtUI.Ids.pagerImageView) as ImageView).imageResource = topImage
         mainTextView.text = spanText
         mainTextView.isSelectable = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean("is_text_selectable", false)
@@ -92,6 +158,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
             hideYouTubePreview(thumbnailView, ytTextView, playPreviewImage)  //скрыть превью, отобразить текстовой ссылкой
         }
 
+        //Выводим коммент, и делаем обработчик нажатия на него (вызваем окно редактирования)
         val commentText = view.findViewById<TextView>(PagerItemtUI.Ids.commentText)
         commentText.text = (ctx.getString(R.string.commentText) + " " + comment)
         commentText.onClick {
@@ -109,11 +176,10 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
                         }
 
                         positiveButton("OK") {
-                            val lpLab = ListPagerLab.get(ctx)
-                            val lps = lpLab.getPhaseItemByTitle(phase, message)
+                            val lps = listPagerLab.getPhaseItemByTitle(phase, title)
                             val cmnt = editTxt.text.toString()
                             lps.comment = cmnt
-                            lpLab.updateListPager(lps)
+                            listPagerLab.updateListPager(lps)
                             commentText.text = (ctx.getString(R.string.commentText) + " " + cmnt)
                         }
                         negativeButton("Отмена") {}
@@ -207,6 +273,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         fun newInstance(lp: ListPager): FragmentPagerItem {
             //TODO сделать передачу через uri
             return FragmentPagerItem().withArguments("phase" to lp.phase,
+                    "id" to lp.id,
                     "title" to lp.title,
                     "topImage" to lp.icon,
                     "desc" to lp.description,

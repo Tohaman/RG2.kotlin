@@ -9,6 +9,7 @@ import android.widget.LinearLayout
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import ru.tohaman.rg2.R
+import ru.tohaman.rg2.ankoconstraintlayout.constraintLayout
 
 /**
  *  Класс для создания одного элемента PagerView для ViewPagerSlidingTab с помощью Anko
@@ -25,31 +26,51 @@ class PagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
                 linearLayout {
                     orientation = LinearLayout.VERTICAL
 
-                    linearLayout {
-                        orientation = LinearLayout.HORIZONTAL
-                        gravity = Gravity.CENTER_VERTICAL
+                    constraintLayout {
 //                      backgroundColor = Color.RED
 
-                        imageView {
+                        val imgView = imageView {
                             id = Ids.pagerImageView
 //                            backgroundColor = Color.GREEN
                             padding = 8.dp
                         }.lparams(80.dp, 80.dp)
 
-                        textView {
+                        val txtView = textView {
                             gravity = Gravity.CENTER
                             id = Ids.pagerTitleText
                             //Если текст ниже селектабельный, то и этот тоже надо делать таким,
                             //иначе текст будет автоматом прокручиваться при открытии view
 //                            isSelectable = true
-                            textSize = 20F
+                            textSize = 18F
                             typeface = Typeface.DEFAULT_BOLD
-                            padding = 10.dp
+                            //padding = 10.dp
 
-                        }.lparams(matchParent, wrapContent)
+                        }.lparams(0.dp, wrapContent)
 
+                        val chkBox = checkBox {
+                            id = Ids.checkBox
+//                            isChecked = true
 
+//                            buttonDrawableResource = R.drawable.checkbox_star
+                        }.lparams(0.dp, wrapContent)
+
+                        constraints {
+                            imgView.connect(
+                                    TOPS of parentId,
+                                    LEFTS of parentId)
+                            txtView.connect(
+                                    TOPS of parentId,
+                                    BOTTOMS of parentId,
+                                    RIGHT to LEFT of chkBox,
+                                    LEFT to RIGHT of imgView)
+                            chkBox.connect(
+                                    TOPS of parentId,
+                                    RIGHTS of parentId
+                            )
+
+                        }
                     }.lparams(matchParent, wrapContent) {setMargins(0.dp, 10.dp, 0.dp, 10.dp)}
+
 
                     textView {
                         id = Ids.descriptionText
@@ -99,5 +120,6 @@ class PagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
         const val youTubeLayout = 7
         const val youTubeTextView = 8
         const val icPlayPreview = 9
+        const val checkBox = 10
     }
 }
