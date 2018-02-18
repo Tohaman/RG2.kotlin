@@ -26,15 +26,18 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_sliding.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk25.coroutines.onItemClick
+import org.jetbrains.anko.support.v4.onPageChangeListener
 import ru.tohaman.rg2.*
 import ru.tohaman.rg2.data.Favorite
 import ru.tohaman.rg2.fragments.FragmentPagerItem
 import ru.tohaman.rg2.util.getThemeFromSharedPreference
+import ru.tohaman.rg2.util.saveInt2SP
 import ru.tohaman.rg2.util.saveString2SP
 
 
-class SlidingTabsActivity : MyDefaultActivity() {
+class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerInteractionListener {
     private var mPhase = "BEGIN"
+    private lateinit var rightDrawerListView: ListView
     private lateinit var mListPagerLab: ListPagerLab
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -97,9 +100,8 @@ class SlidingTabsActivity : MyDefaultActivity() {
         // Настраиваем листвью для выезжающего слева списка
         val listAdapter = MyListAdapter(mListPagers)
         val drawerListView  = findViewById<ListView>(R.id.left_drawer)
-        val rightDrawerListView  = findViewById<ListView>(R.id.right_drawer)
+        rightDrawerListView  = findViewById(R.id.right_drawer)
         // подключим адаптер для выезжающего слева списка
-//        mDrawerListView.setBackgroundResource(R.color.background_material_light)
         drawerListView.adapter = listAdapter
         drawerListView.setOnItemClickListener { _, _, position, _ ->
             mViewPagerSlidingTabs.currentItem = position
@@ -107,17 +109,17 @@ class SlidingTabsActivity : MyDefaultActivity() {
         }
 
         val favList = mListPagerLab.getPhaseList("FAVORITES")
-        rightDrawerListView.adapter = MyListAdapter(favList)
+        val rightDrawerAdapter = MyListAdapter(favList)
+
+        // подключим адаптер для выезжающего справа списка
+        rightDrawerListView.adapter = rightDrawerAdapter
         rightDrawerListView.setOnItemClickListener { _, _, i, _ ->
             //Меняем фазу для выхода в основную активность
+            //TODO Если фаза не меняется, то выходить не надо
             saveString2SP(favList[i].url,"startPhase",ctx)
-
-            mListPagers  = mListPagerLab.getPhaseList(favList[i].url)
-            adapter.notifyDataSetChanged()
-            mViewPagerSlidingTabs.adapter = adapter
-            tabs.setViewPager(mViewPagerSlidingTabs)
-            mViewPagerSlidingTabs.currentItem = favList[i].id
+            saveInt2SP(favList[i].id,"startId",ctx)
             drawer_layout.closeDrawer(GravityCompat.END)
+            onBackPressed()
         }
     }
 
@@ -125,6 +127,10 @@ class SlidingTabsActivity : MyDefaultActivity() {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.sliding_tab_menu, menu)
         return true
+    }
+
+    override fun onViewPagerCheckBoxInteraction() {
+        rightDrawerListView.adapter = MyListAdapter(mListPagerLab.getPhaseList("FAVORITES"))
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

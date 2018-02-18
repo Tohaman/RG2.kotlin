@@ -17,7 +17,7 @@ import ru.tohaman.rg2.data.ListPager
  * а ListUI сделать наследником AnkoComponentEx, хотя кода не много и так наверно проще
  */
 
-class MyListAdapter(val listOfLP: ArrayList<ListPager> = ArrayList(), private val m: Float = 1f) : BaseAdapter() {
+class MyListAdapter(private val listOfLP: ArrayList<ListPager> = ArrayList(), private val m: Float = 1f) : BaseAdapter() {
     lateinit var context: Context
     private val Int.dp: Int get() = this.dpf.toInt()
     private val Int.dpf: Float get() = this * context.resources.displayMetrics.density

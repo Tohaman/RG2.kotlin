@@ -1,8 +1,17 @@
 package ru.tohaman.rg2.data
 
 import android.content.Context
+import android.support.v7.preference.PreferenceManager
 import ru.tohaman.rg2.R
 import java.util.ArrayList
+import com.google.gson.GsonBuilder
+import com.google.gson.Gson
+import ru.tohaman.rg2.FAVORITES
+import ru.tohaman.rg2.util.saveString2SP
+import com.google.gson.reflect.TypeToken
+
+
+
 
 /**
  * Created by Toha on 21.05.2017. Синглетный класс, при первом вызове создающий сиглет, хранящмй всю информацию о всех фазах
@@ -13,7 +22,7 @@ import java.util.ArrayList
 class ListPagerLab private constructor(context: Context){
     private val mDatabase = BaseHelper(context)
     var listPagers = arrayListOf<ListPager>()
-    var favorites = listOf<Favorite>()
+    var favorites = arrayListOf<Favorite>()
 
     init { // тут пишем то, что выполнится при инициализации синглета
         phaseInit("BEGIN2X2",R.array.begin2x2_title,R.array.begin2x2_icon,R.array.begin2x2_descr,R.array.begin2x2_url,context)
@@ -82,13 +91,14 @@ class ListPagerLab private constructor(context: Context){
 
     private fun favoritesInit(context: Context) {
         val listOfFavorite = getFavoriteListFromSharedPref(context)
+        //TODO преобразовать for
         for (i in listOfFavorite.indices) {
             val lp = makeListPagerFromFavorite(listOfFavorite, i)
             listPagers.add(lp)
         }
     }
 
-    private fun makeListPagerFromFavorite(listOfFavorite: List<Favorite>, i: Int): ListPager {
+    private fun makeListPagerFromFavorite(listOfFavorite: ArrayList<Favorite>, i: Int): ListPager {
         val lp = getPhaseItem(listOfFavorite[i].id, listOfFavorite[i].phase).copy()
         lp.comment = listOfFavorite[i].comment
         lp.url = lp.phase
@@ -96,12 +106,32 @@ class ListPagerLab private constructor(context: Context){
         return lp
     }
 
-    private fun getFavoriteListFromSharedPref(context: Context) : List<Favorite> {
-        favorites = listOf(Favorite("BEGIN",3,"свет и пиф-паф"), Favorite("PLL",5, "Тестовый пункт"),Favorite("MEGAMINX", 1, "Пока не редактируется"))
+    private fun getFavoriteListFromSharedPref(context: Context) : ArrayList<Favorite> {
+        favorites = arrayListOf(Favorite("BEGIN",3,"свет и пиф-паф"), Favorite("PLL",5, "Тестовый пункт"),Favorite("MEGAMINX", 1, "Пока не редактируется"))
+        favorites.add(Favorite("BEGIN",5,"свет и пиф-паф"))
+        val defaultString = """[{"comment":"свет и пиф-паф","id":3,"phase":"BEGIN"},{"comment":"Тестовый пункт","id":5,"phase":"PLL"},{"comment":"Пока не редактируется","id":1,"phase":"MEGAMINX"},{"comment":"свет и пиф-паф","id":5,"phase":"BEGIN"}]"""
+        val sp = PreferenceManager.getDefaultSharedPreferences(context)
+        val json = sp.getString(FAVORITES, defaultString)
+        val gson = GsonBuilder().create()
+        val itemsListType = object : TypeToken<ArrayList<Favorite>>() {}.type
+//        favorites = gson.fromJson(json, itemsListType)
+        favorites = gson.fromJson(defaultString, itemsListType)
 
         return favorites
     }
 
+    private fun setFavoriteListToSharedPref(context: Context) {
+        val gson = GsonBuilder().create()
+        val json = gson.toJson(favorites)
+        saveString2SP(json, FAVORITES, context)
+    }
+
+    fun addFavorite(favorite: Favorite, context: Context) {
+        favorites.add(favorite)
+        val lp = makeListPagerFromFavorite(favorites,favorites.size - 1)
+        listPagers.add(lp)
+        setFavoriteListToSharedPref(context)
+    }
 
     //возвращает из ListPagerLab список ListPager'ов с заданной фазой (все записи для данной фазы)
     fun getPhaseList(phase: String): ArrayList<ListPager> {

@@ -84,6 +84,7 @@ class MainActivity : MyDefaultActivity(),
     private lateinit var mListPagerLab: ListPagerLab
     private var curPhase = "BEGIN"
     private var changedPhase = "BEGIN"
+    private var changedId = 0
     private val listOfGo2Fridrich = listOf("ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL")
     private val listOfOtherPuzzle = listOf("PYRAMINX", "MEGAMINX", "SKEWB")
 
@@ -428,6 +429,7 @@ class MainActivity : MyDefaultActivity(),
         if (changedPhase != curPhase) {
             Log.v(DebugTag.TAG, "Change Phase from $curPhase to $changedPhase")
             setListFragmentPhase(changedPhase)
+            startActivity<SlidingTabsActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
         }
     }
 
@@ -516,8 +518,10 @@ class MainActivity : MyDefaultActivity(),
             }
             "startPhase" -> {
                 val phase = sp.getString(key, "BEGIN")
+                val id = sp.getInt("startId", 0)
                 if (curPhase !=  phase) {
                     changedPhase = phase
+                    changedId = id
                 }
             }
         }

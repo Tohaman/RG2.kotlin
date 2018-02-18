@@ -1,5 +1,6 @@
 package ru.tohaman.rg2.fragments
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
@@ -35,13 +36,13 @@ import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.ui.PagerItemtUI
 import ru.tohaman.rg2.util.spannedString
 import ru.tohaman.rg2.util.toEditable
-import kotlin.math.truncate
 
 class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener {
     // Константы для YouTubePlayer
     private val REQ_START_STANDALONE_PLAYER = 101
     private val REQ_RESOLVE_SERVICE_MISSING = 2
     private val RECOVERY_DIALOG_REQUEST = 1
+    private var mListener: OnViewPagerInteractionListener? = null
 
     var url:String = ""
 
@@ -72,62 +73,70 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         val favCheckBox = view.findViewById<CheckBox>(PagerItemtUI.Ids.checkBox)
         //Пришлось делать вот так, а не через xml, которая задает изображение в зависимости от статуса,
         //т.к. иначе при смене через избранное кэшеруется не то изображение
-        favCheckBox.isChecked = false
-        favCheckBox.buttonDrawableResource = R.drawable.ic_favorite
+        var favIsChecked = false
 
+        favCheckBox.buttonDrawableResource = R.drawable.ic_favorite
         favoritesList.indices.forEach { i ->
             if ((favoritesList[i].phase == phase) and (favoritesList[i].id == id)) {
                 favCheckBox.buttonDrawableResource = R.drawable.ic_favorite_checked
-                favCheckBox.isChecked = true
+                favIsChecked = true
             }
         }
+        favCheckBox.isChecked = favIsChecked
 
         //Используем onClick, а не onCheckedChange, чтобы не зацикливаться по нажатию кнопки "Отмена"
-        favCheckBox.onClick {
-            if (favCheckBox.isChecked) {
-                alert {
-                    customView {
-                        linearLayout {
-                            orientation = LinearLayout.VERTICAL
-                            textView {
-                                textResource = R.string.favoriteSetText
-                                textSize = 18F
-                            }.lparams {setMargins(dip(8), dip(8),dip(8), dip(8))}
-                            val editTxt = editText {
-                                text = comment.toEditable()
-                            }
+        favCheckBox.onCheckedChange { _, isChecked ->
+            if (isChecked != favIsChecked) {
+                if (isChecked) {
+                    alert {
+                        customView {
+                            linearLayout {
+                                orientation = LinearLayout.VERTICAL
+                                textView {
+                                    textResource = R.string.favoriteSetText
+                                    textSize = 18F
+                                }.lparams { setMargins(dip(8), dip(8), dip(8), dip(8)) }
+                                val editTxt = editText {
+                                    text = comment.toEditable()
+                                }
 
-                            positiveButton("OK") {
-                                favCheckBox.buttonDrawableResource = R.drawable.ic_favorite_checked
-                                listPagerLab.favorites.plus(Favorite(phase,id, editTxt.text.toString()))
-                            }
-                            negativeButton("Отмена") {
-                                favCheckBox.isChecked = false
+                                positiveButton("OK") {
+                                    favCheckBox.buttonDrawableResource = R.drawable.ic_favorite_checked
+                                    listPagerLab.addFavorite(Favorite(phase, id, editTxt.text.toString()), ctx)
+                                    if (mListener != null) {
+                                        mListener!!.onViewPagerCheckBoxInteraction()
+                                    }
+                                    favIsChecked = true
+                                }
+                                negativeButton("Отмена") {
+                                    favCheckBox.isChecked = false
+                                }
                             }
                         }
-                    }
-                }.show()
+                    }.show()
 
-            } else {
-                alert {
-                    customView {
-                        linearLayout {
-                            orientation = LinearLayout.VERTICAL
-                            textView {
-                                textResource = R.string.favoriteUnSetText
-                                textSize = 18F
-                            }.lparams {setMargins(dip(8), dip(8),dip(8), dip(8))}
+                } else {
+                    alert {
+                        customView {
+                            linearLayout {
+                                orientation = LinearLayout.VERTICAL
+                                textView {
+                                    textResource = R.string.favoriteUnSetText
+                                    textSize = 18F
+                                }.lparams { setMargins(dip(8), dip(8), dip(8), dip(8)) }
 
-                            positiveButton("OK") {
-                                favCheckBox.buttonDrawableResource = R.drawable.ic_favorite
-                            }
-                            negativeButton("Отмена") {
-                                favCheckBox.isChecked = true
+                                positiveButton("OK") {
+                                    favCheckBox.buttonDrawableResource = R.drawable.ic_favorite
+                                    favIsChecked = false
+                                }
+                                negativeButton("Отмена") {
+                                    favCheckBox.isChecked = true
+                                }
                             }
                         }
-                    }
-                }.show()
+                    }.show()
 
+                }
             }
         }
 
@@ -266,6 +275,28 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
             Log.v(DebugTag.TAG, "YouTube onInitializationFailure Ошибка инициализации YouTubePlayer")
             val errorMessage = "Ошибка инициализации YouTubePlayer"
             toast(errorMessage)
+        }
+    }
+
+    override fun onAttach(context: Context?) {
+        Log.v (DebugTag.TAG, "FragmenPagerItem onAttach")
+        super.onAttach(context)
+        if (context is FragmentPagerItem.OnViewPagerInteractionListener) {
+            mListener = context
+        } else {
+            throw RuntimeException(context!!.toString() + " must implement OnViewPagerInteractionListener")
+        }
+    }
+
+    override fun onDetach() {
+        Log.v (DebugTag.TAG, "FragmentPagerItem onDetach")
+        super.onDetach()
+        mListener = null
+    }
+
+    interface OnViewPagerInteractionListener {
+        fun onViewPagerCheckBoxInteraction() {
+            Log.v(DebugTag.TAG, "FragmentPagerItem onViewPagerCheckBoxInteraction")
         }
     }
 

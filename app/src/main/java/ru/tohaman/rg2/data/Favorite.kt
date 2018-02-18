@@ -8,3 +8,7 @@ data class Favorite constructor(
         val id: Int,
         var comment: String = ""
     )
+
+data class FavoriteList constructor(
+        val favorites: ArrayList<Favorite>
+)
