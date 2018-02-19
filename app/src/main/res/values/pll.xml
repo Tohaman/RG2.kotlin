@@ -127,6 +127,8 @@
         <p style="text-align:center"><img src="vpll_1_3" width="60%%"></p>
         <a href="rg2://ytplay?time=0:15&link=0P_uLdvKRbI">фингертрикс от JPerm</a> с интересным движением указательным пальцем левой руки.<br/>
         <b>Алгоритм: (R U\' R U) (R U R U\' R\' U\' R2)</b></p>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм 2 раза.</p>
     ]]></string>
     <string name="pll_st1_url">P69UVywfz04</string>
 
@@ -149,6 +151,8 @@
         <p style="text-align:center"><img src="vpll_2_3" width="60%%"></p>
         <a href="rg2://ytplay?time=1:18&link=0P_uLdvKRbI">фингертрикс от JPerm</a> с интересным движением указательным пальцем левой руки.<br/>
         <b>Алгоритм: (R2 U) (R U R\' U\' R\' U\') (R\' U R\')</b></p>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм 2 раза.</p>
     ]]></string>
     <string name="pll_st2_url">P69UVywfz04</string>
 
@@ -167,8 +171,10 @@
         Фингертрикс:  <a href="rg2://ytplay?time=2:00&link=p77y_1rCWsg">на видео 2:00</a> <br/>
         <b>Алгоритм: F2 M2 F2 M2 U\' M2 U\' M2 </b><br/></p>
         <p>2. Быстрый вариант (хоть ходов и больше, но сделать их можно быстрее): <br/>
-        Фингертрикс: <a href="rg2://ytplay?time=4:08&link=p77y_1rCWsg">на видео 4:08</a> <br/>
-        <b>Алгоритм: (U R\' U\' R) (U\' R U R) (U\' R\' U R) (U R2 U\' R\') U </b></p>
+        Фингертрикс: <a href="rg2://ytplay?time=4:08&link=p77y_1rCWsg">на видео 4:08</a><br/>
+        <b>Алгоритм: (U R\' U\' R) (U\' R U R) (U\' R\' U R) (U R2 U\' R\') U</b></p>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм еще раз.</p>
     ]]></string>
     <string name="pll_st3_url">p77y_1rCWsg</string>
 
@@ -196,6 +202,8 @@
         4. Для тех, у кого плохо с вращением среднего слоя:<br/>
         Фингертрикс: <a href="rg2://ytplay?time=13:35&link=p77y_1rCWsg">на видео 13:35</a> <br/>
         <b>Алгоритм: (R2 U2 R U2 R2 U2) (R2 U2 R U2 R2 U2)</b><br/>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм еще раз.</p>
     ]]></string>
 
     <string name="pll_st4_url">p77y_1rCWsg</string>
@@ -214,6 +222,8 @@
         <p style="text-align:center"><img src="vpll_5_1.xml" width="60%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=4:00&link=fwvKWr087bM">на видео 4:00</a> <br/>
         <b>Алгоритм: (R U R\' U\') (R\' F R2 U\' R\' U\') (R U R\' F\') </b>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм еще раз.</p>
     ]]></string>
     <string name="pll_st5_url">fwvKWr087bM</string>
 
@@ -232,6 +242,8 @@
         <b>Алгоритм:  (R U R\' F\') (R U R\' U\') (R\' F R2 U\' R\' U\') </b></p>
         2. Так же тройным блоком слева, ходов меньше, но с кручением левой грани.<br/>
         <b>Алгоритм: (R U2 R\' U\' R U2) L\' U R\' U\' L </b>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм еще раз.</p>
     ]]></string>
     <string name="pll_st6_url">fwvKWr087bM</string>
 
@@ -250,6 +262,8 @@
         последнего хода и два хода по часовой стрелке (верхняя и правая грани).<br/>
         Фингертрикс: <a href="rg2://ytplay?time=5:18&link=B3iSPvlr7PA">на видео 5:18</a> <br/>
         <b>Алгоритм: (R\' U\' F\') (R U R\' U\') R\' F R2 U\' R\' U\' (R U R\' U R) </b>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм еще раз.</p>
     ]]></string>
     <string name="pll_st7_url">B3iSPvlr7PA</string>
 
@@ -267,6 +281,8 @@
         Одним двойным блоком к себе, другим справа. 2 хода (в Лондон, включили свет), потом последние 7 ходов Запада, пиф-паф и английский пиф-паф. <br/>
         Фингертрикс: <a href="rg2://ytplay?time=9:35&link=B3iSPvlr7PA">на видео 9:35</a> <br/>
         <b>Алгоритм: (F R) (U\' R\' U\' R U R\' F\') (R U R\' U\') (R\' F R F\')</b>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм еще раз.</p>
     ]]></string>
     <string name="pll_st8_url">B3iSPvlr7PA</string>
 
@@ -298,6 +314,8 @@
         <p style="text-align:center"><img src="vpll_9_2.xml" width="60%%"> </p>
         Фингертрикс: <a href="rg2://ytplay?time=8:18&link=L_r41Y1MuAY">на видео 8:18</a> <br/>
         <b>Алгоритм: R2 D2 R\' U\' R D2 R\' U R\' </b>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм 2 раза.</p>
     ]]></string>
     <string name="pll_st9_url">L_r41Y1MuAY</string>
 
@@ -322,6 +340,7 @@
         <p style="text-align:center"><img src="vpll_10_3.xml" width="60%%"></p>
         <b>Алгоритм: R2 D2 (R U R\') D2 (R U\' R) </b>
 
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм 2 раза.</p>
     ]]></string>
     <string name="pll_st10_url">L_r41Y1MuAY</string>
 
@@ -345,6 +364,8 @@
         <p style="text-align:center"><img src="vpll_11_2.xml" width="60%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=10:20&link=L-g7AQfghlw">на видео 10:20</a> <br/>
         <b>Алгоритм: U2 R2 F (R U R\' U\') (R U R\' U\') (R U R\' U\') F\' R2 U2 </b></p>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм еще раз.</p>
     ]]></string>
     <string name="pll_st11_url">L-g7AQfghlw</string>
 
@@ -395,6 +416,7 @@
         <a href="rg2://ytplay?time=5:10&link=W-8n_E1YASU">сложным фингертриксом.</a><br/>
         <b>Алгоритм: z D\' R2 D R2 U R\' D\' R U\' R U R\' D R U\'</b></p>
 
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм еще раз.</p>
     ]]></string>
     <string name="pll_st12_url">L-g7AQfghlw</string>
 
@@ -418,6 +440,8 @@
         <p>Фингертрикс: <a href="rg2://ytplay?time=4:05&link=NbajmNXifXk">на видео 4:05</a>
         или <a href="rg2://ytplay?time=10:50&link=NbajmNXifXk">10:50</a> <br/>
         <b>Алгоритм: (D R\' U R2 D\' R) {U\' D} (R\' U R2 D\' R U\') </b></p>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм еще раз.</p>
     ]]></string>
     <string name="pll_st13_url">NbajmNXifXk</string>
 
@@ -441,6 +465,8 @@
         Фингертрикс: <a href="rg2://ytplay?time=9:10&link=NbajmNXifXk">на видео 9:10</a>
         или <a href="rg2://ytplay?time=12:05&link=NbajmNXifXk">12:05</a> <br/>
         <b>Алгоритм: (U\' R D\' R2 U R\') {D U\'} (R D\' R2 U R\' D} </b></p>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм еще раз.</p>
     ]]></string>
     <string name="pll_st14_url">NbajmNXifXk</string>
 
@@ -462,6 +488,8 @@
         <p style="text-align:center"><img src="vpll_15_1.xml" width="60%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=4:22&link=AB940Ieyt58">на видео 4:22</a> <br/>
         <b>Алгоритм: R\' U2 R U2 R\' F (R U R\' U\') R\' F\' R2 U\'</b>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм еще раз.</p>
     ]]></string>
     <string name="pll_st15_url">AB940Ieyt58</string>
 
@@ -484,6 +512,8 @@
         <p>3. Как и предыдущий алгоритм - двойным блоком к себе.<br/>
         Фингертрикс: <a href="rg2://ytplay?time=12:15&link=AB940Ieyt58">на видео 12:15</a> <br/>
         <b>Алгоритм: (R U\' R\' U\') (R U R D) (R\' U\' R D\') (R\' U2 R\' U\') </b></p>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм еще раз.</p>
     ]]></string>
     <string name="pll_st16_url">AB940Ieyt58</string>
 
@@ -513,6 +543,8 @@
         случае будут противоположны цвету левой грани.
         Просто начните алгоритм с последнего хода нижней грани D или D\' в зависимости от алгоритма. В
         этом случае не придется крутить неудобно D и U2 последним ходом.</p>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм 2 раза или сделать Дальнюю улитку.</p>
     ]]></string>
     <string name="pll_st17_url">w8pDuyhAdVo</string>
 
@@ -544,6 +576,8 @@
         или чуть другой вариант <a href="rg2://ytplay?time=2:09&link=nBMCuMiSFIg">фингертрикса</a>
         с нестандартным вращением крыши большим пальцем правой руки.<br/>
         <b>Алгоритм: R2 U\' R U\' R U R\' U R2 (D\'U) R U\' R\' D </b>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм 2 раза или сделать Ближнюю улитку.</p>
     ]]></string>
     <string name="pll_st18_url">w8pDuyhAdVo</string>
 
@@ -566,6 +600,8 @@
         <b>Алгоритм: (R U R\' U\'D) (R2 U\' R U\') (R\' U R\' U) R2 UD\' </b><br/><br/>
         P.S. Вы наверно заметили что алгоритмы Максима и J Perm отличаются последним ходом U, все
         дело в том, что у Максима привязка идет к двойному блоку, а у J Perm к глазкам.
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм 2 раза или сделать Попутную машинку.</p>
     ]]></string>
     <string name="pll_st19_url">F-ODZtge9Ig</string>
 
@@ -582,6 +618,8 @@
         Фингертрикс: <a href="rg2://ytplay?time=8:05&link=F-ODZtge9Ig">на видео 8:05</a> <br/>
         Фингертрикс: <a href="rg2://ytplay?time=0:59&link=nBMCuMiSFIg">от J Perm</a> <br/>
         <b>Алгоритм: (R\' U\' R UD\') (R2 U R\' U) (R U\' R U\') R2\' U\'D </b><br/><br/>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм 2 раза или сделать Встречную машинку.</p>
     ]]></string>
     <string name="pll_st20_url">F-ODZtge9Ig</string>
 
@@ -601,6 +639,8 @@
         <p style="text-align:center"><img src="vpll_21_2.xml" width="60%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=5:40&link=4ulPytSlCR0">на видео 5:40</a> <br/>
         <b>Алгоритм: U\' (R2 U R U\') R2 D R\' U R D\' </b>
+
+        <p><b>Как смоделировать:</b> Выполнить данный алгоритм еще раз.</p>
     ]]></string>
     <string name="pll_st21_url">4ulPytSlCR0</string>
 </resources>
