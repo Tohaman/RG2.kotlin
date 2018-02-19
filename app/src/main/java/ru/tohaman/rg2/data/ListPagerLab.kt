@@ -22,7 +22,7 @@ import com.google.gson.reflect.TypeToken
 class ListPagerLab private constructor(context: Context){
     private val mDatabase = BaseHelper(context)
     var listPagers = arrayListOf<ListPager>()
-    var favorites = arrayListOf<Favorite>()
+    var favorites = mutableSetOf<Favorite>()
 
     init { // тут пишем то, что выполнится при инициализации синглета
         phaseInit("BEGIN2X2",R.array.begin2x2_title,R.array.begin2x2_icon,R.array.begin2x2_descr,R.array.begin2x2_url,context)
@@ -90,32 +90,32 @@ class ListPagerLab private constructor(context: Context){
     }
 
     private fun favoritesInit(context: Context) {
-        val listOfFavorite = getFavoriteListFromSharedPref(context)
+        val setOfFavorite = getFavoriteListFromSharedPref(context)
         //TODO преобразовать for
-        for (i in listOfFavorite.indices) {
-            val lp = makeListPagerFromFavorite(listOfFavorite, i)
+        for (i in setOfFavorite.indices) {
+            val lp = makeListPagerFromFavorite(setOfFavorite.elementAt(i))
             listPagers.add(lp)
         }
     }
 
-    private fun makeListPagerFromFavorite(listOfFavorite: ArrayList<Favorite>, i: Int): ListPager {
-        val lp = getPhaseItem(listOfFavorite[i].id, listOfFavorite[i].phase).copy()
-        lp.comment = listOfFavorite[i].comment
+    private fun makeListPagerFromFavorite(favorite:Favorite): ListPager {
+        val lp = getPhaseItem(favorite.id, favorite.phase).copy()
+        lp.comment = favorite.comment
         lp.url = lp.phase
         lp.phase = "FAVORITES"
         return lp
     }
 
-    private fun getFavoriteListFromSharedPref(context: Context) : ArrayList<Favorite> {
-        favorites = arrayListOf(Favorite("BEGIN",3,"свет и пиф-паф"), Favorite("PLL",5, "Тестовый пункт"),Favorite("MEGAMINX", 1, "Пока не редактируется"))
+    private fun getFavoriteListFromSharedPref(context: Context) : MutableSet<Favorite> {
+        favorites = mutableSetOf(Favorite("BEGIN",3,"свет и пиф-паф"), Favorite("PLL",5, "Тестовый пункт"),Favorite("MEGAMINX", 1, "Пока не редактируется"))
         favorites.add(Favorite("BEGIN",5,"свет и пиф-паф"))
-        val defaultString = """[{"comment":"свет и пиф-паф","id":3,"phase":"BEGIN"},{"comment":"Тестовый пункт","id":5,"phase":"PLL"},{"comment":"Пока не редактируется","id":1,"phase":"MEGAMINX"},{"comment":"свет и пиф-паф","id":5,"phase":"BEGIN"}]"""
+        val defaultString = """[{"comment":"С этого стоит начать","id":0,"phase":"BEGIN"},{"comment":"Тут описаны пиф-паф, дяди и тети","id":3,"phase":"BEGIN"},{"comment":"Ускоряем сборку кубика","id":1,"phase":"ACCEL"},{"comment":"Очень полезный алгоритм","id":2,"phase":"BLIND"}]"""
         val sp = PreferenceManager.getDefaultSharedPreferences(context)
         val json = sp.getString(FAVORITES, defaultString)
         val gson = GsonBuilder().create()
-        val itemsListType = object : TypeToken<ArrayList<Favorite>>() {}.type
-//        favorites = gson.fromJson(json, itemsListType)
-        favorites = gson.fromJson(defaultString, itemsListType)
+        val itemsListType = object : TypeToken<MutableSet<Favorite>>() {}.type
+        favorites = gson.fromJson(json, itemsListType)
+//        favorites = gson.fromJson(defaultString, itemsListType)
 
         return favorites
     }
@@ -128,8 +128,18 @@ class ListPagerLab private constructor(context: Context){
 
     fun addFavorite(favorite: Favorite, context: Context) {
         favorites.add(favorite)
-        val lp = makeListPagerFromFavorite(favorites,favorites.size - 1)
+        val lp = makeListPagerFromFavorite(favorite)
         listPagers.add(lp)
+        setFavoriteListToSharedPref(context)
+    }
+
+    fun removeFavorite(phase: String, id: Int, context: Context) {
+        val findedFav = favorites.first {
+            (it.phase == phase) and  (it.id == id)
+        }
+        favorites.remove(findedFav)
+        val lp = makeListPagerFromFavorite(findedFav)
+        listPagers.remove(lp)
         setFavoriteListToSharedPref(context)
     }
 

@@ -41,25 +41,28 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
     // Константы для YouTubePlayer
     private val REQ_START_STANDALONE_PLAYER = 101
     private val REQ_RESOLVE_SERVICE_MISSING = 2
-    private val RECOVERY_DIALOG_REQUEST = 1
     private var mListener: OnViewPagerInteractionListener? = null
 
-    var url:String = ""
+    private var url:String = ""
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         // Создаем Вью
         val view = PagerItemtUI<Fragment>().createView(AnkoContext.create(ctx, this))
+        //получаем сиглет общей базы и избранного
+        val listPagerLab = ListPagerLab.get(ctx)
+        val favoritesList = listPagerLab.favorites
 
         //Данные во фрагмент передаются через фабричный метод newInstance данного фрагмента
-        //TODO переделать на передачу через uri
+
         val phase = arguments!!.getString("phase")
         val id = arguments!!.getInt("id")
-        var title = arguments!!.getString("title")
-        val topImage = arguments!!.getInt("topImage")
-        val description = arguments!!.getInt("desc")
-        val comment  = arguments!!.getString("comment")
-        url = arguments!!.getString("url")
+        val lp = listPagerLab.getPhaseItem(id, phase)
+        var title = lp.title
+        val topImage = lp.icon
+        val description = lp.description
+        val comment  = lp.comment
+        url = lp.url
 
         var textString = "<html><body style=\"text-align:justify\"> %s </body></html>"
         val st = getString(description)
@@ -68,8 +71,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         val mainTextView = view.findViewById<TextView>(PagerItemtUI.Ids.descriptionText)
 
-        val listPagerLab = ListPagerLab.get(ctx)
-        val favoritesList = listPagerLab.favorites
+
         val favCheckBox = view.findViewById<CheckBox>(PagerItemtUI.Ids.checkBox)
         //Пришлось делать вот так, а не через xml, которая задает изображение в зависимости от статуса,
         //т.к. иначе при смене через избранное кэшеруется не то изображение
@@ -77,15 +79,17 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         favCheckBox.buttonDrawableResource = R.drawable.ic_favorite
         favoritesList.indices.forEach { i ->
-            if ((favoritesList[i].phase == phase) and (favoritesList[i].id == id)) {
+            if ((favoritesList.elementAt(i).phase == phase) and (favoritesList.elementAt(i).id == id)) {
                 favCheckBox.buttonDrawableResource = R.drawable.ic_favorite_checked
                 favIsChecked = true
             }
         }
         favCheckBox.isChecked = favIsChecked
 
-        //Используем onClick, а не onCheckedChange, чтобы не зацикливаться по нажатию кнопки "Отмена"
+
         favCheckBox.onCheckedChange { _, isChecked ->
+            //Проверяем смену через переменную favIsChecked, чтобы не зацикливаться по нажатию кнопки "Отмена"
+            //favIsChecked меняется только при нажатии ОК
             if (isChecked != favIsChecked) {
                 if (isChecked) {
                     alert {
@@ -127,6 +131,10 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
                                 positiveButton("OK") {
                                     favCheckBox.buttonDrawableResource = R.drawable.ic_favorite
+                                    listPagerLab.removeFavorite(phase, id, ctx)
+                                    if (mListener != null) {
+                                        mListener!!.onViewPagerCheckBoxInteraction()
+                                    }
                                     favIsChecked = false
                                 }
                                 negativeButton("Отмена") {
@@ -223,18 +231,18 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
     private fun playYouTubeVideo(needPlaying:Boolean, urlToPlay: String = "0TvO_rpG_aM"): Boolean {
         val intent: Intent? = YouTubeStandalonePlayer.createVideoIntent(activity, DEVELOPER_KEY, urlToPlay, 1000, true, true)
-        if (intent != null) return when {
-                (canResolveIntent(intent)) and (needPlaying) -> {
-                    startActivityForResult(intent, REQ_START_STANDALONE_PLAYER)
-                    true
-                }
-                (!canResolveIntent(intent)) and (needPlaying) -> {
-                    YouTubeInitializationResult.SERVICE_MISSING.getErrorDialog(activity, REQ_RESOLVE_SERVICE_MISSING).show()
-                    false
-                }
-                !needPlaying -> {canResolveIntent(intent)}  //true or false
-                else -> {false}
-            } else return false
+        return if (intent != null) when {
+            (canResolveIntent(intent)) and (needPlaying) -> {
+                startActivityForResult(intent, REQ_START_STANDALONE_PLAYER)
+                true
+            }
+            (!canResolveIntent(intent)) and (needPlaying) -> {
+                YouTubeInitializationResult.SERVICE_MISSING.getErrorDialog(activity, REQ_RESOLVE_SERVICE_MISSING).show()
+                false
+            }
+            !needPlaying -> {canResolveIntent(intent)}  //true or false
+            else -> {false}
+        } else false
     }
 
     @Suppress("DEPRECATION")
@@ -302,14 +310,8 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
     companion object {
         fun newInstance(lp: ListPager): FragmentPagerItem {
-            //TODO сделать передачу через uri
             return FragmentPagerItem().withArguments("phase" to lp.phase,
-                    "id" to lp.id,
-                    "title" to lp.title,
-                    "topImage" to lp.icon,
-                    "desc" to lp.description,
-                    "url" to lp.url,
-                    "comment" to lp.comment)
+                    "id" to lp.id)
         }
     }
 }

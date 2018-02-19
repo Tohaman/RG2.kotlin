@@ -105,7 +105,7 @@ class MainActivity : MyDefaultActivity(),
         } else {
             loadStartPhase()
         }
-        //Чтобы при onResume не пришлось менять фазу
+        //Чтобы при запуске активности в onResume не пришлось менять фазу
         changedPhase = curPhase
 
         Log.v (TAG, "MainActivity CreateView")
