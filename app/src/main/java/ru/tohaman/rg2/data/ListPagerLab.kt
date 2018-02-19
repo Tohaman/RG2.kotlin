@@ -107,15 +107,14 @@ class ListPagerLab private constructor(context: Context){
     }
 
     private fun getFavoriteListFromSharedPref(context: Context) : MutableSet<Favorite> {
-        favorites = mutableSetOf(Favorite("BEGIN",3,"свет и пиф-паф"), Favorite("PLL",5, "Тестовый пункт"),Favorite("MEGAMINX", 1, "Пока не редактируется"))
-        favorites.add(Favorite("BEGIN",5,"свет и пиф-паф"))
-        val defaultString = """[{"comment":"С этого стоит начать","id":0,"phase":"BEGIN"},{"comment":"Тут описаны пиф-паф, дяди и тети","id":3,"phase":"BEGIN"},{"comment":"Ускоряем сборку кубика","id":1,"phase":"ACCEL"},{"comment":"Очень полезный алгоритм","id":2,"phase":"BLIND"}]"""
+        var defaultString = """[{"comment":"С этого стоит начать","id":0,"phase":"BEGIN"},{"comment":"Тут описаны пиф-паф, дяди и тети","id":3,"phase":"BEGIN"},{"comment":"Ускоряем сборку кубика","id":1,"phase":"ACCEL"},{"comment":"Очень полезный алгоритм","id":2,"phase":"BLIND"}]"""
+        defaultString = context.getString(R.string.def_favorites)
         val sp = PreferenceManager.getDefaultSharedPreferences(context)
         val json = sp.getString(FAVORITES, defaultString)
         val gson = GsonBuilder().create()
         val itemsListType = object : TypeToken<MutableSet<Favorite>>() {}.type
-        favorites = gson.fromJson(json, itemsListType)
-//        favorites = gson.fromJson(defaultString, itemsListType)
+//        favorites = gson.fromJson(json, itemsListType)
+        favorites = gson.fromJson(defaultString, itemsListType)
 
         return favorites
     }

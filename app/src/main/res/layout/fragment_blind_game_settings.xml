@@ -119,7 +119,7 @@
         android:paddingTop="@dimen/big_margin"
         android:paddingBottom="@dimen/big_margin"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/text_answer_count"
+        app:layout_constraintTop_toBottomOf="@+id/lin_lay_answer_count"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>

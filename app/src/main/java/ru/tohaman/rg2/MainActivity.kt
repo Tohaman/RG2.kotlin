@@ -28,9 +28,11 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.FrameLayout
 import android.widget.ImageView
+import android.widget.ListView
 import com.google.gson.GsonBuilder
 import ru.tohaman.rg2.DeveloperKey.base64EncodedPublicKey
 import ru.tohaman.rg2.activities.BlindGameActivity
+import ru.tohaman.rg2.adapters.MyListAdapter
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.util.*
 
@@ -197,6 +199,21 @@ class MainActivity : MyDefaultActivity(),
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
+        val favList = mListPagerLab.getPhaseList("FAVORITES")
+        val rightDrawerAdapter = MyListAdapter(favList,1.3F)
+
+        // подключим адаптер для выезжающего справа списка
+        val rightDrawerListView  = findViewById<ListView>(R.id.main_right_drawer)
+        rightDrawerListView.adapter = rightDrawerAdapter
+        rightDrawerListView.setOnItemClickListener { _, _, i, _ ->
+            val changedId = favList[i].id
+            changedPhase = favList[i].url
+            setListFragmentPhase(changedPhase)
+            startActivity<SlidingTabsActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
+            drawer_layout.closeDrawer(GravityCompat.END)
+        }
+
+
         //Для данной программы не актуально, т.к. пользователь ничего в программе по сути не покупает
         //но если бы нужно было отключение рекламы, то данный вызов обязателен
         loadDataFromPlayMarket()
@@ -231,15 +248,19 @@ class MainActivity : MyDefaultActivity(),
             }
 
             else -> {
-                if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-                    if (backPressedTime + 500 > System.currentTimeMillis()) {
-                        super.onBackPressed()
-                    } else {
-                        toast("Нажмите еще раз для выхода")
-                        backPressedTime = System.currentTimeMillis()
-                    }
+                if (drawer_layout.isDrawerOpen(GravityCompat.END)) {
+                    drawer_layout.closeDrawer(GravityCompat.END)
                 } else {
-                    drawer_layout.openDrawer(GravityCompat.START)
+                    if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+                        if (backPressedTime + 500 > System.currentTimeMillis()) {
+                            super.onBackPressed()
+                        } else {
+                            toast("Нажмите еще раз для выхода")
+                            backPressedTime = System.currentTimeMillis()
+                        }
+                    } else {
+                        drawer_layout.openDrawer(GravityCompat.START)
+                    }
                 }
             }
         }
@@ -348,7 +369,12 @@ class MainActivity : MyDefaultActivity(),
                         }.show()
                     }
                 }
-                return true}
+                return true
+            }
+            R.id.main_favorite -> {
+                drawer_layout.openDrawer(GravityCompat.END)
+                return true
+            }
             else -> return super.onOptionsItemSelected(item)
         }
     }

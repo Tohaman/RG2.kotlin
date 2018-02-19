@@ -100,7 +100,7 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
         // Настраиваем листвью для выезжающего слева списка
         val listAdapter = MyListAdapter(mListPagers)
         val drawerListView  = findViewById<ListView>(R.id.left_drawer)
-        rightDrawerListView  = findViewById(R.id.right_drawer)
+
         // подключим адаптер для выезжающего слева списка
         drawerListView.adapter = listAdapter
         drawerListView.setOnItemClickListener { _, _, position, _ ->
@@ -109,20 +109,21 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
         }
 
         val favList = mListPagerLab.getPhaseList("FAVORITES")
-        val rightDrawerAdapter = MyListAdapter(favList,1.2F)
+        val rightDrawerAdapter = MyListAdapter(favList,1.3F)
 
         // подключим адаптер для выезжающего справа списка
+        rightDrawerListView  = findViewById(R.id.right_drawer)
         rightDrawerListView.adapter = rightDrawerAdapter
         rightDrawerListView.setOnItemClickListener { _, _, i, _ ->
             //Меняем фазу для выхода в основную активность
             //Если фаза не меняется, то выходить не надо, просто открываем другую вкладку
             val changedId = favList[i].id
-            val changedPahse = favList[i].url
-            if (mPhase != changedPahse) {
+            val changedPhase = favList[i].url
+            if (mPhase != changedPhase) {
                 //вот такой "коллбэк", в основной активности обработчик onSharedPreferenceChanged
                 //обработает данные изменения и при возврате в onResume запустит что надо
                 saveInt2SP(changedId, "startId", ctx)
-                saveString2SP(changedPahse, "startPhase", ctx)
+                saveString2SP(changedPhase, "startPhase", ctx)
                 onBackPressed()
             } else {
                 mViewPagerSlidingTabs.currentItem = changedId
@@ -138,7 +139,7 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
     }
 
     override fun onViewPagerCheckBoxInteraction() {
-        val adapter = MyListAdapter(mListPagerLab.getPhaseList("FAVORITES"))
+        val adapter = MyListAdapter(mListPagerLab.getPhaseList("FAVORITES"), 1.3F)
         rightDrawerListView.adapter = adapter
     }
 
