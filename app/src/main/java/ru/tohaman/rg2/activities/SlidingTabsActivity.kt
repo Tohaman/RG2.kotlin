@@ -170,6 +170,10 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
                 }.show()
                 return true
             }
+            R.id.sliding_tab_favorite -> {
+                drawer_layout.openDrawer(GravityCompat.END)
+                return true
+            }
             else -> return super.onOptionsItemSelected(item)
         }
     }
