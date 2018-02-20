@@ -65,7 +65,7 @@ class OllTestGame : MyDefaultActivity() {
     private fun loadNextOLL(guessRows: Int){
         //сгенерируем скрамбл длинны указанной в поле ScrambleLength
         //var scramble = generateScramble(14)
-        var scramble = "F R' F' R U R U R' U' R U' R'"
+        var scramble = "(R U2 R') (F R' R' R) (U' R U' R')"
         scramble = "x x $scramble"
         //крутим куб, чтобы не всегда был зелено-оранжевой стороной к нам
         var i = 0
