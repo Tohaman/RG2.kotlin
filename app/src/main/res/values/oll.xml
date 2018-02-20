@@ -723,7 +723,9 @@
         <b>Алгоритм: (R2\' U R\' B\') (R U\' R2\' U) (Lw U Lw\')</b><br/><br/>
 
         <b>Как смоделировать</b>: <a href="rg2://ytplay?time=3:03&link=g2OOVob1f-E">на видео 3:03</a>
-         нужно выполнить данный алгоритм три раза.
+         нужно выполнить данный алгоритм три раза. Или сделать алгоритм от Феликса с противоположным
+         ходом крыши посередине:<br/>
+         <b>F (U R U2 R\') U (R U2 R\' U\') F\'</b>
     ]]></string>
     <string name="oll_st27_url">g2OOVob1f-E</string>
 
@@ -816,7 +818,7 @@
         Фингертрикс: <a href="rg2://ytplay?time=5:32&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: (R U2) (R2 F R F\') (R U2 R\')</b><br/><br/>
         <b>Как смоделировать</b>: <a href="rg2://ytplay?time=1:11&link=rlHhiQQVv1M">на видео 1:11</a>
-        выполнить алгоритм несколько раз.
+        выполнить алгоритм несколько раз. Или <b>(R U2 R\') (F R\' F\') (R2 U2 R\')</b>
         ]]></string>
     <string name="oll_st32_url">rlHhiQQVv1M</string>
 
@@ -832,7 +834,8 @@
         Фингертрикс: <a href="rg2://ytplay?time=2:55&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: (R U R\' U) (R U\' R\' U\') (R\' F R F\')</b><br/><br/>
         <b>Как смоделировать</b>: <a href="rg2://ytplay?time=2:00&link=KixrDe28A3Y">на видео 2:00</a>
-        выполнить данный алгоритм 5 раз.
+        выполнить данный алгоритм 5 раз. Ну или обратный алгоритм:<br/>
+        <b>(F R\' F\' R) (U R U R\') (U\' R U\' R\')</b>
     ]]></string>
     <string name="oll_st33_url">KixrDe28A3Y</string>
 
@@ -858,7 +861,7 @@
         <b>Алгоритм: (L\' U\' L U\') (L\' U L\' U) (L F\' L\' F)</b><br/><br/>
 
         <b>Как смоделировать</b>: <a href="rg2://ytplay?time=2:05&link=6mWixWwb-Rw">на видео 2:05</a>
-        выполнить алгоритм Максима 3 раза.
+        выполнить алгоритм Максима 3 раза. Или <b>R U2 R2 U\' F\' U F R2 U\' R\'</b>
         ]]></string>
     <string name="oll_st34_url">6mWixWwb-Rw</string>
 

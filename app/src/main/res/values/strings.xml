@@ -61,6 +61,8 @@
     </string>
     <string name="favoriteUnSetText"><b>Удалить данный этап из избранного?</b>
     </string>
+    <string name="title_activity_oll_test_game">OllTestGame</string>
+    <string name="oll_game">Угадай OLL</string>
 
 
 </resources>

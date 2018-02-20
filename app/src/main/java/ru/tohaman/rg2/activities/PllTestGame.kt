@@ -1,18 +1,15 @@
 package ru.tohaman.rg2.activities
 
 import android.os.Bundle
-import android.app.Activity
 import android.graphics.drawable.LayerDrawable
 import android.preference.PreferenceManager
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.app.AppCompatDelegate
 import android.view.View
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
+import kotlinx.android.synthetic.main.activity_all_test_game.*
 
 import org.jetbrains.anko.ctx
 import org.jetbrains.anko.find
@@ -31,12 +28,14 @@ class PllTestGame : MyDefaultActivity() {
     private lateinit var imgView: ImageView
     private var guessRows = 3
     private var is3side = true
+    private var correctAnswers = 0
+    private var unCorrectAnswers = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_pll_test_game)
+        setContentView(R.layout.activity_all_test_game)
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
@@ -90,8 +89,12 @@ class PllTestGame : MyDefaultActivity() {
         
         val guess = guessButton.text.toString()
         if (guess == getNameFromListPagers(listPagers, correctAnswer)) {   //верный ответ
+            correctAnswers += 1
+            correct_text.text = correctAnswers.toString()
             loadNextPLL(guessRows)
         } else {    //неправильный ответ
+            unCorrectAnswers += 1
+            uncorrect_text.text = unCorrectAnswers.toString()
             guessButton.isEnabled = false
         }
     }

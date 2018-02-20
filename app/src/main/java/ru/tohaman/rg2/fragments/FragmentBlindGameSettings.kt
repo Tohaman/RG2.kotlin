@@ -17,7 +17,7 @@ import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.sdk25.coroutines.onCheckedChange
 import org.jetbrains.anko.support.v4.ctx
 import ru.tohaman.rg2.*
-import ru.tohaman.rg2.activities.BlindGameActivity
+import ru.tohaman.rg2.activities.BlindTestGame
 
 import ru.tohaman.rg2.ui.AnkoComponentEx
 import ru.tohaman.rg2.util.saveBoolean2SP
@@ -136,7 +136,7 @@ class BlindGameSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                 saveBoolean2SP(isCornerChecked, BLIND_IS_CORNER_CHECKED, ctx)
             }
 
-            start_blind_game_button.onClick { startActivity<BlindGameActivity>()}
+            start_blind_game_button.onClick { startActivity<BlindTestGame>()}
 
         }
     }

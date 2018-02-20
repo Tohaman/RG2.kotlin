@@ -12,8 +12,6 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.app.AppCompatDelegate
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -29,11 +27,9 @@ import android.view.WindowManager
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.ListView
-import com.google.gson.GsonBuilder
 import ru.tohaman.rg2.DeveloperKey.base64EncodedPublicKey
-import ru.tohaman.rg2.activities.BlindGameActivity
+import ru.tohaman.rg2.activities.OllTestGame
 import ru.tohaman.rg2.adapters.MyListAdapter
-import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.util.*
 
 
@@ -48,10 +44,12 @@ const val METRONOM_ENABLED = "metronomEnabled"
 const val METRONOM_TIME = "metronomTime"
 const val PLL_TEST_ROW_COUNT = "pllTestRowCount"
 const val BLIND_ROW_COUNT = "blindRowCount"
+const val OLL_ROW_COUNT = "blindRowCount"
 const val PLL_TEST_3SIDE = "isPllTest3Side"
 const val BLIND_IS_EDGE_CHECKED = "isBlindEdgeChecked"
 const val BLIND_IS_CORNER_CHECKED = "isBlindCornerChecked"
 const val FAVORITES = "favorites"
+const val DEFAULT_DRAWABLE_SIZE = 1
 
 // SKUs для продуктов: при изменении не забыть поправить в sayThanks
 const val BIG_DONATION = "big_donation"
@@ -375,6 +373,11 @@ class MainActivity : MyDefaultActivity(),
                 drawer_layout.openDrawer(GravityCompat.END)
                 return true
             }
+            R.id.oll_game -> {
+                startActivity<OllTestGame>()
+                return true
+            }
+
             else -> return super.onOptionsItemSelected(item)
         }
     }

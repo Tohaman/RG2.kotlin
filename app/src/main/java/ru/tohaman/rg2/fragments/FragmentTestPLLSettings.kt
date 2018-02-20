@@ -20,7 +20,7 @@ import ru.tohaman.rg2.PLL_TEST_3SIDE
 import ru.tohaman.rg2.PLL_TEST_ROW_COUNT
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.activities.PllTestGame
-import ru.tohaman.rg2.activities.PllTestSelect
+import ru.tohaman.rg2.activities.PllTestSelectPllName
 import ru.tohaman.rg2.ui.AnkoComponentEx
 import ru.tohaman.rg2.util.saveBoolean2SP
 import ru.tohaman.rg2.util.saveInt2SP
@@ -94,7 +94,7 @@ class TestPllUI<in Fragment> : AnkoComponentEx<Fragment>() {
 
             start_game_button.onClick { startActivity<PllTestGame>()}
 
-            button_rename.onClick { startActivity<PllTestSelect>() }
+            button_rename.onClick { startActivity<PllTestSelectPllName>() }
         }
     }
 

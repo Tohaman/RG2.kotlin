@@ -21,7 +21,7 @@ import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.fragments.FragmentListView
 import ru.tohaman.rg2.util.getThemeFromSharedPreference
 
-class PllTestSelect : MyDefaultActivity(), FragmentListView.OnListViewInteractionListener {
+class PllTestSelectPllName : MyDefaultActivity(), FragmentListView.OnListViewInteractionListener {
     private lateinit var fragListView: FragmentListView
     private lateinit var listPagers: ArrayList<ListPager>
 
