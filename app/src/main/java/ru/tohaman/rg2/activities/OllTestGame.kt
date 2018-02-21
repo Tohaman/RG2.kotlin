@@ -83,6 +83,11 @@ class OllTestGame : MyDefaultActivity() {
 
         val listPagerLab = ListPagerLab.get(ctx)
         ollRnd.clear()
+        val ollPhaseName = hashMapOf (
+                0 to "Снежинка",
+                1 to "Домино",
+                2 to "Пуля в коридоре")
+
 //        //берем из азбуки только уникальные значения Set
 //        azbuka.indices.mapTo(ollRnd) { azbuka[it] }
 //        ollRnd.remove("-")

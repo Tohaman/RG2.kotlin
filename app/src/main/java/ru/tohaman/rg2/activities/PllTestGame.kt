@@ -67,6 +67,7 @@ class PllTestGame : MyDefaultActivity() {
             }
         }
         pllRnd.clear()
+        //записываем в pllRnd значения от 0 до listPagers.size (0.1.2.3.4.5.6.7...)
         listPagers.indices.mapTo(pllRnd) { it.toString() }
 
         updateGuessRows(guessRows, guessLinearLayouts)
