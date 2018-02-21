@@ -133,11 +133,11 @@ class ListPagerLab private constructor(context: Context){
     }
 
     fun removeFavorite(phase: String, id: Int, context: Context) {
-        val findedFav = favorites.first {
+        val foundFav = favorites.first {
             (it.phase == phase) and  (it.id == id)
         }
-        favorites.remove(findedFav)
-        val lp = makeListPagerFromFavorite(findedFav)
+        favorites.remove(foundFav)
+        val lp = makeListPagerFromFavorite(foundFav)
         listPagers.remove(lp)
         setFavoriteListToSharedPref(context)
     }

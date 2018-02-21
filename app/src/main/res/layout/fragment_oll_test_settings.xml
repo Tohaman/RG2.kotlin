@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/mid_padding"
+    android:layout_marginEnd="@dimen/mid_padding">
+
+    <RadioGroup
+        android:id="@+id/ch_box_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/rb_3side"
+        app:layout_constraintBottom_toTopOf="@+id/start_game_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Сложность:"
+            android:textSize="18sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_2side"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="по двум сторонам"/>
+
+        <RadioButton
+            android:id="@+id/rb_3side"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="по трем сторонам"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/start_game_button"
+        style="@style/AppTheme.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Начать игру"
+        android:paddingTop="@dimen/big_margin"
+        android:paddingBottom="@dimen/big_margin"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_answer_count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ch_box_layout"/>
+
+    <TextView
+        android:id="@+id/text_answer_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Количество вариантов ответа"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/lin_lay_answer_count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/start_game_button"/>
+
+
+    <LinearLayout
+        android:id="@+id/lin_lay_answer_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/text_answer_count"
+        app:layout_constraintBottom_toTopOf="@id/button_rename"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <Button
+            android:id="@+id/button_minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="@string/minus"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/text_row_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2"
+            android:textAlignment="center"
+            android:textSize="24sp"/>
+
+        <Button
+            android:id="@+id/button_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="@string/plus"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_rename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pll_test_select_button"
+        android:textAllCaps="false"
+        android:paddingTop="@dimen/big_margin"
+        android:paddingBottom="@dimen/big_margin"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lin_lay_answer_count"/>
+
+
+</android.support.constraint.ConstraintLayout>
