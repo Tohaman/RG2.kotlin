@@ -19,6 +19,7 @@ import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_all_test_game.*
 import ru.tohaman.rg2.*
+import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.util.*
 
@@ -26,7 +27,8 @@ import ru.tohaman.rg2.util.*
 class OllTestGame : MyDefaultActivity() {
     private val random = Random()
     private lateinit var guessLinearLayouts : Array<LinearLayout>
-    private val ollRnd = mutableSetOf<String>()
+    private val ollRnd = ArrayList<Int>()
+    private lateinit var listPagers : List<ListPager>
     private lateinit var imgView: ImageView
     private var guessRows = 2
     private var letter = "A"
@@ -58,79 +60,53 @@ class OllTestGame : MyDefaultActivity() {
         guessRows = sp.getInt(OLL_ROW_COUNT, 6) / 2
         updateGuessRows(guessRows, guessLinearLayouts)
 
+        val listPagerLab = ListPagerLab.get(ctx)
+        listPagers = listPagerLab.getPhaseList("OLLTEST")
+        // Если еще нет текущих значений, значит они равны названиям Доллгожданного OLL
+        if (listPagers[0].comment == "") {
+            listPagers.forEach {
+                it.comment = it.title
+                listPagerLab.updateListPager(it)
+            }
+        }
+        ollRnd.clear()
+        //записываем в ollRnd значения от 0 до listPagers.size (0.1.2.3.4.5.6.7...)
+        listPagers.indices.mapTo(ollRnd) { it }
+
         loadNextOLL(guessRows)
     }
 
     private fun loadNextOLL(guessRows: Int){
-        //сгенерируем скрамбл длинны указанной в поле ScrambleLength
-        //var scramble = generateScramble(14)
-        var scramble = "(R' U' R U' R' U) y' (R' U R) B"
-        scramble = "x x $scramble"
-        //крутим куб, чтобы не всегда был зелено-оранжевой стороной к нам
-        var i = 0
-        val yCube = random.nextInt(0..4)
-        while (i < yCube) {
-            scramble = "y $scramble"
-            i += 1
+        // перемешиваем алгоритмы
+        Collections.shuffle(ollRnd)
+
+        // последний в списке считаем верным
+        val correct =  ollRnd[ollRnd.size - 1]
+        letter = listPagers[correct].comment
+
+        // add 2, 4, 6 or 8 кнопок в зависимости от значения guessRows
+        // и заполняем эти кнопки случайными заведомо неверными названиями алгоритмов,
+        // т.к. верное название у нас последнее в rndAzbuka (списке)
+        for (row in 0 until guessRows) {
+            // place Buttons in currentTableRow
+            for (column in 0 until guessLinearLayouts[row].childCount) {
+                // получить ссылку на Button для конфигурации
+                val newGuessButton = guessLinearLayouts[row].getChildAt(column) as Button
+                newGuessButton.isEnabled = true  // активируем кнопку
+                //newGuessButton.lines = 2
+                // пишем текст а названием алгоритма на кнопку
+                newGuessButton.text = listPagers[ollRnd[row * 2 + column]].comment
+            }
         }
-        //крутим крышу на случайное кол-во поворотов, после исполнения скрамбла разборки
-        val uCube = random.nextInt(0..4)
-        i = 0
-        while (i < uCube) {
-            scramble = "$scramble U"
-            i += 1
-        }
 
-        val listPagerLab = ListPagerLab.get(ctx)
-        ollRnd.clear()
-        val ollPhaseName = hashMapOf (
-                0 to "Снежинка",
-                1 to "Домино",
-                2 to "Пуля в коридоре")
+        // заменяем случайную кнопку (текст) на правильный
+        val row = random.nextInt(guessRows)
+        val column = random.nextInt(2)
+        val randomRow = guessLinearLayouts[row] // получить строку
+        (randomRow.getChildAt(column) as Button).text = letter
 
-//        //берем из азбуки только уникальные значения Set
-//        azbuka.indices.mapTo(ollRnd) { azbuka[it] }
-//        ollRnd.remove("-")
-//        // создаем Mutable List из перемешанного Set
-//        val rndAzbuka = ollRnd.shuffled().toMutableList()
-//
-//        //выбираем случайный слот из диапазона и смотрим, какой там элемент (буква)
-//
-//        val fromX = if (isCornerChecked) {0} else {3}
-//        val toY = if (isEdgeChecked) {7} else {3}
-//        val slot = random.nextInt(fromX..toY)
-//        val colorOfElement = getColorOfElement(scrambledCube, slotElementNumbers[slot]!!.first, slotElementNumbers[slot]!!.second)
-//
-//        letter = if (slot < 3) {
-//            azbuka[mainCorner[colorOfElement]!!]
-//        } else {
-//            azbuka[mainEdge[colorOfElement]!!]
-//        }
-//        // находим наш случаный в перемешенном списке и помещаем его в конец списка
-//        val correct = rndAzbuka.indexOf(letter)
-//        rndAzbuka.add(rndAzbuka.removeAt(correct))
-//
-//        // add 2, 4, 6 or 8 кнопок в зависимости от значения guessRows
-//        // и заполняем эти кнопки случайными заведомо неверными названиями алгоритмов,
-//        // т.к. верное название у нас последнее в rndAzbuka (списке)
-//        for (row in 0 until guessRows) {
-//            // place Buttons in currentTableRow
-//            for (column in 0 until guessLinearLayouts[row].childCount) {
-//                // получить ссылку на Button для конфигурации
-//                val newGuessButton = guessLinearLayouts[row].getChildAt(column) as Button
-//                newGuessButton.isEnabled = true  // активируем кнопку
-//                newGuessButton.lines = 1
-//                // пишем текст а названием алгоритма на кнопку
-//                newGuessButton.text = rndAzbuka[row * 2 + column]
-//            }
-//        }
-//
-//        // заменяем случайную кнопку (текст) на правильный
-//        val row = random.nextInt(guessRows)
-//        val column = random.nextInt(2)
-//        val randomRow = guessLinearLayouts[row] // получить строку
-//        (randomRow.getChildAt(column) as Button).text = letter
-
+        val scrm  = ollScramble[correct].toString()
+        var scramble = addRotate2Scramble( scrm )
         imgView.image = getCompleteDrawable(scramble)
     }
 
@@ -150,6 +126,29 @@ class OllTestGame : MyDefaultActivity() {
             drw
         }))
     }
+
+    //Добавляем случайные вращения кубика перед выполнением скрабла и вращение крыши после
+    private fun addRotate2Scramble(scrm: String):String {
+        var scramble = scrm
+//                "(R' U' R U' R' U) y' (R' U R) B"
+        scramble = "x x $scramble"
+        //крутим куб, чтобы не всегда был зелено-оранжевой стороной к нам
+        var i = 0
+        val yCube = random.nextInt(4)
+        while (i < yCube) {
+            scramble = "y $scramble"
+            i += 1
+        }
+        //крутим крышу на случайное кол-во поворотов, после исполнения скрамбла разборки
+        val uCube = random.nextInt(4)
+        i = 0
+        while (i < uCube) {
+            scramble = "$scramble U"
+            i += 1
+        }
+        return scramble
+    }
+
 
     private fun updateGuessRows(guessRows: Int, guessLinearLayouts: Array<LinearLayout>) {
         Log.v (DebugTag.TAG, "BlindTestGame updateGuessRows")

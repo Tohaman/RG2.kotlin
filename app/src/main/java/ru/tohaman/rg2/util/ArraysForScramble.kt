@@ -225,10 +225,10 @@ val ollScramble = hashMapOf(
         0 to "S (R' U') (R U R U R) U' R' S'",                          //Снежинка
         1 to "(F R' F' R) U2 (F R' F' R) (U' R U' R')",                 //Домино
         2 to "(F R' F' R) U2 (F R' F' R) (R U2 R')",                    //Пуля в коридоре
-        3 to "F (R U R' U') S (R U R' U') Fw'",                        //Пуля в стену
+        3 to "F (R U R' U') S (R U R' U') Fw'",                         //Пуля в стену
         4 to "Fw (R U R' U') Fw' U F (R U R' U') F'",                   //Вектор с точкой
         5 to "Fw (R U R' U') Fw' U' F (R U R' U') F'",                  //Вектор с блоком
-        6 to "(R U2') (R2' F R F') U2' M' (U R U' Rw')",                //Микки Маус с бородой
+        6 to "(R U2') (R2 F R F') U2' M' (U R U' Rw')",                 //Микки Маус с бородой
         7 to "Rw U R' U R U2 Rw2 U' R U' R' U2 Rw",                     //Микки Маус с бакенбардами
         8 to "(Rw U R' U') M (U R U' R')",                              //Школа
         9 to "(R U R' U') M' (U R U' Rw')",                             //Летающий змей
@@ -237,7 +237,7 @@ val ollScramble = hashMapOf(
         12 to "F' (L' U' L U) (L' U' L U) (L' U' L U) (L' U' L U) F",   //Чистый бумеранг 1–2
         13 to "(Rw U2) (R' U' R U R' U' R U') Rw'",                     //Чистый бумеранг 3–1
         14 to "(Rw U') (Rw2' U Rw2 U Rw2' U') Rw",                      //Чистый бумеранг 2–3 (Официант)
-        15 to "(R' F) (R2 B') (R2' F') (R2 B) R'",                      //Чистый бумеранг 3–2
+        15 to "(R' F) (R2 B') (R2 F') (R2 B) R'",                       //Чистый бумеранг 3–2
         16 to "L' U2 L U2 (L F' L' F)",                                 //Правая молния с блоком
         17 to "R U2 R' U2 (R' F R F')",                                 //Левая молния с блоком
         18 to "F (U R U' R') F' U' F (U R U' R') F'",                   //Левая молния с точкой
@@ -273,7 +273,7 @@ val ollScramble = hashMapOf(
         48 to "R U' R' U' (R U R2) F R2 U R' (U' R' F' R)",             //Чистая палка 3–3
         49 to "(R' U' R U' R' U) y' (R' U R) B",                        //Чистая палка 1–3
         50 to "(R U2) (R' U' R U R' U' R U' R')",                       //НТВ+
-        51 to "R U2 R2' U' R2 U' R2' U2 R",                             //Вертолет (Футбол)
+        51 to "R U2 R2 U' R2 U' R2 U2 R",                             //Вертолет (Футбол)
         52 to "R' U' R U' R' U2 R",                                     //Рыбка
         53 to "(R U R' U) R U2 R'",                                     //Акула
         54 to "F' (Rw U R' U') (Rw' F R)",                              //Ушки
