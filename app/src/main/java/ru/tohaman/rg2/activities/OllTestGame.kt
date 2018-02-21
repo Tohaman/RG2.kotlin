@@ -18,7 +18,6 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_all_test_game.*
-import org.jetbrains.anko.lines
 import ru.tohaman.rg2.*
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.util.*
@@ -27,7 +26,7 @@ import ru.tohaman.rg2.util.*
 class OllTestGame : MyDefaultActivity() {
     private val random = Random()
     private lateinit var guessLinearLayouts : Array<LinearLayout>
-    private val azbukaRnd = mutableSetOf<String>()
+    private val ollRnd = mutableSetOf<String>()
     private lateinit var imgView: ImageView
     private var guessRows = 2
     private var letter = "A"
@@ -65,31 +64,30 @@ class OllTestGame : MyDefaultActivity() {
     private fun loadNextOLL(guessRows: Int){
         //сгенерируем скрамбл длинны указанной в поле ScrambleLength
         //var scramble = generateScramble(14)
-        var scramble = "(R U2 R') (F R' R' R) (U' R U' R')"
+        var scramble = "(R' U' R U' R' U) y' (R' U R) B"
         scramble = "x x $scramble"
         //крутим куб, чтобы не всегда был зелено-оранжевой стороной к нам
         var i = 0
         val yCube = random.nextInt(0..4)
         while (i < yCube) {
             scramble = "y $scramble"
-            i =+ 1
+            i += 1
         }
         //крутим крышу на случайное кол-во поворотов, после исполнения скрамбла разборки
         val uCube = random.nextInt(0..4)
         i = 0
         while (i < uCube) {
             scramble = "$scramble U"
-            i =+ 1
+            i += 1
         }
 
-//        val listPagerLab = ListPagerLab.get(ctx)
-//        val azbuka = listPagerLab.getCurrentAzbuka()
-//        azbukaRnd.clear()
+        val listPagerLab = ListPagerLab.get(ctx)
+        ollRnd.clear()
 //        //берем из азбуки только уникальные значения Set
-//        azbuka.indices.mapTo(azbukaRnd) { azbuka[it] }
-//        azbukaRnd.remove("-")
+//        azbuka.indices.mapTo(ollRnd) { azbuka[it] }
+//        ollRnd.remove("-")
 //        // создаем Mutable List из перемешанного Set
-//        val rndAzbuka = azbukaRnd.shuffled().toMutableList()
+//        val rndAzbuka = ollRnd.shuffled().toMutableList()
 //
 //        //выбираем случайный слот из диапазона и смотрим, какой там элемент (буква)
 //

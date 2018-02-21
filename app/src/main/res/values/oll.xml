@@ -895,6 +895,7 @@
 
         <b>Как смоделировать</b>: <a href="rg2://ytplay?time=1:52&link=R32nstcHIRQ">на видео 1:52</a>
         выполнить алгоритм 5 раз, можно с ходом U\' в начале, а можно и без него, главное 5 раз одинаково.
+        Или выполнить Правую клюшку с блоком: <b>(R\' F R) (U R\' F\' R) (F U\' F\')</b>
         ]]></string>
     <string name="oll_st36_url">R32nstcHIRQ</string>
 
@@ -1025,6 +1026,7 @@
         <p style="text-align:center"><img src="voll_44_2.xml" width="60%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=6:32&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: (Rw\' U\' Rw) (R\' U\' R U) (Rw\' U Rw)</b><br/><br/>
+        <b>Как смоделировать</b>: повторить данный алгоритм 5 раз.
         ]]></string>
     <string name="oll_st44_url">GXTtry_rdq8</string>
 
@@ -1040,6 +1042,7 @@
         <p style="text-align:center"><img src="voll_45_2.xml" width="60%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=6:13&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: (R\' F R) (U R\' F\' R) (F U\' F\')</b><br/><br/>
+        <b>Как смоделировать</b>: повторить алгоритм от Феликса 2 раза.
         ]]></string>
     <string name="oll_st45_url">o1u_YhSHEB4</string>
 
@@ -1072,7 +1075,8 @@
         Фингертрикс: <a href="rg2://ytplay?time=4:32&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: Rw\' U\' Rw (U\' R\' U R) (U\' R\' U R) Rw\' U Rw</b><br/><br/>
 
-        <b>Как смоделировать</b>: Выполнить данный алгоритм <a href="rg2://ytplay?time=3:00&link=yXg8rKBOOgk">2 раза.</a>
+        <b>Как смоделировать</b>: Выполнить данный алгоритм
+        <a href="rg2://ytplay?time=3:00&link=yXg8rKBOOgk">2 раза.</a>
         ]]></string>
     <string name="oll_st47_url">yXg8rKBOOgk</string>
 
@@ -1180,7 +1184,7 @@
         <b>Алгоритм: R U2 R\' U\' R U\' R\'</b><br/><br/>
         <p>3. Ну и еще один вариант, когда Акула уплывает влево от нас:</p>
         <p style="text-align:center"><img src="voll_54_2.xml" width="60%%"></p>
-        Алгоритм: <b>R\' U\' R U\' R\' U2 R</b><br/>
+        <b>Алгоритм: R\' U\' R U\' R\' U2 R</b><br/>
         <p>Для этого алгоритма очень удобный и быстрый фингертрикс с начальным положением большого пальца правой руки
         сверху. Т.е. стандартное положение рук получается после первого хода и двойное кручение крыши
         можно делать указательным и средним пальцами правой руки. Но почему-то в видео ни у кого этого варианта
