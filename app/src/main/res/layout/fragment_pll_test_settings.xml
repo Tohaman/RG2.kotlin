@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Сложность:"
+            android:text="Выбор игры:"
             android:textSize="18sp"/>
 
         <RadioButton
@@ -31,14 +31,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="по двум сторонам"/>
+            android:text="@string/pll_2side"/>
 
         <RadioButton
             android:id="@+id/rb_3side"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="по трем сторонам"/>
+            android:text="@string/pll_3side"/>
+
+        <RadioButton
+            android:id="@+id/rb_oll_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/rb_oll_game"/>
 
     </RadioGroup>
 
@@ -47,7 +54,7 @@
         style="@style/AppTheme.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Начать игру"
+        android:text="@string/start_game"
         android:paddingTop="@dimen/big_margin"
         android:paddingBottom="@dimen/big_margin"
         android:textSize="18sp"

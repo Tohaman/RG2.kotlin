@@ -1,27 +1,21 @@
 package ru.tohaman.rg2.activities
 
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.support.v4.app.FragmentTransaction
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.app.AppCompatDelegate
 import android.util.Log
-import android.view.WindowManager
 import kotlinx.android.synthetic.main.activity_test_select_pll.*
 import org.jetbrains.anko.*
 import ru.tohaman.rg2.R
 
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import ru.tohaman.rg2.DebugTag
-import ru.tohaman.rg2.IS_SCREEN_ALWAYS_ON
 import ru.tohaman.rg2.MyDefaultActivity
 import ru.tohaman.rg2.adapters.MyListAdapter
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.fragments.FragmentListView
-import ru.tohaman.rg2.util.getThemeFromSharedPreference
 
-class PllTestSelectPllName : MyDefaultActivity(), FragmentListView.OnListViewInteractionListener {
+class TestGameSelectPllName : MyDefaultActivity(), FragmentListView.OnListViewInteractionListener {
     private lateinit var fragListView: FragmentListView
     private lateinit var listPagers: ArrayList<ListPager>
 
@@ -42,9 +36,9 @@ class PllTestSelectPllName : MyDefaultActivity(), FragmentListView.OnListViewInt
         }
         fragListView = FragmentListView.newInstance("PLLTEST")
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.pll_list_view, fragListView).commit()
+        transaction.replace(R.id.pll_oll_list_view, fragListView).commit()
 
-        select_maxim_pll.onClick {
+        select_maxim_name.onClick {
             Log.v (DebugTag.TAG, "PLLTestSelect select_maxim_pll.onClick start")
             listPagers.forEach {
                 it.comment = it.title
@@ -54,7 +48,7 @@ class PllTestSelectPllName : MyDefaultActivity(), FragmentListView.OnListViewInt
             fragListView.listAdapter = listAdapter
         }
 
-        select_jperm_pll.onClick {
+        select_classik_name.onClick {
             Log.v (DebugTag.TAG, "PLLTestSelect select_jperm_pll.onClick start")
             listPagers.forEach {
                 it.comment = it.url
@@ -64,7 +58,7 @@ class PllTestSelectPllName : MyDefaultActivity(), FragmentListView.OnListViewInt
             fragListView.listAdapter = listAdapter
         }
 
-        save_custom_pll.onClick {
+        save_custom_name.onClick {
             Log.v (DebugTag.TAG, "PLLTestSelect save_custom_pll.onClick start")
             listPagers.forEach {
                 val lp = it.copy(phase = "PLLTEST_CUSTOM")
@@ -73,7 +67,7 @@ class PllTestSelectPllName : MyDefaultActivity(), FragmentListView.OnListViewInt
             toast("Текущие названия сохранены")
         }
 
-        load_custom_pll.onClick {
+        load_custom_name.onClick {
             Log.v (DebugTag.TAG, "PLLTestSelect load_custom_pll.onClick start")
             listPagers.forEach {
                 it.comment = listPagerLab.getPhaseItem(it.id, "PLLTEST_CUSTOM").comment

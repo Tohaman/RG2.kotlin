@@ -12,7 +12,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/select_maxim_pll"
+            android:id="@+id/select_maxim_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/small_margin"
@@ -21,7 +21,7 @@
             android:text="Максимкины названия"/>
 
         <Button
-            android:id="@+id/select_jperm_pll"
+            android:id="@+id/select_classik_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/small_margin"
@@ -38,7 +38,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/save_custom_pll"
+            android:id="@+id/save_custom_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/small_margin"
@@ -47,7 +47,7 @@
             android:text="Сохранить текущие названия"/>
 
         <Button
-            android:id="@+id/load_custom_pll"
+            android:id="@+id/load_custom_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/small_margin"
@@ -57,7 +57,7 @@
     </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/pll_list_view"
+        android:id="@+id/pll_oll_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

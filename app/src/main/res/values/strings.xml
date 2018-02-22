@@ -17,7 +17,7 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="begin_4x4">4x4 Простой метод</string>
-    <string name="pll_game">Угадай PLL</string>
+    <string name="pll_game">Тренировка PLL/OLL</string>
     <string name="basic_moves">Основные движения</string>
     <string name="st_about">О программе</string>
     <string name="pager_youtube_text">Ссылка на YouTube видео</string>
@@ -63,6 +63,8 @@
     </string>
     <string name="title_activity_oll_test_game">OllTestGame</string>
     <string name="oll_game">Угадай OLL</string>
-
+    <string name="pll_2side">PLL по двум сторонам</string>
+    <string name="pll_3side">PLL по трем сторонам</string>
+    <string name="rb_oll_game">OLL по двум сторонам</string>
 
 </resources>

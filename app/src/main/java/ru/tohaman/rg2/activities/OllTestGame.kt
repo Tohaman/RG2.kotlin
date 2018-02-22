@@ -54,7 +54,7 @@ class OllTestGame : MyDefaultActivity() {
         }
         //Скрываем ненужные кнопки
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
-        guessRows = sp.getInt(OLL_ROW_COUNT, 6) / 2
+        guessRows = sp.getInt(TEST_GAME_ROW_COUNT, 6) / 2
         updateGuessRows(guessRows, guessLinearLayouts)
 
         val listPagerLab = ListPagerLab.get(ctx)

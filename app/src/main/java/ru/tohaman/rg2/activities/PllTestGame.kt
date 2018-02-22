@@ -39,7 +39,7 @@ class PllTestGame : MyDefaultActivity() {
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
-        guessRows = sp.getInt(PLL_TEST_ROW_COUNT, 6) / 2
+        guessRows = sp.getInt(TEST_GAME_ROW_COUNT, 6) / 2
         is3side = sp.getBoolean(PLL_TEST_3SIDE, true)
 
         imgView = findViewById(R.id.test_image)

@@ -3,12 +3,6 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/oll_game"
-        android:orderInCategory="100"
-        android:icon="@drawable/ic_test"
-        android:title="@string/oll_game"
-        app:showAsAction="ifRoom"/>
-    <item
         android:id="@+id/main_favorite"
         android:orderInCategory="100"
         android:icon="@drawable/ic_favorite_white"

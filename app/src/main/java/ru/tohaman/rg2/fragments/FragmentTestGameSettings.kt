@@ -15,12 +15,11 @@ import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.support.v4.ctx
-import ru.tohaman.rg2.DebugTag
-import ru.tohaman.rg2.PLL_TEST_3SIDE
-import ru.tohaman.rg2.PLL_TEST_ROW_COUNT
-import ru.tohaman.rg2.R
+import ru.tohaman.rg2.*
+import ru.tohaman.rg2.activities.OllTestGame
 import ru.tohaman.rg2.activities.PllTestGame
-import ru.tohaman.rg2.activities.PllTestSelectPllName
+import ru.tohaman.rg2.activities.TestGameSelectOllName
+import ru.tohaman.rg2.activities.TestGameSelectPllName
 import ru.tohaman.rg2.ui.AnkoComponentEx
 import ru.tohaman.rg2.util.saveBoolean2SP
 import ru.tohaman.rg2.util.saveInt2SP
@@ -31,29 +30,33 @@ import ru.tohaman.rg2.util.saveInt2SP
  * фабричный метод [newInstance] для создания фрагмента
  */
 
-class FragmentTestPLLSettings : Fragment() {
+class FragmentTestGameSettings : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return TestPllUI<Fragment>().createView(AnkoContext.create(ctx, this))
+        return TestGameUI<Fragment>().createView(AnkoContext.create(ctx, this))
     }
 
     companion object {
-        fun newInstance(): FragmentTestPLLSettings {
-            Log.v(DebugTag.TAG, "FragmentTestPLLSettings newInstance")
-            return FragmentTestPLLSettings()
+        fun newInstance(): FragmentTestGameSettings {
+            Log.v(DebugTag.TAG, "FragmentTestGameSettings newInstance")
+            return FragmentTestGameSettings()
         }
     }
 
 
 }
 
-class TestPllUI<in Fragment> : AnkoComponentEx<Fragment>() {
+class TestGameUI<in Fragment> : AnkoComponentEx<Fragment>() {
+    private var rowCount = 6
+    private var is3side = true
+    private var isOllGame = false
 
     override fun create(ui: AnkoContext<Fragment>): View = with(ui) {
         Log.v(DebugTag.TAG, "TimerSettingsUI create start")
         val sp = PreferenceManager.getDefaultSharedPreferences(context)
-        var rowCount = sp.getInt(PLL_TEST_ROW_COUNT, 6)
-        var is3side = sp.getBoolean(PLL_TEST_3SIDE, true)
+        rowCount = sp.getInt(TEST_GAME_ROW_COUNT, 6)
+        is3side = sp.getBoolean(PLL_TEST_3SIDE, true)
+        isOllGame = sp.getBoolean(OLL_TEST_GAME, false)
 
         linearLayout {
             gravity = Gravity.CENTER
@@ -65,6 +68,18 @@ class TestPllUI<in Fragment> : AnkoComponentEx<Fragment>() {
                 rightMargin = 16.dp
             }
 
+            ch_box_layout.clearCheck()
+
+            if (isOllGame) {
+                   rb_oll_game.isChecked = true
+            } else {
+                if (is3side) {
+                    rb_3side.isChecked = true
+                } else {
+                    rb_2side.isChecked = true
+                }
+            }
+
             text_row_count.text = rowCount.toString()
 
             button_minus.onClick {
@@ -72,7 +87,7 @@ class TestPllUI<in Fragment> : AnkoComponentEx<Fragment>() {
                 if (rowCount < 2) {
                     rowCount = 2
                 }
-                saveInt2SP(rowCount, PLL_TEST_ROW_COUNT, view.context)
+                saveInt2SP(rowCount, TEST_GAME_ROW_COUNT, view.context)
                 text_row_count.text = rowCount.toString()
             }
             button_plus.onClick {
@@ -80,21 +95,35 @@ class TestPllUI<in Fragment> : AnkoComponentEx<Fragment>() {
                 if (rowCount > 8) {
                     rowCount = 8
                 }
-                saveInt2SP(rowCount, PLL_TEST_ROW_COUNT, view.context)
+                saveInt2SP(rowCount, TEST_GAME_ROW_COUNT, view.context)
                 text_row_count.text = rowCount.toString()
             }
 
             ch_box_layout.onCheckedChange { group, checkedId ->
                 when (checkedId) {
-                    rb_2side.id -> { is3side = false }
-                    rb_3side.id -> { is3side = true }
+                    rb_2side.id ->      { is3side = false; isOllGame = false }
+                    rb_3side.id ->      { is3side = true; isOllGame = false }
+                    rb_oll_game.id ->   { is3side = false; isOllGame = true }
                 }
-                saveBoolean2SP(is3side, PLL_TEST_3SIDE,group!!.context)
+                saveBoolean2SP(is3side, PLL_TEST_3SIDE, group!!.context)
+                saveBoolean2SP(isOllGame, OLL_TEST_GAME, group.context)
             }
 
-            start_game_button.onClick { startActivity<PllTestGame>()}
+            start_game_button.onClick {
+                if (isOllGame) {
+                    startActivity<OllTestGame>()
+                } else {
+                    startActivity<PllTestGame>()
+                }
+            }
 
-            button_rename.onClick { startActivity<PllTestSelectPllName>() }
+            button_rename.onClick {
+                if (isOllGame) {
+                    startActivity<TestGameSelectOllName>()
+                } else {
+                    startActivity<TestGameSelectPllName>()
+                }
+            }
         }
     }
 

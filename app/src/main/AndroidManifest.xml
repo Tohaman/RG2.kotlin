@@ -58,7 +58,11 @@
             android:label="@string/title_activity_pll_test_game">
         </activity>
         <activity
-            android:name=".activities.PllTestSelectPllName"
+            android:name=".activities.TestGameSelectPllName"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".activities.TestGameSelectOllName"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity

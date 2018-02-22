@@ -42,10 +42,10 @@ const val IS_SCREEN_ALWAYS_ON = "screen_always_on"  //ключ для гашен
 const val ONE_HAND_TO_START = "oneHandToStart"
 const val METRONOM_ENABLED = "metronomEnabled"
 const val METRONOM_TIME = "metronomTime"
-const val PLL_TEST_ROW_COUNT = "pllTestRowCount"
+const val TEST_GAME_ROW_COUNT = "pllTestRowCount"
 const val BLIND_ROW_COUNT = "blindRowCount"
-const val OLL_ROW_COUNT = "blindRowCount"
 const val PLL_TEST_3SIDE = "isPllTest3Side"
+const val OLL_TEST_GAME = "isOllGame"
 const val BLIND_IS_EDGE_CHECKED = "isBlindEdgeChecked"
 const val BLIND_IS_CORNER_CHECKED = "isBlindCornerChecked"
 const val FAVORITES = "favorites"
@@ -141,7 +141,7 @@ class MainActivity : MyDefaultActivity(),
         when (curPhase) {
             "TIMER" -> {setFragment(FragmentTimerSettings.newInstance())}
             "SCRAMBLEGEN" -> {setFragment(FragmentScrambleGen.newInstance())}
-            "TESTPLL" -> {setFragment(FragmentTestPLLSettings.newInstance())}
+            "TESTGAME" -> {setFragment(FragmentTestGameSettings.newInstance())}
             "BLINDGAME" -> {setFragment(FragmentBlindGameSettings.newInstance())}
             "SETTINGS" -> {setFragment(FragmentSettings.newInstance())}
             "ABOUT" -> {setFragment(FragmentAbout.newInstance())}
@@ -338,8 +338,8 @@ class MainActivity : MyDefaultActivity(),
                     "SCRAMBLEGEN" -> {
                         alert(getString(R.string.help_scramble_gen)) { okButton { } }.show()
                     }
-                    "TESTPLL" -> {
-                        alert(getString(R.string.help_test_pll)) { okButton { } }.show()
+                    "TESTGAME" -> {
+                        alert(getString(R.string.help_test_game)) { okButton { } }.show()
                     }
                     "BASIC" -> {
                         alert(getString(R.string.help_basic)) { okButton { } }.show()
@@ -371,10 +371,6 @@ class MainActivity : MyDefaultActivity(),
             }
             R.id.main_favorite -> {
                 drawer_layout.openDrawer(GravityCompat.END)
-                return true
-            }
-            R.id.oll_game -> {
-                startActivity<OllTestGame>()
                 return true
             }
 
@@ -412,8 +408,8 @@ class MainActivity : MyDefaultActivity(),
                 saveStartPhase("SCRAMBLEGEN")
             }
             R.id.pll_game -> {
-                setFragment(FragmentTestPLLSettings.newInstance())
-                saveStartPhase("TESTPLL")
+                setFragment(FragmentTestGameSettings.newInstance())
+                saveStartPhase("TESTGAME")
             }
 
             R.id.blind_game -> {

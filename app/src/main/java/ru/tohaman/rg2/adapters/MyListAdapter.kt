@@ -56,7 +56,7 @@ class MyListAdapter(private val listOfLP: ArrayList<ListPager> = ArrayList(), pr
                         linearLayout() {
                             orientation = VERTICAL
                             textView {
-                                text = if (listOfLP[0].phase == "PLLTEST"){
+                                text = if ((listOfLP[0].phase == "PLLTEST") or (listOfLP[0].phase == "OLLTEST")){
                                     listOfLP[i].comment
                                 } else {
                                     listOfLP[i].title
@@ -67,7 +67,7 @@ class MyListAdapter(private val listOfLP: ArrayList<ListPager> = ArrayList(), pr
                             textView {
                                 textSize = m *8F
                                 singleLine = true
-                                text = if (listOfLP[0].phase == "PLLTEST"){
+                                text = if ((listOfLP[0].phase == "PLLTEST") or (listOfLP[0].phase == "OLLTEST")){
                                     ""
                                 } else {
                                     listOfLP[i].comment
