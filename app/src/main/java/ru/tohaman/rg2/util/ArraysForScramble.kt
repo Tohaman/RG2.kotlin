@@ -257,7 +257,7 @@ val ollScramble = hashMapOf(
         32 to "F R' F' R U R U R' U' R U' R'",                          //Метро с точкой
         33 to "R U2 R2 U' F' U F R2 U' R'",                             //Метро с блоком
         34 to "F (U R U' R2) F' R (U R U' R')",                         //Рюмка с блоком
-        35 to "(R U2 R') (F R' R' R) (U' R U' R')",                     //Рюмка с точкой
+        35 to "(R' F R) (U R' F' R) (F U' F')",                         //Рюмка с точкой
         36 to "Fw (R U R' U') Fw'",                                     //Тесла с точкой
         37 to "F R (U' R' U') (R U R') F'",                             //Тесла с блоком
         38 to "S (R U R' U') (R' F R Fw')",                             //Правый пропеллер

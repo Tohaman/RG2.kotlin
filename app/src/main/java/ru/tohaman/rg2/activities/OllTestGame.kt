@@ -127,6 +127,7 @@ class OllTestGame : MyDefaultActivity() {
     //Добавляем случайные вращения кубика перед выполнением скрабла и вращение крыши после
     private fun addRotate2Scramble(scrm: String):String {
         var scramble = scrm
+        //scramble = "(R' F R) (U R' F' R) (F U' F')"
         scramble = "x x $scramble"
         //крутим куб перед скрамблом, чтобы не всегда был зелено-оранжевой стороной к нам
         var i = 0
