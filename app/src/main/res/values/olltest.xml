@@ -60,30 +60,6 @@
        <item>Глазки</item>
     </string-array>
 
-    <string-array name="oll_test_descr">
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-    </string-array>
-
     <string-array name="oll_test_url">
        <item>S (R\' U\') (R U R U R) U\' R\' S\'</item>
        <item>(R U R\' U) (R\' F R F\') U2 (R\' F R F\')</item>

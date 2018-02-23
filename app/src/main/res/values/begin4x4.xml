@@ -321,4 +321,14 @@
     ]]></string>
     <string name="begin4_st8_url">1BXrRXQ0alg</string>
 
+    <string name="begin4_st9_title">Метод Роберта Яу</string>
+    <string name="begin4_st9_descr" formatted="false"><![CDATA[
+        Метод Роберта Яу это метод, которым в своих сборках пользуются все топовые спидкуберы мира.
+        Он так же основан на редукции кубика 4х4 в кубик 3х3, но последовательность редукции немного
+        другая, чем в простом методе.
+
+        от JPERM - https://youtu.be/KWOZHbDdOeo
+    ]]></string>
+    <string name="begin4_st9_url">n7VphemPZbg</string>
+
 </resources>
