@@ -158,6 +158,7 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
                                     when (mPhase) {
                                         "PYRAMINX" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_PYR")}
                                         "SKEWB" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_SKEWB")}
+                                        "BEGIN4X4" -> {ListPagerLab.get(ctx).getPhaseList("BASIC4X4")}
                                         else -> {ListPagerLab.get(ctx).getPhaseList("BASIC")}
                                     }
                             val lstView = listView {
