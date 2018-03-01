@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="basic_5х5_title">
+        <item>@string/basic_5х5_st1_title</item>
+        <item>@string/basic_5х5_st2_title</item>
+        <item>@string/basic_5х5_st3_title</item>
+        <item>@string/basic_5х5_st4_title</item>
+        <item>@string/basic_5х5_st5_title</item>
+        <item>@string/basic_5х5_st6_title</item>
+        <item>@string/basic_5х5_st7_title</item>
+        <item>@string/basic_5х5_st8_title</item>
+        <item>@string/basic_5х5_st9_title</item>
+        <item>@string/basic_5х5_st10_title</item>
+        <item>@string/basic_5х5_st11_title</item>
+        <item>@string/basic_5х5_st12_title</item>
+        <item>@string/basic_5х5_st13_title</item>
+        <item>@string/basic_5х5_st14_title</item>
+        <item>@string/basic_5х5_st15_title</item>
+        <item>@string/basic_5х5_st16_title</item>
+        <item>@string/basic_5х5_st17_title</item>
+        <item>@string/basic_5х5_st18_title</item>
+        <item>@string/basic_5х5_st19_title</item>
+        <item>@string/basic_5х5_st20_title</item>
+        <item>@string/basic_5х5_st21_title</item>
+        <item>@string/basic_5х5_st22_title</item>
+        <item>@string/basic_5х5_st23_title</item>
+        <item>@string/basic_5х5_st24_title</item>
+        <item>@string/basic_5х5_st25_title</item>
+        <item>@string/basic_5х5_st26_title</item>
+        <item>@string/basic_5х5_st27_title</item>
+        <item>@string/basic_5х5_st28_title</item>
+        <item>@string/basic_5х5_st29_title</item>
+        <item>@string/basic_5х5_st30_title</item>
+        <item>@string/basic_5х5_st31_title</item>
+        <item>@string/basic_5х5_st32_title</item>
+        <item>@string/basic_5х5_st33_title</item>
+        <item>@string/basic_5х5_st34_title</item>
+        <item>@string/basic_5х5_st35_title</item>
+        <item>@string/basic_5х5_st36_title</item>
+        <item>@string/basic_5х5_st37_title</item>
+        <item>@string/basic_5х5_st38_title</item>
+        <item>@string/basic_5х5_st39_title</item>
+        <item>@string/basic_5х5_st40_title</item>
+        <item>@string/basic_5х5_st41_title</item>
+        <item>@string/basic_5х5_st42_title</item>
+        <item>@string/basic_5х5_st43_title</item>
+        <item>@string/basic_5х5_st44_title</item>
+        <item>@string/basic_5х5_st45_title</item>
+    </string-array>
+
+    <integer-array name="basic_5х5_icon">
+        <item>@drawable/basic_4x4_1</item>
+        <item>@drawable/basic_4x4_2</item>
+        <item>@drawable/basic_4x4_3</item>
+        <item>@drawable/basic_4x4_4</item>
+        <item>@drawable/basic_4x4_5</item>
+        <item>@drawable/basic_4x4_6</item>
+        <item>@drawable/basic_4x4_7</item>
+        <item>@drawable/basic_4x4_8</item>
+        <item>@drawable/basic_4x4_9</item>
+        <item>@drawable/basic_4x4_10</item>
+        <item>@drawable/basic_4x4_11</item>
+        <item>@drawable/basic_4x4_12</item>
+        <item>@drawable/basic_4x4_13</item>
+        <item>@drawable/basic_4x4_14</item>
+        <item>@drawable/basic_4x4_15</item>
+        <item>@drawable/basic_4x4_16</item>
+        <item>@drawable/basic_4x4_17</item>
+        <item>@drawable/basic_4x4_18</item>
+        <item>@drawable/basic_4x4_19</item>
+        <item>@drawable/basic_4x4_20</item>
+        <item>@drawable/basic_4x4_21</item>
+        <item>@drawable/basic_4x4_22</item>
+        <item>@drawable/basic_4x4_23</item>
+        <item>@drawable/basic_4x4_24</item>
+        <item>@drawable/basic_4x4_25</item>
+        <item>@drawable/basic_4x4_26</item>
+        <item>@drawable/basic_4x4_27</item>
+        <item>@drawable/basic_4x4_28</item>
+        <item>@drawable/basic_4x4_29</item>
+        <item>@drawable/basic_4x4_30</item>
+        <item>@drawable/basic_4x4_31</item>
+        <item>@drawable/basic_4x4_32</item>
+        <item>@drawable/basic_4x4_33</item>
+        <item>@drawable/basic_4x4_34</item>
+        <item>@drawable/basic_4x4_35</item>
+        <item>@drawable/basic_4x4_36</item>
+        <item>@drawable/basic_4x4_37</item>
+        <item>@drawable/basic_4x4_38</item>
+        <item>@drawable/basic_4x4_39</item>
+        <item>@drawable/basic_4x4_40</item>
+        <item>@drawable/basic_4x4_41</item>
+        <item>@drawable/basic_4x4_42</item>
+        <item>@drawable/basic_4x4_43</item>
+        <item>@drawable/basic_4x4_44</item>
+        <item>@drawable/basic_4x4_45</item>
+    </integer-array>
+
+    <string-array name="basic_5х5_descr">
+        <item>@string/basic_5х5_st1_descr</item>
+        <item>@string/basic_5х5_st2_descr</item>
+        <item>@string/basic_5х5_st3_descr</item>
+        <item>@string/basic_5х5_st4_descr</item>
+        <item>@string/basic_5х5_st5_descr</item>
+        <item>@string/basic_5х5_st6_descr</item>
+        <item>@string/basic_5х5_st7_descr</item>
+        <item>@string/basic_5х5_st8_descr</item>
+        <item>@string/basic_5х5_st9_descr</item>
+        <item>@string/basic_5х5_st10_descr</item>
+        <item>@string/basic_5х5_st11_descr</item>
+        <item>@string/basic_5х5_st12_descr</item>
+        <item>@string/basic_5х5_st13_descr</item>
+        <item>@string/basic_5х5_st14_descr</item>
+        <item>@string/basic_5х5_st15_descr</item>
+        <item>@string/basic_5х5_st16_descr</item>
+        <item>@string/basic_5х5_st17_descr</item>
+        <item>@string/basic_5х5_st18_descr</item>
+        <item>@string/basic_5х5_st19_descr</item>
+        <item>@string/basic_5х5_st20_descr</item>
+        <item>@string/basic_5х5_st21_descr</item>
+        <item>@string/basic_5х5_st22_descr</item>
+        <item>@string/basic_5х5_st23_descr</item>
+        <item>@string/basic_5х5_st24_descr</item>
+        <item>@string/basic_5х5_st25_descr</item>
+        <item>@string/basic_5х5_st26_descr</item>
+        <item>@string/basic_5х5_st27_descr</item>
+        <item>@string/basic_5х5_st28_descr</item>
+        <item>@string/basic_5х5_st29_descr</item>
+        <item>@string/basic_5х5_st30_descr</item>
+        <item>@string/basic_5х5_st31_descr</item>
+        <item>@string/basic_5х5_st32_descr</item>
+        <item>@string/basic_5х5_st33_descr</item>
+        <item>@string/basic_5х5_st34_descr</item>
+        <item>@string/basic_5х5_st35_descr</item>
+        <item>@string/basic_5х5_st36_descr</item>
+        <item>@string/basic_5х5_st37_descr</item>
+        <item>@string/basic_5х5_st38_descr</item>
+        <item>@string/basic_5х5_st39_descr</item>
+        <item>@string/basic_5х5_st40_descr</item>
+        <item>@string/basic_5х5_st41_descr</item>
+        <item>@string/basic_5х5_st42_descr</item>
+        <item>@string/basic_5х5_st43_descr</item>
+        <item>@string/basic_5х5_st44_descr</item>
+        <item>@string/basic_5х5_st45_descr</item>
+    </string-array>
+
+    <string-array name="basic_5х5_url">
+        <item>1_url</item>
+        <item>2_url</item>
+        <item>3_url</item>
+        <item>4_url</item>
+        <item>5_url</item>
+        <item>6_url</item>
+        <item>7_url</item>
+        <item>8_url</item>
+        <item>9_url</item>
+        <item>10_url</item>
+        <item>11_url</item>
+        <item>12_url</item>
+        <item>13_url</item>
+        <item>14_url</item>
+        <item>15_url</item>
+        <item>16_url</item>
+        <item>17_url</item>
+        <item>18_url</item>
+        <item>19_url</item>
+        <item>20_url</item>
+        <item>21_url</item>
+        <item>22_url</item>
+        <item>23_url</item>
+        <item>24_url</item>
+        <item>25_url</item>
+        <item>26_url</item>
+        <item>27_url</item>
+        <item>28_url</item>
+        <item>29_url</item>
+        <item>30_url</item>
+        <item>31_url</item>
+        <item>32_url</item>
+        <item>33_url</item>
+        <item>34_url</item>
+        <item>35_url</item>
+        <item>36_url</item>
+        <item>37_url</item>
+        <item>38_url</item>
+        <item>39_url</item>
+        <item>40_url</item>
+        <item>41_url</item>
+        <item>42_url</item>
+        <item>43_url</item>
+        <item>44_url</item>
+        <item>45_url</item>
+    </string-array>
+
+    <string name="basic_5х5_st1_title">R</string>
+    <string name="basic_5х5_st1_descr">Правая по часовой</string>
+    <string name="basic_5х5_st2_title">R\'</string>
+    <string name="basic_5х5_st2_descr">Правая проти часовой</string>
+    <string name="basic_5х5_st3_title">2R</string>
+    <string name="basic_5х5_st3_descr">Втророй правый слой по часовой</string>
+    <string name="basic_5х5_st4_title">2R\'</string>
+    <string name="basic_5х5_st4_descr">Втророй правый слой против часовой</string>
+    <string name="basic_5х5_st5_title">Rw</string>
+    <string name="basic_5х5_st5_descr">Два правых слоя по часовой</string>
+    <string name="basic_5х5_st6_title">Rw\'</string>
+    <string name="basic_5х5_st6_descr">Два правых слоя против часовой</string>
+    <string name="basic_5х5_st7_title">R2</string>
+    <string name="basic_5х5_st7_descr">Правая дважды</string>
+    <string name="basic_5х5_st8_title">2R2</string>
+    <string name="basic_5х5_st8_descr">Второй правый слой дважды</string>
+    <string name="basic_5х5_st9_title">Rw2</string>
+    <string name="basic_5х5_st9_descr">Два правых слоя дважды</string>
+    <string name="basic_5х5_st10_title">L</string>
+    <string name="basic_5х5_st10_descr">Левая по часовой</string>
+    <string name="basic_5х5_st11_title">L\'</string>
+    <string name="basic_5х5_st11_descr">Левая против часовой</string>
+    <string name="basic_5х5_st12_title">2L</string>
+    <string name="basic_5х5_st12_descr">Второй левый слой по часовой</string>
+    <string name="basic_5х5_st13_title">2L\'</string>
+    <string name="basic_5х5_st13_descr">Второй левый слой против часовой</string>
+    <string name="basic_5х5_st14_title">Lw</string>
+    <string name="basic_5х5_st14_descr">Два левых слоя по часовой</string>
+    <string name="basic_5х5_st15_title">Lw\'</string>
+    <string name="basic_5х5_st15_descr">Два левых слоя против часовой</string>
+    <string name="basic_5х5_st16_title">L2</string>
+    <string name="basic_5х5_st16_descr">Левая грань дважды</string>
+    <string name="basic_5х5_st17_title">2L2</string>
+    <string name="basic_5х5_st17_descr">Второй левый слой дважды</string>
+    <string name="basic_5х5_st18_title">Lw2</string>
+    <string name="basic_5х5_st18_descr">Два левых слоя дважды</string>
+    <string name="basic_5х5_st19_title">U</string>
+    <string name="basic_5х5_st19_descr">Верхняя по часовой</string>
+    <string name="basic_5х5_st20_title">U\'</string>
+    <string name="basic_5х5_st20_descr">Верхняя против часовой</string>
+    <string name="basic_5х5_st21_title">2U</string>
+    <string name="basic_5х5_st21_descr">Второй верхний слой по часовой</string>
+    <string name="basic_5х5_st22_title">2U\'</string>
+    <string name="basic_5х5_st22_descr">Второй верхний слой против часовой</string>
+    <string name="basic_5х5_st23_title">Uw</string>
+    <string name="basic_5х5_st23_descr">Два вехних слоя по часовой</string>
+    <string name="basic_5х5_st24_title">Uw\'</string>
+    <string name="basic_5х5_st24_descr">Два верхних слоя против часовой</string>
+    <string name="basic_5х5_st25_title">U2</string>
+    <string name="basic_5х5_st25_descr">Верхняя грань дважды</string>
+    <string name="basic_5х5_st26_title">2U2</string>
+    <string name="basic_5х5_st26_descr">Второй верхний слой дважды</string>
+    <string name="basic_5х5_st27_title">Uw2</string>
+    <string name="basic_5х5_st27_descr">Два вехних слоя дважды</string>
+    <string name="basic_5х5_st28_title">F</string>
+    <string name="basic_5х5_st28_descr">Передняя по часовой</string>
+    <string name="basic_5х5_st29_title">F\'</string>
+    <string name="basic_5х5_st29_descr">Передняя против часовой</string>
+    <string name="basic_5х5_st30_title">2F</string>
+    <string name="basic_5х5_st30_descr">Второй передний слой по часовой</string>
+    <string name="basic_5х5_st31_title">2F\'</string>
+    <string name="basic_5х5_st31_descr">Второй передний слой против часовой</string>
+    <string name="basic_5х5_st32_title">Fw</string>
+    <string name="basic_5х5_st32_descr">Два передних слоя по часовой</string>
+    <string name="basic_5х5_st33_title">Fw\'</string>
+    <string name="basic_5х5_st33_descr">Два передних слоя против часовой</string>
+    <string name="basic_5х5_st34_title">B</string>
+    <string name="basic_5х5_st34_descr">Задняя по часовой</string>
+    <string name="basic_5х5_st35_title">B\'</string>
+    <string name="basic_5х5_st35_descr">Задняя против часовой</string>
+    <string name="basic_5х5_st36_title">2B</string>
+    <string name="basic_5х5_st36_descr">Второй задний слой по часовой</string>
+    <string name="basic_5х5_st37_title">2B\'</string>
+    <string name="basic_5х5_st37_descr">Второй задний слой против часовой</string>
+    <string name="basic_5х5_st38_title">Bw</string>
+    <string name="basic_5х5_st38_descr">Два задних слоя по часовой</string>
+    <string name="basic_5х5_st39_title">Bw\'</string>
+    <string name="basic_5х5_st39_descr">Два задних слоя против часовой</string>
+    <string name="basic_5х5_st40_title">x</string>
+    <string name="basic_5х5_st40_descr">По оси Х</string>
+    <string name="basic_5х5_st41_title">x\'</string>
+    <string name="basic_5х5_st41_descr">Против оси Х</string>
+    <string name="basic_5х5_st42_title">y</string>
+    <string name="basic_5х5_st42_descr">По оси Y</string>
+    <string name="basic_5х5_st43_title">y\'</string>
+    <string name="basic_5х5_st43_descr">Против оси Y</string>
+    <string name="basic_5х5_st44_title">z</string>
+    <string name="basic_5х5_st44_descr">По оси Z</string>
+    <string name="basic_5х5_st45_title">z\'</string>
+    <string name="basic_5х5_st45_descr">Против оси Z</string>
+
+</resources>
