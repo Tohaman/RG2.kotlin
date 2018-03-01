@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="begin5_title">
+        <item>@string/begin5_st1_title</item>
+        <item>@string/begin5_st2_title</item>
+        <item>@string/begin5_st3_title</item>
+        <item>@string/begin5_st4_title</item>
+        <item>@string/begin5_st5_title</item>
+        <item>@string/begin5_st6_title</item>
+        <item>@string/begin5_st7_title</item>
+        <item>@string/begin5_st8_title</item>
+    </string-array>
+
+    <integer-array name="begin5_icon">
+        <item>@drawable/begin_5x5_1</item>
+        <item>@drawable/v4x4_begin_2</item>
+        <item>@drawable/v4x4_begin_3</item>
+        <item>@drawable/v4x4_begin_4</item>
+        <item>@drawable/v4x4_begin_5</item>
+        <item>@drawable/v4x4_begin_6</item>
+        <item>@drawable/v4x4_begin_7</item>
+        <item>@drawable/v4x4_begin_8</item>
+    </integer-array>
+    
+    <string-array name="begin5_descr">
+        <item>@string/begin5_st1_descr</item>
+        <item>@string/begin5_st2_descr</item>
+        <item>@string/begin5_st3_descr</item>
+        <item>@string/begin5_st4_descr</item>
+        <item>@string/begin5_st5_descr</item>
+        <item>@string/begin5_st6_descr</item>
+        <item>@string/begin5_st7_descr</item>
+        <item>@string/begin5_st8_descr</item>
+    </string-array>
+
+    <string-array name="begin5_url">
+        <item>@string/begin5_st1_url</item>
+        <item>@string/begin5_st2_url</item>
+        <item>@string/begin5_st3_url</item>
+        <item>@string/begin5_st4_url</item>
+        <item>@string/begin5_st5_url</item>
+        <item>@string/begin5_st6_url</item>
+        <item>@string/begin5_st7_url</item>
+        <item>@string/begin5_st8_url</item>
+    </string-array>
+    
+    <string name="begin5_st1_title">Этап 1. Первый центр</string>
+    <string name="begin5_st1_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin5_st1_url">drgeedJGCe8</string>
+
+    <string name="begin5_st2_title">Этап 2. Второй центр</string>
+    <string name="begin5_st2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin5_st2_url">BdHtFRtRZhQ</string>
+
+    <string name="begin5_st3_title">Этап 3. Третий центр</string>
+    <string name="begin5_st3_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin5_st3_url">BNXy3FXOo-o</string>
+
+    <string name="begin5_st4_title">Этап 4. Четвертый центр</string>
+    <string name="begin5_st4_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin5_st4_url">_dpg7Aghv-U</string>
+
+    <string name="begin5_st5_title">Этап 5. Пятый и шестой центры</string>
+    <string name="begin5_st5_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin5_st5_url">WTEBEolPX4w</string>
+
+    <string name="begin5_st6_title">Этап 6. Винги</string>
+    <string name="begin5_st6_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin5_st6_url">1NjQSH66S4A</string>
+
+    <string name="begin5_st7_title">Этап 7. Пенальти</string>
+    <string name="begin5_st7_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin5_st7_url">XsMLIA5wLuU</string>
+
+    <string name="begin5_st8_title">Этап 8. Финальная часть сборки</string>
+    <string name="begin5_st8_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin5_st8_url">03J1pGu_TWw</string>
+
+</resources>
