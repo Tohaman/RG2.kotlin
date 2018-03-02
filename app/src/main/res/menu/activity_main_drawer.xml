@@ -24,10 +24,10 @@
             android:id="@+id/blind"
             android:icon="@drawable/ic_icon3"
             android:title="@string/blind_3x3"/>
-        <item
-            android:id="@+id/blind_acc"
-            android:icon="@drawable/ic_icon3"
-            android:title="@string/blind_acc_3x3"/>
+        <!--<item-->
+            <!--android:id="@+id/blind_acc"-->
+            <!--android:icon="@drawable/ic_icon3"-->
+            <!--android:title="@string/blind_acc_3x3"/>-->
         <item
             android:id="@+id/begin4x4"
             android:icon="@drawable/ic_icon4"

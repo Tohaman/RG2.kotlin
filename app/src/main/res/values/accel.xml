@@ -22,7 +22,7 @@
         <item>@string/accel_st18_title</item>
         <item>@string/accel_st19_title</item>
         <item>@string/accel_st20_title</item>
-        <item>@string/accel_st21_title</item>
+        <!--<item>@string/accel_st21_title</item>-->
     </string-array>
 
     <integer-array name="accel_icon">

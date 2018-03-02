@@ -28,6 +28,18 @@
         <item>@string/blind_st25_title</item>
         <item>@string/blind_st26_title</item>
         <item>@string/blind_st27_title</item>
+        <item>@string/blindacc_st1_title</item>
+        <item>@string/blindacc_st2_title</item>
+        <item>@string/blindacc_st3_title</item>
+        <item>@string/blindacc_st4_title</item>
+        <item>@string/blindacc_st5_title</item>
+        <item>@string/blindacc_st6_title</item>
+        <item>@string/blindacc_st7_title</item>
+        <item>@string/blindacc_st8_title</item>
+        <item>@string/blindacc_st9_title</item>
+        <item>@string/blindacc_st10_title</item>
+        <item>@string/blindacc_st11_title</item>
+        <item>@string/blindacc_st12_title</item>
     </string-array>
 
     <integer-array name="blind_icon">
@@ -58,6 +70,18 @@
         <item>@drawable/blind_25</item>
         <item>@drawable/blind_26</item>
         <item>@drawable/blind_27</item>
+        <item>@drawable/blaccel_1</item>
+        <item>@drawable/blaccel_2</item>
+        <item>@drawable/blaccel_3</item>
+        <item>@drawable/blaccel_4</item>
+        <item>@drawable/blaccel_5</item>
+        <item>@drawable/blaccel_6</item>
+        <item>@drawable/blaccel_7</item>
+        <item>@drawable/blaccel_8</item>
+        <item>@drawable/blaccel_9</item>
+        <item>@drawable/blaccel_10</item>
+        <item>@drawable/blaccel_11</item>
+        <item>@drawable/blaccel_12</item>
     </integer-array>
 
     <string-array name="blind_descr">
@@ -88,6 +112,18 @@
         <item>@string/blind_st25_descr</item>
         <item>@string/blind_st26_descr</item>
         <item>@string/blind_st27_descr</item>
+        <item>@string/blindacc_st1_descr</item>
+        <item>@string/blindacc_st2_descr</item>
+        <item>@string/blindacc_st3_descr</item>
+        <item>@string/blindacc_st4_descr</item>
+        <item>@string/blindacc_st5_descr</item>
+        <item>@string/blindacc_st6_descr</item>
+        <item>@string/blindacc_st7_descr</item>
+        <item>@string/blindacc_st8_descr</item>
+        <item>@string/blindacc_st9_descr</item>
+        <item>@string/blindacc_st10_descr</item>
+        <item>@string/blindacc_st11_descr</item>
+        <item>@string/blindacc_st12_descr</item>
     </string-array>
 
     <string-array name="blind_url">
@@ -118,6 +154,18 @@
         <item>@string/blind_st25_url</item>
         <item>@string/blind_st26_url</item>
         <item>@string/blind_st27_url</item>
+        <item>@string/blindacc_st1_url</item>
+        <item>@string/blindacc_st2_url</item>
+        <item>@string/blindacc_st3_url</item>
+        <item>@string/blindacc_st4_url</item>
+        <item>@string/blindacc_st5_url</item>
+        <item>@string/blindacc_st6_url</item>
+        <item>@string/blindacc_st7_url</item>
+        <item>@string/blindacc_st8_url</item>
+        <item>@string/blindacc_st9_url</item>
+        <item>@string/blindacc_st10_url</item>
+        <item>@string/blindacc_st11_url</item>
+        <item>@string/blindacc_st12_url</item>
     </string-array>
 
 

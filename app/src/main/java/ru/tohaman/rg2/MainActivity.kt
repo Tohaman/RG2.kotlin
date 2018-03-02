@@ -85,7 +85,7 @@ class MainActivity : MyDefaultActivity(),
     private var curPhase = "BEGIN"
     private var changedPhase = "BEGIN"
     private var changedId = 0
-    private val listOfGo2Fridrich = listOf("ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL")
+    private val listOfGo2Fridrich = listOf("ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL", "RECOMEND")
     private val listOfOtherPuzzle = listOf("PYRAMINX", "MEGAMINX", "SKEWB")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -316,9 +316,9 @@ class MainActivity : MyDefaultActivity(),
                     "BLIND" -> {
                         alert(getString(R.string.help_blind)) { okButton { } }.show()
                     }
-                    "BLINDACC" -> {
-                        alert(getString(R.string.help_blind_acc)) { okButton { } }.show()
-                    }
+//                    "BLINDACC" -> {
+//                        alert(getString(R.string.help_blind_acc)) { okButton { } }.show()
+//                    }
                     "BEGIN4X4" -> {
                         alert(getString(R.string.help_begin4x4)) { okButton { } }.show()
                     }
@@ -393,7 +393,7 @@ class MainActivity : MyDefaultActivity(),
 
             R.id.blind -> { setListFragmentPhase("BLIND") }
 
-            R.id.blind_acc -> { setListFragmentPhase("BLINDACC") }
+//            R.id.blind_acc -> { setListFragmentPhase("BLINDACC") }
 
             R.id.begin4x4 -> { setListFragmentPhase("BEGIN4X4")}
 

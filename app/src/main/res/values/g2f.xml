@@ -7,6 +7,7 @@
     <item>Жизненный F2L</item>
     <item>Максимкин PLL</item>
     <item>Долгожданный OLL</item>
+    <item>Советы от Антона</item>
 </string-array>
 
 <integer-array name="g2f_icon">
@@ -16,6 +17,7 @@
     <item>@drawable/vf2l</item>
     <item>@drawable/vpll</item>
     <item>@drawable/voll_51</item>
+    <item>@drawable/vbegin_0</item>
 </integer-array>
 
 <string-array name="g2f_descr">
@@ -25,9 +27,12 @@
     <item>@string/g2f_st4_descr</item>
     <item>@string/g2f_st5_descr</item>
     <item>@string/g2f_st6_descr</item>
+    <item>@string/g2f_st7_descr</item>
 </string-array>
 
 <string-array name="g2f_null">
+    <item> </item>
+    <item> </item>
     <item> </item>
     <item> </item>
     <item> </item>
@@ -42,5 +47,6 @@
 <string name="g2f_st4_descr">F2L</string>
 <string name="g2f_st5_descr">PLL</string>
 <string name="g2f_st6_descr">OLL</string>
+<string name="g2f_st7_descr">RECOMEND</string>
 
 </resources>
