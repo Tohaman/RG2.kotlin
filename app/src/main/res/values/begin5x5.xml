@@ -13,14 +13,14 @@
     </string-array>
 
     <integer-array name="begin5_icon">
-        <item>@drawable/begin_5x5_1</item>
-        <item>@drawable/v4x4_begin_2</item>
-        <item>@drawable/v4x4_begin_3</item>
-        <item>@drawable/v4x4_begin_4</item>
-        <item>@drawable/v4x4_begin_5</item>
-        <item>@drawable/v4x4_begin_6</item>
-        <item>@drawable/v4x4_begin_7</item>
-        <item>@drawable/v4x4_begin_8</item>
+        <item>@drawable/v5x5_begin_1</item>
+        <item>@drawable/v5x5_begin_2</item>
+        <item>@drawable/v5x5_begin_3</item>
+        <item>@drawable/v5x5_begin_4</item>
+        <item>@drawable/v5x5_begin_4</item>
+        <item>@drawable/v5x5_begin_4</item>
+        <item>@drawable/v5x5_begin_4</item>
+        <item>@drawable/v5x5_begin_8</item>
     </integer-array>
     
     <string-array name="begin5_descr">
@@ -47,11 +47,75 @@
     
     <string name="begin5_st1_title">Этап 1. Первый центр</string>
     <string name="begin5_st1_descr" formatted="false"><![CDATA[
+        Кубик 5х5, как и кубик 4х4 состоит из <a href="rg2://ytplay?time=0:20&link=drgeedJGCe8">центров, ребер и уголов.</a>
+        Но в этом кубике,
+        центров и ребер значительно больше, а вот углов как у всех кубиков всего лишь восемь.
+        Точнее цетров и ребер здесь столько же, но вот состоят они из большего количества элементов.
+        Каждый центр состоит из <a href="rg2://ytplay?time=0:36&link=drgeedJGCe8">девяти элементов,</a>
+        а каждое ребро из <a href="rg2://ytplay?time=1:03&link=drgeedJGCe8">трех элементов.</a>
+        Стоит отметить один важный факт - центральные элементы центров как и у любого нечетного
+        кубика тут <a href="rg2://ytplay?time=1:42&link=drgeedJGCe8">фиксированы.</a>
+        Это значит, что нам не надо думать о том, где какая сторона
+        должна находится, это всегда легко определить по центральным элементам кубика.
+                <p style="text-align:center"><img src="v5x5_begin_1_1.xml"></p>
+
+        Ну и как легко догадаться, задача первого этапа собрать один центр любого цвета. Например,
+        желтого. Центр состоит из девяти элементов, которые в свю очередь можно разделить на
+        <a href="rg2://ytplay?time=5:01&link=drgeedJGCe8">три группы:</a>
+        <p style="text-align:center"><img src="v5x5_begin_1_2.xml"><br/>
+                                        Центральный элемент</p>
+
+        <p style="text-align:center"><img src="v5x5_begin_1_3.xml"><br/>
+                                        Крестовые элементы</p>
+        <p style="text-align:center"><img src="v5x5_begin_1_4.xml"><br/>
+                                        Икс (X) элементы</p>
+
+        <p>Собирать центр, как и в кубике 4х4, удобнее на верхней грани. И первое, что мы должны
+        сделать, чтобы собрать центр, это поставить один крестовой элемент к центральному.</p>
+                <p style="text-align:center"><img src="v5x5_begin_1_5.xml"></p>
+        Далее, на любой другой грани, нужно собрать полосочку из двух элементов
+        <a href="rg2://ytplay?time=10:36&link=drgeedJGCe8">(крестового и Х-элемента)</a>
+        и поставить эту полоску наверх, рядом с той, что уже есть. Причем поставить, так чтобы они
+        образовали квадрат, т.е. <a href="rg2://ytplay?time=10:47&link=drgeedJGCe8">блок 2х2.</a>
+                <p style="text-align:center"><img src="v5x5_begin_1_6.xml"></p>
+
+        Делаем еще одну полоску из двух элементов на <a href="rg2://ytplay?time=10:56&link=drgeedJGCe8">свободной грани,</a>
+        и ставим ее рядом с
+        нашим квадратом так, чтобы теперь они вместе образовали <a href="rg2://ytplay?time=11:04&link=drgeedJGCe8">блок 2х3.</a>
+                <p style="text-align:center"><img src="v5x5_begin_1_7.xml"></p>
+
+        Теперь собираем полоску уже из <a href="rg2://ytplay?time=11:08&link=drgeedJGCe8">трех оставшихся элементов,</a>
+        <p style="text-align:center"><img src="v5x5_begin_1_8.xml">=><img src="v5x5_begin_1_9.xml"></p>
+        и ставим ее <a href="rg2://ytplay?time=11:17&link=drgeedJGCe8">наверх.</a>
+        Все, первый центр собран. Можно переходить ко второму этапу.
     ]]></string>
     <string name="begin5_st1_url">drgeedJGCe8</string>
 
     <string name="begin5_st2_title">Этап 2. Второй центр</string>
     <string name="begin5_st2_descr" formatted="false"><![CDATA[
+        <p>На втором этапе, как и в кубике 4х4, будем собирать центр, находящийся напротив центра
+        собранного на первом этапе.(0:15) В данном случае будем собирать белый центр.
+        Соответственно переворачиваем кубик, так чтобы собранный(желтый) центр оказался внизу.(5:29)
+        И собираем второй центр так же как первый (крестовый эелемент, пара, еще пара, тройка),
+        только с одним очень важным отличием,
+        когда ставим что либо наверх, то уводим это в сторону и возвращаем на место ту грань,
+        которую поднимали, чтобы наш нижний центр не разрушился. Для тех, кто уже умеет собирать
+        кубик 4х4 - думаю все понятно будет и так, а для остальных постараюсь объяснить подробнее.</p>
+
+        1. Находим крестовый элемент, ставим его на третий этаж, поднимаем неверх к своему центру (1:20)
+        <p style="text-align:center"><img src="v5x5_begin_2_1.xml">=><img src="v5x5_begin_2_2.xml"></p>
+
+        тем самым разрушив нижний центр, поэтому, мы уводим наш белый элемент в сторону и возвращаем
+        элементы нижнего центра на место (1:26).
+        <p style="text-align:center"><img src="v5x5_begin_2_3.xml">=><img src="v5x5_begin_2_4.xml"></p>
+
+        2. Повторяем для первой:
+        <p style="text-align:center"><img src="v5x5_begin_2_5.xml">=><img src="v5x5_begin_2_6.xml"></p>
+        находим/делаем пару, поднимаем ее Lw\'(5:49), сдвигаем U\' и восстанавливаем нижний центр Lw.(5:56)
+        <br/><br/>
+
+        3. И второй пары: (6:37)
+
     ]]></string>
     <string name="begin5_st2_url">BdHtFRtRZhQ</string>
 

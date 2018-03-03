@@ -86,7 +86,7 @@ class MainActivity : MyDefaultActivity(),
     private var changedPhase = "BEGIN"
     private var changedId = 0
     private val listOfGo2Fridrich = listOf("ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL", "RECOMEND")
-    private val listOfOtherPuzzle = listOf("PYRAMINX", "MEGAMINX", "SKEWB")
+    private val listOfOtherPuzzle = listOf("BEGIN4X4","BEGIN5X5","PYRAMINX", "MEGAMINX", "SKEWB")
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -211,6 +211,8 @@ class MainActivity : MyDefaultActivity(),
             drawer_layout.closeDrawer(GravityCompat.END)
         }
 
+        //TODO проверить payCoins, и кол-во запусков программы. Если не платил, то
+        //вывести предложение заплатить.
 
         //Для данной программы не актуально, т.к. пользователь ничего в программе по сути не покупает
         //но если бы нужно было отключение рекламы, то данный вызов обязателен
@@ -322,6 +324,10 @@ class MainActivity : MyDefaultActivity(),
                     "BEGIN4X4" -> {
                         alert(getString(R.string.help_begin4x4)) { okButton { } }.show()
                     }
+                    "BEGIN5X5" -> {
+                        alert(getString(R.string.help_begin5x5)) { okButton { } }.show()
+                    }
+
                     "PYRAMINX" -> {
                         alert(getString(R.string.help_pyraminx)) { okButton { } }.show()
                     }
@@ -395,7 +401,7 @@ class MainActivity : MyDefaultActivity(),
 
 //            R.id.blind_acc -> { setListFragmentPhase("BLINDACC") }
 
-            R.id.begin4x4 -> { setListFragmentPhase("BEGIN4X4")}
+//            R.id.begin4x4 -> { setListFragmentPhase("BEGIN4X4")}
 
             R.id.other_puzzle -> {setListFragmentPhase("OTHER")}
 

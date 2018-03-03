@@ -7,7 +7,7 @@
     <item>Жизненный F2L</item>
     <item>Максимкин PLL</item>
     <item>Долгожданный OLL</item>
-    <!--<item>Советы от Антона</item>-->
+    <item>Советы от Антона</item>
 </string-array>
 
 <integer-array name="g2f_icon">
