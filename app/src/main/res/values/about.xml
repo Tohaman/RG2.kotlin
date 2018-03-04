@@ -53,7 +53,7 @@
 
          <p>Информацию об ошибках, а так же свои пожелания по развитию программы, ссылки на интересные
           видео, которые вы бы хотели видеть в программе, вы можете присылать мне на адрес
-         <a href="mailto:rubicsguide@yandex.ru">rubicsguide@yandex.ru</a> Но прежде, обязательно
+         <a href="mailto:rubicsguide@yandex.ru?subject=RG2">rubicsguide@yandex.ru</a> Но прежде, обязательно
          прочтите информацию в разделе \"Читать обязательно!\" кубика 3х3 для Начинающих, возможно
          ответ на свой вопрос вы найдете там.
          </p>
@@ -61,6 +61,6 @@
          <br/>
          <br/>
          Розов Антон<br/>
-         <a href="mailto:rubicsguide@yandex.ru">rubicsguide@yandex.ru</a>
+         <a href="mailto:rubicsguide@yandex.ru?subject=Вопрос%20по%20RG2">rubicsguide@yandex.ru</a>
     ]]></string>
 </resources>
