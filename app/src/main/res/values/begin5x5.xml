@@ -297,9 +297,11 @@
     ]]></string>
     <string name="begin5_st7_url">XsMLIA5wLuU</string>
 
-    <string name="begin5_st8_title">Этап 8. Паритеты</string>
+    <string name="begin5_st8_title">Этап 8. Сложные ситуации</string>
     <string name="begin5_st8_descr" formatted="false"><![CDATA[
-
+        Теперь немного о нестандартных и сложных ситуациях при сборке кубика 5х5. Все они связаны с
+        забиванием мяча в ворота.
+        Как вы наверно заметили, для полноценной работы алгоритму из предыдущей
     ]]></string>
     <string name="begin5_st8_url">03J1pGu_TWw</string>
 
