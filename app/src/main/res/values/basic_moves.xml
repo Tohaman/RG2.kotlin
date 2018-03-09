@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="basic_title">
+    <item>Движения для 2х2 и 3х3</item>
+    <item>Движения для 4х4</item>
+    <item>Движения для 5х5</item>
+    <item>Движения для пирамидки</item>
+    <item>Движения для скьюба</item>
+</string-array>
+
+<integer-array name="basic_icon">
+    <item>@drawable/vbasic</item>
+    <item>@drawable/basic_4x4</item>
+    <item>@drawable/basic_5x5</item>
+    <item>@drawable/basic_pyr</item>
+    <item>@drawable/basic_skewb</item>
+</integer-array>
+
+<string-array name="basic_descr">
+    <item>@string/basic_st1_descr</item>
+    <item>@string/basic_st2_descr</item>
+    <item>@string/basic_st3_descr</item>
+    <item>@string/basic_st4_descr</item>
+    <item>@string/basic_st5_descr</item>
+</string-array>
+
+<string-array name="basic_null">
+    <item> </item>
+    <item> </item>
+    <item> </item>
+    <item> </item>
+    <item> </item>
+    <item> </item>
+</string-array>
+
+<string name="basic_st1_descr">BASIC3X3</string>
+<string name="basic_st2_descr">BASIC4X4</string>
+<string name="basic_st3_descr">BASIC5X5</string>
+<string name="basic_st4_descr">BASIC_PYR</string>
+<string name="basic_st5_descr">BASIC_SKEWB</string>
+
+</resources>

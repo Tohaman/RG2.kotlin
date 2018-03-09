@@ -1,0 +1,22 @@
+<vector android:height="400dp" android:viewportHeight="170.0"
+    android:viewportWidth="159.0" android:width="400dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/c_bl" android:fillType="nonZero" android:pathData="M159,26l-3,94c0,1 0,1 -1,2l-63,49c-1,0 -1,1 -2,0l-82,-37c-1,0 -1,-1 -1,-2l-7,-96c0,-1 0,-2 1,-2l71,-33c0,0 1,0 2,0l84,23c1,0 2,1 2,2z"/>
+    <path android:fillColor="@color/c_w" android:pathData="M46,47l-3,-28l67,-4l12,25z"/>
+    <path android:fillColor="@color/c_w" android:pathData="M8,35l30,-14l2,26z"/>
+    <path android:fillColor="@color/c_w" android:pathData="M52,15l21,-11l30,8z"/>
+    <path android:fillColor="@color/c_w" android:pathData="M128,41l-11,-24l35,9z"/>
+    <path android:fillColor="@color/c_w" android:pathData="M50,51l39,13l34,-20z"/>
+    <path android:fillColor="@color/c_g" android:pathData="M47,145l-38,-58l33,-34l43,65z"/>
+    <path android:fillColor="@color/c_g" android:pathData="M8,82l-4,-43l34,12z"/>
+    <path android:fillColor="@color/c_g" android:pathData="M88,114l-40,-60l39,14z"/>
+    <path android:fillColor="@color/c_g" android:pathData="M90,165l-40,-17l39,-26z"/>
+    <path android:fillColor="@color/c_g" android:pathData="M11,130l-2,-35l32,48z"/>
+    <path android:fillColor="@color/c_r" android:pathData="M96,118l33,-69l24,24l-26,64z"/>
+    <path android:fillColor="@color/c_r" android:pathData="M93,115l-1,-48l33,-20z"/>
+    <path android:fillColor="@color/c_r" android:pathData="M154,67l-24,-23l25,-15z"/>
+    <path android:fillColor="@color/c_r" android:pathData="M152,118l-19,15l21,-52z"/>
+    <path android:fillColor="@color/c_r" android:pathData="M94,164l-1,-42l31,18z"/>
+    <path android:fillColor="@color/c_bl" android:pathData="M18,60l60,91 2,-1 -60,-91c2,-1 3,-1 5,-2l-13,-9 3,16c1,-2 2,-3 3,-4z"/>
+    <path android:fillColor="@color/c_bl" android:pathData="M143,50l-43,96 2,1 43,-96c2,1 3,2 4,4l0,-16 -12,11c2,0 4,0 5,1z"/>
+    <path android:fillColor="@color/c_bl" android:pathData="M37,34l99,-6 0,-2 -99,6c0,-2 0,-3 1,-5l-14,7 15,5c-1,-2 -2,-3 -2,-5z"/>
+</vector>

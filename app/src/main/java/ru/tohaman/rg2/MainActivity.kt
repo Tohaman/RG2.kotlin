@@ -87,6 +87,7 @@ class MainActivity : MyDefaultActivity(),
     private var changedId = 0
     private val listOfGo2Fridrich = listOf("ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL", "RECOMEND")
     private val listOfOtherPuzzle = listOf("BEGIN4X4","BEGIN5X5","PYRAMINX", "MEGAMINX", "SKEWB")
+    private val listOfBasic = listOf("BASIC3X3", "BASIC_PYR", "BASIC_SKEWB", "BASIC4X4", "BASIC5X5")
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -154,6 +155,10 @@ class MainActivity : MyDefaultActivity(),
                 fab.setImageResource(R.drawable.ic_fab_backward)
                 setListFragmentPhase(curPhase)
             }
+            in listOfBasic -> {
+                fab.setImageResource(R.drawable.ic_fab_backward)
+                setListFragmentPhase(curPhase)
+            }
             else -> { setListFragmentPhase(curPhase) }
         }
 
@@ -172,6 +177,11 @@ class MainActivity : MyDefaultActivity(),
                 }
                 in listOfOtherPuzzle -> {
                     curPhase = "OTHER"
+                    setListFragmentPhase(curPhase)
+                    fab.setImageResource(R.drawable.ic_fab_forward)
+                }
+                in listOfBasic -> {
+                    curPhase = "BASIC"
                     setListFragmentPhase(curPhase)
                     fab.setImageResource(R.drawable.ic_fab_forward)
                 }
@@ -233,6 +243,11 @@ class MainActivity : MyDefaultActivity(),
             }
             in listOfOtherPuzzle -> {
                 curPhase = "OTHER"
+                setListFragmentPhase(curPhase)
+                fab.setImageResource(R.drawable.ic_fab_forward)
+            }
+            in listOfBasic -> {
+                curPhase = "BASIC"
                 setListFragmentPhase(curPhase)
                 fab.setImageResource(R.drawable.ic_fab_forward)
             }
@@ -493,11 +508,11 @@ class MainActivity : MyDefaultActivity(),
         val lp = mListPagerLab.getPhaseItem(id,phase)
         when (phase) {
             //Если в листвью "Основные движения", то показать "тост",
-            "BASIC" -> {
+            "BASIC3X3", "BASIC_PYR", "BASIC_SKEWB", "BASIC4X4", "BASIC5X5" -> {
                 toast(getString(lp.description))
             }
             //Если меню "переходим на Фридрих" или "Другие головоломки", то меняем текст листвью на соответствующую фазу
-            "OTHER","G2F" -> {
+            "BASIC","OTHER","G2F" -> {
                 setListFragmentPhase(getString(lp.description))
                 fab.setImageResource(R.drawable.ic_fab_backward)
             }
