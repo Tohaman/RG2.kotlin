@@ -26,7 +26,7 @@ class MyListAdapter(private val listOfLP: ArrayList<ListPager> = ArrayList(), pr
         context = parent!!.context
         return with(context) {
             when (listOfLP[0].phase) {
-                "BASIC", "BASIC_PYR", "BASIC_SKEWB", "BASIC4X4" -> {
+                "BASIC", "BASIC_PYR", "BASIC_SKEWB", "BASIC4X4", "BASIC5X5" -> {
                     val taskNum: Int = listOfLP[i].icon
                     linearLayout {
                         orientation = HORIZONTAL
