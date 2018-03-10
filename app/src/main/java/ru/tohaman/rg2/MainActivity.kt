@@ -86,12 +86,16 @@ class MainActivity : MyDefaultActivity(),
     private var changedPhase = "BEGIN"
     private var changedId = 0
     private val listOfGo2Fridrich = listOf("ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL", "RECOMEND")
-    private val listOfOtherPuzzle = listOf("BEGIN4X4","BEGIN5X5","PYRAMINX", "MEGAMINX", "SKEWB")
-    private val listOfBasic = listOf("BASIC3X3", "BASIC_PYR", "BASIC_SKEWB", "BASIC4X4", "BASIC5X5")
+    private val listOfOtherPuzzle = listOf("BEGIN4X4", "BEGIN5X5", "PYRAMINX", "MEGAMINX", "SKEWB", "SQUARE")
+    private val listOfBasic = listOf("BASIC3X3", "BASIC4X4", "BASIC5X5", "BASIC_PYR", "BASIC_SKEWB")
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
+
+        //Для данной программы не актуально, т.к. пользователь ничего в программе по сути не покупает
+        //но если бы нужно было отключение рекламы, то данный вызов обязателен
+        loadDataFromPlayMarket()
 
         Log.v (TAG, "MainActivity ListPagerLab init")
         mListPagerLab = ListPagerLab.get(ctx)
@@ -106,8 +110,6 @@ class MainActivity : MyDefaultActivity(),
         } else {
             loadStartPhase()
         }
-        //Чтобы при запуске активности в onResume не пришлось менять фазу
-        changedPhase = curPhase
 
         Log.v (TAG, "MainActivity CreateView")
         setContentView(R.layout.activity_main)
@@ -134,9 +136,18 @@ class MainActivity : MyDefaultActivity(),
         // проверяем версию программы в файле настроек, если она отлична от текущей, то выводим окно с описанием обновлений
         if (curVersion != version) { //если версии разные
             alert(getString(R.string.whatsnew)) { okButton { } }.show()
-            saveInt2SP(curVersion,"version",ctx)
+            saveInt2SP(curVersion, "version", ctx)
+        } else {
+            //Проверяем платил ли уже пользователь, если не платил, то каждый 30-ый вход
+            //напоминаем сказать спасибо.
+            if ((mCoins == 0) and (count % 30 == 0)) {
+                curPhase = "THANKS"
+                alert(getString(R.string.help_thanks)) { okButton { } }.show()
+            }
         }
 
+        //Чтобы при запуске активности в onResume не пришлось менять фазу
+        changedPhase = curPhase
 
         fragListView = FragmentListView.newInstance("BEGIN")
         when (curPhase) {
@@ -147,15 +158,7 @@ class MainActivity : MyDefaultActivity(),
             "SETTINGS" -> {setFragment(FragmentSettings.newInstance())}
             "ABOUT" -> {setFragment(FragmentAbout.newInstance())}
             "AZBUKA","AZBUKA2" -> {setFragment(FragmentAzbukaSelect.newInstance())}
-            in listOfGo2Fridrich -> {
-                fab.setImageResource(R.drawable.ic_fab_backward)
-                setListFragmentPhase(curPhase)
-            }
-            in listOfOtherPuzzle -> {
-                fab.setImageResource(R.drawable.ic_fab_backward)
-                setListFragmentPhase(curPhase)
-            }
-            in listOfBasic -> {
+            in listOfGo2Fridrich, in listOfOtherPuzzle, in  listOfBasic-> {
                 fab.setImageResource(R.drawable.ic_fab_backward)
                 setListFragmentPhase(curPhase)
             }
@@ -195,7 +198,6 @@ class MainActivity : MyDefaultActivity(),
                     setFragment(FragmentScrambleGen.newInstance())
                     fab.setImageResource(R.drawable.ic_fab_forward)
                 }
-
                 else -> {
                     drawer_layout.openDrawer(GravityCompat.START)
                 }
@@ -221,12 +223,6 @@ class MainActivity : MyDefaultActivity(),
             drawer_layout.closeDrawer(GravityCompat.END)
         }
 
-        //TODO проверить payCoins, и кол-во запусков программы. Если не платил, то
-        //вывести предложение заплатить.
-
-        //Для данной программы не актуально, т.к. пользователь ничего в программе по сути не покупает
-        //но если бы нужно было отключение рекламы, то данный вызов обязателен
-        loadDataFromPlayMarket()
     }
 
     private fun setFragment (fragment: Fragment) {
@@ -364,6 +360,21 @@ class MainActivity : MyDefaultActivity(),
                     }
                     "BASIC" -> {
                         alert(getString(R.string.help_basic)) { okButton { } }.show()
+                    }
+                    "BASIC3X3" -> {
+                        alert(getString(R.string.help_basic_3x3)) { okButton { } }.show()
+                    }
+                    "BASIC4X4" -> {
+                        alert(getString(R.string.help_basic_4x4)) { okButton { } }.show()
+                    }
+                    "BASIC5X5" -> {
+                        alert(getString(R.string.help_basic_5x5)) { okButton { } }.show()
+                    }
+                    "BASIC_PYR" -> {
+                        alert(getString(R.string.help_basic_pyr)) { okButton { } }.show()
+                    }
+                    "BASIC_SKEWB" -> {
+                        alert(getString(R.string.help_basic_skewb)) { okButton { } }.show()
                     }
                     "BLINDGAME" -> {
                         alert(getString(R.string.help_blind_game)) { okButton { } }.show()
@@ -784,7 +795,7 @@ class MainActivity : MyDefaultActivity(),
 
         // Не получилось?
         if (result.isFailure) {
-            complain("Failed to query inventory: " + result)
+            complain("Failed to query inventory: $result")
             return@QueryInventoryFinishedListener
         }
 
@@ -795,15 +806,23 @@ class MainActivity : MyDefaultActivity(),
          * to see if it's correct! See verifyDeveloperPayload().
          */
 
-        // Пример пока нам ненужного функционала, поэтому закоментировал
-        // Проверяем, платил ли пользователь уже 100руб.
-//        val premiumPurchase = inventory.getPurchase(MEDIUM_DONATION)
-//        mIsPremium = premiumPurchase != null && verifyDeveloperPayload(premiumPurchase)
-//        Log.d(TAG, "User is " + if (mIsPremium) "PREMIUM" else "NOT PREMIUM")
-//
-//        // Проверяем платил ли 50 руб
-//        val gasPurchase = inventory.getPurchase(SMALL_DONATION)
+        // Проверяем, платил ли пользователь
+        val smallDonat = inventory.getPurchase(SMALL_DONATION)
+        val mediumDonat = inventory.getPurchase(MEDIUM_DONATION)
+        val bigDonat = inventory.getPurchase(BIG_DONATION)
+        mIsPremium = smallDonat != null &&
+                     mediumDonat != null &&
+                     bigDonat != null &&
+                verifyDeveloperPayload(smallDonat) &&
+                verifyDeveloperPayload(mediumDonat) &&
+                verifyDeveloperPayload(bigDonat)
 
+        //Если какая-то покупка была, а mCoins = 0, значит пользователь переустановил
+        //приложение, но уже что-то покупал, считаем что это был маленький донат.
+        if ((mCoins == 0) and (mIsPremium)) {
+            mCoins = 50
+            saveData()
+        }
         setWaitScreen(false)
         Log.d(TAG, "Initial inventory query finished; enabling main UI.")
     }
@@ -815,15 +834,15 @@ class MainActivity : MyDefaultActivity(),
     }
 
     private fun complain(message: String) {
-        Log.e(TAG, "**** TrivialDrive Error: " + message)
-        alert("Error: " + message)
+        Log.e(TAG, "**** TrivialDrive Error: $message")
+        alert("Error: $message")
     }
 
     private fun alert(message: String) {
         val bld = AlertDialog.Builder(this)
         bld.setMessage(message)
         bld.setNeutralButton("OK", null)
-        Log.d(TAG, "Showing alert dialog: " + message)
+        Log.d(TAG, "Showing alert dialog: $message")
         bld.create().show()
     }
 
@@ -831,7 +850,7 @@ class MainActivity : MyDefaultActivity(),
         val spe = getPreferences(MODE_PRIVATE).edit()
         spe.putInt("payCoins", mCoins)
         spe.apply()
-        Log.d(TAG, "Saved data: tank = " + mCoins.toString())
+        Log.d(TAG, "Saved data: Coins = " + mCoins.toString())
     }
 
     private fun loadData() {

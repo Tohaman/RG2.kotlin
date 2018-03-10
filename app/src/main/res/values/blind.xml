@@ -190,7 +190,7 @@
     <string name="blind_st3_title">N3 Запад</string>
     <string name="blind_st3_descr" formatted="false"><![CDATA[
         Первый из алгоритмов, который применяется при сборке вслепую - <b>Запад</b>.<br/>
-         <p style="text-align:center"><img src="blind_3_1.png" width="30%%"></p>
+         <p style="text-align:center"><img src="blind_3_1.xml" width="30%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=3:35&link=_yWZMTIM-fA">на видео 3:35</a>
         (<a href="rg2://ytplay?time=7:22&link=_yWZMTIM-fA">или 7:22</a>) <br/>
         <b>Алгоритм: (R U R\' U\') R\' F R2 U\' R\' U\' (R U R\' F\') </b>
@@ -221,7 +221,7 @@
     <string name="blind_st7_title">N7 Добрались до Юга</string>
     <string name="blind_st7_descr" formatted="false"><![CDATA[
         Еще один очень нужный алгоритм для сборки ребер - <b>Юг</b>.
-        <p style="text-align:center"><img src="blind_7_1.png" width="30%%"></p>
+        <p style="text-align:center"><img src="blind_7_1.xml" width="30%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=2:36&link=rzGqTZKG74o">на видео 2:36</a> <br/>
         <b>Алгоритм: (R U R\' F\') (R U R\' U\' R\' F R2 U\' R\' U\')</b>
     ]]></string>
@@ -255,7 +255,7 @@
     <string name="blind_st12_title">N12 Азбука</string>
     <string name="blind_st12_descr" formatted="false"><![CDATA[
         Азбука - система запоминания цепочек.
-        <p style="text-align:center"><img src="blind_12_1.png" width="80%%"></p>
+        <p style="text-align:center"><img src="blind_12_1.xml" width="80%%"></p>
     ]]></string>
     <string name="blind_st12_url">oglge8NIQqI</string>
 
@@ -321,7 +321,7 @@
     <string name="blind_st19_title">N19 Экватор</string>
     <string name="blind_st19_descr" formatted="false"><![CDATA[
         Для чего нужен еще один алгоритм - Экватор.<br/>
-        <p style="text-align:center"><img src="blind_19_1.png" width="30%%"></p>
+        <p style="text-align:center"><img src="blind_19_1.xml" width="30%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=4:35&link=pT72Wh8VZT4">на видео 4:35</a><br/>
         <b>Алгоритм: (R U R\' F\') (R U2 R\' U2) (R\' F R U R) U2 R\' U\'</b>
     ]]></string>
@@ -344,7 +344,7 @@
     <string name="blind_st22_title">N22 Азбука углов</string>
     <string name="blind_st22_descr" formatted="false"><![CDATA[
         Азбука для углов.
-        <p style="text-align:center"><img src="blind_22_1.png" width="80%%"></p>
+        <p style="text-align:center"><img src="blind_22_1.xml" width="80%%"></p>
     ]]></string>
     <string name="blind_st22_url">fxvR33pCHN0</string>
 

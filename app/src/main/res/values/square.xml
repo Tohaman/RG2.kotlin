@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="square_title">
+        <item>@string/square_st1_title</item>
+        <item>@string/square_st2_title</item>
+        <item>@string/square_st3_title</item>
+        <item>@string/square_st4_title</item>
+        <item>@string/square_st5_title</item>
+        <item>@string/square_st6_title</item>
+        <item>@string/square_st7_title</item>
+    </string-array>
+
+    <integer-array name="square_icon">
+        <item>@drawable/square</item>
+        <item>@drawable/square</item>
+        <item>@drawable/square</item>
+        <item>@drawable/square</item>
+        <item>@drawable/square</item>
+        <item>@drawable/square</item>
+        <item>@drawable/square</item>
+    </integer-array>
+    
+    <string-array name="square_descr">
+        <item>@string/square_st1_descr</item>
+        <item>@string/square_st2_descr</item>
+        <item>@string/square_st3_descr</item>
+        <item>@string/square_st4_descr</item>
+        <item>@string/square_st5_descr</item>
+        <item>@string/square_st6_descr</item>
+        <item>@string/square_st7_descr</item>
+    </string-array>
+
+
+    <string-array name="square_url">
+        <item>@string/square_st1_url</item>
+        <item>@string/square_st2_url</item>
+        <item>@string/square_st3_url</item>
+        <item>@string/square_st4_url</item>
+        <item>@string/square_st5_url</item>
+        <item>@string/square_st6_url</item>
+        <item>@string/square_st7_url</item>
+    </string-array>
+    
+    <string name="square_st1_title">Этап 1. Детский сад.</string>
+    <string name="square_st1_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="square_st1_url">ZxkplMjxShY</string>
+
+    <string name="square_st2_title">Этап 2. Приведение к кубу.</string>
+    <string name="square_st2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="square_st2_url">IdrEmzovc68</string>
+
+    <string name="square_st3_title">Этап 3. Красим углы</string>
+    <string name="square_st3_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="square_st3_url">KI-X-0mMH4U</string>
+
+    <string name="square_st4_title">Этап 4. Красим ребра</string>
+    <string name="square_st4_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="square_st4_url">e2fd9kZdIao</string>
+
+    <string name="square_st5_title">Этап 5. Ставим углы</string>
+    <string name="square_st5_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="square_st5_url">MzNy1X5PI4E</string>
+
+    <string name="square_st6_title">Этап 6. Ставим ребра</string>
+    <string name="square_st6_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="square_st6_url">HmBZUI4dWhw</string>
+
+    <string name="square_st7_title">Паритеты</string>
+    <string name="square_st7_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="square_st7_url">KBEsVhJtudg</string>
+
+</resources>

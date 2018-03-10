@@ -6,6 +6,7 @@
         <item>Пирамидка (Pyraminx)</item>
         <item>Мегаминкс</item>
         <item>Скьюб</item>
+        <item>Скваер</item>
     </string-array>
 
     <integer-array name="other_icon">
@@ -14,6 +15,7 @@
         <item>@drawable/pyraminx</item>
         <item>@drawable/megaminx</item>
         <item>@drawable/skewb</item>
+        <item>@drawable/square</item>
     </integer-array>
 
     <string-array name="other_descr">
@@ -22,9 +24,11 @@
         <item>@string/other_st3_descr</item>
         <item>@string/other_st4_descr</item>
         <item>@string/other_st5_descr</item>
+        <item>@string/other_st6_descr</item>
     </string-array>
 
     <string-array name="other_null">
+        <item> </item>
         <item> </item>
         <item> </item>
         <item> </item>
@@ -37,6 +41,7 @@
     <string name="other_st3_descr">PYRAMINX</string>
     <string name="other_st4_descr">MEGAMINX</string>
     <string name="other_st5_descr">SKEWB</string>
+    <string name="other_st6_descr">SQUARE</string>
 
 </resources>
 
