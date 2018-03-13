@@ -281,6 +281,13 @@
 
     <string name="square_st7_title">Паритеты</string>
     <string name="square_st7_descr" formatted="false"><![CDATA[
+    Если остались несобранными только 2 ребра на одной стороне.(2:50)
+
+    /(3,3)/(1,0)/(-2,0)/(-4,0)/(0,-4)/(0,-4)/(0,-2)/(0,5)/(-3,-3)
+
+    Второй паритет(9:58)
+    /(6,6)/
+
     ]]></string>
     <string name="square_st7_url">KBEsVhJtudg</string>
 
