@@ -4,9 +4,9 @@
         <item>Кубик 4х4</item>
         <item>Кубик 5х5</item>
         <item>Пирамидка (Pyraminx)</item>
-        <item>Мегаминкс</item>
-        <item>Скьюб</item>
-        <item>Скваер</item>
+        <item>Мегаминкс (Megaminx)</item>
+        <item>Скьюб (Skewb)</item>
+        <item>Скваер (Square-1)</item>
     </string-array>
 
     <integer-array name="other_icon">
