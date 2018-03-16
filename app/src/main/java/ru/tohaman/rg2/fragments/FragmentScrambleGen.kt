@@ -244,7 +244,8 @@ class FragmentScrambleGen : Fragment() {
             //сначала ребра: смотрим что в буфере углов
             val sumColor = getColorOfElement(cube,18,11)
             //если там буферный элемент, то ставим признак переплавки
-            if ((sumColor == 18) or (sumColor == 11) or (sumColor == 6)) { isCornerMelted = true }
+            //13 = сине-белый, 32 = бело-оранжевый, 21 = оранжево-синий
+            if ((sumColor == 13) or (sumColor == 32) or (sumColor == 21)) { isCornerMelted = true }
             // ставим на место угол из буфера
             val sc = cornerBufferSolve(cube,  mainCorner[sumColor]!!, solve)
             // сохраняем результаты выполнения одной "буквы"
@@ -292,6 +293,7 @@ class FragmentScrambleGen : Fragment() {
             var result = true
             //сгенерируем скрамбл длинны указанной в поле ScrambleLength
             scramble = generateScramble(lenScramble)
+            //scramble = "B2 D' B2 R U' D2 F B2 U' R2 B' D2 F2 R'"
             //разбираем кубик по скрамблу
             val genScrambleCube = runScramble(resetCube(), scramble)
             // получаем решение кубика (solve,isEdgeMelted,isCornerMelted)
@@ -308,16 +310,16 @@ class FragmentScrambleGen : Fragment() {
         return scramble
     }
 
-    // Установка на свое место элемента цвета colorOfElement находящегося в буфере ребер
+    // Установка на свое место элемента цвета elementPosition находящегося в буфере ребер
     // Возвращает SolveCube = куб после выполнения установки и решение solve + текущий ход
-    private fun edgeBufferSolve(cube: IntArray, colorOfElement: Int, solve: String): SolveCube {
+    private fun edgeBufferSolve(cube: IntArray, elementPosition: Int, solve: String): SolveCube {
         var tmpCube = cube
-        var colOfElem = colorOfElement
+        var positionOfElem = elementPosition
         var solv = solve
-        if (!((colOfElem == 23) or (colOfElem == 30))) {           //проверяем, не буфер ли?, если нет, то добоавляем букву к решению
-            solv += findLetter(colOfElem) + " "        //если буфер, то будем его переплавлять и букву уже
+        if (!((positionOfElem == 23) or (positionOfElem == 30))) {           //проверяем, не буфер ли?, если нет, то добоавляем букву к решению
+            solv += findLetter(positionOfElem) + " "        //если буфер, то будем его переплавлять и букву уже
         }                                               //подставим в рекурсии
-        when (colOfElem) {
+        when (positionOfElem) {
             1 -> tmpCube = blinde1(tmpCube)
             3 -> tmpCube = blinde3(tmpCube)
             5 -> tmpCube = blinde5(tmpCube)
@@ -340,21 +342,21 @@ class FragmentScrambleGen : Fragment() {
             28 -> tmpCube = blinde28(tmpCube)
             30 ->                       //для красно-белого ребра
                 if (!isAllEdgesOnItsPlace(tmpCube)) {
-                    colOfElem = 0
+                    positionOfElem = 0
                     // цикл поиска свободной корзины
                     var j = 0
-                    while (colOfElem == 0) {
+                    while (positionOfElem == 0) {
                         var i = 0
                         do {
                             if (edgePriority[j] == listEdgesOnPlace[i]) {
-                                colOfElem = edgePriority[j]!!
+                                positionOfElem = edgePriority[j]!!
                             } //ищем ребра на своем месте по приоритету edgePriority
                             i++
                         } while (listEdgesOnPlace[i] != null)
                         j++
                     }
                     //переплавляем буфер (рекурсия)
-                    val sc = edgeBufferSolve(tmpCube, colOfElem, solv)
+                    val sc = edgeBufferSolve(tmpCube, positionOfElem, solv)
                     solv = sc.solve
                     tmpCube = sc.cube
                 }
@@ -373,21 +375,21 @@ class FragmentScrambleGen : Fragment() {
     }
 
     private fun meltingEdge(tmpCube: IntArray, solv: String): SolveCube {
-        var colorOfElement = 0
+        var positionOfElement = 0
         // цикл поиска свободной корзины
         var j = 0
-        while (colorOfElement == 0) {
+        while (positionOfElement == 0) {
             var i = 0
             do {
                 if (edgePriority[j] == listEdgesOnPlace[i]) {
-                    colorOfElement = edgePriority[j]!!
+                    positionOfElement = edgePriority[j]!!
                 } //ищем ребра на своем месте по приоритету edgePriority
                 i++
             } while (listEdgesOnPlace[i] != null)
             j++
         }
         //переплавляем буфер (рекурсия)
-        return edgeBufferSolve(tmpCube, colorOfElement, solv)
+        return edgeBufferSolve(tmpCube, positionOfElement, solv)
     }
 
     private fun isAllEdgesOnItsPlace(cube: IntArray): Boolean {    //проверяем все ли грани на своих местах
@@ -410,15 +412,16 @@ class FragmentScrambleGen : Fragment() {
         return result
     }
 
-    // Установка на свое место элемента цвета colorOfElement находящегося в буфере углов
+    // Установка на свое место элемента цвета elementPosition находящегося в буфере углов
     // Возвращает SolveCube = куб после выполнения установки и решение solve + текущий ход
-    private fun cornerBufferSolve(cube: IntArray, colorOfElement: Int, solve: String): SolveCube {
+    private fun cornerBufferSolve(cube: IntArray, elementPosition: Int, solve: String): SolveCube {
         var tmpCube = cube
+        var positionOfElem = elementPosition
         var solv = solve
-        if (!(colorOfElement == 18 || colorOfElement == 11 || colorOfElement == 6)) {           //если с не равно 18,11 или 6, то буфер не на месте и добавляем букву к решению.
-            solv = solv + findLetter(colorOfElement) + " "
+        if (!(positionOfElem == 18 || positionOfElem == 11 || positionOfElem == 6)) {           //если с не равно 18,11 или 6, то буфер не на месте и добавляем букву к решению.
+            solv = solv + findLetter(positionOfElem) + " "
         }
-        when (colorOfElement) {
+        when (elementPosition) {
             0 -> tmpCube = blinde0(tmpCube)
             2 -> tmpCube = blinde2(tmpCube)
             6 -> if (!isAllCornersOnItsPlace(tmpCube)) {
@@ -460,21 +463,21 @@ class FragmentScrambleGen : Fragment() {
     }
 
     private fun meltingCorner(tmpCube: IntArray, solv: String): SolveCube {
-        var colorOfElement = 0
+        var positionOfElement = 0
         // цикл поиска свободной корзины
         var j = 0
-        while (colorOfElement == 0) {
+        while (positionOfElement == 0) {
             var i = 0
             do {
                 if (cornerPriority[j] == listCornersOnPlace[i]) {
-                    colorOfElement = cornerPriority[j]!!
+                    positionOfElement = cornerPriority[j]!!
                 } //ищем ребра на своем месте по приоритету cornerPriority
                 i++
             } while (listCornersOnPlace[i] != null)
             j++
         }
         //переплавляем буфер (рекурсия)
-        return cornerBufferSolve(tmpCube, colorOfElement, solv)
+        return cornerBufferSolve(tmpCube, positionOfElement, solv)
     }
 
     private fun isAllCornersOnItsPlace(cube: IntArray): Boolean {    //проверяем все ли углы на своих местах
