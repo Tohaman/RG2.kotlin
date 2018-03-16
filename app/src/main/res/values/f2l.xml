@@ -172,7 +172,9 @@
     <p style="text-align:center"><img src="vf2l_3_3.xml" width="30%%"></p>
     <b>Алгоритм: U2 (R U R\') (R\' F R F\')</b><br/>
     или опять же через другой вариант заселения <br/>
-    <b>U2 (R U R\') (U R U\' R\')</b><br/><br/>
+    <b>U2 (R U R\') (U R U\' R\')</b><br/>
+    Ну или чуть более короткий и удобный вариант:<br/>
+    <b>(R U\' R\') U2 (R U R\')</b><br/><br/>
 
     <b>4.</b>
     <p style="text-align:center"><img src="vf2l_3_4.xml" width="30%%"></p>
