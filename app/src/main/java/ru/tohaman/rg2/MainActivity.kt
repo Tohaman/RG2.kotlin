@@ -56,6 +56,9 @@ const val BIG_DONATION = "big_donation"
 const val MEDIUM_DONATION = "medium_donation"
 const val SMALL_DONATION = "small_donation"
 
+val listOfBasic = listOf("BASIC3X3", "BASIC4X4", "BASIC5X5", "BASIC_PYR", "BASIC_SKEWB", "BASIC_SQ1")
+
+
 class MainActivity : MyDefaultActivity(),
         NavigationView.OnNavigationItemSelectedListener,
         FragmentListView.OnListViewInteractionListener,
@@ -87,7 +90,6 @@ class MainActivity : MyDefaultActivity(),
     private var changedId = 0
     private val listOfGo2Fridrich = listOf("ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL", "RECOMEND")
     private val listOfOtherPuzzle = listOf("BEGIN4X4", "BEGIN5X5", "PYRAMINX", "MEGAMINX", "SKEWB", "SQUARE")
-    private val listOfBasic = listOf("BASIC3X3", "BASIC4X4", "BASIC5X5", "BASIC_PYR", "BASIC_SKEWB")
 
     override fun onCreate(savedInstanceState: Bundle?) {
 

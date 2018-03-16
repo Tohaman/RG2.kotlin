@@ -9,7 +9,9 @@ import android.widget.BaseAdapter
 import android.widget.LinearLayout.HORIZONTAL
 import android.widget.LinearLayout.VERTICAL
 import org.jetbrains.anko.*
+import ru.tohaman.rg2.MainActivity
 import ru.tohaman.rg2.data.ListPager
+import ru.tohaman.rg2.listOfBasic
 
 /**
  * Created by anton on 27.11.17. Адаптер для listview включает в себя сразу и UI
@@ -26,7 +28,8 @@ class MyListAdapter(private val listOfLP: ArrayList<ListPager> = ArrayList(), pr
         context = parent!!.context
         return with(context) {
             when (listOfLP[0].phase) {
-                "BASIC3X3", "BASIC_PYR", "BASIC_SKEWB", "BASIC4X4", "BASIC5X5" -> {
+
+                in listOfBasic -> {
                     val taskNum: Int = listOfLP[i].icon
                     linearLayout {
                         orientation = HORIZONTAL

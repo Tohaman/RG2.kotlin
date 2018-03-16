@@ -1,88 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="basic_skewb_title">
-        <item>@string/basic_skewb_st1_title</item>
-        <item>@string/basic_skewb_st2_title</item>
-        <item>@string/basic_skewb_st3_title</item>
-        <item>@string/basic_skewb_st4_title</item>
-        <item>@string/basic_skewb_st5_title</item>
-        <item>@string/basic_skewb_st6_title</item>
-        <item>@string/basic_skewb_st7_title</item>
-        <item>@string/basic_skewb_st8_title</item>
-        <item>@string/basic_skewb_st9_title</item>
-        <item>@string/basic_skewb_st10_title</item>
-        <item>@string/basic_skewb_st11_title</item>
-        <item>@string/basic_skewb_st12_title</item>
+    <string-array name="basic_square_title">
+        <item>@string/basic_square_st1_title</item>
+        <item>@string/basic_square_st2_title</item>
+        <item>@string/basic_square_st3_title</item>
+        <item>@string/basic_square_st4_title</item>
+        <item>@string/basic_square_st5_title</item>
+        <item>@string/basic_square_st6_title</item>
     </string-array>
 
-    <integer-array name="basic_skewb_icon">
-        <item>@drawable/basic_skewb_1</item>
-        <item>@drawable/basic_skewb_2</item>
-        <item>@drawable/basic_skewb_3</item>
-        <item>@drawable/basic_skewb_4</item>
-        <item>@drawable/basic_skewb_5</item>
-        <item>@drawable/basic_skewb_6</item>
-        <item>@drawable/basic_skewb_7</item>
-        <item>@drawable/basic_skewb_8</item>
-        <item>@drawable/basic_skewb_9</item>
-        <item>@drawable/basic_skewb_10</item>
-        <item>@drawable/basic_skewb_11</item>
-        <item>@drawable/basic_skewb_12</item>
+    <integer-array name="basic_square_icon">
+        <item>@drawable/basic_square_1</item>
+        <item>@drawable/basic_square_2</item>
+        <item>@drawable/basic_square_3</item>
+        <item>@drawable/basic_square_4</item>
+        <item>@drawable/basic_square_5</item>
+        <item>@drawable/basic_square_6</item>
     </integer-array>
 
-    <string-array name="basic_skewb_descr">
-        <item>@string/basic_skewb_st1_descr</item>
-        <item>@string/basic_skewb_st2_descr</item>
-        <item>@string/basic_skewb_st3_descr</item>
-        <item>@string/basic_skewb_st4_descr</item>
-        <item>@string/basic_skewb_st5_descr</item>
-        <item>@string/basic_skewb_st6_descr</item>
-        <item>@string/basic_skewb_st7_descr</item>
-        <item>@string/basic_skewb_st8_descr</item>
-        <item>@string/basic_skewb_st9_descr</item>
-        <item>@string/basic_skewb_st10_descr</item>
-        <item>@string/basic_skewb_st11_descr</item>
-        <item>@string/basic_skewb_st12_descr</item>
+    <string-array name="basic_square_descr">
+        <item>@string/basic_square_st1_descr</item>
+        <item>@string/basic_square_st2_descr</item>
+        <item>@string/basic_square_st3_descr</item>
+        <item>@string/basic_square_st4_descr</item>
+        <item>@string/basic_square_st5_descr</item>
+        <item>@string/basic_square_st6_descr</item>
     </string-array>
 
-    <string-array name="basic_skewb_url">
+    <string-array name="basic_square_url">
         <item>1_url</item>
         <item>2_url</item>
         <item>3_url</item>
         <item>4_url</item>
         <item>5_url</item>
         <item>6_url</item>
-        <item>7_url</item>
-        <item>8_url</item>
-        <item>9_url</item>
-        <item>10_url</item>
-        <item>11_url</item>
-        <item>12_url</item>
     </string-array>
 
-    <string name="basic_skewb_st1_title">R</string>
-    <string name="basic_skewb_st1_descr">Правая по часовой</string>
-    <string name="basic_skewb_st2_title">R\'</string>
-    <string name="basic_skewb_st2_descr">Правая против часовой</string>
-    <string name="basic_skewb_st3_title">L</string>
-    <string name="basic_skewb_st3_descr">Левая по часовой</string>
-    <string name="basic_skewb_st4_title">L\'</string>
-    <string name="basic_skewb_st4_descr">Левая против часовой</string>
-    <string name="basic_skewb_st5_title">U</string>
-    <string name="basic_skewb_st5_descr">Верх по часовой</string>
-    <string name="basic_skewb_st6_title">U\'</string>
-    <string name="basic_skewb_st6_descr">Верх против часовой</string>
-    <string name="basic_skewb_st7_title">B</string>
-    <string name="basic_skewb_st7_descr">Задняя по часовой</string>
-    <string name="basic_skewb_st8_title">B\'</string>
-    <string name="basic_skewb_st8_descr">Задняя против часовой</string>
-    <string name="basic_skewb_st9_title">F</string>
-    <string name="basic_skewb_st9_descr">Передняя по часовой</string>
-    <string name="basic_skewb_st10_title">F\'</string>
-    <string name="basic_skewb_st10_descr">Передняя против часовой</string>
-    <string name="basic_skewb_st11_title">D</string>
-    <string name="basic_skewb_st11_descr">Нижняя по часовой</string>
-    <string name="basic_skewb_st12_title">D\'</string>
-    <string name="basic_skewb_st12_descr">Нижняя против часовой</string>
+    <string name="basic_square_st1_title">/</string>
+    <string name="basic_square_st1_descr">Слайс</string>
+    <string name="basic_square_st2_title">(1,0)</string>
+    <string name="basic_square_st2_descr">Верх на один по часовой</string>
+    <string name="basic_square_st3_title">(-2,0)</string>
+    <string name="basic_square_st3_descr">Верх на два против часовой</string>
+    <string name="basic_square_st4_title">(0,2)</string>
+    <string name="basic_square_st4_descr">Низ на два по часовой</string>
+    <string name="basic_square_st5_title">(0,-1)</string>
+    <string name="basic_square_st5_descr">Низ на один против часовой</string>
+    <string name="basic_square_st6_title">(3,3)</string>
+    <string name="basic_square_st6_descr">Верх и низ на 3 по часовой</string>
 
 </resources>

@@ -6,6 +6,7 @@
     <item>Движения для 5х5</item>
     <item>Движения для пирамидки</item>
     <item>Движения для скьюба</item>
+    <item>Движения для скваера</item>
 </string-array>
 
 <integer-array name="basic_icon">
@@ -14,6 +15,7 @@
     <item>@drawable/basic_5x5</item>
     <item>@drawable/basic_pyr</item>
     <item>@drawable/basic_skewb</item>
+    <item>@drawable/square</item>
 </integer-array>
 
 <string-array name="basic_descr">
@@ -22,9 +24,11 @@
     <item>@string/basic_st3_descr</item>
     <item>@string/basic_st4_descr</item>
     <item>@string/basic_st5_descr</item>
+    <item>@string/basic_st6_descr</item>
 </string-array>
 
 <string-array name="basic_null">
+    <item> </item>
     <item> </item>
     <item> </item>
     <item> </item>
@@ -38,5 +42,6 @@
 <string name="basic_st3_descr">BASIC5X5</string>
 <string name="basic_st4_descr">BASIC_PYR</string>
 <string name="basic_st5_descr">BASIC_SKEWB</string>
+<string name="basic_st6_descr">BASIC_SQ1</string>
 
 </resources>

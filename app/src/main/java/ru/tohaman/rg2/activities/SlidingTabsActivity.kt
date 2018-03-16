@@ -145,7 +145,7 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         //Если нажали на ? в правом верхнем углу, то вызываем АлертДиалог
-        //со списком основных движений
+        //со списком основных движений для соответствующей головоломки
         Log.v (TAG, "onOptionsItemSelected")
         when (item.itemId) {
             R.id.basic_move_help -> {
@@ -155,11 +155,13 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
                         }
                         verticalLayout {
                             val listPagers : ArrayList<ListPager> =
+                                    //если не одна из перечисленных головоломок, то вызываем движения для кубика 3х3
                                     when (mPhase) {
                                         "PYRAMINX" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_PYR")}
                                         "SKEWB" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_SKEWB")}
                                         "BEGIN4X4" -> {ListPagerLab.get(ctx).getPhaseList("BASIC4X4")}
                                         "BEGIN5X5" -> {ListPagerLab.get(ctx).getPhaseList("BASIC5X5")}
+                                        "SQUARE" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_SQ1")}
                                         else -> {ListPagerLab.get(ctx).getPhaseList("BASIC3X3")}
                                     }
                             val lstView = listView {
