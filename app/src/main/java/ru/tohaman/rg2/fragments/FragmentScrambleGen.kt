@@ -21,6 +21,7 @@ import org.jetbrains.anko.support.v4.ctx
 import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.DebugTag.TAG
 import ru.tohaman.rg2.R
+import ru.tohaman.rg2.R.string.scramble_st
 import ru.tohaman.rg2.adapters.MyGridAdapter
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.util.*
@@ -281,9 +282,11 @@ class FragmentScrambleGen : Fragment() {
         progressBar.visibility = View.INVISIBLE
         progressText.visibility = View.INVISIBLE
         textScramble.text = genRes
+        saveString2SP(genRes, SCRAMBLE, ctx)
         val cube = runScramble(resetCube(), genRes)
         showCube(cube)
         textSolve.text = showSolve(cube)
+
     }
 
     private fun generateScrambleWithParam(checkEdge: Boolean, checkCorner: Boolean, lenScramble: Int): String {

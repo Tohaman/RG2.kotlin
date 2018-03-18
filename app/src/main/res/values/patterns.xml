@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="patterns_title">
+        <item>@string/patterns_st1_title</item>
+        <item>@string/patterns_st2_title</item>
+        <item>@string/patterns_st3_title</item>
+    </string-array>
+
+    <integer-array name="patterns_icon">
+        <item>@drawable/v2x2_begin_1</item>
+        <item>@drawable/v2x2_begin_2</item>
+        <item>@drawable/v2x2_begin_3</item>
+    </integer-array>
+    
+    <string-array name="patterns_descr">
+        <item>@string/patterns_st1_descr</item>
+        <item>@string/patterns_st2_descr</item>
+        <item>@string/patterns_st3_descr</item>
+    </string-array>
+
+
+    <string-array name="patterns_url">
+        <item>@string/patterns_st1_url</item>
+        <item>@string/patterns_st2_url</item>
+        <item>@string/patterns_st3_url</item>
+    </string-array>
+    
+    <string name="patterns_st1_title">1. Вишенка</string>
+    <string name="patterns_st1_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="patterns_st1_url">5Tjr5R9q50w</string>
+
+    <string name="patterns_st2_title">Этап 2. Расстановка углов верхнего слоя</string>
+    <string name="patterns_st2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="patterns_st2_url">5Tjr5R9q50w</string>
+
+    <string name="patterns_st3_title">Этап 3. Разворот углов верхнего слоя</string>
+    <string name="patterns_st3_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="patterns_st3_url">5Tjr5R9q50w</string>
+
+    
+</resources>
