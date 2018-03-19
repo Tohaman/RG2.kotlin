@@ -66,5 +66,6 @@
     <string name="pll_2side">PLL по двум сторонам</string>
     <string name="pll_3side">PLL по трем сторонам</string>
     <string name="rb_oll_game">OLL по двум сторонам</string>
+    <string name="timerText">Таймер</string>
 
 </resources>

@@ -2,20 +2,14 @@ package ru.tohaman.rg2.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.support.v4.app.FragmentTransaction
-import android.support.v7.app.AppCompatDelegate
 import android.util.Log
-import android.view.WindowManager
-import org.jetbrains.anko.ctx
 import org.jetbrains.anko.toast
 import ru.tohaman.rg2.DebugTag.TAG
-import ru.tohaman.rg2.IS_SCREEN_ALWAYS_ON
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.fragments.FragmentScrambleGen
-import ru.tohaman.rg2.util.getThemeFromSharedPreference
 
-class ScrambleActivity : AppCompatActivity(), FragmentScrambleGen.OnSrambleGenInteractionListener  {
+class ScrambleActivity : AppCompatActivity(), FragmentScrambleGen.OnScrambleGenInteractionListener  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

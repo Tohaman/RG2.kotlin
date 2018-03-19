@@ -20,16 +20,19 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import kotlinx.android.synthetic.main.fragment_scramble_gen.view.*
 import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.delay
 import kotlinx.coroutines.experimental.launch
 import org.jetbrains.anko.*
+import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.support.v4.UI
 import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.dip
 import ru.tohaman.rg2.*
 import ru.tohaman.rg2.ankoconstraintlayout.constraintLayout
+import ru.tohaman.rg2.util.generateScramble
 
 
 class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadCompleteListener {
@@ -46,14 +49,16 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     private lateinit var leftCircle: ImageView
     private lateinit var rightCircle: ImageView
     private lateinit var textTime: TextView
+    private lateinit var scrambleTextView : TextView
 
-    private val MAX_STREAMS = 2
+    private val maxStreams = 2
     private lateinit var spl: SoundPool
     private var soundIdTick: Int = 0
 
     private var oneHandToStart = true      //управление таймером одной рукой? или для старта надо положить обе
     private var metronomEnabled = true
     private var metronomTime = 60
+    private var text4Scramble = ""
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -61,6 +66,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         oneHandToStart = sp.getBoolean(ONE_HAND_TO_START, false)
         metronomEnabled = sp.getBoolean(METRONOM_ENABLED, true)
         metronomTime = sp.getInt(METRONOM_TIME, 60)
+        text4Scramble = sp.getString(SCRAMBLE, "U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R")
 
         spl = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             SoundPool.Builder()
@@ -68,13 +74,13 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                     .build()
         } else {
             @Suppress("DEPRECATION")
-            SoundPool(MAX_STREAMS, AudioManager.STREAM_MUSIC, 0)
+            SoundPool(maxStreams, AudioManager.STREAM_MUSIC, 0)
         }
 
         spl.setOnLoadCompleteListener(this)
 
         soundIdTick = spl.load(context, R.raw.metronom, 1)
-        Log.d(DebugTag.TAG, "soundIdTick = " + soundIdTick)
+        Log.d(DebugTag.TAG, "soundIdTick = $soundIdTick")
 
         return createUI()
     }
@@ -176,6 +182,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         showTimerTime()
         isTimerStart = false
         isTimerReady = false
+        scrambleTextView.visibility = View.VISIBLE
     }
 
     private fun startTimer() {
@@ -185,7 +192,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         isTimerStart = true                      // поставили признак, что таймер запущен
         startShowTime()                         // запускаем фоновое отображение времени в фоне
         startMetronom()                         // запускаем метроном в фоне
-
+        scrambleTextView.visibility = View.GONE
     }
 
     private fun startShowTime () {
@@ -307,19 +314,34 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                     val rightHand = imageView(R.drawable.vtimer_2) {
                     }.lparams(handSize, handSize)
 
+                    scrambleTextView = textView {
+                        text = text4Scramble
+                        backgroundColorResource = R.color.dark_gray
+                        padding = m
+                    }.lparams(0, wrapContent)
+                    scrambleTextView.onClick {
+                        text4Scramble = generateScramble(14)
+                        scrambleTextView.text = text4Scramble
+                    }
+
                     constraints {
                         val layouts = arrayOf(leftPad, rightPad)
                         layouts.chainSpreadInside(RIGHT of parentId, LEFT of parentId)
 
+                        scrambleTextView.connect(LEFTS of parentId,
+                                RIGHTS of parentId,
+                                BOTTOMS of parentId
+                                )
+
                         leftPad.connect(LEFTS of parentId,
                                 TOPS of parentId,
                                 RIGHT to LEFT of rightPad,
-                                BOTTOMS of parentId
+                                BOTTOM to TOP of scrambleTextView
                         )
                         rightPad.connect(LEFT to RIGHT of leftPad,
                                 TOPS of parentId,
                                 RIGHTS of parentId,
-                                BOTTOMS of parentId
+                                BOTTOM to TOP of scrambleTextView
                         )
                         topLayout.connect(RIGHTS of parentId,
                                 TOPS of parentId,

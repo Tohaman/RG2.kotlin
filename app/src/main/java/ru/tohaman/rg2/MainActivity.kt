@@ -28,7 +28,6 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.ListView
 import ru.tohaman.rg2.DeveloperKey.base64EncodedPublicKey
-import ru.tohaman.rg2.activities.OllTestGame
 import ru.tohaman.rg2.adapters.MyListAdapter
 import ru.tohaman.rg2.util.*
 
@@ -50,6 +49,11 @@ const val BLIND_IS_EDGE_CHECKED = "isBlindEdgeChecked"
 const val BLIND_IS_CORNER_CHECKED = "isBlindCornerChecked"
 const val FAVORITES = "favorites"
 const val DEFAULT_DRAWABLE_SIZE = 1
+const val SCRAMBLE = "scramble"
+const val SCRAMBLE_LEN = "scrambleLength"
+const val CHK_BUF_EDGES = "checkEdgesBuffer"
+const val CHK_BUF_CORNERS = "checkCornersBuffer"
+const val CHK_SHOW_SOLVE = "checkShowSolve"
 
 // SKUs для продуктов: при изменении не забыть поправить в sayThanks
 const val BIG_DONATION = "big_donation"
@@ -62,7 +66,7 @@ val listOfBasic = listOf("BASIC3X3", "BASIC4X4", "BASIC5X5", "BASIC_PYR", "BASIC
 class MainActivity : MyDefaultActivity(),
         NavigationView.OnNavigationItemSelectedListener,
         FragmentListView.OnListViewInteractionListener,
-        FragmentScrambleGen.OnSrambleGenInteractionListener,
+        FragmentScrambleGen.OnScrambleGenInteractionListener,
         SharedPreferences.OnSharedPreferenceChangeListener,
         FragmentBlindGameSettings.OnBlindGameInteractionListener,
         IabBroadcastReceiver.IabBroadcastListener {
@@ -540,11 +544,14 @@ class MainActivity : MyDefaultActivity(),
 
     override fun onScrambleGenInteraction(button: String) {
         super.onScrambleGenInteraction(button)
-        if (button == "AZBUKA") {
-            setFragment(FragmentAzbukaSelect.newInstance())
-            fab.setImageResource(R.drawable.ic_fab_backward)
-            curPhase = "AZBUKA"
+        when (button) {
+            "AZBUKA" -> {
+                setFragment(FragmentAzbukaSelect.newInstance())
+                fab.setImageResource(R.drawable.ic_fab_backward)
+                curPhase = "AZBUKA"
+            }
         }
+
     }
 
     override fun onBlindGameInteraction(button: String) {

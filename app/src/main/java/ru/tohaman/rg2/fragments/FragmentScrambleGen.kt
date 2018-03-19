@@ -18,10 +18,11 @@ import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.support.v4.alert
 import org.jetbrains.anko.support.v4.ctx
+import org.jetbrains.anko.support.v4.startActivity
 import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.DebugTag.TAG
 import ru.tohaman.rg2.R
-import ru.tohaman.rg2.R.string.scramble_st
+import ru.tohaman.rg2.activities.TimerActivity
 import ru.tohaman.rg2.adapters.MyGridAdapter
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.util.*
@@ -40,7 +41,7 @@ class FragmentScrambleGen : Fragment() {
     private val CHK_BUF_CORNERS = "checkCornersBuffer"
     private val CHK_SHOW_SOLVE = "checkShowSolve"
 
-    private var mListener: OnSrambleGenInteractionListener? = null
+    private var mListener: OnScrambleGenInteractionListener? = null
 
     private var currentCube = IntArray(54)
 
@@ -58,7 +59,7 @@ class FragmentScrambleGen : Fragment() {
     private lateinit var buttonPlus: Button
     private lateinit var buttonMinus: Button
 
-    private var listEdgesOnPlace: SortedMap<Int,Int> = sortedMapOf(0 to 0)
+//    private var listEdgesOnPlace: SortedMap<Int,Int> = sortedMapOf(0 to 0)
     private var listCornersOnPlace: SortedMap<Int,Int> = sortedMapOf(0 to 0)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -80,7 +81,7 @@ class FragmentScrambleGen : Fragment() {
         val view = inflater.inflate(R.layout.fragment_scramble_gen, container, false)
 
         Log.v (TAG, "FragmentScrambleGen onCreateView - hide ProgressBar & ProgressText")
-        progressBar = view!!.findViewById<ProgressBar>(R.id.progressBar)
+        progressBar = view!!.findViewById(R.id.progressBar)
         progressBar.visibility = View.INVISIBLE
         progressText = view.findViewById(R.id.progressText)
         progressText.backgroundColorResource = R.color.gray
@@ -129,18 +130,22 @@ class FragmentScrambleGen : Fragment() {
         buttonPlus = view.findViewById(R.id.button_plus)
         buttonPlus.onClick { v ->
             scrambleLength++
-            if (scrambleLength > 30) { scrambleLength = 30 }
+            if (scrambleLength > 30) {
+                scrambleLength = 30
+            }
             textScrambleLen.text = scrambleLength.toString()
-            saveInt2SP(scrambleLength,SCRAMBLE_LEN, v!!.context)
+            saveInt2SP(scrambleLength, SCRAMBLE_LEN, v!!.context)
         }
 
         // Кнопка -
         buttonMinus = view.findViewById(R.id.button_minus)
         buttonMinus.onClick { v ->
             scrambleLength--
-            if (scrambleLength < 1 ) { scrambleLength = 1 }
+            if (scrambleLength < 1) {
+                scrambleLength = 1
+            }
             textScrambleLen.text = scrambleLength.toString()
-            saveInt2SP(scrambleLength,SCRAMBLE_LEN, v!!.context)
+            saveInt2SP(scrambleLength, SCRAMBLE_LEN, v!!.context)
         }
 
         //Текст самого скрамбла
@@ -155,10 +160,10 @@ class FragmentScrambleGen : Fragment() {
                             hint = "введите свой скрамбл"
                         }
                         positiveButton("OK") {
-                            val scramble_st = setScramble.text.toString()
-                            textScramble.text = scramble_st
-                            saveString2SP(scramble_st,SCRAMBLE, v!!.context)
-                            val cube = runScramble(resetCube(), scramble_st)
+                            val scrambleString = setScramble.text.toString()
+                            textScramble.text = scrambleString
+                            saveString2SP(scrambleString,SCRAMBLE, v!!.context)
+                            val cube = runScramble(resetCube(), scrambleString)
                             showCube(cube)
                             textSolve.text = showSolve(cube)
                         }
@@ -168,15 +173,21 @@ class FragmentScrambleGen : Fragment() {
             }.show()
         }
 
+        val timerButton = view.find<Button> (R.id.timerButton)
+        timerButton.setOnClickListener {
+            Log.v (TAG, "TimerButton Click")
+            startActivity<TimerActivity>()
+        }
+
         // Чекбокс отображать или нет решение скрамбла
-        checkBoxShowSolve = view.findViewById(R.id.checkBox_solve)
+        checkBoxShowSolve = view.find(R.id.checkBox_solve)
         checkBoxShowSolve.isChecked = chkShowSolve
         checkBoxShowSolve.onCheckedChange { buttonView, isChecked ->
             Log.v (TAG, "CheckBoxShowSolve changed")
             chkShowSolve = isChecked
             val cube = runScramble(resetCube(), textScramble.text as String)
             textSolve.text = showSolve(cube)
-            saveBoolean2SP(chkShowSolve,CHK_SHOW_SOLVE, buttonView!!.context)
+            saveBoolean2SP(chkShowSolve, CHK_SHOW_SOLVE, buttonView!!.context)
         }
 
         currentCube = runScramble(resetCube(), scramble)
@@ -187,7 +198,7 @@ class FragmentScrambleGen : Fragment() {
         val gridList = prepareCubeToShowInGridView(currentCube)        //подготавливаем текущий кубик для вывода в GridView
 
         //находим GridView и выводим в него текущий кубик
-        val gridView = view.findViewById(R.id.scram_gridView) as GridView
+        val gridView = view.find<GridView>(R.id.scram_gridView)
         gridAdapter = MyGridAdapter(view.context, gridList)
         gridView.adapter = gridAdapter
 
@@ -213,7 +224,7 @@ class FragmentScrambleGen : Fragment() {
     private fun getSolve(mainCube: IntArray):  Triple<String, Boolean, Boolean>  {
         var solve = "("
         var cube = mainCube.clone()
-        var isEdgeMelted = false
+        var isEdgeMelted = false        //изначально считаем, что переплавок не было
         var isCornerMelted = false
 
         //решаем ребра
@@ -289,8 +300,8 @@ class FragmentScrambleGen : Fragment() {
 
     }
 
-    private fun generateScrambleWithParam(checkEdge: Boolean, checkCorner: Boolean, lenScramble: Int): String {
-        Log.v(TAG, "Ищем скрамбл подходящий по параметрам переплавок буфера и длинне")
+    fun generateScrambleWithParam(checkEdge: Boolean, checkCorner: Boolean, lenScramble: Int): String {
+        Log.v(TAG, "Ищем скрамбл подходящий по параметрам переплавок буфера и длине")
         var scramble: String
         do {
             var result = true
@@ -319,6 +330,7 @@ class FragmentScrambleGen : Fragment() {
         var tmpCube = cube
         var positionOfElem = elementPosition
         var solv = solve
+        var listEdgesOnPlace: SortedMap<Int,Int> = sortedMapOf(0 to 0)
         if (!((positionOfElem == 23) or (positionOfElem == 30))) {           //проверяем, не буфер ли?, если нет, то добоавляем букву к решению
             solv += findLetter(positionOfElem) + " "        //если буфер, то будем его переплавлять и букву уже
         }                                               //подставим в рекурсии
@@ -335,7 +347,7 @@ class FragmentScrambleGen : Fragment() {
             21 -> tmpCube = blinde21(tmpCube)
             23 ->                     // для бело-красного ребра
                 if (!isAllEdgesOnItsPlace(tmpCube)) {
-                    val sc = meltingEdge(tmpCube, solv)
+                    val sc = meltingEdge(tmpCube, solv,listEdgesOnPlace)
                     solv = sc.solve
                     tmpCube = sc.cube
                 } else {
@@ -345,21 +357,8 @@ class FragmentScrambleGen : Fragment() {
             28 -> tmpCube = blinde28(tmpCube)
             30 ->                       //для красно-белого ребра
                 if (!isAllEdgesOnItsPlace(tmpCube)) {
-                    positionOfElem = 0
-                    // цикл поиска свободной корзины
-                    var j = 0
-                    while (positionOfElem == 0) {
-                        var i = 0
-                        do {
-                            if (edgePriority[j] == listEdgesOnPlace[i]) {
-                                positionOfElem = edgePriority[j]!!
-                            } //ищем ребра на своем месте по приоритету edgePriority
-                            i++
-                        } while (listEdgesOnPlace[i] != null)
-                        j++
-                    }
                     //переплавляем буфер (рекурсия)
-                    val sc = edgeBufferSolve(tmpCube, positionOfElem, solv)
+                    val sc = meltingEdge(tmpCube, solv,listEdgesOnPlace)
                     solv = sc.solve
                     tmpCube = sc.cube
                 }
@@ -377,7 +376,7 @@ class FragmentScrambleGen : Fragment() {
         return SolveCube(tmpCube, solv)
     }
 
-    private fun meltingEdge(tmpCube: IntArray, solv: String): SolveCube {
+    private fun meltingEdge(tmpCube: IntArray, solv: String, listEdgesOnPlace: SortedMap<Int,Int> ): SolveCube {
         var positionOfElement = 0
         // цикл поиска свободной корзины
         var j = 0
@@ -395,24 +394,25 @@ class FragmentScrambleGen : Fragment() {
         return edgeBufferSolve(tmpCube, positionOfElement, solv)
     }
 
-    private fun isAllEdgesOnItsPlace(cube: IntArray): Boolean {    //проверяем все ли грани на своих местах
+    private fun isAllEdgesOnItsPlace(cube: IntArray): Pair4Melting {    //проверяем все ли грани на своих местах
         //предположим что все на местах
         var result = true
         //Обнуляем список ребер стоящих на местах
+        var listEdgesOnPlace: SortedMap<Int,Int> = sortedMapOf(0 to 0)
         listEdgesOnPlace.clear()
         var j = 0
         for (i in 0..52) {
             val secColor = dopEdge[i]
             if (secColor != null) {
-                val fcolor = getColorOfElement(cube,i,secColor)
-                if (mainEdge[fcolor] != i) {
-                    listEdgesOnPlace.put(j, i)
+                val firstColor = getColorOfElement(cube,i,secColor)
+                if (mainEdge[firstColor] != i) {
+                    listEdgesOnPlace[j] = i
                     j++
                     result = false
                 }
             }
         }
-        return result
+        return Pair4Melting(result,listEdgesOnPlace)
     }
 
     // Установка на свое место элемента цвета elementPosition находящегося в буфере углов
@@ -496,7 +496,7 @@ class FragmentScrambleGen : Fragment() {
             if (secColor != null) {
                 val fcolor = getColorOfElement(cube,i,secColor)
                 if (mainCorner[fcolor] != i) {
-                    listCornersOnPlace.put(j, i)
+                    listCornersOnPlace[j] = i
                     j++
                     result = false
                 }
@@ -515,7 +515,7 @@ class FragmentScrambleGen : Fragment() {
     override fun onAttach(context: Context?) {
         Log.v (DebugTag.TAG, "FragmentScrambleGen onAttach")
         super.onAttach(context)
-        if (context is FragmentScrambleGen.OnSrambleGenInteractionListener) {
+        if (context is FragmentScrambleGen.OnScrambleGenInteractionListener) {
             mListener = context
         } else {
             throw RuntimeException(context!!.toString() + " must implement OnScrambleGenInteractionListener")
@@ -528,9 +528,10 @@ class FragmentScrambleGen : Fragment() {
         mListener = null
     }
 
-    interface OnSrambleGenInteractionListener {
+    interface OnScrambleGenInteractionListener {
         fun onScrambleGenInteraction(button: String) {
             Log.v(DebugTag.TAG, "FragmentScrambleGen onListViewInteraction")
+
         }
     }
 
@@ -542,6 +543,6 @@ class FragmentScrambleGen : Fragment() {
     }
 
     inner class SolveCube (var cube: IntArray, var solve: String)   // куб, решение
-
+    inner class Pair4Melting (var b: Boolean, var map: SortedMap<Int,Int>)
 }
 
