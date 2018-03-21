@@ -234,12 +234,12 @@ class FragmentScrambleGen : Fragment() {
             //если там буферный элемент бело-красный или красно-белый, то ставим признак переплавки
             if ((sumColor == 43) or (sumColor == 34)) { isEdgeMelted = true }
             // ставим на место ребро из буфера
-            val sc = edgeBufferSolve(cube, mainEdge[sumColor]!!, solve)
+            val sc = edgeBufferSolve(cube, mainEdge[sumColor]!!, solve, ctx)
             // сохраняем результаты выполнения одной "буквы"
             solve = sc.solve
             cube = sc.cube
             // выполняем пока все ребра не будут на своих местах
-        } while (!isAllEdgesOnItsPlace(cube))
+        } while (!isAllEdgesOnItsPlace(cube).allComplete)
 
         solve = solve.trim { it <= ' ' }
         solve += ") "
@@ -268,7 +268,7 @@ class FragmentScrambleGen : Fragment() {
 
         solve = solve.trim { it <= ' ' }
         solve += ")"
-        return Triple(solve,isEdgeMelted,isCornerMelted)
+        return Triple(solve, isEdgeMelted, isCornerMelted)
     }
 
 
@@ -324,97 +324,6 @@ class FragmentScrambleGen : Fragment() {
         return scramble
     }
 
-    // Установка на свое место элемента цвета elementPosition находящегося в буфере ребер
-    // Возвращает SolveCube = куб после выполнения установки и решение solve + текущий ход
-    private fun edgeBufferSolve(cube: IntArray, elementPosition: Int, solve: String): SolveCube {
-        var tmpCube = cube
-        var positionOfElem = elementPosition
-        var solv = solve
-        var listEdgesOnPlace: SortedMap<Int,Int> = sortedMapOf(0 to 0)
-        if (!((positionOfElem == 23) or (positionOfElem == 30))) {           //проверяем, не буфер ли?, если нет, то добоавляем букву к решению
-            solv += findLetter(positionOfElem) + " "        //если буфер, то будем его переплавлять и букву уже
-        }                                               //подставим в рекурсии
-        when (positionOfElem) {
-            1 -> tmpCube = blinde1(tmpCube)
-            3 -> tmpCube = blinde3(tmpCube)
-            5 -> tmpCube = blinde5(tmpCube)
-            7 -> tmpCube = blinde7(tmpCube)
-            10 -> tmpCube = blinde10(tmpCube)
-            12 -> tmpCube = blinde12(tmpCube)
-            14 -> tmpCube = blinde14(tmpCube)
-            16 -> tmpCube = blinde16(tmpCube)
-            19 -> tmpCube = blinde19(tmpCube)
-            21 -> tmpCube = blinde21(tmpCube)
-            23 ->                     // для бело-красного ребра
-                if (!isAllEdgesOnItsPlace(tmpCube)) {
-                    val sc = meltingEdge(tmpCube, solv,listEdgesOnPlace)
-                    solv = sc.solve
-                    tmpCube = sc.cube
-                } else {
-                    //Если все ребра на месте, то преобразуем буквы в слова
-                }
-            25 -> tmpCube = blinde25(tmpCube)
-            28 -> tmpCube = blinde28(tmpCube)
-            30 ->                       //для красно-белого ребра
-                if (!isAllEdgesOnItsPlace(tmpCube)) {
-                    //переплавляем буфер (рекурсия)
-                    val sc = meltingEdge(tmpCube, solv,listEdgesOnPlace)
-                    solv = sc.solve
-                    tmpCube = sc.cube
-                }
-            32 -> tmpCube = blinde32(tmpCube)
-            34 -> tmpCube = blinde34(tmpCube)
-            37 -> tmpCube = blinde37(tmpCube)
-            39 -> tmpCube = blinde39(tmpCube)
-            41 -> tmpCube = blinde41(tmpCube)
-            43 -> tmpCube = blinde43(tmpCube)
-            46 -> tmpCube = blinde46(tmpCube)
-            48 -> tmpCube = blinde48(tmpCube)
-            50 -> tmpCube = blinde50(tmpCube)
-            52 -> tmpCube = blinde52(tmpCube)
-        }
-        return SolveCube(tmpCube, solv)
-    }
-
-    private fun meltingEdge(tmpCube: IntArray, solv: String, listEdgesOnPlace: SortedMap<Int,Int> ): SolveCube {
-        var positionOfElement = 0
-        // цикл поиска свободной корзины
-        var j = 0
-        while (positionOfElement == 0) {
-            var i = 0
-            do {
-                if (edgePriority[j] == listEdgesOnPlace[i]) {
-                    positionOfElement = edgePriority[j]!!
-                } //ищем ребра на своем месте по приоритету edgePriority
-                i++
-            } while (listEdgesOnPlace[i] != null)
-            j++
-        }
-        //переплавляем буфер (рекурсия)
-        return edgeBufferSolve(tmpCube, positionOfElement, solv)
-    }
-
-    private fun isAllEdgesOnItsPlace(cube: IntArray): Pair4Melting {    //проверяем все ли грани на своих местах
-        //предположим что все на местах
-        var result = true
-        //Обнуляем список ребер стоящих на местах
-        var listEdgesOnPlace: SortedMap<Int,Int> = sortedMapOf(0 to 0)
-        listEdgesOnPlace.clear()
-        var j = 0
-        for (i in 0..52) {
-            val secColor = dopEdge[i]
-            if (secColor != null) {
-                val firstColor = getColorOfElement(cube,i,secColor)
-                if (mainEdge[firstColor] != i) {
-                    listEdgesOnPlace[j] = i
-                    j++
-                    result = false
-                }
-            }
-        }
-        return Pair4Melting(result,listEdgesOnPlace)
-    }
-
     // Установка на свое место элемента цвета elementPosition находящегося в буфере углов
     // Возвращает SolveCube = куб после выполнения установки и решение solve + текущий ход
     private fun cornerBufferSolve(cube: IntArray, elementPosition: Int, solve: String): SolveCube {
@@ -422,7 +331,7 @@ class FragmentScrambleGen : Fragment() {
         var positionOfElem = elementPosition
         var solv = solve
         if (!(positionOfElem == 18 || positionOfElem == 11 || positionOfElem == 6)) {           //если с не равно 18,11 или 6, то буфер не на месте и добавляем букву к решению.
-            solv = solv + findLetter(positionOfElem) + " "
+            solv = solv + findLetter(positionOfElem, ctx) + " "
         }
         when (elementPosition) {
             0 -> tmpCube = blinde0(tmpCube)
@@ -505,12 +414,6 @@ class FragmentScrambleGen : Fragment() {
         return result
     }
 
-    //поиск буквы в азбуке
-    private fun findLetter(c: Int): String {     //Доработать функцию поиска буквы из азбуки, пока просто цифра
-        val listPagerLab = ListPagerLab.get(ctx)
-        val azbuka = listPagerLab.getCurrentAzbuka()
-        return azbuka[c]
-    }
 
     override fun onAttach(context: Context?) {
         Log.v (DebugTag.TAG, "FragmentScrambleGen onAttach")
@@ -540,9 +443,109 @@ class FragmentScrambleGen : Fragment() {
             Log.v(DebugTag.TAG, "FragmentScrambleGen newInstance")
             return FragmentScrambleGen()
         }
+
+        private fun isAllEdgesOnItsPlace(cube: IntArray): Pair4Melting {    //проверяем все ли грани на своих местах
+            //предположим что все на местах
+            var result = true
+            //Обнуляем список ребер стоящих на местах
+            var edgesListNotOnPlace: SortedMap<Int,Int> = sortedMapOf(0 to 0)
+            edgesListNotOnPlace.clear()
+            var j = 0
+            for (i in 0..52) {
+                val secColor = dopEdge[i]
+                if (secColor != null) {
+                    val firstColor = getColorOfElement(cube,i,secColor)
+                    if (mainEdge[firstColor] != i) {
+                        edgesListNotOnPlace[j] = i
+                        j++
+                        result = false
+                    }
+                }
+            }
+            return Pair4Melting(result, edgesListNotOnPlace)
+        }
+
+        // Установка на свое место элемента цвета elementPosition находящегося в буфере ребер
+        // Возвращает SolveCube = куб после выполнения установки и решение solve + текущий ход
+        private fun edgeBufferSolve(cube: IntArray, elementPosition: Int, solve: String, context: Context): SolveCube {
+            var tmpCube = cube
+            var positionOfElem = elementPosition
+            var solv = solve
+            if (!((positionOfElem == 23) or (positionOfElem == 30))) {           //проверяем, не буфер ли?, если нет, то добоавляем букву к решению
+                solv += findLetter(positionOfElem, context) + " "        //если буфер, то будем его переплавлять и букву уже
+            }                                               //подставим в рекурсии
+            when (positionOfElem) {
+                1 -> tmpCube = blinde1(tmpCube)
+                3 -> tmpCube = blinde3(tmpCube)
+                5 -> tmpCube = blinde5(tmpCube)
+                7 -> tmpCube = blinde7(tmpCube)
+                10 -> tmpCube = blinde10(tmpCube)
+                12 -> tmpCube = blinde12(tmpCube)
+                14 -> tmpCube = blinde14(tmpCube)
+                16 -> tmpCube = blinde16(tmpCube)
+                19 -> tmpCube = blinde19(tmpCube)
+                21 -> tmpCube = blinde21(tmpCube)
+                23 -> {                    // для бело-красного ребра
+                    val pair4Melting = isAllEdgesOnItsPlace(tmpCube)
+                    if (!pair4Melting.allComplete) {
+                        val sc = meltingEdge(tmpCube, solv, pair4Melting.elementsNotOnPlace, context)
+                        solv = sc.solve
+                        tmpCube = sc.cube
+                    }}
+                25 -> tmpCube = blinde25(tmpCube)
+                28 -> tmpCube = blinde28(tmpCube)
+                30 -> {                      //для красно-белого ребра
+                    val pair4Melting = isAllEdgesOnItsPlace(tmpCube)
+                    if (!pair4Melting.allComplete) {
+                        //переплавляем буфер (рекурсия)
+                        val sc = meltingEdge(tmpCube, solv, pair4Melting.elementsNotOnPlace, context)
+                        solv = sc.solve
+                        tmpCube = sc.cube
+                    }}
+                32 -> tmpCube = blinde32(tmpCube)
+                34 -> tmpCube = blinde34(tmpCube)
+                37 -> tmpCube = blinde37(tmpCube)
+                39 -> tmpCube = blinde39(tmpCube)
+                41 -> tmpCube = blinde41(tmpCube)
+                43 -> tmpCube = blinde43(tmpCube)
+                46 -> tmpCube = blinde46(tmpCube)
+                48 -> tmpCube = blinde48(tmpCube)
+                50 -> tmpCube = blinde50(tmpCube)
+                52 -> tmpCube = blinde52(tmpCube)
+            }
+            return SolveCube(tmpCube, solv)
+        }
+
+        private fun meltingEdge(tmpCube: IntArray, solv: String, edgesListNotOnPlace: SortedMap<Int,Int>, context: Context ): SolveCube {
+            var positionOfElement = 0
+            // цикл поиска свободной корзины
+            var j = 0
+            while (positionOfElement == 0) {
+                var i = 0
+                do {
+                    if (edgePriority[j] == edgesListNotOnPlace[i]) {
+                        positionOfElement = edgePriority[j]!!
+                    } //ищем ребра на своем месте по приоритету edgePriority
+                    i++
+                } while (edgesListNotOnPlace[i] != null)
+                j++
+            }
+            //переплавляем буфер (рекурсия)
+            return edgeBufferSolve(tmpCube, positionOfElement, solv, context)
+        }
+
+        //поиск буквы в азбуке
+        private fun findLetter(numberOfLetter: Int, context: Context): String {
+            val listPagerLab = ListPagerLab.get(context)
+            val azbuka = listPagerLab.getCurrentAzbuka()
+            return azbuka[numberOfLetter]
+        }
+
+
     }
 
-    inner class SolveCube (var cube: IntArray, var solve: String)   // куб, решение
-    inner class Pair4Melting (var b: Boolean, var map: SortedMap<Int,Int>)
+
 }
 
+class SolveCube (var cube: IntArray, var solve: String)   // куб, решение
+class Pair4Melting (var allComplete: Boolean, var elementsNotOnPlace: SortedMap<Int,Int>)

@@ -657,7 +657,7 @@ class MainActivity : MyDefaultActivity(),
 
             if (!result.isSuccess) {
                 // Хьюстон, у нас проблемы с Google Play
-                //complain("Пожалуйста обновите Google Play App до последней версии "); // + result
+                //complain("Пожалуйста обновите Google Play App до последней версии "); // + allComplete
                 mGooglePlayOK = false
                 return@OnIabSetupFinishedListener
             }
@@ -707,7 +707,7 @@ class MainActivity : MyDefaultActivity(),
         Log.d(TAG, "onActivityResult($requestCode,$resultCode,$data")
         if (mHelper == null) return
 
-        // Pass on the activity result to the helper for handling
+        // Pass on the activity allComplete to the helper for handling
         if (!mHelper!!.handleActivityResult(requestCode, resultCode, data)) {
             // not handled, so handle it ourselves (here's where you'd
             // perform any handling of activity results not related to in-app
@@ -785,7 +785,7 @@ class MainActivity : MyDefaultActivity(),
 
     // Called when consumption is complete
     private var mConsumeFinishedListener: IabHelper.OnConsumeFinishedListener = IabHelper.OnConsumeFinishedListener { purchase, result ->
-        Log.d(TAG, "Consumption finished. Purchase: $purchase, result: $result")
+        Log.d(TAG, "Consumption finished. Purchase: $purchase, allComplete: $result")
 
         // if we were disposed of in the meantime, quit.
         if (mHelper == null) return@OnConsumeFinishedListener

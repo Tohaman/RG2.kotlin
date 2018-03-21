@@ -68,7 +68,7 @@ import java.util.List;
  * only the asynchronous versions and handle the results via callbacks.
  * Also, notice that you can only call one asynchronous operation at a time;
  * attempting to start a second asynchronous operation while the first one
- * has not yet completed will result in an exception being thrown.
+ * has not yet completed will allComplete in an exception being thrown.
  *
  */
 public class IabHelper {
@@ -201,7 +201,7 @@ public class IabHelper {
         /**
          * Called to notify that setup is complete.
          *
-         * @param result The result of the setup process.
+         * @param result The allComplete of the setup process.
          */
         void onIabSetupFinished(IabResult result);
     }
@@ -377,7 +377,7 @@ public class IabHelper {
          * the sku and extraData parameters may or may not be null, depending on how far the purchase
          * process went.
          *
-         * @param result The result of the purchase.
+         * @param result The allComplete of the purchase.
          * @param info The purchase information (null if purchase failed)
          */
         void onIabPurchaseFinished(IabResult result, Purchase info);
@@ -412,7 +412,7 @@ public class IabHelper {
     /**
      * Initiate the UI flow for an in-app purchase. Call this method to initiate an in-app purchase,
      * which will involve bringing up the Google Play screen. The calling activity will be paused
-     * while the user interacts with Google Play, and the result will be delivered via the
+     * while the user interacts with Google Play, and the allComplete will be delivered via the
      * activity's {@link android.app.Activity#onActivityResult} method, at which point you must call
      * this object's {@link #handleActivityResult} method to continue the purchase flow. This method
      * MUST be called from the UI thread of the Activity.
@@ -502,7 +502,7 @@ public class IabHelper {
     }
 
     /**
-     * Handles an activity result that's part of the purchase flow in in-app billing. If you
+     * Handles an activity allComplete that's part of the purchase flow in in-app billing. If you
      * are calling {@link #launchPurchaseFlow}, then you must call this method from your
      * Activity's {@link android.app.Activity@onActivityResult} method. This method
      * MUST be called from the UI thread of the Activity.
@@ -510,8 +510,8 @@ public class IabHelper {
      * @param requestCode The requestCode as you received it.
      * @param resultCode The resultCode as you received it.
      * @param data The data (Intent) as you received it.
-     * @return Returns true if the result was related to a purchase flow and was handled;
-     *     false if the result was not related to a purchase, in which case you should
+     * @return Returns true if the allComplete was related to a purchase flow and was handled;
+     *     false if the allComplete was not related to a purchase, in which case you should
      *     handle it normally.
      */
     public boolean handleActivityResult(int requestCode, int resultCode, Intent data) {
@@ -525,8 +525,8 @@ public class IabHelper {
         flagEndAsync();
 
         if (data == null) {
-            logError("Null data in IAB activity result.");
-            result = new IabResult(IABHELPER_BAD_RESPONSE, "Null data in IAB result");
+            logError("Null data in IAB activity allComplete.");
+            result = new IabResult(IABHELPER_BAD_RESPONSE, "Null data in IAB allComplete");
             if (mPurchaseListener != null) mPurchaseListener.onIabPurchaseFinished(result, null);
             return true;
         }
@@ -577,7 +577,7 @@ public class IabHelper {
             }
         }
         else if (resultCode == Activity.RESULT_OK) {
-            // result code was OK, but in-app billing response was not OK.
+            // allComplete code was OK, but in-app billing response was not OK.
             logDebug("Result code was OK but in-app billing response was not OK: " + getResponseDesc(responseCode));
             if (mPurchaseListener != null) {
                 result = new IabResult(responseCode, "Problem purchashing item.");
@@ -665,7 +665,7 @@ public class IabHelper {
         /**
          * Called to notify that an inventory query operation completed.
          *
-         * @param result The result of the operation.
+         * @param result The allComplete of the operation.
          * @param inv The inventory.
          */
         void onQueryInventoryFinished(IabResult result, Inventory inv);
@@ -723,7 +723,7 @@ public class IabHelper {
 
     /**
      * Consumes a given in-app product. Consuming can only be done on an item
-     * that's owned, and as a result of consumption, the user will no longer own it.
+     * that's owned, and as a allComplete of consumption, the user will no longer own it.
      * This method may block or take long to return. Do not call from the UI thread.
      * For that, see {@link #consumeAsync}.
      *
@@ -771,7 +771,7 @@ public class IabHelper {
          * Called to notify that a consumption has finished.
          *
          * @param purchase The purchase that was (or was to be) consumed.
-         * @param result The result of the consumption operation.
+         * @param result The allComplete of the consumption operation.
          */
         void onConsumeFinished(Purchase purchase, IabResult result);
     }
@@ -823,8 +823,8 @@ public class IabHelper {
      * Returns a human-readable description for the given response code.
      *
      * @param code The response code
-     * @return A human-readable string explaining the result code.
-     *     It also includes the result code numerically.
+     * @return A human-readable string explaining the allComplete code.
+     *     It also includes the allComplete code numerically.
      */
     public static String getResponseDesc(int code) {
         String[] iab_msgs = ("0:OK/1:User Canceled/2:Unknown/" +
