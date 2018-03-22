@@ -1,6 +1,7 @@
 package ru.tohaman.rg2.fragments
 
 
+import android.content.Context
 import android.content.res.Configuration
 import android.graphics.Typeface
 import android.media.AudioManager
@@ -13,15 +14,14 @@ import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.MotionEvent
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import kotlinx.android.synthetic.main.fragment_scramble_gen.view.*
 import kotlinx.coroutines.experimental.CommonPool
+import kotlinx.coroutines.experimental.Job
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.delay
 import kotlinx.coroutines.experimental.launch
@@ -32,6 +32,7 @@ import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.dip
 import ru.tohaman.rg2.*
 import ru.tohaman.rg2.ankoconstraintlayout.constraintLayout
+import ru.tohaman.rg2.fragments.FragmentScrambleGen.Companion.generateScrambleWithParam
 import ru.tohaman.rg2.util.generateScramble
 
 
@@ -46,6 +47,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     private lateinit var leftPad: LinearLayout
     private lateinit var rightPad: LinearLayout
     private lateinit var topLayout: LinearLayout
+    private lateinit var saveResultLayout: LinearLayout
     private lateinit var leftCircle: ImageView
     private lateinit var rightCircle: ImageView
     private lateinit var textTime: TextView
@@ -59,15 +61,32 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     private var metronomEnabled = true
     private var metronomTime = 60
     private var text4Scramble = ""
+    private var curTime : String? = null
 
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        Log.v (DebugTag.TAG, "FragmentTimer onCreate $curTime")
+        super.onCreate(savedInstanceState)
+        retainInstance = true
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
         oneHandToStart = sp.getBoolean(ONE_HAND_TO_START, false)
         metronomEnabled = sp.getBoolean(METRONOM_ENABLED, true)
         metronomTime = sp.getInt(METRONOM_TIME, 60)
         text4Scramble = sp.getString(SCRAMBLE, "U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R")
 
+        //TODO Сделать сохранение времени при повороте экрана
+        //Если повернули экран или вернулись в активность, то пытаемся восстановить время
+        if (curTime == null) { curTime = ctx.getString(R.string.begin_timer_text)}
+//        curTime = if (savedInstanceState != null) {
+//            savedInstanceState.getString("time")
+//        } else {
+//            ctx.getString(R.string.begin_timer_text)
+//        }
+        Log.v (DebugTag.TAG, "FragmentTimer onCreate finish $curTime")
+    }
+
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        Log.v (DebugTag.TAG, "FragmentTimer onCreateView")
         spl = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             SoundPool.Builder()
                     .setMaxStreams(2)
@@ -87,13 +106,21 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
 
     override fun onPause() {
         super.onPause()
+        Log.v (DebugTag.TAG, "FragmentTimer onPause")
         isTimerStart = false
         isTimerReady = false
     }
 
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        Log.v (DebugTag.TAG, "FragmentTimer onSaveInstanceState $curTime")
+        super.onSaveInstanceState(savedInstanceState)
+        savedInstanceState.putString("time", curTime)
+    }
+
     override fun onResume() {
         super.onResume()
-        timerReset()
+        Log.v (DebugTag.TAG, "FragmentTimer onResume")
+        //timerReset()
     }
 
     override fun onTouch(v: View, event: MotionEvent): Boolean {
@@ -134,6 +161,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                 //если обе руки прикоснулись и таймер не статован, то значит таймер "готов", обнуляем время таймера
                     (secHand and !isTimerStart) -> {
                         isTimerReady = true
+                        saveResultLayout.visibility = View.GONE
                         textTime.text = ctx.getString(R.string.begin_timer_text)}           //таймер готов к запуску
                 //если обе руки прикоснулись, а таймер был запущен, значит его надо остановить
                     (secHand and isTimerStart) -> { stopTimer()}   //останавливаем таймер
@@ -174,7 +202,9 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         Log.v (DebugTag.TAG, "TimerUI timerReset")
         isTimerStart = false
         isTimerReady = false
-        textTime.text = ctx.getString(R.string.begin_timer_text)
+        curTime = ctx.getString(R.string.begin_timer_text)
+        textTime.text = curTime
+        saveResultLayout.visibility = View.GONE
     }
 
     private fun stopTimer() {
@@ -183,6 +213,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         isTimerStart = false
         isTimerReady = false
         scrambleTextView.visibility = View.VISIBLE
+        saveResultLayout.visibility = View.VISIBLE
     }
 
     private fun startTimer() {
@@ -205,6 +236,10 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         }
     }
 
+    private fun startDelayOnTouch(){
+
+    }
+
     private fun startMetronom() {
         if (metronomEnabled) {
             //Используя корутины Котлина, воспроизводим звук метронома, пока isTimerStart не станет false
@@ -218,15 +253,16 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     }
 
     private fun showTimerTime() {
-        val curTime = System.currentTimeMillis() - startTime
-        val millis = ((curTime % 1000) / 10).toInt()             // сотые доли секунды
-        var seconds = (curTime / 1000).toInt()
+        val currentTime = System.currentTimeMillis() - startTime
+        val millis = ((currentTime % 1000) / 10).toInt()             // сотые доли секунды
+        var seconds = (currentTime / 1000).toInt()
         var minutes = seconds / 60
         seconds %= 60
         if (minutes > 9) {  //если получилось больше 10 минут, то добавляем к начальному времени 10 мин.
             startTime += 600000; minutes = 0
         }
-        textTime.text = String.format("%d:%02d:%02d", minutes, seconds, millis)
+        curTime = String.format("%d:%02d:%02d", minutes, seconds, millis)
+        textTime.text = curTime
     }
 
     private fun getColorFromResources(colorRes:Int):Int {
@@ -238,7 +274,14 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         }
     }
 
+//    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+//        Log.v (DebugTag.TAG, "FragmentTimer onSaveInstanceState")
+//        super.onSaveInstanceState(savedInstanceState)
+//        savedInstanceState.putString("time", textTime.text.toString())
+//    }
+
     private fun createUI(): View {
+        Log.v (DebugTag.TAG, "FragmentTimer onCreateUI")
         //толщина рамки в dp
         val m = dip(10)
         //высота верхней части
@@ -294,9 +337,10 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                     val timeLayout = linearLayout {
                         backgroundColorResource = R.color.white
                         textTime = textView {
-                            text = ctx.getString(R.string.begin_timer_text)
+                            text = curTime
                             textSize = timerTextSize
-                            padding = m
+                            horizontalPadding = m
+                            verticalPadding = m/2
                             typeface = Typeface.MONOSPACE
                             textColorResource = R.color.black
                         }
@@ -316,13 +360,27 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
 
                     scrambleTextView = textView {
                         text = text4Scramble
+                        gravity = Gravity.CENTER
                         backgroundColorResource = R.color.dark_gray
                         padding = m
                     }.lparams(0, wrapContent)
+
                     scrambleTextView.onClick {
-                        text4Scramble = generateScramble(14)
+                        text4Scramble = generateScrambleWithParam (true,true,14,ctx)
                         scrambleTextView.text = text4Scramble
+                        timerReset()
                     }
+
+                    saveResultLayout = linearLayout {
+                        //TODO Сделать сохранение результата
+                        visibility = View.GONE
+                        val simpleText = textView {
+                            text = "Сохранить результат?"
+                            gravity = Gravity.CENTER
+                            backgroundColorResource = R.color.dark_gray
+                            padding = m
+                        }
+                    }.lparams(wrapContent,wrapContent)
 
                     constraints {
                         val layouts = arrayOf(leftPad, rightPad)
@@ -332,6 +390,10 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                                 RIGHTS of parentId,
                                 BOTTOMS of parentId
                                 )
+
+                        saveResultLayout.connect( LEFTS of parentId,
+                                RIGHTS of parentId,
+                                TOP to BOTTOM of leftHand)
 
                         leftPad.connect(LEFTS of parentId,
                                 TOPS of parentId,

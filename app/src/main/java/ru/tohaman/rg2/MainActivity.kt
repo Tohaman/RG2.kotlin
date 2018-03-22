@@ -55,6 +55,7 @@ const val CHK_BUF_EDGES = "checkEdgesBuffer"
 const val CHK_BUF_CORNERS = "checkCornersBuffer"
 const val CHK_SHOW_SOLVE = "checkShowSolve"
 
+
 // SKUs для продуктов: при изменении не забыть поправить в sayThanks
 const val BIG_DONATION = "big_donation"
 const val MEDIUM_DONATION = "medium_donation"

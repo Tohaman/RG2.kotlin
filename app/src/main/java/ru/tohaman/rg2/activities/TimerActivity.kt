@@ -2,6 +2,7 @@ package ru.tohaman.rg2.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatDelegate
 import android.util.Log
@@ -12,6 +13,9 @@ import ru.tohaman.rg2.fragments.FragmentTimer
 
 class TimerActivity : AppCompatActivity() {
 
+    private val FRAGMENT_INSTANCE_NAME = "fragment"
+    var fragment: Fragment? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fragment)
@@ -19,8 +23,14 @@ class TimerActivity : AppCompatActivity() {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         Log.v (TAG, "TimerActivity Start")
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        val transaction : FragmentTransaction? = supportFragmentManager.beginTransaction()
-        transaction?.replace(R.id.fragment_container, FragmentTimer())?.commit()
+        val fm = supportFragmentManager
+        fragment = fm.findFragmentByTag(FRAGMENT_INSTANCE_NAME)
+        if (fragment == null) {
+            fragment = FragmentTimer()
+            fm.beginTransaction()
+                    .add(R.id.fragment_container, fragment, FRAGMENT_INSTANCE_NAME)
+                    .commit()
+        }
     }
 
 }
