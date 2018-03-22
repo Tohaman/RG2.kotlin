@@ -61,10 +61,10 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     private var metronomEnabled = true
     private var metronomTime = 60
     private var text4Scramble = ""
-    private var curTime : String? = null
+    private var curTime = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.v (DebugTag.TAG, "FragmentTimer onCreate $curTime")
+        Log.v (DebugTag.TAG, "FragmentTimer onCreate")
         super.onCreate(savedInstanceState)
         retainInstance = true
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
@@ -73,15 +73,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         metronomTime = sp.getInt(METRONOM_TIME, 60)
         text4Scramble = sp.getString(SCRAMBLE, "U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R")
 
-        //TODO Сделать сохранение времени при повороте экрана
-        //Если повернули экран или вернулись в активность, то пытаемся восстановить время
-        if (curTime == null) { curTime = ctx.getString(R.string.begin_timer_text)}
-//        curTime = if (savedInstanceState != null) {
-//            savedInstanceState.getString("time")
-//        } else {
-//            ctx.getString(R.string.begin_timer_text)
-//        }
-        Log.v (DebugTag.TAG, "FragmentTimer onCreate finish $curTime")
+        curTime = ctx.getString(R.string.begin_timer_text)
     }
 
 
