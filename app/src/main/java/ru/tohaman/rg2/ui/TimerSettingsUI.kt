@@ -125,13 +125,13 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                 }
 
                 constraints {
-                    val layouts = arrayOf (oneHandCheckBox,metronom,metronomText,linLayout,startButton)
+                    val layouts = arrayOf (oneHandCheckBox,startButton,metronom,metronomText,linLayout)
                     layouts.chainSpread(TOP of parentId,BOTTOM of parentId)
                     oneHandCheckBox.connect(HORIZONTAL of parentId,
                             TOPS of parentId,
-                            BOTTOM to TOP of startButton with (30.dp))
+                            BOTTOM to TOP of startButton with (10.dp))
                     startButton.connect(HORIZONTAL of parentId,
-                            TOP to BOTTOM of oneHandCheckBox with (30.dp),
+                            TOP to BOTTOM of oneHandCheckBox with (10.dp),
                             BOTTOM to TOP of metronom)
                     metronom.connect(HORIZONTAL of parentId,
                             TOP to BOTTOM of startButton)

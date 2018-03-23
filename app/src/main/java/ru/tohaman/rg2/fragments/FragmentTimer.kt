@@ -62,6 +62,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     private var metronomTime = 60
     private var text4Scramble = ""
     private var curTime = ""
+    private val delayMills = 300L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.v (DebugTag.TAG, "FragmentTimer onCreate")
@@ -146,31 +147,54 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         //true если хоть что-то из этого true
         val secHand = secondHand or oneHandToStart
         //вот так в котлине when может возвращать какое-то значение, в данном случае положена или отпущена рука (true или false)
+
+        //TODO Сделать задержку при старте
         return when (action) {
         //если что-нажато (первое прикосновение)
             MotionEvent.ACTION_DOWN -> {
                 when {
-                //если обе руки прикоснулись и таймер не статован, то значит таймер "готов", обнуляем время таймера
+                    //если обе руки прикоснулись и таймер не статован, то значит таймер "готов", обнуляем время таймера
                     (secHand and !isTimerStart) -> {
-                        isTimerReady = true
+                        isTimerReady = false
+                        resetPressedTime = System.currentTimeMillis()
+                        launch(UI) {
+                            delay (delayMills)
+                            if (resetPressedTime + delayMills - 1 < System.currentTimeMillis()) {
+                                isTimerReady = true             //таймер готов к запуску
+                                setCircleColor(handLight, R.color.green)
+                            }
+                        }
                         saveResultLayout.visibility = View.GONE
-                        textTime.text = ctx.getString(R.string.begin_timer_text)}           //таймер готов к запуску
-                //если обе руки прикоснулись, а таймер был запущен, значит его надо остановить
-                    (secHand and isTimerStart) -> { stopTimer()}   //останавливаем таймер
-                //в противном случае,
-                    else -> { /**ничего не делаем */ }
+                        textTime.text = ctx.getString(R.string.begin_timer_text)
+                    }
+                    //если обе руки прикоснулись, а таймер был запущен, значит его надо остановить
+                    (secHand and isTimerStart) -> {
+                        stopTimer()                     //останавливаем таймер
+                    }
+                    //в противном случае,
+                    else -> {
+                        /**ничего не делаем */
+                    }
                 }
                 // красим кружочек/чки
-                setCircleColor(handLight, R.color.green)
+                setCircleColor(handLight, R.color.yellow)
                 true        //вернем что текущая рука положена
             }
 
         // если отпустили палец
             MotionEvent.ACTION_UP -> {
+                //Если что-то отпустили, сбрасываем таймер задежки для TimerReady
+                resetPressedTime = System.currentTimeMillis()
                 // Если таймер "готов", то запускаем таймер и
-                if (isTimerReady) { startTimer() }
-                // красим кружочек/чки готовности в красный если таймер не запущен
-                if (!isTimerStart) { setCircleColor(handLight, R.color.red)}
+                if (isTimerReady) {
+                    startTimer()
+                }
+                // теперь красим кружочек/чки готовности в красный или зеленый в зависимости, от того запущен ли таймер
+                if (!isTimerStart) {
+                    setCircleColor(handLight, R.color.red)
+                } else {
+                    setCircleColor(handLight, R.color.green)
+                }
                 false       //вернем что текущая рука убрана
             }
         // если не отпустили, то считаем что нажата(положена)
@@ -363,7 +387,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                         timerReset()
                     }
 
-                    saveResultLayout = linearLayout {
+                    saveResultLayout = verticalLayout {
                         //TODO Сделать сохранение результата
                         visibility = View.GONE
                         val simpleText = textView {
@@ -371,6 +395,22 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                             gravity = Gravity.CENTER
                             backgroundColorResource = R.color.dark_gray
                             padding = m
+                        }
+                        val chooseLayout = linearLayout {
+                            padding = m
+                            backgroundColorResource = R.color.dark_gray
+                            val dnfButton = imageButton {
+                                imageResource = R.drawable.ic_delete
+                                padding = m
+                            }
+                            val plus2Button = imageButton {
+                                imageResource = R.drawable.ic_plus_2
+                                padding = m
+                            }
+                            val okButton = imageButton {
+                                imageResource = R.drawable.ic_ok
+                                padding = m
+                            }
                         }
                     }.lparams(wrapContent,wrapContent)
 
@@ -385,7 +425,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
 
                         saveResultLayout.connect( LEFTS of parentId,
                                 RIGHTS of parentId,
-                                TOP to BOTTOM of leftHand)
+                                BOTTOMS of leftPad)
 
                         leftPad.connect(LEFTS of parentId,
                                 TOPS of parentId,
