@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/left_back"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="@color/blue"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/scrambleTextView"
+        app:layout_constraintEnd_toStartOf="@+id/right_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/right_back"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="@color/blue"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/scrambleTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/left_back"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/scrambleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/dark_gray"
+        android:gravity="center"
+        android:padding="@dimen/small_margin"
+        android:text="U2 F2 L' D2 R U F' L2 B2 R L2 B2 U R"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/one_hand_pad"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/small_margin"
+        android:visibility="invisible"
+        android:background="@color/dark_gray"
+        app:layout_constraintBottom_toTopOf="@+id/scrambleTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/left_pad"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/small_margin"
+        android:background="@color/dark_gray"
+        app:layout_constraintBottom_toTopOf="@+id/scrambleTextView"
+        app:layout_constraintLeft_toLeftOf="@+id/left_back"
+        app:layout_constraintRight_toRightOf="@+id/left_back"
+        app:layout_constraintTop_toTopOf="@+id/left_back">
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/right_pad"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/small_margin"
+        android:background="@color/dark_gray"
+        app:layout_constraintBottom_toTopOf="@+id/scrambleTextView"
+        app:layout_constraintLeft_toLeftOf="@+id/right_back"
+        app:layout_constraintRight_toRightOf="@+id/right_back"
+        app:layout_constraintTop_toTopOf="@+id/right_back">
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>
+

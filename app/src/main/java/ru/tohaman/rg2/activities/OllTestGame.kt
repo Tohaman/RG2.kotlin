@@ -75,7 +75,7 @@ class OllTestGame : MyDefaultActivity() {
 
     private fun loadNextOLL(guessRows: Int){
         // перемешиваем алгоритмы
-        Collections.shuffle(ollRnd)
+        ollRnd.shuffle()
 
         // последний в списке считаем верным
         val correct =  ollRnd[ollRnd.size - 1]

@@ -5,8 +5,10 @@ import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.button_colored.view.*
+import kotlinx.android.synthetic.main.check_box.view.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import ru.tohaman.rg2.*
@@ -29,23 +31,43 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
         val oneHandToStart = sp.getBoolean(ONE_HAND_TO_START, false)
         val metronomEnabled = sp.getBoolean(METRONOM_ENABLED, true)
         var metronomTime = sp.getInt(METRONOM_TIME, 60)
+        var delayMills = sp.getInt(DELAY_MILLS, 500)
+        val isDelayed = if (delayMills == 0) { false } else { true }
+        val isScrambleVisible = sp.getBoolean(IS_SCRAMBLE_VISIBLE, true)
+
 
         linearLayout {
             gravity = Gravity.CENTER
             constraintLayout {
-                val oneHandCheckBox = checkBox {
+
+                val delay500CheckBox = include<CheckBox>(R.layout.check_box) {
+                    text = "Удерживать 0.5 сек для старта"
+                    textSize = 16F
+                    isChecked = isDelayed
+                }
+
+                val oneHandCheckBox = include<CheckBox>(R.layout.check_box) {
                     text = "Управление таймером одной рукой"
                     textSize = 16F
                     isChecked = oneHandToStart
-                }.lparams(wrapContent,wrapContent)
-                val metronom = checkBox {
+                }
+
+                val scrambleCheckBox = include<CheckBox>(R.layout.check_box) {
+                    text = "Генерировать скрамбл"
+                    textSize = 16F
+                    isChecked = isScrambleVisible
+                }
+
+                val metronom = include<CheckBox>(R.layout.check_box) {
                     text = "Метроном"
                     textSize = 24F
                     isChecked = metronomEnabled
                 }
+
                 val metronomText = textView {
                     text = "Частота метронома (тактов в минуту)"
                 }
+
                 val linLayout = linearLayout {
                     orientation = LinearLayout.HORIZONTAL
                     gravity = Gravity.CENTER
@@ -96,8 +118,9 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
 //                        }
 //                    })
 //
-
                 }.lparams(0,wrapContent)
+
+
 
                 include<Button>(R.layout.button_colored) {
                     text = "Запустить таймер"
@@ -116,6 +139,10 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
 
                 startButton.onClick { startActivity<TimerActivity>() }
 
+                delay500CheckBox.setOnCheckedChangeListener { _, isChecked ->
+                    delayMills = if (isChecked) {500} else {0}
+                    saveInt2SP(delayMills, DELAY_MILLS, context)
+                }
                 oneHandCheckBox.setOnCheckedChangeListener { _, isChecked ->
                     saveBoolean2SP(isChecked, ONE_HAND_TO_START, context)
                 }
@@ -125,10 +152,14 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                 }
 
                 constraints {
-                    val layouts = arrayOf (oneHandCheckBox,startButton,metronom,metronomText,linLayout)
+                    val layouts = arrayOf (delay500CheckBox, oneHandCheckBox,startButton,metronom,metronomText,linLayout,scrambleCheckBox)
                     layouts.chainSpread(TOP of parentId,BOTTOM of parentId)
-                    oneHandCheckBox.connect(HORIZONTAL of parentId,
+
+                    delay500CheckBox.connect(HORIZONTAL of parentId,
                             TOPS of parentId,
+                            BOTTOM to TOP of oneHandCheckBox)
+                    oneHandCheckBox.connect(HORIZONTAL of parentId,
+                            TOP to BOTTOM of delay500CheckBox,
                             BOTTOM to TOP of startButton with (10.dp))
                     startButton.connect(HORIZONTAL of parentId,
                             TOP to BOTTOM of oneHandCheckBox with (10.dp),
@@ -140,6 +171,9 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                             BOTTOM to TOP of linLayout)
                     linLayout.connect(HORIZONTAL of parentId,
                             TOP to BOTTOM of metronomText,
+                            BOTTOM to TOP of scrambleCheckBox)
+                    scrambleCheckBox.connect(HORIZONTAL of parentId,
+                            TOP to BOTTOM of linLayout,
                             BOTTOMS of parentId)
                 }
             }.lparams(matchParent, wrapContent) {margin = m}

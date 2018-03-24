@@ -1,9 +1,9 @@
 package ru.tohaman.rg2.fragments
 
 
-import android.content.Context
 import android.content.res.Configuration
 import android.graphics.Typeface
+import android.graphics.drawable.LayerDrawable
 import android.media.AudioManager
 import android.media.SoundPool
 import android.os.Build
@@ -15,13 +15,10 @@ import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.util.Log
 import android.view.*
-import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import kotlinx.android.synthetic.main.fragment_scramble_gen.view.*
 import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.Job
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.delay
 import kotlinx.coroutines.experimental.launch
@@ -33,7 +30,7 @@ import org.jetbrains.anko.support.v4.dip
 import ru.tohaman.rg2.*
 import ru.tohaman.rg2.ankoconstraintlayout.constraintLayout
 import ru.tohaman.rg2.fragments.FragmentScrambleGen.Companion.generateScrambleWithParam
-import ru.tohaman.rg2.util.generateScramble
+import ru.tohaman.rg2.util.cubeColor
 
 
 class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadCompleteListener {
@@ -43,9 +40,11 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     private var rightHandDown = false
     private var isTimerReady = false
     private var isTimerStart = false
+    private var isScrambleVisible = true
 
     private lateinit var leftPad: LinearLayout
     private lateinit var rightPad: LinearLayout
+    private lateinit var oneHandPad: LinearLayout
     private lateinit var topLayout: LinearLayout
     private lateinit var saveResultLayout: LinearLayout
     private lateinit var leftCircle: ImageView
@@ -57,22 +56,24 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     private lateinit var spl: SoundPool
     private var soundIdTick: Int = 0
 
-    private var oneHandToStart = true      //управление таймером одной рукой? или для старта надо положить обе
+    private var oneHandTimer = true      //управление таймером одной рукой? или для старта надо положить обе
     private var metronomEnabled = true
     private var metronomTime = 60
     private var text4Scramble = ""
     private var curTime = ""
-    private val delayMills = 300L
+    private var delayMills = 500L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.v (DebugTag.TAG, "FragmentTimer onCreate")
         super.onCreate(savedInstanceState)
         retainInstance = true
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
-        oneHandToStart = sp.getBoolean(ONE_HAND_TO_START, false)
+        oneHandTimer = sp.getBoolean(ONE_HAND_TO_START, false)
         metronomEnabled = sp.getBoolean(METRONOM_ENABLED, true)
         metronomTime = sp.getInt(METRONOM_TIME, 60)
         text4Scramble = sp.getString(SCRAMBLE, "U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R")
+        delayMills = sp.getInt(DELAY_MILLS, 500).toLong()
+        isScrambleVisible = sp.getBoolean(IS_SCRAMBLE_VISIBLE, true)
 
         curTime = ctx.getString(R.string.begin_timer_text)
     }
@@ -100,6 +101,13 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     override fun onPause() {
         super.onPause()
         Log.v (DebugTag.TAG, "FragmentTimer onPause")
+        //Останавливаем таймер, если фрагмент перестал быть в фокусе (при поворете, переключении программы)
+//        isTimerStart = false
+//        isTimerReady = false
+    }
+
+    fun backButtonWasPressed () {
+        //Останавливаем таймер, если в активности нажали кнопку back
         isTimerStart = false
         isTimerReady = false
     }
@@ -127,6 +135,10 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                 //что-то сделали с правой панелью
                 rightHandDown = onTouchAction(leftHandDown, action, rightCircle)
             }
+            oneHandPad.id -> {
+                //что-то сделали с панелью для управления одной рукой
+                rightHandDown = onTouchAction(leftHandDown, action, rightCircle)
+            }
             topLayout.id -> {
                 //нажали или отпустили панель таймера
                 if (action == MotionEvent.ACTION_DOWN) {
@@ -145,7 +157,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     // на входе состояние нажатий лев и прав панели, на выходе текущее состояние в зависимости от action Up или Down
     private fun onTouchAction(secondHand: Boolean, action: Int, handLight: ImageView): Boolean {
         //true если хоть что-то из этого true
-        val secHand = secondHand or oneHandToStart
+        val secHand = secondHand or oneHandTimer
         //вот так в котлине when может возвращать какое-то значение, в данном случае положена или отпущена рука (true или false)
 
         //TODO Сделать задержку при старте
@@ -203,14 +215,15 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     }
 
     private fun setCircleColor(handLight: ImageView, colorId: Int) {
-        val icon = ContextCompat.getDrawable(ctx, R.drawable.timer_circle)!!
-        DrawableCompat.setTint(icon, getColorFromResources(colorId))
+        val icon = ContextCompat.getDrawable(ctx, R.drawable.timer_circle)
+        DrawableCompat.setTint(icon!!, ContextCompat.getColor(ctx, colorId))
         //красим кружки, только текущий или оба в зависимости от одно- или дву-рукого управления
-        if (oneHandToStart) {
-            leftCircle.setImageDrawable(icon)
-            rightCircle.setImageDrawable(icon)
+
+        if (oneHandTimer) {
+            leftCircle.image = icon
+            rightCircle.image = icon
         } else {
-            handLight.setImageDrawable(icon)
+            handLight.image = icon
         }
     }
 
@@ -228,7 +241,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         showTimerTime()
         isTimerStart = false
         isTimerReady = false
-        scrambleTextView.visibility = View.VISIBLE
+        if (isScrambleVisible) { scrambleTextView.visibility = View.VISIBLE }
         saveResultLayout.visibility = View.VISIBLE
     }
 
@@ -327,18 +340,29 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                 constraintLayout {
                     backgroundColorResource = R.color.blue
 
-                    leftPad = linearLayout { backgroundColorResource = R.color.dark_gray }
+                    leftPad = linearLayout {
+                        backgroundColorResource = R.color.dark_gray
+                    }.lparams(0, 0) { margin = m }
                     leftPad.setOnTouchListener(this@FragmentTimer)
 
-                    rightPad = linearLayout { backgroundColorResource = R.color.dark_gray }
+                    rightPad = linearLayout {
+                        backgroundColorResource = R.color.dark_gray
+                    }.lparams(0, 0) { margin = m }
                     rightPad.setOnTouchListener(this@FragmentTimer)
 
-                    if (oneHandToStart) {
-                        leftPad.lparams(0, 0) { setMargins(m, m, 0, m) }
-                        rightPad.lparams(0, 0) { setMargins(0, m, m, m) }
+                    oneHandPad = linearLayout {
+                        backgroundColorResource = R.color.dark_gray
+                    }.lparams(0, 0) { margin = m }
+                    oneHandPad.setOnTouchListener(this@FragmentTimer)
+
+                    if (oneHandTimer) {
+                        leftPad.visibility = View.INVISIBLE
+                        rightPad.visibility = View.INVISIBLE
+                        oneHandPad.visibility = View.VISIBLE
                     } else {
-                        leftPad.lparams(0, 0) { margin = m }    //{setMargins(m.dp,m.dp,m.dp,m.dp)}
-                        rightPad.lparams(0, 0) { margin = m }    //{setMargins(m.dp,m.dp,m.dp,m.dp)}
+                        leftPad.visibility = View.VISIBLE
+                        rightPad.visibility = View.VISIBLE
+                        oneHandPad.visibility = View.INVISIBLE
                     }
 
                     topLayout = linearLayout {
@@ -377,8 +401,10 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                     scrambleTextView = textView {
                         text = text4Scramble
                         gravity = Gravity.CENTER
+                        textColorResource = R.color.white
                         backgroundColorResource = R.color.dark_gray
                         padding = m
+                        visibility = if (isScrambleVisible) {View.VISIBLE} else {View.GONE}
                     }.lparams(0, wrapContent)
 
                     scrambleTextView.onClick {
@@ -392,6 +418,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                         visibility = View.GONE
                         val simpleText = textView {
                             text = "Сохранить результат?"
+                            textColorResource = R.color.white
                             gravity = Gravity.CENTER
                             backgroundColorResource = R.color.dark_gray
                             padding = m
@@ -432,11 +459,19 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                                 RIGHT to LEFT of rightPad,
                                 BOTTOM to TOP of scrambleTextView
                         )
+
                         rightPad.connect(LEFT to RIGHT of leftPad,
                                 TOPS of parentId,
                                 RIGHTS of parentId,
                                 BOTTOM to TOP of scrambleTextView
                         )
+
+                        oneHandPad.connect(LEFTS of parentId,
+                                TOPS of parentId,
+                                RIGHTS of parentId,
+                                BOTTOM to TOP of scrambleTextView
+                        )
+
                         topLayout.connect(RIGHTS of parentId,
                                 TOPS of parentId,
                                 LEFTS of parentId)
