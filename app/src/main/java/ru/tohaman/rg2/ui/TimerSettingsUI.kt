@@ -58,40 +58,77 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                     isChecked = isScrambleVisible
                 }
 
-                val metronom = include<CheckBox>(R.layout.check_box) {
-                    text = "Метроном"
-                    textSize = 24F
-                    isChecked = metronomEnabled
-                }
-
-                val metronomText = textView {
-                    text = "Частота метронома (тактов в минуту)"
-                }
-
                 val linLayout = linearLayout {
                     orientation = LinearLayout.HORIZONTAL
                     gravity = Gravity.CENTER
-                    val buttonMinus = button ("-")
-                    val textHz = textView {
-                        text = metronomTime.toString()
-                        textSize = 24F
-                    }.lparams {margin = m}
-                    val buttonPlus = button ("+")
 
-                    buttonMinus.onClick { view ->
-                        metronomTime--
-                        if (metronomTime < 1) {metronomTime = 1}
-                        saveInt2SP(metronomTime, METRONOM_TIME, view!!.context)
-                        textHz.text = metronomTime.toString()
-                    }
-                    buttonPlus.onClick { view ->
-                        metronomTime++
-                        if (metronomTime > 240) {metronomTime = 240}
-                        saveInt2SP(metronomTime, METRONOM_TIME, view!!.context)
-                        textHz.text = metronomTime.toString()
-                    }
+                    constraintLayout {
 
-                    //TODO Сделать обработчик долгого нажатия на кнопку, что-то на базе этого
+                        val metronom = include<CheckBox>(R.layout.check_box) {
+                            text = "Метроном"
+                            textSize = 16F
+
+                            isChecked = metronomEnabled
+                        }.lparams { rightMargin = 20.dp }
+
+                        val buttonMinus = button("-") {
+                        }.lparams(50.dp)
+
+                        val textHz = textView {
+                            text = metronomTime.toString()
+                            gravity = Gravity.CENTER
+                            textSize = 20F
+                        }
+
+                        val buttonPlus = button("+") {
+
+                        }.lparams(50.dp)
+
+                        val metronomText = textView {
+                            text = "(тактов в минуту)"
+                        }
+
+                        buttonMinus.onClick { view ->
+                            metronomTime--
+                            if (metronomTime < 1) {
+                                metronomTime = 1
+                            }
+                            saveInt2SP(metronomTime, METRONOM_TIME, view!!.context)
+                            textHz.text = metronomTime.toString()
+                        }
+                        buttonPlus.onClick { view ->
+                            metronomTime++
+                            if (metronomTime > 240) {
+                                metronomTime = 240
+                            }
+                            saveInt2SP(metronomTime, METRONOM_TIME, view!!.context)
+                            textHz.text = metronomTime.toString()
+                        }
+
+                        metronom.setOnCheckedChangeListener { _, isChecked ->
+                            saveBoolean2SP(isChecked, METRONOM_ENABLED, context)
+                        }
+
+                        constraints {
+                            buttonPlus.connect( RIGHTS of parentId,
+                                    TOPS of parentId,
+                                    BOTTOM to TOP of metronomText)
+                            textHz.connect(RIGHT to LEFT of buttonPlus,
+                                    TOPS of parentId,
+                                    BOTTOM to TOP of metronomText)
+                            buttonMinus.connect( RIGHT to LEFT of textHz,
+                                    TOPS of parentId,
+                                    BOTTOM to TOP of metronomText)
+                            metronom.connect(TOPS of parentId,
+                                    BOTTOMS of parentId,
+                                    LEFTS of parentId,
+                                    RIGHT to LEFT of buttonMinus)
+                            metronomText.connect( RIGHTS of buttonPlus,
+                                    LEFTS of buttonMinus,
+                                    BOTTOMS of parentId)
+                        }
+
+                        //TODO Сделать обработчик долгого нажатия на кнопку, что-то на базе этого
 //                    buttonPlus.setOnTouchListener(object : View.OnTouchListener {
 //
 //                        internal var startTime: Long = 0
@@ -118,9 +155,8 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
 //                        }
 //                    })
 //
-                }.lparams(0,wrapContent)
-
-
+                    }
+                }.lparams(wrapContent,wrapContent)
 
                 include<Button>(R.layout.button_colored) {
                     text = "Запустить таймер"
@@ -141,18 +177,18 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
 
                 delay500CheckBox.setOnCheckedChangeListener { _, isChecked ->
                     delayMills = if (isChecked) {500} else {0}
-                    saveInt2SP(delayMills, DELAY_MILLS, context)
+                    saveInt2SP(delayMills, DELAY_MILLS, ctx)
                 }
                 oneHandCheckBox.setOnCheckedChangeListener { _, isChecked ->
-                    saveBoolean2SP(isChecked, ONE_HAND_TO_START, context)
+                    saveBoolean2SP(isChecked, ONE_HAND_TO_START, ctx)
                 }
 
-                metronom.setOnCheckedChangeListener { _, isChecked ->
-                    saveBoolean2SP(isChecked, METRONOM_ENABLED, context)
+                scrambleCheckBox.setOnCheckedChangeListener { _, isChecked ->
+                    saveBoolean2SP(isChecked, IS_SCRAMBLE_VISIBLE, ctx)
                 }
 
                 constraints {
-                    val layouts = arrayOf (delay500CheckBox, oneHandCheckBox,startButton,metronom,metronomText,linLayout,scrambleCheckBox)
+                    val layouts = arrayOf (delay500CheckBox, oneHandCheckBox,startButton,linLayout,scrambleCheckBox)
                     layouts.chainSpread(TOP of parentId,BOTTOM of parentId)
 
                     delay500CheckBox.connect(HORIZONTAL of parentId,
@@ -163,18 +199,17 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                             BOTTOM to TOP of startButton with (10.dp))
                     startButton.connect(HORIZONTAL of parentId,
                             TOP to BOTTOM of oneHandCheckBox with (10.dp),
-                            BOTTOM to TOP of metronom)
-                    metronom.connect(HORIZONTAL of parentId,
-                            TOP to BOTTOM of startButton)
-                    metronomText.connect(HORIZONTAL of parentId,
-                            TOP to BOTTOM of metronom,
                             BOTTOM to TOP of linLayout)
+//                    metronom.connect(HORIZONTAL of parentId,
+//                            TOP to BOTTOM of startButton)
                     linLayout.connect(HORIZONTAL of parentId,
-                            TOP to BOTTOM of metronomText,
+                            TOP to BOTTOM of startButton,
                             BOTTOM to TOP of scrambleCheckBox)
                     scrambleCheckBox.connect(HORIZONTAL of parentId,
                             TOP to BOTTOM of linLayout,
                             BOTTOMS of parentId)
+
+
                 }
             }.lparams(matchParent, wrapContent) {margin = m}
         }

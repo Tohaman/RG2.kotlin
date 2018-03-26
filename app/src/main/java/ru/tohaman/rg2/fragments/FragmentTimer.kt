@@ -233,7 +233,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         isTimerReady = false
         curTime = ctx.getString(R.string.begin_timer_text)
         textTime.text = curTime
-        saveResultLayout.visibility = View.GONE
+//        saveResultLayout.visibility = View.GONE
     }
 
     private fun stopTimer() {
@@ -242,7 +242,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         isTimerStart = false
         isTimerReady = false
         if (isScrambleVisible) { scrambleTextView.visibility = View.VISIBLE }
-        saveResultLayout.visibility = View.VISIBLE
+//        saveResultLayout.visibility = View.VISIBLE
     }
 
     private fun startTimer() {

@@ -135,7 +135,6 @@
                     app:layout_constraintTop_toTopOf="@+id/scramble_textView"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_optimizationLevel="basic"
                     android:layout_marginStart="8dp" />
 
             </android.support.constraint.ConstraintLayout>

@@ -232,7 +232,7 @@
                 app:layout_constraintLeft_toRightOf="@+id/scramble_textView"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/scramble_textView"
-                app:layout_optimizationLevel="basic"/>
+                />
 
         </android.support.constraint.ConstraintLayout>
 
