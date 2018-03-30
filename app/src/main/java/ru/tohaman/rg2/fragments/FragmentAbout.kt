@@ -35,8 +35,6 @@ class FragmentAbout : Fragment() {
         return AboutUI<Fragment>().createView(AnkoContext.create(ctx, this))
     }
 
-    //TODO дописать текст к окну "О Программе"
-
     companion object {
         fun newInstance(): FragmentAbout {
             Log.v(DebugTag.TAG, "FragmentAbout newInstance")
@@ -86,8 +84,8 @@ class AboutUI<in Fragment> : AnkoComponentEx<Fragment>() {
                     }
                     fiveStarButton.onClick {
                         val appPackageName = ctx.packageName // getPackageName() from Context or Activity object
-                        if (!browse("market://details?id=" + appPackageName, false)) {
-                            browse("https://play.google.com/store/apps/details?id=" + appPackageName)
+                        if (!browse("market://details?id=$appPackageName", false)) {
+                            browse("https://play.google.com/store/apps/details?id=$appPackageName")
                         }
                     }
                 }

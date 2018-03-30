@@ -3,14 +3,17 @@ package ru.tohaman.rg2.data
 import android.content.Context
 import android.support.v7.preference.PreferenceManager
 import ru.tohaman.rg2.R
-import java.util.ArrayList
 import com.google.gson.GsonBuilder
 import com.google.gson.Gson
 import ru.tohaman.rg2.FAVORITES
 import ru.tohaman.rg2.util.saveString2SP
 import com.google.gson.reflect.TypeToken
-
-
+import org.joda.time.DateTime
+import org.joda.time.format.DateTimeFormat
+import java.sql.Time
+import java.time.LocalDateTime
+import java.time.LocalTime
+import java.util.*
 
 
 /**
@@ -21,7 +24,7 @@ import com.google.gson.reflect.TypeToken
 
 class ListPagerLab private constructor(context: Context){
     private val mDatabase = BaseHelper(context)
-    var listPagers = arrayListOf<ListPager>()
+    private var listPagers = arrayListOf<ListPager>()
     var favorites = mutableSetOf<Favorite>()
 
     init { // тут пишем то, что выполнится при инициализации синглета

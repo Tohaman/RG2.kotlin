@@ -3,7 +3,6 @@ package ru.tohaman.rg2.fragments
 
 import android.content.res.Configuration
 import android.graphics.Typeface
-import android.graphics.drawable.LayerDrawable
 import android.media.AudioManager
 import android.media.SoundPool
 import android.os.Build
@@ -24,13 +23,19 @@ import kotlinx.coroutines.experimental.delay
 import kotlinx.coroutines.experimental.launch
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onClick
+import org.jetbrains.anko.sdk25.coroutines.onItemClick
 import org.jetbrains.anko.support.v4.UI
 import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.dip
 import ru.tohaman.rg2.*
+import ru.tohaman.rg2.adapters.TimeListAdapter
 import ru.tohaman.rg2.ankoconstraintlayout.constraintLayout
+import ru.tohaman.rg2.data.TimeNote
+import ru.tohaman.rg2.data.database
 import ru.tohaman.rg2.fragments.FragmentScrambleGen.Companion.generateScrambleWithParam
-import ru.tohaman.rg2.util.cubeColor
+import ru.tohaman.rg2.util.saveString2SP
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadCompleteListener {
@@ -41,10 +46,14 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     private var isTimerReady = false
     private var isTimerStart = false
     private var isScrambleVisible = true
+    private var chkEdgesBuffer = true
+    private var chkCornersBuffer = false
+    private var scrambleLength = 14
 
     private lateinit var leftPad: LinearLayout
     private lateinit var rightPad: LinearLayout
     private lateinit var oneHandPad: LinearLayout
+    private lateinit var centerLayout: LinearLayout
     private lateinit var topLayout: LinearLayout
     private lateinit var saveResultLayout: LinearLayout
     private lateinit var leftCircle: ImageView
@@ -54,6 +63,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
 
     private val maxStreams = 2
     private lateinit var spl: SoundPool
+    private lateinit var timeNoteList: List<TimeNote>
     private var soundIdTick: Int = 0
 
     private var oneHandTimer = true      //управление таймером одной рукой? или для старта надо положить обе
@@ -74,8 +84,29 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         text4Scramble = sp.getString(SCRAMBLE, "U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R")
         delayMills = sp.getInt(DELAY_MILLS, 500).toLong()
         isScrambleVisible = sp.getBoolean(IS_SCRAMBLE_VISIBLE, true)
+        chkEdgesBuffer = sp.getBoolean(CHK_BUF_EDGES, true)
+        chkCornersBuffer = sp.getBoolean(CHK_BUF_CORNERS, false)
+        scrambleLength = sp.getInt(SCRAMBLE_LEN, 14)
 
         curTime = ctx.getString(R.string.begin_timer_text)
+
+
+//      Примеры работы с базой времени
+//        val time = SimpleDateFormat("mm:ss.SS", Locale.US).format(Calendar.getInstance().time)
+//        val df = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US)
+//        val now = df.format(Calendar.getInstance().time)
+//        val comment = ""
+//        val scramble = generateScramble(14)
+//        var tm = TimeNote (time, now, scramble, comment)
+//        //Добавляем запись в базу
+//        ctx.database.addTimeNote2Base(tm)
+//        tm.uuid = "3"
+//        tm.comment = "dfhsidhfkj"
+//        //Обновляем запись в базе
+//        ctx.database.updateTimeNoteInBase(tm)
+//        //Удаляем запись из базы по uuid
+//        ctx.database.deleteTimeNoteInBase(2)
+
     }
 
 
@@ -139,7 +170,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                 //что-то сделали с панелью для управления одной рукой
                 rightHandDown = onTouchAction(leftHandDown, action, rightCircle)
             }
-            topLayout.id -> {
+            centerLayout.id -> {
                 //нажали или отпустили панель таймера
                 if (action == MotionEvent.ACTION_DOWN) {
                     if (resetPressedTime + 300 > System.currentTimeMillis()) {
@@ -160,7 +191,6 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         val secHand = secondHand or oneHandTimer
         //вот так в котлине when может возвращать какое-то значение, в данном случае положена или отпущена рука (true или false)
 
-        //TODO Сделать задержку при старте
         return when (action) {
         //если что-нажато (первое прикосновение)
             MotionEvent.ACTION_DOWN -> {
@@ -172,8 +202,9 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                         launch(UI) {
                             delay (delayMills)
                             if (resetPressedTime + delayMills - 1 < System.currentTimeMillis()) {
-                                isTimerReady = true             //таймер готов к запуску
-                                setCircleColor(handLight, R.color.green)
+                                isTimerReady = true             //таймер готов к запуску, значит красим оба кужка зеленым
+                                setCircleColor(leftCircle, R.color.green)
+                                setCircleColor(rightCircle, R.color.green)
                             }
                         }
                         saveResultLayout.visibility = View.GONE
@@ -233,7 +264,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         isTimerReady = false
         curTime = ctx.getString(R.string.begin_timer_text)
         textTime.text = curTime
-//        saveResultLayout.visibility = View.GONE
+        saveResultLayout.visibility = View.GONE
     }
 
     private fun stopTimer() {
@@ -242,7 +273,8 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         isTimerStart = false
         isTimerReady = false
         if (isScrambleVisible) { scrambleTextView.visibility = View.VISIBLE }
-//        saveResultLayout.visibility = View.VISIBLE
+        topLayout.visibility = View.VISIBLE
+        saveResultLayout.visibility = View.VISIBLE
     }
 
     private fun startTimer() {
@@ -253,6 +285,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         startShowTime()                         // запускаем фоновое отображение времени в фоне
         startMetronom()                         // запускаем метроном в фоне
         scrambleTextView.visibility = View.GONE
+        topLayout.visibility = View.GONE
     }
 
     private fun startShowTime () {
@@ -263,10 +296,6 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                 delay(30)
             } while (isTimerStart)
         }
-    }
-
-    private fun startDelayOnTouch(){
-
     }
 
     private fun startMetronom() {
@@ -290,18 +319,18 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         if (minutes > 9) {  //если получилось больше 10 минут, то добавляем к начальному времени 10 мин.
             startTime += 600000; minutes = 0
         }
-        curTime = String.format("%d:%02d:%02d", minutes, seconds, millis)
+        curTime = String.format("%d:%02d.%02d", minutes, seconds, millis)
         textTime.text = curTime
     }
 
-    private fun getColorFromResources(colorRes:Int):Int {
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            ctx.resources.getColor(colorRes,null)
-        } else {
-            @Suppress("DEPRECATION")
-            ctx.resources.getColor(colorRes)
-        }
-    }
+//    private fun getColorFromResources(colorRes:Int):Int {
+//        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            ctx.resources.getColor(colorRes,null)
+//        } else {
+//            @Suppress("DEPRECATION")
+//            ctx.resources.getColor(colorRes)
+//        }
+//    }
 
 //    override fun onSaveInstanceState(savedInstanceState: Bundle) {
 //        Log.v (DebugTag.TAG, "FragmentTimer onSaveInstanceState")
@@ -340,6 +369,129 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                 constraintLayout {
                     backgroundColorResource = R.color.blue
 
+                    topLayout = linearLayout {
+                        gravity = Gravity.CENTER
+                        padding = m
+                        backgroundColorResource = R.color.dark_gray
+                        val imageList = imageView (R.drawable.ic_list) {
+                        }
+
+                        imageList.onClick {
+                            timeNoteList = ctx.database.getTimeNoteFromBase()
+                            alert {
+                                customView {
+                                    positiveButton("Закрыть окно") {
+                                    }
+                                    verticalLayout {
+                                        val lstView = listView {
+                                            adapter = TimeListAdapter(timeNoteList)
+                                        }
+                                        lstView.onItemClick { _, _, i, _ ->
+                                            alert {
+                                                customView {
+                                                    positiveButton("OK") {
+
+                                                    }
+                                                    negativeButton("Удалить запись") {
+                                                        //Удаляем запись из базы по uuid
+                                                        val uuid = timeNoteList[i].uuid.toInt()
+                                                        ctx.database.deleteTimeNoteInBase(uuid)
+                                                        timeNoteList = ctx.database.getTimeNoteFromBase()
+                                                        lstView.adapter = TimeListAdapter(timeNoteList)
+                                                    }
+                                                    constraintLayout {
+                                                        val timeTextView = textView {
+                                                            text = timeNoteList[i].time
+                                                            textSize = 24f
+                                                            padding = dip(10)
+                                                            typeface = Typeface.DEFAULT_BOLD
+                                                        }
+
+                                                        val dateTextView = textView {
+                                                            var df = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US)
+                                                            val date = df.parse(timeNoteList[i].dateTime)
+                                                            df = SimpleDateFormat("dd MMMM yyyy HH:mm", Locale.US)
+                                                            text = df.format(date)
+                                                            textSize = 10f
+                                                            padding = dip(10)
+                                                        }
+
+                                                        val divider = view {
+                                                            backgroundColorResource = R.color.c_lgr
+                                                        }.lparams(matchConstraint, dip (2)) {horizontalMargin = dip(8)}
+
+                                                        val imgComment = imageView {
+                                                            imageResource = R.drawable.ic_comment
+                                                        }.lparams (dip(24), dip(24)) {margin = dip (8)}
+
+                                                        val textComment = textView {
+                                                            text = if (timeNoteList[i].comment == "") {
+                                                                "Нажмите сюда, чтобы добавить свой комментарий."
+                                                            } else {
+                                                                timeNoteList[i].comment
+                                                            }
+                                                        }.lparams {margin = dip (8)}
+
+                                                        textComment.onClick {
+                                                            alert {
+                                                                customView {
+                                                                    verticalLayout {
+                                                                        val setComment = editText (timeNoteList[i].comment){
+                                                                            hint = "введите свой комментарий"
+                                                                        }
+                                                                        positiveButton("OK") {
+                                                                            val commentSt = setComment.text.toString()
+                                                                            textComment.text = commentSt
+                                                                            timeNoteList[i].comment = commentSt
+                                                                            //Обновляем запись в базе
+                                                                            ctx.database.updateTimeNoteInBase(timeNoteList[i])
+                                                                        }
+                                                                        negativeButton("Отмена") {}
+                                                                    }
+                                                                }
+                                                            }.show()
+                                                        }
+
+                                                        val scrambleImage = imageView {
+                                                            imageResource = R.drawable.ic_scramble
+                                                        }.lparams (dip(24), dip(24)) {margin = dip(8)}
+
+                                                        val textScramble = textView {
+                                                            text = timeNoteList[i].scramble
+                                                        }.lparams {margin = dip (8)}
+
+                                                        constraints {
+                                                            timeTextView.connect(TOPS of parentId,
+                                                                    LEFTS of parentId)
+
+                                                            dateTextView.connect(TOPS of parentId,
+                                                                    RIGHTS of parentId)
+
+                                                            divider.connect(TOP to BOTTOM of timeTextView,
+                                                                    HORIZONTAL of parentId)
+
+                                                            imgComment.connect(TOP to BOTTOM of divider,
+                                                                    LEFTS of parentId)
+
+                                                            textComment.connect(TOP to BOTTOM of divider,
+                                                                    LEFT to RIGHT of imgComment)
+
+                                                            scrambleImage.connect(TOP to BOTTOM of textComment,
+                                                                    LEFTS of parentId)
+
+                                                            textScramble.connect(TOP to BOTTOM of textComment,
+                                                                    LEFT to RIGHT of scrambleImage)
+                                                        }
+                                                    }
+                                                }
+                                            }.show()
+                                        }
+                                    }
+                                }
+                            }.show()
+                        }
+                    }.lparams(matchConstraint,wrapContent)
+
                     leftPad = linearLayout {
                         backgroundColorResource = R.color.dark_gray
                     }.lparams(0, 0) { margin = m }
@@ -365,10 +517,10 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                         oneHandPad.visibility = View.INVISIBLE
                     }
 
-                    topLayout = linearLayout {
+                    centerLayout = linearLayout {
                         backgroundColorResource = R.color.blue
                     }.lparams(w, h)
-                    topLayout.setOnTouchListener(this@FragmentTimer)
+                    centerLayout.setOnTouchListener(this@FragmentTimer)
 
                     val topInsideLayout = linearLayout {
                         backgroundColorResource = R.color.dark_gray
@@ -408,35 +560,54 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                     }.lparams(0, wrapContent)
 
                     scrambleTextView.onClick {
-                        text4Scramble = generateScrambleWithParam (true,true,14,ctx)
-                        scrambleTextView.text = text4Scramble
-                        timerReset()
+                        newScramble()
                     }
 
                     saveResultLayout = verticalLayout {
-                        //TODO Сделать сохранение результата
                         visibility = View.GONE
-                        val simpleText = textView {
+                        textView {
                             text = "Сохранить результат?"
                             textColorResource = R.color.white
                             gravity = Gravity.CENTER
                             backgroundColorResource = R.color.dark_gray
                             padding = m
                         }
-                        val chooseLayout = linearLayout {
+                        linearLayout {
                             padding = m
                             backgroundColorResource = R.color.dark_gray
-                            val dnfButton = imageButton {
+                            val cancelButton = imageButton {
                                 imageResource = R.drawable.ic_delete
                                 padding = m
                             }
-                            val plus2Button = imageButton {
-                                imageResource = R.drawable.ic_plus_2
+                            val withCommentButton = imageButton {
+                                imageResource = R.drawable.ic_comment2
                                 padding = m
                             }
+
                             val okButton = imageButton {
                                 imageResource = R.drawable.ic_ok
                                 padding = m
+                            }
+
+                            val df = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US)
+                            val now = df.format(Calendar.getInstance().time)
+
+                            cancelButton.onClick { saveResultLayout.visibility = View.GONE }
+
+                            withCommentButton.onClick {
+                                //TODO добавить комент к результату
+                                toast("Пока не реализовано")
+                            }
+
+                            okButton.onClick {
+                                val time = textTime.text.toString()
+                                val comment = ""
+                                val scramble = scrambleTextView.text.toString()
+                                var tm = TimeNote(time, now, scramble, comment)
+                                //Добавляем запись в базу
+                                ctx.database.addTimeNote2Base(tm)
+                                saveResultLayout.visibility = View.GONE
+                                newScramble()
                             }
                         }
                     }.lparams(wrapContent,wrapContent)
@@ -444,6 +615,9 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                     constraints {
                         val layouts = arrayOf(leftPad, rightPad)
                         layouts.chainSpreadInside(RIGHT of parentId, LEFT of parentId)
+
+                        topLayout.connect(HORIZONTAL of parentId,
+                                TOPS of parentId)
 
                         scrambleTextView.connect(LEFTS of parentId,
                                 RIGHTS of parentId,
@@ -455,36 +629,36 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                                 BOTTOMS of leftPad)
 
                         leftPad.connect(LEFTS of parentId,
-                                TOPS of parentId,
+                                TOP to BOTTOM of topLayout,
                                 RIGHT to LEFT of rightPad,
                                 BOTTOM to TOP of scrambleTextView
                         )
 
                         rightPad.connect(LEFT to RIGHT of leftPad,
-                                TOPS of parentId,
+                                TOP to BOTTOM of topLayout,
                                 RIGHTS of parentId,
                                 BOTTOM to TOP of scrambleTextView
                         )
 
                         oneHandPad.connect(LEFTS of parentId,
-                                TOPS of parentId,
+                                TOP to BOTTOM of topLayout,
                                 RIGHTS of parentId,
                                 BOTTOM to TOP of scrambleTextView
                         )
 
-                        topLayout.connect(RIGHTS of parentId,
-                                TOPS of parentId,
+                        centerLayout.connect(RIGHTS of parentId,
+                                TOP to BOTTOM of topLayout,
                                 LEFTS of parentId)
 
-                        topInsideLayout.connect(RIGHTS of topLayout,
-                                TOPS of topLayout,
-                                LEFTS of topLayout,
-                                BOTTOMS of topLayout)
+                        topInsideLayout.connect(RIGHTS of centerLayout,
+                                TOPS of centerLayout,
+                                LEFTS of centerLayout,
+                                BOTTOMS of centerLayout)
 
-                        timeLayout.connect(RIGHTS of topLayout,
-                                TOPS of topLayout,
-                                LEFTS of topLayout,
-                                BOTTOMS of topLayout)
+                        timeLayout.connect(RIGHTS of centerLayout,
+                                TOPS of centerLayout,
+                                LEFTS of centerLayout,
+                                BOTTOMS of centerLayout)
 
                         leftCircle.connect(RIGHT to LEFT of timeLayout,
                                 TOPS of timeLayout,
@@ -498,16 +672,23 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
 
                         leftHand.connect(HORIZONTAL of leftPad,
                                 BOTTOMS of leftPad,
-                                TOP to BOTTOM of topLayout)
+                                TOP to BOTTOM of centerLayout)
 
                         rightHand.connect(HORIZONTAL of rightPad,
                                 BOTTOMS of rightPad,
-                                TOP to BOTTOM of topLayout)
+                                TOP to BOTTOM of centerLayout)
 
                     }
                 }.lparams(matchParent, matchParent)
             }
         }.view
+    }
+
+    private fun newScramble() {
+        text4Scramble = generateScrambleWithParam(chkEdgesBuffer, chkCornersBuffer, scrambleLength, ctx)
+        scrambleTextView.text = text4Scramble
+        saveString2SP(text4Scramble, SCRAMBLE, ctx)
+        timerReset()
     }
 
     override fun onLoadComplete(soundPool: SoundPool?, sampleId: Int, status: Int) {

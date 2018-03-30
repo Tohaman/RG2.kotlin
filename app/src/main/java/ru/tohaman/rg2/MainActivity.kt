@@ -385,6 +385,9 @@ class MainActivity : MyDefaultActivity(),
                     "BASIC_SKEWB" -> {
                         alert(getString(R.string.help_basic_skewb)) { okButton { } }.show()
                     }
+                    "BASIC_SQUARE" -> {
+                        alert(getString(R.string.help_basic_square)) { okButton { } }.show()
+                    }
                     "BLINDGAME" -> {
                         alert(getString(R.string.help_blind_game)) { okButton { } }.show()
                     }

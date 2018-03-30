@@ -43,7 +43,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     // Pagers sliding tabs https://github.com/astuetz/PagerSlidingTabStrip
-    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+    implementation 'com.astuetz:pagerslidingtabstrip:1.0.1'
+    //JodaTime
+    implementation 'joda-time:joda-time:2.9.9'
 
 }
 kotlin {

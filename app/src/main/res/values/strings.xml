@@ -22,7 +22,7 @@
     <string name="st_about">О программе</string>
     <string name="pager_youtube_text">Ссылка на YouTube видео</string>
     <string name="error_player">Ошибка инициализации YouTubePlayer (%1$s)</string>
-    <string name="begin_timer_text">0:00:00</string>
+    <string name="begin_timer_text">0:00.00</string>
     <string name="action_help">Помощь</string>
     <string name="st_thanks">Сказать спасибо</string>
     <string name="azbuka_button">Выбрать азбуку</string>
@@ -38,7 +38,7 @@
     <string name="defValue">2</string>
 
     <string name="checkBoxSolveText">Решение:</string>
-    <string name="scramble_def_value">R F L B</string>
+    <string name="scramble_def_value">R F L B U2 L B\' R F\' D B</string>
     <string name="scramble_def_solve">(А Г Ш Т Р Ц Л З Ж) (Ж П М Ф Б В)</string>
     <string name="scrambleText">Скрамбл:</string>
     <string name="azbukaButtonText">Выбрать азбуку</string>
