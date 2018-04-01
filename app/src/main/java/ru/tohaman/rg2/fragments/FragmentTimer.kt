@@ -1,6 +1,7 @@
 package ru.tohaman.rg2.fragments
 
 
+import android.content.Context
 import android.content.res.Configuration
 import android.graphics.Typeface
 import android.media.AudioManager
@@ -14,9 +15,6 @@ import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.util.Log
 import android.view.*
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
 import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.delay
@@ -36,6 +34,10 @@ import ru.tohaman.rg2.fragments.FragmentScrambleGen.Companion.generateScrambleWi
 import ru.tohaman.rg2.util.saveString2SP
 import java.text.SimpleDateFormat
 import java.util.*
+import android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT
+import android.content.Context.INPUT_METHOD_SERVICE
+import android.view.inputmethod.InputMethodManager
+import android.widget.*
 
 
 class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadCompleteListener {
@@ -205,9 +207,9 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                                 isTimerReady = true             //таймер готов к запуску, значит красим оба кужка зеленым
                                 setCircleColor(leftCircle, R.color.green)
                                 setCircleColor(rightCircle, R.color.green)
+                                saveResultLayout.visibility = View.GONE
                             }
                         }
-                        saveResultLayout.visibility = View.GONE
                         textTime.text = ctx.getString(R.string.begin_timer_text)
                     }
                     //если обе руки прикоснулись, а таймер был запущен, значит его надо остановить
@@ -373,124 +375,13 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                         gravity = Gravity.CENTER
                         padding = m
                         backgroundColorResource = R.color.dark_gray
-                        val imageList = imageView (R.drawable.ic_list) {
-                        }
-
-                        imageList.onClick {
-                            timeNoteList = ctx.database.getTimeNoteFromBase()
-                            alert {
-                                customView {
-                                    positiveButton("Закрыть окно") {
-                                    }
-                                    verticalLayout {
-                                        val lstView = listView {
-                                            adapter = TimeListAdapter(timeNoteList)
-                                        }
-                                        lstView.onItemClick { _, _, i, _ ->
-                                            alert {
-                                                customView {
-                                                    positiveButton("OK") {
-
-                                                    }
-                                                    negativeButton("Удалить запись") {
-                                                        //Удаляем запись из базы по uuid
-                                                        val uuid = timeNoteList[i].uuid.toInt()
-                                                        ctx.database.deleteTimeNoteInBase(uuid)
-                                                        timeNoteList = ctx.database.getTimeNoteFromBase()
-                                                        lstView.adapter = TimeListAdapter(timeNoteList)
-                                                    }
-                                                    constraintLayout {
-                                                        val timeTextView = textView {
-                                                            text = timeNoteList[i].time
-                                                            textSize = 24f
-                                                            padding = dip(10)
-                                                            typeface = Typeface.DEFAULT_BOLD
-                                                        }
-
-                                                        val dateTextView = textView {
-                                                            var df = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US)
-                                                            val date = df.parse(timeNoteList[i].dateTime)
-                                                            df = SimpleDateFormat("dd MMMM yyyy HH:mm", Locale.US)
-                                                            text = df.format(date)
-                                                            textSize = 10f
-                                                            padding = dip(10)
-                                                        }
-
-                                                        val divider = view {
-                                                            backgroundColorResource = R.color.c_lgr
-                                                        }.lparams(matchConstraint, dip (2)) {horizontalMargin = dip(8)}
-
-                                                        val imgComment = imageView {
-                                                            imageResource = R.drawable.ic_comment
-                                                        }.lparams (dip(24), dip(24)) {margin = dip (8)}
-
-                                                        val textComment = textView {
-                                                            text = if (timeNoteList[i].comment == "") {
-                                                                "Нажмите сюда, чтобы добавить свой комментарий."
-                                                            } else {
-                                                                timeNoteList[i].comment
-                                                            }
-                                                        }.lparams {margin = dip (8)}
-
-                                                        textComment.onClick {
-                                                            alert {
-                                                                customView {
-                                                                    verticalLayout {
-                                                                        val setComment = editText (timeNoteList[i].comment){
-                                                                            hint = "введите свой комментарий"
-                                                                        }
-                                                                        positiveButton("OK") {
-                                                                            val commentSt = setComment.text.toString()
-                                                                            textComment.text = commentSt
-                                                                            timeNoteList[i].comment = commentSt
-                                                                            //Обновляем запись в базе
-                                                                            ctx.database.updateTimeNoteInBase(timeNoteList[i])
-                                                                        }
-                                                                        negativeButton("Отмена") {}
-                                                                    }
-                                                                }
-                                                            }.show()
-                                                        }
-
-                                                        val scrambleImage = imageView {
-                                                            imageResource = R.drawable.ic_scramble
-                                                        }.lparams (dip(24), dip(24)) {margin = dip(8)}
-
-                                                        val textScramble = textView {
-                                                            text = timeNoteList[i].scramble
-                                                        }.lparams {margin = dip (8)}
-
-                                                        constraints {
-                                                            timeTextView.connect(TOPS of parentId,
-                                                                    LEFTS of parentId)
-
-                                                            dateTextView.connect(TOPS of parentId,
-                                                                    RIGHTS of parentId)
-
-                                                            divider.connect(TOP to BOTTOM of timeTextView,
-                                                                    HORIZONTAL of parentId)
-
-                                                            imgComment.connect(TOP to BOTTOM of divider,
-                                                                    LEFTS of parentId)
-
-                                                            textComment.connect(TOP to BOTTOM of divider,
-                                                                    LEFT to RIGHT of imgComment)
-
-                                                            scrambleImage.connect(TOP to BOTTOM of textComment,
-                                                                    LEFTS of parentId)
-
-                                                            textScramble.connect(TOP to BOTTOM of textComment,
-                                                                    LEFT to RIGHT of scrambleImage)
-                                                        }
-                                                    }
-                                                }
-                                            }.show()
-                                        }
-                                    }
-                                }
-                            }.show()
-                        }
+                        imageView (R.drawable.ic_list)
+                        textView ("Результаты:")
                     }.lparams(matchConstraint,wrapContent)
+
+                    topLayout.onClick {
+                        showListOfTimes()
+                    }
 
                     leftPad = linearLayout {
                         backgroundColorResource = R.color.dark_gray
@@ -595,19 +486,26 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                             cancelButton.onClick { saveResultLayout.visibility = View.GONE }
 
                             withCommentButton.onClick {
-                                //TODO добавить комент к результату
-                                toast("Пока не реализовано")
+                                //TODO добавить комент к результату, вынести обработчики в отдельные функции
+                                val imm = ctx.inputMethodManager
+                                alert("Сохранить результат с комментарием:") {
+                                    customView {
+                                        val eText = editText().lparams {margin = m}
+                                        imm.toggleSoftInput(InputMethodManager.RESULT_SHOWN,0)
+                                        positiveButton("OK") {
+                                            saveTimeResult(now, eText.text.toString())
+                                            imm.hideSoftInputFromWindow(eText.windowToken, 0)
+                                        }
+                                        negativeButton("Отмена") {
+                                            imm.hideSoftInputFromWindow(eText.windowToken, 0)
+                                        }
+                                    }
+                                }.show()
                             }
 
                             okButton.onClick {
-                                val time = textTime.text.toString()
                                 val comment = ""
-                                val scramble = scrambleTextView.text.toString()
-                                var tm = TimeNote(time, now, scramble, comment)
-                                //Добавляем запись в базу
-                                ctx.database.addTimeNote2Base(tm)
-                                saveResultLayout.visibility = View.GONE
-                                newScramble()
+                                saveTimeResult(now, comment)
                             }
                         }
                     }.lparams(wrapContent,wrapContent)
@@ -682,6 +580,149 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                 }.lparams(matchParent, matchParent)
             }
         }.view
+    }
+
+    private fun AnkoContext<Fragment>.saveTimeResult(now: String, comment: String) {
+        val time = textTime.text.toString()
+        val scramble = if (isScrambleVisible) { scrambleTextView.text.toString()} else {"Случайный скрамбл"}
+        val tm = TimeNote(time, now, scramble, comment)
+        //Добавляем запись в базу
+        ctx.database.addTimeNote2Base(tm)
+        saveResultLayout.visibility = View.GONE
+        newScramble()
+    }
+
+    private fun AnkoContext<Fragment>.showListOfTimes() {
+        timeNoteList = getSortedTimeNoteList()
+        alert ("Список результатов:"){
+            customView {
+                positiveButton("Закрыть окно") {
+                }
+                verticalLayout {
+                    val lstView = listView {
+                        adapter = TimeListAdapter(timeNoteList)
+                    }
+                    lstView.onItemClick { _, _, i, _ ->
+                        showTimeResultScreen(i, lstView)
+                    }
+                }
+            }
+        }.show()
+    }
+
+    private fun AnkoContext<Fragment>.getSortedTimeNoteList():List<TimeNote> {
+        val tnList = ctx.database.getTimeNoteFromBase()
+        return tnList.sortedWith(compareBy(TimeNote::time))
+    }
+
+    private fun AnkoContext<Fragment>.showTimeResultScreen(i: Int, lstView: ListView) {
+        alert {
+            customView {
+                positiveButton("OK") {
+
+                }
+                negativeButton("Удалить запись") {
+                    //Удаляем запись из базы по uuid
+                    val uuid = timeNoteList[i].uuid.toInt()
+                    ctx.database.deleteTimeNoteInBase(uuid)
+                    timeNoteList = getSortedTimeNoteList()
+                    lstView.adapter = TimeListAdapter(timeNoteList)
+                }
+                constraintLayout {
+                    val timeTextView = textView {
+                        text = timeNoteList[i].time
+                        textSize = 24f
+                        padding = dip(10)
+                        typeface = Typeface.DEFAULT_BOLD
+                    }
+
+                    val dateTextView = textView {
+                        var df = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US)
+                        val date = df.parse(timeNoteList[i].dateTime)
+                        df = SimpleDateFormat("dd MMMM yyyy HH:mm", Locale.getDefault())
+                        text = df.format(date)
+                        textSize = 10f
+                        padding = dip(10)
+                    }
+
+                    val divider = view {
+                        backgroundColorResource = R.color.c_lgr
+                    }.lparams(matchConstraint, dip(2)) { horizontalMargin = dip(8) }
+
+                    val imgComment = imageView {
+                        imageResource = R.drawable.ic_comment
+                    }.lparams(dip(24), dip(24)) { margin = dip(8) }
+
+                    val textComment = textView {
+                        text = if (timeNoteList[i].comment == "") {
+                            "Нажмите сюда, чтобы добавить свой комментарий."
+                        } else {
+                            timeNoteList[i].comment
+                        }
+                    }.lparams { margin = dip(8) }
+
+                    textComment.onClick {
+                        showEditCommentWindows(i, textComment)
+                    }
+
+                    val scrambleImage = imageView {
+                        imageResource = R.drawable.ic_scramble
+                    }.lparams(dip(24), dip(24)) { margin = dip(8) }
+
+                    val textScramble = textView {
+                        text = timeNoteList[i].scramble
+                    }.lparams { margin = dip(8) }
+
+                    constraints {
+                        timeTextView.connect(TOPS of parentId,
+                                LEFTS of parentId)
+
+                        dateTextView.connect(TOPS of parentId,
+                                RIGHTS of parentId)
+
+                        divider.connect(TOP to BOTTOM of timeTextView,
+                                HORIZONTAL of parentId)
+
+                        imgComment.connect(TOP to BOTTOM of divider,
+                                LEFTS of parentId)
+
+                        textComment.connect(TOP to BOTTOM of divider,
+                                LEFT to RIGHT of imgComment)
+
+                        scrambleImage.connect(TOP to BOTTOM of textComment,
+                                LEFTS of parentId)
+
+                        textScramble.connect(TOP to BOTTOM of textComment,
+                                LEFT to RIGHT of scrambleImage)
+                    }
+                }
+            }
+        }.show()
+    }
+
+    private fun AnkoContext<Fragment>.showEditCommentWindows(i: Int, textComment: TextView) {
+        alert ("Введите свой комментарий"){
+            customView {
+                val imm = ctx.inputMethodManager
+                verticalLayout {
+                    val eText = editText(timeNoteList[i].comment) {
+                    }
+                    imm.toggleSoftInput(InputMethodManager.RESULT_SHOWN,0)
+
+                    positiveButton("OK") {
+                        imm.hideSoftInputFromWindow(eText.windowToken, 0)
+                        val commentSt = eText.text.toString()
+                        textComment.text = commentSt
+                        timeNoteList[i].comment = commentSt
+                        //Обновляем запись в базе
+                        ctx.database.updateTimeNoteInBase(timeNoteList[i])
+                    }
+                    negativeButton("Отмена") {
+                        imm.hideSoftInputFromWindow(eText.windowToken, 0)
+                    }
+                }
+            }
+        }.show()
     }
 
     private fun newScramble() {

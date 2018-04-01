@@ -48,7 +48,7 @@
     <string name="settings">Настройки</string>
     <string name="fiveStarButtonText">Оценить приложение в GooglePlay</string>
     <string name="content_description_app_loading_image">Пожалуйста подождите</string>
-    <string name="commentText">Свой комментарий: </string>
+    <string name="commentText">Свой комментарий (алгоритм): </string>
     <string name="pyraminx">Пирамидка (Pyraminx)</string>
     <string name="other_puzzle">Другие головоломки</string>
     <string name="programm_name">RubicsGuide 2 (RG2)</string>

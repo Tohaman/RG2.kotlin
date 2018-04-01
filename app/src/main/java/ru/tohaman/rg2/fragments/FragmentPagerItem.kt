@@ -14,6 +14,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubeStandalonePlayer
@@ -177,29 +178,27 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         //Выводим коммент, и делаем обработчик нажатия на него (вызваем окно редактирования)
         val commentText = view.findViewById<TextView>(PagerItemtUI.Ids.commentText)
-        commentText.text = (ctx.getString(R.string.commentText) + " " + comment)
+        commentText.text = (ctx.getString(R.string.commentText) + "\n" + comment)
         commentText.onClick {
-            alert {
+            alert(R.string.commentText) {
                 customView {
-                    linearLayout {
-                        orientation = LinearLayout.VERTICAL
-                        textView {
-                            textResource = R.string.commentText
-                            textSize = 18F
-                        }
-                        val editTxt = editText {
-                            inputType = InputType.TYPE_TEXT_FLAG_CAP_WORDS
-                            text = comment.toEditable()
-                        }
+                    val imm = ctx.inputMethodManager
+                    val eText = editText {
+                        inputType = InputType.TYPE_TEXT_FLAG_CAP_WORDS
+                        text = comment.toEditable()
+                    }
+                    imm.toggleSoftInput(InputMethodManager.RESULT_SHOWN,0)
 
-                        positiveButton("OK") {
-                            val lps = listPagerLab.getPhaseItemByTitle(phase, title)
-                            val cmnt = editTxt.text.toString()
-                            lps.comment = cmnt
-                            listPagerLab.updateListPager(lps)
-                            commentText.text = (ctx.getString(R.string.commentText) + " " + cmnt)
-                        }
-                        negativeButton("Отмена") {}
+                    positiveButton("OK") {
+                        imm.hideSoftInputFromWindow(eText.windowToken, 0)
+                        val lps = listPagerLab.getPhaseItemByTitle(phase, title)
+                        val cmnt = eText.text.toString()
+                        lps.comment = cmnt
+                        listPagerLab.updateListPager(lps)
+                        commentText.text = (ctx.getString(R.string.commentText) + "\n" + cmnt)
+                    }
+                    negativeButton("Отмена") {
+                        imm.hideSoftInputFromWindow(eText.windowToken, 0)
                     }
                 }
             }.show()
