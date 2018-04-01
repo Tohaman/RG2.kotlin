@@ -49,6 +49,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("PLL",R.array.pll_title,R.array.pll_icon,R.array.pll_descr,R.array.pll_url,context)
         phaseInit("BEGIN4X4",R.array.begin4_title,R.array.begin4_icon,R.array.begin4_descr,R.array.begin4_url,context)
         phaseInit("BEGIN5X5",R.array.begin5_title,R.array.begin5_icon,R.array.begin5_descr,R.array.begin5_url,context)
+        phaseInit("PATTERNS",R.array.patterns_title,R.array.patterns_icon,R.array.patterns_descr,R.array.patterns_url,context,R.array.patterns_comment)
         phaseInit("AZBUKA", R.array.azbuka_title, R.array.g2f_icon,R.array.g2f_descr,R.array.g2f_null,context)
         phaseInit("BLIND", R.array.blind_title, R.array.blind_icon,R.array.blind_descr,R.array.blind_url,context)
         phaseInit("BLINDACC", R.array.blindacc_title, R.array.blindacc_icon,R.array.blindacc_descr,R.array.blindacc_url,context)
@@ -79,15 +80,16 @@ class ListPagerLab private constructor(context: Context){
     //--------функции класса ----------------
 
     // Инициализация фазы, с заданными массивами Заголовков, Иконок, Описаний, ютуб-ссылок
-    private fun phaseInit(phase: String, titleArray: Int, iconArray: Int, descrArray: Int, urlArray: Int, context: Context) {
+    private fun phaseInit(phase: String, titleArray: Int, iconArray: Int, descrArray: Int, urlArray: Int, context: Context, comment : Int = 0) {
         val titles =  context.resources.getStringArray(titleArray)
         val icon = context.resources.obtainTypedArray (iconArray)
         val descr = context.resources.obtainTypedArray (descrArray)
         val url = context.resources.getStringArray(urlArray)
+        val cmnt = if (comment != 0) { context.resources.getStringArray(comment) } else { context.resources.getStringArray(R.array.basic_5x5_url)}
         for (i in titles.indices) {
             var listPager = mDatabase.getListPagerFromBase(i, phase)
             if (listPager == null) {
-                listPager = ListPager(phase, i, titles[i], icon.getResourceId(i, 0), descr.getResourceId(i, 0), url[i])
+                listPager = ListPager(phase, i, titles[i], icon.getResourceId(i, 0), descr.getResourceId(i, 0), url[i], cmnt[i])
                 mDatabase.addListPager2Base(listPager)
             } else {
                 listPager.title = titles[i]
@@ -96,6 +98,10 @@ class ListPagerLab private constructor(context: Context){
                 listPager.url = url[i]
             }
             listPagers.add(listPager)
+            if ((comment != 0) and (listPager.comment == "") and (cmnt[i] != "")) {
+                listPager.comment = cmnt[i]
+                updateListPager(listPager)
+            }
         }
         icon.recycle()
         descr.recycle()

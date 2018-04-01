@@ -8,9 +8,9 @@
     </string-array>
 
     <integer-array name="patterns_icon">
-        <item>@drawable/v2x2_begin_1</item>
-        <item>@drawable/v2x2_begin_2</item>
-        <item>@drawable/v2x2_begin_3</item>
+        <item>@drawable/pattern_1</item>
+        <item>@drawable/pattern_2</item>
+        <item>@drawable/pattern_3</item>
     </integer-array>
     
     <string-array name="patterns_descr">
@@ -19,27 +19,56 @@
         <item>@string/patterns_st3_descr</item>
     </string-array>
 
-
     <string-array name="patterns_url">
         <item>@string/patterns_st1_url</item>
         <item>@string/patterns_st2_url</item>
         <item>@string/patterns_st3_url</item>
     </string-array>
-    
-    <string name="patterns_st1_title">1. Вишенка</string>
+
+    <string-array name="patterns_comment">
+        <item>@string/patterns_st1_comment</item>
+        <item>@string/patterns_st2_comment</item>
+        <item>@string/patterns_st3_comment</item>
+    </string-array>
+
+
+    <string name="patterns_st1_title">1. Точки (Вишенка)</string>
     <string name="patterns_st1_descr" formatted="false"><![CDATA[
+        <p>Больше узоров вы можете найти на сайте <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>.</p>
+
+        <p>Первый узор - точки разного цвета на каждой грани. один из самых простых алгоритмов.
+        Крутим сначала одну, потом другую среднюю грань (без разницы какие), а потом возвращаем их обратно.
+        Если получилась красная точка на белой грани, то она напоминает \"вишенку\" на торте.
+        </p>
+        <p style="text-align:center"><img src="pattern_1.xml"></p>
+        Алгоритм(0:44): <b>S\' M\' S M</b>
     ]]></string>
     <string name="patterns_st1_url">5Tjr5R9q50w</string>
+    <string name="patterns_st1_comment">S\' M\' S M</string>
 
-    <string name="patterns_st2_title">Этап 2. Расстановка углов верхнего слоя</string>
+
+    <string name="patterns_st2_title">2. Шахматы</string>
     <string name="patterns_st2_descr" formatted="false"><![CDATA[
+        <p>Второй алгоритм, пожалуй еще проще первого, если выполнять, через вращение средних слоев.
+        А смотрится, пожалуй, даже эффектнее предыдущего. Просто вращаем каждый средний слой по два раза
+        или вращаем каждую грань (1:51) по два раза, но в этом случае вращать надо парами (правую с левой, верхню
+        с нижней, заднюю с передней).
+        </p>
+        <p style="text-align:center"><img src="pattern_2.xml"></p>
+        Алгоритм(1:51): <b>R2 L2 U2 D2 F2 B2</b> или <b>M2 S2 E2</b>
     ]]></string>
     <string name="patterns_st2_url">5Tjr5R9q50w</string>
+    <string name="patterns_st2_comment">S\' M\' S M</string>
 
-    <string name="patterns_st3_title">Этап 3. Разворот углов верхнего слоя</string>
+    <string name="patterns_st3_title">3. Кубик в кубе</string>
     <string name="patterns_st3_descr" formatted="false"><![CDATA[
+        <p>Непростой, но очень эффектный узор.
+        </p>
+        <p style="text-align:center"><img src="pattern_2.xml"></p>
+        Алгоритм(2:44): <b></b>
     ]]></string>
     <string name="patterns_st3_url">5Tjr5R9q50w</string>
+    <string name="patterns_st3_comment"></string>
 
     
 </resources>

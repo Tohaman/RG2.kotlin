@@ -7,6 +7,7 @@
         <item>Мегаминкс (Megaminx)</item>
         <item>Скьюб (Skewb)</item>
         <item>Скваер (Square-1)</item>
+        <item>Узоры на кубике</item>
     </string-array>
 
     <integer-array name="other_icon">
@@ -16,6 +17,7 @@
         <item>@drawable/megaminx</item>
         <item>@drawable/skewb</item>
         <item>@drawable/square</item>
+        <item>@drawable/pattern_1</item>
     </integer-array>
 
     <string-array name="other_descr">
@@ -25,9 +27,11 @@
         <item>@string/other_st4_descr</item>
         <item>@string/other_st5_descr</item>
         <item>@string/other_st6_descr</item>
+        <item>@string/other_st7_descr</item>
     </string-array>
 
     <string-array name="other_null">
+        <item> </item>
         <item> </item>
         <item> </item>
         <item> </item>
@@ -42,6 +46,7 @@
     <string name="other_st4_descr">MEGAMINX</string>
     <string name="other_st5_descr">SKEWB</string>
     <string name="other_st6_descr">SQUARE</string>
+    <string name="other_st7_descr">PATTERNS</string>
 
 </resources>
 
