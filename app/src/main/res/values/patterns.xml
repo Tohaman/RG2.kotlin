@@ -5,30 +5,40 @@
         <item>@string/patterns_st1_title</item>
         <item>@string/patterns_st2_title</item>
         <item>@string/patterns_st3_title</item>
+        <item>@string/patterns_st4_title</item>
+        <item>@string/patterns_st5_title</item>
     </string-array>
 
     <integer-array name="patterns_icon">
         <item>@drawable/pattern_1</item>
         <item>@drawable/pattern_2</item>
         <item>@drawable/pattern_3</item>
+        <item>@drawable/pattern_4</item>
+        <item>@drawable/pattern_5</item>
     </integer-array>
     
     <string-array name="patterns_descr">
         <item>@string/patterns_st1_descr</item>
         <item>@string/patterns_st2_descr</item>
         <item>@string/patterns_st3_descr</item>
+        <item>@string/patterns_st4_descr</item>
+        <item>@string/patterns_st5_descr</item>
     </string-array>
 
     <string-array name="patterns_url">
         <item>@string/patterns_st1_url</item>
         <item>@string/patterns_st2_url</item>
         <item>@string/patterns_st3_url</item>
+        <item>@string/patterns_st4_url</item>
+        <item>@string/patterns_st5_url</item>
     </string-array>
 
     <string-array name="patterns_comment">
         <item>@string/patterns_st1_comment</item>
         <item>@string/patterns_st2_comment</item>
         <item>@string/patterns_st3_comment</item>
+        <item>@string/patterns_st4_comment</item>
+        <item>@string/patterns_st5_comment</item>
     </string-array>
 
 
@@ -62,13 +72,34 @@
 
     <string name="patterns_st3_title">3. Кубик в кубе</string>
     <string name="patterns_st3_descr" formatted="false"><![CDATA[
-        <p>Непростой, но очень эффектный узор.
+        <p>Непростой, но очень эффектный узор. Создается впечатление, что внутри кубика 3х3 есть еще
+        один кубик.
         </p>
-        <p style="text-align:center"><img src="pattern_2.xml"></p>
-        Алгоритм(2:44): <b></b>
+        <p style="text-align:center"><img src="pattern_3.xml"></p>
+        Алгоритм(2:52): <b>U2 F2 R2 U\' L2 D B R\' B R\' B R\' D\' L2 U\'</b>
     ]]></string>
     <string name="patterns_st3_url">5Tjr5R9q50w</string>
-    <string name="patterns_st3_comment"></string>
+    <string name="patterns_st3_comment">U2 F2 R2 U\' L2 D B R\' B R\' B R\' D\' L2 U\'</string>
 
-    
+    <string name="patterns_st4_title">4. Змея</string>
+    <string name="patterns_st4_descr" formatted="false"><![CDATA[
+        <p>Еще один очень красивый узор. Змейка через весь кубик.
+        </p>
+        <p style="text-align:center"><img src="pattern_4.xml"></p>
+        Алгоритм(4:50): <b>U B2 L D B\' F L\' D  U\' L\' R F\' D2 R\'</b>
+    ]]></string>
+    <string name="patterns_st4_url">5Tjr5R9q50w</string>
+    <string name="patterns_st4_comment">U B2 L D B\' F L\' D  U\' L\' R F\' D2 R\'</string>
+
+    <string name="patterns_st5_title">5. Крест</string>
+    <string name="patterns_st5_descr" formatted="false"><![CDATA[
+        <p>Крест на каждой стороне.
+        </p>
+        <p style="text-align:center"><img src="pattern_5.xml"></p>
+        Алгоритм(6:29): <b>L2 R\' B2 F2 D2 B2 F2 L2 R2 U2 R\'</b>
+    ]]></string>
+    <string name="patterns_st5_url">5Tjr5R9q50w</string>
+    <string name="patterns_st5_comment">L2 R\' B2 F2 D2 B2 F2 L2 R2 U2 R\'</string>
+
+
 </resources>

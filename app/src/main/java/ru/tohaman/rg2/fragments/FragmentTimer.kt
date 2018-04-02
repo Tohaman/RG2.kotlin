@@ -36,6 +36,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT
 import android.content.Context.INPUT_METHOD_SERVICE
+import android.print.PrintAttributes
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
 
@@ -376,7 +377,11 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                         padding = m
                         backgroundColorResource = R.color.dark_gray
                         imageView (R.drawable.ic_list)
-                        textView ("Результаты:")
+                        textView ("Результаты:") {
+                            textSize = 18F
+                            textColorResource = R.color.white
+                            leftPadding = m
+                        }
                     }.lparams(matchConstraint,wrapContent)
 
                     topLayout.onClick {
@@ -443,6 +448,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
 
                     scrambleTextView = textView {
                         text = text4Scramble
+                        textSize = 16F
                         gravity = Gravity.CENTER
                         textColorResource = R.color.white
                         backgroundColorResource = R.color.dark_gray
@@ -631,7 +637,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                 constraintLayout {
                     val timeTextView = textView {
                         text = timeNoteList[i].time
-                        textSize = 24f
+                        textSize = 28f
                         padding = dip(10)
                         typeface = Typeface.DEFAULT_BOLD
                     }
@@ -641,17 +647,17 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                         val date = df.parse(timeNoteList[i].dateTime)
                         df = SimpleDateFormat("dd MMMM yyyy HH:mm", Locale.getDefault())
                         text = df.format(date)
-                        textSize = 10f
+                        textSize = 12f
                         padding = dip(10)
                     }
 
                     val divider = view {
                         backgroundColorResource = R.color.c_lgr
-                    }.lparams(matchConstraint, dip(2)) { horizontalMargin = dip(8) }
+                    }.lparams(matchConstraint, dip(2)) { horizontalMargin = dip(10)}
 
                     val imgComment = imageView {
                         imageResource = R.drawable.ic_comment
-                    }.lparams(dip(24), dip(24)) { margin = dip(8) }
+                    }.lparams(dip(24), dip(24)) { topMargin = dip(16); leftMargin = dip(10)}
 
                     val textComment = textView {
                         text = if (timeNoteList[i].comment == "") {
@@ -659,7 +665,8 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                         } else {
                             timeNoteList[i].comment
                         }
-                    }.lparams { margin = dip(8) }
+                        textSize = 16F
+                    }.lparams (0){ topMargin = dip(16); leftMargin = dip(10); rightMargin = dip(10)}
 
                     textComment.onClick {
                         showEditCommentWindows(i, textComment)
@@ -667,11 +674,12 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
 
                     val scrambleImage = imageView {
                         imageResource = R.drawable.ic_scramble
-                    }.lparams(dip(24), dip(24)) { margin = dip(8) }
+                    }.lparams(dip(24), dip(24)) { setMargins(dip(10),dip(16),0,0) }
 
                     val textScramble = textView {
                         text = timeNoteList[i].scramble
-                    }.lparams { margin = dip(8) }
+                        textSize = 16F
+                    }.lparams (0){ setMargins(dip(10),dip(16),dip(10),0) }
 
                     constraints {
                         timeTextView.connect(TOPS of parentId,
@@ -684,15 +692,19 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                                 HORIZONTAL of parentId)
 
                         imgComment.connect(TOP to BOTTOM of divider,
+                                BOTTOMS of textComment,
                                 LEFTS of parentId)
 
                         textComment.connect(TOP to BOTTOM of divider,
+                                RIGHTS of parentId,
                                 LEFT to RIGHT of imgComment)
 
                         scrambleImage.connect(TOP to BOTTOM of textComment,
+                                BOTTOMS of parentId,
                                 LEFTS of parentId)
 
                         textScramble.connect(TOP to BOTTOM of textComment,
+                                RIGHTS of parentId,
                                 LEFT to RIGHT of scrambleImage)
                     }
                 }
