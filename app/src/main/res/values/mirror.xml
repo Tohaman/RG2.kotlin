@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="mirror_title">
+        <item>@string/mirror_st1_title</item>
+        <item>@string/mirror_st2_title</item>
+        <item>@string/mirror_st3_title</item>
+        <item>@string/mirror_st4_title</item>
+        <item>@string/mirror_st5_title</item>
+    </string-array>
+
+    <integer-array name="mirror_icon">
+        <item>@drawable/mirror_1</item>
+        <item>@drawable/mirror_2</item>
+        <item>@drawable/mirror_3</item>
+        <item>@drawable/mirror_4</item>
+        <item>@drawable/mirror</item>
+    </integer-array>
+    
+    <string-array name="mirror_descr">
+        <item>@string/mirror_st1_descr</item>
+        <item>@string/mirror_st2_descr</item>
+        <item>@string/mirror_st3_descr</item>
+        <item>@string/mirror_st4_descr</item>
+        <item>@string/mirror_st5_descr</item>
+    </string-array>
+
+
+    <string-array name="mirror_url">
+        <item>@string/mirror_st1_url</item>
+        <item>@string/mirror_st2_url</item>
+        <item>@string/mirror_st3_url</item>
+        <item>@string/mirror_st4_url</item>
+        <item>@string/mirror_st5_url</item>
+    </string-array>
+    
+    <string name="mirror_st1_title">1. Правильный крест</string>
+    <string name="mirror_st1_descr" formatted="false"><![CDATA[
+        В собранно виде данная головоломка представляет из себя куб.
+        <p style="text-align:center"><img src="mirror.xml"></p>
+
+        А вот в разобранном виде, что-то абсолютно непонятное.
+        <p style="text-align:center"><img src="mirror_1_1.xml"></p>
+
+        <p>Именно поэтому, очень сложно объяснить словами и показать в статичных картинках, как же
+        все таки собирается данная головоломка. Поэтому, если вам что-то непонятно из текста,
+        не пожалейте интернета, пощелкайте по ссылкам и посмотрите интересующий вас момент в видео.</p>
+
+        Зеркальный куб по сути является обычным кубиком 3х3, только его элементы различаются не
+        цветом, а размером. И собирается он абсолютно так же, как и кубик 3х3.
+
+    ]]></string>
+    <string name="mirror_st1_url">Bv2xJrjkcpI</string>
+
+    <string name="mirror_st2_title">2. Первый слой</string>
+    <string name="mirror_st2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="mirror_st2_url">LxxT2SVJWjk</string>
+
+    <string name="mirror_st3_title">3. Второй слой</string>
+    <string name="mirror_st3_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="mirror_st3_url">mxF-Ulwc3pw</string>
+
+    <string name="mirror_st4_title">4. Ровняем крышу</string>
+    <string name="mirror_st4_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="mirror_st4_url">fypO93TJZQA</string>
+
+    <string name="mirror_st5_title">5. Квадратим крышу</string>
+    <string name="mirror_st5_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="mirror_st5_url">A85jHAryfdw</string>
+
+</resources>

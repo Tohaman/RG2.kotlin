@@ -96,7 +96,7 @@ class MainActivity : MyDefaultActivity(),
     private var changedPhase = "BEGIN"
     private var changedId = 0
     private val listOfGo2Fridrich = listOf("ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL", "RECOMEND")
-    private val listOfOtherPuzzle = listOf("BEGIN4X4", "BEGIN5X5", "PYRAMINX", "MEGAMINX", "SKEWB", "SQUARE", "PATTERNS")
+    private val listOfOtherPuzzle = listOf("BEGIN4X4", "BEGIN5X5", "PYRAMINX", "MEGAMINX", "SKEWB", "SQUARE", "PATTERNS", "MIRROR")
 
     override fun onCreate(savedInstanceState: Bundle?) {
 

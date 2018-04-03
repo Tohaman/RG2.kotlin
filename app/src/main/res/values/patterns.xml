@@ -51,7 +51,7 @@
         Если получилась красная точка на белой грани, то она напоминает \"вишенку\" на торте.
         </p>
         <p style="text-align:center"><img src="pattern_1.xml"></p>
-        Алгоритм(0:44): <b>S\' M\' S M</b>
+        <b><a href="rg2://ytplay?time=0:44&link=5Tjr5R9q50w">Алгоритм:</a> S\' M\' S M</b>
     ]]></string>
     <string name="patterns_st1_url">5Tjr5R9q50w</string>
     <string name="patterns_st1_comment">S\' M\' S M</string>
@@ -65,7 +65,7 @@
         с нижней, заднюю с передней).
         </p>
         <p style="text-align:center"><img src="pattern_2.xml"></p>
-        Алгоритм(1:51): <b>R2 L2 U2 D2 F2 B2</b> или <b>M2 S2 E2</b>
+        <b><a href="rg2://ytplay?time=1:51&link=5Tjr5R9q50w">Алгоритм:</a> R2 L2 U2 D2 F2 B2</b> или <b>M2 S2 E2</b>
     ]]></string>
     <string name="patterns_st2_url">5Tjr5R9q50w</string>
     <string name="patterns_st2_comment">S\' M\' S M</string>
@@ -76,7 +76,7 @@
         один кубик.
         </p>
         <p style="text-align:center"><img src="pattern_3.xml"></p>
-        Алгоритм(2:52): <b>U2 F2 R2 U\' L2 D B R\' B R\' B R\' D\' L2 U\'</b>
+        <b><a href="rg2://ytplay?time=2:52&link=5Tjr5R9q50w">Алгоритм:</a> U2 F2 R2 U\' L2 D B R\' B R\' B R\' D\' L2 U\'</b>
     ]]></string>
     <string name="patterns_st3_url">5Tjr5R9q50w</string>
     <string name="patterns_st3_comment">U2 F2 R2 U\' L2 D B R\' B R\' B R\' D\' L2 U\'</string>
@@ -86,7 +86,7 @@
         <p>Еще один очень красивый узор. Змейка через весь кубик.
         </p>
         <p style="text-align:center"><img src="pattern_4.xml"></p>
-        Алгоритм(4:50): <b>U B2 L D B\' F L\' D  U\' L\' R F\' D2 R\'</b>
+        <b><a href="rg2://ytplay?time=4:50&link=5Tjr5R9q50w">Алгоритм:</a> U B2 L D B\' F L\' D  U\' L\' R F\' D2 R\'</b>
     ]]></string>
     <string name="patterns_st4_url">5Tjr5R9q50w</string>
     <string name="patterns_st4_comment">U B2 L D B\' F L\' D  U\' L\' R F\' D2 R\'</string>
@@ -96,7 +96,7 @@
         <p>Крест на каждой стороне.
         </p>
         <p style="text-align:center"><img src="pattern_5.xml"></p>
-        Алгоритм(6:29): <b>L2 R\' B2 F2 D2 B2 F2 L2 R2 U2 R\'</b>
+        <b><a href="rg2://ytplay?time=6:29&link=5Tjr5R9q50w">Алгоритм:</a> L2 R\' B2 F2 D2 B2 F2 L2 R2 U2 R\'</b>
     ]]></string>
     <string name="patterns_st5_url">5Tjr5R9q50w</string>
     <string name="patterns_st5_comment">L2 R\' B2 F2 D2 B2 F2 L2 R2 U2 R\'</string>

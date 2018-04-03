@@ -133,7 +133,7 @@
         потом левый угол <a href="rg2://ytplay?time=5:00&link=93Sp66a5Q6o">на себя (L),</a>
         правый <a href="rg2://ytplay?time=5:20&link=93Sp66a5Q6o">от себя (F),</a> левый
         <a href="rg2://ytplay?time=5:28&link=93Sp66a5Q6o">от себя (L\').</a><br/>
-        <b>Алгоритм(5:51): F\' L F L\'</b><br/><br/>
+        <b><a href="rg2://ytplay?time=5:51&link=93Sp66a5Q6o">Алгоритм:</a> F\' L F L\'</b><br/><br/>
 
         Ну и если после выполнения пиф-пафа на верхней стороне еще есть желтые элементы, значит надо
         выполнить пиф-паф <a href="rg2://ytplay?time=6:37&link=93Sp66a5Q6o">еще раз.</a>
@@ -160,7 +160,7 @@
         центров:</p>
 
         <b>1. Все <a href="rg2://ytplay?time=0:54&link=gysLJfKILHo">пять центров</a> не на своем месте.</b>
-        <p style="text-align:center"><img src="skewb_3_1.xml"><img src="skewb_3_2.xml"></p>
+        <p style="text-align:center"><img src="skewb_3_2.xml"></p>
 
         Если все центры, кроме установленного на первом этапе, не на месте, то смотрим
         на <a href="rg2://ytplay?time=1:32&link=gysLJfKILHo">верхний центр.</a>
@@ -178,7 +178,7 @@
         </p>
 
         <b>2. Три центра (<a href="rg2://ytplay?time=4:05&link=gysLJfKILHo">верхний и два боковых противоположных</a>) не на своем месте.</b>
-        <p style="text-align:center"><img src="skewb_3_3.xml"><img src="skewb_3_4.xml"></p>
+        <p style="text-align:center"><img src="skewb_3_3.xml"></p>
 
         <p>Повторяем все то, что делали в первой ситуации.
         Смотрим <a href="rg2://ytplay?time=4:14&link=gysLJfKILHo">на верхний центр,</a>
@@ -191,7 +191,7 @@
         </p>
 
         <b>3. Три центра (<a href="rg2://ytplay?time=10:52&link=gysLJfKILHo">верхний и два боковых смежных</a>) не на своем месте.</b>
-        <p style="text-align:center"><img src="skewb_3_5.xml"></p>
+        <p style="text-align:center"><img src="skewb_3_4.xml"></p>
 
         Как вы заметили, алгоритм из предыдущих ситуаций не меняет расположение углов. И
         те, кто умеют собирать кубик рубика вслепую, скорее всего <a href="rg2://ytplay?time=11:35&link=gysLJfKILHo">догадались,</a>
@@ -199,7 +199,7 @@
         Нужно взять скьюб глазками цвета верхнего центра к себе, а неправильно стоящий сбоку центр
         <a href="rg2://ytplay?time=11:53&link=gysLJfKILHo">установочным ходом</a> (B\' или R),
         в зависимости от того, с какой стороны он стоит, поставить назад.
-        <p style="text-align:center"><img src="skewb_3_5.xml"> R => <img src="skewb_3_6.xml"></p>
+        <p style="text-align:center"><img src="skewb_3_5.xml"> R => <img src="skewb_3_7.xml"></p>
 
         <p> Тем самым, по сути, приведя ситуацию к предыдущей.
         <a href="rg2://ytplay?time=12:15&link=gysLJfKILHo">Решаем ее</a> - выполняем пиф-паф,
