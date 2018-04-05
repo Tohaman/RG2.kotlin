@@ -93,7 +93,8 @@
 
     <string name="patterns_st5_title">5. Крест</string>
     <string name="patterns_st5_descr" formatted="false"><![CDATA[
-        <p>Крест на каждой стороне.
+        <p>Крест на каждой стороне. Остальные узоры для кубика 3х3 вы всегда можете найти на
+        сайте <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>
         </p>
         <p style="text-align:center"><img src="pattern_5.xml"></p>
         <b><a href="rg2://ytplay?time=6:29&link=5Tjr5R9q50w">Алгоритм:</a> L2 R\' B2 F2 D2 B2 F2 L2 R2 U2 R\'</b>
