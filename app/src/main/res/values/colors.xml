@@ -36,6 +36,8 @@
     <color name="cube_white">#FFFFFF</color>
     <color name="c_w">#FFFFFF</color>
     <color name="cube_gray">#424242</color>
+    <color name="m_gr">#424242</color>
+    <color name="m_l">#9e9e9e</color>
     <color name="cube_ollgray">#696969</color>
     <color name="c_gr">#696969</color>
     <color name="cube_litegray">#9e9e9e</color>
