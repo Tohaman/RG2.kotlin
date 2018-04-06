@@ -34,15 +34,14 @@
     </string-array>
 
     <string-array name="other_null">
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
     </string-array>
 
     <string name="other_st1_descr">BEGIN4X4</string>

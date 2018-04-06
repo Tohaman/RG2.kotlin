@@ -529,21 +529,18 @@ class MainActivity : MyDefaultActivity(),
         //Обработка событий из FragmentListView
         Log.v(DebugTag.TAG, "onListViewInteraction Start, $phase, $id")
         val lp = mListPagerLab.getPhaseItem(id,phase)
-        when (phase) {
-            //Если в листвью "Основные движения", то показать "тост",
-            "BASIC3X3", "BASIC_PYR", "BASIC_SKEWB", "BASIC4X4", "BASIC5X5" -> {
-                toast(getString(lp.description))
+        when (lp.url) { //В зависимости от того, что прописано в url
+            "thanks" -> {     //Если это меню "сказать спасибо"
+                sayThanks(id)
             }
-            //Если меню "переходим на Фридрих" или "Другие головоломки", то меняем текст листвью на соответствующую фазу
-            "BASIC","OTHER","G2F" -> {
+            "submenu" -> {  //Если это сабменю
                 setListFragmentPhase(getString(lp.description))
                 fab.setImageResource(R.drawable.ic_fab_backward)
             }
-            //Если выбрали какое-то "Спасибо" автору
-            "THANKS" -> {
-                sayThanks(id)
+            "basic" -> {    //Если это движения и надо вывести тост с описанием действия
+                toast(getString(lp.description))
             }
-            //в других случаях запустить SlideTab с просмотром этапов
+            //В других случаях запускаем SlidingTabActivity
             else -> { startActivity<SlidingTabsActivity>(RUBIC_PHASE to phase, EXTRA_ID to id)}
         }
     }

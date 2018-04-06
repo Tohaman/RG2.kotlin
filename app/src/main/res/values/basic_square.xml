@@ -46,18 +46,18 @@
     </string-array>
 
     <string-array name="basic_skewb_url">
-        <item>1_url</item>
-        <item>2_url</item>
-        <item>3_url</item>
-        <item>4_url</item>
-        <item>5_url</item>
-        <item>6_url</item>
-        <item>7_url</item>
-        <item>8_url</item>
-        <item>9_url</item>
-        <item>10_url</item>
-        <item>11_url</item>
-        <item>12_url</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
     </string-array>
 
     <string name="basic_skewb_st1_title">R</string>

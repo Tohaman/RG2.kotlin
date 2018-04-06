@@ -19,9 +19,9 @@
     </string-array>
 
     <string-array name="thanks_url">
-        <item> </item>
-        <item> </item>
-        <item> </item>
+        <item>thanks</item>
+        <item>thanks</item>
+        <item>thanks</item>
     </string-array>
 
     <string name="thanks_st1_title">Сказать маленькое спасибо (50 руб ~ 1$)</string>

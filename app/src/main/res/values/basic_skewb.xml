@@ -28,12 +28,12 @@
     </string-array>
 
     <string-array name="basic_square_url">
-        <item>1_url</item>
-        <item>2_url</item>
-        <item>3_url</item>
-        <item>4_url</item>
-        <item>5_url</item>
-        <item>6_url</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
     </string-array>
 
     <string name="basic_square_st1_title">/</string>

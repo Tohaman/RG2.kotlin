@@ -31,14 +31,13 @@
 </string-array>
 
 <string-array name="g2f_null">
-    <item> </item>
-    <item> </item>
-    <item> </item>
-    <item> </item>
-    <item> </item>
-    <item> </item>
-    <item> </item>
-    <item> </item>
+    <item>submenu</item>
+    <item>submenu</item>
+    <item>submenu</item>
+    <item>submenu</item>
+    <item>submenu</item>
+    <item>submenu</item>
+    <item>submenu</item>
 </string-array>
 
 <string name="g2f_st1_descr">ACCEL</string>

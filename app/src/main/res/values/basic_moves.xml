@@ -1,47 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<string-array name="basic_title">
-    <item>Движения для 2х2 и 3х3</item>
-    <item>Движения для 4х4</item>
-    <item>Движения для 5х5</item>
-    <item>Движения для пирамидки</item>
-    <item>Движения для скьюба</item>
-    <item>Движения для скваера</item>
-</string-array>
+    <string-array name="basic_title">
+        <item>Азбука вращений</item>
+        <item>Движения для 2х2 и 3х3</item>
+        <item>Движения для 4х4</item>
+        <item>Движения для 5х5</item>
+        <item>Движения для пирамидки</item>
+        <item>Движения для скьюба</item>
+        <item>Движения для скваера</item>
+    </string-array>
 
-<integer-array name="basic_icon">
-    <item>@drawable/vbasic</item>
-    <item>@drawable/basic_4x4</item>
-    <item>@drawable/basic_5x5</item>
-    <item>@drawable/basic_pyr</item>
-    <item>@drawable/basic_skewb</item>
-    <item>@drawable/square</item>
-</integer-array>
+    <integer-array name="basic_icon">
+        <item>@drawable/ic_alert</item>
+        <item>@drawable/vbasic</item>
+        <item>@drawable/basic_4x4</item>
+        <item>@drawable/basic_5x5</item>
+        <item>@drawable/basic_pyr</item>
+        <item>@drawable/basic_skewb</item>
+        <item>@drawable/square</item>
+    </integer-array>
 
-<string-array name="basic_descr">
-    <item>@string/basic_st1_descr</item>
-    <item>@string/basic_st2_descr</item>
-    <item>@string/basic_st3_descr</item>
-    <item>@string/basic_st4_descr</item>
-    <item>@string/basic_st5_descr</item>
-    <item>@string/basic_st6_descr</item>
-</string-array>
+    <string-array name="basic_descr">
+        <item>@string/basic_st0_descr</item>
+        <item>@string/basic_st1_descr</item>
+        <item>@string/basic_st2_descr</item>
+        <item>@string/basic_st3_descr</item>
+        <item>@string/basic_st4_descr</item>
+        <item>@string/basic_st5_descr</item>
+        <item>@string/basic_st6_descr</item>
+    </string-array>
 
-<string-array name="basic_null">
-    <item> </item>
-    <item> </item>
-    <item> </item>
-    <item> </item>
-    <item> </item>
-    <item> </item>
-    <item> </item>
-</string-array>
+    <string-array name="basic_null">
+        <item> </item>
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+    </string-array>
 
-<string name="basic_st1_descr">BASIC3X3</string>
-<string name="basic_st2_descr">BASIC4X4</string>
-<string name="basic_st3_descr">BASIC5X5</string>
-<string name="basic_st4_descr">BASIC_PYR</string>
-<string name="basic_st5_descr">BASIC_SKEWB</string>
-<string name="basic_st6_descr">BASIC_SQ1</string>
+    <string name="basic_st0_descr" formatted="false"><![CDATA[
+        <p>Несколько слов о языке вращений кубика Рубика и других шарнирных головоломок.</p>
+
+        <p>Язык вращений – это особые обозначения движений граней кубика, при помощи который можно
+        записать какой-либо алгоритм, решение или скрамбл.</p>
+
+        Начнем с языка вращений для всех кубиков от 2х2 и выше. У кубика шесть сторон, соответственно вращение
+        каждой стороны обозначается соответствующей буквой:<br/><br/>
+
+        F - front - фронтальная сторона<br/>
+        B - back - задняя сторона<br/>
+        L - left - левая сторона<br/>
+        R - right - правая сторона<br/>
+        U - up - верхняя сторона<br/>
+        D - down - нижняя сторона<br/><br/>
+
+        Данный язык вращений является международным, и используется практически на всех более-менее
+        серьезных ресурсах о кубике. В некоторых обучалках, в основном довольно старых, встречается
+        руссифицированный язык вращений (Ф - фасад, П - правая сторона, Л - левая сторона и т.д.),
+        но я не рекомендую вам привыкать к такому.<br/><br/>
+
+        - Если написана только буква, значит крутим эту сторону по часовой стрелке, как если бы мы
+        смотрели на эту грань в лицо. Именно поэтому F и D это вращения как бы в разные
+        стороны.<br/><br/>
+
+        - Если в конце стоит штрих \', например F\', значит крутим эту сторону против часовой стрелки,
+        как если бы мы смотрели на эту грань в лицо.<br/><br/>
+
+        - Если после буквы стоит цифра 2, значит крутим эту сторону на 180 градусов (два раза). Если
+        ещё стоит и штрих, к примеру U2\', то это означает, что в данном алгоритме удобнее вращать
+        U2 против часовой стрелки (но не обязательно, т.к. итог будет один и тот же, что U2, что U2\')<br/><br/>
+
+        - Если после буквы стоит еще буква \"w\", например Uw, значит крутим не только эту грань,
+        но еще и средний слой (для больших кубиков, часто сочетается со следующим модификатором). Также
+        вместо модификатора \"w\", может использоваться строчное обозначение стороны. Т.е.
+        Uw = u, Fw = f, Rw = r и т.д.<br/><br/>
+
+        - Если цифра стоит перед буквой, например 2U, значит крутим только второй по порядку слой от этой
+        грани. Данный модификатор применяется для больших кубов (от 4х4 и выше). Очень часто
+        совмещается с предыдущим, например 3Uw, означает, что нужно повернуть все три слоя по часовой
+        стрелке. Заметьте, что совместно с предыдущим можификатором цифра 2 обычно не применяется,
+        т.е. 2Uw = Uw = 2u = u. Возможно сочетание всех перечисленных можификаторов. Допустим,
+        что нам надо в кубике 6х6 повернуть все три правых слоя на 180 градусов, и сделать это
+        удобнее против часовой стрелки, на языке вращений это будет выглядеть как 3Rw2\'.<br/><br/>
+
+        - Скобки - не обозначают никаких действий. Позволяют просто визуально выделить какую-то
+        часть алгоритма для облегчения его восприятия/запоминания, например пиф-паф в Палке: <b>F (R U R\' U\') F\'</b>.<br/><br/>
+
+        Также существуют более редкие движения, которые тоже иногда используются в алгоритмах:<br/><br/>
+
+        M - middle - средний слой, находящийся между правой (R) и левой (L) сторонами. Может
+        выполняться как (Rw\' R).<br/><br/>
+        S - standing - средний слой, находящийся между фронтальной (F) и задней (B) сторонами. Может
+        выполняться как (Fw\' F).<br/><br/>
+        E - equatorial - средний слой, находящийся между верхней (U) и нижней (D) сторонами. Может
+        выполняться как (Uw\' U).<br/><br/>
+
+        Кроме вращений граней куба, существуют обозначения, указывающие на изменения положения куба
+        в пространстве. Эти движения называются перехватами:<br/><br/>
+
+        x - весь куб вращается от себя по плоскости, совпадающей с правым (R) и левым (L) слоями (F превращается в U)<br/>
+        x\' - весь куб вращается к себе по плоскости, совпадающей с правым (R) и левым (L) слоями (F превращается в D)<br/>
+        y - весь куб вращается по часовой стрелке в горизонтальной плоскости (F превращается в L)<br/>
+        y\' - весь куб вращается против часовой стрелки в горизонтальной плоскости (F превращается в R)<br/>
+        z - весь куб вращается по часовой стрелке в фронтальной плоскости (U превращается в R)<br/>
+        z\' - весь куб вращается против часовой стрелки в фронтальной плоскости (U превращается в L)<br/><br/>
+
+
+    ]]></string>
+    <string name="basic_st1_descr">BASIC3X3</string>
+    <string name="basic_st2_descr">BASIC4X4</string>
+    <string name="basic_st3_descr">BASIC5X5</string>
+    <string name="basic_st4_descr">BASIC_PYR</string>
+    <string name="basic_st5_descr">BASIC_SKEWB</string>
+    <string name="basic_st6_descr">BASIC_SQ1</string>
 
 </resources>
