@@ -4,15 +4,9 @@ import android.content.Context
 import android.support.v7.preference.PreferenceManager
 import ru.tohaman.rg2.R
 import com.google.gson.GsonBuilder
-import com.google.gson.Gson
 import ru.tohaman.rg2.FAVORITES
 import ru.tohaman.rg2.util.saveString2SP
 import com.google.gson.reflect.TypeToken
-import org.joda.time.DateTime
-import org.joda.time.format.DateTimeFormat
-import java.sql.Time
-import java.time.LocalDateTime
-import java.time.LocalTime
 import java.util.*
 
 
@@ -49,7 +43,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("PLL",R.array.pll_title,R.array.pll_icon,R.array.pll_descr,R.array.pll_url,context)
         phaseInit("BEGIN4X4",R.array.begin4_title,R.array.begin4_icon,R.array.begin4_descr,R.array.begin4_url,context)
         phaseInit("BEGIN5X5",R.array.begin5_title,R.array.begin5_icon,R.array.begin5_descr,R.array.begin5_url,context)
-        phaseInit("PATTERNS",R.array.patterns_title,R.array.patterns_icon,R.array.patterns_descr,R.array.patterns_url,context,R.array.patterns_comment)
+        phaseInit("PATTERNS",R.array.patterns_title,R.array.patterns_icon,R.array.patterns_descr,R.array.patterns_url,context, R.array.patterns_comment)
         phaseInit("AZBUKA", R.array.azbuka_title, R.array.g2f_icon,R.array.g2f_descr,R.array.g2f_null,context)
         phaseInit("BLIND", R.array.blind_title, R.array.blind_icon,R.array.blind_descr,R.array.blind_url,context)
         phaseInit("BLINDACC", R.array.blindacc_title, R.array.blindacc_icon,R.array.blindacc_descr,R.array.blindacc_url,context)
@@ -58,6 +52,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("SKEWB", R.array.skewb_title, R.array.skewb_icon,R.array.skewb_descr,R.array.skewb_url,context)
         phaseInit("SQUARE", R.array.square_title, R.array.square_icon,R.array.square_descr,R.array.square_url,context)
         phaseInit("MIRROR", R.array.mirror_title, R.array.mirror_icon,R.array.mirror_descr,R.array.mirror_url,context)
+        phaseInit("AXIS", R.array.axis_title, R.array.axis_icon,R.array.axis_descr,R.array.axis_url,context)
         phaseInit("PLLTEST", R.array.pll_test_phases, R.array.pll_test_icon,R.array.pll_test_descr,R.array.pll_test_url,context)
         phaseInit("PLLTEST_CUSTOM", R.array.pll_test_phases, R.array.pll_test_icon,R.array.pll_test_descr,R.array.pll_test_url,context)
         phaseInit("OLLTEST", R.array.oll_test_phases, R.array.oll_icon, R.array.oll_descr, R.array.oll_test_url, context)
@@ -86,7 +81,7 @@ class ListPagerLab private constructor(context: Context){
         val icon = context.resources.obtainTypedArray (iconArray)
         val descr = context.resources.obtainTypedArray (descrArray)
         val url = context.resources.getStringArray(urlArray)
-        val cmnt = if (comment != 0) { context.resources.getStringArray(comment) } else { context.resources.getStringArray(R.array.basic_5x5_url)}
+        val cmnt = if (comment != 0) { context.resources.getStringArray(comment) } else { context.resources.getStringArray(R.array.empty_comment)}
         for (i in titles.indices) {
             var listPager = mDatabase.getListPagerFromBase(i, phase)
             if (listPager == null) {

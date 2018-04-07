@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="axis_title">
+        <item>@string/axis_st1_title</item>
+        <item>@string/axis_st2_title</item>
+        <item>@string/axis_st3_title</item>
+        <item>@string/axis_st4_title</item>
+        <item>@string/axis_st5a_title</item>
+        <item>@string/axis_st5b_title</item>
+        <item>@string/axis_st6_title</item>
+        <item>@string/axis_st7_title</item>
+        <item>@string/axis_st8_title</item>
+        <item>@string/axis_st9_title</item>
+    </string-array>
+
+    <integer-array name="axis_icon">
+        <item>@drawable/axis</item>
+        <item>@drawable/axis</item>
+        <item>@drawable/axis</item>
+        <item>@drawable/axis</item>
+        <item>@drawable/axis</item>
+        <item>@drawable/axis</item>
+        <item>@drawable/axis</item>
+        <item>@drawable/axis</item>
+        <item>@drawable/axis</item>
+        <item>@drawable/axis</item>
+    </integer-array>
+    
+    <string-array name="axis_descr">
+        <item>@string/axis_st1_descr</item>
+        <item>@string/axis_st2_descr</item>
+        <item>@string/axis_st3_descr</item>
+        <item>@string/axis_st4_descr</item>
+        <item>@string/axis_st5a_descr</item>
+        <item>@string/axis_st5b_descr</item>
+        <item>@string/axis_st6_descr</item>
+        <item>@string/axis_st7_descr</item>
+        <item>@string/axis_st8_descr</item>
+        <item>@string/axis_st9_descr</item>
+    </string-array>
+
+
+    <string-array name="axis_url">
+        <item>@string/axis_st1_url</item>
+        <item>@string/axis_st2_url</item>
+        <item>@string/axis_st3_url</item>
+        <item>@string/axis_st4_url</item>
+        <item>@string/axis_st5a_url</item>
+        <item>@string/axis_st5b_url</item>
+        <item>@string/axis_st6_url</item>
+        <item>@string/axis_st7_url</item>
+        <item>@string/axis_st8_url</item>
+        <item>@string/axis_st9_url</item>
+    </string-array>
+
+    <string name="axis_st1_title">1. Крест</string>
+    <string name="axis_st1_descr" formatted="false"><![CDATA[
+
+    ]]></string>
+    <string name="axis_st1_url"></string>
+
+    <string name="axis_st2_title">2. Разворот смежных центров</string>
+    <string name="axis_st2_descr" formatted="false"><![CDATA[
+
+    ]]></string>
+    <string name="axis_st2_url"></string>
+
+    <string name="axis_st3_title">3. Первый слой</string>
+    <string name="axis_st3_descr" formatted="false"><![CDATA[
+
+    ]]></string>
+    <string name="axis_st3_url"></string>
+
+    <string name="axis_st4_title">4. Второй слой</string>
+    <string name="axis_st4_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="axis_st4_url"></string>
+
+    <string name="axis_st5a_title">5. Верхний крест</string>
+    <string name="axis_st5a_descr" formatted="false"><![CDATA[
+
+    ]]></string>
+    <string name="axis_st5a_url"></string>
+
+    <string name="axis_st5b_title">6. Расстановка углов</string>
+    <string name="axis_st5b_descr" formatted="false"><![CDATA[
+
+    ]]></string>
+    <string name="axis_st5b_url"></string>
+
+    <string name="axis_st6_title">7. Разворот углов</string>
+    <string name="axis_st6_descr" formatted="false"><![CDATA[
+
+    ]]></string>
+    <string name="axis_st6_url"></string>
+
+    <string name="axis_st7_title">Резерв</string>
+    <string name="axis_st7_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="axis_st7_url"></string>
+
+    <string name="axis_st8_title">Резерв</string>
+    <string name="axis_st8_descr" formatted="false"><![CDATA[
+
+    ]]></string>
+    <string name="axis_st8_url"></string>
+
+    <string name="axis_st9_title">Резерв</string>
+    <string name="axis_st9_descr" formatted="false"><![CDATA[
+
+    ]]></string>
+    <string name="axis_st9_url"></string>
+
+</resources>

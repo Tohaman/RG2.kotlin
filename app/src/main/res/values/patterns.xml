@@ -68,7 +68,7 @@
         <b><a href="rg2://ytplay?time=1:51&link=5Tjr5R9q50w">Алгоритм:</a> R2 L2 U2 D2 F2 B2</b> или <b>M2 S2 E2</b>
     ]]></string>
     <string name="patterns_st2_url">5Tjr5R9q50w</string>
-    <string name="patterns_st2_comment">S\' M\' S M</string>
+    <string name="patterns_st2_comment">M2 S2 E2</string>
 
     <string name="patterns_st3_title">3. Кубик в кубе</string>
     <string name="patterns_st3_descr" formatted="false"><![CDATA[
