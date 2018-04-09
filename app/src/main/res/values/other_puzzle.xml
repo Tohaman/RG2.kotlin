@@ -9,7 +9,7 @@
         <item>Скваер (Square-1)</item>
         <item>Узоры на кубике</item>
         <item>Зеркальный куб (Mirror blocks)</item>
-        <!--<item>Ненормальный куб (Axis cube)</item>-->
+        <item>Ненормальный куб (Axis cube)</item>
     </string-array>
 
     <integer-array name="other_icon">

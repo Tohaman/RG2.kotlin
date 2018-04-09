@@ -28,7 +28,7 @@ class MyListAdapter(private val listOfLP: ArrayList<ListPager> = ArrayList(), pr
         context = parent!!.context
         return with(context) {
             when (listOfLP[0].phase) {
-
+                //TODO Сделать определение типа ListView не по фазе, а по url. Если url = basic..., иначе ....
                 in listOfBasic -> {
                     val taskNum: Int = listOfLP[i].icon
                     linearLayout {

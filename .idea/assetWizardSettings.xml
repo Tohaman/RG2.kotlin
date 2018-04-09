@@ -29,11 +29,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="height" value="100" />
-                            <entry key="outputName" value="mirror_3" />
+                            <entry key="height" value="92" />
+                            <entry key="outputName" value="axis_corner" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="D:\Dropbox\RubicsGuide\mirror.svg" />
-                            <entry key="width" value="86" />
+                            <entry key="sourceFile" value="D:\Dropbox\RubicsGuide\axis_corner.svg" />
+                            <entry key="width" value="100" />
                           </map>
                         </option>
                       </PersistentState>
