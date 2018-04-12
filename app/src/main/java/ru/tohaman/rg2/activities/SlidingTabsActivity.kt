@@ -71,7 +71,7 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
 
         Log.v (TAG, "SlidingTabActivity onCreate Инициализируем ListPagers и передаем его адаптерам")
         mListPagerLab = ListPagerLab.get(this)
-        var mListPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList(mPhase)
+        var mListPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList(mPhase).filter { it.url != "submenu" } as ArrayList<ListPager>
 
         Log.v (TAG, "SlidingTabActivity onCreate Настраиваем SlidingTab")
         val mViewPagerSlidingTabs = findViewById<ViewPager>(R.id.viewPagerSlidingTabs)
