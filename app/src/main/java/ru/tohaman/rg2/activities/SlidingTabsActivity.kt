@@ -39,6 +39,7 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
     private var mPhase = "BEGIN"
     private lateinit var rightDrawerListView: ListView
     private lateinit var mListPagerLab: ListPagerLab
+    private lateinit var favList: ArrayList<ListPager>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -96,7 +97,7 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
         mViewPagerSlidingTabs.currentItem = id
         tabs.setViewPager(mViewPagerSlidingTabs)
 
-        Log.v (TAG, "SlidingTabActivity onCreate Настраиваем ListView для списка слева")
+        Log.v (TAG, "SlidingTabActivity onCreate Настраиваем ListView для списка слева ")
         // Настраиваем листвью для выезжающего слева списка
         val listAdapter = MyListAdapter(mListPagers)
         val drawerListView  = findViewById<ListView>(R.id.left_drawer)
@@ -108,7 +109,7 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
             drawer_layout.closeDrawer(GravityCompat.START)
         }
 
-        val favList = mListPagerLab.getPhaseList("FAVORITES")
+        favList = mListPagerLab.getPhaseList("FAVORITES")
         val rightDrawerAdapter = MyListAdapter(favList,1.3F)
 
         // подключим адаптер для выезжающего справа списка
@@ -139,7 +140,8 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
     }
 
     override fun onViewPagerCheckBoxInteraction() {
-        val adapter = MyListAdapter(mListPagerLab.getPhaseList("FAVORITES"), 1.3F)
+        favList = mListPagerLab.getPhaseList("FAVORITES")
+        val adapter = MyListAdapter(favList,1.3F)
         rightDrawerListView.adapter = adapter
     }
 

@@ -492,7 +492,6 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                             cancelButton.onClick { saveResultLayout.visibility = View.GONE }
 
                             withCommentButton.onClick {
-                                //TODO добавить комент к результату, вынести обработчики в отдельные функции
                                 val imm = ctx.inputMethodManager
                                 alert("Сохранить результат с комментарием:") {
                                     customView {

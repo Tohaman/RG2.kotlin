@@ -27,9 +27,9 @@ class MyListAdapter(private val listOfLP: ArrayList<ListPager> = ArrayList(), pr
     override fun getView(i: Int, v: View?, parent: ViewGroup?): View {
         context = parent!!.context
         return with(context) {
-            when (listOfLP[0].phase) {
+            when (listOfLP[0].url) {
                 //TODO Сделать определение типа ListView не по фазе, а по url. Если url = basic..., иначе ....
-                in listOfBasic -> {
+                "basic" -> {
                     val taskNum: Int = listOfLP[i].icon
                     linearLayout {
                         orientation = HORIZONTAL
