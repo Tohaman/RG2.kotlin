@@ -3,14 +3,20 @@ package ru.tohaman.rg2.ui
 import android.preference.PreferenceManager
 import android.util.Log
 import android.view.Gravity
+import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.LinearLayout
+import android.widget.TextView
 import kotlinx.android.synthetic.main.button_colored.view.*
 import kotlinx.android.synthetic.main.check_box.view.*
+import kotlinx.coroutines.experimental.android.UI
+import kotlinx.coroutines.experimental.delay
+import kotlinx.coroutines.experimental.launch
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onClick
+import org.jetbrains.anko.sdk15.coroutines.onTouch
 import ru.tohaman.rg2.*
 import ru.tohaman.rg2.DebugTag.TAG
 import ru.tohaman.rg2.activities.TimerActivity
@@ -34,6 +40,7 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
         var delayMills = sp.getInt(DELAY_MILLS, 500)
         val isDelayed = if (delayMills == 0) { false } else { true }
         val isScrambleVisible = sp.getBoolean(IS_SCRAMBLE_VISIBLE, true)
+        var touchTime = 0L
 
 
         linearLayout {
@@ -80,30 +87,57 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                             textSize = 20F
                         }
 
-                        val buttonPlus = button("+") {
+                        val buttonPlus = button("+") {}.lparams(50.dp)
 
-                        }.lparams(50.dp)
+                        buttonPlus.onTouch { v, event ->
+                            val action = event.action
+                            when (action) {
+                                MotionEvent.ACTION_DOWN -> {
+                                    touchTime = System.currentTimeMillis()
+                                    launch(UI) {
+                                        do {
+                                            metronomTime = metronomTimePlusOne(metronomTime, v, textHz)
+                                            delay(150)
+                                        } while (touchTime != 0L)
+                                    }
+                                }
+                                MotionEvent.ACTION_UP -> {
+                                    touchTime = 0
+                                }
+                            }
+                        }
+
+                        buttonMinus.onTouch { v, event ->
+                            val action = event.action
+                            when (action) {
+                                MotionEvent.ACTION_DOWN -> {
+                                    touchTime = System.currentTimeMillis()
+                                    launch(UI) {
+                                        do {
+                                            metronomTime = metronomTimeMinusOne(metronomTime, v, textHz)
+                                            delay(150)
+                                        } while (touchTime != 0L)
+                                    }
+                                }
+                                MotionEvent.ACTION_UP -> {
+                                    touchTime = 0
+                                }
+                            }
+                        }
+
 
                         val metronomText = textView {
                             text = "(тактов в минуту)"
                         }
 
-                        buttonMinus.onClick { view ->
-                            metronomTime--
-                            if (metronomTime < 1) {
-                                metronomTime = 1
-                            }
-                            saveInt2SP(metronomTime, METRONOM_TIME, view!!.context)
-                            textHz.text = metronomTime.toString()
-                        }
-                        buttonPlus.onClick { view ->
-                            metronomTime++
-                            if (metronomTime > 240) {
-                                metronomTime = 240
-                            }
-                            saveInt2SP(metronomTime, METRONOM_TIME, view!!.context)
-                            textHz.text = metronomTime.toString()
-                        }
+//                        buttonMinus.onClick { view ->
+//                            metronomTime = metronomTimeMinusOne(metronomTime, view, textHz)
+//                        }
+//                        buttonPlus.onClick { view ->
+//                            metronomTime = metronomTimePlusOne(metronomTime, view, textHz)
+//                        }
+
+                        //TODO Сделать обработчик долгого нажатия на кнопку, что-то на базе этого
 
                         metronom.setOnCheckedChangeListener { _, isChecked ->
                             saveBoolean2SP(isChecked, METRONOM_ENABLED, context)
@@ -128,33 +162,6 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                                     BOTTOMS of parentId)
                         }
 
-                        //TODO Сделать обработчик долгого нажатия на кнопку, что-то на базе этого
-//                    buttonPlus.setOnTouchListener(object : View.OnTouchListener {
-//
-//                        internal var startTime: Long = 0
-//
-//                        override fun onTouch(v: View, event: MotionEvent): Boolean {
-//                            when (event.action) {
-//                                MotionEvent.ACTION_DOWN // нажатие
-//                                -> startTime = System.currentTimeInMills()
-//                                MotionEvent.ACTION_MOVE // движение
-//                                -> {
-//                                }
-//                                MotionEvent.ACTION_UP // отпускание
-//                                    , MotionEvent.ACTION_CANCEL -> {
-//                                    val totalTime = System.currentTimeInMills() - startTime
-//                                    val totalSecunds = totalTime / 1000
-//                                    if (totalSecunds >= 3) {
-//                                        //ВОТ тут прошло 3 или больше секунды с начала нажатия
-//                                        //можно что-то запустить
-//                                        println("Три секунды прошло с нажатия!")
-//                                    }
-//                                }
-//                            }
-//                            return true
-//                        }
-//                    })
-//
                     }
                 }.lparams(wrapContent,wrapContent)
 
@@ -215,4 +222,25 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
         }
     }
 
+    private fun metronomTimeMinusOne(metronomTime: Int, view: View?, textHz: TextView) : Int {
+        var metronomTime1 = metronomTime
+        metronomTime1--
+        if (metronomTime1 < 1) {
+            metronomTime1 = 1
+        }
+        saveInt2SP(metronomTime1, METRONOM_TIME, view!!.context)
+        textHz.text = metronomTime1.toString()
+        return metronomTime1
+    }
+
+    private fun metronomTimePlusOne(metronomTime: Int, view: View?, textHz: TextView):Int {
+        var metronomTime1 = metronomTime
+        metronomTime1++
+        if (metronomTime1 > 240) {
+            metronomTime1 = 240
+        }
+        saveInt2SP(metronomTime1, METRONOM_TIME, view!!.context)
+        textHz.text = metronomTime1.toString()
+        return metronomTime1
+    }
 }
