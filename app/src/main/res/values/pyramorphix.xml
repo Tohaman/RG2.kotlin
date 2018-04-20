@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="pyramorphix_title">
+        <item>@string/pyramorphix_st1_title</item>
+        <item>@string/pyramorphix_st2_title</item>
+        <item>@string/pyramorphix_st3_title</item>
+        <item>@string/pyramorphix_st4_title</item>
+        <item>@string/pyramorphix_st5_title</item>
+        <item>@string/pyramorphix_st6_title</item>
+        <item>@string/pyramorphix_st7_title</item>
+    </string-array>
+
+    <integer-array name="pyramorphix_icon">
+        <item>@drawable/pyramorphix_1</item>
+        <item>@drawable/pyramorphix_2</item>
+        <item>@drawable/pyramorphix_3</item>
+        <item>@drawable/pyramorphix_4</item>
+        <item>@drawable/pyramorphix_5</item>
+        <item>@drawable/pyramorphix_6</item>
+        <item>@drawable/pyramorphix_7</item>
+    </integer-array>
+    
+    <string-array name="pyramorphix_descr">
+        <item>@string/pyramorphix_st1_descr</item>
+        <item>@string/pyramorphix_st2_descr</item>
+        <item>@string/pyramorphix_st3_descr</item>
+        <item>@string/pyramorphix_st4_descr</item>
+        <item>@string/pyramorphix_st5_descr</item>
+        <item>@string/pyramorphix_st6_descr</item>
+        <item>@string/pyramorphix_st7_descr</item>
+    </string-array>
+
+
+    <string-array name="pyramorphix_url">
+        <item>@string/pyramorphix_st1_url</item>
+        <item>@string/pyramorphix_st2_url</item>
+        <item>@string/pyramorphix_st3_url</item>
+        <item>@string/pyramorphix_st4_url</item>
+        <item>@string/pyramorphix_st5_url</item>
+        <item>@string/pyramorphix_st6_url</item>
+        <item>@string/pyramorphix_st7_url</item>
+    </string-array>
+
+    <string name="pyramorphix_st1_title">1. Первый крест</string>
+    <string name="pyramorphix_st1_descr" formatted="false"><![CDATA[
+        Мастер пираморфикс
+    ]]></string>
+    <string name="pyramorphix_st1_url"></string>
+
+    <string name="pyramorphix_st2_title">2. Разворот смежных центров</string>
+    <string name="pyramorphix_st2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="pyramorphix_st2_url"></string>
+
+    <string name="pyramorphix_st3_title">3. Первый слой</string>
+    <string name="pyramorphix_st3_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="pyramorphix_st3_url"></string>
+
+    <string name="pyramorphix_st4_title">4. Второй слой</string>
+    <string name="pyramorphix_st4_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="pyramorphix_st4_url"></string>
+
+    <string name="pyramorphix_st5_title">5. Верхний крест</string>
+    <string name="pyramorphix_st5_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="pyramorphix_st5_url"></string>
+
+    <string name="pyramorphix_st6_title">6. Приведение к форме</string>
+    <string name="pyramorphix_st6_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="pyramorphix_st6_url"></string>
+
+    <string name="pyramorphix_st7_title">7. Разворот углов</string>
+    <string name="pyramorphix_st7_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="pyramorphix_st7_url"></string>
+
+</resources>

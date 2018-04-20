@@ -10,6 +10,7 @@
         <item>Узоры на кубике</item>
         <item>Зеркальный куб (Mirror blocks)</item>
         <item>Ненормальный куб (Axis cube)</item>
+        <item>Мастер пираморфикс (Master Pyramorphix)</item>
     </string-array>
 
     <integer-array name="other_icon">
@@ -22,6 +23,7 @@
         <item>@drawable/pattern_1</item>
         <item>@drawable/mirror</item>
         <item>@drawable/axis</item>
+        <item>@drawable/pyramorphix</item>
     </integer-array>
 
     <string-array name="other_descr">
@@ -34,9 +36,11 @@
         <item>@string/other_st7_descr</item>
         <item>@string/other_st8_descr</item>
         <item>@string/other_st9_descr</item>
+        <item>@string/other_st10_descr</item>
     </string-array>
 
     <string-array name="other_null">
+        <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
@@ -57,6 +61,7 @@
     <string name="other_st7_descr">PATTERNS</string>
     <string name="other_st8_descr">MIRROR</string>
     <string name="other_st9_descr">AXIS</string>
+    <string name="other_st10_descr">PYRAMORPHIX</string>
 
 </resources>
 

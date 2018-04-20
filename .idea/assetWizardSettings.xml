@@ -30,10 +30,10 @@
                           <map>
                             <entry key="assetSourceType" value="FILE" />
                             <entry key="height" value="100" />
-                            <entry key="outputName" value="axis_1_5" />
+                            <entry key="outputName" value="ic_pyramophix" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="D:\Dropbox\RubicsGuide\axis.svg" />
-                            <entry key="width" value="99" />
+                            <entry key="sourceFile" value="D:\Dropbox\RubicsGuide\pyramophix.svg" />
+                            <entry key="width" value="97" />
                           </map>
                         </option>
                       </PersistentState>
