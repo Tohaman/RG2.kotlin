@@ -732,9 +732,14 @@ class MainActivity : MyDefaultActivity(),
 
     }
 
-    /** Verifies the developer payload of a purchase.  */
+    /** Verifies the developer payload of a purchase.
+     * * WARNING: Locally generating a random string when starting a purchase and
+     * verifying it here might seem like a good approach, but this will fail in the
+     * case where the user purchases an item on one device and then uses your app on
+     * a different device, because on the other device you will not have access to the
+     * random string you originally generated.*/
     private fun verifyDeveloperPayload(p: Purchase): Boolean {
-        //val payload = p.developerPayload
+        val payload = p.developerPayload
         // тут можно проверить ответ от гугла, но нам в данном случае фиолетово,
         // ибо пользователь за свою покупку ничего в приложении получить не должен
         return true
@@ -748,7 +753,7 @@ class MainActivity : MyDefaultActivity(),
         if (mHelper == null) return@OnIabPurchaseFinishedListener
 
         if (result.isFailure) {
-            complain("Ошибка покупки: " + result)
+            complain("Ошибка покупки: $result")
             setWaitScreen(false)
             return@OnIabPurchaseFinishedListener
         }
