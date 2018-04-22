@@ -96,11 +96,16 @@ class MainActivity : MyDefaultActivity(),
     private var changedPhase = "BEGIN"
     private var changedId = 0
     private val listOfGo2Fridrich = listOf("ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL", "RECOMEND")
-    private val listOfOtherPuzzle = listOf("BEGIN4X4", "BEGIN5X5", "PYRAMINX", "MEGAMINX", "SKEWB", "SQUARE", "PATTERNS", "MIRROR", "AXIS")
+    private val listOfOtherPuzzle = listOf("BEGIN4X4", "BEGIN5X5", "PYRAMINX", "MEGAMINX", "SKEWB", "SQUARE", "PATTERNS", "MIRROR", "AXIS", "PYRAMORPHIX")
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
+
+        //Сохраним в переменную 50 руб, чтобы каждые 30 запусков не выводилось окно "оплатить приложение"
+        //а то разработчик, даже если хочет, то не может этого сделать. Нужно запустить только 1 раз.
+        //mCoins = 50
+        //saveData()
 
         //Для данной программы не актуально, т.к. пользователь ничего в программе по сути не покупает
         //но если бы нужно было отключение рекламы, то данный вызов обязателен
