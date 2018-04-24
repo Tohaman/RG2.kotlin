@@ -15,8 +15,6 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.app_bar_main.*
 import org.jetbrains.anko.*
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.DebugTag.TAG
@@ -27,8 +25,11 @@ import android.view.WindowManager
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.ListView
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.app_bar_main.*
 import ru.tohaman.rg2.DeveloperKey.base64EncodedPublicKey
 import ru.tohaman.rg2.adapters.MyListAdapter
+import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.util.*
 
 
@@ -95,6 +96,7 @@ class MainActivity : MyDefaultActivity(),
     private var curPhase = "BEGIN"
     private var changedPhase = "BEGIN"
     private var changedId = 0
+    private lateinit var favList: ArrayList<ListPager>
     private val listOfGo2Fridrich = listOf("ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL", "RECOMEND")
     private val listOfOtherPuzzle = listOf("BEGIN4X4", "BEGIN5X5", "PYRAMINX", "MEGAMINX", "SKEWB", "SQUARE", "PATTERNS", "MIRROR", "AXIS", "PYRAMORPHIX")
 
@@ -223,13 +225,13 @@ class MainActivity : MyDefaultActivity(),
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
-        val favList = mListPagerLab.getPhaseList("FAVORITES")
+        favList = mListPagerLab.getPhaseList("FAVORITES")
         val rightDrawerAdapter = MyListAdapter(favList,1.3F)
 
         // подключим адаптер для выезжающего справа списка
         val rightDrawerListView  = findViewById<ListView>(R.id.main_right_drawer)
         rightDrawerListView.adapter = rightDrawerAdapter
-        rightDrawerListView.setOnItemClickListener { _, _, i, _ ->
+        rightDrawerListView.setOnItemClickListener { adapterView, view, i, l ->
             val changedId = favList[i].id
             changedPhase = favList[i].url
             setListFragmentPhase(changedPhase)
@@ -500,6 +502,13 @@ class MainActivity : MyDefaultActivity(),
     override fun onResume() {
         super.onResume()
         Log.v (TAG, "onResume - curPhase - $curPhase")
+        favList = mListPagerLab.getPhaseList("FAVORITES")
+        val rightDrawerAdapter = MyListAdapter(favList,1.3F)
+
+        // подключим адаптер для выезжающего справа списка
+        val rightDrawerListView  = findViewById<ListView>(R.id.main_right_drawer)
+        rightDrawerListView.adapter = rightDrawerAdapter
+
         if (changedPhase != curPhase) {
             Log.v(DebugTag.TAG, "Change Phase from $curPhase to $changedPhase")
             setListFragmentPhase(changedPhase)
