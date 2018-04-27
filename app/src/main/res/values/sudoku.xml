@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="sudoku_title">
+        <item>@string/sudoku_st1_title</item>
+        <item>@string/sudoku_st2_title</item>
+        <item>@string/sudoku_st3_title</item>
+        <item>@string/sudoku_st4_title</item>
+        <item>@string/sudoku_st5_title</item>
+        <item>@string/sudoku_st6_title</item>
+        <item>@string/sudoku_st7_title</item>
+    </string-array>
+
+    <integer-array name="sudoku_icon">
+        <item>@drawable/sudoku_1</item>
+        <item>@drawable/sudoku</item>
+        <item>@drawable/sudoku</item>
+        <item>@drawable/sudoku</item>
+        <item>@drawable/sudoku</item>
+        <item>@drawable/sudoku</item>
+        <item>@drawable/sudoku</item>
+    </integer-array>
+    
+    <string-array name="sudoku_descr">
+        <item>@string/sudoku_st1_descr</item>
+        <item>@string/sudoku_st2_descr</item>
+        <item>@string/sudoku_st3_descr</item>
+        <item>@string/sudoku_st4_descr</item>
+        <item>@string/sudoku_st5_descr</item>
+        <item>@string/sudoku_st6_descr</item>
+        <item>@string/sudoku_st7_descr</item>
+    </string-array>
+
+    <string-array name="sudoku_url">
+        <item>@string/sudoku_st1_url</item>
+        <item>@string/sudoku_st2_url</item>
+        <item>@string/sudoku_st3_url</item>
+        <item>@string/sudoku_st4_url</item>
+        <item>@string/sudoku_st5_url</item>
+        <item>@string/sudoku_st6_url</item>
+        <item>@string/sudoku_st7_url</item>
+    </string-array>
+
+    <string name="sudoku_st1_title">1. Ориентация центров</string>
+    <string name="sudoku_st1_descr" formatted="false"><![CDATA[
+        Судоку куб - это по сути кубик Рубика 3х3, но у которого вместо цветных наклеек, наклейки
+        с цифрами. Существует несколько разновидностей данной головоломки. Например:
+        <p style="text-align:center"><img src="sudoku_1_1.xml"></p>
+
+        но это довольно простой вариант судоку куба и найти обучалку по такому варианту не проблема.
+        В данной обучалке будет приведен более сложный вариант этой головоломки, который в собранном
+        варианте выглядит примерно вот так:
+        <p style="text-align:center"><img src="sudoku_1_2.xml"></p>
+
+
+
+    ]]></string>
+    <string name="sudoku_st1_url"></string>
+
+    <string name="sudoku_st2_title">2. Первый крест</string>
+    <string name="sudoku_st2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="sudoku_st2_url"></string>
+
+    <string name="sudoku_st3_title">3. Первый слой</string>
+    <string name="sudoku_st3_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="sudoku_st3_url"></string>
+
+    <string name="sudoku_st4_title">4. Второй слой</string>
+    <string name="sudoku_st4_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="sudoku_st4_url"></string>
+
+    <string name="sudoku_st5_title">5. Верхний крест</string>
+    <string name="sudoku_st5_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="sudoku_st5_url"></string>
+
+    <string name="sudoku_st6_title">6. Разворот углов</string>
+    <string name="sudoku_st6_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="sudoku_st6_url"></string>
+
+    <string name="sudoku_st7_title">7. Перестановка углов</string>
+    <string name="sudoku_st7_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="sudoku_st7_url"></string>
+
+</resources>

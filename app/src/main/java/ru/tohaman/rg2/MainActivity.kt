@@ -98,7 +98,7 @@ class MainActivity : MyDefaultActivity(),
     private var changedId = 0
     private lateinit var favList: ArrayList<ListPager>
     private val listOfGo2Fridrich = listOf("ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL", "RECOMEND")
-    private val listOfOtherPuzzle = listOf("BEGIN4X4", "BEGIN5X5", "PYRAMINX", "MEGAMINX", "SKEWB", "SQUARE", "PATTERNS", "MIRROR", "AXIS", "PYRAMORPHIX")
+    private val listOfOtherPuzzle = listOf("BEGIN4X4", "BEGIN5X5", "PYRAMINX", "MEGAMINX", "SKEWB", "SQUARE", "PATTERNS", "MIRROR", "AXIS", "PYRAMORPHIX", "")
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
