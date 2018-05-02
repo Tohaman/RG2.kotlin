@@ -29,11 +29,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="height" value="187" />
-                            <entry key="outputName" value="sudoku_1_4" />
+                            <entry key="height" value="100" />
+                            <entry key="outputName" value="sudoku" />
                             <entry key="overrideSize" value="true" />
                             <entry key="sourceFile" value="D:\Dropbox\RubicsGuide\sudoku.svg" />
-                            <entry key="width" value="250" />
+                            <entry key="width" value="95" />
                           </map>
                         </option>
                       </PersistentState>
