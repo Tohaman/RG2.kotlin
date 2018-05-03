@@ -42,7 +42,7 @@
         <item>@string/other_st11_descr</item>
     </string-array>
 
-    <string-array name="other_null">
+    <string-array name="other_url">
         <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>

@@ -97,8 +97,8 @@ class MainActivity : MyDefaultActivity(),
     private var changedPhase = "BEGIN"
     private var changedId = 0
     private lateinit var favList: ArrayList<ListPager>
-    private val listOfGo2Fridrich = listOf("ACCEL", "CROSS", "F2L", "ADVF2L", "OLL", "PLL", "RECOMEND")
-    private val listOfOtherPuzzle = listOf("BEGIN4X4", "BEGIN5X5", "PYRAMINX", "MEGAMINX", "SKEWB", "SQUARE", "PATTERNS", "MIRROR", "AXIS", "PYRAMORPHIX", "")
+    private val listOfGo2Fridrich = arrayListOf<String>()
+    private var listOfOtherPuzzle = arrayListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -115,6 +115,22 @@ class MainActivity : MyDefaultActivity(),
 
         Log.v (TAG, "MainActivity ListPagerLab init")
         mListPagerLab = ListPagerLab.get(ctx)
+
+        //получаем список фаз других головоломок, чтобы корректно отрабатывать нажатие кнопки назад
+        val otherList = mListPagerLab.getPhaseList("OTHER")
+        for (i in otherList.indices) {
+            if (otherList[i].url == "submenu") {
+                listOfOtherPuzzle.add(getString(otherList[i].description))
+            }
+        }
+
+        //получаем список фаз методики Фридрих, чтобы корректно отрабатывать нажатие кнопки назад
+        val fridrichList = mListPagerLab.getPhaseList("G2F")
+        for (i in fridrichList.indices) {
+            if (fridrichList[i].url == "submenu") {
+                listOfGo2Fridrich.add(getString(fridrichList[i].description))
+            }
+        }
 
         // Регистрируем слушатель OnSharedPreferenceChangeListener (Изменеия в настройках)
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
