@@ -11,7 +11,7 @@
         <item>Зеркальный куб (Mirror blocks)</item>
         <item>Ненормальный куб (Axis cube)</item>
         <item>Мастер пираморфикс (Master Pyramorphix)</item>
-        <item>Судоку куб</item>
+        <!--<item>Судоку куб</item>-->
     </string-array>
 
     <integer-array name="other_icon">
