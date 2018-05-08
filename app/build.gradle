@@ -21,10 +21,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildToolsVersion '27.0.3'
+
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
@@ -35,7 +37,6 @@ dependencies {
     // for Anko snackbar
     implementation "org.jetbrains.anko:anko-design:$anko_version"
     implementation "org.jetbrains.anko:anko-sdk15-coroutines:$anko_version"
-
     implementation 'com.android.support:preference-v14:27.1.1'
     implementation 'com.android.support:support-v4:27.1.1'
     implementation 'com.android.support:recyclerview-v7:27.1.1'
@@ -46,7 +47,6 @@ dependencies {
     implementation 'com.astuetz:pagerslidingtabstrip:1.0.1'
     //JodaTime
     implementation 'joda-time:joda-time:2.9.9'
-
 }
 kotlin {
     experimental {
