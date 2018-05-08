@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.design.widget.NavigationView
@@ -644,30 +645,42 @@ class MainActivity : MyDefaultActivity(),
      */
 
     private fun sayThanks( donationNumber : Int ) {
-        val donationString = when (donationNumber) {
-            1 -> { MEDIUM_DONATION }
-            2 -> { BIG_DONATION }
-            else -> {SMALL_DONATION }
-        }
+        if (donationNumber < 3) {
+            //Донат через GooglePlay
+            val donationString = when (donationNumber) {
+                1 -> {
+                    MEDIUM_DONATION
+                }
+                2 -> {
+                    BIG_DONATION
+                }
+                else -> {
+                    SMALL_DONATION
+                }
+            }
 
-        Log.d(TAG, "Pay button clicked; launching purchase flow for pay.")
-        setWaitScreen(true)
-        /* TO DO: for security, generate your payload here for verification. See the comments on
+            Log.d(TAG, "Pay button clicked; launching purchase flow for pay.")
+            setWaitScreen(true)
+            /* TO DO: for security, generate your payload here for verification. See the comments on
                  *        verifyDeveloperPayload() for more info. Since this is a SAMPLE, we just use
                  *        an empty string, but on a production app you should carefully generate this. */
-        val payload2 = ""
+            val payload2 = ""
 
-        if (mGooglePlayOK) {
-            try {
-                mHelper!!.launchPurchaseFlow(this, donationString, RC_REQUEST,
-                        mPurchaseFinishedListener, payload2)
-            } catch (e: IabHelper.IabAsyncInProgressException) {
-                complain("Ошибка запуска потока оплаты. Другая асинхронная операция запущена.")
+            if (mGooglePlayOK) {
+                try {
+                    mHelper!!.launchPurchaseFlow(this, donationString, RC_REQUEST,
+                            mPurchaseFinishedListener, payload2)
+                } catch (e: IabHelper.IabAsyncInProgressException) {
+                    complain("Ошибка запуска потока оплаты. Другая асинхронная операция запущена.")
+                    setWaitScreen(false)
+                }
+            } else {
+                complain("Пожалуйста обновите Google Play App до последней версии ")
                 setWaitScreen(false)
             }
         } else {
-            complain("Пожалуйста обновите Google Play App до последней версии ")
-            setWaitScreen(false)
+            //Донат на Яндекс.кошелек
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://money.yandex.ru/to/410016716734895")))
         }
     }
 

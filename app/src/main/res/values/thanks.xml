@@ -4,15 +4,18 @@
         <item>@string/thanks_st1_title</item>
         <item>@string/thanks_st2_title</item>
         <item>@string/thanks_st3_title</item>
+        <item>@string/thanks_st4_title</item>
     </string-array>
 
     <integer-array name="thanks_icon">
         <item>@drawable/gift_small</item>
         <item>@drawable/gift_medium</item>
         <item>@drawable/gift_big</item>
+        <item>@drawable/gift_card</item>
     </integer-array>
 
     <string-array name="thanks_descr">
+        <item> </item>
         <item> </item>
         <item> </item>
         <item> </item>
@@ -22,10 +25,12 @@
         <item>thanks</item>
         <item>thanks</item>
         <item>thanks</item>
+        <item>thanks</item>
     </string-array>
 
     <string name="thanks_st1_title">Сказать маленькое спасибо (50 руб ~ 1$)</string>
     <string name="thanks_st2_title">Сказать большое спасибо (100 руб ~ 2$)</string>
     <string name="thanks_st3_title">Сказать огромное спасибо (200 руб ~ 4$)</string>
+    <string name="thanks_st4_title">Сказать Яндекс.спасибо</string>
 
 </resources>
