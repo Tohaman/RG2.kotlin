@@ -30,9 +30,9 @@
                           <map>
                             <entry key="assetSourceType" value="FILE" />
                             <entry key="height" value="100" />
-                            <entry key="outputName" value="axis_4_3" />
+                            <entry key="outputName" value="sudoku_5_1" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="D:\Dropbox\RubicsGuide\axis.svg" />
+                            <entry key="sourceFile" value="D:\Dropbox\RubicsGuide\sudoku.svg" />
                             <entry key="width" value="100" />
                           </map>
                         </option>
