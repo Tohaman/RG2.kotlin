@@ -254,10 +254,12 @@
         из Лондона, от этого вы просыпаетесь (вы же туда не уезжали) и крыша встает на место.
         Ну и доворот передней грани, чтобы поставить все на место.</p>
 
-        <p>Алгоритм для места справа:<br/>
+        <p style="text-align:center">Алгоритм для <a href="rg2://ytplay?time=31:15&link=ENLnPS2eqPg">места справа:</a><br/>
+        <img src="axis_4_3.xml"><br/>
         <b>(U R U\' R\') (U\' F\' U F)</b></p>
 
-        <p>Алгоритм для места слева:<br/>
+        <p style="text-align:center">Алгоритм для <a href="rg2://ytplay?time=27:25&link=ENLnPS2eqPg">места слева:</a><br/>
+        <img src="axis_4_4.xml"><br/>
         <b>(U\' L\' U L) (U F U\' F\')</b></p>
 
         <p>В ситуации, когда ребро уже на <a href="rg2://ytplay?time=33:37&link=ENLnPS2eqPg">своем месте, но перевернуто,</a>
