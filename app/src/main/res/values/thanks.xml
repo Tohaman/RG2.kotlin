@@ -31,6 +31,6 @@
     <string name="thanks_st1_title">Сказать маленькое спасибо (50 руб ~ 1$)</string>
     <string name="thanks_st2_title">Сказать большое спасибо (100 руб ~ 2$)</string>
     <string name="thanks_st3_title">Сказать огромное спасибо (200 руб ~ 4$)</string>
-    <string name="thanks_st4_title">Сказать Яндекс.спасибо</string>
+    <string name="thanks_st4_title">Сказать Яндекс.спасибо (любая сумма)</string>
 
 </resources>
