@@ -57,8 +57,6 @@ class YouTubeActivity : AppCompatActivity() {
                 Log.v (DebugTag.TAG, "Видимо нету Youtube плеера, запускаем просмотр через браузер time = $time")
                 //https://youtu.be/fwvKWr087bM?t=4m16s
                 //<a href="rg2://ytplay?time=4:16&link=fwvKWr087bM">Запад</a>
-                //val st2 = Regex("""\?time=\d+:(\d\d)""").replace(st,"")
-
                 time = Regex(":").replace(time,"m")
                 browse("https://youtu.be/$videoId" + "?t=$time" + "s")
                 //YouTubeInitializationResult.SERVICE_MISSING.getErrorDialog(this, REQ_RESOLVE_SERVICE_MISSING).show()
