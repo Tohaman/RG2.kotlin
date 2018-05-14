@@ -72,7 +72,6 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         val mainTextView = view.findViewById<TextView>(PagerItemtUI.Ids.descriptionText)
 
-
         val favCheckBox = view.findViewById<CheckBox>(PagerItemtUI.Ids.checkBox)
         //Пришлось делать вот так, а не через xml, которая задает изображение в зависимости от статуса,
         //т.к. иначе при смене через избранное кэшеруется не то изображение
