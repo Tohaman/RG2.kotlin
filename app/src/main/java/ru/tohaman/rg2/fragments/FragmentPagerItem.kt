@@ -210,8 +210,11 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         thumbnailView.visibility = View.GONE
         playPreviewImage.visibility = View.GONE
         ytTextView.visibility = View.VISIBLE
-        //var text1 = "<html><body> <a href=\"rg2://ytplay?time=0:00&link=%s\"> %s </a></body></html>"
-        var text1 = "<html><body> <a href=\"https://www.youtube.com/watch?v=%s\"> %s </a></body></html>"
+        var text1 = if (canPlayYouTubeVideo()) {
+            "<html><body> <a href=\"rg2://ytplay?time=0:00&link=%s\"> %s </a></body></html>"
+        } else {
+            "<html><body> <a href=\"https://www.youtube.com/watch?v=%s\"> %s </a></body></html>"
+        }
         //https://www.youtube.com/watch?v=ENLnPS2eqPg&t=20s
         text1 = kotlin.String.format(text1, url, getString(R.string.pager_youtube_text))
         ytTextView.text = spannedString(text1, imgGetter)
