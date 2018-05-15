@@ -682,6 +682,8 @@ class MainActivity : MyDefaultActivity(),
             //Донат на Яндекс.кошелек
             //startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://money.yandex.ru/to/410016716734895")))
             browse("https://money.yandex.ru/to/410016716734895")
+            mCoins = 50
+            saveData()
         }
     }
 

@@ -9,8 +9,8 @@ import android.support.v7.app.AppCompatDelegate
 import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
-import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubeStandalonePlayer
+import org.jetbrains.anko.browse
 import org.jetbrains.anko.ctx
 import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.DeveloperKey.DEVELOPER_KEY
@@ -46,16 +46,21 @@ class YouTubeActivity : AppCompatActivity() {
             window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         }
         Log.v (DebugTag.TAG, "YouTubeActivity преобразуем время")
-        val text1 = intent.data!!.getQueryParameter("time")
+        var time = intent.data!!.getQueryParameter("time")
         val videoId = intent.data!!.getQueryParameter("link")
-        var intent = YouTubeStandalonePlayer.createVideoIntent(this, DEVELOPER_KEY, videoId, StringToTimeMillis(text1), true, true)
+        val intent = YouTubeStandalonePlayer.createVideoIntent(this, DEVELOPER_KEY, videoId, StringToTimeMillis(time), true, true)
         if (intent != null) {
             if (canResolveIntent(intent)) {
                 Log.v (DebugTag.TAG, "Установлен - запускаем StandAlone плеер c нужного времени")
                 startActivityForResult(intent, REQ_START_STANDALONE_PLAYER)
             } else {
-                Log.v (DebugTag.TAG, "Видимо нету Youtube плеера")
-                YouTubeInitializationResult.SERVICE_MISSING.getErrorDialog(this, REQ_RESOLVE_SERVICE_MISSING).show()
+                Log.v (DebugTag.TAG, "Видимо нету Youtube плеера, запускаем просмотр через браузер time = $time")
+                //https://youtu.be/fwvKWr087bM?t=4m16s
+                //<a href="rg2://ytplay?time=4:16&link=fwvKWr087bM">Запад</a>
+                time = Regex(":").replace(time,"m")
+                browse("https://youtu.be/$videoId" + "?t=$time" + "s")
+                //YouTubeInitializationResult.SERVICE_MISSING.getErrorDialog(this, REQ_RESOLVE_SERVICE_MISSING).show()
+                finish()
             }
         }
     }

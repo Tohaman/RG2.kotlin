@@ -72,7 +72,6 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         val mainTextView = view.findViewById<TextView>(PagerItemtUI.Ids.descriptionText)
 
-
         val favCheckBox = view.findViewById<CheckBox>(PagerItemtUI.Ids.checkBox)
         //Пришлось делать вот так, а не через xml, которая задает изображение в зависимости от статуса,
         //т.к. иначе при смене через избранное кэшеруется не то изображение
@@ -211,7 +210,9 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         thumbnailView.visibility = View.GONE
         playPreviewImage.visibility = View.GONE
         ytTextView.visibility = View.VISIBLE
-        var text1 = "<html><body> <a href=\"rg2://ytplay?time=0:00&link=%s\"> %s </a></body></html>"
+        //var text1 = "<html><body> <a href=\"rg2://ytplay?time=0:00&link=%s\"> %s </a></body></html>"
+        var text1 = "<html><body> <a href=\"https://www.youtube.com/watch?v=%s\"> %s </a></body></html>"
+        //https://www.youtube.com/watch?v=ENLnPS2eqPg&t=20s
         text1 = kotlin.String.format(text1, url, getString(R.string.pager_youtube_text))
         ytTextView.text = spannedString(text1, imgGetter)
     }
