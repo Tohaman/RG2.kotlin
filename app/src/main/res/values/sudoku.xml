@@ -158,7 +158,7 @@
 
         Еще больше раскладок вы можете найти <a href=http://rubik.rthost.org/3x3x3_x_sudoku_cube_nutting.htm>вот тут</a>.
     ]]></string>
-    <string name="sudoku_st1_url">aaaaaaaaaaa</string>
+    <string name="sudoku_st1_url">bZoz4E-m-vo</string>
 
     <string name="sudoku_st2_title">2. Первый крест</string>
     <string name="sudoku_st2_descr" formatted="false"><![CDATA[
@@ -233,7 +233,7 @@
         Если у вас раскладка отличается от используемой в этой обучалке, то лучше посмотрите по ней,
         правильно ли вы расставили ребра.
     ]]></string>
-    <string name="sudoku_st2_url">aaaaaaaaaaa</string>
+    <string name="sudoku_st2_url">bZoz4E-m-vo</string>
 
     <string name="sudoku_st3_title">3. Первый слой</string>
     <string name="sudoku_st3_descr" formatted="false"><![CDATA[
@@ -276,7 +276,7 @@
         Если нужных углов нет на третьем этаже, значит они на первом. Находим и поднимаем их
         на третий этаж пиф-пафом. После чего действуем по приведенному выше алгоритму.
     ]]></string>
-    <string name="sudoku_st3_url">aaaaaaaaaaa</string>
+    <string name="sudoku_st3_url">SFZ6ccmSzmQ</string>
 
     <string name="sudoku_st4_title">4. Второй слой</string>
     <string name="sudoku_st4_descr" formatted="false"><![CDATA[
@@ -361,7 +361,7 @@
 
         Два слоя готовы.
     ]]></string>
-    <string name="sudoku_st4_url">aaaaaaaaaaa</string>
+    <string name="sudoku_st4_url">SFZ6ccmSzmQ</string>
 
     <string name="sudoku_st5_title">5. Верхний крест</string>
     <string name="sudoku_st5_descr" formatted="false"><![CDATA[
