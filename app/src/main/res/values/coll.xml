@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="coll_title">
+        <item>@string/coll_st0_title</item>
+        <item>@string/coll_st1_title</item>
+        <item>@string/coll_st2_title</item>
+        <item>@string/coll_st3_title</item>
+        <item>@string/coll_st4_title</item>
+        <item>@string/coll_st5_title</item>
+        <item>@string/coll_st6_title</item>
+        <item>@string/coll_st7_title</item>
+        <item>@string/coll_st8_title</item>
+        <item>@string/coll_st9_title</item>
+        <item>@string/coll_st10_title</item>
+        <item>@string/coll_st11_title</item>
+        <item>@string/coll_st12_title</item>
+        <item>@string/coll_st13_title</item>
+        <item>@string/coll_st14_title</item>
+        <item>@string/coll_st15_title</item>
+        <item>@string/coll_st16_title</item>
+        <item>@string/coll_st17_title</item>
+        <item>@string/coll_st18_title</item>
+        <item>@string/coll_st19_title</item>
+        <item>@string/coll_st20_title</item>
+        <!--<item>@string/coll_st21_title</item>-->
+    </string-array>
+
+    <integer-array name="coll_icon">
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+        <item>@drawable/voll_1</item>
+    </integer-array>
+
+    <string-array name="coll_descr">
+        <item>@string/coll_st0_descr</item>
+        <item>@string/coll_st1_descr</item>
+        <item>@string/coll_st2_descr</item>
+        <item>@string/coll_st3_descr</item>
+        <item>@string/coll_st4_descr</item>
+        <item>@string/coll_st5_descr</item>
+        <item>@string/coll_st6_descr</item>
+        <item>@string/coll_st7_descr</item>
+        <item>@string/coll_st8_descr</item>
+        <item>@string/coll_st9_descr</item>
+        <item>@string/coll_st10_descr</item>
+        <item>@string/coll_st11_descr</item>
+        <item>@string/coll_st12_descr</item>
+        <item>@string/coll_st13_descr</item>
+        <item>@string/coll_st14_descr</item>
+        <item>@string/coll_st15_descr</item>
+        <item>@string/coll_st16_descr</item>
+        <item>@string/coll_st17_descr</item>
+        <item>@string/coll_st18_descr</item>
+        <item>@string/coll_st19_descr</item>
+        <item>@string/coll_st20_descr</item>
+        <item>@string/coll_st21_descr</item>
+    </string-array>
+
+    <string-array name="coll_url">
+        <item>@string/coll_st0_url</item>
+        <item>@string/coll_st1_url</item>
+        <item>@string/coll_st2_url</item>
+        <item>@string/coll_st3_url</item>
+        <item>@string/coll_st4_url</item>
+        <item>@string/coll_st5_url</item>
+        <item>@string/coll_st6_url</item>
+        <item>@string/coll_st7_url</item>
+        <item>@string/coll_st8_url</item>
+        <item>@string/coll_st9_url</item>
+        <item>@string/coll_st10_url</item>
+        <item>@string/coll_st11_url</item>
+        <item>@string/coll_st12_url</item>
+        <item>@string/coll_st13_url</item>
+        <item>@string/coll_st14_url</item>
+        <item>@string/coll_st15_url</item>
+        <item>@string/coll_st16_url</item>
+        <item>@string/coll_st17_url</item>
+        <item>@string/coll_st18_url</item>
+        <item>@string/coll_st19_url</item>
+        <item>@string/coll_st20_url</item>
+        <item>@string/coll_st21_url</item>
+    </string-array>
+
+    <string name="coll_st0_title">Глазки #1</string>
+    <string name="coll_st0_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st0_url"></string>
+
+    <string name="coll_st1_title">Глазки #2</string>
+    <string name="coll_st1_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st1_url"></string>
+
+    <string name="coll_st2_title">Глазки #3</string>
+    <string name="coll_st2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st2_url"></string>
+
+    <string name="coll_st3_title">Глазки #4</string>
+    <string name="coll_st3_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st3_url"></string>
+
+    <string name="coll_st4_title">Глазки #5</string>
+    <string name="coll_st4_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st4_url"></string>
+
+    <string name="coll_st5_title">Глазки #6</string>
+    <string name="coll_st5_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st5_url"></string>
+
+    <string name="coll_st6_title">N6 Шахматы</string>
+    <string name="coll_st6_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st6_url"></string>
+
+    <string name="coll_st7_title">N7 Буква \"Т\"</string>
+    <string name="coll_st7_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st7_url"></string>
+
+    <string name="coll_st8_title">N8 Ушки</string>
+    <string name="coll_st8_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st8_url"></string>
+
+    <string name="coll_st9_title">N9 Носик</string>
+    <string name="coll_st9_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st9_url"></string>
+
+    <string name="coll_st10_title">N10 Человечек (PLL Черепашка)</string>
+    <string name="coll_st10_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st10_url"></string>
+
+    <string name="coll_st11_title">N11 Рыбка (Акула)</string>
+    <string name="coll_st11_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st11_url"></string>
+
+    <string name="coll_st12_title">N12 Домино (пуля)</string>
+    <string name="coll_st12_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st12_url"></string>
+
+    <string name="coll_st13_title">N13 Глазки</string>
+    <string name="coll_st13_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st13_url"></string>
+
+    <string name="coll_st14_title">N14 Вертолет (глазки-ушки)</string>
+    <string name="coll_st14_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st14_url"></string>
+
+    <string name="coll_st15_title">N15 Запад (два двойных блока)</string>
+    <string name="coll_st15_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st15_url"></string>
+
+    <string name="coll_st16_title">N16 Юг (тройной блок с двойным справа)</string>
+    <string name="coll_st16_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st16_url"></string>
+
+    <string name="coll_st17_title">N17 Окошки (тройной блок с глазками)</string>
+    <string name="coll_st17_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st17_url"></string>
+
+    <string name="coll_st18_title">N18 Светофор (параллельный перенос)</string>
+    <string name="coll_st18_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st18_url"></string>
+
+    <string name="coll_st19_title">N19 Север (Тройной блок с блоком слева)</string>
+    <string name="coll_st19_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st19_url"></string>
+
+    <string name="coll_st20_title">N20 9ый этап</string>
+    <string name="coll_st20_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st20_url"></string>
+
+    <string name="coll_st21_title">Немного терминологии</string>
+    <string name="coll_st21_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st21_url"></string>
+
+</resources>
