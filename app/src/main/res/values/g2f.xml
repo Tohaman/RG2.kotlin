@@ -8,7 +8,7 @@
     <item>Максимкин PLL</item>
     <item>Долгожданный OLL</item>
     <item>Советы от Антона</item>
-    <item>СOLL</item>
+    <!--<item>СOLL</item>-->
 </string-array>
 
 <integer-array name="g2f_icon">
