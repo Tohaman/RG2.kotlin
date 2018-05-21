@@ -33,8 +33,8 @@
         <item>@drawable/coll_4</item>
         <item>@drawable/coll_5</item>
         <item>@drawable/coll_6</item>
-        <item>@drawable/coll_1</item>
-        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_7</item>
+        <item>@drawable/coll_8</item>
         <item>@drawable/coll_1</item>
         <item>@drawable/coll_1</item>
         <item>@drawable/coll_1</item>
@@ -264,39 +264,42 @@
 
     <string name="coll_st8_title">Ушки #2</string>
     <string name="coll_st8_descr" formatted="false"><![CDATA[
-        <p>Как распознать: (0:20) из ситуации ушками от себя, пара на пережней грани</p>
+        <p>Как распознать: (0:20) из ситуации ушками от себя, пара на передней грани, разные наклейки
+        сзади.</p>
 
-        <p></p>
-        <p style="text-align:center"><img src="coll_4.xml"></p>
+        <p>Достаем и разбиваем правую заднюю F2L пару, делаем U2, собираем и загоняем пару на место,
+        ставим на место левую переднюю пару.</p>
+        <p style="text-align:center"><img src="coll_8.xml"></p>
 
-        Алгоритм:(0:00) <b></b>
+        Алгоритм:(0:23) <b>(R\' U R) U2 (R\' L\' U R) U\' L</b>
     ]]></string>
     <string name="coll_st8_url">rVrNZWbnXTg</string>
-    <string name="coll_st8_comment"></string>
+    <string name="coll_st8_comment">(R\' U R) U2 (R\' L\' U R) U\' L</string>
 
     <string name="coll_st9_title">Ушки #3</string>
     <string name="coll_st9_descr" formatted="false"><![CDATA[
-        <p>Как распознать: (0:00) из ситуации ушками от себя, </p>
+        <p>Как распознать: (0:41) из ситуации ушками от себя, слева пара, справа разные наклеки.</p>
 
-        <p></p>
-        <p style="text-align:center"><img src="coll_4.xml"></p>
+        <p>Развернуть ушками налево и сделать пиф-паф, английский пиф-паф с первыми жирными ходами.</p>
+        <p style="text-align:center"><img src="coll_9.xml"></p>
 
-        Алгоритм:(0:00) <b></b>
+        Алгоритм:(0:45) <b>U\' (Rw U R\' U\') (Rw\' F R F\')</b>
     ]]></string>
     <string name="coll_st9_url">rVrNZWbnXTg</string>
-    <string name="coll_st9_comment"></string>
+    <string name="coll_st9_comment">U\' (Rw U R\' U\') (Rw\' F R F\')</string>
 
     <string name="coll_st10_title">Ушки #4</string>
     <string name="coll_st10_descr" formatted="false"><![CDATA[
-        <p>Как распознать: (0:00) из ситуации ушками от себя, </p>
+        <p>Как распознать: (0:58) из ситуации ушками от себя, пара справа, а слева разные наклейки.</p>
 
-        <p></p>
-        <p style="text-align:center"><img src="coll_4.xml"></p>
+        <p>Предыдущий алгоритм, но слева или второй алгоритм через правую руку.</p>
+        <p style="text-align:center"><img src="coll_10.xml"></p>
 
-        Алгоритм:(0:00) <b></b>
+        Алгоритм 1:(1:02) <b>U (Lw\' U\' L U) (Lw F\' L\' F)</b><br/><br/>
+        Алгоритм 2: <b>U R\' F\' Rw U R U\' Rw\' F</b>
     ]]></string>
     <string name="coll_st10_url">rVrNZWbnXTg</string>
-    <string name="coll_st10_comment"></string>
+    <string name="coll_st10_comment">U R\' F\' Rw U R U\' Rw\' F</string>
 
     <string name="coll_st11_title">Ушки #5</string>
     <string name="coll_st11_descr" formatted="false"><![CDATA[

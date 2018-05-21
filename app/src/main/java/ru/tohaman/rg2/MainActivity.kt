@@ -173,7 +173,7 @@ class MainActivity : MyDefaultActivity(),
         } else {
             //Проверяем платил ли уже пользователь, если не платил, то каждый 30-ый вход
             //напоминаем сказать спасибо.
-            if ((mCoins == 0) and (count % 30 == 0)) {
+            if ((mCoins == 0) and (count % 25 == 0)) {
                 curPhase = "THANKS"
                 alert(getString(R.string.help_thanks)) { okButton { } }.show()
             }
