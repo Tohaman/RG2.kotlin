@@ -179,6 +179,13 @@ class MainActivity : MyDefaultActivity(),
             }
         }
 
+        //Исправление ошибки в комментах к узорам
+        val pattern = mListPagerLab.getPhaseItem(1,"PATTERNS")
+        if (pattern.comment == "S' M' S M") {
+            pattern.comment = "M2 S2 E2"
+            mListPagerLab.updateListPager(pattern)
+        }
+
         //Чтобы при запуске активности в onResume не пришлось менять фазу
         changedPhase = curPhase
 

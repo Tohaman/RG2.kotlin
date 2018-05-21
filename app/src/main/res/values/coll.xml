@@ -26,28 +26,28 @@
     </string-array>
 
     <integer-array name="coll_icon">
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
-        <item>@drawable/voll_1</item>
+        <item>@drawable/coll</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_2</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_1</item>
     </integer-array>
 
     <string-array name="coll_descr">
@@ -100,100 +100,251 @@
         <item>@string/coll_st21_url</item>
     </string-array>
 
-    <string name="coll_st0_title">Глазки #1</string>
+    <string-array name="coll_comment">
+        <item>@string/coll_st0_comment</item>
+        <item>@string/coll_st1_comment</item>
+        <item>@string/coll_st2_comment</item>
+        <item>@string/coll_st3_comment</item>
+        <item>@string/coll_st4_comment</item>
+        <item>@string/coll_st5_comment</item>
+        <item>@string/coll_st6_comment</item>
+        <item>@string/coll_st7_comment</item>
+        <item>@string/coll_st8_comment</item>
+        <item>@string/coll_st9_comment</item>
+        <item>@string/coll_st10_comment</item>
+        <item>@string/coll_st1_comment</item>
+        <item>@string/coll_st1_comment</item>
+        <item>@string/coll_st1_comment</item>
+        <item>@string/coll_st1_comment</item>
+        <item>@string/coll_st1_comment</item>
+        <item>@string/coll_st1_comment</item>
+        <item>@string/coll_st1_comment</item>
+        <item>@string/coll_st1_comment</item>
+        <item>@string/coll_st1_comment</item>
+        <item>@string/coll_st1_comment</item>
+    </string-array>
+    
+    <string name="coll_st0_title">Введение</string>
     <string name="coll_st0_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="coll_st0_url"></string>
+        <p>Если вы выучили весь OLL, пора переходить к <b>COLL</b>, что расшифровывается как
+        Corners & OLL (углы и OLL). Результат выполнеия данных алгоритмов - PLL с углами на своих местах,
+        т.е. окошки, рельсы, шахматы или PLL скип. Есть расширенный вариант COLL, который называется
+        OLLCP (OLL & Corner Permutation). Отличие их в том, что OLLCP это набор алгоритмов для любой
+        OLL ситуации, а COLL только для ситуации, когда желтый крест уже собран. Т.е. <b>COLL</b>
+        это варианты алгоритмов для базовых OLL ситуаций, по 6 на каждую ситуацию, минус 2 ситуации
+        для HTB+ (двойных глаз), где их всего 4, итого получается 40 алгоритмов.</p>
 
-    <string name="coll_st1_title">Глазки #2</string>
+        <p>Почему стоит учить COLL? Ведь многие скажут, что это не стоит усилий, т.к. этапов сборки последнего
+        слоя остается всё равно два, и нужно время на распознавание дополнительных ситуаций.</p>
+
+        <p>1. COLL значительно увеличивает вероятность PLL скипа.</p>
+
+        <p>2. Если даже вы не получили скип, то будет одна из простых PLL ситуаций: окошки, рельсы или шахматы,
+        определение которых даже по двум сторонам не составляет труда и происходит значительно быстрее,
+        чем остальных PLL ситуаций.</p>
+
+        <p>3. Дополнительного времени для определения ситуации практически не требуется (при должном уровне
+        тренировок), т.к. ситуации COLL легко определяются из стандартного положения для данной OLL
+        ситуации.</p>
+
+        <p>4. Уменьшается количство ходов перед/после PLL алгоритмом, за счет умньшения количества ситуаций,
+        которые могут выпасть и изучения дополнительных PLL алгоритмов для разных начальных положений.
+        Например, окошки легко делаются как из положения тройным блоком к себе, так и от себя.</p>
+
+        <p>Определение COLL ситуации происходит по смежности, схожести либо противоположности наклеек
+        угловых элементов. Постараюсь привести эскизы ситуаций, именно для тех положений, из которых
+        наиболее легко определяется COLL ситуация, а так же дать текстовое описание определения
+        этой ситуации.</p>
+
+    ]]></string>
+    <string name="coll_st0_url">t3KcPrjmJJ4</string>
+    <string name="coll_st0_comment"></string>
+
+    <string name="coll_st1_title">Глазки #1</string>
     <string name="coll_st1_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="coll_st1_url"></string>
+        <p>Как распознать: (0:04) из ситуации глазками от себя, на вас смотрят одинаковые глазки, а две
+        верхние дальние наклейки разного цвета.</p>
 
-    <string name="coll_st2_title">Глазки #3</string>
+        <p>Делаем северо-западную Акулу, потом простую Рыбку.</p>
+        <p style="text-align:center"><img src="coll_1.xml"></p>
+
+        Алгоритм:(0:08) <b>(R\' U\' R U\') R\' U2 R (R U R\' U) R U2 R\'</b><br/>
+        или тот же алгоритм, но в чуть другой записи:<br/>
+        <b>(R\' U\' R U\') R\' U2 R2 U R\' U R U2 R\'</b>
+    ]]></string>
+    <string name="coll_st1_url">CFIQMKxJP4k</string>
+    <string name="coll_st1_comment">(R\' U\' R U\') R\' U2 R2 U R\' U R U2 R\'</string>
+
+    <string name="coll_st2_title">Глазки #2</string>
     <string name="coll_st2_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="coll_st2_url"></string>
+        <p>Как распознать: (0:21) из ситуации глазками от себя, на вас смотрят одинаковые глазки, а две
+        верхние дальние наклейки одинакового цвета.</p>
 
-    <string name="coll_st3_title">Глазки #4</string>
+        <p>Выключаем свет, Австралия, Включаем свет.</p>
+        <p style="text-align:center"><img src="coll_2.xml"></p>
+
+        Алгоритм:(0:28) <b>R\' (F R U\' R\' U\' R U R\' F\' R U R\' U\' R\' F R F\') R</b>
+    ]]></string>
+    <string name="coll_st2_url">CFIQMKxJP4k</string>
+    <string name="coll_st2_comment">R\' (F R U\' R\' U\' R U R\' F\' R U R\' U\' R\' F R F\') R</string>
+
+    <string name="coll_st3_title">Глазки #3</string>
     <string name="coll_st3_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="coll_st3_url"></string>
+        <p>Как распознать: (0:39) из ситуации глазками от себя, наклейка уголка смотрящая на вас справа и
+        дальняя верхняя левая наклейка - одинаковые, а дальняя верхняя правая смежная с ними.</p>
 
-    <string name="coll_st4_title">Глазки #5</string>
+        <p>Очень похоже на алгоритм из Ускорения N13, только все движения в противоположную сторону,
+        ну и начальное положение тоже противоположное, т.е. глазками от себя.</p>
+        <p style="text-align:center"><img src="coll_3.xml"></p>
+
+        Алгоритм:(0:43) <b>R2 D\' R U2 R\' D R U2 R</b>
+    ]]></string>
+    <string name="coll_st3_url">CFIQMKxJP4k</string>
+    <string name="coll_st3_comment">R2 D\' R U2 R\' D R U2 R</string>
+
+    <string name="coll_st4_title">Глазки #4</string>
     <string name="coll_st4_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="coll_st4_url"></string>
+        <p>Как распознать: (0:00) из ситуации глазками от себя, </p>
 
-    <string name="coll_st5_title">Глазки #6</string>
+        <p></p>
+        <p style="text-align:center"><img src="coll_4.xml"></p>
+
+        Алгоритм:(0:00) <b></b>
+    ]]></string>
+    <string name="coll_st4_url">CFIQMKxJP4k</string>
+    <string name="coll_st4_comment"></string>
+
+    <string name="coll_st5_title">Глазки #5</string>
     <string name="coll_st5_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="coll_st5_url"></string>
+        <p>Как распознать: (0:00) из ситуации глазками от себя, </p>
 
-    <string name="coll_st6_title">N6 Шахматы</string>
+        <p></p>
+        <p style="text-align:center"><img src="coll_4.xml"></p>
+
+        Алгоритм:(0:00) <b></b>
+    ]]></string>
+    <string name="coll_st5_url">CFIQMKxJP4k</string>
+    <string name="coll_st5_comment"></string>
+
+    <string name="coll_st6_title">Глазки #6</string>
     <string name="coll_st6_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="coll_st6_url"></string>
+        <p>Как распознать: (0:00) из ситуации глазками от себя, </p>
 
-    <string name="coll_st7_title">N7 Буква \"Т\"</string>
+        <p></p>
+        <p style="text-align:center"><img src="coll_4.xml"></p>
+
+        Алгоритм:(0:00) <b></b>
+    ]]></string>
+    <string name="coll_st6_url">CFIQMKxJP4k</string>
+    <string name="coll_st6_comment"></string>
+
+    <string name="coll_st7_title">Ушки #1</string>
     <string name="coll_st7_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="coll_st7_url"></string>
+        <p>Как распознать: (0:00) из ситуации глазками от себя, </p>
 
-    <string name="coll_st8_title">N8 Ушки</string>
+        <p></p>
+        <p style="text-align:center"><img src="coll_4.xml"></p>
+
+        Алгоритм:(0:00) <b></b>
+    ]]></string>
+    <string name="coll_st7_url">rVrNZWbnXTg</string>
+    <string name="coll_st7_comment"></string>
+
+    <string name="coll_st8_title">Ушки #2</string>
     <string name="coll_st8_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="coll_st8_url"></string>
+        <p>Как распознать: (0:00) из ситуации глазками от себя, </p>
 
-    <string name="coll_st9_title">N9 Носик</string>
+        <p></p>
+        <p style="text-align:center"><img src="coll_4.xml"></p>
+
+        Алгоритм:(0:00) <b></b>
+    ]]></string>
+    <string name="coll_st8_url">rVrNZWbnXTg</string>
+    <string name="coll_st8_comment"></string>
+
+    <string name="coll_st9_title">Ушки #3</string>
     <string name="coll_st9_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="coll_st9_url"></string>
+        <p>Как распознать: (0:00) из ситуации глазками от себя, </p>
 
-    <string name="coll_st10_title">N10 Человечек (PLL Черепашка)</string>
+        <p></p>
+        <p style="text-align:center"><img src="coll_4.xml"></p>
+
+        Алгоритм:(0:00) <b></b>
+    ]]></string>
+    <string name="coll_st9_url">rVrNZWbnXTg</string>
+    <string name="coll_st9_comment"></string>
+
+    <string name="coll_st10_title">Ушки #4</string>
     <string name="coll_st10_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="coll_st10_url"></string>
+        <p>Как распознать: (0:00) из ситуации глазками от себя, </p>
 
-    <string name="coll_st11_title">N11 Рыбка (Акула)</string>
+        <p></p>
+        <p style="text-align:center"><img src="coll_4.xml"></p>
+
+        Алгоритм:(0:00) <b></b>
+    ]]></string>
+    <string name="coll_st10_url">rVrNZWbnXTg</string>
+    <string name="coll_st10_comment"></string>
+
+    <string name="coll_st11_title">Ушки #5</string>
     <string name="coll_st11_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="coll_st11_url"></string>
+        <p>Как распознать: (0:00) из ситуации глазками от себя, </p>
 
-    <string name="coll_st12_title">N12 Домино (пуля)</string>
+        <p></p>
+        <p style="text-align:center"><img src="coll_4.xml"></p>
+
+        Алгоритм:(0:00) <b></b>
+    ]]></string>
+    <string name="coll_st11_url">rVrNZWbnXTg</string>
+    <string name="coll_st11_comment"></string>
+
+    <string name="coll_st12_title">Ушки #6</string>
     <string name="coll_st12_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="coll_st12_url"></string>
+        <p>Как распознать: (0:00) из ситуации глазками от себя, </p>
 
-    <string name="coll_st13_title">N13 Глазки</string>
+        <p></p>
+        <p style="text-align:center"><img src="coll_4.xml"></p>
+
+        Алгоритм:(0:00) <b></b>
+    ]]></string>
+    <string name="coll_st12_url">rVrNZWbnXTg</string>
+    <string name="coll_st12_comment"></string>
+
+    <string name="coll_st13_title">Носик #1</string>
     <string name="coll_st13_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="coll_st13_url"></string>
+    <string name="coll_st13_comment"></string>
 
-    <string name="coll_st14_title">N14 Вертолет (глазки-ушки)</string>
+    <string name="coll_st14_title">Носик #2</string>
     <string name="coll_st14_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="coll_st14_url"></string>
+    <string name="coll_st14_comment"></string>
 
-    <string name="coll_st15_title">N15 Запад (два двойных блока)</string>
+    <string name="coll_st15_title">Носик #3</string>
     <string name="coll_st15_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="coll_st15_url"></string>
+    <string name="coll_st15_comment"></string>
 
-    <string name="coll_st16_title">N16 Юг (тройной блок с двойным справа)</string>
+    <string name="coll_st16_title">Носик #4</string>
     <string name="coll_st16_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="coll_st16_url"></string>
+    <string name="coll_st16_comment"></string>
 
-    <string name="coll_st17_title">N17 Окошки (тройной блок с глазками)</string>
+    <string name="coll_st17_title">Носик #5</string>
     <string name="coll_st17_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="coll_st17_url"></string>
+    <string name="coll_st17_comment"></string>
 
-    <string name="coll_st18_title">N18 Светофор (параллельный перенос)</string>
+    <string name="coll_st18_title">Носик #6</string>
     <string name="coll_st18_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="coll_st18_url"></string>
+    <string name="coll_st18_comment"></string>
 
     <string name="coll_st19_title">N19 Север (Тройной блок с блоком слева)</string>
     <string name="coll_st19_descr" formatted="false"><![CDATA[

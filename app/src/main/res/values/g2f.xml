@@ -8,7 +8,7 @@
     <item>Максимкин PLL</item>
     <item>Долгожданный OLL</item>
     <item>Советы от Антона</item>
-    <!--<item>СOLL</item>-->
+    <item>СOLL</item>
 </string-array>
 
 <integer-array name="g2f_icon">
@@ -19,7 +19,7 @@
     <item>@drawable/vpll</item>
     <item>@drawable/voll_51</item>
     <item>@drawable/vbegin_0</item>
-    <item>@drawable/vbegin_0</item>
+    <item>@drawable/coll</item>
 </integer-array>
 
 <string-array name="g2f_descr">
@@ -51,6 +51,6 @@
     <string name="g2f_st5_descr">PLL</string>
     <string name="g2f_st6_descr">OLL</string>
     <string name="g2f_st7_descr">RECOMEND</string>
-    <string name="g2f_st8_descr">СOLL</string>
+    <string name="g2f_st8_descr">COLL</string>
 
 </resources>
