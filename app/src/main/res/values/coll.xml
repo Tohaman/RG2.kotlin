@@ -22,7 +22,8 @@
         <item>@string/coll_st18_title</item>
         <item>@string/coll_st19_title</item>
         <item>@string/coll_st20_title</item>
-        <!--<item>@string/coll_st21_title</item>-->
+        <item>@string/coll_st21_title</item>
+        <item>@string/coll_st22_title</item>
     </string-array>
 
     <integer-array name="coll_icon">
@@ -35,12 +36,14 @@
         <item>@drawable/coll_6</item>
         <item>@drawable/coll_7</item>
         <item>@drawable/coll_8</item>
-        <item>@drawable/coll_1</item>
-        <item>@drawable/coll_1</item>
-        <item>@drawable/coll_1</item>
-        <item>@drawable/coll_1</item>
-        <item>@drawable/coll_1</item>
-        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_9</item>
+        <item>@drawable/coll_10</item>
+        <item>@drawable/coll_11</item>
+        <item>@drawable/coll_12</item>
+        <item>@drawable/coll_13</item>
+        <item>@drawable/coll_14</item>
+        <item>@drawable/coll_15</item>
+        <item>@drawable/coll_16</item>
         <item>@drawable/coll_1</item>
         <item>@drawable/coll_1</item>
         <item>@drawable/coll_1</item>
@@ -73,6 +76,7 @@
         <item>@string/coll_st19_descr</item>
         <item>@string/coll_st20_descr</item>
         <item>@string/coll_st21_descr</item>
+        <item>@string/coll_st22_descr</item>
     </string-array>
 
     <string-array name="coll_url">
@@ -98,6 +102,7 @@
         <item>@string/coll_st19_url</item>
         <item>@string/coll_st20_url</item>
         <item>@string/coll_st21_url</item>
+        <item>@string/coll_st22_url</item>
     </string-array>
 
     <string-array name="coll_comment">
@@ -112,16 +117,18 @@
         <item>@string/coll_st8_comment</item>
         <item>@string/coll_st9_comment</item>
         <item>@string/coll_st10_comment</item>
-        <item>@string/coll_st1_comment</item>
-        <item>@string/coll_st1_comment</item>
-        <item>@string/coll_st1_comment</item>
-        <item>@string/coll_st1_comment</item>
-        <item>@string/coll_st1_comment</item>
-        <item>@string/coll_st1_comment</item>
-        <item>@string/coll_st1_comment</item>
-        <item>@string/coll_st1_comment</item>
-        <item>@string/coll_st1_comment</item>
-        <item>@string/coll_st1_comment</item>
+        <item>@string/coll_st11_comment</item>
+        <item>@string/coll_st12_comment</item>
+        <item>@string/coll_st13_comment</item>
+        <item>@string/coll_st14_comment</item>
+        <item>@string/coll_st15_comment</item>
+        <item>@string/coll_st16_comment</item>
+        <item>@string/coll_st17_comment</item>
+        <item>@string/coll_st18_comment</item>
+        <item>@string/coll_st19_comment</item>
+        <item>@string/coll_st20_comment</item>
+        <item>@string/coll_st21_comment</item>
+        <item>@string/coll_st22_comment</item>
     </string-array>
     
     <string name="coll_st0_title">Введение</string>
@@ -156,13 +163,18 @@
         наиболее легко определяется COLL ситуация, а так же дать текстовое описание определения
         этой ситуации.</p>
 
+        <p>Если вы используете какой-то свой алгоритм, то вы его можете задать в поле \"Свой комментарий
+        (алгоритм)\" к этапу, после этого он отобразится и в списке этапов.</p>
+
     ]]></string>
     <string name="coll_st0_url">t3KcPrjmJJ4</string>
-    <string name="coll_st0_comment"></string>
+    <string name="coll_st0_comment">Тут можно задать свой алгоритм</string>
+
+    <!-- ================= Глазки ======================= -->
 
     <string name="coll_st1_title">Глазки #1</string>
     <string name="coll_st1_descr" formatted="false"><![CDATA[
-        <p><a href="rg2://ytplay?time=0:04&link=CFIQMKxJP4k">Как распознать:</a> из ситуации глазками от себя, на вас смотрят одинаковые глазки, а две
+        <p><a href="rg2://ytplay?time=0:04&link=CFIQMKxJP4k">Как распознать:</a> из ситуации глазками от себя: на вас смотрят одинаковые глазки, а две
         верхние дальние наклейки разного цвета.</p>
 
         <p>Делаем северо-западную Акулу, потом простую Рыбку.</p>
@@ -177,7 +189,7 @@
 
     <string name="coll_st2_title">Глазки #2</string>
     <string name="coll_st2_descr" formatted="false"><![CDATA[
-        <p><a href="rg2://ytplay?time=0:21&link=CFIQMKxJP4k">Как распознать:</a> из ситуации глазками от себя, на вас смотрят одинаковые глазки, а две
+        <p><a href="rg2://ytplay?time=0:21&link=CFIQMKxJP4k">Как распознать:</a> из ситуации глазками от себя: на вас смотрят одинаковые глазки, а две
         верхние дальние наклейки одинакового цвета.</p>
 
         <p>Выключаем свет, Австралия, Включаем свет.</p>
@@ -190,7 +202,7 @@
 
     <string name="coll_st3_title">Глазки #3</string>
     <string name="coll_st3_descr" formatted="false"><![CDATA[
-        <p><a href="rg2://ytplay?time=0:39&link=CFIQMKxJP4k">Как распознать:</a> из ситуации глазками от себя, наклейка уголка смотрящая на вас справа и
+        <p><a href="rg2://ytplay?time=0:39&link=CFIQMKxJP4k">Как распознать:</a> из ситуации глазками от себя: наклейка уголка смотрящая на вас справа и
         дальняя верхняя левая наклейка - одинаковые, а дальняя верхняя правая смежная с ними.</p>
 
         <p>Очень похоже на алгоритм из Ускорения N13, только все движения в противоположную сторону,
@@ -204,7 +216,7 @@
 
     <string name="coll_st4_title">Глазки #4</string>
     <string name="coll_st4_descr" formatted="false"><![CDATA[
-       <p><a href="rg2://ytplay?time=0:56&link=CFIQMKxJP4k">Как распознать:</a> из ситуации глазками от себя, наклейка уголка смотрящая на вас слева и
+       <p><a href="rg2://ytplay?time=0:56&link=CFIQMKxJP4k">Как распознать:</a> из ситуации глазками от себя: наклейка уголка смотрящая на вас слева и
         дальняя верхняя правая наклейка - одинаковые, а дальняя верхняя левая смежная с ними. Ну или
         можно так: пара наискосок и две противоположных наклейки.</p>
 
@@ -220,7 +232,7 @@
 
     <string name="coll_st5_title">Глазки #5</string>
     <string name="coll_st5_descr" formatted="false"><![CDATA[
-       <p><a href="rg2://ytplay?time=1:23&link=CFIQMKxJP4k">Как распознать:</a> из ситуации глазками от себя, две противоположные пары стоящие наискосок.</p>
+       <p><a href="rg2://ytplay?time=1:23&link=CFIQMKxJP4k">Как распознать:</a> из ситуации глазками от себя: две противоположные пары стоящие наискосок.</p>
 
         <p>Странный алгоритм: В лондон, странный пиф-паф, странная рыбка, из Лондона. Да и фингертрикс
         для него тоже немного странный, начинается с необычного вращения передней грани, зато потом
@@ -234,7 +246,7 @@
 
     <string name="coll_st6_title">Глазки #6</string>
     <string name="coll_st6_descr" formatted="false"><![CDATA[
-        <p><a href="rg2://ytplay?time=1:46&link=CFIQMKxJP4k">Как распознать:</a> из ситуации глазками от себя, передние наклейки разные, а задние
+        <p><a href="rg2://ytplay?time=1:46&link=CFIQMKxJP4k">Как распознать:</a> из ситуации глазками от себя: передние наклейки разные, а задние
         одинаковые.</p>
 
         <p>Просто выучите новый алгоритм. :)</p>
@@ -245,11 +257,11 @@
     <string name="coll_st6_url">CFIQMKxJP4k</string>
     <string name="coll_st6_comment">R2 D\' R U R\' D R U R U\' R\' U\' R</string>
 
-
+    <!-- ================= Ушки ======================= -->
 
     <string name="coll_st7_title">Ушки #1</string>
     <string name="coll_st7_descr" formatted="false"><![CDATA[
-        <p>Как распознать: (0:02) из ситуации ушками от себя, пара на передней грани и противоположная
+        <p>Как распознать: (0:02) из ситуации ушками от себя: пара на передней грани и противоположная
         пара на задней верхней грани.</p>
 
         <p>Выполняем северо-восточную (обычную) Акулу, потом юго-восточную Рыбку. Ну или обычную Акулу,
@@ -264,7 +276,7 @@
 
     <string name="coll_st8_title">Ушки #2</string>
     <string name="coll_st8_descr" formatted="false"><![CDATA[
-        <p>Как распознать: (0:20) из ситуации ушками от себя, пара на передней грани, разные наклейки
+        <p>Как распознать: (0:20) из ситуации ушками от себя: пара на передней грани, разные наклейки
         сзади.</p>
 
         <p>Достаем и разбиваем правую заднюю F2L пару, делаем U2, собираем и загоняем пару на место,
@@ -278,7 +290,7 @@
 
     <string name="coll_st9_title">Ушки #3</string>
     <string name="coll_st9_descr" formatted="false"><![CDATA[
-        <p>Как распознать: (0:41) из ситуации ушками от себя, слева пара, справа разные наклеки.</p>
+        <p>Как распознать: (0:41) из ситуации ушками от себя: слева пара, справа разные наклеки.</p>
 
         <p>Развернуть ушками налево и сделать пиф-паф, английский пиф-паф с первыми жирными ходами.</p>
         <p style="text-align:center"><img src="coll_9.xml"></p>
@@ -290,101 +302,152 @@
 
     <string name="coll_st10_title">Ушки #4</string>
     <string name="coll_st10_descr" formatted="false"><![CDATA[
-        <p>Как распознать: (0:58) из ситуации ушками от себя, пара справа, а слева разные наклейки.</p>
+        <p>Как распознать: (0:58) из ситуации ушками от себя: пара справа, а слева разные наклейки.</p>
 
-        <p>Предыдущий алгоритм, но слева или второй алгоритм через правую руку.</p>
+        <p>Предыдущий алгоритм, но слева. Второй алгоритм через правую руку. И третий вариант, для
+        данной ситуации - алгоритм из ускорения N8.</p>
         <p style="text-align:center"><img src="coll_10.xml"></p>
 
         Алгоритм 1:(1:02) <b>U (Lw\' U\' L U) (Lw F\' L\' F)</b><br/><br/>
-        Алгоритм 2: <b>U R\' F\' Rw U R U\' Rw\' F</b>
+
+        Алгоритм 2: <b>U R\' F\' Rw U R U\' Rw\' F</b><br/><br/>
+
+        <a href="rg2://ytplay?time=6:50&link=gbuLeCv_fRM">Алгоритм 3:</a> <b>x (D\' R\' U R D R\' U\' R) x\'</b>
     ]]></string>
     <string name="coll_st10_url">rVrNZWbnXTg</string>
     <string name="coll_st10_comment">U R\' F\' Rw U R U\' Rw\' F</string>
 
     <string name="coll_st11_title">Ушки #5</string>
     <string name="coll_st11_descr" formatted="false"><![CDATA[
-        <p>Как распознать: (0:00) из ситуации ушками от себя, </p>
+        <p>Как распознать: (1:15) из ситуации ушками от себя: пара сзади, а спереди разные наклейки.</p>
 
-        <p></p>
-        <p style="text-align:center"><img src="coll_4.xml"></p>
+        <p>В Лондон, пиф-паф, рыбный пиф-паф с обратными ходами крыши, пиф-паф без последнего хода, из Лондона.</p>
+        <p style="text-align:center"><img src="coll_11.xml"></p>
 
-        Алгоритм:(0:00) <b></b>
+        Алгоритм:(1:20) <b>U2 (F (R U R\' U\') (R U\' R\' U\') R U R\' F\')</b>
     ]]></string>
     <string name="coll_st11_url">rVrNZWbnXTg</string>
-    <string name="coll_st11_comment"></string>
+    <string name="coll_st11_comment">U2 (F (R U R\' U\') (R U\' R\' U\') R U R\' F\')</string>
 
     <string name="coll_st12_title">Ушки #6</string>
     <string name="coll_st12_descr" formatted="false"><![CDATA[
-        <p>Как распознать: (0:00) из ситуации ушками от себя, </p>
+        <p>Как распознать: (1:40) из ситуации ушками от себя: пара справа и пара слева.</p>
 
-        <p></p>
-        <p style="text-align:center"><img src="coll_4.xml"></p>
+        <p>В видео алгоритм написан неверно.</p>
+        <p style="text-align:center"><img src="coll_12.xml"></p>
 
-        Алгоритм:(0:00) <b></b>
+        Алгоритм:(1:46) <b>R\' U R2 D Rw\' U2 Rw D\' R2 U\' R</b>
     ]]></string>
     <string name="coll_st12_url">rVrNZWbnXTg</string>
-    <string name="coll_st12_comment"></string>
+    <string name="coll_st12_comment">R\' U R2 D Rw\' U2 Rw D\' R2 U\' R</string>
 
-
+    <!-- ================= Носики ======================= -->
 
     <string name="coll_st13_title">Носик #1</string>
     <string name="coll_st13_descr" formatted="false"><![CDATA[
-        <p>Как распознать: (0:00) из ситуации  </p>
+        <p>Как распознать: (0:03) из ситуации как на картинке: справа две противоположные, слева
+        смежная наклейка.</p>
 
-        <p></p>
+        <p>1. Крыша дважды, первые четыре хода Акулы, два пиф-пафа, последние три хода Акулы.<br/>
+        2. Ну или еще один вариант, уже другой Акулы с двумя пиф-пафами в середине.
+        </p>
         <p style="text-align:center"><img src="coll_13.xml"></p>
 
-        Алгоритм:(0:00) <b></b>
-
+        Алгоритм 1:(0:10) <b>U2 (R U2 R\' U\' (R U R\' U\')2 R U\' R\')</b><br/><br/>
+        Алгоритм 2:(0:29) <b>U (R' U2 (R U R\' U\')2 R U R\' U R)</b>
     ]]></string>
-    <string name="coll_st13_url"></string>
-    <string name="coll_st13_comment"></string>
+    <string name="coll_st13_url">U0dP8MJw-Ig</string>
+    <string name="coll_st13_comment">U2 (R U2 R\' U\' (R U R\' U\')2 R U\' R\')</string>
 
     <string name="coll_st14_title">Носик #2</string>
     <string name="coll_st14_descr" formatted="false"><![CDATA[
+        <p>Как распознать: (0:49) из ситуации как на картинке: диагональные одинаковые, на
+        передней грани справа смежная наклейка.</p>
+
+        <p></p>
+        <p style="text-align:center"><img src="coll_14.xml"></p>
+
+        Алгоритм:(0:52) <b>R U2 R D R\' U2 R D\' R2</b>
     ]]></string>
-    <string name="coll_st14_url"></string>
-    <string name="coll_st14_comment"></string>
+    <string name="coll_st14_url">U0dP8MJw-Ig</string>
+    <string name="coll_st14_comment">R U2 R D R\' U2 R D\' R2</string>
 
     <string name="coll_st15_title">Носик #3</string>
     <string name="coll_st15_descr" formatted="false"><![CDATA[
+        <p>Как распознать: (1:03) из ситуации на картинке: диагональные одинаковые, на
+        передней грани справа противоположная наклейка.</p>
+
+        <p>Повернуть крышу и выполнить предыдущий алгоритм слева или справа, но все ходы в другую сторону.</p>
+        <p style="text-align:center"><img src="coll_15.xml"></p>
+
+        Алгоритм 1:(1:09) <b>U (L\' U2 L\' D\' L U2 L\' D L2)</b><br/><br/>
+        Алгоритм 2:(1:18) <b>U\' (R\' U2 R\' D\' R U2 R\' D R2)</b>
     ]]></string>
-    <string name="coll_st15_url"></string>
-    <string name="coll_st15_comment"></string>
+    <string name="coll_st15_url">U0dP8MJw-Ig</string>
+    <string name="coll_st15_comment">U\' (R\' U2 R\' D\' R U2 R\' D R2)</string>
 
     <string name="coll_st16_title">Носик #4</string>
     <string name="coll_st16_descr" formatted="false"><![CDATA[
+        <p>Как распознать: (1:34) из ситуации на картинке: правые одинаковые, левая смежная.</p>
+
+        <p>Крыша дважды, два хода против часовой, первые 10 ходов Юга, свет дважды.</p>
+        <p style="text-align:center"><img src="coll_16.xml"></p>
+
+        Алгоритм:(1:37) <b>U2 (R\' U\' (R U R\' F\' R U R\' U\' R\' F) R2)</b>
     ]]></string>
-    <string name="coll_st16_url"></string>
+    <string name="coll_st16_url">U0dP8MJw-Ig</string>
     <string name="coll_st16_comment"></string>
 
     <string name="coll_st17_title">Носик #5</string>
     <string name="coll_st17_descr" formatted="false"><![CDATA[
+        <p>Как распознать: (1:55) из ситуации на картинке: диагональные противоположны, пердняя смежная.</p>
+
+        <p>На самом деле, очень удобный и быстрый алгоритм, хотя и с вращениями задней грани.</p>
+        <p style="text-align:center"><img src="coll_17.xml"></p>
+
+        Алгоритм:(2:01) <b>R\' F R B\' R\' F\' R B</b>
     ]]></string>
-    <string name="coll_st17_url"></string>
+    <string name="coll_st17_url">U0dP8MJw-Ig</string>
     <string name="coll_st17_comment"></string>
 
     <string name="coll_st18_title">Носик #6</string>
     <string name="coll_st18_descr" formatted="false"><![CDATA[
+        <p>Как распознать: (2:12) из ситуации на картинке: диагональные противоположны, справа пара.</p>
+
+        <p>Кажется, что алгоритм очень неудобный, т.к. нужно крутить и правую и левую, да еще и переднюю грани.
+        На самом деле, очень удобный фингертрикс.</p>
+        <p style="text-align:center"><img src="coll_18.xml"></p>
+
+        Алгоритм:(2:22) <b>F R\' F\' L F R F\' L\'</b>
     ]]></string>
-    <string name="coll_st18_url"></string>
+    <string name="coll_st18_url">U0dP8MJw-Ig</string>
     <string name="coll_st18_comment"></string>
 
 
+    <!-- ================= НТВ+ ======================= -->
 
-    <string name="coll_st19_title">N19 Север (Тройной блок с блоком слева)</string>
+    <string name="coll_st19_title">НТВ+ #1</string>
     <string name="coll_st19_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="coll_st19_url"></string>
+    <string name="coll_st19_comment"></string>
 
-    <string name="coll_st20_title">N20 9ый этап</string>
+    <string name="coll_st20_title">НТВ+ #2</string>
     <string name="coll_st20_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="coll_st20_url"></string>
+    <string name="coll_st20_comment"></string>
 
-    <string name="coll_st21_title">Немного терминологии</string>
+    <string name="coll_st21_title">НТВ+ #3</string>
     <string name="coll_st21_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="coll_st21_url"></string>
+    <string name="coll_st21_comment"></string>
+
+    <string name="coll_st22_title">НТВ+ #4</string>
+    <string name="coll_st22_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st22_url"></string>
+    <string name="coll_st22_comment"></string>
 
 </resources>

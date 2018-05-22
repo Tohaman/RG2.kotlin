@@ -44,7 +44,7 @@
     <color name="cube_litegray">#9e9e9e</color>
     <color name="c_lgr">#bdbdbd</color>
     <color name="semitransparent_grey">#cc424242</color>
-    <color name="ic_launcher_backgroun">#FFFDFB</color>
+    <color name="ic_launcher_background">#FFFDFB</color>
     <color name="primary_dark_material_light_1">#e51313</color>
     <color name="dark_red">#b71c1c</color>
     <color name="textColorTertiaryLight">#AA000000</color>

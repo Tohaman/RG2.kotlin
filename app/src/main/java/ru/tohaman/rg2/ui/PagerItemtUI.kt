@@ -103,6 +103,7 @@ class PagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
                     textView {
                         id = Ids.commentText
                         textSize = 16f
+                        textColorResource = R.color.colorAccent
                         text = ctx.getString(R.string.commentText)
                     }.lparams(matchParent, wrapContent) {setMargins(0.dp, 8.dp, 0.dp, 32.dp)}
 
