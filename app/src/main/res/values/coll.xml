@@ -166,6 +166,8 @@
         <p>Если вы используете какой-то свой алгоритм, то вы его можете задать в поле \"Свой комментарий
         (алгоритм)\" к этапу, после этого он отобразится и в списке этапов.</p>
 
+        Еще больше алгоритмов COLL вы можете найти <a href=https://speedcubing.ru/tutorial/3x3x3/pro/coll>тут.</a>
+
     ]]></string>
     <string name="coll_st0_url">t3KcPrjmJJ4</string>
     <string name="coll_st0_comment">Тут можно задать свой алгоритм</string>
@@ -396,7 +398,7 @@
         Алгоритм:(1:37) <b>U2 (R\' U\' (R U R\' F\' R U R\' U\' R\' F) R2)</b>
     ]]></string>
     <string name="coll_st16_url">U0dP8MJw-Ig</string>
-    <string name="coll_st16_comment"></string>
+    <string name="coll_st16_comment">U2 (R\' U\' (R U R\' F\' R U R\' U\' R\' F) R2)</string>
 
     <string name="coll_st17_title">Носик #5</string>
     <string name="coll_st17_descr" formatted="false"><![CDATA[
@@ -408,7 +410,7 @@
         Алгоритм:(2:01) <b>R\' F R B\' R\' F\' R B</b>
     ]]></string>
     <string name="coll_st17_url">U0dP8MJw-Ig</string>
-    <string name="coll_st17_comment"></string>
+    <string name="coll_st17_comment">R\' F R B\' R\' F\' R B</string>
 
     <string name="coll_st18_title">Носик #6</string>
     <string name="coll_st18_descr" formatted="false"><![CDATA[
@@ -421,33 +423,103 @@
         Алгоритм:(2:22) <b>F R\' F\' L F R F\' L\'</b>
     ]]></string>
     <string name="coll_st18_url">U0dP8MJw-Ig</string>
-    <string name="coll_st18_comment"></string>
+    <string name="coll_st18_comment">F R\' F\' L F R F\' L\'</string>
 
 
     <!-- ================= НТВ+ ======================= -->
 
     <string name="coll_st19_title">НТВ+ #1</string>
     <string name="coll_st19_descr" formatted="false"><![CDATA[
+        <p>Как распознать: (0:03) из ситуации глазками к себе: справа пара и слева пара (вертикальные пары).</p>
+
+        <p>Акула с пиф-пафом посередине.</p>
+        <p style="text-align:center"><img src="coll_19.xml"></p>
+
+        Алгоритм:(0:07) <b>R U2 R\' U\' (R U R\' U\') R U\' R\'</b>
     ]]></string>
-    <string name="coll_st19_url"></string>
-    <string name="coll_st19_comment"></string>
+    <string name="coll_st19_url">GJ7nsaOvwbM</string>
+    <string name="coll_st19_comment">R U2 R\' U\' (R U R\' U\') R U\' R\'</string>
 
     <string name="coll_st20_title">НТВ+ #2</string>
     <string name="coll_st20_descr" formatted="false"><![CDATA[
+        <p>Как распознать: (0:18) из ситуации глазками к себе: пара спереди и пара сзади (горизонтальные пары).</p>
+
+        <p>Классический вариант решения с тремя пиф-пафами.</p>
+        <p style="text-align:center"><img src="coll_20.xml"></p>
+
+        Алгоритм:(0:21) <b>F (R U R\' U\')3 F\'</b>
     ]]></string>
-    <string name="coll_st20_url"></string>
-    <string name="coll_st20_comment"></string>
+    <string name="coll_st20_url">GJ7nsaOvwbM</string>
+    <string name="coll_st20_comment">F (R U R\' U\')3 F\'</string>
 
     <string name="coll_st21_title">НТВ+ #3</string>
     <string name="coll_st21_descr" formatted="false"><![CDATA[
+        <p>Как распознать: (0:29) из ситуации глазками к себе:</p>
+
+        <p></p>
+        <p style="text-align:center"><img src="coll_19.xml"></p>
+
+        Алгоритм:(0:00) <b></b>
     ]]></string>
-    <string name="coll_st21_url"></string>
+    <string name="coll_st21_url">GJ7nsaOvwbM</string>
     <string name="coll_st21_comment"></string>
 
     <string name="coll_st22_title">НТВ+ #4</string>
     <string name="coll_st22_descr" formatted="false"><![CDATA[
+        <p>Как распознать: (0:03) из ситуации глазками к себе:</p>
+
+        <p></p>
+        <p style="text-align:center"><img src="coll_19.xml"></p>
+
+        Алгоритм:(0:00) <b></b>
     ]]></string>
-    <string name="coll_st22_url"></string>
+    <string name="coll_st22_url">GJ7nsaOvwbM</string>
     <string name="coll_st22_comment"></string>
+
+
+    <!-- ================= Вертолеты ======================= -->
+
+    <string name="coll_st23_title">Вертолет #1</string>
+    <string name="coll_st23_descr" formatted="false"><![CDATA[
+        <p>Как распознать: (0:03) из ситуации глазками к себе:</p>
+
+        <p></p>
+        <p style="text-align:center"><img src="coll_19.xml"></p>
+
+        Алгоритм:(0:00) <b></b>
+    ]]></string>
+    <string name="coll_st23_url"></string>
+    <string name="coll_st23_comment"></string>
+
+    <string name="coll_st24_title">Вертолет #2</string>
+    <string name="coll_st24_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st24_url"></string>
+    <string name="coll_st24_comment"></string>
+
+    <string name="coll_st25_title">Вертолет #3</string>
+    <string name="coll_st25_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st25_url"></string>
+    <string name="coll_st25_comment"></string>
+
+    <string name="coll_st26_title">Вертолет #4</string>
+    <string name="coll_st26_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st26_url"></string>
+    <string name="coll_st26_comment"></string>
+
+    <string name="coll_st27_title">Вертолет #5</string>
+    <string name="coll_st27_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st27_url"></string>
+    <string name="coll_st27_comment"></string>
+
+    <string name="coll_st28_title">Вертолет #6</string>
+    <string name="coll_st28_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="coll_st28_url"></string>
+    <string name="coll_st28_comment"></string>
+
 
 </resources>
