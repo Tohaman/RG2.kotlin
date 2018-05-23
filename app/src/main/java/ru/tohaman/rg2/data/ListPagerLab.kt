@@ -56,6 +56,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("AXIS", R.array.axis_title, R.array.axis_icon,R.array.axis_descr,R.array.axis_url,context)
         phaseInit("PYRAMORPHIX", R.array.pyramorphix_title, R.array.pyramorphix_icon,R.array.pyramorphix_descr,R.array.pyramorphix_url,context)
         phaseInit("SUDOKU", R.array.sudoku_title, R.array.sudoku_icon,R.array.sudoku_descr,R.array.sudoku_url,context)
+        phaseInit("WINDMILL", R.array.windmill_title, R.array.windmill_icon,R.array.windmill_descr,R.array.windmill_url,context)
         phaseInit("PLLTEST", R.array.pll_test_phases, R.array.pll_test_icon,R.array.pll_test_descr,R.array.pll_test_url,context)
         phaseInit("PLLTEST_CUSTOM", R.array.pll_test_phases, R.array.pll_test_icon,R.array.pll_test_descr,R.array.pll_test_url,context)
         phaseInit("OLLTEST", R.array.oll_test_phases, R.array.oll_icon, R.array.oll_descr, R.array.oll_test_url, context)
