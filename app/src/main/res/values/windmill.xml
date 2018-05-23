@@ -13,10 +13,10 @@
     </string-array>
 
     <integer-array name="windmill_icon">
-        <item>@drawable/windmill_8</item>
-        <item>@drawable/windmill_8</item>
-        <item>@drawable/windmill_8</item>
-        <item>@drawable/windmill_8</item>
+        <item>@drawable/windmill_1</item>
+        <item>@drawable/windmill_2</item>
+        <item>@drawable/windmill_2</item>
+        <item>@drawable/windmill_3</item>
         <item>@drawable/windmill_8</item>
         <item>@drawable/windmill_8</item>
         <item>@drawable/windmill_8</item>

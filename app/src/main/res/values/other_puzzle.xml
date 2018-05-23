@@ -27,7 +27,7 @@
         <item>@drawable/axis</item>
         <item>@drawable/pyramorphix</item>
         <item>@drawable/sudoku</item>
-        <item>@drawable/windmill_8</item>
+        <item>@drawable/windmill</item>
     </integer-array>
 
     <string-array name="other_descr">
