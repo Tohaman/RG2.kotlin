@@ -10,7 +10,6 @@
         <item>@string/windmill_st6_title</item>
         <item>@string/windmill_st7_title</item>
         <item>@string/windmill_st8_title</item>
-        <item>@string/windmill_st9_title</item>
     </string-array>
 
     <integer-array name="windmill_icon">
@@ -19,7 +18,6 @@
         <item>@drawable/windmill_3</item>
         <item>@drawable/windmill_4</item>
         <item>@drawable/windmill_5</item>
-        <item>@drawable/windmill_6</item>
         <item>@drawable/windmill_7</item>
         <item>@drawable/windmill_8</item>
         <item>@drawable/windmill_9</item>
@@ -34,7 +32,6 @@
         <item>@string/windmill_st6_descr</item>
         <item>@string/windmill_st7_descr</item>
         <item>@string/windmill_st8_descr</item>
-        <item>@string/windmill_st9_descr</item>
     </string-array>
 
 
@@ -47,7 +44,6 @@
         <item>@string/windmill_st6_url</item>
         <item>@string/windmill_st7_url</item>
         <item>@string/windmill_st8_url</item>
-        <item>@string/windmill_st9_url</item>
     </string-array>
 
     <string name="windmill_st1_title">1. Обзор и Белый крест</string>
