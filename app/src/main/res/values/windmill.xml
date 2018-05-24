@@ -10,17 +10,19 @@
         <item>@string/windmill_st6_title</item>
         <item>@string/windmill_st7_title</item>
         <item>@string/windmill_st8_title</item>
+        <item>@string/windmill_st9_title</item>
     </string-array>
 
     <integer-array name="windmill_icon">
         <item>@drawable/windmill_1</item>
         <item>@drawable/windmill_2</item>
-        <item>@drawable/windmill_2</item>
         <item>@drawable/windmill_3</item>
+        <item>@drawable/windmill_4</item>
+        <item>@drawable/windmill_5</item>
+        <item>@drawable/windmill_6</item>
+        <item>@drawable/windmill_7</item>
         <item>@drawable/windmill_8</item>
-        <item>@drawable/windmill_8</item>
-        <item>@drawable/windmill_8</item>
-        <item>@drawable/windmill_8</item>
+        <item>@drawable/windmill_9</item>
     </integer-array>
     
     <string-array name="windmill_descr">
@@ -32,6 +34,7 @@
         <item>@string/windmill_st6_descr</item>
         <item>@string/windmill_st7_descr</item>
         <item>@string/windmill_st8_descr</item>
+        <item>@string/windmill_st9_descr</item>
     </string-array>
 
 
@@ -44,13 +47,16 @@
         <item>@string/windmill_st6_url</item>
         <item>@string/windmill_st7_url</item>
         <item>@string/windmill_st8_url</item>
+        <item>@string/windmill_st9_url</item>
     </string-array>
 
-    <string name="windmill_st1_title">1. Первый крест</string>
+    <string name="windmill_st1_title">1. Обзор и Белый крест</string>
     <string name="windmill_st1_descr" formatted="false"><![CDATA[
         <p>Продолжим серию обучалок по головоломкам на базе обычной трешки, которые меняют
-        свою форму. На этот раз это будет Windmill или по-русски Мельница. Почему она так
-        называется, легко понять сделав на этой головоломке узор \"Шахматы\".</p>
+        свою форму. На этот раз это будет <b>Windmill</b> или по-русски Мельница. Почему она так
+        называется, легко понять сделав на этой головоломке узор \"Шахматы\". Данная обучалка
+        рассчитана на тех, кто уже умеет собирать обычный кубик 3х3, и очень желательно, чтобы
+        вы это умели делать по методике Максима Чечнева.</p>
 
         Для начала давайте все таки рассмотрим особенности строения данной головоломки, чтобы
         было легче проводить аналогии с обычным кубиком. Начнем как всегда с центров:
@@ -64,45 +70,105 @@
 
         Ребра:
         <p style="text-align:center"><img src="windmill_1_2.xml"></p>
-        И снова все не просто, ребра тут бывают двух видов:
-        1. Двухцветные элементы, одна наклейка которых трапецевидная, а вторая треугольная.
+        <p>И снова все не просто, ребра тут бывают двух видов:<br/>
+        1. Двухцветные элементы, одна наклейка которых трапецевидная, а вторая прямоугольная.<br/>
+        2. Длинные прямоугольные элементы с одной наклейкой.</p>
+
+        Углы:
+        <p style="text-align:center"><img src="windmill_1_3.xml"></p>
+        <p>Вот тут все просто, это элементы с двумя наклейками, одна из которых треугольная (белая или желтая),
+        а вторая длинная прямоугольная. Эти элементы очень похожи на ребра второго типа, но у ребер только
+        одна наклейка, а у углов две.</p>
+
+        <p>Переходим к сборке. Первым делом соберем крест вокруг белого центра, причем в этой головоломке,
+        можно собрать сначала и неправильный крест, на следующем этапе мы его поправим.
+        Все абсолютно аналогично сборке креста в обычном кубике, нас интересуют только ребра
+        с двумя наклейками, одна из которых белая.</p>
+
+        <p>Как обычно, ищем их сначала на втором этаже, если
+        там нет, то на третьем, если там нет, то на первом этаже, ну а если и там нет, то в подвале.
+        Ставим эти ребра на крышу к белому центру.</p>
+
+        В итоге у вас должно получится что-то типа вот этого.
+        <p style="text-align:center"><img src="windmill_1.xml"></p>
+
+        Элементы показанные на рисунке серым цветом, могут
+        быть любыми, как по цвету, так и по расположению. Если что-то непонятно, посмотрите в видео.
+
     ]]></string>
     <string name="windmill_st1_url">aaaaaaaaaaa</string>
 
-    <string name="windmill_st2_title">2. Разворот смежных центров</string>
+    <string name="windmill_st2_title">2. Совмещаем крест по цвету</string>
     <string name="windmill_st2_descr" formatted="false"><![CDATA[
+        <p>Теперь, как и в кубике 3х3, сделаем так, чтобы ребра креста дружили с центрами второго слоя
+        по цвету, на то, дружат ли ребра с центрами по расположению, пока не обращаем внимания.</p>
+
+        <p>Все абсолютно аналогично третьему этапу методики для новичков Максима Чечнева, поворачиваем
+        крышу так, чтобы цвет двух ребер совпадал с цветом центров, ставим эти центры налево и от себя,
+        делаем пиф-паф и доворот правой грани.</p>
+
+        <p><b>Алгоритм: (R U R\' U\') R</b></p>
+
+        <p>Если такие центры друг напротив друга, то опускаем правую и левую грани, крутим два раза крышу,
+        поднимаем боковые грани.</p>
+
+        <p><b>Алгоритм: (R\' L) U2 (R L\')</b></p>
+
+        В итоге у вас должно получится что-то типа вот этого.
+        <p style="text-align:center"><img src="windmill_2.xml"></p>
     ]]></string>
     <string name="windmill_st2_url">aaaaaaaaaaa</string>
 
-    <string name="windmill_st3_title">3. Первый слой</string>
+    <string name="windmill_st3_title">3. Разворот смежных центров</string>
     <string name="windmill_st3_descr" formatted="false"><![CDATA[
+        Теперь наша задача подружить центры второго слоя с уже установленными ребрами по расположению.
+        Этот этап абсолютно аналогичен соответствующим этапам из axis cube и master pyramorphix.
+
+        Берем головоломку крестом сверху, а центром, который нужно подружить с ребром, справа.
+        Опускаем вращением правой грани ребро с третьего этажа на первый (R2\'), ставим ребро,
+        которое оказалось внизу, на переднюю грань (делаем D\') и теперь поворачиваем
+        правую грань так, чтобы при возвращении ребра на правую грань оно дружило с центром.
+        Тут все делается методом проб и ошибок, ничего страшного, если не получится сделать это сразу.
+        Повернули правую грань, попробовали подогнать ребро, если не подошло, то снова увели ребро
+        на переднюю грань и еще повернули правую, снова попробовали.
+        Как совпало, крутим правую грань
+        на 180 градусов (R2), ребро должно дружить и с верхним центром и с правым.
+        Перехватываем так, чтобы справа был другой недружный центр,
+        повторяем операцию.</p>
+
+        <p><b>Алгоритм: R2 D\' {R} D R2</b></p>
     ]]></string>
     <string name="windmill_st3_url">aaaaaaaaaaa</string>
 
-    <string name="windmill_st4_title">4. Второй слой</string>
+    <string name="windmill_st4_title">4. Углы первого слоя</string>
     <string name="windmill_st4_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="windmill_st4_url">aaaaaaaaaaa</string>
 
-    <string name="windmill_st5_title">5. Ориентация элементов верхнего креста</string>
+    <string name="windmill_st5_title">5. Второй слой</string>
     <string name="windmill_st5_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="windmill_st5_url">aaaaaaaaaaa</string>
 
-    <string name="windmill_st6_title">6. Делаем крест правильным</string>
+    <string name="windmill_st6_title">6. Желтый крест</string>
     <string name="windmill_st6_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="windmill_st6_url">aaaaaaaaaaa</string>
 
-    <string name="windmill_st7_title">7. Расстановка углов</string>
+    <string name="windmill_st7_title">7. Красим крышу</string>
     <string name="windmill_st7_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="windmill_st7_url">aaaaaaaaaaa</string>
 
-    <string name="windmill_st8_title">8. Разворот углов</string>
+    <string name="windmill_st8_title">8. Совмещаем ребра</string>
     <string name="windmill_st8_descr" formatted="false"><![CDATA[
-        Profit!
     ]]></string>
     <string name="windmill_st8_url">aaaaaaaaaaa</string>
+
+    <string name="windmill_st9_title">8. Совмещаем углы</string>
+    <string name="windmill_st9_descr" formatted="false"><![CDATA[
+        Profit!
+    ]]></string>
+    <string name="windmill_st9_url">aaaaaaaaaaa</string>
 
 </resources>
