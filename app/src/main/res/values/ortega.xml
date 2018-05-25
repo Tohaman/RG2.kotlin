@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="recomend_title">
+        <item>@string/ortega1_title</item>
+        <item>@string/ortega2_title</item>
+        <item>@string/ortega3_title</item>
+        <item>@string/ortega4_title</item>
+    </string-array>
+
+    <integer-array name="recomend_icon">
+        <item>@drawable/vbegin_0</item>
+        <item>@drawable/vbegin_0</item>
+        <item>@drawable/vbegin_0</item>
+        <item>@drawable/vbegin_0</item>
+    </integer-array>
+
+    <string-array name="recomend_descr">
+        <item>@string/ortega1_descr</item>
+        <item>@string/ortega2_descr</item>
+        <item>@string/ortega3_descr</item>
+        <item>@string/ortega4_descr</item>
+    </string-array>
+
+
+    <string-array name="recomend_url">
+        <item>@string/ortega1_url</item>
+        <item>@string/ortega2_url</item>
+        <item>@string/ortega3_url</item>
+        <item>@string/ortega4_url</item>
+    </string-array>
+
+    <string name="ortega1_title">Первая сторона</string>
+    <string name="ortega1_descr" formatted="false"><![CDATA[
+        <p>Этот метод сборки кубика 2х2 был изобретён независимо друг от друга двумя людьми:
+        Victor Ortega и Josef Jelínek. Является наиболее популярным методом сборки куба 2х2 среднего уровня.</p>
+
+
+    ]]></string>
+    <string name="ortega1_url">XOILnb9FieU</string>
+
+
+    <string name="ortega2_title">Противоположная сторона (OLL)</string>
+    <string name="ortega2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="ortega2_url">XOILnb9FieU</string>
+
+    <string name="ortega3_title">Перестановка элементов (PBL)</string>
+    <string name="ortega3_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="ortega3_url">XOILnb9FieU</string>
+
+
+    <string name="ortega4_title">Сравнение с методикой А.Кима</string>
+    <string name="ortega4_descr" formatted="false"><![CDATA[
+        ]]></string>
+    <string name="ortega4_url">XOILnb9FieU</string>
+</resources>
