@@ -12,7 +12,7 @@
         <item>Ненормальный куб (Axis cube)</item>
         <item>Мастер пираморфикс (Master Pyramorphix)</item>
         <item>Судоку куб</item>
-        <item>Мельница (Windmill)</item>
+        <!--<item>Мельница (Windmill)</item>-->
     </string-array>
 
     <integer-array name="other_icon">
