@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="recomend_title">
+    <string-array name="ortega_title">
         <item>@string/ortega1_title</item>
         <item>@string/ortega2_title</item>
         <item>@string/ortega3_title</item>
         <item>@string/ortega4_title</item>
     </string-array>
 
-    <integer-array name="recomend_icon">
+    <integer-array name="ortega_icon">
         <item>@drawable/vbegin_0</item>
         <item>@drawable/vbegin_0</item>
         <item>@drawable/vbegin_0</item>
         <item>@drawable/vbegin_0</item>
     </integer-array>
 
-    <string-array name="recomend_descr">
+    <string-array name="ortega_descr">
         <item>@string/ortega1_descr</item>
         <item>@string/ortega2_descr</item>
         <item>@string/ortega3_descr</item>
@@ -23,7 +23,7 @@
     </string-array>
 
 
-    <string-array name="recomend_url">
+    <string-array name="ortega_url">
         <item>@string/ortega1_url</item>
         <item>@string/ortega2_url</item>
         <item>@string/ortega3_url</item>
