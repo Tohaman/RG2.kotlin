@@ -234,7 +234,7 @@
         Повернуть двойным левым блоком к себе.<br/>
         <p style="text-align:center"><img src="vpll_5_1.xml" width="60%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=4:00&link=fwvKWr087bM">на видео 4:00</a> <br/>
-        <b>Алгоритм: (R U R\' U\') (R\' F R2 U\' R\' U\') (R U R\' F\') </b>
+        <b>Алгоритм: (R U R\' U\') (R\' F R2 U\' R\' U\') (R U R\' F\')</b>
 
         <p><b>Как смоделировать:</b> Выполнить данный алгоритм еще раз.</p>
     ]]></string>

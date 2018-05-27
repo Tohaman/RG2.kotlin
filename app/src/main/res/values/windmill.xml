@@ -92,7 +92,7 @@
         быть любыми, как по цвету, так и по расположению. Если что-то непонятно, посмотрите в видео.
 
     ]]></string>
-    <string name="windmill_st1_url">aaaaaaaaaaa</string>
+    <string name="windmill_st1_url">Jq0h03rhw4s</string>
 
     <string name="windmill_st2_title">2. Совмещаем крест по цвету</string>
     <string name="windmill_st2_descr" formatted="false"><![CDATA[
@@ -113,7 +113,7 @@
         В итоге у вас должно получится что-то типа вот этого.
         <p style="text-align:center"><img src="windmill_2.xml"></p>
     ]]></string>
-    <string name="windmill_st2_url">aaaaaaaaaaa</string>
+    <string name="windmill_st2_url">Jq0h03rhw4s</string>
 
     <string name="windmill_st3_title">3. Разворот смежных центров</string>
     <string name="windmill_st3_descr" formatted="false"><![CDATA[
@@ -123,7 +123,7 @@
         Берем головоломку крестом сверху, а центром, который нужно подружить с ребром, справа.
         Опускаем вращением правой грани ребро с третьего этажа на первый (R2\'), ставим ребро,
         которое оказалось внизу, на переднюю грань (делаем D\') и теперь поворачиваем
-        правую грань так, чтобы при возвращении ребра на правую грань оно дружило с центром.
+        правую грань так, чтобы хорошо видеть правый цент и при возвращении ребра на правую грань оно дружило с этим центром.
         Тут все делается методом проб и ошибок, ничего страшного, если не получится сделать это сразу.
         Повернули правую грань, попробовали подогнать ребро, если не подошло, то снова увели ребро
         на переднюю грань и еще повернули правую, снова попробовали.
@@ -134,7 +134,7 @@
 
         <p><b>Алгоритм: R2 D\' {R} D R2</b></p>
     ]]></string>
-    <string name="windmill_st3_url">aaaaaaaaaaa</string>
+    <string name="windmill_st3_url">Jq0h03rhw4s</string>
 
     <string name="windmill_st4_title">4. Углы первого слоя</string>
     <string name="windmill_st4_descr" formatted="false"><![CDATA[
@@ -154,7 +154,7 @@
 
         <p><b>Алгоритм: R U R\' U\'</b></p>
     ]]></string>
-    <string name="windmill_st4_url">aaaaaaaaaaa</string>
+    <string name="windmill_st4_url">Jq0h03rhw4s</string>
 
     <string name="windmill_st5_title">5. Второй слой</string>
     <string name="windmill_st5_descr" formatted="false"><![CDATA[
@@ -210,7 +210,7 @@
         делаем все так же, как и в простом кубике.
         Просто загоняем туда любое другое ребро, а потом ставим нужное ребро уже правильно.</p>
     ]]></string>
-    <string name="windmill_st5_url">aaaaaaaaaaa</string>
+    <string name="windmill_st5_url">Jq0h03rhw4s</string>
 
     <string name="windmill_st6_title">6. Красим крышу (OLL)</string>
     <string name="windmill_st6_descr" formatted="false"><![CDATA[
@@ -227,7 +227,7 @@
         определить доставшуюся OLL ситуацию не составляет труда. Сложности могут возникнуть разве,
         что с вращением данной головоломки, поскольку из-за скошенных углов это не всегда удобно.</p>
     ]]></string>
-    <string name="windmill_st6_url">aaaaaaaaaaa</string>
+    <string name="windmill_st6_url">Jq0h03rhw4s</string>
 
     <string name="windmill_st7_title">7. Ставим ребра</string>
     <string name="windmill_st7_descr" formatted="false"><![CDATA[
@@ -253,10 +253,13 @@
 
         <p>Если вы попали в ситуацию, когда два дяди на данном этапе находятся друг напротив друга,
         то данный алгоритм надо будет выполнить два раза. Первый без разницы из какого положения,
-        а вот перед вторым выполнением уже надо будет расположить дядей на 9 и 12 часов.<br/><br/>
+        а вот перед вторым выполнением уже надо будет расположить дядей на 9 и 12 часов, либо
+        выполнить алгоритм Запад.</p>
+
+        <p>Алгоритм: <b>(R U R\' U\') (R\' F R2 U\' R\' U\') (R U R\' F\')</b></p>
 
     ]]></string>
-    <string name="windmill_st7_url">aaaaaaaaaaa</string>
+    <string name="windmill_st7_url">Jq0h03rhw4s</string>
 
     <string name="windmill_st8_title">8. Расставляем углы</string>
     <string name="windmill_st8_descr" formatted="false"><![CDATA[
@@ -288,6 +291,6 @@
 
         Profit!
     ]]></string>
-    <string name="windmill_st8_url">aaaaaaaaaaa</string>
+    <string name="windmill_st8_url">Jq0h03rhw4s</string>
 
 </resources>
