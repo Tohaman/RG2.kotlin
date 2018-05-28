@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="roux_title">
+        <item>@string/roux1_title</item>
+        <item>@string/roux2_title</item>
+        <item>@string/roux3_title</item>
+        <item>@string/roux4_title</item>
+    </string-array>
+
+    <integer-array name="roux_icon">
+        <item>@drawable/vbegin_0</item>
+        <item>@drawable/vbegin_0</item>
+        <item>@drawable/vbegin_0</item>
+        <item>@drawable/vbegin_0</item>
+    </integer-array>
+
+    <string-array name="roux_descr">
+        <item>@string/roux1_descr</item>
+        <item>@string/roux2_descr</item>
+        <item>@string/roux3_descr</item>
+        <item>@string/roux4_descr</item>
+    </string-array>
+
+
+    <string-array name="roux_url">
+        <item>@string/roux1_url</item>
+        <item>@string/roux2_url</item>
+        <item>@string/roux3_url</item>
+        <item>@string/roux4_url</item>
+    </string-array>
+
+    <string name="roux1_title">Первая сторона</string>
+    <string name="roux1_descr" formatted="false"><![CDATA[
+        <p>Этот метод сборки кубика 2х2 был изобретён независимо друг от друга двумя людьми:
+        Victor roux и Josef Jelínek. Является наиболее популярным методом сборки куба 2х2 среднего уровня.</p>
+
+
+    ]]></string>
+    <string name="roux1_url">XOILnb9FieU</string>
+
+
+    <string name="roux2_title">Противоположная сторона (OLL)</string>
+    <string name="roux2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="roux2_url">XOILnb9FieU</string>
+
+    <string name="roux3_title">Перестановка элементов (PBL)</string>
+    <string name="roux3_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="roux3_url">XOILnb9FieU</string>
+
+
+    <string name="roux4_title">Сравнение с методикой А.Кима</string>
+    <string name="roux4_descr" formatted="false"><![CDATA[
+        ]]></string>
+    <string name="roux4_url">XOILnb9FieU</string>
+</resources>
