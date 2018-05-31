@@ -255,6 +255,7 @@
 
         <p>Пример N1, разберем кубик вот по такому скрамблу:
         <a href="rg2://scrmbl?scram=F_D2_L2_R\'_D2_B2_L\'_B2_L_B2_R\'_F2_U_F_D_U\'_L\'_U\'_F_U\'_L\'">F D2 L2 R\' D2 B2 L\' B2 L B2 R\' F2 U F D U\' L\' U\' F U\' L\'</a></p>
+        <p style="text-align:center"><img src="roux_5.xml"></p>
 
         <b>Первый блок.</b>
 
@@ -304,10 +305,9 @@
 
         Profit!
 
-
-
         <p>Пример N2. Разберем кубик вот по такому скрамблу:
         <a href="rg2://scrmbl?scram=R\'_U2_L2_B2_L2_D\'_B2_D\'_F2_R2_D\'_U_B\'_D_B\'_F_R_B\'_D_L2_U2">R\' U2 L2 B2 L2 D\' B2 D\' F2 R2 D\' U B\' D B\' F R B\' D L2 U2</a></p>
+        <p style="text-align:center"><img src="roux_5_1.xml"></p>
 
         <b>Первый блок.</b>
 
