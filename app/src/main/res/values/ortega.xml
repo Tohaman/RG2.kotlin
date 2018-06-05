@@ -5,21 +5,18 @@
         <item>@string/ortega1_title</item>
         <item>@string/ortega2_title</item>
         <item>@string/ortega3_title</item>
-        <item>@string/ortega4_title</item>
     </string-array>
 
     <integer-array name="ortega_icon">
-        <item>@drawable/vbegin_0</item>
-        <item>@drawable/vbegin_0</item>
-        <item>@drawable/vbegin_0</item>
-        <item>@drawable/vbegin_0</item>
+        <item>@drawable/ortega_1</item>
+        <item>@drawable/ortega_2</item>
+        <item>@drawable/ortega_3</item>
     </integer-array>
 
     <string-array name="ortega_descr">
         <item>@string/ortega1_descr</item>
         <item>@string/ortega2_descr</item>
         <item>@string/ortega3_descr</item>
-        <item>@string/ortega4_descr</item>
     </string-array>
 
 
@@ -27,13 +24,22 @@
         <item>@string/ortega1_url</item>
         <item>@string/ortega2_url</item>
         <item>@string/ortega3_url</item>
-        <item>@string/ortega4_url</item>
     </string-array>
 
     <string name="ortega1_title">Первая сторона</string>
     <string name="ortega1_descr" formatted="false"><![CDATA[
         <p>Этот метод сборки кубика 2х2 был изобретён независимо друг от друга двумя людьми:
-        Victor Ortega и Josef Jelínek. Является наиболее популярным методом сборки куба 2х2 среднего уровня.</p>
+        Victor Ortega и Josef Jelínek. Является наиболее популярным методом сборки куба 2х2
+        среднего уровня. Алгоритмы из данного метода вам очень пригодятся и в дальнейшем,
+        если вы будете изучать более продвинутые методы сборки CLL, EG-1, EG-2.</p>
+
+        Сборку кубика данным методом можно разделить на три этапа.
+        1. Сборка одной стороны (не слоя).
+        2. Сборка противоположной стороны (OLL).
+        3. Перестановка элементов двух слоев (PBL).
+
+        Первым делом необходимо собрать одну сторону, причем собрать целиком слой вовсе необязательно,
+        более того, я бы даже сказал нежелательно. Почему? Объясню на третьем этапе сборки.
 
 
     ]]></string>
@@ -50,9 +56,4 @@
     ]]></string>
     <string name="ortega3_url">XOILnb9FieU</string>
 
-
-    <string name="ortega4_title">Сравнение с методикой А.Кима</string>
-    <string name="ortega4_descr" formatted="false"><![CDATA[
-        ]]></string>
-    <string name="ortega4_url">XOILnb9FieU</string>
 </resources>
