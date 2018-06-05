@@ -10,7 +10,7 @@
     <item>Долгожданный OLL</item>
     <item>СOLL от Дилана</item>
     <item>Roux для CFOP-щиков</item>
-    <item>Ортега для 2х2</item>
+    <!--<item>Ортега для 2х2</item>-->
 </string-array>
 
 <integer-array name="g2f_icon">

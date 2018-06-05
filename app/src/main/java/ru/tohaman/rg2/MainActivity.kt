@@ -100,6 +100,7 @@ class MainActivity : MyDefaultActivity(),
     private lateinit var favList: ArrayList<ListPager>
     private val listOfGo2Fridrich = arrayListOf<String>()
     private var listOfOtherPuzzle = arrayListOf<String>()
+    private var listOfMain2x2 = arrayListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -132,6 +133,15 @@ class MainActivity : MyDefaultActivity(),
                 listOfGo2Fridrich.add(getString(fridrichList[i].description))
             }
         }
+
+        //получаем список фаз методики Фридрих, чтобы корректно отрабатывать нажатие кнопки назад
+        val main2x2List = mListPagerLab.getPhaseList("MAIN2X2")
+        for (i in main2x2List.indices) {
+            if (main2x2List[i].url == "submenu") {
+                listOfMain2x2.add(getString(main2x2List[i].description))
+            }
+        }
+
 
         // Регистрируем слушатель OnSharedPreferenceChangeListener (Изменеия в настройках)
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
@@ -228,6 +238,12 @@ class MainActivity : MyDefaultActivity(),
                     setListFragmentPhase(curPhase)
                     fab.setImageResource(R.drawable.ic_fab_forward)
                 }
+                in listOfMain2x2 -> {
+                    curPhase = "MAIN2X2"
+                    setListFragmentPhase(curPhase)
+                    fab.setImageResource(R.drawable.ic_fab_forward)
+                }
+
                 "AZBUKA" -> {
                     curPhase = "SCRAMBLEGEN"
                     setFragment(FragmentScrambleGen.newInstance())
@@ -284,6 +300,11 @@ class MainActivity : MyDefaultActivity(),
             }
             in listOfBasic -> {
                 curPhase = "BASIC"
+                setListFragmentPhase(curPhase)
+                fab.setImageResource(R.drawable.ic_fab_forward)
+            }
+            in listOfMain2x2 -> {
+                curPhase = "MAIN2X2"
                 setListFragmentPhase(curPhase)
                 fab.setImageResource(R.drawable.ic_fab_forward)
             }
@@ -458,9 +479,9 @@ class MainActivity : MyDefaultActivity(),
         // Handle navigation view item clicks here.
         Log.v(DebugTag.TAG, "NavigationItemSelected $item.itemId")
         when (item.itemId) {
-            R.id.begin2x2 -> { setListFragmentPhase("BEGIN2X2") }
+            R.id.begin2x2 -> { setListFragmentPhase("MAIN2X2") }
 
-            R.id.adv2x2 -> { setListFragmentPhase("ADV2X2") }
+//            R.id.adv2x2 -> { setListFragmentPhase("ADV2X2") }
 
             R.id.begin -> { setListFragmentPhase("BEGIN") }
 
