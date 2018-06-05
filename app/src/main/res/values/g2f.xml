@@ -9,7 +9,7 @@
     <item>Максимкин PLL</item>
     <item>Долгожданный OLL</item>
     <item>СOLL от Дилана</item>
-    <item>Метод Roux (Ру)</item>
+    <item>Roux для CFOP-щиков</item>
 </string-array>
 
 <integer-array name="g2f_icon">
@@ -21,7 +21,7 @@
     <item>@drawable/vpll</item>
     <item>@drawable/voll_51</item>
     <item>@drawable/coll</item>
-    <item>@drawable/roux_2</item>
+    <item>@drawable/roux_3</item>
 </integer-array>
 
 <string-array name="g2f_descr">
