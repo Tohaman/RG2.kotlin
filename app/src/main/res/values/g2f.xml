@@ -10,7 +10,6 @@
     <item>Долгожданный OLL</item>
     <item>СOLL от Дилана</item>
     <item>Roux для CFOP-щиков</item>
-    <!--<item>Ортега для 2х2</item>-->
 </string-array>
 
 <integer-array name="g2f_icon">
@@ -23,7 +22,6 @@
     <item>@drawable/voll_51</item>
     <item>@drawable/coll</item>
     <item>@drawable/roux_3</item>
-    <item>@drawable/ortega_1</item>
 </integer-array>
 
 <string-array name="g2f_descr">
@@ -36,11 +34,9 @@
     <item>@string/g2f_st7_descr</item>
     <item>@string/g2f_st8_descr</item>
     <item>@string/g2f_st9_descr</item>
-    <item>@string/g2f_st10_descr</item>
 </string-array>
 
 <string-array name="g2f_null">
-    <item>submenu</item>
     <item>submenu</item>
     <item>submenu</item>
     <item>submenu</item>
@@ -61,6 +57,5 @@
     <string name="g2f_st7_descr">OLL</string>
     <string name="g2f_st8_descr">COLL</string>
     <string name="g2f_st9_descr">ROUX</string>
-    <string name="g2f_st10_descr">ORTEGA</string>
 
 </resources>
