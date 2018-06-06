@@ -7,6 +7,7 @@
         <item>@string/patterns_st3_title</item>
         <item>@string/patterns_st4_title</item>
         <item>@string/patterns_st5_title</item>
+        <item>@string/patterns_st6_title</item>
     </string-array>
 
     <integer-array name="patterns_icon">
@@ -15,6 +16,7 @@
         <item>@drawable/pattern_3</item>
         <item>@drawable/pattern_4</item>
         <item>@drawable/pattern_5</item>
+        <item>@drawable/pattern_6</item>
     </integer-array>
     
     <string-array name="patterns_descr">
@@ -23,6 +25,7 @@
         <item>@string/patterns_st3_descr</item>
         <item>@string/patterns_st4_descr</item>
         <item>@string/patterns_st5_descr</item>
+        <item>@string/patterns_st6_descr</item>
     </string-array>
 
     <string-array name="patterns_url">
@@ -31,6 +34,7 @@
         <item>@string/patterns_st3_url</item>
         <item>@string/patterns_st4_url</item>
         <item>@string/patterns_st5_url</item>
+        <item>@string/patterns_st6_url</item>
     </string-array>
 
     <string-array name="patterns_comment">
@@ -39,6 +43,7 @@
         <item>@string/patterns_st3_comment</item>
         <item>@string/patterns_st4_comment</item>
         <item>@string/patterns_st5_comment</item>
+        <item>@string/patterns_st6_comment</item>
     </string-array>
 
 
@@ -101,6 +106,18 @@
     ]]></string>
     <string name="patterns_st5_url">5Tjr5R9q50w</string>
     <string name="patterns_st5_comment">L2 R\' B2 F2 D2 B2 F2 L2 R2 U2 R\'</string>
+
+    <string name="patterns_st6_title">6. Молния в точку</string>
+    <string name="patterns_st6_descr" formatted="false"><![CDATA[
+        <p>Очень интересный и необычный узор, которого вы не найдете на сайте
+        <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>. Его мне прислал
+        Дмитрий Константинов, за что ему большое спасибо.
+        </p>
+        <p style="text-align:center"><img src="pattern_6.xml"></p>
+        <b>Алгоритм: (R2 F B\' R2 U\'D)(R2 F B\' R2 U\'D)(R2 F B\' R2 U\'D)</b>
+    ]]></string>
+    <string name="patterns_st6_url"></string>
+    <string name="patterns_st6_comment">(R2 F B\' R2 U\'D)3</string>
 
 
 </resources>
