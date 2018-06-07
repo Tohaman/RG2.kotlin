@@ -112,6 +112,11 @@
         <p style="text-align:center"><img src="ortega_2_11.xml"></p>
         <p>Алгоритм: <b>F (R U R\' U\') F\'</b></p>
 
+        <p>А для ситуации глазками направо, вместо пиф-пафа, делаем те же ходы, но начинаем с крыши.</p>
+
+        <p style="text-align:center"><img src="ortega_2_16.xml"></p>
+        <p>Алгоритм: <b>F (U R U\' R\') F\'</b></p>
+
         <p><b>6. Вертолет (Pi-OLL)</b></p>
         <p style="text-align:center"><img src="ortega_2_12.xml"></p>
 
@@ -130,13 +135,12 @@
         <p style="text-align:center"><img src="ortega_2_15.xml"></p>
         <p>Алгоритм: <b>R2 U2 R U2 R2</b></p>
 
-
-
     ]]></string>
     <string name="ortega2_url">XOILnb9FieU</string>
 
     <string name="ortega3_title">Перестановка элементов (PBL)</string>
     <string name="ortega3_descr" formatted="false"><![CDATA[
+        Ну и теперь осталось расставить все элементы кубика на свои места.
     ]]></string>
     <string name="ortega3_url">XOILnb9FieU</string>
 
