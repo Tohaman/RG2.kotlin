@@ -182,11 +182,11 @@
     <string name="roux3_url">gROant1t_j4</string>
 
 
-    <string name="roux4_title">Шесть ребер</string>
+    <string name="roux4_title">Шесть ребер (LSE)</string>
     <string name="roux4_descr" formatted="false"><![CDATA[
         <p>Осталось разобраться только с <a href="rg2://ytplay?time=15:57&link=gROant1t_j4">шестью ребрами</a>
-        (четырьмя на верхней грани и двумя на нижней).</p>
-        <p>Данный этап можно разбить на четыре (три) подэтапа:<br/>
+        (четырьмя на верхней грани и двумя на нижней). Поэтому данный этап называют LSE (Last Six Edge).</p>
+        <p>Его можно разбить на четыре (три) подэтапа:<br/>
         0. Установка белого или желтого центра сверху.<br/>
         1. Разворот ребер (Edge Orientation).<br/>
         2. Установка двух боковых ребер верхнего слоя (L/R Edges).<br/>
