@@ -224,9 +224,10 @@
 
         <p><b>3.4. PBL #8</b></p>
 
-        <p></p>
+        <p>Сверху слой собран, снизу нет глазок. Можно перевернуть кибик и сделать Австралию,
+        а можно и вот так.</p>
         <p style="text-align:center"><img src="ortega_3_8.xml"></p>
-        <p>Алгоритм: <b></b></p>
+        <p>Алгоритм: <b>R2 U\' R U\' F\' R U2 R U L U\'</b></p>
 
     ]]></string>
     <string name="ortega3_url">XOILnb9FieU</string>

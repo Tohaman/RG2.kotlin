@@ -5,7 +5,7 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/begin2x2"
+            android:id="@+id/main2x2"
             android:icon="@drawable/ic_icon2"
             android:title="@string/begin_2x2"/>
         <!--<item-->
@@ -13,17 +13,17 @@
             <!--android:icon="@drawable/ic_icon2"-->
             <!--android:title="@string/advanced_2x2"/>-->
         <item
-            android:id="@+id/begin"
+            android:id="@+id/main3x3"
             android:icon="@drawable/ic_icon3"
             android:title="@string/begin_3x3"/>
-        <item
-            android:id="@+id/g2f"
-            android:icon="@drawable/ic_icon3"
-            android:title="@string/g2f_3x3"/>
-        <item
-            android:id="@+id/blind"
-            android:icon="@drawable/ic_icon3"
-            android:title="@string/blind_3x3"/>
+        <!--<item-->
+            <!--android:id="@+id/g2f"-->
+            <!--android:icon="@drawable/ic_icon3"-->
+            <!--android:title="@string/g2f_3x3"/>-->
+        <!--<item-->
+            <!--android:id="@+id/blind"-->
+            <!--android:icon="@drawable/ic_icon3"-->
+            <!--android:title="@string/blind_3x3"/>-->
         <!--<item-->
             <!--android:id="@+id/blind_acc"-->
             <!--android:icon="@drawable/ic_icon3"-->
