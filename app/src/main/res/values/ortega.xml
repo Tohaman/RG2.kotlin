@@ -33,6 +33,8 @@
         среднего уровня. Алгоритмы из данного метода вам очень пригодятся и в дальнейшем,
         если вы будете изучать более продвинутые методы сборки CLL, EG-1, EG-2.</p>
 
+        <p>В основе данной обучалки лежит видео от Яна Корзюка и его подборка алгоритмов для данного метода.</p>
+
         <p>Сборку кубика данным методом можно разделить на три этапа.<br/>
         1. Сборка одной стороны (не слоя).<br/>
         2. Сборка противоположной стороны (OLL).<br/>
@@ -192,59 +194,59 @@
         <p>Алгоритм: <b>(F R) (U\' R\' U\' R U R\' F\') (R U R\' U\') (R\' F R F\')</b><br/>
         или <a href="rg2://ytplay?time=4:59&link=XOILnb9FieU">алгоритм:</a> <b>(R U\' R\' U\') F2 (U\' R U R\') D R2</b></p>
 
-        <p><a href="rg2://ytplay?time=5:11&link=XOILnb9FieU">2. Глазки на нижнем слое.</a></p>
+        <p><a href="rg2://ytplay?time=6:11&link=XOILnb9FieU">2. Глазки на нижнем слое.</a></p>
 
-        <p><a href="rg2://ytplay?time=5:22&link=XOILnb9FieU"><b>2.1. PBL #3</b></a></p>
+        <p><a href="rg2://ytplay?time=6:23&link=XOILnb9FieU"><b>2.1. PBL #3</b></a></p>
 
         <p>Самый часто попадающийся случай - снизу глазки и сверху глазки. Ставим обоими глазками
         от себя.</p>
         <p style="text-align:center"><img src="ortega_3_3.xml"></p>
-        <p>Алгоритм: <b>R2 U\' (R2 U2 F2) U\' R2</b></p>
+        <p><a href="rg2://ytplay?time=6:38&link=XOILnb9FieU">Алгоритм:</a> <b>R2 U\' (R2 U2 F2) U\' R2</b></p>
 
         <p>Или вариант алгоритма для ситуации, когда глазки обоих слоев смотрят на вас.</p>
         <p style="text-align:center"><img src="ortega_3_10.xml"></p>
-        <p>Алгоритм: <b>R2 U\' (B2 U2 R2) U\' R2</b></p>
+        <p><a href="rg2://ytplay?time=6:59&link=XOILnb9FieU">Алгоритм:</a> <b>R2 U\' (B2 U2 R2) U\' R2</b></p>
 
-        <p><b>2.2. PBL #4</b></p>
+        <p><a href="rg2://ytplay?time=7:05&link=XOILnb9FieU"><b>2.2. PBL #4</b></a></p>
 
-        <p>Снизу глазки, сверху нет глазок.</p>
+        <p>Снизу глазки, сверху нет глазок. Нижними глазками от себя.</p>
         <p style="text-align:center"><img src="ortega_3_4.xml"></p>
-        <p>Алгоритм: <b>(R U\' F) U2 (F\' U R\')</b></p>
+        <p><a href="rg2://ytplay?time=7:21&link=XOILnb9FieU">Алгоритм:</a> <b>(R U\' F) U2 (F\' U R\')</b></p>
 
         <p>Или вариант алгоритма для ситуации, когда глазки нижнего слоя смотрят на вас.</p>
         <p style="text-align:center"><img src="ortega_3_11.xml"></p>
-        <p>Алгоритм: <b>(R U R U\') B2 (U R\' U\' R\')</b></p>
+        <p><a href="rg2://ytplay?time=7:18&link=XOILnb9FieU">Алгоритм:</a> <b>(R U R U\') B2 (U R\' U\' R\')</b></p>
 
-        <p><b>2.3. PBL #5</b></p>
+        <p><a href="rg2://ytplay?time=7:25&link=XOILnb9FieU"><b>2.3. PBL #5</b></a></p>
 
         <p>Снизу глазки, сверху все собрано. Можно перевернуть и сделать любой алгоритм из PBL #1, но лучше так.</p>
         <p style="text-align:center"><img src="ortega_3_5.xml"></p>
-        <p>Алгоритм: <b>R\' U L\' U\' R2 U\' R\' U2 R U\'</b></p>
+        <p><a href="rg2://ytplay?time=7:37&link=XOILnb9FieU">Алгоритм:</a> <b>R\' U L\' U\' R2 U\' R\' U2 R U\'</b></p>
 
-        <p>3. Нижний слой не собран, но глазок нет.</p>
+        <p><a href="rg2://ytplay?time=5:11&link=XOILnb9FieU">3. Нижний слой не собран, но глазок нет.</a></p>
 
-        <p><b>3.1. PBL #6</b></p>
+        <p><a href="rg2://ytplay?time=5:22&link=XOILnb9FieU"><b>3.1. PBL #6</b></a></p>
 
-        <p>Снизу нет глазок, сверху глазки. Глазками к себе.</p>
+        <p>Снизу нет глазок, сверху глазки. Ставим верхний слой глазками (блоком) к себе.</p>
         <p style="text-align:center"><img src="ortega_3_6.xml"></p>
-        <p>Алгоритм: <b>(R\' F R\') F2 (R U\' R)</b><br/>
+        <p><a href="rg2://ytplay?time=5:32&link=XOILnb9FieU">Алгоритм:</a> <b>(R\' F R\') F2 (R U\' R)</b><br/>
         или <b>(R U\' R) F2\' (R U\' R)</b><br/>
         или <b>(R U\' L) U2 (R\' U L\')</b></p>
 
-        <p><b>3.2. PBL #7</b></p>
+        <p><a href="rg2://ytplay?time=5:35&link=XOILnb9FieU"><b>3.2. PBL #7</b></a></p>
 
         <p>Глазок нет ни сверху, ни снизу. Самая простая, но и самая редкая ситуация. Алгоритм один,
         но два варианта его выполнения.</p>
         <p style="text-align:center"><img src="ortega_3_7.xml"></p>
-        <p>Алгоритм: <b>R L U2 R\' L\'</b><br/>
+        <p><a href="rg2://ytplay?time=5:42&link=XOILnb9FieU">Алгоритм:</a> <b>R L U2 R\' L\'</b><br/>
         по сути это: <b>R2 B2 R2</b></p>
 
-        <p><b>3.4. PBL #8</b></p>
+        <p><a href="rg2://ytplay?time=5:46&link=XOILnb9FieU"><b>3.4. PBL #8</b></a></p>
 
-        <p>Сверху слой собран, снизу нет глазок. Можно перевернуть кибик и сделать Австралию,
-        а можно и вот так.</p>
+        <p>Сверху слой собран, снизу нет глазок. Можно перевернуть кубик и сделать Австралию,
+        а можно просто немного модифицировать алгоритм из PBL #2, по сути, объединив его с PBL #5.</p>
         <p style="text-align:center"><img src="ortega_3_8.xml"></p>
-        <p>Алгоритм: <b>R2 U\' R U\' F\' R U2 R U L U\' </b></p>
+        <p><a href="rg2://ytplay?time=5:46&link=XOILnb9FieU">Алгоритм:</a> <b>(R U\' R\' U\') F2 (U\' R U R\') D (F2) R2</b></p>
 
     ]]></string>
     <string name="ortega3_url">XOILnb9FieU</string>
