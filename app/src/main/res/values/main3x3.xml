@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="main3x3_title">
+        <item>С чего начать?</item>
+        <item>Метод для начинающих</item>
+        <item>Продвинутые методы (CFOP, ROUX)</item>
+        <item>Сборка вслепую (Blind)</item>
+    </string-array>
+
+    <integer-array name="main3x3_icon">
+        <item>@drawable/vbegin_0</item>
+        <item>@drawable/vbegin_9</item>
+        <item>@drawable/vf2l_2</item>
+        <item>@drawable/blind</item>
+    </integer-array>
+
+    <string-array name="main3x3_descr">
+        <item>@string/recomendation2_descr</item>
+        <item>@string/main3x3_st2_descr</item>
+        <item>@string/main3x3_st3_descr</item>
+        <item>@string/main3x3_st4_descr</item>
+    </string-array>
+
+    <string-array name="main3x3_url">
+        <item>@string/recomendation1_url</item>
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+    </string-array>
+
+    <string name="main3x3_st1_descr">RECOMEND</string>
+    <string name="main3x3_st2_descr">BEGIN</string>
+    <string name="main3x3_st3_descr">G2F</string>
+    <string name="main3x3_st4_descr">BLIND</string>
+
+</resources>

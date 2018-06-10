@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.SharedPreferences
-import android.net.Uri
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.design.widget.NavigationView
@@ -98,8 +97,7 @@ class MainActivity : MyDefaultActivity(),
     private var changedPhase = "BEGIN"
     private var changedId = 0
     private lateinit var favList: ArrayList<ListPager>
-    private val listOfGo2Fridrich = arrayListOf<String>()
-    private var listOfOtherPuzzle = arrayListOf<String>()
+    private var listOfSubmenu = arrayListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -117,21 +115,8 @@ class MainActivity : MyDefaultActivity(),
         Log.v (TAG, "MainActivity ListPagerLab init")
         mListPagerLab = ListPagerLab.get(ctx)
 
-        //получаем список фаз других головоломок, чтобы корректно отрабатывать нажатие кнопки назад
-        val otherList = mListPagerLab.getPhaseList("OTHER")
-        for (i in otherList.indices) {
-            if (otherList[i].url == "submenu") {
-                listOfOtherPuzzle.add(getString(otherList[i].description))
-            }
-        }
-
-        //получаем список фаз методики Фридрих, чтобы корректно отрабатывать нажатие кнопки назад
-        val fridrichList = mListPagerLab.getPhaseList("G2F")
-        for (i in fridrichList.indices) {
-            if (fridrichList[i].url == "submenu") {
-                listOfGo2Fridrich.add(getString(fridrichList[i].description))
-            }
-        }
+        //получаем список фаз submenu, чтобы корректно отрабатывать нажатие кнопки назад
+        listOfSubmenu = mListPagerLab.getSubmenu(ctx)
 
         // Регистрируем слушатель OnSharedPreferenceChangeListener (Изменеия в настройках)
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
@@ -198,7 +183,7 @@ class MainActivity : MyDefaultActivity(),
             "SETTINGS" -> {setFragment(FragmentSettings.newInstance())}
             "ABOUT" -> {setFragment(FragmentAbout.newInstance())}
             "AZBUKA","AZBUKA2" -> {setFragment(FragmentAzbukaSelect.newInstance())}
-            in listOfGo2Fridrich, in listOfOtherPuzzle, in  listOfBasic-> {
+            in listOfSubmenu-> {
                 fab.setImageResource(R.drawable.ic_fab_backward)
                 setListFragmentPhase(curPhase)
             }
@@ -212,36 +197,29 @@ class MainActivity : MyDefaultActivity(),
             fab.visibility = View.VISIBLE
         }
         fab.setOnClickListener { _ ->
-            when (curPhase) {
-                in listOfGo2Fridrich -> {
-                    curPhase = "G2F"
-                    setListFragmentPhase(curPhase)
-                    fab.setImageResource(R.drawable.ic_fab_forward)
+            val backPhase = mListPagerLab.getBackPhase(curPhase,ctx)
+            if (backPhase == "") {
+                when (curPhase) {
+                    "AZBUKA" -> {
+                        curPhase = "SCRAMBLEGEN"
+                        setFragment(FragmentScrambleGen.newInstance())
+                        fab.setImageResource(R.drawable.ic_fab_forward)
+                    }
+                    "AZBUKA2" -> {
+                        curPhase = "BLINDGAME"
+                        setFragment(FragmentScrambleGen.newInstance())
+                        fab.setImageResource(R.drawable.ic_fab_forward)
+                    }
+                    else -> {
+                        drawer_layout.openDrawer(GravityCompat.START)
+                    }
                 }
-                in listOfOtherPuzzle -> {
-                    curPhase = "OTHER"
-                    setListFragmentPhase(curPhase)
-                    fab.setImageResource(R.drawable.ic_fab_forward)
-                }
-                in listOfBasic -> {
-                    curPhase = "BASIC"
-                    setListFragmentPhase(curPhase)
-                    fab.setImageResource(R.drawable.ic_fab_forward)
-                }
-                "AZBUKA" -> {
-                    curPhase = "SCRAMBLEGEN"
-                    setFragment(FragmentScrambleGen.newInstance())
-                    fab.setImageResource(R.drawable.ic_fab_forward)
-                }
-                "AZBUKA2" -> {
-                    curPhase = "BLINDGAME"
-                    setFragment(FragmentScrambleGen.newInstance())
-                    fab.setImageResource(R.drawable.ic_fab_forward)
-                }
-                else -> {
-                    drawer_layout.openDrawer(GravityCompat.START)
-                }
+            } else {
+                curPhase = backPhase
+                setListFragmentPhase(curPhase)
+                fab.setImageResource(R.drawable.ic_fab_forward)
             }
+
         }
         setSupportActionBar(maintoolbar)
         val toggle = ActionBarDrawerToggle(
@@ -271,50 +249,43 @@ class MainActivity : MyDefaultActivity(),
     }
 
     override fun onBackPressed() {
-        when (curPhase) {
-            in listOfGo2Fridrich -> {
-                curPhase = "G2F"
-                setListFragmentPhase(curPhase)
-                fab.setImageResource(R.drawable.ic_fab_forward)
-            }
-            in listOfOtherPuzzle -> {
-                curPhase = "OTHER"
-                setListFragmentPhase(curPhase)
-                fab.setImageResource(R.drawable.ic_fab_forward)
-            }
-            in listOfBasic -> {
-                curPhase = "BASIC"
-                setListFragmentPhase(curPhase)
-                fab.setImageResource(R.drawable.ic_fab_forward)
-            }
-            "AZBUKA" -> {
-                curPhase = "SCRAMBLEGEN"
-                setFragment(FragmentScrambleGen.newInstance())
-                fab.setImageResource(R.drawable.ic_fab_forward)
-            }
-            "AZBUKA2" -> {
-                curPhase = "BLINDGAME"
-                setFragment(FragmentBlindGameSettings.newInstance())
-                fab.setImageResource(R.drawable.ic_fab_forward)
-            }
+        val backPhase = mListPagerLab.getBackPhase(curPhase,ctx)
 
-            else -> {
-                if (drawer_layout.isDrawerOpen(GravityCompat.END)) {
-                    drawer_layout.closeDrawer(GravityCompat.END)
-                } else {
-                    if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-                        if (backPressedTime + 500 > System.currentTimeMillis()) {
-                            super.onBackPressed()
-                        } else {
-                            toast("Нажмите еще раз для выхода")
-                            backPressedTime = System.currentTimeMillis()
-                        }
+        if (backPhase == "") {
+            when (curPhase) {
+                "AZBUKA" -> {
+                    curPhase = "SCRAMBLEGEN"
+                    setFragment(FragmentScrambleGen.newInstance())
+                    fab.setImageResource(R.drawable.ic_fab_forward)
+                }
+                "AZBUKA2" -> {
+                    curPhase = "BLINDGAME"
+                    setFragment(FragmentBlindGameSettings.newInstance())
+                    fab.setImageResource(R.drawable.ic_fab_forward)
+                }
+                else -> {
+                    if (drawer_layout.isDrawerOpen(GravityCompat.END)) {
+                        drawer_layout.closeDrawer(GravityCompat.END)
                     } else {
-                        drawer_layout.openDrawer(GravityCompat.START)
+                        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+                            if (backPressedTime + 500 > System.currentTimeMillis()) {
+                                super.onBackPressed()
+                            } else {
+                                toast("Нажмите еще раз для выхода")
+                                backPressedTime = System.currentTimeMillis()
+                            }
+                        } else {
+                            drawer_layout.openDrawer(GravityCompat.START)
+                        }
                     }
                 }
             }
+        } else {
+            curPhase = backPhase
+            setListFragmentPhase(curPhase)
+            fab.setImageResource(R.drawable.ic_fab_forward)
         }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -458,15 +429,15 @@ class MainActivity : MyDefaultActivity(),
         // Handle navigation view item clicks here.
         Log.v(DebugTag.TAG, "NavigationItemSelected $item.itemId")
         when (item.itemId) {
-            R.id.begin2x2 -> { setListFragmentPhase("BEGIN2X2") }
+            R.id.main2x2 -> { setListFragmentPhase("MAIN2X2") }
 
-            R.id.adv2x2 -> { setListFragmentPhase("ADV2X2") }
+//            R.id.adv2x2 -> { setListFragmentPhase("ADV2X2") }
 
-            R.id.begin -> { setListFragmentPhase("BEGIN") }
+            R.id.main3x3 -> { setListFragmentPhase("MAIN3X3") }
 
-            R.id.g2f -> { setListFragmentPhase("G2F") }
+//            R.id.g2f -> { setListFragmentPhase("BEGIN") }
 
-            R.id.blind -> { setListFragmentPhase("BLIND") }
+//            R.id.blind -> { setListFragmentPhase("BLIND") }
 
 //            R.id.blind_acc -> { setListFragmentPhase("BLINDACC") }
 

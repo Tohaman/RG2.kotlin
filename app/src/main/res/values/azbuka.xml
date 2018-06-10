@@ -22,6 +22,16 @@
         <item>CUSTOMAZBUKA</item>
     </string-array>
 
+    <integer-array name="azbuka_icon">
+        <item>@drawable/vbegin_0</item>
+        <item>@drawable/vbegin_0</item>
+    </integer-array>
+
+    <string-array name="azbuka_url">
+        <item> </item>
+        <item> </item>
+    </string-array>
+
     <string-array name="azbuka_descr">
         <item>@string/g2f_st1_descr</item>
         <item>@string/g2f_st2_descr</item>

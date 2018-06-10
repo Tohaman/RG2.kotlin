@@ -8,6 +8,7 @@ import ru.tohaman.rg2.FAVORITES
 import ru.tohaman.rg2.util.saveString2SP
 import com.google.gson.reflect.TypeToken
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 /**
@@ -24,7 +25,9 @@ class ListPagerLab private constructor(context: Context){
     init { // тут пишем то, что выполнится при инициализации синглета
         phaseInit("BEGIN2X2",R.array.begin2x2_title,R.array.begin2x2_icon,R.array.begin2x2_descr,R.array.begin2x2_url,context)
         phaseInit("ADV2X2",R.array.adv2x2_title,R.array.adv2x2_icon,R.array.adv2x2_descr,R.array.adv2x2_url,context)
-        phaseInit("G2F", R.array.g2f_title,R.array.g2f_icon,R.array.g2f_descr,R.array.g2f_null,context)
+        phaseInit("G2F", R.array.g2f_title,R.array.g2f_icon,R.array.g2f_descr,R.array.g2f_url,context)
+        phaseInit("MAIN2X2", R.array.main2x2_title,R.array.main2x2_icon,R.array.main2x2_descr,R.array.main2x2_url,context)
+        phaseInit("MAIN3X3", R.array.main3x3_title,R.array.main3x3_icon,R.array.main3x3_descr,R.array.main3x3_url,context)
         phaseInit("OTHER", R.array.other_title,R.array.other_icon,R.array.other_descr,R.array.other_url,context)
         phaseInit("BEGIN",R.array.begin_title,R.array.begin_icon,R.array.begin_descr,R.array.begin_url,context)
         phaseInit("RECOMEND",R.array.recomend_title,R.array.recomend_icon,R.array.recomend_descr,R.array.recomend_url,context)
@@ -47,7 +50,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("BEGIN4X4",R.array.begin4_title,R.array.begin4_icon,R.array.begin4_descr,R.array.begin4_url,context)
         phaseInit("BEGIN5X5",R.array.begin5_title,R.array.begin5_icon,R.array.begin5_descr,R.array.begin5_url,context)
         phaseInit("PATTERNS",R.array.patterns_title,R.array.patterns_icon,R.array.patterns_descr,R.array.patterns_url,context, R.array.patterns_comment)
-        phaseInit("AZBUKA", R.array.azbuka_title, R.array.g2f_icon,R.array.g2f_descr,R.array.g2f_null,context)
+        phaseInit("AZBUKA", R.array.azbuka_title, R.array.azbuka_icon,R.array.azbuka_descr,R.array.azbuka_url,context)
         phaseInit("BLIND", R.array.blind_title, R.array.blind_icon,R.array.blind_descr,R.array.blind_url,context)
         phaseInit("BLINDACC", R.array.blindacc_title, R.array.blindacc_icon,R.array.blindacc_descr,R.array.blindacc_url,context)
         phaseInit("PYRAMINX", R.array.pyraminx_title, R.array.pyraminx_icon,R.array.pyraminx_descr,R.array.pyraminx_url,context)
@@ -174,6 +177,28 @@ class ListPagerLab private constructor(context: Context){
                 .filter { (phase == it.phase) and (id == it.id) }
                 .forEach { listPager = it }
         return listPager
+    }
+
+    fun getBackPhase(phase: String, ctx : Context): String {
+        var listPager = ListPager("", 0, "", 0)
+        val submenuLP = listPagers
+                .filter {("submenu" == it.url)}
+        submenuLP
+                .filter { (ctx.getString(it.description) == phase) }
+                .forEach { listPager = it }
+
+        return listPager.phase
+    }
+
+    fun getSubmenu (ctx: Context): ArrayList<String> {
+        var stringArray: ArrayList<String> = arrayListOf()
+        val submenuLP = listPagers
+                .filter {("submenu" == it.url)}
+                .forEach {
+                    stringArray.add(ctx.getString(it.description))
+                }
+
+        return stringArray
     }
 
     //возвращает из ListPagerLab один ListPager с заданными фазой и title
