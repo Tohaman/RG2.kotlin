@@ -10,6 +10,7 @@
         <item>@string/begin5_st6_title</item>
         <item>@string/begin5_st7_title</item>
         <item>@string/begin5_st8_title</item>
+        <item>@string/begin5_st9_title</item>
     </string-array>
 
     <integer-array name="begin5_icon">
@@ -21,6 +22,7 @@
         <item>@drawable/v5x5_begin_6</item>
         <item>@drawable/v5x5_begin_7</item>
         <item>@drawable/v5x5_begin_8</item>
+        <item>@drawable/v5x5_begin_9</item>
     </integer-array>
     
     <string-array name="begin5_descr">
@@ -32,6 +34,7 @@
         <item>@string/begin5_st6_descr</item>
         <item>@string/begin5_st7_descr</item>
         <item>@string/begin5_st8_descr</item>
+        <item>@string/begin5_st9_descr</item>
     </string-array>
 
     <string-array name="begin5_url">
@@ -43,6 +46,7 @@
         <item>@string/begin5_st6_url</item>
         <item>@string/begin5_st7_url</item>
         <item>@string/begin5_st8_url</item>
+        <item>@string/begin5_st9_url</item>
     </string-array>
     
     <string name="begin5_st1_title">Этап 1. Первый центр</string>
@@ -198,6 +202,8 @@
         Один элемент ставим на место второго (M\'), уводим его налево (U\'), отправляем его на заднюю грань (Lw\'), возвращаем
         крышу назад (U), возвращаем центр назад (M), возвращаем элементы на крыше назад (U\'),
         и возвращаем левую грань назад (Lw).</p>
+
+        <p>Алгоритм: M\' U\' Lw\' U M U\' Lw</b></p>
 
         Вот наверно и все, что касается этого этапа.
 
@@ -395,5 +401,30 @@
 
     ]]></string>
     <string name="begin5_st8_url">03J1pGu_TWw</string>
+
+    <string name="begin5_st9_title">Ускорения</string>
+    <string name="begin5_st9_descr" formatted="false"><![CDATA[
+        <p>Два ускорения от Дмитрия Константинова, с авторским видео.</p>
+
+        <p>Первое ускорение связано <a href="rg2://ytplay?time=0:14&link=OphIvx2VrLg">с ситуацией,</a>
+        когда при сборке центров, остается поменять пару X-элементов центров:</p>
+        <p style="text-align:center"><img src="v5x5_begin_9.xml"></p>
+
+        <p>Если поставить их как на рисунке, то они очень легко ставятся на свои места при помощи трех
+        пиф-пафов, в которых свет включается/выключается жирно, а крыша вращается как обычно.</p>
+
+        <p><a href="rg2://ytplay?time=0:42&link=OphIvx2VrLg">Алгоритм:</a> <b>(Rw U Rw\' U\')3</b></p>
+
+        <p>Второе ускорение <a href="rg2://ytplay?time=1:12&link=OphIvx2VrLg">для ситуации,</a>
+        когда остается поменять местами два крестовых элемента.
+        Можно использовать и обычный алгоритм, а можно поменять два X-элемента тремя пиф-пафами из
+        прошлого ускорения, а потом в три хода поменять тройные полоски местами.</p>
+
+        <p style="text-align:center"><img src="v5x5_begin_9_2.xml"></p>
+
+        <p><a href="rg2://ytplay?time=1:32&link=OphIvx2VrLg">Алгоритм:</a> <b>(Rw U Rw\' U\')3 U\' (3Rw U2 3Rw\')</b></p>
+    ]]></string>
+    <string name="begin5_st9_url">OphIvx2VrLg</string>
+
 
 </resources>
