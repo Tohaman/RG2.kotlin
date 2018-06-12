@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="other3x3_title">
+        <item>Зеркальный куб (Mirror blocks)</item>
+        <item>Ненормальный куб (Axis cube)</item>
+        <item>Мастер пираморфикс (Master Pyramorphix)</item>
+        <item>Судоку куб</item>
+        <item>Мельница (Windmill)</item>
+    </string-array>
+
+    <integer-array name="other3x3_icon">
+        <item>@drawable/mirror</item>
+        <item>@drawable/axis</item>
+        <item>@drawable/pyramorphix</item>
+        <item>@drawable/sudoku</item>
+        <item>@drawable/windmill</item>
+    </integer-array>
+
+    <string-array name="other3x3_descr">
+        <item>@string/other3x3_st1_descr</item>
+        <item>@string/other3x3_st2_descr</item>
+        <item>@string/other3x3_st3_descr</item>
+        <item>@string/other3x3_st4_descr</item>
+        <item>@string/other3x3_st5_descr</item>
+    </string-array>
+
+    <string-array name="other3x3_url">
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+    </string-array>
+
+    <string name="other3x3_st1_descr">MIRROR</string>
+    <string name="other3x3_st2_descr">AXIS</string>
+    <string name="other3x3_st3_descr">PYRAMORPHIX</string>
+    <string name="other3x3_st4_descr">SUDOKU</string>
+    <string name="other3x3_st5_descr">WINDMILL</string>
+
+</resources>
+

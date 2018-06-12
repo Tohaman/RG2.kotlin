@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="ivy_title">
+        <item>@string/ivy1_title</item>
+        <item>@string/ivy2_title</item>
+        <item>@string/ivy3_title</item>
+        <item>@string/ivy4_title</item>
+        <item>@string/ivy5_title</item>
+    </string-array>
+
+    <integer-array name="ivy_icon">
+        <item>@drawable/ivy_1</item>
+        <item>@drawable/ivy_1</item>
+        <item>@drawable/ivy_1</item>
+        <item>@drawable/ivy_1</item>
+        <item>@drawable/ivy_1</item>
+    </integer-array>
+
+    <string-array name="ivy_descr">
+        <item>@string/ivy1_descr</item>
+        <item>@string/ivy2_descr</item>
+        <item>@string/ivy3_descr</item>
+        <item>@string/ivy4_descr</item>
+        <item>@string/ivy5_descr</item>
+    </string-array>
+
+
+    <string-array name="ivy_url">
+        <item>@string/ivy1_url</item>
+        <item>@string/ivy2_url</item>
+        <item>@string/ivy3_url</item>
+        <item>@string/ivy4_url</item>
+        <item>@string/ivy5_url</item>
+    </string-array>
+
+    <string name="ivy1_title">Первый блок</string>
+    <string name="ivy1_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="ivy1_url"></string>
+
+
+    <string name="ivy2_title">Второй блок</string>
+    <string name="ivy2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="ivy2_url"></string>
+
+    <string name="ivy3_title">CMLL</string>
+    <string name="ivy3_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="ivy3_url"></string>
+
+
+    <string name="ivy4_title">Шесть ребер (LSE)</string>
+    <string name="ivy4_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="ivy4_url"></string>
+
+    <string name="ivy5_title">Примеры сборки</string>
+    <string name="ivy5_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="ivy5_url"></string>
+    
+</resources>

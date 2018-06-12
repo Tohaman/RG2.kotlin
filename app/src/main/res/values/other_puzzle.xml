@@ -7,11 +7,6 @@
         <item>Мегаминкс (Megaminx)</item>
         <item>Скьюб (Skewb)</item>
         <item>Скваер (Square-1)</item>
-        <item>Зеркальный куб (Mirror blocks)</item>
-        <item>Ненормальный куб (Axis cube)</item>
-        <item>Мастер пираморфикс (Master Pyramorphix)</item>
-        <item>Судоку куб</item>
-        <item>Мельница (Windmill)</item>
     </string-array>
 
     <integer-array name="other_icon">
@@ -21,11 +16,6 @@
         <item>@drawable/megaminx</item>
         <item>@drawable/skewb</item>
         <item>@drawable/square</item>
-        <item>@drawable/mirror</item>
-        <item>@drawable/axis</item>
-        <item>@drawable/pyramorphix</item>
-        <item>@drawable/sudoku</item>
-        <item>@drawable/windmill</item>
     </integer-array>
 
     <string-array name="other_descr">
@@ -35,19 +25,9 @@
         <item>@string/other_st4_descr</item>
         <item>@string/other_st5_descr</item>
         <item>@string/other_st6_descr</item>
-        <item>@string/other_st7_descr</item>
-        <item>@string/other_st8_descr</item>
-        <item>@string/other_st9_descr</item>
-        <item>@string/other_st10_descr</item>
-        <item>@string/other_st11_descr</item>
     </string-array>
 
     <string-array name="other_url">
-        <item>submenu</item>
-        <item>submenu</item>
-        <item>submenu</item>
-        <item>submenu</item>
-        <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
@@ -63,11 +43,6 @@
     <string name="other_st4_descr">MEGAMINX</string>
     <string name="other_st5_descr">SKEWB</string>
     <string name="other_st6_descr">SQUARE</string>
-    <string name="other_st7_descr">MIRROR</string>
-    <string name="other_st8_descr">AXIS</string>
-    <string name="other_st9_descr">PYRAMORPHIX</string>
-    <string name="other_st10_descr">SUDOKU</string>
-    <string name="other_st11_descr">WINDMILL</string>
 
 </resources>
 
