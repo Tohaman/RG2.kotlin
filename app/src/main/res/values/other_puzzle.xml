@@ -6,6 +6,7 @@
         <item>Пирамидка (Pyraminx)</item>
         <item>Мегаминкс (Megaminx)</item>
         <item>Скьюб (Skewb)</item>
+        <item>Айви куб (Ivy cube)</item>
         <item>Скваер (Square-1)</item>
     </string-array>
 
@@ -15,6 +16,7 @@
         <item>@drawable/pyraminx</item>
         <item>@drawable/megaminx</item>
         <item>@drawable/skewb</item>
+        <item>@drawable/ivy_2</item>
         <item>@drawable/square</item>
     </integer-array>
 
@@ -25,9 +27,11 @@
         <item>@string/other_st4_descr</item>
         <item>@string/other_st5_descr</item>
         <item>@string/other_st6_descr</item>
+        <item>@string/other_st7_descr</item>
     </string-array>
 
     <string-array name="other_url">
+        <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
@@ -42,7 +46,8 @@
     <string name="other_st3_descr">PYRAMINX</string>
     <string name="other_st4_descr">MEGAMINX</string>
     <string name="other_st5_descr">SKEWB</string>
-    <string name="other_st6_descr">SQUARE</string>
+    <string name="other_st6_descr">IVY</string>
+    <string name="other_st7_descr">SQUARE</string>
 
 </resources>
 
