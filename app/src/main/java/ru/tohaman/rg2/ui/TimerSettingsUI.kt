@@ -40,7 +40,7 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
         var delayMills = sp.getInt(DELAY_MILLS, 500)
         val isDelayed = if (delayMills == 0) { false } else { true }
         val isScrambleVisible = sp.getBoolean(IS_SCRAMBLE_VISIBLE, true)
-        var touchTime = 0L
+        var touchTime: Long
 
 
         linearLayout {

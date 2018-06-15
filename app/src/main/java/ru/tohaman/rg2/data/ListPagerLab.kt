@@ -195,7 +195,7 @@ class ListPagerLab private constructor(context: Context){
 
     fun getSubmenu (ctx: Context): ArrayList<String> {
         var stringArray: ArrayList<String> = arrayListOf()
-        val submenuLP = listPagers
+        listPagers
                 .filter {("submenu" == it.url)}
                 .forEach {
                     stringArray.add(ctx.getString(it.description))

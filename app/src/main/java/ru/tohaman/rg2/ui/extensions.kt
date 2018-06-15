@@ -81,7 +81,7 @@ inline fun ViewManager.styledButton(styleRes: Int = 0, init: Button.() -> Unit):
             else Button(ContextThemeWrapper(it, styleRes), null, 0) }, 0) { init() }
 }
 
-inline fun ViewManager.styledButton(styleRes: Int = 0): Button = styledButton(styleRes) {}
+//inline fun ViewManager.styledButton(styleRes: Int = 0): Button = styledButton(styleRes) {}
 
 
 inline fun ViewManager.squareRelativeLayout(init: RelativeLayout.() -> Unit) : SquareRelativeLayout {

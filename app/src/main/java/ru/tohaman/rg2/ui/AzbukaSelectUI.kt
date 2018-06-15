@@ -80,7 +80,7 @@ class AzbukaSelectUI<in Fragment> : AnkoComponentEx<Fragment>()  {
                     gridAdapter.notifyDataSetChanged()
                 }
 
-                azbuka_gridView.onItemClickListener = AdapterView.OnItemClickListener { parent, v, position, id ->
+                azbuka_gridView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
                     var letter = gridAdapter.getItem(position)
                     if (!((letter == "") or (letter == "-"))) {
                         Log.v (TAG, "Letter select dialog")
