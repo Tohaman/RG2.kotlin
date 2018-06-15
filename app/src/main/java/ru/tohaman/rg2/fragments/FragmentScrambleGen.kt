@@ -132,8 +132,8 @@ class FragmentScrambleGen : Fragment() {
         buttonMinus = view.findViewById(R.id.button_minus)
         buttonMinus.onClick { v ->
             scrambleLength--
-            if (scrambleLength < 1) {
-                scrambleLength = 1
+            if (scrambleLength < 3) {
+                scrambleLength = 3
             }
             textScrambleLen.text = scrambleLength.toString()
             saveInt2SP(scrambleLength, SCRAMBLE_LEN, v!!.context)

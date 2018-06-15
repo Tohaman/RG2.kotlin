@@ -435,7 +435,7 @@ class MainActivity : MyDefaultActivity(),
 
             R.id.main3x3 -> { setListFragmentPhase("MAIN3X3") }
 
-//            R.id.g2f -> { setListFragmentPhase("BEGIN") }
+            R.id.other3x3 -> { setListFragmentPhase("OTHER3X3") }
 
 //            R.id.blind -> { setListFragmentPhase("BLIND") }
 

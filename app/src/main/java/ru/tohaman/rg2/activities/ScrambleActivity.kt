@@ -6,10 +6,11 @@ import android.support.v4.app.FragmentTransaction
 import android.util.Log
 import org.jetbrains.anko.toast
 import ru.tohaman.rg2.DebugTag.TAG
+import ru.tohaman.rg2.MyDefaultActivity
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.fragments.FragmentScrambleGen
 
-class ScrambleActivity : AppCompatActivity(), FragmentScrambleGen.OnScrambleGenInteractionListener  {
+class ScrambleActivity : MyDefaultActivity(), FragmentScrambleGen.OnScrambleGenInteractionListener  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

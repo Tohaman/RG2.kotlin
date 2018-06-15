@@ -6,13 +6,8 @@
         <item>Пирамидка (Pyraminx)</item>
         <item>Мегаминкс (Megaminx)</item>
         <item>Скьюб (Skewb)</item>
+        <item>Айви куб (Ivy cube)</item>
         <item>Скваер (Square-1)</item>
-        <item>Узоры на кубике</item>
-        <item>Зеркальный куб (Mirror blocks)</item>
-        <item>Ненормальный куб (Axis cube)</item>
-        <item>Мастер пираморфикс (Master Pyramorphix)</item>
-        <item>Судоку куб</item>
-        <item>Мельница (Windmill)</item>
     </string-array>
 
     <integer-array name="other_icon">
@@ -21,13 +16,8 @@
         <item>@drawable/pyraminx</item>
         <item>@drawable/megaminx</item>
         <item>@drawable/skewb</item>
+        <item>@drawable/ivy_2</item>
         <item>@drawable/square</item>
-        <item>@drawable/pattern_1</item>
-        <item>@drawable/mirror</item>
-        <item>@drawable/axis</item>
-        <item>@drawable/pyramorphix</item>
-        <item>@drawable/sudoku</item>
-        <item>@drawable/windmill</item>
     </integer-array>
 
     <string-array name="other_descr">
@@ -38,18 +28,9 @@
         <item>@string/other_st5_descr</item>
         <item>@string/other_st6_descr</item>
         <item>@string/other_st7_descr</item>
-        <item>@string/other_st8_descr</item>
-        <item>@string/other_st9_descr</item>
-        <item>@string/other_st10_descr</item>
-        <item>@string/other_st11_descr</item>
-        <item>@string/other_st12_descr</item>
     </string-array>
 
     <string-array name="other_url">
-        <item>submenu</item>
-        <item>submenu</item>
-        <item>submenu</item>
-        <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
@@ -65,13 +46,8 @@
     <string name="other_st3_descr">PYRAMINX</string>
     <string name="other_st4_descr">MEGAMINX</string>
     <string name="other_st5_descr">SKEWB</string>
-    <string name="other_st6_descr">SQUARE</string>
-    <string name="other_st7_descr">PATTERNS</string>
-    <string name="other_st8_descr">MIRROR</string>
-    <string name="other_st9_descr">AXIS</string>
-    <string name="other_st10_descr">PYRAMORPHIX</string>
-    <string name="other_st11_descr">SUDOKU</string>
-    <string name="other_st12_descr">WINDMILL</string>
+    <string name="other_st6_descr">IVY</string>
+    <string name="other_st7_descr">SQUARE</string>
 
 </resources>
 

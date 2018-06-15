@@ -40,10 +40,10 @@
         </activity>
         <activity
             android:name=".activities.SlidingTabsActivity"
-            android:theme="@style/AppThemeLight"/>
+            android:theme="@style/AppTheme"/>
         <activity android:name=".activities.TimerActivity"/>
         <activity android:name=".activities.ScrambleActivity"
-                  android:theme="@style/AppThemeLight">
+                  android:theme="@style/AppTheme">
             <intent-filter>
                 <data
                     android:host="scrmbl"

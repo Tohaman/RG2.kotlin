@@ -29,6 +29,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("MAIN2X2", R.array.main2x2_title,R.array.main2x2_icon,R.array.main2x2_descr,R.array.main2x2_url,context)
         phaseInit("MAIN3X3", R.array.main3x3_title,R.array.main3x3_icon,R.array.main3x3_descr,R.array.main3x3_url,context)
         phaseInit("OTHER", R.array.other_title,R.array.other_icon,R.array.other_descr,R.array.other_url,context)
+        phaseInit("OTHER3X3", R.array.other3x3_title,R.array.other3x3_icon,R.array.other3x3_descr,R.array.other3x3_url,context)
         phaseInit("BEGIN",R.array.begin_title,R.array.begin_icon,R.array.begin_descr,R.array.begin_url,context)
         phaseInit("RECOMEND",R.array.recomend_title,R.array.recomend_icon,R.array.recomend_descr,R.array.recomend_url,context)
         phaseInit("BASIC",R.array.basic_title,R.array.basic_icon,R.array.basic_descr,R.array.basic_null,context)
@@ -37,6 +38,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("BASIC5X5",R.array.basic_5x5_title,R.array.basic_5x5_icon,R.array.basic_5x5_descr,R.array.basic_5x5_url,context)
         phaseInit("BASIC_PYR",R.array.basic_pyr_title,R.array.basic_pyr_icon,R.array.basic_pyr_descr,R.array.basic_pyr_url,context)
         phaseInit("BASIC_SKEWB",R.array.basic_skewb_title,R.array.basic_skewb_icon,R.array.basic_skewb_descr,R.array.basic_skewb_url,context)
+        phaseInit("BASIC_IVY",R.array.basic_ivy_title,R.array.basic_ivy_icon,R.array.basic_ivy_descr,R.array.basic_ivy_url,context)
         phaseInit("BASIC_SQ1",R.array.basic_square_title,R.array.basic_square_icon,R.array.basic_square_descr,R.array.basic_square_url,context)
         phaseInit("ACCEL",R.array.accel_title,R.array.accel_icon,R.array.accel_descr,R.array.accel_url,context)
         phaseInit("CROSS",R.array.cross_title,R.array.cross_icon,R.array.cross_descr,R.array.cross_url,context)
@@ -62,6 +64,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("PYRAMORPHIX", R.array.pyramorphix_title, R.array.pyramorphix_icon,R.array.pyramorphix_descr,R.array.pyramorphix_url,context)
         phaseInit("SUDOKU", R.array.sudoku_title, R.array.sudoku_icon,R.array.sudoku_descr,R.array.sudoku_url,context)
         phaseInit("WINDMILL", R.array.windmill_title, R.array.windmill_icon,R.array.windmill_descr,R.array.windmill_url,context)
+        phaseInit("IVY", R.array.ivy_title, R.array.ivy_icon,R.array.ivy_descr,R.array.ivy_url,context)
         phaseInit("PLLTEST", R.array.pll_test_phases, R.array.pll_test_icon,R.array.pll_test_descr,R.array.pll_test_url,context)
         phaseInit("PLLTEST_CUSTOM", R.array.pll_test_phases, R.array.pll_test_icon,R.array.pll_test_descr,R.array.pll_test_url,context)
         phaseInit("OLLTEST", R.array.oll_test_phases, R.array.oll_icon, R.array.oll_descr, R.array.oll_test_url, context)
@@ -192,7 +195,7 @@ class ListPagerLab private constructor(context: Context){
 
     fun getSubmenu (ctx: Context): ArrayList<String> {
         var stringArray: ArrayList<String> = arrayListOf()
-        val submenuLP = listPagers
+        listPagers
                 .filter {("submenu" == it.url)}
                 .forEach {
                     stringArray.add(ctx.getString(it.description))

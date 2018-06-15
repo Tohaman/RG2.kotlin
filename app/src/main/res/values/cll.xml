@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cll_title">
+        <item>@string/cll_st0_title</item>
+        <item>@string/cll_st1_title</item>
+        <item>@string/cll_st2_title</item>
+        <item>@string/cll_st3_title</item>
+        <item>@string/cll_st4_title</item>
+        <item>@string/cll_st5_title</item>
+        <item>@string/cll_st6_title</item>
+        <item>@string/cll_st7_title</item>
+        <item>@string/cll_st8_title</item>
+        <item>@string/cll_st9_title</item>
+        <item>@string/cll_st10_title</item>
+        <item>@string/cll_st11_title</item>
+        <item>@string/cll_st12_title</item>
+        <item>@string/cll_st13_title</item>
+        <item>@string/cll_st14_title</item>
+        <item>@string/cll_st15_title</item>
+        <item>@string/cll_st16_title</item>
+        <item>@string/cll_st17_title</item>
+        <item>@string/cll_st18_title</item>
+        <item>@string/cll_st19_title</item>
+        <item>@string/cll_st20_title</item>
+        <item>@string/cll_st21_title</item>
+        <item>@string/cll_st22_title</item>
+        <item>@string/cll_st23_title</item>
+        <item>@string/cll_st24_title</item>
+        <item>@string/cll_st25_title</item>
+        <item>@string/cll_st26_title</item>
+        <item>@string/cll_st27_title</item>
+        <item>@string/cll_st28_title</item>
+        <item>@string/cll_st29_title</item>
+    </string-array>
+
+    <integer-array name="cll_icon">
+        <item>@drawable/coll</item>
+        <item>@drawable/coll_1</item>
+        <item>@drawable/coll_2</item>
+        <item>@drawable/coll_3</item>
+        <item>@drawable/coll_4</item>
+        <item>@drawable/coll_5</item>
+        <item>@drawable/coll_6</item>
+        <item>@drawable/coll_7</item>
+        <item>@drawable/coll_8</item>
+        <item>@drawable/coll_9</item>
+        <item>@drawable/coll_10</item>
+        <item>@drawable/coll_11</item>
+        <item>@drawable/coll_12</item>
+        <item>@drawable/coll_13</item>
+        <item>@drawable/coll_14</item>
+        <item>@drawable/coll_15</item>
+        <item>@drawable/coll_16</item>
+        <item>@drawable/coll_17</item>
+        <item>@drawable/coll_18</item>
+        <item>@drawable/coll_19</item>
+        <item>@drawable/coll_20</item>
+        <item>@drawable/coll_21</item>
+        <item>@drawable/coll_22</item>
+        <item>@drawable/coll_23</item>
+        <item>@drawable/coll_24</item>
+        <item>@drawable/coll_25</item>
+        <item>@drawable/coll_26</item>
+        <item>@drawable/coll_27</item>
+        <item>@drawable/coll_28</item>
+        <item>@drawable/coll_29</item>
+    </integer-array>
+
+    <string-array name="cll_descr">
+        <item>@string/cll_st0_descr</item>
+        <item>@string/cll_st1_descr</item>
+        <item>@string/cll_st2_descr</item>
+        <item>@string/cll_st3_descr</item>
+        <item>@string/cll_st4_descr</item>
+        <item>@string/cll_st5_descr</item>
+        <item>@string/cll_st6_descr</item>
+        <item>@string/cll_st7_descr</item>
+        <item>@string/cll_st8_descr</item>
+        <item>@string/cll_st9_descr</item>
+        <item>@string/cll_st10_descr</item>
+        <item>@string/cll_st11_descr</item>
+        <item>@string/cll_st12_descr</item>
+        <item>@string/cll_st13_descr</item>
+        <item>@string/cll_st14_descr</item>
+        <item>@string/cll_st15_descr</item>
+        <item>@string/cll_st16_descr</item>
+        <item>@string/cll_st17_descr</item>
+        <item>@string/cll_st18_descr</item>
+        <item>@string/cll_st19_descr</item>
+        <item>@string/cll_st20_descr</item>
+        <item>@string/cll_st21_descr</item>
+        <item>@string/cll_st22_descr</item>
+        <item>@string/cll_st23_descr</item>
+        <item>@string/cll_st24_descr</item>
+        <item>@string/cll_st25_descr</item>
+        <item>@string/cll_st26_descr</item>
+        <item>@string/cll_st27_descr</item>
+        <item>@string/cll_st28_descr</item>
+        <item>@string/cll_st29_descr</item>
+    </string-array>
+
+    <string-array name="cll_url">
+        <item>@string/cll_st0_url</item>
+        <item>@string/cll_st1_url</item>
+        <item>@string/cll_st2_url</item>
+        <item>@string/cll_st3_url</item>
+        <item>@string/cll_st4_url</item>
+        <item>@string/cll_st5_url</item>
+        <item>@string/cll_st6_url</item>
+        <item>@string/cll_st7_url</item>
+        <item>@string/cll_st8_url</item>
+        <item>@string/cll_st9_url</item>
+        <item>@string/cll_st10_url</item>
+        <item>@string/cll_st11_url</item>
+        <item>@string/cll_st12_url</item>
+        <item>@string/cll_st13_url</item>
+        <item>@string/cll_st14_url</item>
+        <item>@string/cll_st15_url</item>
+        <item>@string/cll_st16_url</item>
+        <item>@string/cll_st17_url</item>
+        <item>@string/cll_st18_url</item>
+        <item>@string/cll_st19_url</item>
+        <item>@string/cll_st20_url</item>
+        <item>@string/cll_st21_url</item>
+        <item>@string/cll_st22_url</item>
+        <item>@string/cll_st23_url</item>
+        <item>@string/cll_st24_url</item>
+        <item>@string/cll_st25_url</item>
+        <item>@string/cll_st26_url</item>
+        <item>@string/cll_st27_url</item>
+        <item>@string/cll_st28_url</item>
+        <item>@string/cll_st29_url</item>
+    </string-array>
+
+    <string-array name="cll_comment">
+        <item>@string/cll_st0_comment</item>
+        <item>@string/cll_st1_comment</item>
+        <item>@string/cll_st2_comment</item>
+        <item>@string/cll_st3_comment</item>
+        <item>@string/cll_st4_comment</item>
+        <item>@string/cll_st5_comment</item>
+        <item>@string/cll_st6_comment</item>
+        <item>@string/cll_st7_comment</item>
+        <item>@string/cll_st8_comment</item>
+        <item>@string/cll_st9_comment</item>
+        <item>@string/cll_st10_comment</item>
+        <item>@string/cll_st11_comment</item>
+        <item>@string/cll_st12_comment</item>
+        <item>@string/cll_st13_comment</item>
+        <item>@string/cll_st14_comment</item>
+        <item>@string/cll_st15_comment</item>
+        <item>@string/cll_st16_comment</item>
+        <item>@string/cll_st17_comment</item>
+        <item>@string/cll_st18_comment</item>
+        <item>@string/cll_st19_comment</item>
+        <item>@string/cll_st20_comment</item>
+        <item>@string/cll_st21_comment</item>
+        <item>@string/cll_st22_comment</item>
+        <item>@string/cll_st23_comment</item>
+        <item>@string/cll_st24_comment</item>
+        <item>@string/cll_st25_comment</item>
+        <item>@string/cll_st26_comment</item>
+        <item>@string/cll_st27_comment</item>
+        <item>@string/cll_st28_comment</item>
+        <item>@string/cll_st29_comment</item>
+    </string-array>
+    
+    <string name="cll_st0_title">Введение</string>
+    <string name="cll_st0_descr" formatted="false"><![CDATA[
+
+    ]]></string>
+    <string name="cll_st0_url">n06bmpfoTJk</string>
+    <string name="cll_st0_comment"></string>
+
+    <!-- ================= Глазки ======================= -->
+
+    <string name="cll_st1_title">Рыбка ОП!</string>
+    <string name="cll_st1_descr" formatted="false"><![CDATA[
+        
+    ]]></string>
+    <string name="cll_st1_url">n06bmpfoTJk</string>
+    <string name="cll_st1_comment"></string>
+
+    <string name="cll_st2_title">Глазки #2</string>
+    <string name="cll_st2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st2_url">n06bmpfoTJk</string>
+    <string name="cll_st2_comment"></string>
+
+    <string name="cll_st3_title">Глазки #3</string>
+    <string name="cll_st3_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st3_url">n06bmpfoTJk</string>
+    <string name="cll_st3_comment"></string>
+
+    <string name="cll_st4_title">Глазки #4</string>
+    <string name="cll_st4_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st4_url">n06bmpfoTJk</string>
+    <string name="cll_st4_comment"></string>
+
+    <string name="cll_st5_title">Глазки #5</string>
+    <string name="cll_st5_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st5_url">n06bmpfoTJk</string>
+    <string name="cll_st5_comment"></string>
+
+    <string name="cll_st6_title">Глазки #6</string>
+    <string name="cll_st6_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st6_url">n06bmpfoTJk</string>
+    <string name="cll_st6_comment"></string>
+
+    <!-- ================= Ушки ======================= -->
+
+    <string name="cll_st7_title">Ушки #1</string>
+    <string name="cll_st7_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st7_url">rVrNZWbnXTg</string>
+    <string name="cll_st7_comment"></string>
+
+    <string name="cll_st8_title">Ушки #2</string>
+    <string name="cll_st8_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st8_url">rVrNZWbnXTg</string>
+    <string name="cll_st8_comment"></string>
+
+    <string name="cll_st9_title">Ушки #3</string>
+    <string name="cll_st9_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st9_url">rVrNZWbnXTg</string>
+    <string name="cll_st9_comment"></string>
+
+    <string name="cll_st10_title">Ушки #4</string>
+    <string name="cll_st10_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st10_url">rVrNZWbnXTg</string>
+    <string name="cll_st10_comment"></string>
+
+    <string name="cll_st11_title">Ушки #5</string>
+    <string name="cll_st11_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st11_url">rVrNZWbnXTg</string>
+    <string name="cll_st11_comment"></string>
+
+    <string name="cll_st12_title">Ушки #6</string>
+    <string name="cll_st12_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st12_url">rVrNZWbnXTg</string>
+    <string name="cll_st12_comment"></string>
+
+    <!-- ================= Носики ======================= -->
+
+    <string name="cll_st13_title">Носик #1</string>
+    <string name="cll_st13_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st13_url">U0dP8MJw-Ig</string>
+    <string name="cll_st13_comment"></string>
+
+    <string name="cll_st14_title">Носик #2</string>
+    <string name="cll_st14_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st14_url">U0dP8MJw-Ig</string>
+    <string name="cll_st14_comment"></string>
+
+    <string name="cll_st15_title">Носик #3</string>
+    <string name="cll_st15_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st15_url">U0dP8MJw-Ig</string>
+    <string name="cll_st15_comment"></string>
+
+    <string name="cll_st16_title">Носик #4</string>
+    <string name="cll_st16_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st16_url">U0dP8MJw-Ig</string>
+    <string name="cll_st16_comment"></string>
+
+    <string name="cll_st17_title">Носик #5</string>
+    <string name="cll_st17_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st17_url">U0dP8MJw-Ig</string>
+    <string name="cll_st17_comment"></string>
+
+    <string name="cll_st18_title">Носик #6</string>
+    <string name="cll_st18_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st18_url">U0dP8MJw-Ig</string>
+    <string name="cll_st18_comment"></string>
+
+
+    <!-- ================= НТВ+ ======================= -->
+
+    <string name="cll_st19_title">НТВ+ #1</string>
+    <string name="cll_st19_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st19_url">GJ7nsaOvwbM</string>
+    <string name="cll_st19_comment"></string>
+
+    <string name="cll_st20_title">НТВ+ #2</string>
+    <string name="cll_st20_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st20_url">GJ7nsaOvwbM</string>
+    <string name="cll_st20_comment"></string>
+
+    <string name="cll_st21_title">НТВ+ #3</string>
+    <string name="cll_st21_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st21_url">GJ7nsaOvwbM</string>
+    <string name="cll_st21_comment"></string>
+
+    <string name="cll_st22_title">НТВ+ #4</string>
+    <string name="cll_st22_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st22_url">GJ7nsaOvwbM</string>
+    <string name="cll_st22_comment"></string>
+
+
+    <!-- ================= Вертолеты ======================= -->
+
+    <string name="cll_st23_title">Вертолет #1</string>
+    <string name="cll_st23_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st23_url">YTpCBRiAuow</string>
+    <string name="cll_st23_comment"></string>
+
+    <string name="cll_st24_title">Вертолет #2</string>
+    <string name="cll_st24_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st24_url">YTpCBRiAuow</string>
+    <string name="cll_st24_comment"></string>
+
+    <string name="cll_st25_title">Вертолет #3</string>
+    <string name="cll_st25_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st25_url">YTpCBRiAuow</string>
+    <string name="cll_st25_comment"></string>
+
+    <string name="cll_st26_title">Вертолет #4</string>
+    <string name="cll_st26_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st26_url">YTpCBRiAuow</string>
+    <string name="cll_st26_comment"></string>
+
+    <string name="cll_st27_title">Вертолет #5</string>
+    <string name="cll_st27_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st27_url">YTpCBRiAuow</string>
+    <string name="cll_st27_comment"></string>
+
+    <string name="cll_st28_title">Вертолет #6</string>
+    <string name="cll_st28_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st28_url">YTpCBRiAuow</string>
+    <string name="cll_st28_comment"></string>
+
+
+    <!-- ================= Рыбки ======================= -->
+
+    <string name="cll_st29_title">Рыбки/Акулы</string>
+    <string name="cll_st29_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cll_st29_url"></string>
+    <string name="cll_st29_comment"></string>
+
+</resources>

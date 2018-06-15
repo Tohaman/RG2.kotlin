@@ -8,7 +8,7 @@
     <string name="begin_2x2">Кубик 2х2</string>
     <string name="advanced_2x2">2х2 Продвинутый</string>
     <string name="begin_3x3">Кубик 3х3</string>
-    <string name="g2f_3x3">3х3 Продвинутый</string>
+    <string name="other_3x3">Модификации 3х3</string>
     <string name="blind_3x3">3х3 Вслепую</string>
     <string name="blind_acc_3x3">Ускорения слепой сборки</string>
     <string name="addition">Дополнительно:</string>
