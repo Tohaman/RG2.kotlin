@@ -2,18 +2,21 @@
 <resources>
     <string-array name="cll_title">
         <item>@string/cll_st0_title</item>
+
         <item>@string/cll_st1_title</item>
-        <item>@string/cll_st2_title</item>
         <item>@string/cll_st3_title</item>
-        <item>@string/cll_st4_title</item>
         <item>@string/cll_st5_title</item>
-        <item>@string/cll_st6_title</item>
         <item>@string/cll_st7_title</item>
-        <item>@string/cll_st8_title</item>
         <item>@string/cll_st9_title</item>
-        <item>@string/cll_st10_title</item>
         <item>@string/cll_st11_title</item>
+
+        <item>@string/cll_st2_title</item>
+        <item>@string/cll_st4_title</item>
+        <item>@string/cll_st6_title</item>
+        <item>@string/cll_st8_title</item>
+        <item>@string/cll_st10_title</item>
         <item>@string/cll_st12_title</item>
+
         <item>@string/cll_st13_title</item>
         <item>@string/cll_st14_title</item>
         <item>@string/cll_st15_title</item>
@@ -34,21 +37,21 @@
     </string-array>
 
     <integer-array name="cll_icon">
-        <item>@drawable/coll</item>
-        <item>@drawable/coll_1</item>
-        <item>@drawable/coll_2</item>
-        <item>@drawable/coll_3</item>
-        <item>@drawable/coll_4</item>
-        <item>@drawable/coll_5</item>
-        <item>@drawable/coll_6</item>
-        <item>@drawable/coll_7</item>
-        <item>@drawable/coll_8</item>
-        <item>@drawable/coll_9</item>
-        <item>@drawable/coll_10</item>
-        <item>@drawable/coll_11</item>
-        <item>@drawable/coll_12</item>
-        <item>@drawable/coll_13</item>
-        <item>@drawable/coll_14</item>
+        <item>@drawable/cll</item>
+        <item>@drawable/cll_1</item>
+        <item>@drawable/cll_3</item>
+        <item>@drawable/cll_5</item>
+        <item>@drawable/cll_7</item>
+        <item>@drawable/cll_9</item>
+        <item>@drawable/cll_11</item>
+        <item>@drawable/cll_2</item>
+        <item>@drawable/cll_4</item>
+        <item>@drawable/cll_6</item>
+        <item>@drawable/cll_8</item>
+        <item>@drawable/cll_10</item>
+        <item>@drawable/cll_12</item>
+        <item>@drawable/cll_13</item>
+        <item>@drawable/cll_14</item>
         <item>@drawable/coll_15</item>
         <item>@drawable/coll_16</item>
         <item>@drawable/coll_17</item>
@@ -69,17 +72,19 @@
     <string-array name="cll_descr">
         <item>@string/cll_st0_descr</item>
         <item>@string/cll_st1_descr</item>
-        <item>@string/cll_st2_descr</item>
         <item>@string/cll_st3_descr</item>
-        <item>@string/cll_st4_descr</item>
         <item>@string/cll_st5_descr</item>
-        <item>@string/cll_st6_descr</item>
         <item>@string/cll_st7_descr</item>
-        <item>@string/cll_st8_descr</item>
         <item>@string/cll_st9_descr</item>
-        <item>@string/cll_st10_descr</item>
         <item>@string/cll_st11_descr</item>
+
+        <item>@string/cll_st2_descr</item>
+        <item>@string/cll_st4_descr</item>
+        <item>@string/cll_st6_descr</item>
+        <item>@string/cll_st8_descr</item>
+        <item>@string/cll_st10_descr</item>
         <item>@string/cll_st12_descr</item>
+
         <item>@string/cll_st13_descr</item>
         <item>@string/cll_st14_descr</item>
         <item>@string/cll_st15_descr</item>
@@ -102,17 +107,19 @@
     <string-array name="cll_url">
         <item>@string/cll_st0_url</item>
         <item>@string/cll_st1_url</item>
-        <item>@string/cll_st2_url</item>
         <item>@string/cll_st3_url</item>
-        <item>@string/cll_st4_url</item>
         <item>@string/cll_st5_url</item>
-        <item>@string/cll_st6_url</item>
         <item>@string/cll_st7_url</item>
-        <item>@string/cll_st8_url</item>
         <item>@string/cll_st9_url</item>
-        <item>@string/cll_st10_url</item>
         <item>@string/cll_st11_url</item>
+
+        <item>@string/cll_st2_url</item>
+        <item>@string/cll_st4_url</item>
+        <item>@string/cll_st6_url</item>
+        <item>@string/cll_st8_url</item>
+        <item>@string/cll_st10_url</item>
         <item>@string/cll_st12_url</item>
+
         <item>@string/cll_st13_url</item>
         <item>@string/cll_st14_url</item>
         <item>@string/cll_st15_url</item>
@@ -134,18 +141,21 @@
 
     <string-array name="cll_comment">
         <item>@string/cll_st0_comment</item>
+
         <item>@string/cll_st1_comment</item>
-        <item>@string/cll_st2_comment</item>
         <item>@string/cll_st3_comment</item>
-        <item>@string/cll_st4_comment</item>
         <item>@string/cll_st5_comment</item>
-        <item>@string/cll_st6_comment</item>
         <item>@string/cll_st7_comment</item>
-        <item>@string/cll_st8_comment</item>
         <item>@string/cll_st9_comment</item>
-        <item>@string/cll_st10_comment</item>
         <item>@string/cll_st11_comment</item>
+
+        <item>@string/cll_st2_comment</item>
+        <item>@string/cll_st4_comment</item>
+        <item>@string/cll_st6_comment</item>
+        <item>@string/cll_st8_comment</item>
+        <item>@string/cll_st10_comment</item>
         <item>@string/cll_st12_comment</item>
+
         <item>@string/cll_st13_comment</item>
         <item>@string/cll_st14_comment</item>
         <item>@string/cll_st15_comment</item>
@@ -167,92 +177,168 @@
     
     <string name="cll_st0_title">Введение</string>
     <string name="cll_st0_descr" formatted="false"><![CDATA[
+        <p>CLL (Corners of Last Layer) (0:15) - метод сборки кубика 2х2, который объединяет этапы OLL и PLL для
+        последнего слоя, т.е. позволяет собрать верхний слой из любой ситуации в один алгоритм.
+        Можно конечно применить алгоритмы из COLL для трешки, но поскольку в двушке нет ребер, то
+        зачастую в CLL есть более короткие и удобные варианты. Этот метод является частью метода FULL EG.</p>
 
+        <p>Определение CLL, как в COLL ситуации, происходит по смежности, схожести либо противоположности наклеек
+        угловых элементов. Постараюсь привести эскизы ситуаций, именно для тех положений, из которых
+        наиболее легко определяется CLL ситуация, а также дать текстовое описание определения
+        этих ситуаций.</p>
+
+        <p>Если вы используете какой-то свой алгоритм, то вы его можете задать в поле \"Свой комментарий
+        (алгоритм)\" к этапу, после этого он отобразится и в списке этапов.</p>
     ]]></string>
     <string name="cll_st0_url">n06bmpfoTJk</string>
     <string name="cll_st0_comment"></string>
 
-    <!-- ================= Глазки ======================= -->
+    <!-- ================= Рыбки и Акулы ======================= -->
 
     <string name="cll_st1_title">Рыбка ОП!</string>
     <string name="cll_st1_descr" formatted="false"><![CDATA[
-        
+        <p>Начнем с Рыбок и Акул. Для данных алгоритмов из положений приведенных на картинках достаточно
+        посмотреть на налейки сбоку от наклеек цвета верхней стороны (на картинках указаны \"желтым\") и на
+        наклейку стоящую между \"желтыми\"(1:31). Первым делом сравниваем между собой две наклейки стоящие <b>рядом
+        с желтым</b>, а потом наклейку стоящую <b>между желтыми</b> и наклейку строящую <b>рядом с желтой</b> на передней
+        грани кубика. Поскольку Акулы и Рыбки по сути являются зеркальными случаями друг друга, то
+        учить удобнее Акулы с Рыбками соответствующими парами.</p>
+
+        <p>В данном случае у нас первая пара Одинаковая, а вторая Противоположная, поэтому назовем эту
+        ситуацию - Рыбка ОП!.</p>
+        <p style="text-align:center"><img src="cll_1.xml"></p>
+
+        <p><a href="rg2://ytplay?time=2:12&link=n06bmpfoTJk">Алгоритм:</a> <b>U\' L\' U2 L U L\' U L</b></p>
+
     ]]></string>
     <string name="cll_st1_url">n06bmpfoTJk</string>
-    <string name="cll_st1_comment"></string>
+    <string name="cll_st1_comment">U\' L\' U2 L U L\' U L</string>
 
-    <string name="cll_st2_title">Глазки #2</string>
+    <string name="cll_st2_title">Акула ОП!</string>
     <string name="cll_st2_descr" formatted="false"><![CDATA[
+        <p>В данном случае у нас первая пара Одинаковая, а вторая Противоположная, значит это Акула ОП!. (1:47)</p>
+        <p style="text-align:center"><img src="cll_2.xml"></p>
+
+        <p><a href="rg2://ytplay?time=1:56&link=n06bmpfoTJk">Алгоритм:</a> <b>U R U2\' R\' U\' R U\' R\'</b></p>
     ]]></string>
     <string name="cll_st2_url">n06bmpfoTJk</string>
-    <string name="cll_st2_comment"></string>
+    <string name="cll_st2_comment">U R U2\' R\' U\' R U\' R\'</string>
 
-    <string name="cll_st3_title">Глазки #3</string>
+    <string name="cll_st3_title">Рыбка ПОп</string>
     <string name="cll_st3_descr" formatted="false"><![CDATA[
+        <p>Первая пара Противоположная, а вторая Одинаковая, значит это Рыбка ПОп.(3:07) Довольно непростой для
+        исполнения алгоритм.</p>
+        <p style="text-align:center"><img src="cll_3.xml"></p>
+
+        <p><a href="rg2://ytplay?time=3:11&link=n06bmpfoTJk">Алгоритм:</a> <b>U (R\' F R2 F\' R) (U2 R\' U\' R2)</b></p>
     ]]></string>
     <string name="cll_st3_url">n06bmpfoTJk</string>
-    <string name="cll_st3_comment"></string>
+    <string name="cll_st3_comment">U (R\' F R2 F\' R) (U2 R\' U\' R2)</string>
 
-    <string name="cll_st4_title">Глазки #4</string>
+    <string name="cll_st4_title">Акула ПОп</string>
     <string name="cll_st4_descr" formatted="false"><![CDATA[
+        <p>Первая пара Противоположная, а вторая Одинаковая, значит это Акула ПОп.(2:43)</p>
+        <p style="text-align:center"><img src="cll_4.xml"></p>
+
+        <p><a href="rg2://ytplay?time=2:49&link=n06bmpfoTJk">Алгоритм:</a> <b>R U2 R\' U\' R U\' F R F\' U\' R\'</b></p>
     ]]></string>
     <string name="cll_st4_url">n06bmpfoTJk</string>
-    <string name="cll_st4_comment"></string>
+    <string name="cll_st4_comment">R U2 R\' U\' R U\' F R F\' U\' R\'</string>
 
-    <string name="cll_st5_title">Глазки #5</string>
+    <string name="cll_st5_title">Рыбка ОСь</string>
     <string name="cll_st5_descr" formatted="false"><![CDATA[
+        <p>Первая пара Одинаковая, а вторая Смежная, значит это Акула ПОп.(4:03)</p>
+        <p style="text-align:center"><img src="cll_5.xml"></p>
+
+        <p><a href="rg2://ytplay?time=4:06&link=n06bmpfoTJk">Алгоритм:</a> <b>U2\' R U\' L\' U R\' U\' L</b></p>
     ]]></string>
     <string name="cll_st5_url">n06bmpfoTJk</string>
-    <string name="cll_st5_comment"></string>
+    <string name="cll_st5_comment">U2\' R U\' L\' U R\' U\' L</string>
 
-    <string name="cll_st6_title">Глазки #6</string>
+    <string name="cll_st6_title">Акула ОСь</string>
     <string name="cll_st6_descr" formatted="false"><![CDATA[
+        <p>Первая пара Одинаковая, а вторая Смежная, значит это Акула ОСь.(3:47)</p>
+        <p style="text-align:center"><img src="cll_6.xml"></p>
+
+        <p><a href="rg2://ytplay?time=3:54&link=n06bmpfoTJk">Алгоритм:</a> <b>U2 L\' U R U\' L U R\'</b></p>
     ]]></string>
     <string name="cll_st6_url">n06bmpfoTJk</string>
-    <string name="cll_st6_comment"></string>
+    <string name="cll_st6_comment">U2 L\' U R U\' L U R\'</string>
 
-    <!-- ================= Ушки ======================= -->
-
-    <string name="cll_st7_title">Ушки #1</string>
+    <string name="cll_st7_title">Рыбка СОс</string>
     <string name="cll_st7_descr" formatted="false"><![CDATA[
+        <p>Первая пара Смежная, а вторая Одинаковая, значит это Рыбка СОс или СОль.(5:17) По
+        сути противоположна Акуле ПСих.</p>
+        <p style="text-align:center"><img src="cll_7.xml"></p>
+
+        <p><a href="rg2://ytplay?time=5:21&link=n06bmpfoTJk">Алгоритм:</a> <b>U2\' R\' F2 R U2\' R U\' R\' F</b></p>
     ]]></string>
     <string name="cll_st7_url">rVrNZWbnXTg</string>
-    <string name="cll_st7_comment"></string>
+    <string name="cll_st7_comment">U2\' R\' F2 R U2\' R U\' R\' F</string>
 
-    <string name="cll_st8_title">Ушки #2</string>
+    <string name="cll_st8_title">Акула СОс</string>
     <string name="cll_st8_descr" formatted="false"><![CDATA[
+        <p>Первая пара Смежная, а вторая Одинаковая, значит это Акула СОс.(4:36) В отличие от других
+        пар Рыбка/Акула, при выполнении данного алгоритма на собранном кубике получится Рыбка ПСих(4:15),
+        а не СОс.</p>
+        <p style="text-align:center"><img src="cll_8.xml"></p>
+
+        <p><a href="rg2://ytplay?time=4:40&link=n06bmpfoTJk">Алгоритм:</a> <b>U2\' R U2 R\' U2 R\' F R F\'</b></p>
     ]]></string>
     <string name="cll_st8_url">rVrNZWbnXTg</string>
-    <string name="cll_st8_comment"></string>
+    <string name="cll_st8_comment">U2\' R U2 R\' U2 R\' F R F\'</string>
 
-    <string name="cll_st9_title">Ушки #3</string>
+    <string name="cll_st9_title">Рыбка ПСих</string>
     <string name="cll_st9_descr" formatted="false"><![CDATA[
+        <p>Первая пара Противоположная, а вторая Смежная, значит это Рыбка ПСих.(4:51)</p>
+        <p style="text-align:center"><img src="cll_9.xml"></p>
+
+        <p><a href="rg2://ytplay?time=4:54&link=n06bmpfoTJk">Алгоритм:</a> <b>F R U R\' U2\' F\' U\' R\' F R</b></p>
     ]]></string>
     <string name="cll_st9_url">rVrNZWbnXTg</string>
-    <string name="cll_st9_comment"></string>
+    <string name="cll_st9_comment">F R U R\' U2\' F\' U\' R\' F R</string>
 
-    <string name="cll_st10_title">Ушки #4</string>
+    <string name="cll_st10_title">Акула ПСих</string>
     <string name="cll_st10_descr" formatted="false"><![CDATA[
+        <p>Первая пара Противоположная, а вторая Смежная, значит это Акула ПСих.(5:04)</p>
+        <p style="text-align:center"><img src="cll_10.xml"></p>
+
+        <p><a href="rg2://ytplay?time=5:11&link=n06bmpfoTJk">Алгоритм:</a> <b>U2\' F\' R U R\' U2\' R\' F2 R</b></p>
     ]]></string>
     <string name="cll_st10_url">rVrNZWbnXTg</string>
-    <string name="cll_st10_comment"></string>
+    <string name="cll_st10_comment">U2\' F\' R U R\' U2\' R\' F2 R</string>
 
-    <string name="cll_st11_title">Ушки #5</string>
+    <string name="cll_st11_title">Рыбка СПам</string>
     <string name="cll_st11_descr" formatted="false"><![CDATA[
+        <p>Первая пара Смежная, а вторая Противоположная, значит это Рыбка СПам.(5:46)</p>
+        <p style="text-align:center"><img src="cll_11.xml"></p>
+
+        <p><a href="rg2://ytplay?time=5:47&link=n06bmpfoTJk">Алгоритм:</a> <b>(R U\' R U\') (R\' U R\' U\') F R F\'</b><br/>
+        или <b>(R U\' R U\') (R\' U R\' U\') y R U\' R\'</b></p>
     ]]></string>
     <string name="cll_st11_url">rVrNZWbnXTg</string>
-    <string name="cll_st11_comment"></string>
+    <string name="cll_st11_comment">(R U\' R U\') (R\' U R\' U\') F R F\'</string>
 
-    <string name="cll_st12_title">Ушки #6</string>
+    <string name="cll_st12_title">Акула СПам</string>
     <string name="cll_st12_descr" formatted="false"><![CDATA[
+        <p>Первая пара Смежная, а вторая Противоположная, значит это Акула СПам.(5:28)</p>
+        <p style="text-align:center"><img src="cll_12.xml"></p>
+
+        <p><a href="rg2://ytplay?time=5:38&link=n06bmpfoTJk">Алгоритм:</a> <b>F R F\' U R U\' R U R\' U R\'</b></p>
     ]]></string>
     <string name="cll_st12_url">rVrNZWbnXTg</string>
-    <string name="cll_st12_comment"></string>
+    <string name="cll_st12_comment">F R F\' U R U\' R U R\' U R\'</string>
 
     <!-- ================= Носики ======================= -->
 
-    <string name="cll_st13_title">Носик #1</string>
+    <string name="cll_st13_title">Носик СПлин</string>
     <string name="cll_st13_descr" formatted="false"><![CDATA[
+        Для Носиков (L-OLL) (6:12) первым делом смотрим на две верхние наклейки, а потом на левую
+        верхнюю и левую переднюю. Т.е. вот такой Носик (Смежные, Противоположные), будет Носик СПлин. (6:38)
+        <p style="text-align:center"><img src="cll_13.xml"></p>
+
+        <p><a href="rg2://ytplay?time=6:46&link=n06bmpfoTJk">Алгоритм:</a> <b>R2\' U\' R U2 R\' U2\' R U\' R2</b></p>
+
     ]]></string>
     <string name="cll_st13_url">U0dP8MJw-Ig</string>
     <string name="cll_st13_comment"></string>
