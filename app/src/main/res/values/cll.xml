@@ -34,6 +34,7 @@
         <item>@string/cll_st27_title</item>
         <item>@string/cll_st28_title</item>
         <item>@string/cll_st29_title</item>
+        <item>@string/cll_st30_title</item>
     </string-array>
 
     <integer-array name="cll_icon">
@@ -52,25 +53,27 @@
         <item>@drawable/cll_12</item>
         <item>@drawable/cll_13</item>
         <item>@drawable/cll_14</item>
-        <item>@drawable/coll_15</item>
-        <item>@drawable/coll_16</item>
-        <item>@drawable/coll_17</item>
-        <item>@drawable/coll_18</item>
-        <item>@drawable/coll_19</item>
-        <item>@drawable/coll_20</item>
-        <item>@drawable/coll_21</item>
-        <item>@drawable/coll_22</item>
-        <item>@drawable/coll_23</item>
-        <item>@drawable/coll_24</item>
-        <item>@drawable/coll_25</item>
-        <item>@drawable/coll_26</item>
-        <item>@drawable/coll_27</item>
-        <item>@drawable/coll_28</item>
-        <item>@drawable/coll_29</item>
+        <item>@drawable/cll_15</item>
+        <item>@drawable/cll_16</item>
+        <item>@drawable/cll_17</item>
+        <item>@drawable/cll_18</item>
+        <item>@drawable/cll_19</item>
+        <item>@drawable/cll_20</item>
+        <item>@drawable/cll_21</item>
+        <item>@drawable/cll_22</item>
+        <item>@drawable/cll_23</item>
+        <item>@drawable/cll_24</item>
+        <item>@drawable/cll_25</item>
+        <item>@drawable/cll_26</item>
+        <item>@drawable/cll_27</item>
+        <item>@drawable/cll_28</item>
+        <item>@drawable/cll_29</item>
+        <item>@drawable/cll_30</item>
     </integer-array>
 
     <string-array name="cll_descr">
         <item>@string/cll_st0_descr</item>
+
         <item>@string/cll_st1_descr</item>
         <item>@string/cll_st3_descr</item>
         <item>@string/cll_st5_descr</item>
@@ -91,17 +94,21 @@
         <item>@string/cll_st16_descr</item>
         <item>@string/cll_st17_descr</item>
         <item>@string/cll_st18_descr</item>
+
         <item>@string/cll_st19_descr</item>
         <item>@string/cll_st20_descr</item>
         <item>@string/cll_st21_descr</item>
         <item>@string/cll_st22_descr</item>
         <item>@string/cll_st23_descr</item>
         <item>@string/cll_st24_descr</item>
+
         <item>@string/cll_st25_descr</item>
         <item>@string/cll_st26_descr</item>
         <item>@string/cll_st27_descr</item>
         <item>@string/cll_st28_descr</item>
         <item>@string/cll_st29_descr</item>
+        <item>@string/cll_st30_descr</item>
+
     </string-array>
 
     <string-array name="cll_url">
@@ -137,6 +144,7 @@
         <item>@string/cll_st27_url</item>
         <item>@string/cll_st28_url</item>
         <item>@string/cll_st29_url</item>
+        <item>@string/cll_st30_url</item>
     </string-array>
 
     <string-array name="cll_comment">
@@ -173,6 +181,7 @@
         <item>@string/cll_st27_comment</item>
         <item>@string/cll_st28_comment</item>
         <item>@string/cll_st29_comment</item>
+        <item>@string/cll_st30_comment</item>
     </string-array>
     
     <string name="cll_st0_title">Введение</string>
@@ -185,7 +194,8 @@
         <p>Определение CLL, как в COLL ситуации, происходит по смежности, схожести либо противоположности наклеек
         угловых элементов. Постараюсь привести эскизы ситуаций, именно для тех положений, из которых
         наиболее легко определяется CLL ситуация, а также дать текстовое описание определения
-        этих ситуаций.</p>
+        этих ситуаций. Именно поэтому в превьюшках приведены трехмерные картинки кубиков на которых
+        выделены только необходмые для определения ситуации элементы.</p>
 
         <p>Если вы используете какой-то свой алгоритм, то вы его можете задать в поле \"Свой комментарий
         (алгоритм)\" к этапу, после этого он отобразится и в списке этапов.</p>
@@ -195,7 +205,7 @@
 
     <!-- ================= Рыбки и Акулы ======================= -->
 
-    <string name="cll_st1_title">Рыбка ОП!</string>
+    <string name="cll_st1_title">Рыбка (Sune) ОП!</string>
     <string name="cll_st1_descr" formatted="false"><![CDATA[
         <p>Начнем с Рыбок и Акул. Для данных алгоритмов из положений приведенных на картинках достаточно
         посмотреть на налейки сбоку от наклеек цвета верхней стороны (на картинках указаны \"желтым\") и на
@@ -210,73 +220,86 @@
 
         <p><a href="rg2://ytplay?time=2:12&link=n06bmpfoTJk">Алгоритм:</a> <b>U\' L\' U2 L U L\' U L</b></p>
 
+        <p>Как смоделировать: Выполнить Акулу ОП!. <b>U R U2\' R\' U\' R U\' R\'</b></p>
     ]]></string>
     <string name="cll_st1_url">n06bmpfoTJk</string>
     <string name="cll_st1_comment">U\' L\' U2 L U L\' U L</string>
 
-    <string name="cll_st2_title">Акула ОП!</string>
+    <string name="cll_st2_title">Акула (AntiSune) ОП!</string>
     <string name="cll_st2_descr" formatted="false"><![CDATA[
         <p>В данном случае у нас первая пара Одинаковая, а вторая Противоположная, значит это Акула ОП!. (1:47)</p>
         <p style="text-align:center"><img src="cll_2.xml"></p>
 
         <p><a href="rg2://ytplay?time=1:56&link=n06bmpfoTJk">Алгоритм:</a> <b>U R U2\' R\' U\' R U\' R\'</b></p>
+
+        <p>Как смоделировать: Выполнить Акулу ОП!. <b>U\' L\' U2 L U L\' U L</b></p>
     ]]></string>
     <string name="cll_st2_url">n06bmpfoTJk</string>
     <string name="cll_st2_comment">U R U2\' R\' U\' R U\' R\'</string>
 
-    <string name="cll_st3_title">Рыбка ПОп</string>
+    <string name="cll_st3_title">Рыбка (Sune) ПОп</string>
     <string name="cll_st3_descr" formatted="false"><![CDATA[
         <p>Первая пара Противоположная, а вторая Одинаковая, значит это Рыбка ПОп.(3:07) Довольно непростой для
         исполнения алгоритм.</p>
         <p style="text-align:center"><img src="cll_3.xml"></p>
 
         <p><a href="rg2://ytplay?time=3:11&link=n06bmpfoTJk">Алгоритм:</a> <b>U (R\' F R2 F\' R) (U2 R\' U\' R2)</b></p>
+
+        <p>Как смоделировать: Выполнить Акулу ПОп. <b>R U2 R\' U\' R U\' F R F\' U\' R\'</b></p>
     ]]></string>
     <string name="cll_st3_url">n06bmpfoTJk</string>
     <string name="cll_st3_comment">U (R\' F R2 F\' R) (U2 R\' U\' R2)</string>
 
-    <string name="cll_st4_title">Акула ПОп</string>
+    <string name="cll_st4_title">Акула (AntiSune) ПОп</string>
     <string name="cll_st4_descr" formatted="false"><![CDATA[
         <p>Первая пара Противоположная, а вторая Одинаковая, значит это Акула ПОп.(2:43)</p>
         <p style="text-align:center"><img src="cll_4.xml"></p>
 
         <p><a href="rg2://ytplay?time=2:49&link=n06bmpfoTJk">Алгоритм:</a> <b>R U2 R\' U\' R U\' F R F\' U\' R\'</b></p>
+
+        <p>Как смоделировать: Выполнить Рыбку ПОп. <b>U (R\' F R2 F\' R) (U2 R\' U\' R2)</b></p>
     ]]></string>
     <string name="cll_st4_url">n06bmpfoTJk</string>
     <string name="cll_st4_comment">R U2 R\' U\' R U\' F R F\' U\' R\'</string>
 
-    <string name="cll_st5_title">Рыбка ОСь</string>
+    <string name="cll_st5_title">Рыбка (Sune) ОСь</string>
     <string name="cll_st5_descr" formatted="false"><![CDATA[
         <p>Первая пара Одинаковая, а вторая Смежная, значит это Акула ПОп.(4:03)</p>
         <p style="text-align:center"><img src="cll_5.xml"></p>
 
         <p><a href="rg2://ytplay?time=4:06&link=n06bmpfoTJk">Алгоритм:</a> <b>U2\' R U\' L\' U R\' U\' L</b></p>
+
+        <p>Как смоделировать: Выполнить Акулу ОСь. <b>U2 L\' U R U\' L U R\'</b></p>
     ]]></string>
     <string name="cll_st5_url">n06bmpfoTJk</string>
     <string name="cll_st5_comment">U2\' R U\' L\' U R\' U\' L</string>
 
-    <string name="cll_st6_title">Акула ОСь</string>
+    <string name="cll_st6_title">Акула (AntiSune) ОСь</string>
     <string name="cll_st6_descr" formatted="false"><![CDATA[
         <p>Первая пара Одинаковая, а вторая Смежная, значит это Акула ОСь.(3:47)</p>
         <p style="text-align:center"><img src="cll_6.xml"></p>
 
         <p><a href="rg2://ytplay?time=3:54&link=n06bmpfoTJk">Алгоритм:</a> <b>U2 L\' U R U\' L U R\'</b></p>
+
+        <p>Как смоделировать: Выполнить Рыбку ОСь. <b>U2\' R U\' L\' U R\' U\' L</b></p>
     ]]></string>
     <string name="cll_st6_url">n06bmpfoTJk</string>
     <string name="cll_st6_comment">U2 L\' U R U\' L U R\'</string>
 
-    <string name="cll_st7_title">Рыбка СОс</string>
+    <string name="cll_st7_title">Рыбка (Sune) СОс</string>
     <string name="cll_st7_descr" formatted="false"><![CDATA[
         <p>Первая пара Смежная, а вторая Одинаковая, значит это Рыбка СОс или СОль.(5:17) По
         сути противоположна Акуле ПСих.</p>
         <p style="text-align:center"><img src="cll_7.xml"></p>
 
         <p><a href="rg2://ytplay?time=5:21&link=n06bmpfoTJk">Алгоритм:</a> <b>U2\' R\' F2 R U2\' R U\' R\' F</b></p>
+
+        <p>Как смоделировать: Выполнить Акулу ПСих. <b>U2\' F\' R U R\' U2\' R\' F2 R<b></p>
     ]]></string>
-    <string name="cll_st7_url">rVrNZWbnXTg</string>
+    <string name="cll_st7_url">n06bmpfoTJk</string>
     <string name="cll_st7_comment">U2\' R\' F2 R U2\' R U\' R\' F</string>
 
-    <string name="cll_st8_title">Акула СОс</string>
+    <string name="cll_st8_title">Акула (AntiSune) СОс</string>
     <string name="cll_st8_descr" formatted="false"><![CDATA[
         <p>Первая пара Смежная, а вторая Одинаковая, значит это Акула СОс.(4:36) В отличие от других
         пар Рыбка/Акула, при выполнении данного алгоритма на собранном кубике получится Рыбка ПСих(4:15),
@@ -284,54 +307,64 @@
         <p style="text-align:center"><img src="cll_8.xml"></p>
 
         <p><a href="rg2://ytplay?time=4:40&link=n06bmpfoTJk">Алгоритм:</a> <b>U2\' R U2 R\' U2 R\' F R F\'</b></p>
+
+        <p>Как смоделировать: Выполнить Рыбку ПСих. <b>F R U R\' U2\' F\' U\' R\' F R</b></p>
     ]]></string>
-    <string name="cll_st8_url">rVrNZWbnXTg</string>
+    <string name="cll_st8_url">n06bmpfoTJk</string>
     <string name="cll_st8_comment">U2\' R U2 R\' U2 R\' F R F\'</string>
 
-    <string name="cll_st9_title">Рыбка ПСих</string>
+    <string name="cll_st9_title">Рыбка (Sune) ПСих</string>
     <string name="cll_st9_descr" formatted="false"><![CDATA[
         <p>Первая пара Противоположная, а вторая Смежная, значит это Рыбка ПСих.(4:51)</p>
         <p style="text-align:center"><img src="cll_9.xml"></p>
 
         <p><a href="rg2://ytplay?time=4:54&link=n06bmpfoTJk">Алгоритм:</a> <b>F R U R\' U2\' F\' U\' R\' F R</b></p>
+
+        <p>Как смоделировать: Выполнить Акулу СОс. <b>U2\' R U2 R\' U2 R\' F R F\'</b></p>
     ]]></string>
-    <string name="cll_st9_url">rVrNZWbnXTg</string>
+    <string name="cll_st9_url">n06bmpfoTJk</string>
     <string name="cll_st9_comment">F R U R\' U2\' F\' U\' R\' F R</string>
 
-    <string name="cll_st10_title">Акула ПСих</string>
+    <string name="cll_st10_title">Акула (AntiSune) ПСих</string>
     <string name="cll_st10_descr" formatted="false"><![CDATA[
         <p>Первая пара Противоположная, а вторая Смежная, значит это Акула ПСих.(5:04)</p>
         <p style="text-align:center"><img src="cll_10.xml"></p>
 
         <p><a href="rg2://ytplay?time=5:11&link=n06bmpfoTJk">Алгоритм:</a> <b>U2\' F\' R U R\' U2\' R\' F2 R</b></p>
+
+        <p>Как смоделировать: Выполнить Рыбку СОс. <b>U2\' R\' F2 R U2\' R U\' R\' F</b></p>
     ]]></string>
-    <string name="cll_st10_url">rVrNZWbnXTg</string>
+    <string name="cll_st10_url">n06bmpfoTJk</string>
     <string name="cll_st10_comment">U2\' F\' R U R\' U2\' R\' F2 R</string>
 
-    <string name="cll_st11_title">Рыбка СПам</string>
+    <string name="cll_st11_title">Рыбка (Sune) СПам</string>
     <string name="cll_st11_descr" formatted="false"><![CDATA[
         <p>Первая пара Смежная, а вторая Противоположная, значит это Рыбка СПам.(5:46)</p>
         <p style="text-align:center"><img src="cll_11.xml"></p>
 
         <p><a href="rg2://ytplay?time=5:47&link=n06bmpfoTJk">Алгоритм:</a> <b>(R U\' R U\') (R\' U R\' U\') F R F\'</b><br/>
         или <b>(R U\' R U\') (R\' U R\' U\') y R U\' R\'</b></p>
+
+        <p>Как смоделировать: Выполнить Акулу СПам. <b>F R F\' U R U\' R U R\' U R\'</b></p>
     ]]></string>
-    <string name="cll_st11_url">rVrNZWbnXTg</string>
+    <string name="cll_st11_url">n06bmpfoTJk</string>
     <string name="cll_st11_comment">(R U\' R U\') (R\' U R\' U\') F R F\'</string>
 
-    <string name="cll_st12_title">Акула СПам</string>
+    <string name="cll_st12_title">Акула (AntiSune) СПам</string>
     <string name="cll_st12_descr" formatted="false"><![CDATA[
         <p>Первая пара Смежная, а вторая Противоположная, значит это Акула СПам.(5:28)</p>
         <p style="text-align:center"><img src="cll_12.xml"></p>
 
         <p><a href="rg2://ytplay?time=5:38&link=n06bmpfoTJk">Алгоритм:</a> <b>F R F\' U R U\' R U R\' U R\'</b></p>
+
+        <p>Как смоделировать: Выполнить Рыбку СПам. <b>(R U\' R U\') (R\' U R\' U\') F R F\'</b></p>
     ]]></string>
-    <string name="cll_st12_url">rVrNZWbnXTg</string>
+    <string name="cll_st12_url">n06bmpfoTJk</string>
     <string name="cll_st12_comment">F R F\' U R U\' R U R\' U R\'</string>
 
     <!-- ================= Носики ======================= -->
 
-    <string name="cll_st13_title">Носик СПлин</string>
+    <string name="cll_st13_title">Носик (L-OLL) СПлин</string>
     <string name="cll_st13_descr" formatted="false"><![CDATA[
         Для Носиков (L-OLL) (6:12) первым делом смотрим на две верхние наклейки, а потом на левую
         верхнюю и левую переднюю. Т.е. вот такой Носик (Смежные, Противоположные), будет Носик СПлин. (6:38)
@@ -339,113 +372,245 @@
 
         <p><a href="rg2://ytplay?time=6:46&link=n06bmpfoTJk">Алгоритм:</a> <b>R2\' U\' R U2 R\' U2\' R U\' R2</b></p>
 
-    ]]></string>
-    <string name="cll_st13_url">U0dP8MJw-Ig</string>
-    <string name="cll_st13_comment"></string>
+        <p>Как смоделировать: Выполнить алгоритм еще раз. <b>R2\' U\' R U2 R\' U2\' R U\' R2</b></p>
 
-    <string name="cll_st14_title">Носик #2</string>
+    ]]></string>
+    <string name="cll_st13_url">n06bmpfoTJk</string>
+    <string name="cll_st13_comment">R2\' U\' R U2 R\' U2\' R U\' R2</string>
+
+    <string name="cll_st14_title">Носик (L-OLL) СОль</string>
     <string name="cll_st14_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cll_st14_url">U0dP8MJw-Ig</string>
-    <string name="cll_st14_comment"></string>
+        Первая пара Смежная, а вторая Одинаковая, значит это Носик СОль. (7:11)
+        <p style="text-align:center"><img src="cll_14.xml"></p>
 
-    <string name="cll_st15_title">Носик #3</string>
+        <p><a href="rg2://ytplay?time=7:23&link=n06bmpfoTJk">Алгоритм:</a> <b>U\' R U2\' R2\' F R F\' R U2\' R\'</b></p>
+
+        <p>Как смоделировать: Выполнить алгоритм еще раз. <b>U\' R U2\' R2\' F R F\' R U2\' R\'</b></p>
+    ]]></string>
+    <string name="cll_st14_url">n06bmpfoTJk</string>
+    <string name="cll_st14_comment">U\' R U2\' R2\' F R F\' R U2\' R\'</string>
+
+    <string name="cll_st15_title">Носик (L-OLL) ОПал</string>
     <string name="cll_st15_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cll_st15_url">U0dP8MJw-Ig</string>
-    <string name="cll_st15_comment"></string>
+        Первая пара Одинаковая, а вторая Противоположная, значит это Носик ОПал. (8:01)
+        <p style="text-align:center"><img src="cll_15.xml"></p>
 
-    <string name="cll_st16_title">Носик #4</string>
+        <p><a href="rg2://ytplay?time=8:11&link=n06bmpfoTJk">Алгоритм:</a> <b>R\' U2 R U\' R\' U2 R U\' F R F\'</b></p>
+
+        <p>Как смоделировать: Выполнить Глазки Бэкслэш. <b>U\' R2 U R\' U\' R2 U\' F\' U2 F</b></p>
+    ]]></string>
+    <string name="cll_st15_url">n06bmpfoTJk</string>
+    <string name="cll_st15_comment">R\' U2 R U\' R\' U2 R U\' F R F\'</string>
+
+    <string name="cll_st16_title">Носик (L-OLL) ОСел</string>
     <string name="cll_st16_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cll_st16_url">U0dP8MJw-Ig</string>
-    <string name="cll_st16_comment"></string>
+        Первая пара Одинаковая, а вторая Смежная, значит это Носик ОСел. (8:58)
+        <p style="text-align:center"><img src="cll_16.xml"></p>
 
-    <string name="cll_st17_title">Носик #5</string>
+        <p><a href="rg2://ytplay?time=9:08&link=n06bmpfoTJk">Алгоритм:</a> <b>R U2\' R2\' F2 R U R\' F2 R F\'</b></p>
+
+        <p>Как смоделировать: Выполнить Глазки Cлэш. <b>(R\' F R U\') y\' (R U2 R\' U\' R U2 R\')</b></p>
+    ]]></string>
+    <string name="cll_st16_url">n06bmpfoTJk</string>
+    <string name="cll_st16_comment">R U2\' R2\' F2 R U R\' F2 R F\'</string>
+
+    <string name="cll_st17_title">Носик (L-OLL) ПикСель</string>
     <string name="cll_st17_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cll_st17_url">U0dP8MJw-Ig</string>
-    <string name="cll_st17_comment"></string>
+        Первая пара Противоположная, а вторая Смежная, значит это Носик ПикСель. (9:57)
+        <p style="text-align:center"><img src="cll_17.xml"></p>
 
-    <string name="cll_st18_title">Носик #6</string>
+        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b>U R\' U2\' R U2\' F R F\'</b></p>
+
+        <p>Как смоделировать: Выполнить Ушки Печенька. <b>U\' R U R\' U\' R\' F R F\'</b></p>
+    ]]></string>
+    <string name="cll_st17_url">n06bmpfoTJk</string>
+    <string name="cll_st17_comment">U R\' U2\' R U2\' F R F\'</string>
+
+    <string name="cll_st18_title">Носик (L-OLL) ПОинт</string>
     <string name="cll_st18_descr" formatted="false"><![CDATA[
+        Первая пара Противоположная, а вторая Одинаковая, значит это Носик ПОинт. (11:00)
+        <p style="text-align:center"><img src="cll_18.xml"></p>
+
+        <p><a href="rg2://ytplay?time=11:09&link=n06bmpfoTJk">Алгоритм:</a> <b>F\' (R U R\' U\') R\' F R</b></p>
+
+        <p>Как смоделировать: Выполнить Ушки Брауни. <b>(R U R\' U\') F\' U\' F</b></p>
     ]]></string>
-    <string name="cll_st18_url">U0dP8MJw-Ig</string>
-    <string name="cll_st18_comment"></string>
+    <string name="cll_st18_url">n06bmpfoTJk</string>
+    <string name="cll_st18_comment">F\' (R U R\' U\') R\' F R</string>
 
 
-    <!-- ================= НТВ+ ======================= -->
+    <!-- ================= Глазки ======================= -->
 
-    <string name="cll_st19_title">НТВ+ #1</string>
+    <string name="cll_st19_title">Глазки (U-OLL) Бэкслэш</string>
     <string name="cll_st19_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cll_st19_url">GJ7nsaOvwbM</string>
-    <string name="cll_st19_comment"></string>
+        <p>В Глазках первым делом смотрим на пару левой/верхней/дальней и правой/ближней наклеек. А затем
+        на пару левой/верхней/ближней и правой/дальней наклеек.</p>
 
-    <string name="cll_st20_title">НТВ+ #2</string>
+        <p>Если первая пара Одинковая, а вторая Противоположная, то это Глазки Бэкслэш (по первой паре). (8:26)</p>
+
+        <p style="text-align:center"><img src="cll_19.xml"></p>
+
+        <p><a href="rg2://ytplay?time=8:11&link=n06bmpfoTJk">Алгоритм:</a> <b>U\' R2 U R\' U\' R2 U\' F\' U2 F</b></p>
+
+        <p>Как смоделировать: Выполнить Носик ОПал. <b>R\' U2 R U\' R\' U2 R U\' F R F\'</b></p>
+
+    ]]></string>
+    <string name="cll_st19_url">n06bmpfoTJk</string>
+    <string name="cll_st19_comment">U\' R2 U R\' U\' R2 U\' F\' U2 F</string>
+
+    <string name="cll_st20_title">Глазки (U-OLL) Cлэш</string>
     <string name="cll_st20_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cll_st20_url">GJ7nsaOvwbM</string>
-    <string name="cll_st20_comment"></string>
+        <p>Первая пара Противоположная, а вторая Одинаковая, то это Глазки Слэш (по второй паре). (9:19)</p>
 
-    <string name="cll_st21_title">НТВ+ #3</string>
+        <p style="text-align:center"><img src="cll_20.xml"></p>
+
+        <p><a href="rg2://ytplay?time=9:31&link=n06bmpfoTJk">Алгоритм:</a> <b>(R\' F R U\') y\' (R U2 R\' U\' R U2 R\')</b></p>
+
+        <p>Как смоделировать: Выполнить Носик ОСел. <b>R U2\' R2\' F2 R U R\' F2 R F\'</b></p>
+    ]]></string>
+    <string name="cll_st20_url">n06bmpfoTJk</string>
+    <string name="cll_st20_comment">(R\' F R U\') y\' (R U2 R\' U\' R U2 R\')</string>
+
+    <string name="cll_st21_title">Глазки (U-OLL) ЮПи</string>
     <string name="cll_st21_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cll_st21_url">GJ7nsaOvwbM</string>
-    <string name="cll_st21_comment"></string>
+        <p>Две смежных пары, если смотреть как на все Глазки, или пара на правой грани, а слева разные наклейки.
+        Получается Ю-ОЛЛ с буквой П, поэтому ЮПи(11:47).</p>
 
-    <string name="cll_st22_title">НТВ+ #4</string>
+        <p style="text-align:center"><img src="cll_21.xml"></p>
+
+        <p><a href="rg2://ytplay?time=12:03&link=n06bmpfoTJk">Алгоритм:</a> <b>U R\' F U\' R U\' R\' U2\' F2 R</b></p>
+
+        <p>Как смоделировать: Выполнить Ушки Кола. <b>U R\' U R\' F U\' R U F2 R2</b></p>
+    ]]></string>
+    <string name="cll_st21_url">n06bmpfoTJk</string>
+    <string name="cll_st21_comment">U R\' F U\' R U\' R\' U2\' F2 R</string>
+
+    <string name="cll_st22_title">Глазки (U-OLL) ЮнИкс</string>
     <string name="cll_st22_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cll_st22_url">GJ7nsaOvwbM</string>
-    <string name="cll_st22_comment"></string>
+        <p>Две Одинаковые пары, Ю-ОЛЛ иксом, поэтому ЮнИкс (12:37).</p>
 
+        <p style="text-align:center"><img src="cll_22.xml"></p>
+
+        <p><a href="rg2://ytplay?time=12:47&link=n06bmpfoTJk">Алгоритм:</a> <b>U x R U\' R U\' R\' U L\' U\' L</b></p>
+
+        <p>Как смоделировать: Выполнить Ушки Ракета. <b>R\' U\' F R F\' U R U\' R U R\'</b></p>
+    ]]></string>
+    <string name="cll_st22_url">n06bmpfoTJk</string>
+    <string name="cll_st22_comment">U x R U\' R U\' R\' U L\' U\' L</string>
+
+
+    <string name="cll_st23_title">Глазки (U-OLL) Хэтчбек</string>
+    <string name="cll_st23_descr" formatted="false"><![CDATA[
+        <p>Две противоположные пары. Или на правой грани пара и сверху пара одинаковых, значит это Хэтчбек (13:22).</p>
+
+        <p style="text-align:center"><img src="cll_23.xml"></p>
+
+        <p><a href="rg2://ytplay?time=13:36&link=n06bmpfoTJk">Алгоритм:</a> <b>U\' F R U R\' U2\' F\' R U\' R\' F</b></p>
+
+        <p>Как смоделировать: Выполнить алгоритм еще раз. <b>U\' F R U R\' U2\' F\' R U\' R\' F</b></p>
+    ]]></string>
+    <string name="cll_st23_url">n06bmpfoTJk</string>
+    <string name="cll_st23_comment">U\' F R U R\' U2\' F\' R U\' R\' F</string>
+
+    <string name="cll_st24_title">Глазки (U-OLL) Юла (Фруруф)</string>
+    <string name="cll_st24_descr" formatted="false"><![CDATA[
+        <p> Сверху пара одинаковых, а справа пара Противоположных, значит это самый обычный Фруруф (Юла) (14:12).</p>
+
+        <p style="text-align:center"><img src="cll_24.xml"></p>
+
+        <p><a href="rg2://ytplay?time=14:21&link=n06bmpfoTJk">Алгоритм:</a> <b>F (R U R\' U\') F\'</b></p>
+
+        <p>Как смоделировать: Выполнить алгоритм еще раз. <b></b></p>
+    ]]></string>
+    <string name="cll_st24_url">n06bmpfoTJk</string>
+    <string name="cll_st24_comment">F (R U R\' U\') F\'</string>
+
+    <!-- ================= Ушки ======================= -->
+
+    <string name="cll_st25_title">Ушки (T-OLL) Печенька</string>
+    <string name="cll_st25_descr" formatted="false"><![CDATA[
+        <p>В Ушках первым делом смотрим на левую пару верхней и передней наклеек. А затем
+        на правую пару верхней и передней наклеек. (10:22)</p>
+
+        <p>Если первая пара Одинковая, а вторая Противоположная, то это Ушки Печенька. (10:31)
+        Почему печенька - посмотрите в видео.</p>
+
+        <p style="text-align:center"><img src="cll_25.xml"></p>
+
+        <p><a href="rg2://ytplay?time=10:50&link=n06bmpfoTJk">Алгоритм:</a> <b>U\' (R U R\' U\') (R\' F R F\')</b></p>
+
+        <p>Как смоделировать: Выполнить Носик ПикСель. <b>U\' (R U R\' U\') (R\' F R F\')</b></p>
+    ]]></string>
+    <string name="cll_st25_url">n06bmpfoTJk</string>
+    <string name="cll_st25_comment">U\' R U R\' U\' R\' F R F\'</string>
+
+    <string name="cll_st26_title">Ушки (T-OLL) Брауни</string>
+    <string name="cll_st26_descr" formatted="false"><![CDATA[
+        <p>Если первая пара Противоположная, а вторая Одинаковая, то это Ушки Брауни. (11:23)</p>
+
+        <p style="text-align:center"><img src="cll_26.xml"></p>
+
+        <p><a href="rg2://ytplay?time=11:30&link=n06bmpfoTJk">Алгоритм:</a> <b>(R U R\' U\') F\' U\' F</b></p>
+
+        <p>Как смоделировать: Выполнить Носик ПОинт. <b>F\' (R U R\' U\') R\' F R</b></p>
+    ]]></string>
+    <string name="cll_st26_url">n06bmpfoTJk</string>
+    <string name="cll_st26_comment">(R U R\' U\') F\' U\' F</string>
+
+    <string name="cll_st27_title">Ушки (T-OLL) Кола</string>
+    <string name="cll_st27_descr" formatted="false"><![CDATA[
+        <p>Если первая пара Противоположная, и вторая Противоположная, то это Ушки Кола. (12:14)
+        Поскольку парный с Глазками ЮПи.</p>
+
+        <p style="text-align:center"><img src="cll_27.xml"></p>
+
+        <p><a href="rg2://ytplay?time=12:22&link=n06bmpfoTJk">Алгоритм:</a> <b>U R\' U R\' F U\' R U F2 R2</b></p>
+
+        <p>Как смоделировать: Выполнить Глазки ЮПи. <b>U R\' F U\' R U\' R\' U2\' F2 R</b></p>
+    ]]></string>
+    <string name="cll_st27_url">n06bmpfoTJk</string>
+    <string name="cll_st27_comment">U R\' U R\' F U\' R U F2 R2</string>
+
+    <string name="cll_st28_title">Ушки (T-OLL) Ракета</string>
+    <string name="cll_st28_descr" formatted="false"><![CDATA[
+        <p>Если пара Одинаковых сзади, и Противоположные наклеки на передней грани, то это Ушки Ракета. (13:00)</p>
+
+        <p style="text-align:center"><img src="cll_28.xml"></p>
+
+        <p><a href="rg2://ytplay?time=13:11&link=n06bmpfoTJk">Алгоритм:</a> <b>R\' U\' F R F\' U R U\' R U R\'</b></p>
+
+        <p>Как смоделировать: Выполнить Глазки Юникс. <b>U x R U\' R U\' R\' U L\' U\' L</b></p>
+    ]]></string>
+    <string name="cll_st28_url">n06bmpfoTJk</string>
+    <string name="cll_st28_comment">R\' U\' F R F\' U R U\' R U R\'</string>
+
+    <string name="cll_st29_title">Ушки (T-OLL) Бэг</string>
+    <string name="cll_st29_descr" formatted="false"><![CDATA[
+        <p>Похоже на Ракету, но пара Одинаковых наклеек на передней грани, значит это Бэг (Сумка)(13:46).</p>
+
+        <p style="text-align:center"><img src="cll_29.xml"></p>
+
+        <p><a href="rg2://ytplay?time=13:55&link=n06bmpfoTJk">Алгоритм:</a> <b>R\' U R U2\' R2\' F R F\' R</b></p>
+
+        <p>Как смоделировать: Выполнить алгоритм еще раз. <b>R\' U R U2\' R2\' F R F\' R</b></p>
+    ]]></string>
+    <string name="cll_st29_url">n06bmpfoTJk</string>
+    <string name="cll_st29_comment">R\' U R U2\' R2\' F R F\' R</string>
+
+    <string name="cll_st30_title">Ушки (T-OLL) #6</string>
+    <string name="cll_st30_descr" formatted="false"><![CDATA[
+        <p>Пара Одинаковых слева и пара справа. Алгоритм называется Труба (14:28).</p>
+
+        <p style="text-align:center"><img src="cll_30.xml"></p>
+
+        <p><a href="rg2://ytplay?time=14:41&link=n06bmpfoTJk">Алгоритм:</a> <b>F U\' R U2 R\' U\' F2 R U R\'</b></p>
+
+        <p>Как смоделировать: Выполнить алгоритм еще раз. <b>F U\' R U2 R\' U\' F2 R U R\'</b></p>
+    ]]></string>
+    <string name="cll_st30_url">n06bmpfoTJk</string>
+    <string name="cll_st30_comment">F U\' R U2 R\' U\' F2 R U R\'</string>
 
     <!-- ================= Вертолеты ======================= -->
 
-    <string name="cll_st23_title">Вертолет #1</string>
-    <string name="cll_st23_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cll_st23_url">YTpCBRiAuow</string>
-    <string name="cll_st23_comment"></string>
-
-    <string name="cll_st24_title">Вертолет #2</string>
-    <string name="cll_st24_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cll_st24_url">YTpCBRiAuow</string>
-    <string name="cll_st24_comment"></string>
-
-    <string name="cll_st25_title">Вертолет #3</string>
-    <string name="cll_st25_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cll_st25_url">YTpCBRiAuow</string>
-    <string name="cll_st25_comment"></string>
-
-    <string name="cll_st26_title">Вертолет #4</string>
-    <string name="cll_st26_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cll_st26_url">YTpCBRiAuow</string>
-    <string name="cll_st26_comment"></string>
-
-    <string name="cll_st27_title">Вертолет #5</string>
-    <string name="cll_st27_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cll_st27_url">YTpCBRiAuow</string>
-    <string name="cll_st27_comment"></string>
-
-    <string name="cll_st28_title">Вертолет #6</string>
-    <string name="cll_st28_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cll_st28_url">YTpCBRiAuow</string>
-    <string name="cll_st28_comment"></string>
-
-
-    <!-- ================= Рыбки ======================= -->
-
-    <string name="cll_st29_title">Рыбки/Акулы</string>
-    <string name="cll_st29_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cll_st29_url"></string>
-    <string name="cll_st29_comment"></string>
 
 </resources>
