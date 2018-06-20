@@ -35,6 +35,16 @@
         <item>@string/cll_st28_title</item>
         <item>@string/cll_st29_title</item>
         <item>@string/cll_st30_title</item>
+        <item>@string/cll_st31_title</item>
+        <item>@string/cll_st32_title</item>
+        <item>@string/cll_st33_title</item>
+        <item>@string/cll_st34_title</item>
+        <item>@string/cll_st35_title</item>
+        <item>@string/cll_st36_title</item>
+        <item>@string/cll_st37_title</item>
+        <item>@string/cll_st38_title</item>
+        <item>@string/cll_st39_title</item>
+        <item>@string/cll_st40_title</item>
     </string-array>
 
     <integer-array name="cll_icon">
@@ -68,6 +78,16 @@
         <item>@drawable/cll_27</item>
         <item>@drawable/cll_28</item>
         <item>@drawable/cll_29</item>
+        <item>@drawable/cll_30</item>
+        <item>@drawable/cll_30</item>
+        <item>@drawable/cll_30</item>
+        <item>@drawable/cll_30</item>
+        <item>@drawable/cll_30</item>
+        <item>@drawable/cll_30</item>
+        <item>@drawable/cll_30</item>
+        <item>@drawable/cll_30</item>
+        <item>@drawable/cll_30</item>
+        <item>@drawable/cll_30</item>
         <item>@drawable/cll_30</item>
     </integer-array>
 
@@ -109,6 +129,18 @@
         <item>@string/cll_st29_descr</item>
         <item>@string/cll_st30_descr</item>
 
+        <item>@string/cll_st31_descr</item>
+        <item>@string/cll_st32_descr</item>
+        <item>@string/cll_st33_descr</item>
+        <item>@string/cll_st34_descr</item>
+        <item>@string/cll_st35_descr</item>
+        <item>@string/cll_st36_descr</item>
+
+        <item>@string/cll_st37_descr</item>
+        <item>@string/cll_st38_descr</item>
+        <item>@string/cll_st39_descr</item>
+        <item>@string/cll_st40_descr</item>
+
     </string-array>
 
     <string-array name="cll_url">
@@ -145,6 +177,16 @@
         <item>@string/cll_st28_url</item>
         <item>@string/cll_st29_url</item>
         <item>@string/cll_st30_url</item>
+        <item>@string/cll_st31_url</item>
+        <item>@string/cll_st32_url</item>
+        <item>@string/cll_st33_url</item>
+        <item>@string/cll_st34_url</item>
+        <item>@string/cll_st35_url</item>
+        <item>@string/cll_st36_url</item>
+        <item>@string/cll_st37_url</item>
+        <item>@string/cll_st38_url</item>
+        <item>@string/cll_st39_url</item>
+        <item>@string/cll_st40_url</item>
     </string-array>
 
     <string-array name="cll_comment">
@@ -182,6 +224,16 @@
         <item>@string/cll_st28_comment</item>
         <item>@string/cll_st29_comment</item>
         <item>@string/cll_st30_comment</item>
+        <item>@string/cll_st31_comment</item>
+        <item>@string/cll_st32_comment</item>
+        <item>@string/cll_st33_comment</item>
+        <item>@string/cll_st34_comment</item>
+        <item>@string/cll_st35_comment</item>
+        <item>@string/cll_st36_comment</item>
+        <item>@string/cll_st37_comment</item>
+        <item>@string/cll_st38_comment</item>
+        <item>@string/cll_st39_comment</item>
+        <item>@string/cll_st40_comment</item>
     </string-array>
     
     <string name="cll_st0_title">Введение</string>
@@ -612,7 +664,135 @@
 
     <!-- ================= Вертолеты ======================= -->
 
+    <string name="cll_st31_title">Вертолет (T-OLL) #1</string>
+    <string name="cll_st31_descr" formatted="false"><![CDATA[
+        <p>Пара. Алгоритм называется (00:00).</p>
+
+        <p style="text-align:center"><img src="cll_31.xml"></p>
+
+        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+
+        <p>Как смоделировать: Выполнить . <b></b></p>
+    ]]></string>
+    <string name="cll_st31_url">n06bmpfoTJk</string>
+    <string name="cll_st31_comment"></string>
+
+    <string name="cll_st32_title">Вертолет (T-OLL) #1</string>
+    <string name="cll_st32_descr" formatted="false"><![CDATA[
+        <p>Пара. Алгоритм называется (00:00).</p>
+
+        <p style="text-align:center"><img src="cll_31.xml"></p>
+
+        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+
+        <p>Как смоделировать: Выполнить . <b></b></p>
+    ]]></string>
+    <string name="cll_st32_url">n06bmpfoTJk</string>
+    <string name="cll_st32_comment"></string>
+
+    <string name="cll_st33_title">Вертолет (T-OLL) #1</string>
+    <string name="cll_st33_descr" formatted="false"><![CDATA[
+        <p>Пара. Алгоритм называется (00:00).</p>
+
+        <p style="text-align:center"><img src="cll_31.xml"></p>
+
+        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+
+        <p>Как смоделировать: Выполнить . <b></b></p>
+    ]]></string>
+    <string name="cll_st33_url">n06bmpfoTJk</string>
+    <string name="cll_st33_comment"></string>
+
+    <string name="cll_st34_title">Вертолет (T-OLL) #1</string>
+    <string name="cll_st34_descr" formatted="false"><![CDATA[
+        <p>Пара. Алгоритм называется (00:00).</p>
+
+        <p style="text-align:center"><img src="cll_31.xml"></p>
+
+        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+
+        <p>Как смоделировать: Выполнить . <b></b></p>
+    ]]></string>
+    <string name="cll_st34_url">n06bmpfoTJk</string>
+    <string name="cll_st34_comment"></string>
+
+    <string name="cll_st35_title">Вертолет (T-OLL) #1</string>
+    <string name="cll_st35_descr" formatted="false"><![CDATA[
+        <p>Пара. Алгоритм называется (00:00).</p>
+
+        <p style="text-align:center"><img src="cll_31.xml"></p>
+
+        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+
+        <p>Как смоделировать: Выполнить . <b></b></p>
+    ]]></string>
+    <string name="cll_st35_url">n06bmpfoTJk</string>
+    <string name="cll_st35_comment"></string>
+
+    <string name="cll_st36_title">Вертолет (T-OLL) #1</string>
+    <string name="cll_st36_descr" formatted="false"><![CDATA[
+        <p>Пара. Алгоритм называется (00:00).</p>
+
+        <p style="text-align:center"><img src="cll_31.xml"></p>
+
+        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+
+        <p>Как смоделировать: Выполнить . <b></b></p>
+    ]]></string>
+    <string name="cll_st36_url">n06bmpfoTJk</string>
+    <string name="cll_st36_comment"></string>
 
     <!-- ================= НТВ+ ======================= -->
+    <string name="cll_st37_title">НТВ+ (T-OLL) #1</string>
+    <string name="cll_st37_descr" formatted="false"><![CDATA[
+        <p>Пара. Алгоритм называется (00:00).</p>
+
+        <p style="text-align:center"><img src="cll_31.xml"></p>
+
+        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+
+        <p>Как смоделировать: Выполнить . <b></b></p>
+    ]]></string>
+    <string name="cll_st37_url">n06bmpfoTJk</string>
+    <string name="cll_st37_comment"></string>
+
+    <string name="cll_st38_title">НТВ+ (T-OLL) #1</string>
+    <string name="cll_st38_descr" formatted="false"><![CDATA[
+        <p>Пара. Алгоритм называется (00:00).</p>
+
+        <p style="text-align:center"><img src="cll_31.xml"></p>
+
+        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+
+        <p>Как смоделировать: Выполнить . <b></b></p>
+    ]]></string>
+    <string name="cll_st38_url">n06bmpfoTJk</string>
+    <string name="cll_st38_comment"></string>
+
+    <string name="cll_st39_title">НТВ+ (T-OLL) #1</string>
+    <string name="cll_st39_descr" formatted="false"><![CDATA[
+        <p>Пара. Алгоритм называется (00:00).</p>
+
+        <p style="text-align:center"><img src="cll_31.xml"></p>
+
+        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+
+        <p>Как смоделировать: Выполнить . <b></b></p>
+    ]]></string>
+    <string name="cll_st39_url">n06bmpfoTJk</string>
+    <string name="cll_st39_comment"></string>
+
+    <string name="cll_st40_title">НТВ+ (T-OLL) #1</string>
+    <string name="cll_st40_descr" formatted="false"><![CDATA[
+        <p>Пара. Алгоритм называется (00:00).</p>
+
+        <p style="text-align:center"><img src="cll_31.xml"></p>
+
+        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+
+        <p>Как смоделировать: Выполнить . <b></b></p>
+    ]]></string>
+    <string name="cll_st40_url">n06bmpfoTJk</string>
+    <string name="cll_st40_comment"></string>
 
 </resources>
