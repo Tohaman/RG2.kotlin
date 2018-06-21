@@ -45,6 +45,7 @@
         <item>@string/cll_st38_title</item>
         <item>@string/cll_st39_title</item>
         <item>@string/cll_st40_title</item>
+        <item>@string/cll_st41_title</item>
     </string-array>
 
     <integer-array name="cll_icon">
@@ -89,6 +90,7 @@
         <item>@drawable/cll_38</item>
         <item>@drawable/cll_39</item>
         <item>@drawable/cll_40</item>
+        <item>@drawable/cll_41</item>
     </integer-array>
 
     <string-array name="cll_descr">
@@ -141,6 +143,8 @@
         <item>@string/cll_st39_descr</item>
         <item>@string/cll_st40_descr</item>
 
+        <item>@string/cll_st41_descr</item>
+
     </string-array>
 
     <string-array name="cll_url">
@@ -187,6 +191,7 @@
         <item>@string/cll_st38_url</item>
         <item>@string/cll_st39_url</item>
         <item>@string/cll_st40_url</item>
+        <item>@string/cll_st41_url</item>
     </string-array>
 
     <string-array name="cll_comment">
@@ -234,6 +239,7 @@
         <item>@string/cll_st38_comment</item>
         <item>@string/cll_st39_comment</item>
         <item>@string/cll_st40_comment</item>
+        <item>@string/cll_st41_comment</item>
     </string-array>
     
     <string name="cll_st0_title">Введение</string>
@@ -795,11 +801,27 @@
 
         <p style="text-align:center"><img src="cll_40.xml"></p>
 
-        <p><a href="rg2://ytplay?time=18:23&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+        <p><a href="rg2://ytplay?time=18:23&link=n06bmpfoTJk">Алгоритм:</a> <b>F2 R\' F2 R2 U2\' R\' F2</b></p>
 
         <p>Как смоделировать: Выполнить алгоритм еще раз. <b>F2 R\' F2 R2 U2\' R\' F2</b></p>
     ]]></string>
     <string name="cll_st40_url">n06bmpfoTJk</string>
-    <string name="cll_st40_comment"></string>
+    <string name="cll_st40_comment">F2 R\' F2 R2 U2\' R\' F2</string>
+
+    <string name="cll_st41_title">Чистый PLL</string>
+    <string name="cll_st41_descr" formatted="false"><![CDATA[
+        <p>Случаи когда верхняя сторона собрана, а слой не собран рассмотрены в методике Фридрих
+        и Ортега.</p>
+
+        <p style="text-align:center"><img src="cll_41.xml"></p>
+
+        <p>Если нет глазок - <a href="rg2://ytplay?time=18:56&link=n06bmpfoTJk">алгоритм:</a> <b>(R U\' R\' U\') F2 (U\' R U R\') D R2</b></p>
+
+        <p>Если есть глазки - <a href="rg2://ytplay?time=19:28&link=n06bmpfoTJk">алгоритм:</a> <b>R U2 R\' U\' R U2 L\' U R\' U\' L</b><br/>
+        или для <a href="rg2://ytplay?time=19:45&link=n06bmpfoTJk">глазок сзади:</a> <b>(R\' F) R\' F2 R U\' R\' F2 R2</b></p>
+    ]]></string>
+    <string name="cll_st41_url">n06bmpfoTJk</string>
+    <string name="cll_st41_comment"></string>
+
 
 </resources>
