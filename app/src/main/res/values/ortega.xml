@@ -157,7 +157,7 @@
         сделать вот такой простой пятиходовый алгоритм.</p>
 
         <p style="text-align:center"><img src="ortega_2_15.xml"></p>
-        <p>Алгоритм: <b>R2 U2 R U2 R2</b></p>
+        <p>Алгоритм: <b>R2\' U2\' R U2\' R2</b></p>
 
     ]]></string>
     <string name="ortega2_url">XOILnb9FieU</string>

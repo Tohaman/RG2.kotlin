@@ -79,16 +79,16 @@
         <item>@drawable/cll_28</item>
         <item>@drawable/cll_29</item>
         <item>@drawable/cll_30</item>
-        <item>@drawable/cll_30</item>
-        <item>@drawable/cll_30</item>
-        <item>@drawable/cll_30</item>
-        <item>@drawable/cll_30</item>
-        <item>@drawable/cll_30</item>
-        <item>@drawable/cll_30</item>
-        <item>@drawable/cll_30</item>
-        <item>@drawable/cll_30</item>
-        <item>@drawable/cll_30</item>
-        <item>@drawable/cll_30</item>
+        <item>@drawable/cll_31</item>
+        <item>@drawable/cll_32</item>
+        <item>@drawable/cll_33</item>
+        <item>@drawable/cll_34</item>
+        <item>@drawable/cll_35</item>
+        <item>@drawable/cll_36</item>
+        <item>@drawable/cll_37</item>
+        <item>@drawable/cll_38</item>
+        <item>@drawable/cll_39</item>
+        <item>@drawable/cll_40</item>
     </integer-array>
 
     <string-array name="cll_descr">
@@ -649,7 +649,7 @@
     <string name="cll_st29_url">n06bmpfoTJk</string>
     <string name="cll_st29_comment">R\' U R U2\' R2\' F R F\' R</string>
 
-    <string name="cll_st30_title">Ушки (T-OLL) #6</string>
+    <string name="cll_st30_title">Ушки (T-OLL) Труба</string>
     <string name="cll_st30_descr" formatted="false"><![CDATA[
         <p>Пара Одинаковых слева и пара справа. Алгоритм называется Труба (14:28).</p>
 
@@ -664,133 +664,140 @@
 
     <!-- ================= Вертолеты ======================= -->
 
-    <string name="cll_st31_title">Вертолет (T-OLL) #1</string>
+    <string name="cll_st31_title">Вертолет (Pi-OLL) Якудза</string>
     <string name="cll_st31_descr" formatted="false"><![CDATA[
-        <p>Пара. Алгоритм называется (00:00).</p>
+        <p>Вертолеты определяются из стандартного положения по цветам верхних наклеек.(14:50)
+        В данном случае правая пара Одинаковая, а левая Противоположная - алгоритм называется Якудза
+        или двойной Фруруф.(14:58)</p>
 
         <p style="text-align:center"><img src="cll_31.xml"></p>
 
-        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+        <p><a href="rg2://ytplay?time=15:07&link=n06bmpfoTJk">Алгоритм:</a> <b>F (R U R\' U\')2 F\'</b></p>
 
-        <p>Как смоделировать: Выполнить . <b></b></p>
+        <p>Как смоделировать: Выполнить алгоритм еще раз. <b>F (R U R\' U\')2 F\'</b></p>
     ]]></string>
     <string name="cll_st31_url">n06bmpfoTJk</string>
-    <string name="cll_st31_comment"></string>
+    <string name="cll_st31_comment">F (R U R\' U\')2 F\'</string>
 
-    <string name="cll_st32_title">Вертолет (T-OLL) #1</string>
+    <string name="cll_st32_title">Вертолет (Pi-OLL) Коза-Ностра</string>
     <string name="cll_st32_descr" formatted="false"><![CDATA[
-        <p>Пара. Алгоритм называется (00:00).</p>
+        <p>Противополжный предыдущему, правая пара Противоположная, а левая Одинаковая. Алгоритм
+        называется Коза-Ностра (15:18).</p>
 
-        <p style="text-align:center"><img src="cll_31.xml"></p>
+        <p style="text-align:center"><img src="cll_32.xml"></p>
 
-        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+        <p><a href="rg2://ytplay?time=15:25&link=n06bmpfoTJk">Алгоритм:</a> <b>R\' F\' R U\' R\' F U\' F U R</b></p>
 
-        <p>Как смоделировать: Выполнить . <b></b></p>
+        <p>Как смоделировать: Выполнить алгоритм еще раз. <b>R\' F\' R U\' R\' F U\' F U R</b></p>
     ]]></string>
     <string name="cll_st32_url">n06bmpfoTJk</string>
-    <string name="cll_st32_comment"></string>
+    <string name="cll_st32_comment">R\' F\' R U\' R\' F U\' F U R</string>
 
-    <string name="cll_st33_title">Вертолет (T-OLL) #1</string>
+    <string name="cll_st33_title">Вертолет (Pi-OLL) Правша</string>
     <string name="cll_st33_descr" formatted="false"><![CDATA[
-        <p>Пара. Алгоритм называется (00:00).</p>
+        <p>Пара Одинаковых стоит по-диагонали (Слэш), две оставшиеся противоположные. Алгоритм
+        называется Правша (15:36).</p>
 
-        <p style="text-align:center"><img src="cll_31.xml"></p>
+        <p style="text-align:center"><img src="cll_33.xml"></p>
 
-        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+        <p><a href="rg2://ytplay?time=15:49&link=n06bmpfoTJk">Алгоритм:</a> <b>R U2 R\' U\' R U R\' U2\' R\' F R F\'</b></p>
 
-        <p>Как смоделировать: Выполнить . <b></b></p>
+        <p>Как смоделировать: Выполнить Левшу. <b>F U\' R\' F2 R U\' F2 R U2 R\'</b></p>
     ]]></string>
     <string name="cll_st33_url">n06bmpfoTJk</string>
-    <string name="cll_st33_comment"></string>
+    <string name="cll_st33_comment">R U2 R\' U\' R U R\' U2\' R\' F R F\'</string>
 
-    <string name="cll_st34_title">Вертолет (T-OLL) #1</string>
+    <string name="cll_st34_title">Вертолет (Pi-OLL) Левша</string>
     <string name="cll_st34_descr" formatted="false"><![CDATA[
-        <p>Пара. Алгоритм называется (00:00).</p>
+        <p>Похоже на предыдущий, только пара Одинаковых располагается как БэкСлэш, а две оставшиеся
+        наклейки также противоположные. Соответственно, алгоритм называется Левша (15:56).</p>
 
-        <p style="text-align:center"><img src="cll_31.xml"></p>
+        <p style="text-align:center"><img src="cll_34.xml"></p>
 
-        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+        <p><a href="rg2://ytplay?time=16:03&link=n06bmpfoTJk">Алгоритм:</a> <b>F U\' R\' F2 R U\' F2 R U2 R\'</b></p>
 
-        <p>Как смоделировать: Выполнить . <b></b></p>
+        <p>Как смоделировать: Выполнить Правшу. <b>R U2 R\' U\' R U R\' U2\' R\' F R F\'</b></p>
     ]]></string>
     <string name="cll_st34_url">n06bmpfoTJk</string>
-    <string name="cll_st34_comment"></string>
+    <string name="cll_st34_comment">F U\' R\' F2 R U\' F2 R U2 R\'</string>
 
-    <string name="cll_st35_title">Вертолет (T-OLL) #1</string>
+    <string name="cll_st35_title">Вертолет (Pi-OLL) Мэн</string>
     <string name="cll_st35_descr" formatted="false"><![CDATA[
-        <p>Пара. Алгоритм называется (00:00).</p>
+        <p>Две вертикальные пары. Алгоритм называется Мэн (16:25).</p>
 
-        <p style="text-align:center"><img src="cll_31.xml"></p>
+        <p style="text-align:center"><img src="cll_35.xml"></p>
 
-        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+        <p><a href="rg2://ytplay?time=16:34&link=n06bmpfoTJk">Алгоритм:</a> <b>R U\' R\' F R\' F R U R\' F R</b></p>
 
-        <p>Как смоделировать: Выполнить . <b></b></p>
+        <p>Как смоделировать: Выполнить Майю. <b>R U\' R\' F U2\' R2\' F R U\' R</b></p>
     ]]></string>
     <string name="cll_st35_url">n06bmpfoTJk</string>
-    <string name="cll_st35_comment"></string>
+    <string name="cll_st35_comment">R U\' R\' F R\' F R U R\' F R</string>
 
-    <string name="cll_st36_title">Вертолет (T-OLL) #1</string>
+    <string name="cll_st36_title">Вертолет (Pi-OLL) СуперМэн</string>
     <string name="cll_st36_descr" formatted="false"><![CDATA[
-        <p>Пара. Алгоритм называется (00:00).</p>
+        <p>Две пары с Одинаковыми наклейками стоящими крест накрест. Алгоритм называется СуперМэн(17:09).</p>
 
-        <p style="text-align:center"><img src="cll_31.xml"></p>
+        <p style="text-align:center"><img src="cll_36.xml"></p>
 
-        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+        <p><a href="rg2://ytplay?time=17:29&link=n06bmpfoTJk">Алгоритм:</a> <b>(U\' R U\' R U\' R\' U R\') y (R U2 R\')</b></p>
 
-        <p>Как смоделировать: Выполнить . <b></b></p>
+        <p>Как смоделировать: Выполнить Инь-Ян. <b>(R U R\' U2\' R U2\' R\' U) y\' (R\' U\' R)</b></p>
     ]]></string>
     <string name="cll_st36_url">n06bmpfoTJk</string>
-    <string name="cll_st36_comment"></string>
+    <string name="cll_st36_comment">(U\' R U\' R U\' R\' U R\') y (R U2 R\')</string>
 
     <!-- ================= НТВ+ ======================= -->
-    <string name="cll_st37_title">НТВ+ (T-OLL) #1</string>
+
+    <string name="cll_st37_title">НТВ+ (H-OLL) Майа</string>
     <string name="cll_st37_descr" formatted="false"><![CDATA[
-        <p>Пара. Алгоритм называется (00:00).</p>
+        <p>Как и для вертолетов, определять ситуацию будем по четырем наклейкам на верхней грани.
+        Передня пара Одинаковые наклейки, задняя противоположные. Алгоритм называется Майя(16:47).</p>
 
-        <p style="text-align:center"><img src="cll_31.xml"></p>
+        <p style="text-align:center"><img src="cll_37.xml"></p>
 
-        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+        <p><a href="rg2://ytplay?time=16:58&link=n06bmpfoTJk">Алгоритм:</a> <b>R U\' R\' F U2\' R2\' F R U\' R</b></p>
 
-        <p>Как смоделировать: Выполнить . <b></b></p>
+        <p>Как смоделировать: Выполнить Мэна. <b>R U\' R\' F R\' F R U R\' F R</b></p>
     ]]></string>
     <string name="cll_st37_url">n06bmpfoTJk</string>
-    <string name="cll_st37_comment"></string>
+    <string name="cll_st37_comment">R U\' R\' F U2\' R2\' F R U\' R</string>
 
-    <string name="cll_st38_title">НТВ+ (T-OLL) #1</string>
+    <string name="cll_st38_title">НТВ+ (H-OLL) Инь-Ян</string>
     <string name="cll_st38_descr" formatted="false"><![CDATA[
-        <p>Пара. Алгоритм называется (00:00).</p>
+        <p>Пара Одинаковых справа, а слева пара Противоположных наклеек. Алгоритм называется Инь-Ян (17:40).</p>
 
-        <p style="text-align:center"><img src="cll_31.xml"></p>
+        <p style="text-align:center"><img src="cll_38.xml"></p>
 
-        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+        <p><a href="rg2://ytplay?time=17:42&link=n06bmpfoTJk">Алгоритм:</a> <b>(R U R\' U2\' R U2\' R\' U) y\' (R\' U\' R)</b></p>
 
-        <p>Как смоделировать: Выполнить . <b></b></p>
+        <p>Как смоделировать: Выполнить СуперМэна. <b>(U\' R U\' R U\' R\' U R\') y (R U2 R\')</b></p>
     ]]></string>
     <string name="cll_st38_url">n06bmpfoTJk</string>
-    <string name="cll_st38_comment"></string>
+    <string name="cll_st38_comment">(R U R\' U2\' R U2\' R\' U) y\' (R\' U\' R)</string>
 
-    <string name="cll_st39_title">НТВ+ (T-OLL) #1</string>
+    <string name="cll_st39_title">НТВ+ (H-OLL) БэтМэн</string>
     <string name="cll_st39_descr" formatted="false"><![CDATA[
-        <p>Пара. Алгоритм называется (00:00).</p>
+        <p>Две вертикальных пары. Алгоритм называется БэтМэн (18:01).</p>
 
-        <p style="text-align:center"><img src="cll_31.xml"></p>
+        <p style="text-align:center"><img src="cll_39.xml"></p>
 
-        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+        <p><a href="rg2://ytplay?time=18:08&link=n06bmpfoTJk">Алгоритм:</a> <b>R2\' U2\' R U2\' R2</b></p>
 
-        <p>Как смоделировать: Выполнить . <b></b></p>
+        <p>Как смоделировать: Выполнить алгоритм еще раз. <b>R2\' U2\' R U2\' R2</b></p>
     ]]></string>
     <string name="cll_st39_url">n06bmpfoTJk</string>
-    <string name="cll_st39_comment"></string>
+    <string name="cll_st39_comment">R2\' U2\' R U2\' R2</string>
 
-    <string name="cll_st40_title">НТВ+ (T-OLL) #1</string>
+    <string name="cll_st40_title">НТВ+ (H-OLL) Ортега</string>
     <string name="cll_st40_descr" formatted="false"><![CDATA[
-        <p>Пара. Алгоритм называется (00:00).</p>
+        <p>Две горизонтальных пары. Алгоритм называется Ортега (18:18). Либо выполнить тройной Фруруф.</p>
 
-        <p style="text-align:center"><img src="cll_31.xml"></p>
+        <p style="text-align:center"><img src="cll_40.xml"></p>
 
-        <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
+        <p><a href="rg2://ytplay?time=18:23&link=n06bmpfoTJk">Алгоритм:</a> <b></b></p>
 
-        <p>Как смоделировать: Выполнить . <b></b></p>
+        <p>Как смоделировать: Выполнить алгоритм еще раз. <b>F2 R\' F2 R2 U2\' R\' F2</b></p>
     ]]></string>
     <string name="cll_st40_url">n06bmpfoTJk</string>
     <string name="cll_st40_comment"></string>
