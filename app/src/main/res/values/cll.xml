@@ -244,7 +244,8 @@
     
     <string name="cll_st0_title">Введение</string>
     <string name="cll_st0_descr" formatted="false"><![CDATA[
-        <p>CLL (Corners of Last Layer) (0:15) - метод сборки кубика 2х2, который объединяет этапы OLL и PLL для
+        <p>CLL <a href="rg2://ytplay?time=0:15&link=n06bmpfoTJk">(Corners of Last Layer)</a>
+        - метод сборки кубика 2х2, который объединяет этапы OLL и PLL для
         последнего слоя, т.е. позволяет собрать верхний слой из любой ситуации в один алгоритм.
         Можно конечно применить алгоритмы из COLL для трешки, но поскольку в двушке нет ребер, то
         зачастую в CLL есть более короткие и удобные варианты. Этот метод является частью метода FULL EG.</p>
@@ -268,7 +269,8 @@
     <string name="cll_st1_descr" formatted="false"><![CDATA[
         <p>Начнем с Рыбок и Акул. Для данных алгоритмов из положений приведенных на картинках достаточно
         посмотреть на налейки сбоку от наклеек цвета верхней стороны (на картинках указаны \"желтым\") и на
-        наклейку стоящую между \"желтыми\"(1:31). Первым делом сравниваем между собой две наклейки стоящие <b>рядом
+        наклейку стоящую <a href="rg2://ytplay?time=1:31&link=n06bmpfoTJk">между \"желтыми\".</a>
+        Первым делом сравниваем между собой две наклейки стоящие <b>рядом
         с желтым</b>, а потом наклейку стоящую <b>между желтыми</b> и наклейку стоящую <b>рядом с желтой</b> на передней
         грани кубика. Поскольку Акулы и Рыбки по сути являются зеркальными случаями друг друга, то
         учить удобнее Акулы с Рыбками соответствующими парами.</p>
@@ -286,7 +288,8 @@
 
     <string name="cll_st2_title">Акула (AntiSune) ОП!</string>
     <string name="cll_st2_descr" formatted="false"><![CDATA[
-        <p>В данном случае у нас первая пара Одинаковая, а вторая Противоположная, значит это Акула ОП!. (1:47)</p>
+        <p>В данном случае у нас первая пара Одинаковая, а вторая Противоположная, значит это
+        <a href="rg2://ytplay?time=1:47&link=n06bmpfoTJk">Акула ОП!.</a></p>
         <p style="text-align:center"><img src="cll_2.xml"></p>
 
         <p><a href="rg2://ytplay?time=1:56&link=n06bmpfoTJk">Алгоритм:</a> <b>U R U2\' R\' U\' R U\' R\'</b></p>
@@ -298,7 +301,8 @@
 
     <string name="cll_st3_title">Рыбка (Sune) ПОп</string>
     <string name="cll_st3_descr" formatted="false"><![CDATA[
-        <p>Первая пара Противоположная, а вторая Одинаковая, значит это Рыбка ПОп.(3:07) Довольно непростой для
+        <p>Первая пара Противоположная, а вторая Одинаковая, значит это
+        <a href="rg2://ytplay?time=3:07&link=n06bmpfoTJk">Рыбка ПОп.</a> Довольно непростой для
         исполнения алгоритм.</p>
         <p style="text-align:center"><img src="cll_3.xml"></p>
 
@@ -311,7 +315,8 @@
 
     <string name="cll_st4_title">Акула (AntiSune) ПОп</string>
     <string name="cll_st4_descr" formatted="false"><![CDATA[
-        <p>Первая пара Противоположная, а вторая Одинаковая, значит это Акула ПОп.(2:43)</p>
+        <p>Первая пара Противоположная, а вторая Одинаковая, значит это
+        <a href="rg2://ytplay?time=2:43&link=n06bmpfoTJk">Акула ПОп.</a></p>
         <p style="text-align:center"><img src="cll_4.xml"></p>
 
         <p><a href="rg2://ytplay?time=2:49&link=n06bmpfoTJk">Алгоритм:</a> <b>R U2 R\' U\' R U\' F R F\' U\' R\'</b></p>
@@ -323,7 +328,8 @@
 
     <string name="cll_st5_title">Рыбка (Sune) ОСь</string>
     <string name="cll_st5_descr" formatted="false"><![CDATA[
-        <p>Первая пара Одинаковая, а вторая Смежная, значит это Акула ПОп.(4:03)</p>
+        <p>Первая пара Одинаковая, а вторая Смежная, значит это
+        <a href="rg2://ytplay?time=4:03&link=n06bmpfoTJk">Акула ПОп.</a></p>
         <p style="text-align:center"><img src="cll_5.xml"></p>
 
         <p><a href="rg2://ytplay?time=4:06&link=n06bmpfoTJk">Алгоритм:</a> <b>U2\' R U\' L\' U R\' U\' L</b></p>
@@ -335,7 +341,8 @@
 
     <string name="cll_st6_title">Акула (AntiSune) ОСь</string>
     <string name="cll_st6_descr" formatted="false"><![CDATA[
-        <p>Первая пара Одинаковая, а вторая Смежная, значит это Акула ОСь.(3:47)</p>
+        <p>Первая пара Одинаковая, а вторая Смежная, значит это
+        <a href="rg2://ytplay?time=3:47&link=n06bmpfoTJk">Акула ОСь.</a></p>
         <p style="text-align:center"><img src="cll_6.xml"></p>
 
         <p><a href="rg2://ytplay?time=3:54&link=n06bmpfoTJk">Алгоритм:</a> <b>U2 L\' U R U\' L U R\'</b></p>
@@ -347,7 +354,8 @@
 
     <string name="cll_st7_title">Рыбка (Sune) СОс</string>
     <string name="cll_st7_descr" formatted="false"><![CDATA[
-        <p>Первая пара Смежная, а вторая Одинаковая, значит это Рыбка СОс или СОль.(5:17) По
+        <p>Первая пара Смежная, а вторая Одинаковая, значит это
+        <a href="rg2://ytplay?time=5:17&link=n06bmpfoTJk">Рыбка СОс</a> или СОль. По
         сути противоположна Акуле ПСих.</p>
         <p style="text-align:center"><img src="cll_7.xml"></p>
 
@@ -360,8 +368,8 @@
 
     <string name="cll_st8_title">Акула (AntiSune) СОс</string>
     <string name="cll_st8_descr" formatted="false"><![CDATA[
-        <p>Первая пара Смежная, а вторая Одинаковая, значит это Акула СОс.(4:36) В отличие от других
-        пар Рыбка/Акула, при выполнении данного алгоритма на собранном кубике получится Рыбка ПСих(4:15),
+        <p>Первая пара Смежная, а вторая Одинаковая, значит это <a href="rg2://ytplay?time=4:36&link=n06bmpfoTJk">Акула СОс.</a>
+        В отличие от других пар Рыбка/Акула, при выполнении данного алгоритма на собранном кубике получится Рыбка ПСих(4:15),
         а не СОс.</p>
         <p style="text-align:center"><img src="cll_8.xml"></p>
 
@@ -374,7 +382,8 @@
 
     <string name="cll_st9_title">Рыбка (Sune) ПСих</string>
     <string name="cll_st9_descr" formatted="false"><![CDATA[
-        <p>Первая пара Противоположная, а вторая Смежная, значит это Рыбка ПСих.(4:51)</p>
+        <p>Первая пара Противоположная, а вторая Смежная, значит это
+        <a href="rg2://ytplay?time=4:51&link=n06bmpfoTJk">Рыбка ПСих.</a></p>
         <p style="text-align:center"><img src="cll_9.xml"></p>
 
         <p><a href="rg2://ytplay?time=4:54&link=n06bmpfoTJk">Алгоритм:</a> <b>F R U R\' U2\' F\' U\' R\' F R</b></p>
@@ -386,7 +395,8 @@
 
     <string name="cll_st10_title">Акула (AntiSune) ПСих</string>
     <string name="cll_st10_descr" formatted="false"><![CDATA[
-        <p>Первая пара Противоположная, а вторая Смежная, значит это Акула ПСих.(5:04)</p>
+        <p>Первая пара Противоположная, а вторая Смежная, значит это
+        <a href="rg2://ytplay?time=5:04&link=n06bmpfoTJk">Акула ПСих.</a></p>
         <p style="text-align:center"><img src="cll_10.xml"></p>
 
         <p><a href="rg2://ytplay?time=5:11&link=n06bmpfoTJk">Алгоритм:</a> <b>U2\' F\' R U R\' U2\' R\' F2 R</b></p>
@@ -398,7 +408,8 @@
 
     <string name="cll_st11_title">Рыбка (Sune) СПам</string>
     <string name="cll_st11_descr" formatted="false"><![CDATA[
-        <p>Первая пара Смежная, а вторая Противоположная, значит это Рыбка СПам.(5:46)</p>
+        <p>Первая пара Смежная, а вторая Противоположная, значит это
+        <a href="rg2://ytplay?time=5:46&link=n06bmpfoTJk">Рыбка СПам.</a></p>
         <p style="text-align:center"><img src="cll_11.xml"></p>
 
         <p><a href="rg2://ytplay?time=5:47&link=n06bmpfoTJk">Алгоритм:</a> <b>(R U\' R U\') (R\' U R\' U\') F R F\'</b><br/>
@@ -411,7 +422,8 @@
 
     <string name="cll_st12_title">Акула (AntiSune) СПам</string>
     <string name="cll_st12_descr" formatted="false"><![CDATA[
-        <p>Первая пара Смежная, а вторая Противоположная, значит это Акула СПам.(5:28)</p>
+        <p>Первая пара Смежная, а вторая Противоположная, значит это
+        <a href="rg2://ytplay?time=5:28&link=n06bmpfoTJk">Акула СПам.</a></p>
         <p style="text-align:center"><img src="cll_12.xml"></p>
 
         <p><a href="rg2://ytplay?time=5:38&link=n06bmpfoTJk">Алгоритм:</a> <b>F R F\' U R U\' R U R\' U R\'</b></p>
@@ -426,7 +438,8 @@
     <string name="cll_st13_title">Носик (L-OLL) СПлин</string>
     <string name="cll_st13_descr" formatted="false"><![CDATA[
         Для Носиков (L-OLL) (6:12) первым делом смотрим на две верхние наклейки, а потом на левую
-        верхнюю и левую переднюю. Т.е. вот такой Носик (Смежные, Противоположные), будет Носик СПлин. (6:38)
+        верхнюю и левую переднюю. Т.е. вот такой Носик (Смежные, Противоположные), будет
+        <a href="rg2://ytplay?time=6:38&link=n06bmpfoTJk">Носик СПлин.</a>
         <p style="text-align:center"><img src="cll_13.xml"></p>
 
         <p><a href="rg2://ytplay?time=6:46&link=n06bmpfoTJk">Алгоритм:</a> <b>R2\' U\' R U2 R\' U2\' R U\' R2</b></p>
@@ -439,7 +452,7 @@
 
     <string name="cll_st14_title">Носик (L-OLL) СОль</string>
     <string name="cll_st14_descr" formatted="false"><![CDATA[
-        Первая пара Смежная, а вторая Одинаковая, значит это Носик СОль. (7:11)
+        Первая пара Смежная, а вторая Одинаковая, значит это <a href="rg2://ytplay?time=7:11&link=n06bmpfoTJk">Носик СОль.</a>
         <p style="text-align:center"><img src="cll_14.xml"></p>
 
         <p><a href="rg2://ytplay?time=7:23&link=n06bmpfoTJk">Алгоритм:</a> <b>U\' R U2\' R2\' F R F\' R U2\' R\'</b></p>
@@ -451,7 +464,8 @@
 
     <string name="cll_st15_title">Носик (L-OLL) ОПал</string>
     <string name="cll_st15_descr" formatted="false"><![CDATA[
-        Первая пара Одинаковая, а вторая Противоположная, значит это Носик ОПал. (8:01)
+        Первая пара Одинаковая, а вторая Противоположная, значит это
+        <a href="rg2://ytplay?time=8:01&link=n06bmpfoTJk">Носик ОПал.</a>
         <p style="text-align:center"><img src="cll_15.xml"></p>
 
         <p><a href="rg2://ytplay?time=8:11&link=n06bmpfoTJk">Алгоритм:</a> <b>R\' U2 R U\' R\' U2 R U\' F R F\'</b></p>
@@ -463,7 +477,7 @@
 
     <string name="cll_st16_title">Носик (L-OLL) ОСел</string>
     <string name="cll_st16_descr" formatted="false"><![CDATA[
-        Первая пара Одинаковая, а вторая Смежная, значит это Носик ОСел. (8:58)
+        Первая пара Одинаковая, а вторая Смежная, значит это <a href="rg2://ytplay?time=8:58&link=n06bmpfoTJk">Носик ОСел.</a>
         <p style="text-align:center"><img src="cll_16.xml"></p>
 
         <p><a href="rg2://ytplay?time=9:08&link=n06bmpfoTJk">Алгоритм:</a> <b>R U2\' R2\' F2 R U R\' F2 R F\'</b></p>
@@ -475,7 +489,7 @@
 
     <string name="cll_st17_title">Носик (L-OLL) ПикСель</string>
     <string name="cll_st17_descr" formatted="false"><![CDATA[
-        Первая пара Противоположная, а вторая Смежная, значит это Носик ПикСель. (9:57)
+        Первая пара Противоположная, а вторая Смежная, значит это <a href="rg2://ytplay?time=9:57&link=n06bmpfoTJk">Носик ПикСель.</a>
         <p style="text-align:center"><img src="cll_17.xml"></p>
 
         <p><a href="rg2://ytplay?time=10:11&link=n06bmpfoTJk">Алгоритм:</a> <b>U R\' U2\' R U2\' F R F\'</b></p>
@@ -487,7 +501,7 @@
 
     <string name="cll_st18_title">Носик (L-OLL) ПОинт</string>
     <string name="cll_st18_descr" formatted="false"><![CDATA[
-        Первая пара Противоположная, а вторая Одинаковая, значит это Носик ПОинт. (11:00)
+        Первая пара Противоположная, а вторая Одинаковая, значит это <a href="rg2://ytplay?time=11:00&link=n06bmpfoTJk">Носик ПОинт.</a>
         <p style="text-align:center"><img src="cll_18.xml"></p>
 
         <p><a href="rg2://ytplay?time=11:09&link=n06bmpfoTJk">Алгоритм:</a> <b>F\' (R U R\' U\') R\' F R</b></p>
@@ -505,21 +519,22 @@
         <p>В Глазках первым делом смотрим на пару левой/верхней/дальней и правой/ближней наклеек. А затем
         на пару левой/верхней/ближней и правой/дальней наклеек.</p>
 
-        <p>Если первая пара Одинаковая, а вторая Противоположная, то это Глазки Бэкслэш (по первой паре). (8:26)</p>
+        <p>Если первая пара Одинаковая, а вторая Противоположная, то это
+        <a href="rg2://ytplay?time=8:26&link=n06bmpfoTJk">Глазки Бэкслэш</a> (по первой паре).</p>
 
         <p style="text-align:center"><img src="cll_19.xml"></p>
 
         <p><a href="rg2://ytplay?time=8:11&link=n06bmpfoTJk">Алгоритм:</a> <b>U\' R2 U R\' U\' R2 U\' F\' U2 F</b></p>
 
         <p>Как смоделировать: выполнить Носик ОПал. <b>R\' U2 R U\' R\' U2 R U\' F R F\'</b></p>
-
     ]]></string>
     <string name="cll_st19_url">n06bmpfoTJk</string>
     <string name="cll_st19_comment">U\' R2 U R\' U\' R2 U\' F\' U2 F</string>
 
     <string name="cll_st20_title">Глазки (U-OLL) Cлэш</string>
     <string name="cll_st20_descr" formatted="false"><![CDATA[
-        <p>Если первая пара Противоположная, а вторая Одинаковая, то это Глазки Слэш (по второй паре). (9:19)</p>
+        <p>Если первая пара Противоположная, а вторая Одинаковая, то это
+        <a href="rg2://ytplay?time=9:19&link=n06bmpfoTJk">Глазки Слэш</a> (по второй паре).</p>
 
         <p style="text-align:center"><img src="cll_20.xml"></p>
 
@@ -533,7 +548,7 @@
     <string name="cll_st21_title">Глазки (U-OLL) ЮПи</string>
     <string name="cll_st21_descr" formatted="false"><![CDATA[
         <p>Две смежных пары, если смотреть как на все Глазки, или пара на правой грани, а слева разные наклейки.
-        Получается Ю-ОЛЛ с буквой П, поэтому ЮПи(11:47).</p>
+        Получается Ю-ОЛЛ с буквой П, поэтому <a href="rg2://ytplay?time=11:47&link=n06bmpfoTJk">Глазки ЮПи.</a></p>
 
         <p style="text-align:center"><img src="cll_21.xml"></p>
 
@@ -546,7 +561,7 @@
 
     <string name="cll_st22_title">Глазки (U-OLL) ЮнИкс</string>
     <string name="cll_st22_descr" formatted="false"><![CDATA[
-        <p>Две Одинаковые пары, Ю-ОЛЛ иксом, поэтому ЮнИкс (12:37).</p>
+        <p>Две Одинаковые пары, Ю-ОЛЛ иксом, поэтому <a href="rg2://ytplay?time=12:37&link=n06bmpfoTJk">ЮнИкс.</a></p>
 
         <p style="text-align:center"><img src="cll_22.xml"></p>
 
@@ -560,7 +575,8 @@
 
     <string name="cll_st23_title">Глазки (U-OLL) Хэтчбек</string>
     <string name="cll_st23_descr" formatted="false"><![CDATA[
-        <p>Две противоположные пары. Или на правой грани пара и сверху пара одинаковых, значит это Хэтчбек (13:22).</p>
+        <p>Две противоположные пары. Или на правой грани пара и сверху пара одинаковых, значит это
+        <a href="rg2://ytplay?time=13:22&link=n06bmpfoTJk">Хэтчбек.</a></p>
 
         <p style="text-align:center"><img src="cll_23.xml"></p>
 
@@ -573,7 +589,8 @@
 
     <string name="cll_st24_title">Глазки (U-OLL) Юла (Фруруф)</string>
     <string name="cll_st24_descr" formatted="false"><![CDATA[
-        <p> Сверху пара одинаковых, а справа пара Противоположных, значит это самый обычный Фруруф (Юла) (14:12).</p>
+        <p> Сверху пара одинаковых, а справа пара Противоположных, значит это самый обычный
+        <a href="rg2://ytplay?time=14:12&link=n06bmpfoTJk">Фруруф (Юла).</a></p>
 
         <p style="text-align:center"><img src="cll_24.xml"></p>
 
@@ -588,10 +605,11 @@
 
     <string name="cll_st25_title">Ушки (T-OLL) Печенька</string>
     <string name="cll_st25_descr" formatted="false"><![CDATA[
-        <p>В Ушках первым делом смотрим на левую пару верхней и передней наклеек. А затем
-        на правую пару верхней и передней наклеек. (10:22)</p>
+        <p>В Ушках <a href="rg2://ytplay?time=10:22&link=n06bmpfoTJk">первым делом смотрим</a> на
+        левую пару верхней и передней наклеек. А затем на правую пару верхней и передней наклеек.</p>
 
-        <p>Если первая пара Одинаковая, а вторая Противоположная, то это Ушки Печенька. (10:31)
+        <p>Если первая пара Одинаковая, а вторая Противоположная, то это
+        <a href="rg2://ytplay?time=10:31&link=n06bmpfoTJk">Ушки Печенька.</a>
         Почему печенька - посмотрите в видео.</p>
 
         <p style="text-align:center"><img src="cll_25.xml"></p>
@@ -605,7 +623,8 @@
 
     <string name="cll_st26_title">Ушки (T-OLL) Брауни</string>
     <string name="cll_st26_descr" formatted="false"><![CDATA[
-        <p>Если первая пара Противоположная, а вторая Одинаковая, то это Ушки Брауни. (11:23)</p>
+        <p>Если первая пара Противоположная, а вторая Одинаковая, то это
+        <a href="rg2://ytplay?time=11:23&link=n06bmpfoTJk">Ушки Брауни.</a></p>
 
         <p style="text-align:center"><img src="cll_26.xml"></p>
 
@@ -618,7 +637,8 @@
 
     <string name="cll_st27_title">Ушки (T-OLL) Кола</string>
     <string name="cll_st27_descr" formatted="false"><![CDATA[
-        <p>Если первая пара Противоположная, и вторая Противоположная, то это Ушки Кола. (12:14)
+        <p>Если первая пара Противоположная, и вторая Противоположная, то это
+        <a href="rg2://ytplay?time=12:14&link=n06bmpfoTJk">Ушки Кола.</a>
         Поскольку парный с Глазками ЮПи.</p>
 
         <p style="text-align:center"><img src="cll_27.xml"></p>
@@ -632,7 +652,8 @@
 
     <string name="cll_st28_title">Ушки (T-OLL) Ракета</string>
     <string name="cll_st28_descr" formatted="false"><![CDATA[
-        <p>Если пара Одинаковых сзади, и Противоположные наклейки на передней грани, то это Ушки Ракета. (13:00)</p>
+        <p>Если пара Одинаковых сзади, и Противоположные наклейки на передней грани, то это
+        <a href="rg2://ytplay?time=13:00&link=n06bmpfoTJk">Ушки Ракета.</a></p>
 
         <p style="text-align:center"><img src="cll_28.xml"></p>
 
@@ -645,7 +666,8 @@
 
     <string name="cll_st29_title">Ушки (T-OLL) Бэг</string>
     <string name="cll_st29_descr" formatted="false"><![CDATA[
-        <p>Похоже на Ракету, но пара Одинаковых наклеек на передней грани, значит это Бэг (Сумка)(13:46).</p>
+        <p>Похоже на Ракету, но пара Одинаковых наклеек на передней грани, значит это
+        <a href="rg2://ytplay?time=13:46&link=n06bmpfoTJk">Бэг (Сумка).</a></p>
 
         <p style="text-align:center"><img src="cll_29.xml"></p>
 
@@ -658,7 +680,8 @@
 
     <string name="cll_st30_title">Ушки (T-OLL) Труба</string>
     <string name="cll_st30_descr" formatted="false"><![CDATA[
-        <p>Пара Одинаковых слева и пара справа. Алгоритм называется Труба (14:28).</p>
+        <p>Пара Одинаковых слева и пара справа. Алгоритм называется
+        <a href="rg2://ytplay?time=14:28&link=n06bmpfoTJk">Труба.</a></p>
 
         <p style="text-align:center"><img src="cll_30.xml"></p>
 
@@ -673,9 +696,10 @@
 
     <string name="cll_st31_title">Вертолет (Pi-OLL) Якудза</string>
     <string name="cll_st31_descr" formatted="false"><![CDATA[
-        <p>Вертолеты определяются из стандартного положения по цветам верхних наклеек.(14:50)
-        В данном случае правая пара Одинаковая, а левая Противоположная - алгоритм называется Якудза
-        или двойной Фруруф.(14:58)</p>
+        <p>Вертолеты определяются из стандартного положения по цветам
+        <a href="rg2://ytplay?time=14:50&link=n06bmpfoTJk">верхних наклеек.</a>
+        В данном случае правая пара Одинаковая, а левая Противоположная - алгоритм называется
+        <a href="rg2://ytplay?time=14:58&link=n06bmpfoTJk">Якудза или двойной Фруруф.</a></p>
 
         <p style="text-align:center"><img src="cll_31.xml"></p>
 
@@ -689,7 +713,7 @@
     <string name="cll_st32_title">Вертолет (Pi-OLL) Коза-Ностра</string>
     <string name="cll_st32_descr" formatted="false"><![CDATA[
         <p>Противополжный предыдущему: правая пара Противоположная, а левая Одинаковая. Алгоритм
-        называется Коза-Ностра (15:18).</p>
+        называется <a href="rg2://ytplay?time=15:18&link=n06bmpfoTJk">Коза-Ностра.</a></p>
 
         <p style="text-align:center"><img src="cll_32.xml"></p>
 
@@ -703,7 +727,7 @@
     <string name="cll_st33_title">Вертолет (Pi-OLL) Правша</string>
     <string name="cll_st33_descr" formatted="false"><![CDATA[
         <p>Пара Одинаковых стоит по-диагонали (Слэш), две оставшиеся противоположные. Алгоритм
-        называется Правша (15:36).</p>
+        называется <a href="rg2://ytplay?time=15:36&link=n06bmpfoTJk">Правша.</a></p>
 
         <p style="text-align:center"><img src="cll_33.xml"></p>
 
@@ -717,7 +741,8 @@
     <string name="cll_st34_title">Вертолет (Pi-OLL) Левша</string>
     <string name="cll_st34_descr" formatted="false"><![CDATA[
         <p>Похоже на предыдущий, только пара Одинаковых располагается как БэкСлэш, а две оставшиеся
-        наклейки также противоположные. Соответственно, алгоритм называется Левша (15:56).</p>
+        наклейки также противоположные. Соответственно, алгоритм называется
+        <a href="rg2://ytplay?time=15:56&link=n06bmpfoTJk">Левша.</a></p>
 
         <p style="text-align:center"><img src="cll_34.xml"></p>
 
@@ -730,7 +755,7 @@
 
     <string name="cll_st35_title">Вертолет (Pi-OLL) Мэн</string>
     <string name="cll_st35_descr" formatted="false"><![CDATA[
-        <p>Две вертикальные пары. Алгоритм называется Мэн (16:25).</p>
+        <p>Две вертикальные пары. Алгоритм называется <a href="rg2://ytplay?time=16:25&link=n06bmpfoTJk">Мэн.</a></p>
 
         <p style="text-align:center"><img src="cll_35.xml"></p>
 
@@ -743,7 +768,8 @@
 
     <string name="cll_st36_title">Вертолет (Pi-OLL) СуперМэн</string>
     <string name="cll_st36_descr" formatted="false"><![CDATA[
-        <p>Две пары с Одинаковыми наклейками стоящими крест накрест. Алгоритм называется СуперМэн(17:09).</p>
+        <p>Две пары с Одинаковыми наклейками стоящими крест накрест. Алгоритм называется
+        <a href="rg2://ytplay?time=17:09&link=n06bmpfoTJk">СуперМэн.</a></p>
 
         <p style="text-align:center"><img src="cll_36.xml"></p>
 
@@ -759,7 +785,8 @@
     <string name="cll_st37_title">НТВ+ (H-OLL) Майа</string>
     <string name="cll_st37_descr" formatted="false"><![CDATA[
         <p>Как и для вертолетов, определять ситуацию будем по четырем наклейкам на верхней грани.
-        Передняя пара Одинаковые наклейки, задняя противоположные. Алгоритм называется Майя(16:47).</p>
+        Передняя пара Одинаковые наклейки, задняя противоположные. Алгоритм называется
+        <a href="rg2://ytplay?time=16:47&link=n06bmpfoTJk">Майя.</a></p>
 
         <p style="text-align:center"><img src="cll_37.xml"></p>
 
@@ -772,7 +799,8 @@
 
     <string name="cll_st38_title">НТВ+ (H-OLL) Инь-Ян</string>
     <string name="cll_st38_descr" formatted="false"><![CDATA[
-        <p>Пара Одинаковых справа, а слева пара Противоположных наклеек. Алгоритм называется Инь-Ян (17:40).</p>
+        <p>Пара Одинаковых справа, а слева пара Противоположных наклеек. Алгоритм называется
+        <a href="rg2://ytplay?time=17:40&link=n06bmpfoTJk">Инь-Ян.</a></p>
 
         <p style="text-align:center"><img src="cll_38.xml"></p>
 
@@ -785,7 +813,7 @@
 
     <string name="cll_st39_title">НТВ+ (H-OLL) БэтМэн</string>
     <string name="cll_st39_descr" formatted="false"><![CDATA[
-        <p>Две вертикальных пары. Алгоритм называется БэтМэн (18:01).</p>
+        <p>Две вертикальных пары. Алгоритм называется <a href="rg2://ytplay?time=18:01&link=n06bmpfoTJk">БэтМэн.</a></p>
 
         <p style="text-align:center"><img src="cll_39.xml"></p>
 
@@ -798,7 +826,8 @@
 
     <string name="cll_st40_title">НТВ+ (H-OLL) Ортега</string>
     <string name="cll_st40_descr" formatted="false"><![CDATA[
-        <p>Две горизонтальных пары. Алгоритм называется Ортега (18:18). Либо выполнить тройной Фруруф.</p>
+        <p>Две горизонтальных пары. Алгоритм называется
+        <a href="rg2://ytplay?time=18:18&link=n06bmpfoTJk">Ортега.</a> Либо выполнить тройной Фруруф.</p>
 
         <p style="text-align:center"><img src="cll_40.xml"></p>
 
