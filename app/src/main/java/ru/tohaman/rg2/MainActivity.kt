@@ -310,14 +310,49 @@ class MainActivity : MyDefaultActivity(),
                     "BEGIN2X2" -> {
                         alert(getString(R.string.help_begin2x2)) { okButton { } }.show()
                     }
+                    "MAIN3X3" -> {
+                        alert(getString(R.string.help_main3x3)) { okButton { } }.show()
+                    }
+                    "MAIN2X2" -> {
+                        alert(getString(R.string.help_main2x2)) { okButton { } }.show()
+                    }
+                    "OTHER3X3" -> {
+                        alert(getString(R.string.help_other3x3)) { okButton { } }.show()
+                    }
+                    "MIRROR" -> {
+                        alert(getString(R.string.help_mirror)) { okButton { } }.show()
+                    }
+                    "AXIS" -> {
+                        alert(getString(R.string.help_axis)) { okButton { } }.show()
+                    }
+                    "PYRAMORPHIX" -> {
+                        alert(getString(R.string.help_pyramorphix)) { okButton { } }.show()
+                    }
+                    "SUDOKU" -> {
+                        alert(getString(R.string.help_sudoku)) { okButton { } }.show()
+                    }
+                    "WINDMILL" -> {
+                        alert(getString(R.string.help_windmill)) { okButton { } }.show()
+                    }
+
                     "ADV2X2" -> {
                         alert(getString(R.string.help_adv2x2)) { okButton { } }.show()
                     }
+                    "CLL" -> {
+                        alert(getString(R.string.help_cll)) { okButton { } }.show()
+                    }
+                    "ORTEGA" -> {
+                        alert(getString(R.string.help_ortega)) { okButton { } }.show()
+                    }
+
                     "BEGIN" -> {
                         alert(getString(R.string.help_begin)) { okButton { } }.show()
                     }
                     "G2F" -> {
                         alert(getString(R.string.help_g2f)) { okButton { } }.show()
+                    }
+                    "RECOMEND" -> {
+                        alert(getString(R.string.help_recomend)) { okButton { } }.show()
                     }
                     "ACCEL" -> {
                         alert(getString(R.string.help_accel)) { okButton { } }.show()
@@ -340,11 +375,21 @@ class MainActivity : MyDefaultActivity(),
                     "BLIND" -> {
                         alert(getString(R.string.help_blind)) { okButton { } }.show()
                     }
-//                    "BLINDACC" -> {
-//                        alert(getString(R.string.help_blind_acc)) { okButton { } }.show()
-//                    }
+                    "COLL" -> {
+                        alert(getString(R.string.help_coll)) { okButton { } }.show()
+                    }
+                    "ROUX" -> {
+                        alert(getString(R.string.help_roux)) { okButton { } }.show()
+                    }
+                    "PATTERNS" -> {
+                        alert(getString(R.string.help_patterns)) { okButton { } }.show()
+                    }
                     "BEGIN4X4" -> {
                         alert(getString(R.string.help_begin4x4)) { okButton { } }.show()
+                    }
+
+                    "OTHER" -> {
+                        alert(getString(R.string.help_other)) { okButton { } }.show()
                     }
                     "BEGIN5X5" -> {
                         alert(getString(R.string.help_begin5x5)) { okButton { } }.show()
@@ -358,6 +403,9 @@ class MainActivity : MyDefaultActivity(),
                     }
                     "SKEWB" -> {
                         alert(getString(R.string.help_skewb)) { okButton { } }.show()
+                    }
+                    "IVY" -> {
+                        alert(getString(R.string.help_ivy)) { okButton { } }.show()
                     }
 
                     "TIMER" -> {
@@ -410,6 +458,15 @@ class MainActivity : MyDefaultActivity(),
                                 }
                             }
                             okButton { }
+                        }.show()
+                    }
+                    else -> {
+                        alert(getString(R.string.help_missed)) {
+                            positiveButton("Закрыть") {  }
+                            negativeButton("Отправить письмо автору") {
+                                email("rubicsguide@yandex.ru",
+                                        "Отсутствует help",
+                                        "Отсутствует help для $curPhase") }
                         }.show()
                     }
                 }

@@ -1000,6 +1000,9 @@
         Фингертрикс: <a href="rg2://ytplay?time=0:55&link=hfRAZDv84fA">на видео 0:55</a> <br/>
         Фингертрикс: <a href="rg2://ytplay?time=2:16&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
         <b>Алгоритм: (R U R2\' U\') (R\' F R U) R U\' F\'</b><br/><br/>
+
+        <p>Или вот такой алгоритм, который мне прислал Иван Полканов:<br/>
+        <b>F (R U R\' U\') R\' (F\' Rw U R U\' Rw\')</b></p>
         <b>Как смоделировать</b>: <a href="rg2://ytplay?time=1:55&link=hfRAZDv84fA">на видео 1:55</a>
         повторить данный алгоритм 2 раза.
         ]]></string>
@@ -1120,10 +1123,16 @@
         <p>Как и с палкой 1-1 главное поставить палку горизонтально. Алгоритмы у Максима и Феликса одинаковые, но
         по разному расставлены акценты.</p>
         <p style="text-align:center"><img src="voll_49_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rg2://ytplay?time=1:03&link=n52nllQkI_A">на видео 1:03</a> <br/>
+        <p>Фингертрикс: <a href="rg2://ytplay?time=1:03&link=n52nllQkI_A">на видео 1:03</a> <br/>
         <b>Алгоритм: (R\' F) (R U R U\') (R2\' F\' R2) (U\' R\' U) (R U R\')</b><br/><br/>
         Фингертрикс: <a href="rg2://ytplay?time=4:55&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
-        <b>Алгоритм: (R\' F R U) (R U\' R2\' F\') R2 U\' R\' (U R U R\')</b><br/><br/>
+        <b>Алгоритм: (R\' F R U) (R U\' R2\' F\') R2 U\' R\' (U R U R\')</b></p>
+
+        <p>Ну а если такая палка досталась вам в вертикальном виде, то можно выполнить, вот такой
+        алгоритм, который мне прислал Иван Полканов, выполнять его лучше из стандартного положения рук.</p>
+        <p style="text-align:center"><img src="voll_49_2.xml" width="60%%"></p>
+        <p>Алгоритм: <b>R U2 R2 U\' R U\' R\' U2 F R F\'</b></p>
+
         <b>Как смоделировать</b>: Выполнить данный алгоритм <a href="rg2://ytplay?time=2:18&link=n52nllQkI_A">3 раза.</a>
         ]]></string>
     <string name="oll_st49_url">n52nllQkI_A</string>

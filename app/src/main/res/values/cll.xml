@@ -414,13 +414,13 @@
         <a href="rg2://ytplay?time=5:46&link=n06bmpfoTJk">Рыбка СПам.</a></p>
         <p style="text-align:center"><img src="cll_11.xml"></p>
 
-        <p><a href="rg2://ytplay?time=5:47&link=n06bmpfoTJk">Алгоритм:</a> <b>(R U\' R U\') (R\' U R\' U\') F R F\'</b><br/>
+        <p><a href="rg2://ytplay?time=5:47&link=n06bmpfoTJk">Алгоритм:</a> <b>(R U\' R U\') (R\' U R\' U\') F R\' F\'</b><br/>
         или <b>(R U\' R U\') (R\' U R\' U\') y R U\' R\'</b></p>
 
         <p>Как смоделировать: выполнить Акулу СПам. <b>F R F\' U R U\' R U R\' U R\'</b></p>
     ]]></string>
     <string name="cll_st11_url">n06bmpfoTJk</string>
-    <string name="cll_st11_comment">(R U\' R U\') (R\' U R\' U\') F R F\'</string>
+    <string name="cll_st11_comment">(R U\' R U\') (R\' U R\' U\') F R\' F\'</string>
 
     <string name="cll_st12_title">Акула (AntiSune) СПам</string>
     <string name="cll_st12_descr" formatted="false"><![CDATA[
@@ -430,7 +430,7 @@
 
         <p><a href="rg2://ytplay?time=5:38&link=n06bmpfoTJk">Алгоритм:</a> <b>F R F\' U R U\' R U R\' U R\'</b></p>
 
-        <p>Как смоделировать: выполнить Рыбку СПам. <b>(R U\' R U\') (R\' U R\' U\') F R F\'</b></p>
+        <p>Как смоделировать: выполнить Рыбку СПам. <b>(R U\' R U\') (R\' U R\' U\') F R\' F\'</b></p>
     ]]></string>
     <string name="cll_st12_url">n06bmpfoTJk</string>
     <string name="cll_st12_comment">F R F\' U R U\' R U R\' U R\'</string>
