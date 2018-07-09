@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="begin_bondarenko_title">
+        <item>@string/begin_bondarenko_st0_title</item>
+        <item>@string/begin_bondarenko_st1_title</item>
+        <item>@string/begin_bondarenko_st2_title</item>
+        <item>@string/begin_bondarenko_st3_title</item>
+        <item>@string/begin_bondarenko_st4_title</item>
+        <item>@string/begin_bondarenko_st5a_title</item>
+        <item>@string/begin_bondarenko_st5b_title</item>
+        <item>@string/begin_bondarenko_st6_title</item>
+        <item>@string/begin_bondarenko_st7_title</item>
+        <item>@string/begin_bondarenko_st8_title</item>
+        <item>@string/begin_bondarenko_st9_title</item>
+    </string-array>
+
+    <integer-array name="begin_bondarenko_icon">
+        <item>@drawable/vbegin_0</item>
+        <item>@drawable/vbegin</item>
+        <item>@drawable/vbegin_2</item>
+        <item>@drawable/vbegin_3</item>
+        <item>@drawable/vbegin_4</item>
+        <item>@drawable/vbegin_5a</item>
+        <item>@drawable/vbegin_5b</item>
+        <item>@drawable/vbegin_6</item>
+        <item>@drawable/vbegin_7</item>
+        <item>@drawable/vbegin_8</item>
+        <item>@drawable/vbegin_9</item>
+    </integer-array>
+    
+    <string-array name="begin_bondarenko_descr">
+        <item>@string/begin_bondarenko_st0_descr</item>
+        <item>@string/begin_bondarenko_st1_descr</item>
+        <item>@string/begin_bondarenko_st2_descr</item>
+        <item>@string/begin_bondarenko_st3_descr</item>
+        <item>@string/begin_bondarenko_st4_descr</item>
+        <item>@string/begin_bondarenko_st5a_descr</item>
+        <item>@string/begin_bondarenko_st5b_descr</item>
+        <item>@string/begin_bondarenko_st6_descr</item>
+        <item>@string/begin_bondarenko_st7_descr</item>
+        <item>@string/begin_bondarenko_st8_descr</item>
+        <item>@string/begin_bondarenko_st9_descr</item>
+    </string-array>
+
+
+    <string-array name="begin_bondarenko_url">
+        <item>@string/begin_bondarenko_st0_url</item>
+        <item>@string/begin_bondarenko_st1_url</item>
+        <item>@string/begin_bondarenko_st2_url</item>
+        <item>@string/begin_bondarenko_st3_url</item>
+        <item>@string/begin_bondarenko_st4_url</item>
+        <item>@string/begin_bondarenko_st5a_url</item>
+        <item>@string/begin_bondarenko_st5b_url</item>
+        <item>@string/begin_bondarenko_st6_url</item>
+        <item>@string/begin_bondarenko_st7_url</item>
+        <item>@string/begin_bondarenko_st8_url</item>
+        <item>@string/begin_bondarenko_st9_url</item>
+    </string-array>
+
+    <string name="begin_bondarenko_st0_title">Читать обязательно!</string>
+    <string name="begin_bondarenko_st0_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin_bondarenko_st0_url"></string>
+
+
+    <string name="begin_bondarenko_st1_title">Этап 1. Выбор стороны</string>
+    <string name="begin_bondarenko_st1_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin_bondarenko_st1_url">0TvO_rpG_aM</string>
+
+    <string name="begin_bondarenko_st2_title">Этап 2. Нижний крест</string>
+    <string name="begin_bondarenko_st2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin_bondarenko_st2_url">8VCsFNFa5yM</string>
+
+    <string name="begin_bondarenko_st3_title">Этап 3. Правильный крест</string>
+    <string name="begin_bondarenko_st3_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin_bondarenko_st3_url">ku-FyZvD48Q</string>
+
+    <string name="begin_bondarenko_st4_title">Этап 4. Первый (нижний) слой</string>
+    <string name="begin_bondarenko_st4_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin_bondarenko_st4_url">Vt9dHndW7-E</string>
+
+    <string name="begin_bondarenko_st5a_title">Этап 5а. Два нижних слоя (Ромашки)</string>
+    <string name="begin_bondarenko_st5a_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin_bondarenko_st5a_url">v3J6-5_J29s</string>
+
+    <string name="begin_bondarenko_st5b_title">Этап 5б. Два нижних слоя (Желтый одуванчик)</string>
+    <string name="begin_bondarenko_st5b_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin_bondarenko_st5b_url">fad9teqrKVo</string>
+
+    <string name="begin_bondarenko_st6_title">Этап 6. Верхний крест (Оружие)</string>
+    <string name="begin_bondarenko_st6_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin_bondarenko_st6_url">8C0Dn2Y7jUY</string>
+
+    <string name="begin_bondarenko_st7_title">Этап 7. Красим крышу</string>
+    <string name="begin_bondarenko_st7_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin_bondarenko_st7_url">u9vBRWSVBA8</string>
+
+    <string name="begin_bondarenko_st8_title">Этап 8. Ставим грани (Убийство в Лондоне)</string>
+    <string name="begin_bondarenko_st8_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin_bondarenko_st8_url">oU5LJmWefDw</string>
+
+    <string name="begin_bondarenko_st9_title">Этап 9. Треугольники (Инфаркт)</string>
+    <string name="begin_bondarenko_st9_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="begin_bondarenko_st9_url">dGh_gjwsfe0</string>
+
+</resources>

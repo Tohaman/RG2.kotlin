@@ -31,6 +31,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("OTHER", R.array.other_title,R.array.other_icon,R.array.other_descr,R.array.other_url,context)
         phaseInit("OTHER3X3", R.array.other3x3_title,R.array.other3x3_icon,R.array.other3x3_descr,R.array.other3x3_url,context)
         phaseInit("BEGIN",R.array.begin_title,R.array.begin_icon,R.array.begin_descr,R.array.begin_url,context)
+        phaseInit("BEGIN_BNDR",R.array.begin_bondarenko_title,R.array.begin_bondarenko_icon,R.array.begin_bondarenko_descr,R.array.begin_bondarenko_url,context)
         phaseInit("RECOMEND",R.array.recomend_title,R.array.recomend_icon,R.array.recomend_descr,R.array.recomend_url,context)
         phaseInit("BASIC",R.array.basic_title,R.array.basic_icon,R.array.basic_descr,R.array.basic_null,context)
         phaseInit("BASIC3X3",R.array.basic_3x3_title,R.array.basic_3x3_icon,R.array.basic_3x3_descr,R.array.basic_3x3_url,context)
