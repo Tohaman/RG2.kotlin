@@ -119,11 +119,12 @@
         Сложность сборки данным методом заключается только в том, как правильно взять кубик в той
         или иной ситуации и сколько раз при этом нужно выполнить первый или второй алгоритм.</p>
 
+        Первым делом необходимо собрать
 
     ]]></string>
     <string name="begin_bondarenko_st2_url">8VCsFNFa5yM</string>
 
-    <string name="begin_bondarenko_st3_title">Этап 3. Правильный крест</string>
+    <string name="begin_bondarenko_st3_title">Первый (нижний) слой</string>
     <string name="begin_bondarenko_st3_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="begin_bondarenko_st3_url">ku-FyZvD48Q</string>

@@ -12,7 +12,7 @@
     <integer-array name="main3x3_icon">
         <item>@drawable/vbegin_0</item>
         <item>@drawable/vbegin_9</item>
-        <item>@drawable/vbegin_9</item>
+        <item>@drawable/bondarenko_0</item>
         <item>@drawable/vf2l_2</item>
         <item>@drawable/blind</item>
         <item>@drawable/pattern_1</item>
