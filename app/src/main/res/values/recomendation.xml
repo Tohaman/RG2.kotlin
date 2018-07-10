@@ -30,7 +30,7 @@
         <item>@string/recomendation4_url</item>
     </string-array>
 
-    <string name="recomendation1_title">Сравнение с \"Классической\" методикой</string>
+    <string name="recomendation1_title">Методика Максима vs \"Классическая\" методика.</string>
     <string name="recomendation1_descr" formatted="false"><![CDATA[
         <p>Довольно часто в отзывах и на почту мне пишут про методику сборки кубика
         для новичков, которая еще в 80-х годах прошлого века была

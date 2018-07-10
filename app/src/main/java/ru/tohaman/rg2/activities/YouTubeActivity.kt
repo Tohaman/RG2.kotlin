@@ -48,18 +48,15 @@ class YouTubeActivity : AppCompatActivity() {
         Log.v (DebugTag.TAG, "YouTubeActivity преобразуем время")
         var time = intent.data!!.getQueryParameter("time")
         val videoId = intent.data!!.getQueryParameter("link")
-        val intent = YouTubeStandalonePlayer.createVideoIntent(this, DEVELOPER_KEY, videoId, StringToTimeMillis(time), true, true)
+        val intent = YouTubeStandalonePlayer.createVideoIntent(this, DEVELOPER_KEY, videoId, stringToTimeMillis(time), true, true)
         if (intent != null) {
             if (canResolveIntent(intent)) {
                 Log.v (DebugTag.TAG, "Установлен - запускаем StandAlone плеер c нужного времени")
                 startActivityForResult(intent, REQ_START_STANDALONE_PLAYER)
             } else {
                 Log.v (DebugTag.TAG, "Видимо нету Youtube плеера, запускаем просмотр через браузер time = $time")
-                //https://youtu.be/fwvKWr087bM?t=4m16s
-                //<a href="rg2://ytplay?time=4:16&link=fwvKWr087bM">Запад</a>
                 time = Regex(":").replace(time,"m")
                 browse("https://youtu.be/$videoId" + "?t=$time" + "s")
-                //YouTubeInitializationResult.SERVICE_MISSING.getErrorDialog(this, REQ_RESOLVE_SERVICE_MISSING).show()
                 finish()
             }
         }
@@ -89,7 +86,7 @@ class YouTubeActivity : AppCompatActivity() {
         return resolveInfo != null && !resolveInfo.isEmpty()
     }
 
-    private fun StringToTimeMillis(text: String): Int {
+    private fun stringToTimeMillis(text: String): Int {
         val calendar = Calendar.getInstance()
         val format = SimpleDateFormat("m:s", Locale.ENGLISH)
         try {

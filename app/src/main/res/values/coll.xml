@@ -278,6 +278,10 @@
         <p style="text-align:center"><img src="coll_5.xml"></p>
 
         <a href="rg2://ytplay?time=1:26&link=CFIQMKxJP4k">Алгоритм:</a> <b>F (R U\' R\' U) (R U R\' U R U\' R\') F\'</b>
+
+        <p>Ну или можно использовать вот такой алгоритм:</p>
+
+        <p>Алгоритм: <b>x\' (R2 D2 R\' U2 R D2 R\' U2 R\') x</b></p>
     ]]></string>
     <string name="coll_st5_url">CFIQMKxJP4k</string>
     <string name="coll_st5_comment">F R U\' R\' U R U R\' U R U\' R\' F\'</string>

@@ -2,7 +2,6 @@
 <resources>
 
     <string-array name="begin_bondarenko_title">
-        <item>@string/begin_bondarenko_st0_title</item>
         <item>@string/begin_bondarenko_st1_title</item>
         <item>@string/begin_bondarenko_st2_title</item>
         <item>@string/begin_bondarenko_st3_title</item>
@@ -16,10 +15,9 @@
     </string-array>
 
     <integer-array name="begin_bondarenko_icon">
-        <item>@drawable/vbegin_0</item>
-        <item>@drawable/vbegin</item>
-        <item>@drawable/vbegin_2</item>
+        <item>@drawable/vbegin_9</item>
         <item>@drawable/vbegin_3</item>
+        <item>@drawable/vbegin_4</item>
         <item>@drawable/vbegin_4</item>
         <item>@drawable/vbegin_5a</item>
         <item>@drawable/vbegin_5b</item>
@@ -30,7 +28,6 @@
     </integer-array>
     
     <string-array name="begin_bondarenko_descr">
-        <item>@string/begin_bondarenko_st0_descr</item>
         <item>@string/begin_bondarenko_st1_descr</item>
         <item>@string/begin_bondarenko_st2_descr</item>
         <item>@string/begin_bondarenko_st3_descr</item>
@@ -45,7 +42,6 @@
 
 
     <string-array name="begin_bondarenko_url">
-        <item>@string/begin_bondarenko_st0_url</item>
         <item>@string/begin_bondarenko_st1_url</item>
         <item>@string/begin_bondarenko_st2_url</item>
         <item>@string/begin_bondarenko_st3_url</item>
@@ -58,19 +54,72 @@
         <item>@string/begin_bondarenko_st9_url</item>
     </string-array>
 
-    <string name="begin_bondarenko_st0_title">Читать обязательно!</string>
-    <string name="begin_bondarenko_st0_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="begin_bondarenko_st0_url"></string>
-
-
-    <string name="begin_bondarenko_st1_title">Этап 1. Выбор стороны</string>
+    <string name="begin_bondarenko_st1_title">Устройство и вращение кубика.</string>
     <string name="begin_bondarenko_st1_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="begin_bondarenko_st1_url">0TvO_rpG_aM</string>
+        <p>Для начала несколько слов об устройстве кубика и тех частях из
+        <a href="rg2://ytplay?time=1:25&link=n6hyCY-TuoU">которых он состоит.</a></p>
 
-    <string name="begin_bondarenko_st2_title">Этап 2. Нижний крест</string>
+        1. <a href="rg2://ytplay?time=2:33&link=n6hyCY-TuoU">Центры (крестовина).</a>
+        <p style="text-align:center"><img src="bondarenko_1_1.xml"></p>
+        <p>Элементы кубика имеющие всего одну наклейку. Отличительная особенность - положение центров
+        относительно друг друга четко фиксировано, т.к. внутри кубика они жестко соединены крестовиной.</p>
+
+        2. <a href="rg2://ytplay?time=2:47&link=n6hyCY-TuoU">Ребра.</a>
+        <p style="text-align:center"><img src="bondarenko_1_2.xml"></p>
+        <p>Элементы кубика имеющие две наклейки.</p>
+
+        3. <a href="rg2://ytplay?time=2:59&link=n6hyCY-TuoU">Углы.</a>
+        <p style="text-align:center"><img src="bondarenko_1_3.xml"></p>
+        <p>Элементы кубика имеющие три наклейки.</p>
+
+        <p>Теперь несколько слов о том, как вращать кубик Рубика (3:18) и о том, что такое алгоритмы.
+        Каждую сторону кубика можно повернуть ПО или ПРОТИВ часовой стрелки.
+        Последовательность из нескольких таких вращений называется <b>Алгоритмом</b>.</p>
+
+        <p>Для того, чтобы записать вращения кубика, используется <b>Язык вращений</b>, т.е. особые
+        обозначения движений сторон кубика, при помощи которых можно записать какой-либо алгоритм.</p>
+
+        <p>У кубика шесть сторон, соответственно вращение каждой стороны обозначается соответствующей буквой:<br/><br/>
+
+        F - front - фронтальная сторона<br/>
+        B - back - задняя сторона<br/>
+        L - left - левая сторона<br/>
+        R - right - правая сторона<br/>
+        U - up - верхняя сторона<br/>
+        D - down - нижняя сторона<br/><br/>
+
+        Если написана только буква, значит крутим эту сторону по часовой стрелке так, как если бы мы
+        смотрели прямо на эту грань (в лицо). Именно поэтому R и L это вращения как бы в разные
+        стороны.<br/><br/>
+
+        Если в конце стоит штрих \', например F\', значит крутим эту сторону против часовой стрелки,
+        как если бы мы смотрели прямо на эту грань.</p>
+
+        <p><a href="rg2://ytplay?time=5:00&link=n6hyCY-TuoU">Например,</a> <b>R U R\' U\'</b> -
+        означает, что сначала нужно повернуть по часовой стрелке правую сторону (R),
+        затем по часовой верхнюю (U), потом против часовой правую (R\') и против часовой верхнюю (U\').</p>
+
+        <p>Если повторить данный алгоритм <a href="rg2://ytplay?time=6:08&link=n6hyCY-TuoU">еще 5 раз,</a>
+        то кубик вернется в исходное положение.</p>
+
+    ]]></string>
+    <string name="begin_bondarenko_st1_url">n6hyCY-TuoU</string>
+
+    <string name="begin_bondarenko_st2_title">Первый крест</string>
     <string name="begin_bondarenko_st2_descr" formatted="false"><![CDATA[
+        <p>Данный метод, позволяет собрать кубик Рубика из любой ситуации используя свего лишь один
+        очень простой четырехходовый алгоритм, который уже известен вам из введения, а именно <b>R U R\' U\'</b>.
+        Это будет основной алгоритм методики, более известный как <b>Пиф-паф</b>.</p>
+
+        Если быть более точным, то будем использовать еще один, но по сути тот же самый алгоритм,
+        только выполненять его будем слева, а не справа - <b>L\' U\' L U</b>. Назовем его <b>Левый пиф-паф</b>.
+        Заметьте, что левая грань от себя (первый ход), это вращение грани против часовой стрелки,
+        т.е. L\', а не L.
+
+        Сложность сборки данным методом заключается только в том, как правильно взять кубик в той
+        или иной ситуации и сколько раз при этом нужно выполнить первый или второй алгоритм.</p>
+
+
     ]]></string>
     <string name="begin_bondarenko_st2_url">8VCsFNFa5yM</string>
 

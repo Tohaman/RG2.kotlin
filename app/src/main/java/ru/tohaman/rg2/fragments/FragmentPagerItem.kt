@@ -23,14 +23,12 @@ import com.google.android.youtube.player.YouTubeThumbnailView
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
 import org.jetbrains.anko.sdk15.coroutines.onClick
-import org.jetbrains.anko.support.v4.alert
-import org.jetbrains.anko.support.v4.ctx
-import org.jetbrains.anko.support.v4.toast
-import org.jetbrains.anko.support.v4.withArguments
+import org.jetbrains.anko.support.v4.*
 import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.DeveloperKey.DEVELOPER_KEY
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.VIDEO_PREVIEW
+import ru.tohaman.rg2.activities.YouTubeActivity
 import ru.tohaman.rg2.data.Favorite
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
@@ -226,7 +224,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         ytTextView.visibility = View.GONE
         thumbnailView.initialize(DEVELOPER_KEY, this)
         thumbnailView.setOnClickListener {
-            playYouTubeVideo(true, url)
+            browse("rg2://ytplay?time=0:00&link=$url")
         }
     }
 
