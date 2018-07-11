@@ -31,7 +31,7 @@
             android:summary="когда запущено приложение"/>
 
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="fab_on"
             android:title="Большая зеленая кнопка"
             android:summary="отображение \'умной\' кнопки в интефейсе программы"/>
