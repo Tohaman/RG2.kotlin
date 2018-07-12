@@ -15,10 +15,10 @@
                           <map>
                             <entry key="assetSourceType" value="FILE" />
                             <entry key="height" value="100" />
-                            <entry key="outputName" value="ic_compl_cube_2" />
+                            <entry key="outputName" value="bondarenko_right" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="D:\Dropbox\Приложения\compl_cube_2.svg" />
-                            <entry key="width" value="100" />
+                            <entry key="sourceFile" value="D:\Dropbox\RubicsGuide\3x3_right.svg" />
+                            <entry key="width" value="98" />
                           </map>
                         </option>
                       </PersistentState>

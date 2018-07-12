@@ -16,8 +16,8 @@
     <integer-array name="begin_bondarenko_icon">
         <item>@drawable/vbegin_0</item>
         <item>@drawable/bondarenko_2_2</item>
-        <item>@drawable/vbegin_3</item>
-        <item>@drawable/vbegin_4</item>
+        <item>@drawable/bondarenko_3</item>
+        <item>@drawable/bondarenko_4</item>
         <item>@drawable/vbegin_5a</item>
         <item>@drawable/vbegin_6</item>
         <item>@drawable/vbegin_7</item>
@@ -205,11 +205,61 @@
 
     <string name="begin_bondarenko_st4_title">Первый слой</string>
     <string name="begin_bondarenko_st4_descr" formatted="false"><![CDATA[
+        <p>Теперь поставим на свои места белые углы, т.е. соберем не только белую сторону, но
+        и целиком первый слой.(0:39) Данный этап, абсолютно аналогичен Этапу N4 методики для
+        начинающих Максима Чечнева, поэтому если вам тут что-то будет непонятно, можно посмотреть
+        у Максима.</p>
+        <p style="text-align:center"><img src="bondarenko_4.xml"></p>
+
+        <p>Кубик на данном этапе держим так же, как и на предыдущем, т.е. собранным белым крестом вниз.
+        И начинаем искать углы с белой наклейкой.(1:12) Прежде всего будем их искать на третьем слое, т.е.
+        смотрим вот на эти четыре элемента.</p>
+        <p style="text-align:center"><img src="bondarenko_4_1.xml"></p>
+        <p>Есть у кого-то из них белая наклейка.</p>
+
+        <p>Если находим такой угол(1:36), то смотрим на две другие наклейки этого угла. Например, находим вот такой
+        бело-зелено-красный угол.</p>
+        <p style="text-align:center"><img src="bondarenko_4_2.xml"></p>
+
+        <p>Смотрим, на НЕ БЕЛЫЕ (1:56) наклейки этого уголка. В данном случае они зеленая и красная.
+        И наша задача повернуть два нижних слоя так, чтобы цвета центров \"окружающих\" этот уголок были
+        такми же, как эти две наклейки. Т.е. в данном случае нам нужно повернуть два нижних слоя
+        вот до такого положения. (2:25)</p>
+        <p style="text-align:center"><img src="bondarenko_4_3.xml"></p>
+
+        И делаем наш волшебный алгоритм (3:46) (<b>R U R\' U\'</b>), до тех пор пока угол не встанет на свое место.
+
+        Возможны три ситуаци, в зависимости от того, где находится белая наклейка угла:
+
+        <p style="text-align:center"><img src="bondarenko_4_3.xml"><br/>
+        1 пиф-паф (3:46)</p>
+
+        <p style="text-align:center"><img src="bondarenko_4_4.xml"><br/>
+        3 пиф-пафа (7:27)</p>
+
+        <p style="text-align:center"><img src="bondarenko_4_5.xml"><br/>
+        5 пиф-пафов (5:28)</p>
+
+        <p>Находим другой белый угол (4:31), подгоняем к нему его место и делаем пиф-пафы. Повторяем для
+        всех белых углов.</p>
+
+        <p>Если еще не все уголки стоят на своих местах (нижний слой не собран), а на верхнем слое нет
+        уголков с белым цветом, значит надо искать такой уголок на нижнем слое. (6:48)</p>
+
+        Находим, берем кубик так, чтобы этот угол находился справа внизу
+        <p style="text-align:center"><img src="bondarenko_4_6.xml"></p>
+
+        <p>и делаем пиф-паф. Тем самым подняв этот угол на верхний слой (7:18), а что с ним делать дальше -
+        вы уже знаете, подогнать к нему его место и сделать нужное количество пиф-пафов.</p>
+
+        <p><i>Если вам что-то непонятно из текстового описания, вы можете посмотреть этот момент в видео,
+        просто щелкнув по выделенному тексту.</i></p>
     ]]></string>
     <string name="begin_bondarenko_st4_url">cAPQoOjAVUA</string>
 
     <string name="begin_bondarenko_st5_title">Второй слой</string>
     <string name="begin_bondarenko_st5_descr" formatted="false"><![CDATA[
+
     ]]></string>
     <string name="begin_bondarenko_st5_url">cAPQoOjAVUA</string>
 
