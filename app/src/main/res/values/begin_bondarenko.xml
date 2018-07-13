@@ -15,11 +15,11 @@
 
     <integer-array name="begin_bondarenko_icon">
         <item>@drawable/vbegin_0</item>
-        <item>@drawable/bondarenko_2_2</item>
+        <item>@drawable/bondarenko_2</item>
         <item>@drawable/bondarenko_3</item>
         <item>@drawable/bondarenko_4</item>
-        <item>@drawable/vbegin_5a</item>
-        <item>@drawable/vbegin_6</item>
+        <item>@drawable/bondarenko_5</item>
+        <item>@drawable/bondarenko_6</item>
         <item>@drawable/vbegin_7</item>
         <item>@drawable/vbegin_8</item>
         <item>@drawable/vbegin_9</item>
@@ -50,7 +50,7 @@
         <item>@string/begin_bondarenko_st9_url</item>
     </string-array>
 
-    <string name="begin_bondarenko_st1_title">Устройство и вращения кубика.</string>
+    <string name="begin_bondarenko_st1_title">Устройство, Алгоритмы и Язык вращений кубика.</string>
     <string name="begin_bondarenko_st1_descr" formatted="false"><![CDATA[
         <p>Для начала несколько слов об устройстве кубика и тех частях из
         <a href="rg2://ytplay?time=1:25&link=n6hyCY-TuoU">которых он состоит.</a></p>
@@ -125,7 +125,8 @@
         Это будет основной алгоритм методики, более известный как <b>Пиф-паф</b>.</p>
 
         <p>Если быть более точным, то будем использовать еще один, но по сути тот же самый алгоритм,
-        только выполненять его будем слева, а не справа - <b>L\' U\' L U</b>. Назовем его <b>Левый пиф-паф</b>.
+        только выполненять его будем слева, (9:44)cAPQoOjAVUA
+        а не справа - <b>L\' U\' L U</b>. Назовем его <b>Левый пиф-паф</b>.
         Заметьте, что левая грань от себя (первый ход), это вращение грани против часовой стрелки,
         т.е. L\', а не L.</p>
 
@@ -259,28 +260,92 @@
 
     <string name="begin_bondarenko_st5_title">Второй слой</string>
     <string name="begin_bondarenko_st5_descr" formatted="false"><![CDATA[
-        (9^25)
+        <p>Теперь будем собирать второй (средний) слой.(9:25)</p>
+        <p style="text-align:center"><img src="bondarenko_5.xml"></p>
+
+        По сути, нам нужно установить на свои места, только вот эти четыре ребра (элементы с двумя наклейками).
+        <p style="text-align:center"><img src="bondarenko_5_1.xml"></p>
+
+        <p>И для этого нам понадобятся оба алгоритма, о которых было сказано раньше. Т.е.<br/>
+        обычный пиф-паф (9:34) - <b>R U R\' U\'</b><br/>
+        и левый пиф-паф (9:45) - <b>L\' U\' L U</b></p>
+
+        <p>Для начала необходимо найти нужные ребра. (10:42) В первую очередь искать мы их будем
+        на верхнем слое, причем искать будем ребра без цвета верхней стороны, т.е. без желтого. (10:51)</p>
+
+        Например, находим вот такое красно-синее ребро.(11:13)
+        <p style="text-align:center"><img src="bondarenko_5_2.xml"></p>
+
+        <p>Теперь нужно соместить его со своим центром, как бы сказал Максим Чечнев, нам
+        необходимо сделать \"стебель ромашки\". Т.е. покрутить два нижних слоя (11:20) так, чтобы
+        на передней грани наклейки найденного ребра и центра совпали, в данном случае,
+        крутить будем до вот такого положения. </p>
+        <p style="text-align:center"><img src="bondarenko_5_3.xml"></p>
+
+        <p>Далее, необходимо определить, куда из этого положения пойдет ребро, направо или налево?
+        Для этого необходимо сравнить верхний цвет нашего ребра и цветами центров находящихся
+        на правой и левой гранях кубика. С какой стороны он совпадет, в ту сторону и нужно
+        установить ребро. Данное ребро у нас должно пойти направо, т.к. красная грань справа от
+        синей.</p>
+
+        <p>Все готово для выполнения алгоритма. Общий алгоритм для данного этапа выглядит так: Отводим
+        ребро от его места, выполняем пиф-паф со стороны места ребра, поворачиваем кубик в сторону
+        места и делаем пиф-паф с другой стороны.</p>
+
+        <p>Для места справа получается так: (13:23)</p>
+        <p style="text-align:center"><img src="bondarenko_5_5.xml"></p>
+
+        <p>отводим ребро влево (U), обычный правый пиф-паф (R U R\' U\'),
+        перехват вправо (y) и пиф-паф слева (L\' U\' L U).</p>
+        <p>Алгоритм: <b>U (R U R\' U\') y (L\' U\' L U)</b></p>
+
+        Если же место ребра находится слева (14:01),
+        <p style="text-align:center"><img src="bondarenko_5_4.xml"></p>
+        <p>то отводим верх вправо (U\'), левый пиф-паф (L\' U\' L U), перехват влево (y\'), пиф-паф справа
+        (R U R\' U\').</p>
+        <p>Алгоритм: <b>U\' (L\' U\' L U) y\' (R U R\' U\')</b></p>
+
+        <p>Ищем следующее ребро без желтого цвета на верхнем слое, подгоняем его к своему центру,
+        ставим на свое место. Повторяем действия для оставшихся ребер.</p>
+
+        <p>Если у вас сложилась ситуация (15:45), когда еще не все ребра среднего слоя стоят на своих местах,
+        а ребра без желтой наклейки на верхнем слое нет, значит оно находится на среднем слое, но
+        не на своем месте или на своем но перевернуто. Например так:</p>
+        <p style="text-align:center"><img src="bondarenko_5_6.xml"></p>
+
+        <p>В этом случае, надо \"достать\" ребро (16:12) со второго слоя на третий и проще всего сделать это
+        поставив на его место любое другое ребро с верхнего слоя (с желтой наклейкой). Т.е. взять
+        кубик нужным нам ребром на втором слое справа (как на картинке) и выполнить алгоритм для
+        ситуации место справа, <b>U (R U R\' U\') y (L\' U\' L U)</b>.</p>
+
+        <p>В этом случае нужное нам ребро без желтой наклейки выйдет на верхний слой (16:43), а что с ним
+        делать в этом случае мы уже знаем.</p>
     ]]></string>
     <string name="begin_bondarenko_st5_url">cAPQoOjAVUA</string>
 
-    <string name="begin_bondarenko_st6_title">Верхний слой</string>
+    <string name="begin_bondarenko_st6_title">Желтый крест</string>
     <string name="begin_bondarenko_st6_descr" formatted="false"><![CDATA[
+        (0:54) Теперь будем собирать желтый крест на верхней стороне.
+        <p style="text-align:center"><img src="bondarenko_6.xml"></p>
+
+
+
     ]]></string>
-    <string name="begin_bondarenko_st6_url">cAPQoOjAVUA</string>
+    <string name="begin_bondarenko_st6_url">uYgycBkQlRs</string>
 
     <string name="begin_bondarenko_st7_title">Резерв</string>
     <string name="begin_bondarenko_st7_descr" formatted="false"><![CDATA[
     ]]></string>
-    <string name="begin_bondarenko_st7_url">cAPQoOjAVUA</string>
+    <string name="begin_bondarenko_st7_url">uYgycBkQlRs</string>
 
     <string name="begin_bondarenko_st8_title">Резерв</string>
     <string name="begin_bondarenko_st8_descr" formatted="false"><![CDATA[
     ]]></string>
-    <string name="begin_bondarenko_st8_url">ku-FyZvD48Q</string>
+    <string name="begin_bondarenko_st8_url">uYgycBkQlRs</string>
 
     <string name="begin_bondarenko_st9_title">Резерв</string>
     <string name="begin_bondarenko_st9_descr" formatted="false"><![CDATA[
     ]]></string>
-    <string name="begin_bondarenko_st9_url">ku-FyZvD48Q</string>
+    <string name="begin_bondarenko_st9_url">uYgycBkQlRs</string>
 
 </resources>
