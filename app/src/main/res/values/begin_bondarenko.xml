@@ -310,7 +310,7 @@
         синей.</p>
 
         <p>Все готово для выполнения алгоритма. Общий алгоритм для данного этапа выглядит так: Отводим
-        ребро от его места, выполняем пиф-паф со стороны места ребра, поворачиваем кубик в сторону
+        ребро от его места, выполняем пиф-паф со стороны места ребра, перехватываем кубик в сторону
         места и делаем пиф-паф с другой стороны.</p>
 
         <p>Для <a href="rg2://ytplay?time=13:23&link=cAPQoOjAVUA">места справа</a> получается так:</p>
@@ -415,22 +415,33 @@
 
         <p>2. Два соседних угла на своем месте</p>
         <p style="text-align:center"><img src="bondarenko_7_2.xml"></p>
+        в этом случае берем кубик так, чтобы оба угла находились слева, выполняем 3 обычных пиф-пафа,
+        перехват в сторону пиф-пафв, т.е. вправо и теперь делаем три левых пиф-пафа.
+
+        <p>Алгоритм: <b>(R U R\' U\')3 y (L\' U\' L U)3</b></p>
 
         3. Два противоположных угла на своем месте
         <p style="text-align:center"><img src="bondarenko_7_3.xml"></p>
 
+        <p>делаем алгоритм из предыдущего случая два раза, первый из любого положения,
+        получаем предыдущую ситуацию, поворачиваем
+        двумя углами стоящими на своем месте налево и еще раз делаем три правых, перехват и три
+        левых пиф-пафа.</p>
 
     ]]></string>
     <string name="begin_bondarenko_st7_url">uYgycBkQlRs</string>
 
-    <string name="begin_bondarenko_st8_title">Резерв</string>
+    <string name="begin_bondarenko_st8_title">Разворот углов</string>
     <string name="begin_bondarenko_st8_descr" formatted="false"><![CDATA[
+        На этом этапе надо развернуть углы, которые мы расставили на прошлом этапе на свои места,
+        желтой стороной вверх. Но как это ни странно, для того, чтобы это сделать нужно перевернуть
+        кубик белой стороной вверх, а желтой вниз.
     ]]></string>
-    <string name="begin_bondarenko_st8_url">uYgycBkQlRs</string>
+    <string name="begin_bondarenko_st8_url">GcwQyJ27vSA</string>
 
-    <string name="begin_bondarenko_st9_title">Резерв</string>
+    <string name="begin_bondarenko_st9_title">Расстановка центров</string>
     <string name="begin_bondarenko_st9_descr" formatted="false"><![CDATA[
     ]]></string>
-    <string name="begin_bondarenko_st9_url">uYgycBkQlRs</string>
+    <string name="begin_bondarenko_st9_url">GcwQyJ27vSA</string>
 
 </resources>
