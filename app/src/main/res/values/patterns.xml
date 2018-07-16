@@ -9,6 +9,7 @@
         <item>@string/patterns_st5_title</item>
         <item>@string/patterns_st6_title</item>
         <item>@string/patterns_st7_title</item>
+        <item>@string/patterns_st8_title</item>
     </string-array>
 
     <integer-array name="patterns_icon">
@@ -19,6 +20,7 @@
         <item>@drawable/pattern_5</item>
         <item>@drawable/pattern_6</item>
         <item>@drawable/pattern_7</item>
+        <item>@drawable/pattern_8</item>
     </integer-array>
     
     <string-array name="patterns_descr">
@@ -29,6 +31,7 @@
         <item>@string/patterns_st5_descr</item>
         <item>@string/patterns_st6_descr</item>
         <item>@string/patterns_st7_descr</item>
+        <item>@string/patterns_st8_descr</item>
     </string-array>
 
     <string-array name="patterns_url">
@@ -39,6 +42,7 @@
         <item>@string/patterns_st5_url</item>
         <item>@string/patterns_st6_url</item>
         <item>@string/patterns_st7_url</item>
+        <item>@string/patterns_st8_url</item>
     </string-array>
 
     <string-array name="patterns_comment">
@@ -49,6 +53,7 @@
         <item>@string/patterns_st5_comment</item>
         <item>@string/patterns_st6_comment</item>
         <item>@string/patterns_st7_comment</item>
+        <item>@string/patterns_st8_comment</item>
     </string-array>
 
 
@@ -126,9 +131,7 @@
 
     <string name="patterns_st7_title">7. Другой крест</string>
     <string name="patterns_st7_descr" formatted="false"><![CDATA[
-        <p>Еще один узор, которого вы не найдете на сайте
-        <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>. Немного другой
-        крест, отличающийся от предыдущего расположением уголков.
+        <p> Немного другой крест, отличающийся от предыдущего расположением уголков.
         </p>
         <p style="text-align:center"><img src="pattern_7.xml"></p>
         <b>Алгоритм: U F B\' L2 U2 L2 F\' B U2 L2 U</b>
@@ -136,5 +139,17 @@
     <string name="patterns_st7_url"></string>
     <string name="patterns_st7_comment">U F B\' L2 U2 L2 F\' B U2 L2 U</string>
 
+    <string name="patterns_st8_title">8. Буквы П</string>
+    <string name="patterns_st8_descr" formatted="false"><![CDATA[
+        <p>Немного другой вариант четырех букв П, по сравнению с тем, что приведен на сайте
+        <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>. Очень легкий
+        для запоминания алгоритм, надо всего лищь 7 раз выполнить пиф-паф/перехват. Если повторить
+        данный алгоритм еще раз, то получится ситуация как на сайте.
+        </p>
+        <p style="text-align:center"><img src="pattern_8.xml"></p>
+        <b>Алгоритм: (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y</b>
+    ]]></string>
+    <string name="patterns_st8_url"></string>
+    <string name="patterns_st8_comment">((R U R\' U\') y)7</string>
 
 </resources>
