@@ -407,7 +407,9 @@ class MainActivity : MyDefaultActivity(),
                     "IVY" -> {
                         alert(getString(R.string.help_ivy)) { okButton { } }.show()
                     }
-
+                    "SQUARE" -> {
+                        alert(getString(R.string.help_square)) { okButton { } }.show()
+                    }
                     "TIMER" -> {
                         alert(getString(R.string.help_timer)) { okButton { } }.show()
                     }
@@ -435,9 +437,10 @@ class MainActivity : MyDefaultActivity(),
                     "BASIC_SKEWB" -> {
                         alert(getString(R.string.help_basic_skewb)) { okButton { } }.show()
                     }
-                    "BASIC_SQUARE" -> {
-                        alert(getString(R.string.help_basic_square)) { okButton { } }.show()
+                    "BASIC_SQ1" -> {
+                        alert(getString(R.string.help_basic_sq1)) { okButton { } }.show()
                     }
+
                     "BLINDGAME" -> {
                         alert(getString(R.string.help_blind_game)) { okButton { } }.show()
                     }
