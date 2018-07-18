@@ -313,6 +313,10 @@ class MainActivity : MyDefaultActivity(),
                     "MAIN3X3" -> {
                         alert(getString(R.string.help_main3x3)) { okButton { } }.show()
                     }
+                    "BEGIN_BNDR" -> {
+                        alert(getString(R.string.help_bondarenko)) { okButton { } }.show()
+                    }
+
                     "MAIN2X2" -> {
                         alert(getString(R.string.help_main2x2)) { okButton { } }.show()
                     }
