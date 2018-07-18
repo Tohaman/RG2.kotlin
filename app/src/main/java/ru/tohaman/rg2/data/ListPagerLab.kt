@@ -61,6 +61,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("MEGAMINX", R.array.megaminx_title, R.array.megaminx_icon,R.array.megaminx_descr,R.array.megaminx_url,context)
         phaseInit("SKEWB", R.array.skewb_title, R.array.skewb_icon,R.array.skewb_descr,R.array.skewb_url,context)
         phaseInit("SQUARE", R.array.square_title, R.array.square_icon,R.array.square_descr,R.array.square_url,context)
+        phaseInit("SQ_STAR", R.array.sq_star_title, R.array.sq_star_icon,R.array.sq_star_descr,R.array.sq_star_url,context)
         phaseInit("MIRROR", R.array.mirror_title, R.array.mirror_icon,R.array.mirror_descr,R.array.mirror_url,context)
         phaseInit("AXIS", R.array.axis_title, R.array.axis_icon,R.array.axis_descr,R.array.axis_url,context)
         phaseInit("PYRAMORPHIX", R.array.pyramorphix_title, R.array.pyramorphix_icon,R.array.pyramorphix_descr,R.array.pyramorphix_url,context)
