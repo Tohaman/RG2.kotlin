@@ -146,7 +146,7 @@ class MainActivity : MyDefaultActivity(),
             alert(getString(R.string.first_start)) { okButton { } }.show()
             //и отменяем вывод окна что нового в данной версии
             version = curVersion
-            curPhase = "BEGIN"
+            curPhase = "MAIN3X3"
             saveInt2SP(curVersion,"version",ctx)
         }
         saveInt2SP(count,"startcount",ctx)
