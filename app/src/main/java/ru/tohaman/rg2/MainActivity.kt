@@ -191,7 +191,7 @@ class MainActivity : MyDefaultActivity(),
         }
 
         nav_view.setNavigationItemSelectedListener(this)
-        if (!sp.getBoolean("fab_on", true)) {
+        if (!sp.getBoolean("fab_on", false)) {
             fab.visibility = View.GONE
         } else {
             fab.visibility = View.VISIBLE

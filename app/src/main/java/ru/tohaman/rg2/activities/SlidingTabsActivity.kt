@@ -47,7 +47,7 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
         setContentView(R.layout.activity_sliding_tabs)
         setSupportActionBar(toolbar)
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
-        if (!sp.getBoolean("fab_on", true)) {
+        if (!sp.getBoolean("fab_on", false)) {
             fab_sl.visibility = View.GONE
         } else {
             fab_sl.visibility = View.VISIBLE
