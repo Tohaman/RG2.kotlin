@@ -3,7 +3,7 @@
     <string-array name="main3x3_title">
         <item>С чего начать?</item>
         <item>Метод для начинающих от Максима Чечнева</item>
-        <item>Метод для начинающих от Евгения Бондаренко</item>
+        <!--<item>Метод для начинающих от Евгения Бондаренко</item>-->
         <item>Продвинутые методы (Фридрих (CFOP), ROUX)</item>
         <item>Сборка вслепую (Blind)</item>
         <item>Узоры на кубике</item>
@@ -12,7 +12,7 @@
     <integer-array name="main3x3_icon">
         <item>@drawable/vbegin_0</item>
         <item>@drawable/vbegin_9</item>
-        <item>@drawable/bondarenko_0</item>
+        <!--<item>@drawable/rozov_0</item>-->
         <item>@drawable/vf2l_2</item>
         <item>@drawable/blind</item>
         <item>@drawable/pattern_1</item>
@@ -21,7 +21,7 @@
     <string-array name="main3x3_descr">
         <item>@string/recomendation2_descr</item>
         <item>@string/main3x3_st2_descr</item>
-        <item>@string/main3x3_st6_descr</item>
+        <!--<item>@string/main3x3_st6_descr</item>-->
         <item>@string/main3x3_st3_descr</item>
         <item>@string/main3x3_st4_descr</item>
         <item>@string/main3x3_st5_descr</item>
@@ -41,6 +41,6 @@
     <string name="main3x3_st3_descr">G2F</string>
     <string name="main3x3_st4_descr">BLIND</string>
     <string name="main3x3_st5_descr">PATTERNS</string>
-    <string name="main3x3_st6_descr">BEGIN_BNDR</string>
+    <!--<string name="main3x3_st6_descr">BEGIN_BNDR</string>-->
 
 </resources>
