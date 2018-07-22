@@ -414,6 +414,10 @@ class MainActivity : MyDefaultActivity(),
                     "SQUARE" -> {
                         alert(getString(R.string.help_square)) { okButton { } }.show()
                     }
+                    "SQ_STAR" -> {
+                        alert(getString(R.string.help_sq_star)) { okButton { } }.show()
+                    }
+
                     "TIMER" -> {
                         alert(getString(R.string.help_timer)) { okButton { } }.show()
                     }
