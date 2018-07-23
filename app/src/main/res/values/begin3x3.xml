@@ -3,7 +3,7 @@
 
     <string-array name="begin_title">
         <item>@string/begin_st0_title</item>
-        <item>@string/begin_bondarenko_st1_title</item>
+        <item>@string/begin_rozov_st1_title</item>
         <item>@string/begin_st1_title</item>
         <item>@string/begin_st2_title</item>
         <item>@string/begin_st3_title</item>
@@ -35,7 +35,7 @@
     
     <string-array name="begin_descr">
         <item>@string/begin_st0_descr</item>
-        <item>@string/begin_bondarenko_st1_descr</item>
+        <item>@string/begin_rozov_st1_descr</item>
         <item>@string/begin_st1_descr</item>
         <item>@string/begin_st2_descr</item>
         <item>@string/begin_st3_descr</item>
@@ -52,7 +52,7 @@
 
     <string-array name="begin_url">
         <item>@string/begin_st0_url</item>
-        <item>@string/begin_bondarenko_st1_url</item>
+        <item>@string/begin_rozov_st1_url</item>
         <item>@string/begin_st1_url</item>
         <item>@string/begin_st2_url</item>
         <item>@string/begin_st3_url</item>
@@ -117,8 +117,8 @@
         10. В планах есть добавление обучалок по другим головоломкам, но написание
         обучалок требует очень много времени, поэтому если у вас есть желание помочь - пишите на почту.<br/><br/>
 
-        11. О том, как на мой взгляд, стоит изучать сборку кубика вы можете прочитать в разделе \"Фридрих\"
-        - \"Советы от Антона\" - \"Последовательность обучения\".<br/><br/>
+        11. О том, как на мой взгляд, стоит изучать сборку кубика вы можете прочитать в разделе
+        \"Советы от Антона\" - \"Последовательность обучения\".<br/><br/>
 
         Спасибо, что дочитали этот текст до конца.<br/><br/>
 
@@ -463,11 +463,8 @@
         Повторяем так, до тех пор, пока не докрасим крышу.</p>
 
         <p>Если у вас не получилось покрасить крышу с первого раза, пожалуйста, не поленитесь
-        пощелкать по ссылкам в тексте или посмотреть видео целиком. Также можете посмотреть
-        разворот углов в методе для новичков Евгения Бондаренко, принцип там тот же самый, но
-        чуть другое исполнение, возможно вам оно покажется более понятным.</p>
-
-        Или напишите мне <a href="mailto:rubicsguide@yandex.ru?subject=Не%20получается%207ой%20этап&body=Здравствуйте,%20Антон.">на почту,</a>
+        пощелкать по ссылкам в тексте или посмотреть видео целиком. Или напишите мне
+        <a href="mailto:rubicsguide@yandex.ru?subject=Не%20получается%207ой%20этап&body=Здравствуйте,%20Антон.">на почту,</a>
         что вам показалось непонятным. Постараюсь поправить.</p>
 
         <p>Очень важно понимать, что <a href="rg2://ytplay?time=12:57&link=u9vBRWSVBA8">общее количество пиф-пафов</a>

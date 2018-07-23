@@ -36,6 +36,12 @@
             android:id="@+id/other_puzzle"
             android:icon="@drawable/ic_megaminx"
             android:title="@string/other_puzzle"/>
+
+        <item
+            android:id="@+id/basic_move"
+            android:icon="@drawable/ic_menu_basic"
+            android:title="@string/basic_moves"/>
+
         <item
             android:id="@+id/timer"
             android:icon="@drawable/ic_menu_timer"
@@ -52,11 +58,6 @@
             android:id="@+id/blind_game"
             android:icon="@drawable/ic_menu_game"
             android:title="@string/blind_game"/>
-
-        <item
-            android:id="@+id/basic_move"
-            android:icon="@drawable/ic_menu_basic"
-            android:title="@string/basic_moves"/>
     </group>
 
     <item android:title="@string/addition">
