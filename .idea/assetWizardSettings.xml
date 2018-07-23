@@ -19,11 +19,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="height" value="87" />
-                            <entry key="outputName" value="sq_star_3_4" />
+                            <entry key="height" value="80" />
+                            <entry key="outputName" value="rozov_2_1" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="D:\Dropbox\RubicsGuide\sq-star.svg" />
-                            <entry key="width" value="100" />
+                            <entry key="sourceFile" value="D:\Dropbox\RubicsGuide\rozov.svg" />
+                            <entry key="width" value="80" />
                           </map>
                         </option>
                       </PersistentState>
