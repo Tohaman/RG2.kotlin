@@ -22,7 +22,7 @@
         <item>@drawable/rozov_6</item>
         <item>@drawable/rozov_7</item>
         <item>@drawable/rozov_8</item>
-        <item>@drawable/rozov_9</item>
+        <item>@drawable/bondarenko_9</item>
     </integer-array>
     
     <string-array name="begin_bondarenko_descr">

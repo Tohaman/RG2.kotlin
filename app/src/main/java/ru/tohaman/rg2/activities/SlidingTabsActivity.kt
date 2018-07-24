@@ -171,7 +171,7 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
                             val lstView = listView {
                                 adapter = MyListAdapter(listPagers)
                             }
-                            lstView.onItemClick { p0, p1, p2, p3 ->
+                            lstView.onItemClick { _, _, p2, _ ->
                                 toast(listPagers[p2].description)
                             }
                         }
