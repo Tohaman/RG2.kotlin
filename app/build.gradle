@@ -8,7 +8,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "ru.tohaman.rg2"
-        minSdkVersion 17
+        minSdkVersion 14
         targetSdkVersion 27
         versionCode 67
         versionName "2.20180723.1"
