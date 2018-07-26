@@ -352,6 +352,10 @@ class MainActivity : MyDefaultActivity(),
                     "BEGIN" -> {
                         alert(getString(R.string.help_begin)) { okButton { } }.show()
                     }
+                    "ROZOV" -> {
+                        alert(getString(R.string.help_begin_rozov)) { okButton { } }.show()
+                    }
+
                     "G2F" -> {
                         alert(getString(R.string.help_g2f)) { okButton { } }.show()
                     }

@@ -5,6 +5,7 @@
         <item>Фридрих для 2х2</item>
         <item>Метод Ортега</item>
         <item>CLL для двушки</item>
+        <item>Слепая сборка (Blind)</item>
     </string-array>
 
     <integer-array name="main2x2_icon">
@@ -12,6 +13,7 @@
         <item>@drawable/v2x2_adv_1</item>
         <item>@drawable/ortega_1</item>
         <item>@drawable/cll</item>
+        <item>@drawable/main2x2</item>
     </integer-array>
 
     <string-array name="main2x2_descr">
@@ -19,6 +21,7 @@
         <item>@string/main2x2_st2_descr</item>
         <item>@string/main2x2_st3_descr</item>
         <item>@string/main2x2_st4_descr</item>
+        <item>@string/adv2x2_st6_descr</item>
     </string-array>
 
     <string-array name="main2x2_url">
@@ -26,11 +29,13 @@
         <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
+        <item>@string/adv2x2_st6_url</item>
     </string-array>
 
     <string name="main2x2_st1_descr">BEGIN2X2</string>
     <string name="main2x2_st2_descr">ADV2X2</string>
     <string name="main2x2_st3_descr">ORTEGA</string>
     <string name="main2x2_st4_descr">CLL</string>
+    <string name="main2x2_st5_descr">BLIND2X2</string>
 
 </resources>
