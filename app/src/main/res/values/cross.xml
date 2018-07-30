@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="cross_title">
+        <item>@string/cross_st4_title</item>
         <item>@string/cross_st1_title</item>
         <item>@string/cross_st2_title</item>
         <item>@string/cross_st3_title</item>
-        <item>@string/cross_st4_title</item>
+
     </string-array>
 
     <integer-array name="cross_icon">
+        <item>@drawable/vcross_4</item>
         <item>@drawable/vcross</item>
         <item>@drawable/vbegin_3</item>
         <item>@drawable/vcross_3</item>
-        <item>@drawable/vcross_4</item>
+
     </integer-array>
 
     <string-array name="cross_descr">
+        <item>@string/cross_st4_descr</item>
         <item>@string/cross_st1_descr</item>
         <item>@string/cross_st2_descr</item>
         <item>@string/cross_st3_descr</item>
-        <item>@string/cross_st4_descr</item>
+
     </string-array>
 
     <string-array name="cross_url">
+        <item>@string/cross_st4_url</item>
         <item>@string/cross_st1_url</item>
         <item>@string/cross_st2_url</item>
         <item>@string/cross_st3_url</item>
-        <item>@string/cross_st4_url</item>
+
     </string-array>
 
 
@@ -58,7 +62,7 @@
     ]]></string>
     <string name="cross_st3_url">X8ISM4OoiM0</string>
 
-    <string name="cross_st4_title">7 советов по сборке креста от J Perm</string>
+    <string name="cross_st4_title">Крест за 8 ходов от JPerm</string>
     <string name="cross_st4_descr" formatted="false"><![CDATA[
         <p>К сожалению, в видеоуроках от Максима по кресту отражены не все приемы быстрой сборки креста,
         поэтому в данный цикл я включил еще и видео с советами от <a href=https://www.facebook.com/JPermCubing>J Perm</a>.
@@ -67,7 +71,8 @@
         <p>Как я уже писал в комментариях к видео от Максима, крест из любого положения собирается в
         <a href="rg2://ytplay?time=0:00&link=IWXpkfwimo0">8 ходов</a>
         или меньше. И лучше собирать его снизу, в этом случае не понадобится тратить время на
-        переворот кубика, когда крест будет собран.</p>
+        переворот кубика, когда крест будет собран. Забудьте про боковой хват от Максима - хотите
+        собирать быстро, собирайте крест снизу.</p>
 
         <p><a href="rg2://ytplay?time=0:24&link=IWXpkfwimo0"><b>Совет №1</b></a> -
         (Ignore the center pieces) при сборке креста <b>не обращайте внимание на центры</b>, т.е. не нужно совмещать
