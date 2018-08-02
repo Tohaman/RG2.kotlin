@@ -48,6 +48,7 @@ class SlidingTabsActivity : MyDefaultActivity(),
     private lateinit var rightDrawerListView: ListView
     private lateinit var mListPagerLab: ListPagerLab
     private lateinit var favList: ArrayList<ListPager>
+    private lateinit var mViewPagerSlidingTabs: ViewPager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,6 +78,7 @@ class SlidingTabsActivity : MyDefaultActivity(),
 
         //Чтобы при запуске активности в onResume не пришлось менять фазу
         changedPhase = curPhase
+        changedId = curId
 
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
@@ -88,7 +90,7 @@ class SlidingTabsActivity : MyDefaultActivity(),
         val mListPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList(curPhase).filter { it.url != "submenu" } as ArrayList<ListPager>
 
         Log.v (TAG, "SlidingTabActivity onCreate Настраиваем SlidingTab")
-        val mViewPagerSlidingTabs = findViewById<ViewPager>(R.id.viewPagerSlidingTabs)
+        mViewPagerSlidingTabs = findViewById<ViewPager>(R.id.viewPagerSlidingTabs)
 
         // подключим адаптер для слайдингтаба (основного текста)
         val adapter = object : FragmentStatePagerAdapter(supportFragmentManager) {
@@ -173,7 +175,7 @@ class SlidingTabsActivity : MyDefaultActivity(),
             finish()
         } else {
             if (changedId != curId) {
-                //TODO значит ссылка на другой этап той же фазы
+                mViewPagerSlidingTabs.currentItem = changedId
             }
         }
     }
@@ -184,8 +186,8 @@ class SlidingTabsActivity : MyDefaultActivity(),
         when (key) {
             "startPhase" -> {
                 val phase = sp.getString(key, "ROZOV")
-                val id = sp.getInt("startId", 0)
                 if (curPhase !=  phase) { changedPhase = phase }
+                val id = sp.getInt(key, 0)
                 if (curId != id) { changedId = id}
             }
         }
