@@ -2,21 +2,21 @@
 <resources>
 
     <string-array name="recomend_title">
-        <item>@string/recomendation1_title</item>
+        <!--<item>@string/recomendation1_title</item>-->
         <item>@string/recomendation2_title</item>
         <item>@string/recomendation3_title</item>
         <item>@string/recomendation4_title</item>
     </string-array>
 
     <integer-array name="recomend_icon">
-        <item>@drawable/vbegin_0</item>
+        <!--<item>@drawable/vbegin_0</item>-->
         <item>@drawable/vbegin_0</item>
         <item>@drawable/vbegin_0</item>
         <item>@drawable/vbegin_0</item>
     </integer-array>
 
     <string-array name="recomend_descr">
-        <item>@string/recomendation1_descr</item>
+        <!--<item>@string/recomendation1_descr</item>-->
         <item>@string/recomendation2_descr</item>
         <item>@string/recomendation3_descr</item>
         <item>@string/recomendation4_descr</item>
@@ -24,7 +24,7 @@
 
 
     <string-array name="recomend_url">
-        <item>@string/recomendation1_url</item>
+        <!--<item>@string/recomendation1_url</item>-->
         <item>@string/recomendation2_url</item>
         <item>@string/recomendation3_url</item>
         <item>@string/recomendation4_url</item>
@@ -111,7 +111,9 @@
         никаких сроков, сколько времени нужно потратить на то или иное обучение - это все очень индивидуально,
         главное последовательность обучения. <br/><br/>
 
-        1. Первым делом рекомендую перейти на сборку кубика по моей методике, методике Максима, А.Кима или
+        1. Первым делом рекомендую перейти на сборку кубика по
+        <a href="rg2://pager?phase=ROZOV&item=0">моей методике,</a>
+        <a href="rg2://pager?phase=BEGIN&item=2">методике Максима,</a> А.Кима или
         любой другой методике, в которой при сборке верхнего слоя сначала все элементы
         делаются одного цвета (крыша красится), а потом расставляются на свои места.
         Это необходимо, для плавного/постепенного перехода к скоростной методике через Ускорения и
@@ -348,10 +350,9 @@
         <p><b>Начнем с плюсов:</b></p>
         <p>1. Первый крест собирается сразу на нижней грани, нет необходимости переворачивать
         кубик.</p>
-        <p>2. Более правильная, но только по сравнению с классической методикой, последовательность выполнения этапов.
+        <p>2. Более правильная, по сравнению с классической методикой, последовательность выполнения этапов.
         Есть F2L, OLL и PLL (состоящий каждый из двух этапов).</p>
-        <p>3. Более быстрые алгоритмы для решения 7-го этапа, чем куча пиф-пафов. Но это только если
-        сравнивать с методикой Максима без Ускорений.</p>
+        <p>3. Более быстрые алгоритмы для решения 7-го этапа, чем куча пиф-пафов.</p>
         <p>4. Более простое определение расстановки углов и ребер последнего слоя (PLL этап).
         А также, их исполнение через алгоритмы предыдущих этапов.</p>
 

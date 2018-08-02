@@ -7,7 +7,6 @@ import android.text.Editable
 import android.text.Html
 import android.text.Spanned
 import android.util.Log
-import android.view.WindowManager
 import ru.tohaman.rg2.DebugTag.TAG
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.data.ListPager
@@ -39,7 +38,7 @@ fun saveString2SP(value : String, key: String, context: Context) {
     editor.apply() // подтверждаем изменения
 }
 
-fun spannedString(desc:String, imgGetter: Html.ImageGetter): Spanned {
+fun spannedString(desc:String, imgGetter: Html.ImageGetter, tagHandler: Html.TagHandler? = null): Spanned {
     // Немного преобразуем текст для корректного отображения.
     val desc1 = desc.replace("%%", "%25")
 
@@ -54,10 +53,10 @@ fun spannedString(desc:String, imgGetter: Html.ImageGetter): Spanned {
     // пока не используется (null), но все воозможно :)
 
     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-        Html.fromHtml(desc1, Html.FROM_HTML_MODE_LEGACY, imgGetter, null)
+        Html.fromHtml(desc1, Html.FROM_HTML_MODE_LEGACY, imgGetter, tagHandler)
     } else {
         @Suppress("DEPRECATION")
-        Html.fromHtml(desc1, imgGetter, null)
+        Html.fromHtml(desc1, imgGetter, tagHandler)
     }
 }
 

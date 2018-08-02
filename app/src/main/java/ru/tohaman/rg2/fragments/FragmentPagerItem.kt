@@ -28,7 +28,6 @@ import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.DeveloperKey.DEVELOPER_KEY
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.VIDEO_PREVIEW
-import ru.tohaman.rg2.activities.YouTubeActivity
 import ru.tohaman.rg2.data.Favorite
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
@@ -66,7 +65,8 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         var textString = "<html><body style=\"text-align:justify\"> %s </body></html>"
         val st = getString(description)
         textString = String.format(textString, st)
-        val spanText = spannedString(textString, imgGetter)
+        val spanText = spannedString(textString, imgGetter, tagHandler)
+//        val spanText = Html.fromHtml("<br><p><strike>Test Strike</strike></p>", imgGetter, tagHandler)
 
         val mainTextView = view.findViewById<TextView>(PagerItemtUI.Ids.descriptionText)
 
@@ -215,7 +215,8 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         }
         //https://www.youtube.com/watch?v=ENLnPS2eqPg&t=20s
         text1 = kotlin.String.format(text1, url, getString(R.string.pager_youtube_text))
-        ytTextView.text = spannedString(text1, imgGetter)
+        ytTextView.text = spannedString(text1, imgGetter, tagHandler)
+//        ytTextView.text = Html.fromHtml("<br><mytag phase=1>Test Tag</mytag>", imgGetter, tagHandler)
     }
 
     private fun showYouTubePreview(thumbnailView: YouTubeThumbnailView, ytTextView: TextView, playPreviewImage: ImageView) {
@@ -261,6 +262,17 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         drawable.setBounds(0, 0, drawable.intrinsicWidth, drawable.intrinsicHeight)
         drawable
+    }
+
+    private val tagHandler = Html.TagHandler { opening, tag, output, xmlReader ->
+        //Тут можно обрабатывать свои тэги
+        if (tag.equals("mytag", true)) {
+            val open = opening
+            val tag1 = tag
+            val out = output
+            val xml = xmlReader
+
+        }
     }
 
     // И еще один метод для ЮТплеера = true, если есть приложение, которое может обрабоать наше намерение (интент)

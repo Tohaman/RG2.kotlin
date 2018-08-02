@@ -1,5 +1,6 @@
 package ru.tohaman.rg2.activities
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
@@ -35,8 +36,15 @@ import ru.tohaman.rg2.util.saveInt2SP
 import ru.tohaman.rg2.util.saveString2SP
 
 
-class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerInteractionListener {
-    private var mPhase = "BEGIN"
+class SlidingTabsActivity : MyDefaultActivity(),
+        SharedPreferences.OnSharedPreferenceChangeListener,
+        FragmentPagerItem.OnViewPagerInteractionListener
+{
+
+    private var curPhase = "BEGIN"
+    private var curId = 0
+    private var changedPhase = "BEGIN"
+    private var changedId = 0
     private lateinit var rightDrawerListView: ListView
     private lateinit var mListPagerLab: ListPagerLab
     private lateinit var favList: ArrayList<ListPager>
@@ -57,13 +65,18 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
         }
 
         //Инициируем фазу и номер этапа, должны быть переданы из другой активности, если нет, то используем значения по-умолчанию
-        var id = 0
         if (intent.hasExtra(RUBIC_PHASE)){
-            mPhase = intent.extras.getString(RUBIC_PHASE)
+            curPhase = intent.extras.getString(RUBIC_PHASE)
         }
         if (intent.hasExtra(EXTRA_ID)){
-            id = intent.extras.getInt(EXTRA_ID)
+            curId = intent.extras.getInt(EXTRA_ID)
         }
+
+        //Регистрируем обработчик изменений в SharedPreference
+        sp.registerOnSharedPreferenceChangeListener(this)
+
+        //Чтобы при запуске активности в onResume не пришлось менять фазу
+        changedPhase = curPhase
 
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
@@ -72,7 +85,7 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
 
         Log.v (TAG, "SlidingTabActivity onCreate Инициализируем ListPagers и передаем его адаптерам")
         mListPagerLab = ListPagerLab.get(this)
-        var mListPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList(mPhase).filter { it.url != "submenu" } as ArrayList<ListPager>
+        val mListPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList(curPhase).filter { it.url != "submenu" } as ArrayList<ListPager>
 
         Log.v (TAG, "SlidingTabActivity onCreate Настраиваем SlidingTab")
         val mViewPagerSlidingTabs = findViewById<ViewPager>(R.id.viewPagerSlidingTabs)
@@ -94,7 +107,7 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
 
         }
         mViewPagerSlidingTabs.adapter = adapter
-        mViewPagerSlidingTabs.currentItem = id
+        mViewPagerSlidingTabs.currentItem = curId
         tabs.setViewPager(mViewPagerSlidingTabs)
 
         Log.v (TAG, "SlidingTabActivity onCreate Настраиваем ListView для списка слева ")
@@ -120,7 +133,7 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
             //Если фаза не меняется, то выходить не надо, просто открываем другую вкладку
             val changedId = favList[i].id
             val changedPhase = favList[i].url
-            if (mPhase != changedPhase) {
+            if (curPhase != changedPhase) {
                 //вот такой "коллбэк", в основной активности обработчик onSharedPreferenceChanged
                 //обработает данные изменения и при возврате в onResume запустит что надо
                 saveInt2SP(changedId, "startId", ctx)
@@ -145,6 +158,41 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
         rightDrawerListView.adapter = adapter
     }
 
+    override fun onPause() {
+        super.onPause()
+        Log.v (TAG, "onPause - curPhase - $curPhase")
+        changedPhase = curPhase
+        changedId = curId
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (changedPhase != curPhase) {
+            //Если за время между он Pause и onResume была сменена фаза, т.е. вызывалась ShowPagerActivity
+            Log.v(DebugTag.TAG, "Phase changed from $curPhase to $changedPhase")
+            finish()
+        } else {
+            if (changedId != curId) {
+                //TODO значит ссылка на другой этап той же фазы
+            }
+        }
+    }
+
+    // Слушаем изменения в настройках программы
+    override fun onSharedPreferenceChanged(sp: SharedPreferences, key: String?) {
+        //Если поменяли фазу, значит меняем значение changedPhase
+        when (key) {
+            "startPhase" -> {
+                val phase = sp.getString(key, "ROZOV")
+                val id = sp.getInt("startId", 0)
+                if (curPhase !=  phase) { changedPhase = phase }
+                if (curId != id) { changedId = id}
+            }
+        }
+
+    }
+
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         //Если нажали на ? в правом верхнем углу, то вызываем АлертДиалог
         //со списком основных движений для соответствующей головоломки
@@ -158,7 +206,7 @@ class SlidingTabsActivity : MyDefaultActivity(), FragmentPagerItem.OnViewPagerIn
                         verticalLayout {
                             val listPagers : ArrayList<ListPager> =
                                     //если не одна из перечисленных головоломок, то вызываем движения для кубика 3х3
-                                    when (mPhase) {
+                                    when (curPhase) {
                                         "PYRAMINX" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_PYR")}
                                         "SKEWB" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_SKEWB")}
                                         "BEGIN4X4" -> {ListPagerLab.get(ctx).getPhaseList("BASIC4X4")}
