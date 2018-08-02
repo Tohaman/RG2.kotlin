@@ -187,7 +187,7 @@ class SlidingTabsActivity : MyDefaultActivity(),
             "startPhase" -> {
                 val phase = sp.getString(key, "ROZOV")
                 if (curPhase !=  phase) { changedPhase = phase }
-                val id = sp.getInt(key, 0)
+                val id = sp.getInt("startId", 0)
                 if (curId != id) { changedId = id}
             }
         }
