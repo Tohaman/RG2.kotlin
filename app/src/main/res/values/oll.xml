@@ -649,13 +649,19 @@
     <string name="oll_st24_title">#24 Правый мягкий знак с блоком</string>
     <string name="oll_st24_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
+        <p>1. Двойным блоком к себе.</p>
         <p style="text-align:center"><img src="voll_24_1.xml" width="60%%"></p>
         Фингертрикс: <a href="rg2://ytplay?time=1:13&link=Qq10hEWLDXQ">на видео 1:13</a>
         (<a href="rg2://ytplay?time=2:25&link=Qq10hEWLDXQ">или 2:25</a>) <br/>
         Фингертрикс: <a href="rg2://ytplay?time=3:36&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
-        <b>Алгоритм: R\' U\' F (U R U\' R\') F\' R</b><br/><br/>
-        <b>Как смоделировать</b>: <a href="rg2://ytplay?time=2:06&link=Qq10hEWLDXQ">на видео 2:06</a>
-        противоположными ходами <b>R\' F (R U R\' U\') F\' U R</b>.
+        <p><b>Алгоритм: R\' U\' F (U R U\' R\') F\' R</b></p>
+
+        <p>2. Двойным блоком налево.</p>
+        <p style="text-align:center"><img src="voll_24_2.xml" width="60%%"></p>
+        <p><b>Алгоритм: S (R U R\' U\') Fw\' U\' F</b></p>
+
+        <p><b>Как смоделировать</b>: <a href="rg2://ytplay?time=2:06&link=Qq10hEWLDXQ">на видео 2:06</a>
+        противоположными ходами <b>R\' F (R U R\' U\') F\' U R</b>.</p>
     ]]></string>
     <string name="oll_st24_url">Qq10hEWLDXQ</string>
 

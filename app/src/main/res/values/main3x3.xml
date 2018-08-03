@@ -2,8 +2,8 @@
 <resources>
     <string-array name="main3x3_title">
         <item>С чего начать?</item>
+        <item>Метод для начинающих от Антона Розова (10+)</item>
         <item>Метод для начинающих от Максима Чечнева (7+)</item>
-        <item>Метод для начинающих от Антона Розова (11+)</item>
         <item>Продвинутые методы (Фридрих (CFOP), ROUX)</item>
         <item>Сборка вслепую (Blind)</item>
         <item>Узоры на кубике</item>
@@ -11,8 +11,8 @@
 
     <integer-array name="main3x3_icon">
         <item>@drawable/vbegin_0</item>
-        <item>@drawable/vbegin_9</item>
         <item>@drawable/rozov_0</item>
+        <item>@drawable/vbegin_9</item>
         <item>@drawable/vf2l_2</item>
         <item>@drawable/blind</item>
         <item>@drawable/pattern_1</item>
@@ -20,8 +20,8 @@
 
     <string-array name="main3x3_descr">
         <item>@string/recomendation2_descr</item>
-        <item>@string/main3x3_st2_descr</item>
         <item>@string/main3x3_st6_descr</item>
+        <item>@string/main3x3_st2_descr</item>
         <item>@string/main3x3_st3_descr</item>
         <item>@string/main3x3_st4_descr</item>
         <item>@string/main3x3_st5_descr</item>

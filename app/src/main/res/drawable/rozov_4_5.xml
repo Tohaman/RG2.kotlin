@@ -34,4 +34,6 @@
     <path android:fillColor="@color/c_o" android:pathData="M13.38,62.68l6.19,7.97l-0.13,19.8l-6.12,-9.17z"/>
     <path android:fillColor="@color/c_o" android:pathData="M6.88,54.15l5.62,7.39l-0.13,18.34l-5.29,-8.03z"/>
     <path android:fillColor="@color/c_o" android:pathData="M1.41,46.63l4.66,6.31l0.19,17.9l-4.53,-6.95z"/>
+
+    <path android:fillColor="@color/c_w" android:pathData="m9.446,20.9146 l5.1028,27.2738c0.6603,-0.7566 -0.3462,0.6923 1.695,-1.0274 -0.1574,3.5929 -0.2309,5.0395 -0.2362,8.7558 -1.5741,-1.9951 -2.8552,-4.915 -4.1389,-6.7216 0.8081,-0.1647 0.8833,-0.0712 1.758,-0.4515L8.5662,21.271Z" />
 </vector>
