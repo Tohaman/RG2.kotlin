@@ -52,6 +52,7 @@ class YouTubeActivity : AppCompatActivity(), YouTubePlayer.OnInitializedListener
         Log.v (DebugTag.TAG, "YouTubeActivity преобразуем время")
         var time = intent.data!!.getQueryParameter("time")
         videoId = intent.data!!.getQueryParameter("link")
+        //TODO почистить лишнее в следующих версиях
 //        val intent = YouTubeStandalonePlayer.createVideoIntent(this, DEVELOPER_KEY, videoId, stringToTimeMillis(time), true, true)
 //        if (intent != null) {
 //            if (canResolveIntent(intent)) {
