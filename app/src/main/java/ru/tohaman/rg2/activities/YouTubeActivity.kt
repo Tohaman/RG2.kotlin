@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatDelegate
 import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
-import com.google.android.youtube.player.YouTubeStandalonePlayer
+import com.google.android.youtube.player.*
 import org.jetbrains.anko.browse
 import org.jetbrains.anko.ctx
 import ru.tohaman.rg2.DebugTag
@@ -29,13 +29,16 @@ import java.util.*
  * а манифест перед <application добавить строку></application><uses-permission android:name="android.permission.INTERNET"></uses-permission>
   </intent-filter> */
 
-class YouTubeActivity : AppCompatActivity() {
+class YouTubeActivity : AppCompatActivity(), YouTubePlayer.OnInitializedListener {
+
     private var date: Date? = null
+    private var videoId = ""
+    private val RECOVERY_DIALOG_REQUEST = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //Включаем поддержку векторной графики на устройствах ниже Лилипопа (5.0)
-        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
+        //AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         Log.v (DebugTag.TAG, "YouTubeActivity onCreate")
         // Проверяем значения из настроек, выключать экран или нет при прсмотре видео
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
@@ -45,39 +48,50 @@ class YouTubeActivity : AppCompatActivity() {
         } else {
             window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         }
+
         Log.v (DebugTag.TAG, "YouTubeActivity преобразуем время")
         var time = intent.data!!.getQueryParameter("time")
-        val videoId = intent.data!!.getQueryParameter("link")
-        val intent = YouTubeStandalonePlayer.createVideoIntent(this, DEVELOPER_KEY, videoId, stringToTimeMillis(time), true, true)
-        if (intent != null) {
-            if (canResolveIntent(intent)) {
-                Log.v (DebugTag.TAG, "Установлен - запускаем StandAlone плеер c нужного времени")
-                startActivityForResult(intent, REQ_START_STANDALONE_PLAYER)
-            } else {
-                Log.v (DebugTag.TAG, "Видимо нету Youtube плеера, запускаем просмотр через браузер time = $time")
-                time = Regex(":").replace(time,"m")
-                browse("https://youtu.be/$videoId" + "?t=$time" + "s")
-                finish()
-            }
+        videoId = intent.data!!.getQueryParameter("link")
+//        val intent = YouTubeStandalonePlayer.createVideoIntent(this, DEVELOPER_KEY, videoId, stringToTimeMillis(time), true, true)
+//        if (intent != null) {
+//            if (canResolveIntent(intent)) {
+//                Log.v (DebugTag.TAG, "Установлен - запускаем StandAlone плеер c нужного времени")
+//                startActivity(intent)
+//                //startActivityForResult(intent, REQ_START_STANDALONE_PLAYER)
+//                finish()
+//            } else {
+//                Log.v (DebugTag.TAG, "Видимо нету Youtube плеера, запускаем просмотр через браузер time = $time")
+//                time = Regex(":").replace(time,"m")
+//                browse("https://youtu.be/$videoId" + "?t=$time" + "s")
+//                finish()
+//            }
+//        }
+        val result = YouTubeApiServiceUtil.isYouTubeApiServiceAvailable(ctx)
+        if (result == YouTubeInitializationResult.SUCCESS) {
+            startActivity(
+                YouTubeStandalonePlayer.createVideoIntent(this, DEVELOPER_KEY, videoId, stringToTimeMillis(time), true, true)
+            )
+        } else {
+            time = Regex(":").replace(time,"m")
+            browse("https://youtu.be/$videoId" + "?t=$time" + "s")
         }
+        finish()
+    }
+
+    override fun onInitializationSuccess(p0: YouTubePlayer.Provider?, p1: YouTubePlayer?, p2: Boolean) {
+        p1?.loadVideo(DEVELOPER_KEY)
+    }
+
+    override fun onInitializationFailure(p0: YouTubePlayer.Provider?, p1: YouTubeInitializationResult?) {
+        Log.v(DebugTag.TAG, p1.toString())
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
         super.onActivityResult(requestCode, resultCode, data)
         Log.v (DebugTag.TAG, "YouTubeActivity onActivityResult")
-        if (requestCode == REQ_START_STANDALONE_PLAYER && resultCode != Activity.RESULT_OK) {
-            val errorReason = YouTubeStandalonePlayer.getReturnedInitializationResult(data)
-            if (errorReason.isUserRecoverableError) {
-                errorReason.getErrorDialog(this, 0).show()
-            } else {
-                val errorMessage = String.format(getString(R.string.error_player), errorReason.toString())
-                Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
-            }
-        }
-        if (requestCode == REQ_START_STANDALONE_PLAYER && resultCode == Activity.RESULT_OK) {
-            Log.v (DebugTag.TAG, "Просмотр завершился удачно")
-            finish()
-        }
+//        if (requestCode == RECOVERY_DIALOG_REQUEST) {
+//                playerView.initialize(DEVELOPER_KEY, this)
+//        }
     }
 
     private fun canResolveIntent(intent: Intent): Boolean {
@@ -86,6 +100,7 @@ class YouTubeActivity : AppCompatActivity() {
         return resolveInfo != null && !resolveInfo.isEmpty()
     }
 
+    //Преобразует строку вида 0:25 в милисекунды (25000)
     private fun stringToTimeMillis(text: String): Int {
         val calendar = Calendar.getInstance()
         val format = SimpleDateFormat("m:s", Locale.ENGLISH)
