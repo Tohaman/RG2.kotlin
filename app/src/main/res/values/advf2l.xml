@@ -2,35 +2,45 @@
 <resources>
     <string-array name="advf2l_title">
         <item>@string/advf2l_st1_title</item>
+        <item>Жизненный F2L</item>
         <item>@string/advf2l_st2_title</item>
         <item>@string/advf2l_st3_title</item>
         <item>@string/advf2l_st4_title</item>
         <item>@string/advf2l_st5_title</item>
+
     </string-array>
 
     <integer-array name="advf2l_icon">
+        <item>@drawable/vf2l</item>
         <item>@drawable/vf2l</item>
         <item>@drawable/vf2l1</item>
         <item>@drawable/vf2l2_1</item>
         <item>@drawable/vf2l3_1</item>
         <item>@drawable/vf2l4_1</item>
+
     </integer-array>
 
     <string-array name="advf2l_descr">
         <item>@string/advf2l_st1_descr</item>
+        <item>@string/g2f_st5_descr</item>
         <item>@string/advf2l_st2_descr</item>
         <item>@string/advf2l_st3_descr</item>
         <item>@string/advf2l_st4_descr</item>
         <item>@string/advf2l_st5_descr</item>
+
     </string-array>
 
     <string-array name="advf2l_url">
         <item>@string/advf2l_st1_url</item>
+        <item>submenu</item>
         <item>@string/advf2l_st2_url</item>
         <item>@string/advf2l_st3_url</item>
         <item>@string/advf2l_st4_url</item>
         <item>@string/advf2l_st5_url</item>
+
     </string-array>
+
+    <string name="g2f_st5_descr">F2L</string>
 
     <string name="advf2l_max_title">Жизненный F2L от Максима</string>
     <string name="advf2l_max_descr" formatted="false"><![CDATA[
@@ -41,87 +51,80 @@
     <a href="rubic-activity://listactivity?phase=F2L"> щелкните сюда</a>
     ]]></string>
 
-    <string name="advf2l_st1_title">Интуитивный F2L от JPerm</string>
+    <string name="advf2l_st1_title">Интуитивный F2L (без формул)</string>
     <string name="advf2l_st1_descr" formatted="false"><![CDATA[
-        <p>Как много было сказано в видео от Максима, но почему-то мало уделено этому внимания, F2L как и
-        крест можно и нужно понимать, т.е. можно решать интуитивно, без формул, особенно на \"первых парах\".
-        А уже потом, применяя
+        <p>F2L как и крест можно и нужно понимать, т.е. можно решать интуитивно, без формул, особенно
+        на \"первых парах\". А уже потом, применяя
         формулы, ускорять свою сборку. Т.е. на мой взгляд, F2L лучше начать с интуитивного F2L, сразу
-        отказавшись от новичкового метода, постепенно ускоряя формулами (от Максима и Кристофера)
+        отказавшись от новичкового метода, постепенно ускоряя формулами (из Жизненного и Advanced F2L)
         свои самые \"нелюбимые\" ситуации. Пусть поначалу это и окажется медленее, чем новичковый метод.</p>
 
-        <p>На ютубе много видео по F2L, но к сожалению нормального интуитивного F2L на русском языке я
-        так и не нашел (может дело просто в моих тараканах в голове). Поэтому за основу я взял видео
-        от JPerm (пусть и на английском), но где все четко, упорядоченно и без ненужной фоновой музыки.
-        Надеюсь, что с моими комментариями будет все понятно.</p>
-
         <p>Главное отличие F2L от метода для новичков, в том, что два нижних слоя
-        <a href="rg2://ytplay?time=0:08&link=Ar_Zit1VLG0">собираются вместе</a>
+        <a href="rg2://ytplay?time=0:24&link=aaaaaaaaaaa">собираются вместе</a>
         , угол (парень) ставится на место вместе со своим ребром (девушкой), т.е. парой.</p>
 
         <p style="text-align:center"><img src="vf2l.xml" width="30%%"></p>
 
-        <p>В F2L есть <b><a href="rg2://ytplay?time=0:08&link=Ar_Zit1VLG0">4 базовых алгоритма</a> (The 4 Fundamental Algorithms).</b><br/>
-        Когда я сказал, что решать F2L можно без формул, я слукавил. Все-таки 4 алгоритма выучить придется.
+        <p>В F2L есть <b><a href="rg2://ytplay?time=1:32&link=aaaaaaaaaaa">4 базовых алгоритма.</a></b><br/>
+        Когда я сказал, что решать F2L можно без формул, я немного слукавил. Все-таки 4 алгоритма выучить придется.
         Но, во-первых, это трехходовки, а во-вторых, пара из них зеркальна другой паре (делается не справа, а слева),
         т.е. по сути это всего лишь два простейших трехходовых алгоритма. Итак:</p>
 
-        <a href="rg2://ytplay?time=0:24&link=Ar_Zit1VLG0">Первый базовый</a> алгоритм: <b>R U\' R\'</b><br/>
+        <a href="rg2://ytplay?time=1:50&link=aaaaaaaaaaa">Первый базовый</a> алгоритм: <b>R U\' R\'</b><br/>
         Применяется для ситуации когда угол с ребром уже образуют пару.
 
         <p style="text-align:center"><img src="vf2l_int_2.xml" width="30%%"></p>
 
-        <a href="rg2://ytplay?time=0:32&link=Ar_Zit1VLG0">Зеркальный первому</a> <b>L\' U L</b><br/>
+        <a href="rg2://ytplay?time=2:08&link=aaaaaaaaaaa">Зеркальный первому</a> <b>L\' U L</b><br/>
         <p style="text-align:center"><img src="vf2l_int_3.xml" width="30%%"></p>
 
-        <a href="rg2://ytplay?time=0:40&link=Ar_Zit1VLG0">Второй базовый</a> алгоритм: <b>R U R\'</b><br/>
+        <a href="rg2://ytplay?time=2:22&link=aaaaaaaaaaa">Второй базовый</a> алгоритм: <b>R U R\'</b><br/>
         Применяется когда верхние наклейки угла и ребра разные. Является первыми тремя ходами обычного пиф-пафа.
         <p style="text-align:center"><img src="vf2l_int_4.xml" width="30%%"></p>
 
-        Ну и <a href="rg2://ytplay?time=0:50&link=Ar_Zit1VLG0">зеркальный ему</a> <b>L\' U\' L</b><br/>
+        Ну и <a href="rg2://ytplay?time=2:42&link=aaaaaaaaaaa">зеркальный ему</a> <b>L\' U\' L</b><br/>
         <p style="text-align:center"><img src="vf2l_int_5.xml" width="30%%"></p>
 
-        Перейдем непосредственно к сборке.<br/><br/>
+        <a href="rg2://ytplay?time=2:51&link=aaaaaaaaaaa">Перейдем непосредственно к сборке.</a><br/><br/>
 
         1. Первое правило интуитивной сборки <b>Обе части пары должны быть на
-        <a href="rg2://ytplay?time=1:02&link=Ar_Zit1VLG0">верхнем слое</a>
-        (Both pieces in top layer).</b><br/>
+        <a href="rg2://ytplay?time=2:55&link=aaaaaaaaaaa">верхнем слое.</a></b><br/>
         Если какая-то из частей не наверху, то ее надо туда поднять.
         Проще всего это сделать пиф-пафом, ну или лучше
-        <a href="rg2://ytplay?time=1:20&link=Ar_Zit1VLG0">первыми тремя ходами</a>
+        <a href="rg2://ytplay?time=3:33&link=aaaaaaaaaaa">первыми тремя ходами</a>
         пиф-пафа, т.е. вторым базовым алгоритмом  <b>R U R\'</b>.<br/>
 
         <p style="text-align:center"><img src="vf2l_int_6.xml" width="60%%"></p>
 
-        Пожалуй есть одно исключение, когда не стоит поднимать обе части наверх - это когда угол уже
-        стоит на своем месте. В этом случае проще загнать
-        ребро на место <b>ромашкой</b> (или каким-нибудь алгоритмом из ускорений Advanced F2L).<br/><br/>
+        Пожалуй есть <a href="rg2://ytplay?time=3:55&link=aaaaaaaaaaa">одно исключение,</a> когда не
+        стоит поднимать обе части наверх - это когда угол уже стоит на своем месте. В этом случае проще загнать
+        ребро на место <b>ромашкой</b> (или каким-нибудь другим алгоритмом из методики для новичков
+        или Advanced F2L).<br/><br/>
 
-        2. <b>Сверху ли <a href="rg2://ytplay?time=1:02&link=Ar_Zit1VLG0"> белая наклейка?</a> (Is white facing up?)</b><br/>
+        2. <b>Сверху ли <a href="rg2://ytplay?time=4:29&link=aaaaaaaaaaa"> белая наклейка?</a></b><br/>
         Если обе части на верхнем слое, то теперь смотрим на угол, точнее на то, куда он смотрит
         белой наклейкой. Вверх или куда-то вбок. Т.е. проще говоря, смотрим, парень у нас с завышенной
         самооценкой или нет. <br/><br/>
 
-        2.1 Первый случай: <b><a href="rg2://ytplay?time=1:32&link=Ar_Zit1VLG0">белая сбоку</a></b>, т.е.
+        2.1 Первый случай: <b><a href="rg2://ytplay?time=4:42&link=aaaaaaaaaaa">белая сбоку</a></b>, т.е.
         парень скромный или наглый.<br/><br/>
 
         <p style="text-align:center"><img src="vf2l_int_7.xml" width="60%%"></p>
 
-        3. <b>Устанавливаем угол (Move the corner piece).</b><br/>
+        3. <b>Устанавливаем угол.</b><br/>
         Для этого подгоняем парня к
-        <a href="rg2://ytplay?time=1:32&link=Ar_Zit1VLG0"> своей квартире</a>,
-        как в методике для начинающих. Теперь
-        <a href="rg2://ytplay?time=1:43&link=Ar_Zit1VLG0"> смотрим на верхнюю наклейку,</a>
-        и . . . отводим угол от той стороны, какого цвета верхняя наклейка. Т.е. так,
-        чтобы после отвода, белая наклейка угла оставалась видна.<br/><br/>
+        <a href="rg2://ytplay?time=4:46&link=aaaaaaaaaaa">своей квартире</a>,
+        как в методике для начинающих. Теперь смотрим на верхнюю наклейку, и …
+        отводим угол от той стороны, какого цвета верхняя наклейка
+        (<a href="rg2://ytplay?time=4:56&link=aaaaaaaaaaa">\"жмем на белую наклейку\"</a>).
+        Т.е. ставим угол так, чтобы после отвода, его белая наклейка оставалась видна.<br/><br/>
 
-        <p style="text-align:center"><img src="vf2l_int_8.xml" width="60%%"></p>
+        <p style="text-align:center"><img src="vf2l_int_8.xml"></p>
 
-        4. Смотрим <b><a href="rg2://ytplay?time=1:54&link=Ar_Zit1VLG0">одинаковы ли верхние наклейки угла и ребра.</a>
-        (Are top colors the same?).</b><br/>
+        4. Смотрим <b><a href="rg2://ytplay?time=6:01&link=aaaaaaaaaaa">одинаковы ли верхние наклейки угла и ребра.</a></b><br/>
         И в зависимости от этого определяем, где место ребра по отношению к углу.<br/>
         Как определить место куда должно встать ребро?
-        <a href="rg2://ytplay?time=2:10&link=Ar_Zit1VLG0">Положите палец</a> на середину крыши, параллельно
+        <a href="rg2://ytplay?time=5:33&link=aaaaaaaaaaa">Положите палец</a> на середину крыши, параллельно
         той грани, на которой белая наклейка угла. Два ребра, до которых дотрагивается палец и есть
         те два места, на которые может встать ребро в зависимости как раз от того, одинаковы или нет
         верхние наклейки угла и ребра.
@@ -129,27 +132,26 @@
         <p style="text-align:center"><img src="vf2l_int_9.xml" width="60%%"></p>
 
         Если наклейки
-        <a href="rg2://ytplay?time=2:19&link=Ar_Zit1VLG0">одинаковы,</a> то место рядом с углом.
-        Если <a href="rg2://ytplay?time=2:24&link=Ar_Zit1VLG0">противоположны,</a>
+        <a href="rg2://ytplay?time=6:07&link=aaaaaaaaaaa">одинаковы,</a> то место рядом с углом.
+        Если <a href="rg2://ytplay?time=6:14&link=aaaaaaaaaaa">противоположны,</a>
         то на противоположной грани.
 
         <p style="text-align:center"><img src="vf2l_int_10.xml" width="80%%"></p>
 
-        5. С местом определились. Теперь - <b><a href="rg2://ytplay?time=2:28&link=Ar_Zit1VLG0">ставим ребро на это место.</a>
-        (Move the edge piece).</b><br/>
+        5. С местом определились. Теперь -
+        <b><a href="rg2://ytplay?time=6:25&link=aaaaaaaaaaa">ставим ребро на это место.</a></b><br/>
         Но поставить надо так, чтобы угол остался там, где он есть.
         Для этого опустим угол на первый этаж вращением той грани, на которой белая наклейка угла.
         Крутим крышу, так чтобы ребро встало на место и возвращаем угол на свое место.
 
         <p style="text-align:center"><img src="vf2l_int_11.xml" width="80%%"></p>
 
-        6. <b><a href="rg2://ytplay?time=2:48&link=Ar_Zit1VLG0">Заселяем.</a>
-        (Insert).</b><br/>
+        6. <b><a href="rg2://ytplay?time=7:30&link=aaaaaaaaaaa">Заселяем.</a></b><br/>
         Используя один из базовых алгоритмов. Для одинаковых верхних наклеек это будет один из первых базовых.
 
         <p style="text-align:center"><img src="vf2l_int_12.xml" width="80%%"></p>
 
-        Теперь о ситуации когда верхние наклейки <a href="rg2://ytplay?time=2:48&link=Ar_Zit1VLG0">угла и ребра разные.</a><br/>
+        Теперь о ситуации когда верхние наклейки угла и ребра разные.<br/>
         Абсолютно те же самые 5 и 6 шаги,
 
         <p style="text-align:center"><img src="vf2l_int_11_1.xml" width="80%%"></p>
@@ -160,25 +162,24 @@
         <p style="text-align:center"><img src="vf2l_int_13.xml" width="60%%"></p>
 
         2.2 Вернемся еще чуть назад к ситуации, когда обе части на верхнем слое, но
-        <b><a href="rg2://ytplay?time=3:59&link=Ar_Zit1VLG0">белая наклейка угла сверху</a></b>,
+        <b><a href="rg2://ytplay?time=8:04&link=aaaaaaaaaaa">белая наклейка угла сверху</a></b>,
         т.е. парень с завышенной самооценкой. Этот случай, на мой взгляд, еще проще, чем когда белая наклейка сбоку.<br/>
 
         <p style="text-align:center"><img src="vf2l_int_14.xml" width="60%%"></p>
 
-        3.  Тут сразу начинаем с  <b><a href="rg2://ytplay?time=4:15&link=Ar_Zit1VLG0">установки на место ребра</a>
-        (Move the edge piece).</b><be/>
+        3.  Тут сразу начинаем с <b><a href="rg2://ytplay?time=8:23&link=aaaaaaaaaaa">установки на место ребра</a></b><br/>
+
         А место у ребра в данном случае на своей грани, т.е. делаем хорошо знакомый \"Стебель ромашки\". И теперь
-        опускаем ребро на второй этаж <a href="rg2://ytplay?time=4:18&link=Ar_Zit1VLG0">от своей квартиры.</a>
+        опускаем ребро на второй этаж <a href="rg2://ytplay?time=8:40&link=aaaaaaaaaaa">от своей квартиры.</a>
 
         <p style="text-align:center"><img src="vf2l_int_15.xml" width="60%%"></p>
 
-        4. <b><a href="rg2://ytplay?time=4:21&link=Ar_Zit1VLG0">Ставим угол над ребром.</a>
-        (Put corner above edge).</b> И поднимаем пару на верхний слой.
+        4. <b><a href="rg2://ytplay?time=8:54&link=aaaaaaaaaaa">Ставим угол над ребром.</a></b> И
+        поднимаем пару на верхний слой.
 
         <p style="text-align:center"><img src="vf2l_int_16.xml" width="60%%"></p>
 
-        5. <b><a href="rg2://ytplay?time=4:28&link=Ar_Zit1VLG0">Заселяем.</a>
-        (Insert).</b><br/>
+        5. <b><a href="rg2://ytplay?time=9:08&link=aaaaaaaaaaa">Заселяем.</a></b><br/>
         Используя один из первых базовых алгоритмов <b>R U\' R\'</b> или <b>L\' U L</b>.<br/><br/>
 
         <p style="text-align:center"><img src="vf2l_int_12.xml" width="80%%"></p>
@@ -186,7 +187,7 @@
         Profit!<br/><br/>
 
         Осталось рассказать про ситуации немного выходящие за рамки вышепреведенной инструкции.
-        <b><a href="rg2://ytplay?time=4:37&link=Ar_Zit1VLG0">(How to solve special cases).</a></b><br/>
+        <b><a href="rg2://ytplay?time=9:13&link=aaaaaaaaaaa">(How to solve special cases).</a></b><br/>
         Например, такая ситуация:
 
         <p style="text-align:center"><img src="vf2l_int_17.xml" width="30%%"></p>
@@ -195,7 +196,7 @@
         ребру угол, т.к. угол окажется на первом этаже. Есть несколько вариантов решения:<br/><br/>
         1. Алгоритмы - их вы можете найти в других частях F2L (Жизненном и Advanced)<br/><br/>
 
-        2. <b><a href="rg2://ytplay?time=5:21&link=Ar_Zit1VLG0">Надо разбить такую пару.</a> (Split it up)</b><br/>
+        2. <b><a href="rg2://ytplay?time=9:49&link=aaaaaaaaaaa">Надо разбить такую пару.</a></b><br/>
         И простой алгоритм для разбивки пар такой: опустите угол на первый этаж, уведите ребро в сторону, верните угол наверх
         <b>(R\' U R)</b>. Но как вы заметили, данный алгоритм выселяет пару из задней правой квартиры.
         Ничего страшного, просто поверните два нижних слоя так, чтобы задняя правая квартира
@@ -208,25 +209,45 @@
         то в этом случае не опустите, а поднимите угол и отведите его в сторону, после чего верните
         ребро на место, т.е. <b>(R U\' R\')</b>. Пара расстанется и ее можно легко решить интуитивно.
 
-        <p>Пример <a href="rg2://ytplay?time=6:20&link=Ar_Zit1VLG0">интуитивной сборки F2L</a> на видео с 6:20</p>
+        <p>Ну и как обычно, пара ускорений для начинающих интуитивный F2L.</p>
 
-        <p> И еще немножко от себя. Считайте это первым ускорением интуитивного F2L. Если угол в
-        своей квартире, но перевернут (белой наклейкой на первом этаже), а ребро на третьем этаже, то
-        просто начинайте делать алгоритм для угла с завышенной самооценкой.</p>
+        <p>1. Если угол <a href="rg2://ytplay?time=11:05&link=aaaaaaaaaaa">в своей квартире,</a> но
+        перевернут (белой наклейкой на первом этаже), а ребро на
+        третьем этаже, то просто начинайте делать алгоритм для угла с завышенной самооценкой.</p>
 
         <p style="text-align:center"><img src="vf2l_int_19.xml" width="30%%"></p>
 
         <p>Т.е. сначала подгоните
         ребро к своему цвету (сделайте стебель \"ромашки\"), опустите ребро на второй этаж от квартиры,
-        тем самым подняв угол на верхний слой и посмотрите на угол, если белая наклейка сверху, то
-        продолжаем алгоритм \"парня с завышенной самооценкой\", т.е. ставим угол над ребром. Если же
-        наклейка сбоку, то отводим крышу в противоположную сторону (\"давим\" на белую наклейку). Теперь
+        тем самым подняв угол на верхний слой и посмотрите на угол, если
+        <a href="rg2://ytplay?time=11:05&link=aaaaaaaaaaa">белая наклейка сверху,</a> то
+        продолжаем алгоритм \"парня с завышенной самооценкой\", т.е. ставим угол над ребром.<br/>
+        Если же наклейка сбоку, то отводим крышу в противоположную сторону
+        (<a href="rg2://ytplay?time=12:34&link=aaaaaaaaaaa">\"давим\" на белую наклейку</a>). Теперь
         возвращаем ребро на третий этаж. Получаем одну из базовых ситуаций - заселяем.
         </p>
+
+        <p>2. Если угол на верхнем слое (белой наклейкой вбок), а
+        <a href="rg2://ytplay?time=13:05&link=aaaaaaaaaaa">ребро на втором этаже.</a></p>
+        <p style="text-align:center"><img src="vf2l_int_20.xml" width="30%%"></p>
+
+        <p>В этом случае, считайте, что место где стоит ребро, это их квартира и действуем
+        <a href="rg2://ytplay?time=13:19&link=aaaaaaaaaaa">по обычному алгоритму</a> для такого угла.
+        Т.е. подгоняем угол к ребру, отводим его от ребра так, чтобы
+        белая наклейка была видна и опускаем на первый этаж, тем самым подняв ребро наверх. Теперь
+        ставим ребро на его место и возвращаем угол наверх. Заселяем пару.
+        </p>
+
+        <p>Заметьте, что для данного ускорения ребро на втором этаже может стоять и
+        <a href="rg2://ytplay?time=14:09&link=aaaaaaaaaaa">не на своем месте.</a></p>
+
+        <p>Примеры интуитивной сборки от <a href="rg2://ytplay?time=6:20&link=Ar_Zit1VLG0">Дилана Ванга,</a>
+        <a href="rg2://ytplay?time=14:56&link=aaaaaaaaaaa">мой пример N1</a> и
+        <a href="rg2://ytplay?time=17:28&link=aaaaaaaaaaa">мой пример N2</a>
+        </p>
+
     ]]></string>
-    <string name="advf2l_st1_url">Ar_Zit1VLG0</string>
-
-
+    <string name="advf2l_st1_url">aaaaaaaaaaa</string>
 
     <string name="advf2l_st2_title">Advanced F2L</string>
     <string name="advf2l_st2_descr" formatted="false"><![CDATA[

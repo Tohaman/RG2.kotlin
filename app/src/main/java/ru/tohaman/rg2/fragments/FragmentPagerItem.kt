@@ -56,10 +56,10 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         val phase = arguments!!.getString("phase")
         val id = arguments!!.getInt("id")
         val lp = listPagerLab.getPhaseItem(id, phase)
-        var title = lp.title
+        val title = lp.title
         val topImage = lp.icon
         val description = lp.description
-        val comment  = lp.comment
+        var comment  = lp.comment
         url = lp.url
 
         var textString = "<html><body style=\"text-align:justify\"> %s </body></html>"
@@ -176,7 +176,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         //Выводим коммент, и делаем обработчик нажатия на него (вызваем окно редактирования)
         val commentText = view.findViewById<TextView>(PagerItemtUI.Ids.commentText)
         commentText.text = (ctx.getString(R.string.commentText) + "\n" + comment)
-        commentText.onClick {
+        commentText.onClick { it ->
             alert(R.string.commentText) {
                 customView {
                     val imm = ctx.inputMethodManager
@@ -189,10 +189,10 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
                     positiveButton("OK") {
                         imm.hideSoftInputFromWindow(eText.windowToken, 0)
                         val lps = listPagerLab.getPhaseItemByTitle(phase, title)
-                        val cmnt = eText.text.toString()
-                        lps.comment = cmnt
+                        comment = eText.text.toString()
+                        lps.comment = comment
                         listPagerLab.updateListPager(lps)
-                        commentText.text = (ctx.getString(R.string.commentText) + "\n" + cmnt)
+                        commentText.text = (ctx.getString(R.string.commentText) + "\n" + comment)
                     }
                     negativeButton("Отмена") {
                         imm.hideSoftInputFromWindow(eText.windowToken, 0)
