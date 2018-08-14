@@ -2,42 +2,39 @@
 <resources>
     <string-array name="advf2l_title">
         <item>@string/advf2l_st1_title</item>
-        <item>Жизненный F2L</item>
         <item>@string/advf2l_st2_title</item>
         <item>@string/advf2l_st3_title</item>
         <item>@string/advf2l_st4_title</item>
         <item>@string/advf2l_st5_title</item>
+        <item>Жизненный F2L (формулы)</item>
 
     </string-array>
 
     <integer-array name="advf2l_icon">
         <item>@drawable/vf2l</item>
-        <item>@drawable/vf2l</item>
         <item>@drawable/vf2l1</item>
         <item>@drawable/vf2l2_1</item>
         <item>@drawable/vf2l3_1</item>
         <item>@drawable/vf2l4_1</item>
-
+        <item>@drawable/vf2l</item>
     </integer-array>
 
     <string-array name="advf2l_descr">
         <item>@string/advf2l_st1_descr</item>
-        <item>@string/g2f_st5_descr</item>
         <item>@string/advf2l_st2_descr</item>
         <item>@string/advf2l_st3_descr</item>
         <item>@string/advf2l_st4_descr</item>
         <item>@string/advf2l_st5_descr</item>
-
+        <item>@string/g2f_st5_descr</item>
     </string-array>
 
     <string-array name="advf2l_url">
         <item>@string/advf2l_st1_url</item>
-        <item>submenu</item>
         <item>@string/advf2l_st2_url</item>
         <item>@string/advf2l_st3_url</item>
         <item>@string/advf2l_st4_url</item>
         <item>@string/advf2l_st5_url</item>
-
+        <item>submenu</item>
     </string-array>
 
     <string name="g2f_st5_descr">F2L</string>
@@ -186,8 +183,8 @@
 
         Profit!<br/><br/>
 
-        Осталось рассказать про ситуации немного выходящие за рамки вышепреведенной инструкции.
-        <b><a href="rg2://ytplay?time=9:13&link=Fp5bHu8lw-w">(How to solve special cases).</a></b><br/>
+        Осталось рассказать про ситуации немного выходящие за рамки
+        <b><a href="rg2://ytplay?time=9:13&link=aaaaaaaaaaa">вышепреведенной инструкции.</a></b><br/>
         Например, такая ситуация:
 
         <p style="text-align:center"><img src="vf2l_int_17.xml" width="30%%"></p>
@@ -207,7 +204,9 @@
         <p style="text-align:center"><img src="vf2l_int_18.xml" width="30%%"></p>
 
         то в этом случае не опустите, а поднимите угол и отведите его в сторону, после чего верните
-        ребро на место, т.е. <b>(R U\' R\')</b>. Пара расстанется и ее можно легко решить интуитивно.
+        ребро на место, т.е. <b>(R U\' R\')</b>. Или перехватите куб, так чтобы пара оказалась
+        слева и сделайте алгоритм слева <b>(L U\' L\')</b>.
+        Пара расстанется и ее можно легко решить интуитивно.
 
         <p>Ну и как обычно, пара ускорений для начинающих интуитивный F2L.</p>
 
@@ -241,9 +240,10 @@
         <p>Заметьте, что для данного ускорения ребро на втором этаже может стоять и
         <a href="rg2://ytplay?time=14:09&link=Fp5bHu8lw-w">не на своем месте.</a></p>
 
-        <p>Примеры интуитивной сборки от <a href="rg2://ytplay?time=6:20&link=Ar_Zit1VLG0">Дилана Ванга,</a>
-        <a href="rg2://ytplay?time=14:56&link=Fp5bHu8lw-w">мой пример N1</a> и
-        <a href="rg2://ytplay?time=17:28&link=Fp5bHu8lw-w">мой пример N2</a>
+        <p>Чтобы лучше понять этот метод, посмотрите примеры интуитивной сборки от
+        <a href="rg2://ytplay?time=6:20&link=Ar_Zit1VLG0">Дилана Ванга,</a>
+        <a href="rg2://ytplay?time=14:56&link=aaaaaaaaaaa">мой пример N1</a> и
+        <a href="rg2://ytplay?time=17:28&link=aaaaaaaaaaa">мой пример N2.</a>
         </p>
 
     ]]></string>
