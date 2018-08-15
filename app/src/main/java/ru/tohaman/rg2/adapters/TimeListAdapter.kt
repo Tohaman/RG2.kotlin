@@ -54,13 +54,18 @@ class TimeListAdapter(private val listOfTimes: List<TimeNote> = ArrayList(), pri
 
                 }.lparams {margin = 8.dp}
 
-                val commentImage = imageView(R.drawable.ic_comment) {
-                     visibility = if (listOfTimes[i].comment == "") {
-                         View.GONE
-                     } else {
-                         View.VISIBLE
-                     }
-                }.lparams {rightMargin = 8.dp}
+
+                val commentText = textView() {
+                    text = listOfTimes[i].comment
+                    textSize = 8f
+                }.lparams {leftMargin = 16.dp}
+//                val commentImage = imageView(R.drawable.ic_comment) {
+//                     visibility = if (listOfTimes[i].comment == "") {
+//                         View.GONE
+//                     } else {
+//                         View.VISIBLE
+//                     }
+//                }.lparams {rightMargin = 8.dp}
 
                  val scrambleText = textView {
                     text = listOfTimes[i].scramble
@@ -78,8 +83,9 @@ class TimeListAdapter(private val listOfTimes: List<TimeNote> = ArrayList(), pri
                      scrambleText.connect(LEFT to RIGHT of scrambleImage,
                              TOP to BOTTOM of timeTextView,
                              BOTTOMS of parentId)
-                     commentImage.connect(RIGHTS of parentId,
+                     commentText.connect(
                              TOP to BOTTOM of timeTextView,
+                             LEFT to RIGHT of scrambleText,
                              BOTTOMS of parentId)
                  }
              }
