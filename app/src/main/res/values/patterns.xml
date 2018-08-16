@@ -10,6 +10,7 @@
         <item>@string/patterns_st6_title</item>
         <item>@string/patterns_st7_title</item>
         <item>@string/patterns_st8_title</item>
+        <item>@string/patterns_st9_title</item>
     </string-array>
 
     <integer-array name="patterns_icon">
@@ -21,6 +22,7 @@
         <item>@drawable/pattern_6</item>
         <item>@drawable/pattern_7</item>
         <item>@drawable/pattern_8</item>
+        <item>@drawable/pattern_9</item>
     </integer-array>
     
     <string-array name="patterns_descr">
@@ -32,6 +34,7 @@
         <item>@string/patterns_st6_descr</item>
         <item>@string/patterns_st7_descr</item>
         <item>@string/patterns_st8_descr</item>
+        <item>@string/patterns_st9_descr</item>
     </string-array>
 
     <string-array name="patterns_url">
@@ -43,6 +46,7 @@
         <item>@string/patterns_st6_url</item>
         <item>@string/patterns_st7_url</item>
         <item>@string/patterns_st8_url</item>
+        <item>@string/patterns_st9_url</item>
     </string-array>
 
     <string-array name="patterns_comment">
@@ -54,6 +58,7 @@
         <item>@string/patterns_st6_comment</item>
         <item>@string/patterns_st7_comment</item>
         <item>@string/patterns_st8_comment</item>
+        <item>@string/patterns_st9_comment</item>
     </string-array>
 
 

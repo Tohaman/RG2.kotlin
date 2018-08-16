@@ -87,19 +87,19 @@ class YouTubeActivity : AppCompatActivity(), YouTubePlayer.OnInitializedListener
         Log.v(DebugTag.TAG, p1.toString())
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-        super.onActivityResult(requestCode, resultCode, data)
-        Log.v (DebugTag.TAG, "YouTubeActivity onActivityResult")
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        Log.v (DebugTag.TAG, "YouTubeActivity onActivityResult")
 //        if (requestCode == RECOVERY_DIALOG_REQUEST) {
 //                playerView.initialize(DEVELOPER_KEY, this)
 //        }
-    }
+//    }
 
-    private fun canResolveIntent(intent: Intent): Boolean {
-        Log.v (DebugTag.TAG, "Установлен ли в системе плеер?")
-        val resolveInfo = this.packageManager.queryIntentActivities(intent, 0)
-        return resolveInfo != null && !resolveInfo.isEmpty()
-    }
+//    private fun canResolveIntent(intent: Intent): Boolean {
+//        Log.v (DebugTag.TAG, "Установлен ли в системе плеер?")
+//        val resolveInfo = this.packageManager.queryIntentActivities(intent, 0)
+//        return resolveInfo != null && !resolveInfo.isEmpty()
+//    }
 
     //Преобразует строку вида 0:25 в милисекунды (25000)
     private fun stringToTimeMillis(text: String): Int {
