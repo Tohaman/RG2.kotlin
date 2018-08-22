@@ -16,10 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
-import com.google.android.youtube.player.YouTubeInitializationResult
-import com.google.android.youtube.player.YouTubeStandalonePlayer
-import com.google.android.youtube.player.YouTubeThumbnailLoader
-import com.google.android.youtube.player.YouTubeThumbnailView
+import com.google.android.youtube.player.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
 import org.jetbrains.anko.sdk15.coroutines.onClick
@@ -229,23 +226,23 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         }
     }
 
-    private fun canPlayYouTubeVideo():Boolean = playYouTubeVideo(false)
+    private fun canPlayYouTubeVideo():Boolean = YouTubeApiServiceUtil.isYouTubeApiServiceAvailable(ctx) == YouTubeInitializationResult.SUCCESS
 
-    private fun playYouTubeVideo(needPlaying:Boolean, urlToPlay: String = "0TvO_rpG_aM"): Boolean {
-        val intent: Intent? = YouTubeStandalonePlayer.createVideoIntent(activity, DEVELOPER_KEY, urlToPlay, 1000, true, true)
-        return if (intent != null) when {
-            (canResolveIntent(intent)) and (needPlaying) -> {
-                startActivityForResult(intent, REQ_START_STANDALONE_PLAYER)
-                true
-            }
-            (!canResolveIntent(intent)) and (needPlaying) -> {
-                YouTubeInitializationResult.SERVICE_MISSING.getErrorDialog(activity, REQ_RESOLVE_SERVICE_MISSING).show()
-                false
-            }
-            !needPlaying -> {canResolveIntent(intent)}  //true or false
-            else -> {false}
-        } else false
-    }
+//    private fun playYouTubeVideo(needPlaying:Boolean, urlToPlay: String = "0TvO_rpG_aM"): Boolean {
+//        val intent: Intent? = YouTubeStandalonePlayer.createVideoIntent(activity, DEVELOPER_KEY, urlToPlay, 1000, true, true)
+//        return if (intent != null) when {
+//            (canResolveIntent(intent)) and (needPlaying) -> {
+//                startActivityForResult(intent, REQ_START_STANDALONE_PLAYER)
+//                true
+//            }
+//            (!canResolveIntent(intent)) and (needPlaying) -> {
+//                YouTubeInitializationResult.SERVICE_MISSING.getErrorDialog(activity, REQ_RESOLVE_SERVICE_MISSING).show()
+//                false
+//            }
+//            !needPlaying -> {canResolveIntent(intent)}  //true or false
+//            else -> {false}
+//        } else false
+//    }
 
     @Suppress("DEPRECATION")
     private val imgGetter = Html.ImageGetter { source ->
