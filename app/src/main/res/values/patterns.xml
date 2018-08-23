@@ -10,6 +10,7 @@
         <item>@string/patterns_st6_title</item>
         <item>@string/patterns_st7_title</item>
         <item>@string/patterns_st8_title</item>
+        <item>@string/patterns_st9_title</item>
     </string-array>
 
     <integer-array name="patterns_icon">
@@ -21,6 +22,7 @@
         <item>@drawable/pattern_6</item>
         <item>@drawable/pattern_7</item>
         <item>@drawable/pattern_8</item>
+        <item>@drawable/pattern_9</item>
     </integer-array>
     
     <string-array name="patterns_descr">
@@ -32,6 +34,7 @@
         <item>@string/patterns_st6_descr</item>
         <item>@string/patterns_st7_descr</item>
         <item>@string/patterns_st8_descr</item>
+        <item>@string/patterns_st9_descr</item>
     </string-array>
 
     <string-array name="patterns_url">
@@ -43,6 +46,7 @@
         <item>@string/patterns_st6_url</item>
         <item>@string/patterns_st7_url</item>
         <item>@string/patterns_st8_url</item>
+        <item>@string/patterns_st9_url</item>
     </string-array>
 
     <string-array name="patterns_comment">
@@ -54,6 +58,7 @@
         <item>@string/patterns_st6_comment</item>
         <item>@string/patterns_st7_comment</item>
         <item>@string/patterns_st8_comment</item>
+        <item>@string/patterns_st9_comment</item>
     </string-array>
 
 
@@ -151,5 +156,17 @@
     ]]></string>
     <string name="patterns_st8_url"></string>
     <string name="patterns_st8_comment">((R U R\' U\') y)7</string>
+
+    <string name="patterns_st9_title">8. Четыре полоски</string>
+    <string name="patterns_st9_descr" formatted="false"><![CDATA[
+        <p>Еще один узор, которого нет на сайте
+        <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>. Спасибо Егору за
+        присланный узор.</p>
+        <p style="text-align:center"><img src="pattern_9.xml"></p>
+        <b>Алгоритм: R2 F2 M2 B2 L2</b>
+    ]]></string>
+    <string name="patterns_st9_url"></string>
+    <string name="patterns_st9_comment">R2 F2 M2 B2 L2</string>
+
 
 </resources>

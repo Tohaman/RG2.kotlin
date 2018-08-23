@@ -16,10 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
-import com.google.android.youtube.player.YouTubeInitializationResult
-import com.google.android.youtube.player.YouTubeStandalonePlayer
-import com.google.android.youtube.player.YouTubeThumbnailLoader
-import com.google.android.youtube.player.YouTubeThumbnailView
+import com.google.android.youtube.player.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
 import org.jetbrains.anko.sdk15.coroutines.onClick
@@ -28,7 +25,6 @@ import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.DeveloperKey.DEVELOPER_KEY
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.VIDEO_PREVIEW
-import ru.tohaman.rg2.activities.YouTubeActivity
 import ru.tohaman.rg2.data.Favorite
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
@@ -57,16 +53,17 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         val phase = arguments!!.getString("phase")
         val id = arguments!!.getInt("id")
         val lp = listPagerLab.getPhaseItem(id, phase)
-        var title = lp.title
+        val title = lp.title
         val topImage = lp.icon
         val description = lp.description
-        val comment  = lp.comment
+        var comment  = lp.comment
         url = lp.url
 
         var textString = "<html><body style=\"text-align:justify\"> %s </body></html>"
         val st = getString(description)
         textString = String.format(textString, st)
-        val spanText = spannedString(textString, imgGetter)
+        val spanText = spannedString(textString, imgGetter, tagHandler)
+//        val spanText = Html.fromHtml("<br><p><strike>Test Strike</strike></p>", imgGetter, tagHandler)
 
         val mainTextView = view.findViewById<TextView>(PagerItemtUI.Ids.descriptionText)
 
@@ -176,7 +173,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         //Выводим коммент, и делаем обработчик нажатия на него (вызваем окно редактирования)
         val commentText = view.findViewById<TextView>(PagerItemtUI.Ids.commentText)
         commentText.text = (ctx.getString(R.string.commentText) + "\n" + comment)
-        commentText.onClick {
+        commentText.onClick { it ->
             alert(R.string.commentText) {
                 customView {
                     val imm = ctx.inputMethodManager
@@ -189,10 +186,10 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
                     positiveButton("OK") {
                         imm.hideSoftInputFromWindow(eText.windowToken, 0)
                         val lps = listPagerLab.getPhaseItemByTitle(phase, title)
-                        val cmnt = eText.text.toString()
-                        lps.comment = cmnt
+                        comment = eText.text.toString()
+                        lps.comment = comment
                         listPagerLab.updateListPager(lps)
-                        commentText.text = (ctx.getString(R.string.commentText) + "\n" + cmnt)
+                        commentText.text = (ctx.getString(R.string.commentText) + "\n" + comment)
                     }
                     negativeButton("Отмена") {
                         imm.hideSoftInputFromWindow(eText.windowToken, 0)
@@ -215,7 +212,8 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         }
         //https://www.youtube.com/watch?v=ENLnPS2eqPg&t=20s
         text1 = kotlin.String.format(text1, url, getString(R.string.pager_youtube_text))
-        ytTextView.text = spannedString(text1, imgGetter)
+        ytTextView.text = spannedString(text1, imgGetter, tagHandler)
+//        ytTextView.text = Html.fromHtml("<br><mytag phase=1>Test Tag</mytag>", imgGetter, tagHandler)
     }
 
     private fun showYouTubePreview(thumbnailView: YouTubeThumbnailView, ytTextView: TextView, playPreviewImage: ImageView) {
@@ -228,23 +226,23 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         }
     }
 
-    private fun canPlayYouTubeVideo():Boolean = playYouTubeVideo(false)
+    private fun canPlayYouTubeVideo():Boolean = YouTubeApiServiceUtil.isYouTubeApiServiceAvailable(ctx) == YouTubeInitializationResult.SUCCESS
 
-    private fun playYouTubeVideo(needPlaying:Boolean, urlToPlay: String = "0TvO_rpG_aM"): Boolean {
-        val intent: Intent? = YouTubeStandalonePlayer.createVideoIntent(activity, DEVELOPER_KEY, urlToPlay, 1000, true, true)
-        return if (intent != null) when {
-            (canResolveIntent(intent)) and (needPlaying) -> {
-                startActivityForResult(intent, REQ_START_STANDALONE_PLAYER)
-                true
-            }
-            (!canResolveIntent(intent)) and (needPlaying) -> {
-                YouTubeInitializationResult.SERVICE_MISSING.getErrorDialog(activity, REQ_RESOLVE_SERVICE_MISSING).show()
-                false
-            }
-            !needPlaying -> {canResolveIntent(intent)}  //true or false
-            else -> {false}
-        } else false
-    }
+//    private fun playYouTubeVideo(needPlaying:Boolean, urlToPlay: String = "0TvO_rpG_aM"): Boolean {
+//        val intent: Intent? = YouTubeStandalonePlayer.createVideoIntent(activity, DEVELOPER_KEY, urlToPlay, 1000, true, true)
+//        return if (intent != null) when {
+//            (canResolveIntent(intent)) and (needPlaying) -> {
+//                startActivityForResult(intent, REQ_START_STANDALONE_PLAYER)
+//                true
+//            }
+//            (!canResolveIntent(intent)) and (needPlaying) -> {
+//                YouTubeInitializationResult.SERVICE_MISSING.getErrorDialog(activity, REQ_RESOLVE_SERVICE_MISSING).show()
+//                false
+//            }
+//            !needPlaying -> {canResolveIntent(intent)}  //true or false
+//            else -> {false}
+//        } else false
+//    }
 
     @Suppress("DEPRECATION")
     private val imgGetter = Html.ImageGetter { source ->
@@ -261,6 +259,17 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         drawable.setBounds(0, 0, drawable.intrinsicWidth, drawable.intrinsicHeight)
         drawable
+    }
+
+    private val tagHandler = Html.TagHandler { opening, tag, output, xmlReader ->
+        //Тут можно обрабатывать свои тэги
+        if (tag.equals("mytag", true)) {
+            val open = opening
+            val tag1 = tag
+            val out = output
+            val xml = xmlReader
+
+        }
     }
 
     // И еще один метод для ЮТплеера = true, если есть приложение, которое может обрабоать наше намерение (интент)

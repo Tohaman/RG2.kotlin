@@ -38,6 +38,7 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+
         <activity
             android:name=".activities.SlidingTabsActivity"
             android:theme="@style/AppTheme"/>
@@ -55,24 +56,43 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+
         <activity
             android:name=".activities.PllTestGame"
             android:label="@string/title_activity_pll_test_game">
         </activity>
+
         <activity
             android:name=".activities.TestGameSelectPllName"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
         <activity
             android:name=".activities.TestGameSelectOllName"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
         <activity
             android:name=".activities.OllTestGame"
             android:label="@string/title_activity_oll_test_game">
         </activity>
         <activity android:name=".activities.BlindTestGame">
         </activity>
+
+        <activity
+            android:name=".activities.ShowPagerActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <data
+                    android:host="pager"
+                    android:scheme="rg2" />
+
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

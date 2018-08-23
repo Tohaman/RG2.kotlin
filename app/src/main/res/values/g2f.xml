@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="g2f_title">
-        <item>Советы от Антона</item>
+        <item>F.A.Q. (ЧаВо)</item>
         <item>Ускорения для начинающих</item>
-        <item>Ускоряем крест</item>
-        <item>Интуитивный + Adv.F2L</item>
-        <item>Жизненный F2L</item>
+        <item>Cross (Ускоряем крест)</item>
+        <item>F2L (Первые два слоя вместе)</item>
+        <!--<item>Жизненный F2L</item>-->
         <item>Максимкин PLL</item>
         <item>Долгожданный OLL</item>
         <item>СOLL от Дилана</item>
@@ -17,7 +17,7 @@
         <item>@drawable/vaccel_2</item>
         <item>@drawable/vcross</item>
         <item>@drawable/vf2l</item>
-        <item>@drawable/vf2l</item>
+        <!--<item>@drawable/vf2l</item>-->
         <item>@drawable/vpll</item>
         <item>@drawable/voll_51</item>
         <item>@drawable/coll</item>
@@ -29,7 +29,7 @@
         <item>@string/g2f_st2_descr</item>
         <item>@string/g2f_st3_descr</item>
         <item>@string/g2f_st4_descr</item>
-        <item>@string/g2f_st5_descr</item>
+        <!--<item>@string/g2f_st5_descr</item>-->
         <item>@string/g2f_st6_descr</item>
         <item>@string/g2f_st7_descr</item>
         <item>@string/g2f_st8_descr</item>
@@ -45,14 +45,13 @@
         <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
-        <item>submenu</item>
     </string-array>
 
     <string name="g2f_st1_descr">RECOMEND</string>
     <string name="g2f_st2_descr">ACCEL</string>
     <string name="g2f_st3_descr">CROSS</string>
     <string name="g2f_st4_descr">ADVF2L</string>
-    <string name="g2f_st5_descr">F2L</string>
+    <!--<string name="g2f_st5_descr">F2L</string>-->
     <string name="g2f_st6_descr">PLL</string>
     <string name="g2f_st7_descr">OLL</string>
     <string name="g2f_st8_descr">COLL</string>

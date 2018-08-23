@@ -90,7 +90,6 @@ class PagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
 
                         imageView (ContextCompat.getDrawable(context, R.drawable.ic_play)){
                             id = Ids.icPlayPreview
-
                         }.lparams(100.dp,100.dp) {centerInParent()}
 
                         textView {

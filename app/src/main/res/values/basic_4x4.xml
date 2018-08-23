@@ -195,7 +195,7 @@
     <string name="basic_4x4_st1_title">R</string>
     <string name="basic_4x4_st1_descr">Правая по часовой</string>
     <string name="basic_4x4_st2_title">R\'</string>
-    <string name="basic_4x4_st2_descr">Правая проти часовой</string>
+    <string name="basic_4x4_st2_descr">Правая против часовой</string>
     <string name="basic_4x4_st3_title">2R</string>
     <string name="basic_4x4_st3_descr">Втророй правый слой по часовой</string>
     <string name="basic_4x4_st4_title">2R\'</string>
