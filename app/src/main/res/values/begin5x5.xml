@@ -11,6 +11,7 @@
         <item>@string/begin5_st7_title</item>
         <item>@string/begin5_st8_title</item>
         <item>@string/begin5_st9_title</item>
+        <item>@string/begin5_st10_title</item>
     </string-array>
 
     <integer-array name="begin5_icon">
@@ -23,6 +24,7 @@
         <item>@drawable/v5x5_begin_7</item>
         <item>@drawable/v5x5_begin_8</item>
         <item>@drawable/v5x5_begin_9</item>
+        <item>@drawable/v5x5_begin_10</item>
     </integer-array>
     
     <string-array name="begin5_descr">
@@ -35,6 +37,7 @@
         <item>@string/begin5_st7_descr</item>
         <item>@string/begin5_st8_descr</item>
         <item>@string/begin5_st9_descr</item>
+        <item>@string/begin5_st10_descr</item>
     </string-array>
 
     <string-array name="begin5_url">
@@ -47,6 +50,7 @@
         <item>@string/begin5_st7_url</item>
         <item>@string/begin5_st8_url</item>
         <item>@string/begin5_st9_url</item>
+        <item>@string/begin5_st10_url</item>
     </string-array>
     
     <string name="begin5_st1_title">Этап 1. Первый центр</string>
@@ -426,5 +430,10 @@
     ]]></string>
     <string name="begin5_st9_url">OphIvx2VrLg</string>
 
+    <string name="begin5_st10_title">Метод Фрислайс</string>
+    <string name="begin5_st10_descr" formatted="false"><![CDATA[
+
+    ]]></string>
+    <string name="begin5_st10_url"></string>
 
 </resources>
