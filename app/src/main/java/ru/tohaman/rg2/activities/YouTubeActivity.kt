@@ -29,7 +29,10 @@ import java.util.*
  * а манифест перед <application добавить строку></application><uses-permission android:name="android.permission.INTERNET"></uses-permission>
   </intent-filter> */
 
-class YouTubeActivity : AppCompatActivity(), YouTubePlayer.OnInitializedListener {
+class YouTubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListener {
+    //TODO https://habr.com/sandbox/87735/ - прочитать и при необходимости поправить
+    //https://www.stacktips.com/tutorials/android/youtube-android-player-api-example
+    //https://developers.google.com/youtube/v3/code_samples/java - подписаться на канал
 
     private var date: Date? = null
     private var videoId = ""
