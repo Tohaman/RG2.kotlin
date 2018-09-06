@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="other_title">
-        <item>Кубик 4х4</item>
-        <item>Кубик 5х5</item>
+        <!--<item>Кубик 4х4</item>-->
+        <!--<item>Кубик 5х5</item>-->
         <item>Пирамидка (Pyraminx)</item>
         <item>Мегаминкс (Megaminx)</item>
         <item>Скьюб (Skewb)</item>
@@ -12,8 +12,8 @@
     </string-array>
 
     <integer-array name="other_icon">
-        <item>@drawable/v4x4_begin</item>
-        <item>@drawable/v5x5_begin</item>
+        <!--<item>@drawable/v4x4_begin</item>-->
+        <!--<item>@drawable/v5x5_begin</item>-->
         <item>@drawable/pyraminx</item>
         <item>@drawable/megaminx</item>
         <item>@drawable/skewb</item>
@@ -23,8 +23,8 @@
     </integer-array>
 
     <string-array name="other_descr">
-        <item>@string/other_st1_descr</item>
-        <item>@string/other_st2_descr</item>
+        <!--<item>@string/other_st1_descr</item>-->
+        <!--<item>@string/other_st2_descr</item>-->
         <item>@string/other_st3_descr</item>
         <item>@string/other_st4_descr</item>
         <item>@string/other_st5_descr</item>
@@ -34,8 +34,8 @@
     </string-array>
 
     <string-array name="other_url">
-        <item>submenu</item>
-        <item>submenu</item>
+        <!--<item>submenu</item>-->
+        <!--<item>submenu</item>-->
         <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
@@ -45,8 +45,8 @@
         <item>submenu</item>
     </string-array>
 
-    <string name="other_st1_descr">BEGIN4X4</string>
-    <string name="other_st2_descr">BEGIN5X5</string>
+    <!--<string name="other_st1_descr">BEGIN4X4</string>-->
+    <!--<string name="other_st2_descr">BEGIN5X5</string>-->
     <string name="other_st3_descr">PYRAMINX</string>
     <string name="other_st4_descr">MEGAMINX</string>
     <string name="other_st5_descr">SKEWB</string>
