@@ -30,7 +30,6 @@ import java.util.*
   </intent-filter> */
 
 class YouTubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListener {
-    //TODO https://habr.com/sandbox/87735/ - прочитать и при необходимости поправить
     //https://www.stacktips.com/tutorials/android/youtube-android-player-api-example
     //https://developers.google.com/youtube/v3/code_samples/java - подписаться на канал
 
@@ -42,7 +41,7 @@ class YouTubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListen
         super.onCreate(savedInstanceState)
         //Включаем поддержку векторной графики на устройствах ниже Лилипопа (5.0)
         //AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
-        Log.v (DebugTag.TAG, "YouTubeActivity onCreate")
+        //Log.v (DebugTag.TAG, "YouTubeActivity onCreate")
         // Проверяем значения из настроек, выключать экран или нет при прсмотре видео
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
         val sleepOnYouTube = sp.getBoolean(IS_VIDEO_SCREEN_ON, false)
@@ -52,24 +51,10 @@ class YouTubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListen
             window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         }
 
-        Log.v (DebugTag.TAG, "YouTubeActivity преобразуем время")
+        //Log.v (DebugTag.TAG, "YouTubeActivity преобразуем время")
         var time = intent.data!!.getQueryParameter("time")
         videoId = intent.data!!.getQueryParameter("link")
-        //TODO почистить лишнее в следующих версиях
-//        val intent = YouTubeStandalonePlayer.createVideoIntent(this, DEVELOPER_KEY, videoId, stringToTimeMillis(time), true, true)
-//        if (intent != null) {
-//            if (canResolveIntent(intent)) {
-//                Log.v (DebugTag.TAG, "Установлен - запускаем StandAlone плеер c нужного времени")
-//                startActivity(intent)
-//                //startActivityForResult(intent, REQ_START_STANDALONE_PLAYER)
-//                finish()
-//            } else {
-//                Log.v (DebugTag.TAG, "Видимо нету Youtube плеера, запускаем просмотр через браузер time = $time")
-//                time = Regex(":").replace(time,"m")
-//                browse("https://youtu.be/$videoId" + "?t=$time" + "s")
-//                finish()
-//            }
-//        }
+
         val result = YouTubeApiServiceUtil.isYouTubeApiServiceAvailable(ctx)
         if (result == YouTubeInitializationResult.SUCCESS) {
             startActivity(
