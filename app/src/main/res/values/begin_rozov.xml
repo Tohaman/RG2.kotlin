@@ -11,6 +11,7 @@
         <item>@string/begin_rozov_st7_title</item>
         <item>@string/begin_rozov_st8_title</item>
         <item>@string/begin_rozov_st9_title</item>
+        <item>@string/begin_rozov_st10_title</item>
     </string-array>
 
     <integer-array name="begin_rozov_icon">
@@ -23,6 +24,7 @@
         <item>@drawable/rozov_7</item>
         <item>@drawable/rozov_8</item>
         <item>@drawable/rozov_5</item>
+        <item>@drawable/rozov_10</item>
     </integer-array>
     
     <string-array name="begin_rozov_descr">
@@ -35,6 +37,7 @@
         <item>@string/begin_rozov_st7_descr</item>
         <item>@string/begin_rozov_st8_descr</item>
         <item>@string/begin_rozov_st9_descr</item>
+        <item>@string/begin_rozov_st10_descr</item>
     </string-array>
 
 
@@ -48,6 +51,7 @@
         <item>@string/begin_rozov_st7_url</item>
         <item>@string/begin_rozov_st8_url</item>
         <item>@string/begin_rozov_st9_url</item>
+        <item>@string/begin_rozov_st10_url</item>
     </string-array>
 
     <string name="begin_rozov_st1_title">Устройство, Алгоритмы и Язык вращений кубика.</string>
@@ -846,9 +850,25 @@
         <p>А если смотреть еще на один шаг дальше, то есть еще COLL (Corners & OLL), набор алгоритмов
         позволяющих за один алгоритм не только разворачивать углы желтой наклейкой вверх, но и
         сразу выполнять еще и следующий этап, т.е. расстановку углов на свои места.</p>
-
     ]]></string>
     <string name="begin_rozov_st9_url">_ZqL3XwyoDE</string>
 
+    <string name="begin_rozov_st10_title">Ускорение для F2L</string>
+    <string name="begin_rozov_st10_descr" formatted="false"><![CDATA[
+        <p>Еще одно ускорение, связано со сборкой второго слоя. Если у вас сложилась ситуация, когда
+        два ребра на втором слое нужно поменять местами, например вот такая:</p>
+        <p style="text-align:center"><img src="rozov_10_2.xml"><img src="rozov_10_1.xml"></p>
+
+        <p>то вместо того, чтобы выгонять одно ребро наверх, ставить его на свое место, потом ставить
+        на место второе ребро, можно поставить эти два ребра справа</p>
+        <p style="text-align:center"><img src="rozov_10_3.xml"></p>
+
+        <p>и сделать вот такой, очень простой и быстрый алгоритм:</p>
+
+        <p>Алгоритм: <b>R2 U2 R2 U2 R2</b></p>
+
+        <p>Спасибо Евгению Прокофьеву, за присланный алгоритм.</p>
+    ]]></string>
+    <string name="begin_rozov_st10_url"></string>
 
 </resources>
