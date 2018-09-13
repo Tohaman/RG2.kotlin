@@ -103,6 +103,18 @@ class MainActivity : MyDefaultActivity(),
 
         super.onCreate(savedInstanceState)
 
+//        var a = 0
+//        for(i in 100000..999999){
+//            val st = i.toString()
+//            var result = false
+//            for (j in 0 until st.length) {
+//                if (st[j] == '1') {result = true}
+//            }
+//            if (result) {  a += 1 }
+//
+//        }
+//
+
         //Сохраним в переменную 50 руб, чтобы каждые 30 запусков не выводилось окно "оплатить приложение"
         //а то разработчик, даже если хочет, то не может этого сделать. Нужно запустить только 1 раз.
         //mCoins = 50
@@ -242,6 +254,7 @@ class MainActivity : MyDefaultActivity(),
         }
 
     }
+
 
     private fun setFragment (fragment: Fragment) {
         val transaction : FragmentTransaction = supportFragmentManager.beginTransaction()
