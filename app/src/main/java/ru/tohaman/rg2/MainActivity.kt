@@ -507,7 +507,7 @@ class MainActivity : MyDefaultActivity(),
 
             R.id.main3x3 -> { setListFragmentPhase("MAIN3X3") }
 
-            R.id.big_cubes -> { setListFragmentPhase("BIG_CUBES") }
+            R.id.big_cubes -> { setListFragmentPhase("BIG_MAIN") }
 
             R.id.other3x3 -> { setListFragmentPhase("OTHER3X3") }
 
