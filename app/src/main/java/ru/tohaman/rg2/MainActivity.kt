@@ -134,7 +134,7 @@ class MainActivity : MyDefaultActivity(),
         //но если бы нужно было отключение рекламы, то данный вызов обязателен
         loadDataFromPlayMarket()
 
-        Log.v (TAG, "MainActivity ListPagerLab init. A = $a")
+        Log.v (TAG, "MainActivity ListPagerLab init.")
         mListPagerLab = ListPagerLab.get(ctx)
 
         //получаем список фаз submenu, чтобы корректно отрабатывать нажатие кнопки назад
