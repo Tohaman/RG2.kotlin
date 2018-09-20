@@ -104,16 +104,26 @@ class MainActivity : MyDefaultActivity(),
         super.onCreate(savedInstanceState)
 
 //        var a = 0
-//        for(i in 100000..999999){
-//            val st = i.toString()
-//            var result = false
-//            for (j in 0 until st.length) {
-//                if (st[j] == '1') {result = true}
+//        for(i in 0..999999){
+//            var st = i.toString()
+//            if (st.length < 6) {
+//                for (j in st.length .. 5) {
+//                    st = "0$st"
+//                }
 //            }
-//            if (result) {  a += 1 }
+//            var result = false
+//            loop@for (j in 1 until st.length) {
+//                if (((st[j].toInt() - (st[j-1].toInt()))%5 == 0 ) and (st[j] != st[j-1]))  {
+//                        result = true
+//                        break@loop
+//                }
+//            }
+//            if (result) {
+//                a += 1
+//            }
 //
 //        }
-//
+
 
         //Сохраним в переменную 50 руб, чтобы каждые 30 запусков не выводилось окно "оплатить приложение"
         //а то разработчик, даже если хочет, то не может этого сделать. Нужно запустить только 1 раз.
@@ -124,7 +134,7 @@ class MainActivity : MyDefaultActivity(),
         //но если бы нужно было отключение рекламы, то данный вызов обязателен
         loadDataFromPlayMarket()
 
-        Log.v (TAG, "MainActivity ListPagerLab init")
+        Log.v (TAG, "MainActivity ListPagerLab init. A = $a")
         mListPagerLab = ListPagerLab.get(ctx)
 
         //получаем список фаз submenu, чтобы корректно отрабатывать нажатие кнопки назад
