@@ -3,6 +3,7 @@
 
     <string-array name="big_cubes_title">
         <item>@string/big_cubes_st1_title</item>
+        <item>@string/big_cubes_st5_title</item>
         <item>@string/big_cubes_st2_title</item>
         <item>@string/big_cubes_st3_title</item>
         <item>@string/big_cubes_st4_title</item>
@@ -10,6 +11,7 @@
 
     <integer-array name="big_cubes_icon">
         <item>@drawable/big_cubes_1</item>
+        <item>@drawable/big_cubes_5</item>
         <item>@drawable/big_cubes_2</item>
         <item>@drawable/big_cubes_3</item>
         <item>@drawable/big_cubes_4</item>
@@ -17,6 +19,7 @@
     
     <string-array name="big_cubes_descr">
         <item>@string/big_cubes_st1_descr</item>
+        <item>@string/begin5_st9_descr</item>
         <item>@string/big_cubes_st2_descr</item>
         <item>@string/big_cubes_st3_descr</item>
         <item>@string/big_cubes_st4_descr</item>
@@ -24,6 +27,7 @@
 
     <string-array name="big_cubes_url">
         <item>@string/big_cubes_st1_url</item>
+        <item>@string/begin5_st9_url</item>
         <item>@string/big_cubes_st2_url</item>
         <item>@string/big_cubes_st3_url</item>
         <item>@string/big_cubes_st4_url</item>
@@ -87,7 +91,7 @@
 
         <p>5. При сборке <a href="rg2://ytplay?time=7:15&link=aaaaaaaaaaa">последних двух центров,</a>
         когда свободных сторон для сборки блоков уже не осталось,
-         постарайтесь максимально переместить элементы на свои стороны, а затем используйте
+        постарайтесь максимально переместить элементы на свои стороны, а затем используйте
         <a href="rg2://ytplay?time=9:06&link=aaaaaaaaaaa">простой алгоритм</a> для установки
         любого одиночного элемента на свое место. Крышу в этом алгоритме будем крутить попеременно, то
         в одну, то в другую сторону.<br/>
@@ -205,7 +209,7 @@
         а не просто выгоняем собранное ребро на верхний или нижний слой, т.е. положение всех
         центров рабочей зоны должно остаться без изменений.</p>
 
-        <p>Ну и пара ускорений для сборки:<br/>
+        <p>Ну и несколько ускорений для сборки:<br/>
         1. <a href="rg2://ytplay?time=13:07&link=W0mbroPt9eI">Не торопитесь выгонять собранное ребро</a>
         из «рабочей зоны», сначала найдите элементы для следующего ребра и поменяйте собранное ребро
         на ребро верхнего или нижнего слоя, в котором есть элементы следующего ребра.</p>
@@ -213,6 +217,14 @@
         <p>2. Когда у вас нижняя грань уже заполнена собранными ребрами, для поиска подходящего ребра,
         можно смотреть только на верхнюю грань, есть ли на ней не парные элементы. Если есть, то ставить
         вместо собранного ребра то ребро, <a href="rg2://ytplay?time=17:13&link=W0mbroPt9eI">где есть такой элемент.</a></p>
+
+        <p>3. Если <a href="rg2://ytplay?time=11:56&link=bbbbbbbbbbb">винги на одном слое,</a>
+        но находятся в левом переднем и заднем правом слоту, то
+        вместо того, чтобы делать перехват и флип, лучше достать ребро из заднего правого слота наверх
+        и поставить его в передний правый слот при этом все это сделав через удобную правую грань.</p>
+        <p style="text-align:center"><img src="freeslice_24.xml"></p>
+
+        <p><a href="rg2://ytplay?time=12:29&link=bbbbbbbbbbb">Алгоритм:</a> <b>R’ U R2 U’ R’</b></p>
 
         <p>Повторяем такую сборку ребер до тех пор, пока не закончатся все несобранные ребра на верхнем
         и нижнем слое, т.е. таким методом мы можем легко собрать восемь ребер (четыре ребра на верхней
@@ -384,7 +396,8 @@
 
         <p><b>(Rw U2) x M (Rw U2 Rw U2)(Rw’ U2 Lw U2 Rw’ U2) Rw U2 (Rw’ U2 Rw’)</b></p>
 
-        <p>Но как вариант, можно и уронить кубик, а среднюю грань вернуть первым очень жирным ходом назад:<br/>
+        <p>Но как вариант, можно и уронить кубик, а среднюю грань вернуть первым
+        <a href="rg2://ytplay?time=12:44&link=bbbbbbbbbbb">очень жирным ходом назад:</a><br/>
         <b>(Rw U2) x (Rw U2 Rw U2) (<i>3Rw’</i> U2 Lw U2 Rw’ U2) Rw U2 (Rw’ U2 Rw’)</b></p>
 
         <p>А для кубика 6х6 может быть две ситуации применения данного алгоритма:<br/>
@@ -444,5 +457,7 @@
 
     ]]></string>
     <string name="big_cubes_st4_url">7Ef6BHrrPZs</string>
+
+    <string name="big_cubes_st5_title">Ускорения для центров 5х5</string>
 
 </resources>
