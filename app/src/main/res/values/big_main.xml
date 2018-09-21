@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="big_main_title">
+        <item>Кубик 4х4 для начинающих</item>
+        <item>Продвинутый 4х4 (метод Яу)</item>
+        <item>Кубик 5х5 для начинающих</item>
+        <item>Как собрать любой большой куб</item>
+    </string-array>
+
+    <integer-array name="big_main_icon">
+        <item>@drawable/big_main_1</item>
+        <item>@drawable/big_main_2</item>
+        <item>@drawable/big_main_3</item>
+        <item>@drawable/big_main_4</item>
+    </integer-array>
+    
+    <string-array name="big_main_descr">
+        <item>@string/big_main_st1_descr</item>
+        <item>@string/big_main_st2_descr</item>
+        <item>@string/big_main_st3_descr</item>
+        <item>@string/big_main_st4_descr</item>
+    </string-array>
+
+    <string-array name="big_main_url">
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+    </string-array>
+
+    <string name="big_main_st1_descr">BEGIN4X4</string>
+    <string name="big_main_st2_descr">YAU4X4</string>
+    <string name="big_main_st3_descr">BEGIN5X5</string>
+    <string name="big_main_st4_descr">BIG_CUBES</string>
+
+
+</resources>
