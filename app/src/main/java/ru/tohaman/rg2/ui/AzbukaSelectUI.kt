@@ -103,12 +103,14 @@ class AzbukaSelectUI<in Fragment> : AnkoComponentEx<Fragment>()  {
 
                                         buttonMinus.onClick {
                                             var ch = letter[0]
-                                            ch--
                                             when {
-                                                (ch == 'Е') -> { ch = 'Ё' }
-                                                (ch < 'Ё') -> { ch = 'Е' }
-                                                (ch < 'А') and (ch != 'Ё') -> { ch = 'Я' }
-
+                                                //код Ё находится не между Е и Ж
+                                                (ch == 'Ж') -> { ch = 'Ё' }
+                                                (ch == 'Ё') -> { ch = 'Е' }
+                                                (ch == 'А') -> { ch = 'Z' }
+                                                (ch == 'A') -> { ch = '9' }
+                                                (ch == '0') -> { ch = 'Я' }
+                                                else -> {ch--}
                                             }
                                             letter = ch.toString()
                                             letterText.text = letter
@@ -116,12 +118,14 @@ class AzbukaSelectUI<in Fragment> : AnkoComponentEx<Fragment>()  {
 
                                         buttonPlus.onClick {
                                             var ch = letter[0]
-                                            ch++
                                             when {
-                                                (ch > 'Я') -> { ch = 'А' }
-                                                (ch == 'Ж') -> { ch = 'Ё' }
-                                                //между Ё и А, т.к. Ё в таблице символов идет раньше А, а не после Е
-                                                (ch in 'Ђ'..'Џ') -> { ch = 'Ж' }
+                                                (ch == 'Я') -> { ch = '0' }
+                                                (ch == '9') -> { ch = 'A'}
+                                                (ch == 'Z') -> { ch = 'А'}
+                                                //код Ё находится не между Е и Ж
+                                                (ch == 'Е') -> { ch = 'Ё' }
+                                                (ch == 'Ё') -> { ch = 'Ж' }
+                                                else -> {ch++}
                                             }
                                             letter = ch.toString()
                                             letterText.text = letter
