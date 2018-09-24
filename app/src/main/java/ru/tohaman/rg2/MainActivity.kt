@@ -418,6 +418,15 @@ class MainActivity : MyDefaultActivity(),
                     "BEGIN4X4" -> {
                         alert(getString(R.string.help_begin4x4)) { okButton { } }.show()
                     }
+                    "BIG_MAIN" -> {
+                        alert(getString(R.string.help_big_main)) { okButton { } }.show()
+                    }
+                    "YAU4X4" -> {
+                        alert(getString(R.string.help_yau4x4)) { okButton { } }.show()
+                    }
+                    "BIG_CUBES" -> {
+                        alert(getString(R.string.help_big_cubes)) { okButton { } }.show()
+                    }
 
                     "OTHER" -> {
                         alert(getString(R.string.help_other)) { okButton { } }.show()
