@@ -32,6 +32,9 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/support_email"/>
+        android:autoLink="email"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/support_email" />
 
 </LinearLayout>
