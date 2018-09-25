@@ -12,6 +12,8 @@
         <item>@string/patterns_st8_title</item>
         <item>@string/patterns_st9_title</item>
         <item>@string/patterns_st10_title</item>
+        <item>@string/patterns_st11_title</item>
+        <item>@string/patterns_st12_title</item>
     </string-array>
 
     <integer-array name="patterns_icon">
@@ -25,6 +27,8 @@
         <item>@drawable/pattern_8</item>
         <item>@drawable/pattern_9</item>
         <item>@drawable/pattern_10</item>
+        <item>@drawable/pattern_11</item>
+        <item>@drawable/pattern_12</item>
     </integer-array>
     
     <string-array name="patterns_descr">
@@ -38,6 +42,8 @@
         <item>@string/patterns_st8_descr</item>
         <item>@string/patterns_st9_descr</item>
         <item>@string/patterns_st10_descr</item>
+        <item>@string/patterns_st11_descr</item>
+        <item>@string/patterns_st12_descr</item>
     </string-array>
 
     <string-array name="patterns_url">
@@ -51,6 +57,8 @@
         <item>@string/patterns_st8_url</item>
         <item>@string/patterns_st9_url</item>
         <item>@string/patterns_st10_url</item>
+        <item>@string/patterns_st11_url</item>
+        <item>@string/patterns_st12_url</item>
     </string-array>
 
     <string-array name="patterns_comment">
@@ -64,6 +72,8 @@
         <item>@string/patterns_st8_comment</item>
         <item>@string/patterns_st9_comment</item>
         <item>@string/patterns_st10_comment</item>
+        <item>@string/patterns_st11_comment</item>
+        <item>@string/patterns_st12_comment</item>
     </string-array>
 
 
@@ -183,5 +193,24 @@
     ]]></string>
     <string name="patterns_st10_url"></string>
     <string name="patterns_st10_comment">U2 B2 F2 L2 R2</string>
+
+    <string name="patterns_st11_title">11. СРТГ</string>
+    <string name="patterns_st11_descr" formatted="false"><![CDATA[
+        <p> Спасибо Дмитрию Константинову за присланный узор.</p>
+        <p style="text-align:center"><img src="pattern_11.xml"></p>
+        <b>Алгоритм: U2 B2 F2 L2 R2</b>
+    ]]></string>
+    <string name="patterns_st11_url"></string>
+    <string name="patterns_st11_comment"></string>
+
+    <string name="patterns_st12_title">11. ФБК</string>
+    <string name="patterns_st12_descr" formatted="false"><![CDATA[
+        <p> Спасибо Дмитрию Константинову за присланный узор.</p>
+        <p style="text-align:center"><img src="pattern_12.xml"></p>
+        <b>Алгоритм: U2 B2 F2 L2 R2</b>
+    ]]></string>
+    <string name="patterns_st12_url"></string>
+    <string name="patterns_st12_comment"></string>
+
 
 </resources>
