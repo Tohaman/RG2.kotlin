@@ -395,8 +395,8 @@
         </p>
         <p style="text-align:center"><img src="coll_13.xml"></p>
 
-        <a href="rg2://ytplay?time=0:10&link=U0dP8MJw-Ig">Алгоритм 1:</a> <b>U2 (R U2 R\' U\' (R U R\' U\')2 R U\' R\')</b><br/><br/>
-        <a href="rg2://ytplay?time=0:29&link=U0dP8MJw-Ig">Алгоритм 2:</a> <b>U (R' U2 (R U R\' U\')2 R U R\' U R)</b>
+        <p><a href="rg2://ytplay?time=0:10&link=U0dP8MJw-Ig">Алгоритм 1:</a> <b>U2 (R U2 R\' U\' (R U R\' U\')2 R U\' R\')</b><br/><br/>
+        <a href="rg2://ytplay?time=0:29&link=U0dP8MJw-Ig">Алгоритм 2:</a> <b>U (R\' U2 (R U R\' U\')2 R U R\' U R)</b></p>
     ]]></string>
     <string name="coll_st13_url">U0dP8MJw-Ig</string>
     <string name="coll_st13_comment">U2 (R U2 R\' U\' (R U R\' U\')2 R U\' R\')</string>
