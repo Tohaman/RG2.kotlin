@@ -48,6 +48,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("ACCEL",R.array.accel_title,R.array.accel_icon,R.array.accel_descr,R.array.accel_url,context)
         phaseInit("CROSS",R.array.cross_title,R.array.cross_icon,R.array.cross_descr,R.array.cross_url,context)
         phaseInit("F2L",R.array.f2l_title,R.array.f2l_icon,R.array.f2l_descr,R.array.f2l_url,context)
+        phaseInit("EXP_F2L",R.array.exp_f2l_title,R.array.exp_f2l_icon,R.array.exp_f2l_descr,R.array.exp_f2l_url,context)
         phaseInit("ADVF2L",R.array.advf2l_title,R.array.advf2l_icon,R.array.advf2l_descr,R.array.advf2l_url,context)
         phaseInit("OLL",R.array.oll_title,R.array.oll_icon,R.array.oll_descr,R.array.oll_url,context)
         phaseInit("PLL",R.array.pll_title,R.array.pll_icon,R.array.pll_descr,R.array.pll_url,context)
@@ -201,7 +202,7 @@ class ListPagerLab private constructor(context: Context){
     }
 
     fun getSubmenu (ctx: Context): ArrayList<String> {
-        var stringArray: ArrayList<String> = arrayListOf()
+        val stringArray: ArrayList<String> = arrayListOf()
         listPagers
                 .filter {("submenu" == it.url)}
                 .forEach {

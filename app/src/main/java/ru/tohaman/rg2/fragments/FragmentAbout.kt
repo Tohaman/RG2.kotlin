@@ -45,7 +45,6 @@ class FragmentAbout : Fragment() {
 }
 
 class AboutUI<in Fragment> : AnkoComponentEx<Fragment>() {
-    private lateinit var gridAdapter: MyGridAdapter
 
     override fun create(ui: AnkoContext<Fragment>): View = with(ui) {
         Log.v(DebugTag.TAG, "AboutUI create start")

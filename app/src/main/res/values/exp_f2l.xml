@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="exp_f2l_title">
+        <item>@string/exp_f2l_st1_title</item>
+        <item>@string/exp_f2l_st2_title</item>
+        <item>@string/exp_f2l_st3_title</item>
+        <item>@string/exp_f2l_st4_title</item>
+        <item>@string/exp_f2l_st5_title</item>
+    </string-array>
+
+    <integer-array name="exp_f2l_icon">
+        <item>@drawable/vf2l_1</item>
+        <item>@drawable/vf2l_2</item>
+        <item>@drawable/vf2l_3</item>
+        <item>@drawable/vf2l_4</item>
+        <item>@drawable/vf2l_5</item>
+    </integer-array>
+    
+    <string-array name="exp_f2l_descr">
+        <item>@string/exp_f2l_st1_descr</item>
+        <item>@string/exp_f2l_st2_descr</item>
+        <item>@string/exp_f2l_st3_descr</item>
+        <item>@string/exp_f2l_st4_descr</item>
+        <item>@string/exp_f2l_st5_descr</item>
+    </string-array>
+
+    <string-array name="exp_f2l_url">
+        <item>@string/exp_f2l_st1_url</item>
+        <item>@string/exp_f2l_st2_url</item>
+        <item>@string/exp_f2l_st3_url</item>
+        <item>@string/exp_f2l_st4_url</item>
+        <item>@string/exp_f2l_st5_url</item>
+    </string-array>
+
+    <string name="exp_f2l_st1_title">Планка снизу</string>
+    <string name="exp_f2l_st1_descr" formatted="false"><![CDATA[
+        [
+        {\"FR\":\"Тут текст для переднего правого слота\",
+        \"BR\":\"Тут текст для заднего правого слота\",
+        \"FL\":\"Тут текст для переднего левого слота\",
+        \"BL\":\"Тут текст для заднего левого слота\"}
+        ]
+    ]]></string>
+    <string name="exp_f2l_st1_url"></string>
+
+    <string name="exp_f2l_st2_title">Планка сверху</string>
+    <string name="exp_f2l_st2_descr" formatted="false"><![CDATA[
+        [
+        {\"FR\":\"Тут текст для переднего правого слота2\",
+        \"BR\":\"Тут текст для заднего правого слота2\",
+        \"FL\":\"Тут текст для переднего левого слота2\",
+        \"BL\":\"Тут текст для заднего левого слота2\"}
+        ]
+    ]]></string>
+    <string name="exp_f2l_st2_url"></string>
+
+    <string name="exp_f2l_st3_title">Планка сверху</string>
+    <string name="exp_f2l_st3_descr" formatted="false"><![CDATA[
+        [
+        {\"FR\":\"Тут текст для переднего правого слота3\",
+        \"BR\":\"Тут текст для заднего правого слота3\",
+        \"FL\":\"Тут текст для переднего левого слота3\",
+        \"BL\":\"Тут текст для заднего левого слота3\"}
+        ]
+    ]]></string>
+    <string name="exp_f2l_st3_url"></string>
+
+    <string name="exp_f2l_st4_title">Планка сверху</string>
+    <string name="exp_f2l_st4_descr" formatted="false"><![CDATA[
+        [
+        {\"FR\":\"Тут текст для переднего правого слота4\",
+        \"BR\":\"Тут текст для заднего правого слота4\",
+        \"FL\":\"Тут текст для переднего левого слота4\",
+        \"BL\":\"Тут текст для заднего левого слота4\"}
+        ]
+    ]]></string>
+    <string name="exp_f2l_st4_url"></string>
+
+    <string name="exp_f2l_st5_title">Планка сверху</string>
+    <string name="exp_f2l_st5_descr" formatted="false"><![CDATA[
+        [
+        {\"FR\":\"Тут текст для переднего правого слота5\",
+        \"BR\":\"Тут текст для заднего правого слота5\",
+        \"FL\":\"Тут текст для переднего левого слота5\",
+        \"BL\":\"Тут текст для заднего левого слота5\"}
+        ]
+    ]]></string>
+    <string name="exp_f2l_st5_url"></string>
+
+
+</resources>
+

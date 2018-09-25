@@ -35,6 +35,10 @@ import ru.tohaman.rg2.util.getThemeFromSharedPreference
 import ru.tohaman.rg2.util.saveInt2SP
 import ru.tohaman.rg2.util.saveString2SP
 
+/*
+    Активность которая отображает слайдинг таб с обучалками. Слева выезжающее меню этапов, справа Избранное
+*/
+
 
 class SlidingTabsActivity : MyDefaultActivity(),
         SharedPreferences.OnSharedPreferenceChangeListener,

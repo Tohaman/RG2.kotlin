@@ -27,10 +27,10 @@ class MyGridAdapter (val context: Context, var gridList: List<CubeAzbuka>) : Bas
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
         var grid = convertView
-        val holder : ViewHolder
+        val holder : MyGridViewHolder
 
         if (grid == null) {
-            holder = ViewHolder()
+            holder = MyGridViewHolder()
             grid = with (context) {
                 linearLayout {
                     holder.linLay = linearLayout {                  //Линлэйаут во всю клетку
@@ -47,7 +47,7 @@ class MyGridAdapter (val context: Context, var gridList: List<CubeAzbuka>) : Bas
             }
             grid.tag = holder
         } else {
-            holder = grid.tag as ViewHolder
+            holder = grid.tag as MyGridViewHolder
         }
         // Если символ не задан, значит это пустая клетка и делаем ее прозрачной
         // если клетка кубика, то лэйаут делаем черным.
@@ -79,7 +79,7 @@ class MyGridAdapter (val context: Context, var gridList: List<CubeAzbuka>) : Bas
         return position.toLong()
     }
 
-    class ViewHolder {
+    class MyGridViewHolder {
         internal var linLay : LinearLayout? = null
         internal var relLay : SquareRelativeLayout? = null
         internal var txtView : TextView? = null

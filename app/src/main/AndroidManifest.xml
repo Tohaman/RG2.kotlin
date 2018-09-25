@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="ru.tohaman.rg2">
+    package="ru.tohaman.rg2">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
         android:allowBackup="true"
@@ -19,9 +19,9 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -30,55 +30,45 @@
             <intent-filter>
                 <data
                     android:host="ytplay"
-                    android:scheme="rg2"/>
+                    android:scheme="rg2" />
 
-                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activities.SlidingTabsActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".activities.TimerActivity"/>
-        <activity android:name=".activities.ScrambleActivity"
-                  android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activities.TimerActivity" />
+        <activity
+            android:name=".activities.ScrambleActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <data
                     android:host="scrmbl"
-                    android:scheme="rg2"/>
+                    android:scheme="rg2" />
 
-                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activities.PllTestGame"
-            android:label="@string/title_activity_pll_test_game">
-        </activity>
-
+            android:label="@string/title_activity_pll_test_game"></activity>
         <activity
             android:name=".activities.TestGameSelectPllName"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".activities.TestGameSelectOllName"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".activities.OllTestGame"
-            android:label="@string/title_activity_oll_test_game">
-        </activity>
-        <activity android:name=".activities.BlindTestGame">
-        </activity>
-
+            android:label="@string/title_activity_oll_test_game"></activity>
+        <activity android:name=".activities.BlindTestGame"></activity>
         <activity
             android:name=".activities.ShowPagerActivity"
             android:theme="@style/AppTheme">
@@ -88,11 +78,12 @@
                     android:scheme="rg2" />
 
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".activities.OllPagerActivity"></activity>
     </application>
 
 </manifest>

@@ -143,11 +143,16 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
             }
         }
 
+        val isTextSelectable = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean("is_text_selectable", false)
 
         (view.findViewById(PagerItemtUI.Ids.pagerTitleText) as TextView).text = title
+        //Если основной текст селектабельный, то и этот тоже надо делать таким, иначе текст будет автоматом прокручиваться при открытии view
+        (view.findViewById(PagerItemtUI.Ids.pagerTitleText) as TextView).isSelectable = isTextSelectable
+
         (view.findViewById(PagerItemtUI.Ids.pagerImageView) as ImageView).imageResource = topImage
+
         mainTextView.text = spanText
-        mainTextView.isSelectable = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean("is_text_selectable", false)
+        mainTextView.isSelectable = isTextSelectable
         mainTextView.movementMethod = LinkMovementMethod.getInstance()
 
         val ytTextView = view.findViewById(PagerItemtUI.Ids.youTubeTextView) as TextView
