@@ -3,11 +3,10 @@ package ru.tohaman.rg2.ui
 import android.content.Context
 import android.content.res.Resources
 import android.os.Build
+import android.support.annotation.LayoutRes
+import android.support.v7.widget.RecyclerView
 import android.transition.TransitionManager
-import android.view.ContextThemeWrapper
-import android.view.View
-import android.view.ViewGroup
-import android.view.ViewManager
+import android.view.*
 import android.widget.Button
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -86,4 +85,15 @@ inline fun ViewManager.styledButton(styleRes: Int = 0, init: Button.() -> Unit):
 
 inline fun ViewManager.squareRelativeLayout(init: RelativeLayout.() -> Unit) : SquareRelativeLayout {
     return ankoView({SquareRelativeLayout(it)},0,init)
+}
+
+fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = false): View {
+    return LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
+}
+
+fun <T : RecyclerView.ViewHolder> T.listen(event: (position: Int, type: Int) -> Unit): T {
+    itemView.setOnClickListener {
+        event.invoke(adapterPosition, itemViewType)
+    }
+    return this
 }

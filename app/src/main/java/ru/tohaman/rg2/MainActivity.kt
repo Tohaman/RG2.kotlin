@@ -28,7 +28,7 @@ import android.widget.ListView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import ru.tohaman.rg2.DeveloperKey.base64EncodedPublicKey
-import ru.tohaman.rg2.activities.OllPagerActivity
+import ru.tohaman.rg2.activities.F2LPagerActivity
 import ru.tohaman.rg2.adapters.MyListAdapter
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.util.*
@@ -657,7 +657,7 @@ class MainActivity : MyDefaultActivity(),
                 toast(getString(lp.description))
             }
             "ollPager" -> {  //Если тип не submenu, а ollPager
-                startActivity<OllPagerActivity>()
+                startActivity<F2LPagerActivity>()
             }
             //В других случаях запускаем SlidingTabActivity
             else -> { startActivity<SlidingTabsActivity>(RUBIC_PHASE to phase, EXTRA_ID to id)}

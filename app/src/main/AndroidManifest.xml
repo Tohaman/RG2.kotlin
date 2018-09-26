@@ -83,7 +83,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.OllPagerActivity"></activity>
+        <activity android:name=".activities.F2LPagerActivity"></activity>
     </application>
 
 </manifest>
