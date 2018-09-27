@@ -194,16 +194,17 @@
     <string name="patterns_st10_url"></string>
     <string name="patterns_st10_comment">U2 B2 F2 L2 R2</string>
 
-    <string name="patterns_st11_title">11. СРТГ</string>
+    <string name="patterns_st11_title">11. Рыбка на грани…</string>
     <string name="patterns_st11_descr" formatted="false"><![CDATA[
-        <p>Буквы С, Р, Т и Г на боковых граняъ кубика. Спасибо Дмитрию Константинову за присланный узор.</p>
+        <p>Узор с буквами С, Р, Т и Г на боковых гранях, но если присмотреться, то буквы Т и Р образуют
+        \"Рыбку\", поэтому и такое название. Спасибо Дмитрию Константинову за присланный узор.</p>
         <p style="text-align:center"><img src="pattern_11.xml"></p>
         <b>Алгоритм: D\' L R U2 L\' R\' D\'</b>
     ]]></string>
     <string name="patterns_st11_url"></string>
     <string name="patterns_st11_comment">D\' L R U2 L\' R\' D\'</string>
 
-    <string name="patterns_st12_title">11. ФБК</string>
+    <string name="patterns_st12_title">12. ФБК</string>
     <string name="patterns_st12_descr" formatted="false"><![CDATA[
         <p>Очень простой узор, буквы Н только на двух гранях. А если взять кубик стандартно,
         белой вверх, зеленой к себе, то получится эмблема ФБК. Спасибо Виктору Рудневу за присланный узор.</p>
