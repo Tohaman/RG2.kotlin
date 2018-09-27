@@ -26,7 +26,7 @@ import java.util.ArrayList
 class F2LPagerActivity : MyDefaultActivity(),
         View.OnClickListener,
         SharedPreferences.OnSharedPreferenceChangeListener,
-        FragmentPagerItem.OnViewPagerInteractionListener
+        FragmentF2LPagerItem.OnViewPagerInteractionListener
 {
     private lateinit var mViewPagerSlidingTabs: ViewPager
     private lateinit var mRecyclerView: RecyclerView
@@ -65,7 +65,7 @@ class F2LPagerActivity : MyDefaultActivity(),
         val itemsListType = object : TypeToken<ArrayList<F2lPhases>>() {}.type
         val listOfTexts : ArrayList <F2lPhases> = gson.fromJson(description, itemsListType)
         for (i in 0..3) {
-            slotListPagers.add(lp)
+            slotListPagers.add(ListPager(lp.phase, i, listOfTexts[i].slot, lp.icon, lp.description, lp.url, lp.comment))
         }
         return slotListPagers
     }

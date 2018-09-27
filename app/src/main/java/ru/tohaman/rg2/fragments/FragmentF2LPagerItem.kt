@@ -10,13 +10,20 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.google.android.youtube.player.*
+import com.google.gson.GsonBuilder
+import com.google.gson.reflect.TypeToken
 import org.jetbrains.anko.*
 import org.jetbrains.anko.support.v4.*
 import ru.tohaman.rg2.DebugTag
+import ru.tohaman.rg2.data.F2lPhases
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
+import ru.tohaman.rg2.ui.F2LPagerItemtUI
 import ru.tohaman.rg2.ui.PagerItemtUI
+import ru.tohaman.rg2.util.spannedString
+import java.util.ArrayList
 
 class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener {
     private var mListener: OnViewPagerInteractionListener? = null
@@ -26,10 +33,34 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         // Создаем Вью
-        val view = PagerItemtUI<Fragment>().createView(AnkoContext.create(ctx, this))
+        val view = F2LPagerItemtUI<Fragment>().createView(AnkoContext.create(ctx, this))
         //получаем сиглет общей базы и избранного
         val listPagerLab = ListPagerLab.get(ctx)
         val favoritesList = listPagerLab.favorites
+
+        //Данные во фрагмент передаются через фабричный метод newInstance данного фрагмента
+
+        val phase = arguments!!.getString("phase")
+        val id = arguments!!.getInt("id")
+        val lp = listPagerLab.getPhaseItem(id, phase)
+        val title = lp.title
+        val topImage = lp.icon
+        val description = arguments!!.getInt("text")
+        var comment  = lp.comment
+        url = lp.url
+
+        val gson = GsonBuilder().create()
+        val itemsListType = object : TypeToken<ArrayList<F2lPhases>>() {}.type
+        var textString = "<html><body style=\"text-align:justify\"> %s </body></html>"
+        val st = getString(description)
+        val listOfTexts : ArrayList<F2lPhases> = gson.fromJson(st, itemsListType)
+        textString = String.format(textString, listOfTexts[id].text)
+        val spanText = spannedString(textString, imgGetter, tagHandler)
+
+
+
+        val mainTextView = view.findViewById<TextView>(F2LPagerItemtUI.Ids.descriptionText)
+        mainTextView.text = spanText
 
         return view
     }
@@ -52,6 +83,16 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
         drawable
     }
 
+    private val tagHandler = Html.TagHandler { opening, tag, output, xmlReader ->
+        //Тут можно обрабатывать свои тэги
+        if (tag.equals("mytag", true)) {
+            val open = opening
+            val tag1 = tag
+            val out = output
+            val xml = xmlReader
+
+        }
+    }
 
     //Два обязательных переопределяемых метода для имплементного YouTubeThumbnailView.OnInitializedListener
     override fun onInitializationSuccess(p0: YouTubeThumbnailView?, p1: YouTubeThumbnailLoader?) {
@@ -95,8 +136,10 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
 
     companion object {
         fun newInstance(lp: ListPager): FragmentF2LPagerItem {
-            return FragmentF2LPagerItem().withArguments("phase" to lp.phase,
-                    "id" to lp.id)
+            return FragmentF2LPagerItem().withArguments(
+                    "phase" to lp.phase,
+                    "id" to lp.id,
+                    "text" to lp.description)
         }
     }
 }
