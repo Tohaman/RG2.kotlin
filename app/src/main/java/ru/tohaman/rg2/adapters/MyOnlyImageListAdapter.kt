@@ -29,8 +29,11 @@ class MyOnlyImageListAdapter(private val listOfLP: ArrayList<ListPager> = ArrayL
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        holder.itemView.leftListViewImage.tag = position
+        //задаем картинку для этапа
         holder.itemView.leftListViewImage.setImageResource(listOfLP[position].icon)
+
+        //Вот таким образом передаем onClick по картинке в активность. position передаем через tag
+        holder.itemView.leftListViewImage.tag = position
         holder.itemView.leftListViewImage.setOnClickListener {
             onClickListener.onClick(holder.itemView.leftListViewImage)
         }

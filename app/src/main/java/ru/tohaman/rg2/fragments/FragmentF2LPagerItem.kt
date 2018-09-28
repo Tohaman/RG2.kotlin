@@ -40,14 +40,16 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
 
         //Данные во фрагмент передаются через фабричный метод newInstance данного фрагмента
 
-        val phase = arguments!!.getString("phase")
         val id = arguments!!.getInt("id")
-        val lp = listPagerLab.getPhaseItem(id, phase)
-        val title = lp.title
-        val topImage = lp.icon
+        val title = arguments!!.getString("title")
+        val topImage = arguments!!.getInt("icon")
         val description = arguments!!.getInt("text")
-        var comment  = lp.comment
-        url = lp.url
+        var comment  = arguments!!.getString("comment")
+        //url = lp.url
+
+        val titleTextView = view.findViewById<TextView>(F2LPagerItemtUI.Ids.pagerTitleText)
+        titleTextView.text = title
+
 
         val gson = GsonBuilder().create()
         val itemsListType = object : TypeToken<ArrayList<F2lPhases>>() {}.type
@@ -57,10 +59,9 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
         textString = String.format(textString, listOfTexts[id].text)
         val spanText = spannedString(textString, imgGetter, tagHandler)
 
-
-
         val mainTextView = view.findViewById<TextView>(F2LPagerItemtUI.Ids.descriptionText)
         mainTextView.text = spanText
+
 
         return view
     }
@@ -137,9 +138,11 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
     companion object {
         fun newInstance(lp: ListPager): FragmentF2LPagerItem {
             return FragmentF2LPagerItem().withArguments(
-                    "phase" to lp.phase,
                     "id" to lp.id,
-                    "text" to lp.description)
+                    "title" to lp.title,
+                    "icon" to lp.icon,
+                    "text" to lp.description,
+                    "comment" to lp.comment)
         }
     }
 }

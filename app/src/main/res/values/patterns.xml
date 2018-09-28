@@ -199,10 +199,10 @@
         <p>Узор с буквами С, Р, Т и Г на боковых гранях, но если присмотреться, то буквы Т и Р образуют
         \"Рыбку\", поэтому и такое название. Спасибо Дмитрию Константинову за присланный узор.</p>
         <p style="text-align:center"><img src="pattern_11.xml"></p>
-        <b>Алгоритм: D\' L R U2 L\' R\' D\'</b>
+        <b>Алгоритм: D L\' R\' U2 L R D</b>
     ]]></string>
     <string name="patterns_st11_url"></string>
-    <string name="patterns_st11_comment">D\' L R U2 L\' R\' D\'</string>
+    <string name="patterns_st11_comment">D L\' R\' U2 L R D</string>
 
     <string name="patterns_st12_title">12. ФБК</string>
     <string name="patterns_st12_descr" formatted="false"><![CDATA[

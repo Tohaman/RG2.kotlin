@@ -30,6 +30,7 @@ class F2LPagerActivity : MyDefaultActivity(),
 {
     private lateinit var mViewPagerSlidingTabs: ViewPager
     private lateinit var mRecyclerView: RecyclerView
+    private lateinit var mListPagers : ArrayList<ListPager>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +41,7 @@ class F2LPagerActivity : MyDefaultActivity(),
 
         Log.v (DebugTag.TAG, "SlidingTabActivity onCreate Инициализируем ListPagers и передаем его адаптерам")
         val mListPagerLab = ListPagerLab.get(this)
-        val mListPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList("EXP_F2L").filter { it.url != "submenu" } as ArrayList<ListPager>
+        mListPagers  = mListPagerLab.getPhaseList("EXP_F2L").filter { it.url != "submenu" } as ArrayList<ListPager>
 
         mViewPagerSlidingTabs = findViewById<ViewPager>(R.id.viewPagerSlidingTabs)
         setSlidingTabAdapter(convertDescription2ListPagers(mListPagers[0]))
@@ -53,8 +54,8 @@ class F2LPagerActivity : MyDefaultActivity(),
         // Создаем вертикальный RecycleView (задаем Layout Manager)
         mRecyclerView.layoutManager = LinearLayoutManager(this)
         // Назначаем адаптер типа MyOnlyImage элемент которого только картинка
+        // назначем обработчик для слушателя onClick адаптера в активности
         mRecyclerView.adapter = MyOnlyImageListAdapter(mListPagers,this)
-        //mRecyclerView.setOnClickListener {  }
 
     }
 
@@ -70,13 +71,13 @@ class F2LPagerActivity : MyDefaultActivity(),
         return slotListPagers
     }
 
+    //при смене этапа, меняем (устанавливаем) адаптер для слайдингтаба
     private fun setSlidingTabAdapter(mListPagers: ArrayList<ListPager>) {
         // подключим адаптер для слайдингтаба (основного текста)
         val adapter = object : FragmentStatePagerAdapter(supportFragmentManager) {
-            val titles = arrayOf("FR", "FB", "FL", "BL")
+            val titles = arrayOf("FR", "BR", "FL", "BL")
 
             override fun getPageTitle(position: Int): CharSequence {
-
                 //Заголовки для ViewPager
                 return titles[position]
             }
@@ -95,11 +96,12 @@ class F2LPagerActivity : MyDefaultActivity(),
         mViewPagerSlidingTabs.adapter = adapter
     }
 
+    //обрабатываем onClick по элементам RecycleView, через перехват onClick адаптера
     override fun onClick(view: View?) {
-        val position=view?.tag as Int
-        Log.v (DebugTag.TAG, "F2LPagerActivity Click on item $position")
+        val position = view?.tag as Int
+        //Log.v (DebugTag.TAG, "F2LPagerActivity Click on item $position")
+        setSlidingTabAdapter(convertDescription2ListPagers(mListPagers[position]))
     }
-
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.

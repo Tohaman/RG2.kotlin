@@ -10,11 +10,11 @@
     </string-array>
 
     <integer-array name="exp_f2l_icon">
-        <item>@drawable/vf2l_1</item>
-        <item>@drawable/vf2l_2</item>
-        <item>@drawable/vf2l_3</item>
-        <item>@drawable/vf2l_4</item>
-        <item>@drawable/vf2l_5</item>
+        <item>@drawable/exp_f2l_1</item>
+        <item>@drawable/exp_f2l_1</item>
+        <item>@drawable/exp_f2l_1</item>
+        <item>@drawable/exp_f2l_1</item>
+        <item>@drawable/exp_f2l_1</item>
     </integer-array>
     
     <string-array name="exp_f2l_descr">
@@ -80,10 +80,10 @@
     <string name="exp_f2l_st5_title">Планка сверху</string>
     <string name="exp_f2l_st5_descr" formatted="false"><![CDATA[
         [
-        {\"slot\":\"Передний правый слот\", \"text\":\"Текст для алгоритма FR\"},
-        {\"slot\":\"Задний правый слот\", \"text\":\"Текст для алгоритма BR\"},
-        {\"slot\":\"Передний левый слот\", \"text\":\"Текст для алгоритма FL\"},
-        {\"slot\":\"Задний левый слот\", \"text\":\"Текст для алгоритма BL\"}
+        {\"slot\":\"Передний правый слот\", \"text\":\"Текст для алгоритма FR 5\"},
+        {\"slot\":\"Задний правый слот\", \"text\":\"Текст для алгоритма BR 5\"},
+        {\"slot\":\"Передний левый слот\", \"text\":\"Текст для алгоритма FL 5\"},
+        {\"slot\":\"Задний левый слот\", \"text\":\"Текст для алгоритма BL 5\"}
         ]
     ]]></string>
     <string name="exp_f2l_st5_url"></string>
