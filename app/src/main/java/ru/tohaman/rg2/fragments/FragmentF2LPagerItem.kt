@@ -2,14 +2,17 @@ package ru.tohaman.rg2.fragments
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.graphics.drawable.LayerDrawable
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
+import android.support.v4.graphics.drawable.DrawableCompat
 import android.text.Html
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import com.google.android.youtube.player.*
 import com.google.gson.GsonBuilder
@@ -22,6 +25,7 @@ import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.ui.F2LPagerItemtUI
 import ru.tohaman.rg2.ui.PagerItemtUI
+import ru.tohaman.rg2.util.cubeColor
 import ru.tohaman.rg2.util.spannedString
 import java.util.ArrayList
 
@@ -62,6 +66,17 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
         val mainTextView = view.findViewById<TextView>(F2LPagerItemtUI.Ids.descriptionText)
         mainTextView.text = spanText
 
+        val imageView = view.findViewById<ImageView>(F2LPagerItemtUI.Ids.pagerImageView)
+
+//        return LayerDrawable( Array(28) { i ->
+//            //получаем drawable по имени "z_2s_0$i"
+//            val drw = ContextCompat.getDrawable(ctx, resources.getIdentifier("z_2s_0$i", "drawable", this.packageName))
+//            //раскрашиваем цветом кубика
+//            DrawableCompat.setTint(drw!!, ContextCompat.getColor(ctx, cubeColor[genScrambleCube[27-i]]))
+//            drw
+//        })
+        //val layerDrawable = LayerDrawable (ContextCompat.getDrawable(ctx,topImage)!!)
+        imageView.image = ContextCompat.getDrawable(ctx,topImage)!!
 
         return view
     }

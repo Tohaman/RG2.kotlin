@@ -133,13 +133,13 @@ class BlindTestGame : MyDefaultActivity() {
         //цвет фона кубика
         genScrambleCube[27] = 6
 
-        return LayerDrawable( Array(28, { i ->
+        return LayerDrawable( Array(28) { i ->
             //получаем drawable по имени "z_2s_0$i"
             val drw = ContextCompat.getDrawable(ctx, resources.getIdentifier("z_2s_0$i", "drawable", this.packageName))
             //раскрашиваем цветом кубика
             DrawableCompat.setTint(drw!!, ContextCompat.getColor(ctx,cubeColor[genScrambleCube[27-i]]))
             drw
-        }))
+        })
     }
 
     private fun updateGuessRows(guessRows: Int, guessLinearLayouts: Array<LinearLayout>) {
