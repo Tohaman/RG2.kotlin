@@ -7,7 +7,6 @@ import com.google.gson.GsonBuilder
 import ru.tohaman.rg2.FAVORITES
 import ru.tohaman.rg2.util.saveString2SP
 import com.google.gson.reflect.TypeToken
-import java.util.*
 import kotlin.collections.ArrayList
 
 
@@ -97,20 +96,21 @@ class ListPagerLab private constructor(context: Context){
 
     // Инициализация фазы, с заданными массивами Заголовков, Иконок, Описаний, ютуб-ссылок
     private fun phaseInit(phase: String, titleArray: Int, iconArray: Int, descrArray: Int, urlArray: Int, context: Context, comment : Int = 0) {
+        val emptyComment = Array (100) {""}
         val titles =  context.resources.getStringArray(titleArray)
         val icon = context.resources.obtainTypedArray (iconArray)
-        val descr = context.resources.obtainTypedArray (descrArray)
+        val description = context.resources.obtainTypedArray (descrArray)
         val url = context.resources.getStringArray(urlArray)
-        val cmnt = if (comment != 0) { context.resources.getStringArray(comment) } else { context.resources.getStringArray(R.array.empty_comment)}
+        val cmnt = if (comment != 0) { context.resources.getStringArray(comment) } else { emptyComment}
         for (i in titles.indices) {
             var listPager = mDatabase.getListPagerFromBase(i, phase)
             if (listPager == null) {
-                listPager = ListPager(phase, i, titles[i], icon.getResourceId(i, 0), descr.getResourceId(i, 0), url[i], cmnt[i])
+                listPager = ListPager(phase, i, titles[i], icon.getResourceId(i, 0), description.getResourceId(i, 0), url[i], cmnt[i])
                 mDatabase.addListPager2Base(listPager)
             } else {
                 listPager.title = titles[i]
                 listPager.icon= icon.getResourceId(i,0)
-                listPager.description = descr.getResourceId(i,0)
+                listPager.description = description.getResourceId(i,0)
                 listPager.url = url[i]
             }
             listPagers.add(listPager)
@@ -120,7 +120,7 @@ class ListPagerLab private constructor(context: Context){
             }
         }
         icon.recycle()
-        descr.recycle()
+        description.recycle()
     }
 
     private fun favoritesInit(context: Context) {

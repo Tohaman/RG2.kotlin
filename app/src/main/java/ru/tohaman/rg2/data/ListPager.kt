@@ -6,7 +6,8 @@ package ru.tohaman.rg2.data
 //        Icon: Int,             // иконка этапа
 //        Description: Int,      // описание этапа
 //        Url: String,           // ссылка на ютубвидео
-//        Comment: String)       // свой коммент к этапу
+//        Comment: String,       // свой коммент к этапу
+//        SubID: String)         // номер подэтапа
 
 data class ListPager constructor (
         var phase: String,
@@ -15,7 +16,8 @@ data class ListPager constructor (
         var icon: Int = 0,
         var description: Int = 0,
         var url: String = "",
-        var comment: String = "") {
+        var comment: String = "",
+        var subID : String = "") {
 
     //Благодаря возможности Котлина задать значения по-умолчанию в кострукторе, можно обойти без вот такого создания доп.конструкторов
     //конструктор для объекта содержащего только фазу, номер в фазе, название этапа и иконку (например для главного меню)
