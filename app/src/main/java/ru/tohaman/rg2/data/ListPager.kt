@@ -17,7 +17,8 @@ data class ListPager constructor (
         var description: Int = 0,
         var url: String = "",
         var comment: String = "",
-        var subID : String = "") {
+        var subID : String = "",
+        var subTitle : String = "") {
 
     //Благодаря возможности Котлина задать значения по-умолчанию в кострукторе, можно обойти без вот такого создания доп.конструкторов
     //конструктор для объекта содержащего только фазу, номер в фазе, название этапа и иконку (например для главного меню)

@@ -190,6 +190,12 @@ class ListPagerLab private constructor(context: Context){
         return listPager
     }
 
+    //возвращает из ListPagerLab список ListPager'ов с заданными фазой и номером
+    fun getPhaseItemList(id: Int, phase: String): ArrayList<ListPager> {
+        return listPagers.filterTo (ArrayList()) {(phase == it.phase) and (id == it.id)}
+    }
+
+
     fun getBackPhase(phase: String, ctx : Context): String {
         var listPager = ListPager("", 0, "", 0)
         val submenuLP = listPagers
