@@ -1,6 +1,7 @@
 package ru.tohaman.rg2.data
 
 import android.content.Context
+import android.support.v4.content.res.TypedArrayUtils.getString
 import android.support.v7.preference.PreferenceManager
 import ru.tohaman.rg2.R
 import com.google.gson.GsonBuilder
@@ -47,7 +48,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("ACCEL",R.array.accel_title,R.array.accel_icon,R.array.accel_descr,R.array.accel_url,context)
         phaseInit("CROSS",R.array.cross_title,R.array.cross_icon,R.array.cross_descr,R.array.cross_url,context)
         phaseInit("F2L",R.array.f2l_title,R.array.f2l_icon,R.array.f2l_descr,R.array.f2l_url,context)
-        phaseInit("EXP_F2L",R.array.exp_f2l_title,R.array.exp_f2l_icon,R.array.exp_f2l_descr,R.array.exp_f2l_url,context)
+        extPhaseInit("EXP_F2L",R.array.exp_f2l_title,R.array.exp_f2l_icon,R.array.exp_f2l_descr,R.array.exp_f2l_url,context)
         phaseInit("ADVF2L",R.array.advf2l_title,R.array.advf2l_icon,R.array.advf2l_descr,R.array.advf2l_url,context)
         phaseInit("OLL",R.array.oll_title,R.array.oll_icon,R.array.oll_descr,R.array.oll_url,context)
         phaseInit("PLL",R.array.pll_title,R.array.pll_icon,R.array.pll_descr,R.array.pll_url,context)
@@ -121,6 +122,29 @@ class ListPagerLab private constructor(context: Context){
         }
         icon.recycle()
         description.recycle()
+    }
+
+    private fun extPhaseInit (phase: String, titleArray: Int, iconArray: Int, descrArray: Int, urlArray: Int, context: Context, comment: Int = 0) {
+        val emptyComment = Array (100) {""}
+        val titles =  context.resources.getStringArray(titleArray)
+        val icon = context.resources.obtainTypedArray (iconArray)
+        val description = context.resources.obtainTypedArray (descrArray)
+        val url = context.resources.getStringArray(urlArray)
+        val cmnt = if (comment != 0) { context.resources.getStringArray(comment) } else { emptyComment}
+
+        for (i in titles.indices) {
+            val text : String? = context.resources.getStringArray(descrArray)[i]
+            val slotListPagers = arrayListOf<ListPager>()
+            val gson = GsonBuilder().create()
+            val itemsListType = object : TypeToken<ArrayList<F2lPhases>>() {}.type
+            val listOfTexts : ArrayList <F2lPhases> = gson.fromJson(text, itemsListType)
+            for (j in listOfTexts.indices) {
+                //slotListPagers.add(ListPager(lp.phase, i, listOfTexts[i].slot, lp.icon, lp.description, lp.url, lp.comment))
+            }
+
+        }
+        description.recycle()
+        icon.recycle()
     }
 
     private fun favoritesInit(context: Context) {
