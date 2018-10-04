@@ -31,6 +31,8 @@ class F2LPagerActivity : MyDefaultActivity(),
     private lateinit var mViewPagerSlidingTabs: ViewPager
     private lateinit var mRecyclerView: RecyclerView
     private lateinit var mListPagers : ArrayList<ListPager>
+    private lateinit var mListMainItem : ArrayList<ListPager>
+    private lateinit var mListPagerLab : ListPagerLab
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +42,7 @@ class F2LPagerActivity : MyDefaultActivity(),
         setSupportActionBar(toolbar)
 
         Log.v (DebugTag.TAG, "SlidingTabActivity onCreate Инициализируем ListPagers и передаем его адаптерам")
-        val mListPagerLab = ListPagerLab.get(this)
+        mListPagerLab = ListPagerLab.get(this)
         mListPagers  = mListPagerLab.getPhaseList("EXP_F2L").filter { it.url != "submenu" } as ArrayList<ListPager>
 
         mViewPagerSlidingTabs = findViewById<ViewPager>(R.id.viewPagerSlidingTabs)
@@ -49,25 +51,26 @@ class F2LPagerActivity : MyDefaultActivity(),
         tabs.setViewPager(mViewPagerSlidingTabs)
 
 
-        val a = mListPagers.size
         mRecyclerView = findViewById<RecyclerView>(R.id.leftRecycleView)
         // Создаем вертикальный RecycleView (задаем Layout Manager)
         mRecyclerView.layoutManager = LinearLayoutManager(this)
         // Назначаем адаптер типа MyOnlyImage элемент которого только картинка
         // назначем обработчик для слушателя onClick адаптера в активности
-        mRecyclerView.adapter = MyOnlyImageListAdapter(mListPagers,this)
+        mListMainItem  = mListPagers.filter { it.subID == "0" } as ArrayList<ListPager>
+        mRecyclerView.adapter = MyOnlyImageListAdapter(mListMainItem,this)
 
     }
 
     private fun convertDescription2ListPagers(lp:ListPager): ArrayList<ListPager> {
         val description : String = getString(lp.description)
-        val slotListPagers = arrayListOf<ListPager>()
-        val gson = GsonBuilder().create()
-        val itemsListType = object : TypeToken<ArrayList<F2lPhases>>() {}.type
-        val listOfTexts : ArrayList <F2lPhases> = gson.fromJson(description, itemsListType)
-        for (i in 0..3) {
-            slotListPagers.add(ListPager(lp.phase, i, listOfTexts[i].slot, lp.icon, lp.description, lp.url, lp.comment))
-        }
+        val slotListPagers = mListPagerLab.getPhaseItemList(lp.id, lp.phase)
+//        val gson = GsonBuilder().create()
+//        val itemsListType = object : TypeToken<ArrayList<F2lPhases>>() {}.type
+//        val listOfTexts : ArrayList <F2lPhases> = gson.fromJson(description, itemsListType)
+//        for (i in 0..3) {
+//            slotListPagers[i].
+//            //(ListPager(lp.phase, i, listOfTexts[i].slot, lp.icon, lp.description, lp.url, lp.comment, lp.subID, lp.subTitle))
+//        }
         return slotListPagers
     }
 
@@ -75,16 +78,16 @@ class F2LPagerActivity : MyDefaultActivity(),
     private fun setSlidingTabAdapter(mListPagers: ArrayList<ListPager>) {
         // подключим адаптер для слайдингтаба (основного текста)
         val adapter = object : FragmentStatePagerAdapter(supportFragmentManager) {
-            val titles = arrayOf("FR", "BR", "FL", "BL")
+            //val titles = arrayOf("FR", "BR", "FL", "BL")
 
             override fun getPageTitle(position: Int): CharSequence {
                 //Заголовки для ViewPager
-                return titles[position]
+                return mListPagers[position].subTitle
             }
 
             override fun getCount(): Int {
                 //Количество элементов для ViewPager
-                return titles.size
+                return mListPagers.size
             }
 
             override fun getItem(position: Int): Fragment {
@@ -100,7 +103,7 @@ class F2LPagerActivity : MyDefaultActivity(),
     override fun onClick(view: View?) {
         val position = view?.tag as Int
         //Log.v (DebugTag.TAG, "F2LPagerActivity Click on item $position")
-        setSlidingTabAdapter(convertDescription2ListPagers(mListPagers[position]))
+        setSlidingTabAdapter(convertDescription2ListPagers(mListMainItem[position]))
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {

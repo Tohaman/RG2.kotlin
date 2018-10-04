@@ -23,6 +23,8 @@ class ListPagerLab private constructor(context: Context){
     var favorites = mutableSetOf<Favorite>()
 
     init { // тут пишем то, что выполнится при инициализации синглета
+        extPhaseInit("EXP_F2L",R.array.exp_f2l_title,R.array.exp_f2l_icon,R.array.exp_f2l_descr,R.array.exp_f2l_url,context)
+
         phaseInit("BEGIN2X2",R.array.begin2x2_title,R.array.begin2x2_icon,R.array.begin2x2_descr,R.array.begin2x2_url,context)
         phaseInit("ADV2X2",R.array.adv2x2_title,R.array.adv2x2_icon,R.array.adv2x2_descr,R.array.adv2x2_url,context)
         phaseInit("G2F", R.array.g2f_title,R.array.g2f_icon,R.array.g2f_descr,R.array.g2f_url,context)
@@ -48,7 +50,6 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("ACCEL",R.array.accel_title,R.array.accel_icon,R.array.accel_descr,R.array.accel_url,context)
         phaseInit("CROSS",R.array.cross_title,R.array.cross_icon,R.array.cross_descr,R.array.cross_url,context)
         phaseInit("F2L",R.array.f2l_title,R.array.f2l_icon,R.array.f2l_descr,R.array.f2l_url,context)
-        extPhaseInit("EXP_F2L",R.array.exp_f2l_title,R.array.exp_f2l_icon,R.array.exp_f2l_descr,R.array.exp_f2l_url,context)
         phaseInit("ADVF2L",R.array.advf2l_title,R.array.advf2l_icon,R.array.advf2l_descr,R.array.advf2l_url,context)
         phaseInit("OLL",R.array.oll_title,R.array.oll_icon,R.array.oll_descr,R.array.oll_url,context)
         phaseInit("PLL",R.array.pll_title,R.array.pll_icon,R.array.pll_descr,R.array.pll_url,context)
@@ -124,24 +125,53 @@ class ListPagerLab private constructor(context: Context){
         description.recycle()
     }
 
-    private fun extPhaseInit (phase: String, titleArray: Int, iconArray: Int, descrArray: Int, urlArray: Int, context: Context, comment: Int = 0) {
-        val emptyComment = Array (100) {""}
-        val titles =  context.resources.getStringArray(titleArray)
-        val icon = context.resources.obtainTypedArray (iconArray)
-        val description = context.resources.obtainTypedArray (descrArray)
+    //Инициализируем фазу с подэтапами (расширенное меню с listview слева)
+    private fun extPhaseInit(phase: String, titleArray: Int, iconArray: Int, descrArray: Int, urlArray: Int, context: Context, comment: Int = 0) {
+        val emptyComment = Array(500) { "" }
+        val titles = context.resources.getStringArray(titleArray)
+        val icon = context.resources.obtainTypedArray(iconArray)
+        val description = context.resources.obtainTypedArray(descrArray)
         val url = context.resources.getStringArray(urlArray)
-        val cmnt = if (comment != 0) { context.resources.getStringArray(comment) } else { emptyComment}
+        val cmnt = if (comment != 0) {
+            context.resources.getStringArray(comment)
+        } else {
+            emptyComment
+        }
 
         for (i in titles.indices) {
-            val text : String? = context.resources.getStringArray(descrArray)[i]
-            val slotListPagers = arrayListOf<ListPager>()
+            //text = description к этапу фазы, содержит несколько записей о подэтапах
+            val text: String? = context.resources.getStringArray(descrArray)[i]
+
             val gson = GsonBuilder().create()
             val itemsListType = object : TypeToken<ArrayList<F2lPhases>>() {}.type
-            val listOfTexts : ArrayList <F2lPhases> = gson.fromJson(text, itemsListType)
-            for (j in listOfTexts.indices) {
-                //slotListPagers.add(ListPager(lp.phase, i, listOfTexts[i].slot, lp.icon, lp.description, lp.url, lp.comment))
-            }
+            val listOfTexts: ArrayList<F2lPhases> = gson.fromJson(text, itemsListType)
 
+            //Ищем коммент в базе
+            val slotListPagers = arrayListOf<ListPager>()
+
+            for (j in listOfTexts.indices) {
+                var listPager = mDatabase.getListPagerFromBase(i, phase)
+
+                //Если коммента нет, то создаем запись с дефолтным комментом
+                if (listPager == null) {
+                    listPager = ListPager(phase, i, titles[i], icon.getResourceId(i, 0),
+                            description.getResourceId(i, 0), url[i], "",
+                            j.toString(), listOfTexts[j].subTitle, listOfTexts[j].slot)
+                mDatabase.addListPager2Base(listPager)
+                }
+                //Если коммент есть, то берем его из базы
+                else {
+                    listPager.title = titles[i]
+                    listPager.icon = icon.getResourceId(i, 0)
+                    listPager.description = description.getResourceId(i, 0)
+                    listPager.url = url[i]
+                    listPager.subID = j.toString()
+                    listPager.subTitle = listOfTexts[j].subTitle
+                    listPager.slot = listOfTexts[j].slot
+                }
+                listPagers.add(listPager)
+            }
+            //TODO сделать обработку комментов по подэтапам
         }
         description.recycle()
         icon.recycle()
@@ -209,7 +239,7 @@ class ListPagerLab private constructor(context: Context){
         var listPager = ListPager("", 0, "", 0)
 
         listPagers
-                .filter { (phase == it.phase) and (id == it.id) }
+                .filter { (phase == it.phase) and (id == it.id)}
                 .forEach { listPager = it }
         return listPager
     }

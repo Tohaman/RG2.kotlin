@@ -44,11 +44,15 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
 
         //Данные во фрагмент передаются через фабричный метод newInstance данного фрагмента
 
+        val phase = arguments!!.getString("phase")
         val id = arguments!!.getInt("id")
-        val title = arguments!!.getString("title")
-        val topImage = arguments!!.getInt("icon")
-        val description = arguments!!.getInt("text")
-        var comment  = arguments!!.getString("comment")
+        val subId = arguments!!.getString("subId").toInt()
+        val lp = listPagerLab.getPhaseItemList(id, phase)[subId]
+
+        val title = lp.slot
+        val topImage = lp.icon
+        val description = lp.description
+        var comment  = lp.comment
         //url = lp.url
 
         val titleTextView = view.findViewById<TextView>(F2LPagerItemtUI.Ids.pagerTitleText)
@@ -60,7 +64,7 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
         var textString = "<html><body style=\"text-align:justify\"> %s </body></html>"
         val st = getString(description)
         val listOfTexts : ArrayList<F2lPhases> = gson.fromJson(st, itemsListType)
-        textString = String.format(textString, listOfTexts[id].text)
+        textString = String.format(textString, listOfTexts[subId].text)
         val spanText = spannedString(textString, imgGetter, tagHandler)
 
         val mainTextView = view.findViewById<TextView>(F2LPagerItemtUI.Ids.descriptionText)
@@ -153,11 +157,9 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
     companion object {
         fun newInstance(lp: ListPager): FragmentF2LPagerItem {
             return FragmentF2LPagerItem().withArguments(
+                    "phase" to lp.phase,
                     "id" to lp.id,
-                    "title" to lp.title,
-                    "icon" to lp.icon,
-                    "text" to lp.description,
-                    "comment" to lp.comment)
+                    "subId" to lp.subID)
         }
     }
 }
