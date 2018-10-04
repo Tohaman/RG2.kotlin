@@ -2,11 +2,9 @@ package ru.tohaman.rg2.fragments
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.graphics.drawable.LayerDrawable
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
-import android.support.v4.graphics.drawable.DrawableCompat
 import android.text.Html
 import android.util.Log
 import android.view.LayoutInflater
@@ -24,8 +22,6 @@ import ru.tohaman.rg2.data.F2lPhases
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.ui.F2LPagerItemtUI
-import ru.tohaman.rg2.ui.PagerItemtUI
-import ru.tohaman.rg2.util.cubeColor
 import ru.tohaman.rg2.util.spannedString
 import java.util.ArrayList
 
@@ -49,7 +45,7 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
         val subId = arguments!!.getString("subId").toInt()
         val lp = listPagerLab.getPhaseItemList(id, phase)[subId]
 
-        val title = lp.slot
+        val title = lp.subLongTitle
         val topImage = lp.icon
         val description = lp.description
         var comment  = lp.comment

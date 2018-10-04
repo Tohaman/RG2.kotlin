@@ -4,23 +4,18 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentStatePagerAdapter
-import android.support.v4.view.ViewPager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
-import com.google.gson.GsonBuilder
-import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.app_bar_sliding.*
 import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.MyDefaultActivity
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.adapters.MyOnlyImageListAdapter
-import ru.tohaman.rg2.data.F2lPhases
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.fragments.FragmentF2LPagerItem
-import ru.tohaman.rg2.fragments.FragmentPagerItem
 import java.util.ArrayList
 
 class F2LPagerActivity : MyDefaultActivity(),
@@ -28,8 +23,6 @@ class F2LPagerActivity : MyDefaultActivity(),
         SharedPreferences.OnSharedPreferenceChangeListener,
         FragmentF2LPagerItem.OnViewPagerInteractionListener
 {
-    private lateinit var mViewPagerSlidingTabs: ViewPager
-    private lateinit var mRecyclerView: RecyclerView
     private lateinit var mListPagers : ArrayList<ListPager>
     private lateinit var mListMainItem : ArrayList<ListPager>
     private lateinit var mListPagerLab : ListPagerLab
@@ -45,13 +38,14 @@ class F2LPagerActivity : MyDefaultActivity(),
         mListPagerLab = ListPagerLab.get(this)
         mListPagers  = mListPagerLab.getPhaseList("EXP_F2L").filter { it.url != "submenu" } as ArrayList<ListPager>
 
-        mViewPagerSlidingTabs = findViewById<ViewPager>(R.id.viewPagerSlidingTabs)
+        //mViewPagerSlidingTabs = findViewById<ViewPager>(R.id.viewPagerSlidingTabs)
         setSlidingTabAdapter(convertDescription2ListPagers(mListPagers[0]))
-        mViewPagerSlidingTabs.currentItem = 0
-        tabs.setViewPager(mViewPagerSlidingTabs)
+        //mViewPagerSlidingTabs.currentItem = 0
+        viewPagerSlidingTabs.currentItem = 0
+        tabs.setViewPager(viewPagerSlidingTabs)
 
 
-        mRecyclerView = findViewById<RecyclerView>(R.id.leftRecycleView)
+        val mRecyclerView = findViewById<RecyclerView>(R.id.leftRecycleView)
         // Создаем вертикальный RecycleView (задаем Layout Manager)
         mRecyclerView.layoutManager = LinearLayoutManager(this)
         // Назначаем адаптер типа MyOnlyImage элемент которого только картинка
@@ -62,16 +56,7 @@ class F2LPagerActivity : MyDefaultActivity(),
     }
 
     private fun convertDescription2ListPagers(lp:ListPager): ArrayList<ListPager> {
-        val description : String = getString(lp.description)
-        val slotListPagers = mListPagerLab.getPhaseItemList(lp.id, lp.phase)
-//        val gson = GsonBuilder().create()
-//        val itemsListType = object : TypeToken<ArrayList<F2lPhases>>() {}.type
-//        val listOfTexts : ArrayList <F2lPhases> = gson.fromJson(description, itemsListType)
-//        for (i in 0..3) {
-//            slotListPagers[i].
-//            //(ListPager(lp.phase, i, listOfTexts[i].slot, lp.icon, lp.description, lp.url, lp.comment, lp.subID, lp.subTitle))
-//        }
-        return slotListPagers
+        return mListPagerLab.getPhaseItemList(lp.id, lp.phase)
     }
 
     //при смене этапа, меняем (устанавливаем) адаптер для слайдингтаба
@@ -96,7 +81,7 @@ class F2LPagerActivity : MyDefaultActivity(),
             }
 
         }
-        mViewPagerSlidingTabs.adapter = adapter
+        viewPagerSlidingTabs.adapter = adapter
     }
 
     //обрабатываем onClick по элементам RecycleView, через перехват onClick адаптера
@@ -104,6 +89,7 @@ class F2LPagerActivity : MyDefaultActivity(),
         val position = view?.tag as Int
         //Log.v (DebugTag.TAG, "F2LPagerActivity Click on item $position")
         setSlidingTabAdapter(convertDescription2ListPagers(mListMainItem[position]))
+        tabs.setViewPager(viewPagerSlidingTabs)
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {

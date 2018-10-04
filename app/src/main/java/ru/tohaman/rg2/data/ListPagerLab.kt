@@ -1,7 +1,6 @@
 package ru.tohaman.rg2.data
 
 import android.content.Context
-import android.support.v4.content.res.TypedArrayUtils.getString
 import android.support.v7.preference.PreferenceManager
 import ru.tohaman.rg2.R
 import com.google.gson.GsonBuilder
@@ -156,7 +155,7 @@ class ListPagerLab private constructor(context: Context){
                 if (listPager == null) {
                     listPager = ListPager(phase, i, titles[i], icon.getResourceId(i, 0),
                             description.getResourceId(i, 0), url[i], "",
-                            j.toString(), listOfTexts[j].subTitle, listOfTexts[j].slot)
+                            j.toString(), listOfTexts[j].subTitle, listOfTexts[j].subLongTitle)
                 mDatabase.addListPager2Base(listPager)
                 }
                 //Если коммент есть, то берем его из базы
@@ -167,7 +166,7 @@ class ListPagerLab private constructor(context: Context){
                     listPager.url = url[i]
                     listPager.subID = j.toString()
                     listPager.subTitle = listOfTexts[j].subTitle
-                    listPager.slot = listOfTexts[j].slot
+                    listPager.subLongTitle = listOfTexts[j].subLongTitle
                 }
                 listPagers.add(listPager)
             }
