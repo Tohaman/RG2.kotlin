@@ -4,7 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import org.jetbrains.anko.ctx
 import org.jetbrains.anko.db.*
-import java.util.*
+import kotlin.collections.ArrayList
 
 class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_NAME, null, VERSION) {
 
@@ -23,6 +23,7 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
         const val PHASE : String = "phase"
         const val ID : String = "id"
         const val COMMENT : String = "comment"
+        const val SUB_ID : String = "subId"
         private var instance: BaseHelper? = null
 
         @Synchronized
@@ -58,6 +59,12 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
                 NOTE_DATE to TEXT,
                 TIME_COMMENT to TEXT,
                 SCRAMBLE to TEXT)
+        //Для версии 3
+//        db.createTable(TABLE_MAIN,true,
+//                PHASE to TEXT,
+//                ID to INTEGER,
+//                COMMENT to TEXT,
+//                SUB_ID to INTEGER)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -69,6 +76,24 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
                     NOTE_DATE to TEXT,
                     TIME_COMMENT to TEXT,
                     SCRAMBLE to TEXT)
+        }
+        if (oldVersion < 3) {
+            //db.createTable(TABLE_MAIN_V3,true,PHASE to TEXT, ID to INTEGER, COMMENT to TEXT, SUB_ID to INTEGER)
+            val lps = db.select(TABLE_MAIN).parseList(object : MapRowParser<ListPager> {
+                override fun parseRow(columns: Map<String, Any?>): ListPager {
+                    val phase = columns.getValue(PHASE).toString()
+                    val id = columns.getValue(ID).toString()
+                    val comment = columns.getValue(COMMENT).toString()
+                    return ListPager(phase = phase,id = id.toInt(),comment = comment)
+                }
+            })
+
+            db.dropTable(TABLE_MAIN, true)
+            db.createTable(TABLE_MAIN,true,PHASE to TEXT,
+                    ID to INTEGER, COMMENT to TEXT, SUB_ID to INTEGER)
+            for (i in lps.indices) {
+                //this.writableDatabase.insert()
+            }
         }
     }
 
@@ -110,6 +135,11 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
         return listPager
     }
 
+    fun getCommentFromBase (id: Int, phase: String) : String {
+        var comment = getListPagerFromBase(id, phase)?.comment
+        if (comment == null) { comment = ""}
+        return comment
+    }
 
     fun addListPager2Base(listPager: ListPager) {
         this.writableDatabase.insert(TABLE_MAIN,
@@ -161,6 +191,25 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
             }
         })
         return timeNoteList
+    }
+
+    fun addColumn() {
+        val dbw = this.writableDatabase
+        val lps = dbw.select(TABLE_MAIN).parseList(object : MapRowParser<ListPager> {
+            override fun parseRow(columns: Map<String, Any?>): ListPager {
+                val phase = columns.getValue(PHASE).toString()
+                val id = columns.getValue(ID).toString()
+                val comment = columns.getValue(COMMENT).toString()
+                return ListPager(phase = phase,id = id.toInt(),comment = comment)
+            }
+        })
+        dbw.dropTable(TABLE_MAIN, true)
+        dbw.createTable(TABLE_MAIN,true,PHASE to TEXT,
+                ID to INTEGER, COMMENT to TEXT, SUB_ID to INTEGER)
+        for (i in lps.indices) {
+            //dbw.insert()
+
+        }
     }
 
 }

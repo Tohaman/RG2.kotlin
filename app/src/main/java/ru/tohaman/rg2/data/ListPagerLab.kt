@@ -7,6 +7,7 @@ import com.google.gson.GsonBuilder
 import ru.tohaman.rg2.FAVORITES
 import ru.tohaman.rg2.util.saveString2SP
 import com.google.gson.reflect.TypeToken
+import java.util.*
 import kotlin.collections.ArrayList
 
 
@@ -106,7 +107,8 @@ class ListPagerLab private constructor(context: Context){
         for (i in titles.indices) {
             var listPager = mDatabase.getListPagerFromBase(i, phase)
             if (listPager == null) {
-                listPager = ListPager(phase, i, titles[i], icon.getResourceId(i, 0), description.getResourceId(i, 0), url[i], cmnt[i])
+                listPager = ListPager(phase, i, titles[i], icon.getResourceId(i, 0),
+                        description.getResourceId(i, 0), url[i], cmnt[i])
                 mDatabase.addListPager2Base(listPager)
             } else {
                 listPager.title = titles[i]
@@ -126,7 +128,7 @@ class ListPagerLab private constructor(context: Context){
 
     //Инициализируем фазу с подэтапами (расширенное меню с listview слева)
     private fun extPhaseInit(phase: String, titleArray: Int, iconArray: Int, descrArray: Int, urlArray: Int, context: Context, comment: Int = 0) {
-        val emptyComment = Array(500) { "" }
+        val emptyComment = Array(100) { "" }
         val titles = context.resources.getStringArray(titleArray)
         val icon = context.resources.obtainTypedArray(iconArray)
         val description = context.resources.obtainTypedArray(descrArray)
@@ -136,27 +138,34 @@ class ListPagerLab private constructor(context: Context){
         } else {
             emptyComment
         }
+        //mDatabase.addColumn()
 
         for (i in titles.indices) {
             //text = description к этапу фазы, содержит несколько записей о подэтапах
             val text: String? = context.resources.getStringArray(descrArray)[i]
+            var currentComment = mDatabase.getCommentFromBase(i, phase)
+
 
             val gson = GsonBuilder().create()
             val itemsListType = object : TypeToken<ArrayList<F2lPhases>>() {}.type
             val listOfTexts: ArrayList<F2lPhases> = gson.fromJson(text, itemsListType)
-
-            //Ищем коммент в базе
-            val slotListPagers = arrayListOf<ListPager>()
+//            val st = """["ура, едем","на дачу","","","","","","","",""]"""
+//            var st2 = """f"""
+//            if (st2[0] != '[') { st2 = "[$st2]"}
+//            val subComment : Array<String> = st2.split(",").toTypedArray()
+            val itemsListType2 = object : TypeToken<ArrayList<String>>() {}.type
 
             for (j in listOfTexts.indices) {
+                //Ищем коммент в базе
                 var listPager = mDatabase.getListPagerFromBase(i, phase)
 
-                //Если коммента нет, то создаем запись с дефолтным комментом
+
+                //Если коммента нет, то создаем запись с дефолтным пустым комментом
                 if (listPager == null) {
                     listPager = ListPager(phase, i, titles[i], icon.getResourceId(i, 0),
                             description.getResourceId(i, 0), url[i], "",
                             j.toString(), listOfTexts[j].subTitle, listOfTexts[j].subLongTitle)
-                mDatabase.addListPager2Base(listPager)
+                    //mDatabase.addListPager2Base(listPager)
                 }
                 //Если коммент есть, то берем его из базы
                 else {
@@ -167,6 +176,18 @@ class ListPagerLab private constructor(context: Context){
                     listPager.subID = j.toString()
                     listPager.subTitle = listOfTexts[j].subTitle
                     listPager.subLongTitle = listOfTexts[j].subLongTitle
+                    //Если коомент есть, то пытаемся его получить для этого подэтапа, если не получается, значит считем
+                    //что он пустой.
+                    var commentString = listPager.comment
+                    if (commentString[0] != '[') { commentString = "[$commentString]"}
+                    val itemsListType2 = object : TypeToken<ArrayList<String>>() {}.type
+                    val listOfComments : ArrayList<String> = gson.fromJson(commentString, itemsListType2)
+                    if (j >= listOfComments.size) {
+                        listPager.comment = ""
+                    } else {
+                        listPager.comment = listOfComments[j]
+                    }
+
                 }
                 listPagers.add(listPager)
             }
