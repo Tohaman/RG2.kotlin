@@ -9,7 +9,7 @@ import kotlin.collections.ArrayList
 class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_NAME, null, VERSION) {
 
     companion object {
-        private const val VERSION = 2       //Версия базы данных
+        private const val VERSION = 3       //Версия базы данных
         private const val DATABASE_NAME = "base.db"
 
         const val TABLE_TIME : String = "timeTable"
@@ -50,7 +50,7 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
         //db.execSQL("CREATE TABLE if not exists $TABLE_MAIN ($PHASE TEXT,$ID INTEGER,$COMMENT TEXT)")
 
         //Для верисии 1
-        db.createTable(TABLE_MAIN,true,PHASE to TEXT, ID to INTEGER, COMMENT to TEXT)
+        //db.createTable(TABLE_MAIN,true,PHASE to TEXT, ID to INTEGER, COMMENT to TEXT)
 
         //Добалено в версии 2
         db.createTable(TABLE_TIME, true,
@@ -60,11 +60,11 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
                 TIME_COMMENT to TEXT,
                 SCRAMBLE to TEXT)
         //Для версии 3
-//        db.createTable(TABLE_MAIN,true,
-//                PHASE to TEXT,
-//                ID to INTEGER,
-//                COMMENT to TEXT,
-//                SUB_ID to INTEGER)
+        db.createTable(TABLE_MAIN,true,
+                PHASE to TEXT,
+                ID to INTEGER,
+                COMMENT to TEXT,
+                SUB_ID to TEXT)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -79,20 +79,27 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
         }
         if (oldVersion < 3) {
             //db.createTable(TABLE_MAIN_V3,true,PHASE to TEXT, ID to INTEGER, COMMENT to TEXT, SUB_ID to INTEGER)
+            //считываем старую базу в лист lps
             val lps = db.select(TABLE_MAIN).parseList(object : MapRowParser<ListPager> {
                 override fun parseRow(columns: Map<String, Any?>): ListPager {
                     val phase = columns.getValue(PHASE).toString()
                     val id = columns.getValue(ID).toString()
                     val comment = columns.getValue(COMMENT).toString()
-                    return ListPager(phase = phase,id = id.toInt(),comment = comment)
+                    return ListPager(phase = phase,id = id.toInt(),comment = comment, subID = "")
                 }
             })
-
+            //удаляем старую таблицу
             db.dropTable(TABLE_MAIN, true)
+            //создаем новую (уже с subId)
             db.createTable(TABLE_MAIN,true,PHASE to TEXT,
-                    ID to INTEGER, COMMENT to TEXT, SUB_ID to INTEGER)
+                    ID to INTEGER, COMMENT to TEXT, SUB_ID to TEXT)
+            //заполняем новую базу
             for (i in lps.indices) {
-                //this.writableDatabase.insert()
+                db.insert(TABLE_MAIN,
+                        PHASE to lps[i].phase,
+                        ID to lps[i].id,
+                        COMMENT to lps[i].comment,
+                        SUB_ID to lps[i].subID)
             }
         }
     }
@@ -110,7 +117,8 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
                         val newPhase: String = cursor.getString(cursor.getColumnIndex(PHASE))
                         val newId: Int = cursor.getInt(cursor.getColumnIndex(ID))
                         val newComment: String = cursor.getString(cursor.getColumnIndex(COMMENT))
-                        mListPagers.plus(ListPager(newPhase, newId, comment = newComment))
+                        val newSubId = cursor.getString((cursor.getColumnIndex(SUB_ID)))
+                        mListPagers.plus(ListPager(newPhase, newId, comment = newComment, subID = newSubId))
                     } while ((cursor.moveToNext()))
                 }
             }
@@ -118,25 +126,38 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
         return mListPagers
     }
 
-    fun getListPagerFromBase(id: Int, phase: String): ListPager? {
-        var listPager: ListPager? = null
-        val db = this.readableDatabase
-        val selectQuery = "SELECT * FROM $TABLE_MAIN WHERE $PHASE = '$phase' AND $ID = $id"
-        val curCursor = db.rawQuery(selectQuery, null)
-        curCursor.use { cursor ->
-            if (cursor.count != 0) {
-                cursor.moveToFirst()
-                listPager = ListPager(phase = cursor.getString(cursor.getColumnIndex(PHASE)),
-                        id = cursor.getInt(cursor.getColumnIndex(ID)),
-                        comment = cursor.getString(cursor.getColumnIndex(COMMENT))
-                )
+//    fun getListPagerFromBase(id: Int, phase: String, subId: String = ""): ListPager? {
+//        var listPager: ListPager? = null
+//        val db = this.readableDatabase
+//        val selectQuery = "SELECT * FROM $TABLE_MAIN WHERE $PHASE = '$phase' AND $ID = $id"
+//        val curCursor = db.rawQuery(selectQuery, null)
+//        curCursor.use { cursor ->
+//            if (cursor.count != 0) {
+//                cursor.moveToFirst()
+//                listPager = ListPager(phase = cursor.getString(cursor.getColumnIndex(PHASE)),
+//                        id = cursor.getInt(cursor.getColumnIndex(ID)),
+//                        comment = cursor.getString(cursor.getColumnIndex(COMMENT))
+//                )
+//            }
+//        }
+//        return listPager
+//    }
+
+    fun getListPagerFromBase(id: Int, phase: String, subId: String = ""): ListPager? {
+        val lps = this.readableDatabase.select(TABLE_MAIN)
+                .whereSimple("$PHASE = ? AND $ID = ? AND $SUB_ID = ?", phase, id.toString(), subId)
+                .parseList(object : MapRowParser<ListPager> {
+            override fun parseRow(columns: Map<String, Any?>): ListPager {
+                val comment = columns.getValue(COMMENT).toString()
+                return ListPager(phase = phase,id = id,comment = comment, subID = subId)
             }
-        }
-        return listPager
+        })
+        return if (lps.isEmpty()) {null} else {lps[0]}
     }
 
-    fun getCommentFromBase (id: Int, phase: String) : String {
-        var comment = getListPagerFromBase(id, phase)?.comment
+
+    fun getCommentFromBase (id: Int, phase: String, subId: String = "") : String {
+        var comment = getListPagerFromBase(id, phase, subId)?.comment
         if (comment == null) { comment = ""}
         return comment
     }
@@ -145,13 +166,15 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
         this.writableDatabase.insert(TABLE_MAIN,
                 PHASE to listPager.phase,
                 ID to listPager.id,
-                COMMENT to listPager.comment)
+                COMMENT to listPager.comment,
+                SUB_ID to listPager.subID)
     }
 
     fun updateListPagerInBase(listPager: ListPager) {
         this.writableDatabase.update(TABLE_MAIN,
                 COMMENT to listPager.comment)
-                .whereSimple("PHASE = ? AND ID = ?", listPager.phase, listPager.id.toString())
+                .whereSimple("$PHASE = ? AND $ID = ? AND $SUB_ID = ?",
+                        listPager.phase, listPager.id.toString(), listPager.subID)
                 .exec()
     }
 
@@ -192,26 +215,6 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
         })
         return timeNoteList
     }
-
-    fun addColumn() {
-        val dbw = this.writableDatabase
-        val lps = dbw.select(TABLE_MAIN).parseList(object : MapRowParser<ListPager> {
-            override fun parseRow(columns: Map<String, Any?>): ListPager {
-                val phase = columns.getValue(PHASE).toString()
-                val id = columns.getValue(ID).toString()
-                val comment = columns.getValue(COMMENT).toString()
-                return ListPager(phase = phase,id = id.toInt(),comment = comment)
-            }
-        })
-        dbw.dropTable(TABLE_MAIN, true)
-        dbw.createTable(TABLE_MAIN,true,PHASE to TEXT,
-                ID to INTEGER, COMMENT to TEXT, SUB_ID to INTEGER)
-        for (i in lps.indices) {
-            //dbw.insert()
-
-        }
-    }
-
 }
 
 // Access property for Context

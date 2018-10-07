@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="cub_2x2x3_title">
+        <item>@string/cub_2x2x3_1_title</item>
+        <item>@string/cub_2x2x3_2_title</item>
+        <item>@string/cub_2x2x3_3_title</item>
+        <item>@string/cub_2x2x3_4_title</item>
+    </string-array>
+
+    <integer-array name="cub_2x2x3_icon">
+        <item>@drawable/cub_2x2x3_1</item>
+        <item>@drawable/cub_2x2x3_2</item>
+        <item>@drawable/cub_2x2x3_3</item>
+        <item>@drawable/cub_2x2x3_4</item>
+    </integer-array>
+
+    <string-array name="cub_2x2x3_descr">
+        <item>@string/cub_2x2x3_1_descr</item>
+        <item>@string/cub_2x2x3_2_descr</item>
+        <item>@string/cub_2x2x3_3_descr</item>
+        <item>@string/cub_2x2x3_4_descr</item>
+    </string-array>
+
+
+    <string-array name="cub_2x2x3_url">
+        <item>@string/cub_2x2x3_1_url</item>
+        <item>@string/cub_2x2x3_2_url</item>
+        <item>@string/cub_2x2x3_3_url</item>
+        <item>@string/cub_2x2x3_4_url</item>
+    </string-array>
+
+    <string name="cub_2x2x3_1_title">Введение и язык вращений</string>
+    <string name="cub_2x2x3_1_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cub_2x2x3_1_url"></string>
+
+
+    <string name="cub_2x2x3_2_title">Две стороны</string>
+    <string name="cub_2x2x3_2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cub_2x2x3_2_url"></string>
+
+    <string name="cub_2x2x3_3_title">Два слоя</string>
+    <string name="cub_2x2x3_3_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cub_2x2x3_3_url"></string>
+
+
+    <string name="cub_2x2x3_4_title">Средний слой</string>
+    <string name="cub_2x2x3_4_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cub_2x2x3_4_url"></string>
+
+</resources>

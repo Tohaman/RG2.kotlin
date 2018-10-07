@@ -37,7 +37,8 @@
     <string name="exp_f2l_st1_descr" formatted="false"><![CDATA[
         [
         {\"subTitle\":\"Введение\", \"subLongTitle\":\"Введение в Expert F2L\",
-        \"text\":\"В Expert F2L приведны сложные ситуации\"}
+        \"text\":\"В Expert F2L приведны сложные ситуации возникающие на этапе F2L. В основном, эти ситуации
+        связаны с разбиением «недружной» пары.\"}
         ]
     ]]></string>
     <string name="exp_f2l_st1_url"></string>
