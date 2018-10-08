@@ -36,7 +36,7 @@ class F2LPagerActivity : MyDefaultActivity(),
 
         Log.v (DebugTag.TAG, "SlidingTabActivity onCreate Инициализируем ListPagers и передаем его адаптерам")
         mListPagerLab = ListPagerLab.get(this)
-        mListPagers  = mListPagerLab.getPhaseList("EXP_F2L").filter { it.url != "submenu" } as ArrayList<ListPager>
+        mListPagers  = mListPagerLab.getPhaseList("EXP_F2L", "0").filter { it.url != "submenu" } as ArrayList<ListPager>
 
         //mViewPagerSlidingTabs = findViewById<ViewPager>(R.id.viewPagerSlidingTabs)
         setSlidingTabAdapter(convertDescription2ListPagers(mListPagers[0]))

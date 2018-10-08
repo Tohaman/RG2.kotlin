@@ -10,19 +10,26 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.google.android.youtube.player.*
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import org.jetbrains.anko.*
+import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
 import org.jetbrains.anko.support.v4.*
 import ru.tohaman.rg2.DebugTag
+import ru.tohaman.rg2.R
 import ru.tohaman.rg2.data.F2lPhases
+import ru.tohaman.rg2.data.Favorite
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.ui.F2LPagerItemtUI
+import ru.tohaman.rg2.ui.PagerItemtUI
 import ru.tohaman.rg2.util.spannedString
+import ru.tohaman.rg2.util.toEditable
 import java.util.ArrayList
 
 class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener {
@@ -67,16 +74,82 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
         mainTextView.text = spanText
 
         val imageView = view.findViewById<ImageView>(F2LPagerItemtUI.Ids.pagerImageView)
-
-//        return LayerDrawable( Array(28) { i ->
-//            //получаем drawable по имени "z_2s_0$i"
-//            val drw = ContextCompat.getDrawable(ctx, resources.getIdentifier("z_2s_0$i", "drawable", this.packageName))
-//            //раскрашиваем цветом кубика
-//            DrawableCompat.setTint(drw!!, ContextCompat.getColor(ctx, cubeColor[genScrambleCube[27-i]]))
-//            drw
-//        })
-        //val layerDrawable = LayerDrawable (ContextCompat.getDrawable(ctx,topImage)!!)
         imageView.image = ContextCompat.getDrawable(ctx,topImage)!!
+
+        val favCheckBox = view.findViewById<CheckBox>(PagerItemtUI.Ids.checkBox)
+        //Пришлось делать вот так, а не через xml, которая задает изображение в зависимости от статуса,
+        //т.к. иначе при смене через избранное кэшеруется не то изображение
+        var favIsChecked = false
+        favCheckBox.buttonDrawableResource = R.drawable.ic_favorite
+        favoritesList.indices.forEach { i ->
+            if ((favoritesList.elementAt(i).phase == phase) and (favoritesList.elementAt(i).id == id)) {
+                favCheckBox.buttonDrawableResource = R.drawable.ic_favorite_checked
+                favIsChecked = true
+            }
+        }
+        favCheckBox.isChecked = favIsChecked
+
+        favCheckBox.onCheckedChange { _, isChecked ->
+            //Проверяем смену через переменную favIsChecked, чтобы не зацикливаться по нажатию кнопки "Отмена"
+            //favIsChecked меняется только при нажатии ОК
+            if (isChecked != favIsChecked) {
+                if (isChecked) {
+                    alert {
+                        customView {
+                            linearLayout {
+                                orientation = LinearLayout.VERTICAL
+                                textView {
+                                    textResource = R.string.favoriteSetText
+                                    textSize = 18F
+                                }.lparams { setMargins(dip(8), dip(8), dip(8), dip(8)) }
+                                val editTxt = editText {
+                                    text = comment.toEditable()
+                                }
+
+                                positiveButton("OK") {
+                                    favCheckBox.buttonDrawableResource = R.drawable.ic_favorite_checked
+                                    listPagerLab.addFavorite(Favorite(phase, id, editTxt.text.toString()), ctx)
+                                    if (mListener != null) {
+                                        mListener!!.onViewPagerCheckBoxInteraction()
+                                    }
+                                    favIsChecked = true
+                                }
+                                negativeButton("Отмена") {
+                                    favCheckBox.isChecked = false
+                                }
+                            }
+                        }
+                    }.show()
+
+                } else {
+                    alert {
+                        customView {
+                            linearLayout {
+                                orientation = LinearLayout.VERTICAL
+                                textView {
+                                    textResource = R.string.favoriteUnSetText
+                                    textSize = 18F
+                                }.lparams { setMargins(dip(8), dip(8), dip(8), dip(8)) }
+
+                                positiveButton("OK") {
+                                    favCheckBox.buttonDrawableResource = R.drawable.ic_favorite
+                                    listPagerLab.removeFavorite(phase, id, ctx)
+                                    if (mListener != null) {
+                                        mListener!!.onViewPagerCheckBoxInteraction()
+                                    }
+                                    favIsChecked = false
+                                }
+                                negativeButton("Отмена") {
+                                    favCheckBox.isChecked = true
+                                }
+                            }
+                        }
+                    }.show()
+
+                }
+            }
+        }
+
 
         return view
     }
@@ -145,9 +218,9 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
     }
 
     interface OnViewPagerInteractionListener {
-//        fun onViewPagerCheckBoxInteraction() {
-//            Log.v(DebugTag.TAG, "F2LFragmentPagerItem onViewPagerCheckBoxInteraction")
-//        }
+        fun onViewPagerCheckBoxInteraction() {
+            Log.v(DebugTag.TAG, "F2LFragmentPagerItem onViewPagerCheckBoxInteraction")
+        }
     }
 
     companion object {

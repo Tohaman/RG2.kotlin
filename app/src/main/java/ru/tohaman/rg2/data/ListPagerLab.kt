@@ -227,8 +227,8 @@ class ListPagerLab private constructor(context: Context){
     }
 
     //возвращает из ListPagerLab список ListPager'ов с заданной фазой (все записи для данной фазы)
-    fun getPhaseList(phase: String): ArrayList<ListPager> {
-        return listPagers.filterTo(ArrayList()) { phase == it.phase }
+    fun getPhaseList(phase: String, subId: String = ""): ArrayList<ListPager> {
+        return listPagers.filterTo(ArrayList()) { (phase == it.phase) and (it.subID == subId) }
     }
 
     //возвращает из ListPagerLab один ListPager с заданными фазой и номером
@@ -261,7 +261,7 @@ class ListPagerLab private constructor(context: Context){
     fun getSubmenu (ctx: Context): ArrayList<String> {
         val stringArray: ArrayList<String> = arrayListOf()
         listPagers
-                .filter {("submenu" == it.url)}
+                .filter {("submenu" == it.url) or ("ollPager" == it.url)}
                 .forEach {
                     stringArray.add(ctx.getString(it.description))
                 }

@@ -179,7 +179,7 @@ class MainActivity : MyDefaultActivity(),
             alert(getString(R.string.whatsnew)) { okButton { } }.show()
             saveInt2SP(curVersion, "version", ctx)
         } else {
-            //Проверяем платил ли уже пользователь, если не платил, то каждый 30-ый вход
+            //Проверяем платил ли уже пользователь, если не платил, то каждый 25-ый вход
             //напоминаем сказать спасибо.
             if ((mCoins == 0) and (count % 25 == 0)) {
                 curPhase = "THANKS"
@@ -250,7 +250,7 @@ class MainActivity : MyDefaultActivity(),
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
-        favList = mListPagerLab.getPhaseList("FAVORITES")
+        favList = mListPagerLab.getPhaseList("FAVORITES","0")
         val rightDrawerAdapter = MyListAdapter(favList,1.3F)
 
         // подключим адаптер для выезжающего справа списка
@@ -614,7 +614,11 @@ class MainActivity : MyDefaultActivity(),
         if (changedPhase != curPhase) {
             Log.v(DebugTag.TAG, "Change Phase from $curPhase to $changedPhase")
             setListFragmentPhase(changedPhase)
-            startActivity<SlidingTabsActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
+            if (changedPhase == "EXP_F2L") {
+                startActivity<F2LPagerActivity>(RUBIC_PHASE to changedPhase)
+            } else {
+                startActivity<SlidingTabsActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
+            }
         }
     }
 
