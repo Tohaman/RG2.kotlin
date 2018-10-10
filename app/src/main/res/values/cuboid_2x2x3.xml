@@ -6,12 +6,14 @@
         <item>@string/cub_2x2x3_2_title</item>
         <item>@string/cub_2x2x3_3_title</item>
         <item>@string/cub_2x2x3_4_title</item>
+        <item>@string/cub_2x2x3_5_title</item>
     </string-array>
 
     <integer-array name="cub_2x2x3_icon">
         <item>@drawable/cub_2x2x3_1</item>
         <item>@drawable/cub_2x2x3_2</item>
         <item>@drawable/cub_2x2x3_3</item>
+        <item>@drawable/cub_2x2x3_4</item>
         <item>@drawable/cub_2x2x3_4</item>
     </integer-array>
 
@@ -20,6 +22,7 @@
         <item>@string/cub_2x2x3_2_descr</item>
         <item>@string/cub_2x2x3_3_descr</item>
         <item>@string/cub_2x2x3_4_descr</item>
+        <item>@string/cub_2x2x3_5_descr</item>
     </string-array>
 
 
@@ -28,6 +31,7 @@
         <item>@string/cub_2x2x3_2_url</item>
         <item>@string/cub_2x2x3_3_url</item>
         <item>@string/cub_2x2x3_4_url</item>
+        <item>@string/cub_2x2x3_5_url</item>
     </string-array>
 
     <string name="cub_2x2x3_1_title">Введение и язык вращений</string>
@@ -187,5 +191,11 @@
     <string name="cub_2x2x3_4_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="cub_2x2x3_4_url"></string>
+
+    <string name="cub_2x2x3_5_title">Ускорения</string>
+    <string name="cub_2x2x3_5_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cub_2x2x3_5_url"></string>
+
 
 </resources>
