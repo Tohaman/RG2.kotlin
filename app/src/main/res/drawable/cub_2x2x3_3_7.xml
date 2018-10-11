@@ -16,6 +16,5 @@
   <path android:fillColor="@color/c_w" android:pathData="M45.58,23.91h15.98v15.98h-15.98z"/>
 
   <path android:fillColor="@color/c_r" android:pathData="M14.23,31.33l5.38,-3.49l0.74,1.15l-3.45,2.23l11.89,0l-3.45,-2.23l0.74,-1.15l6.27,4.06l-6.27,4.07l-0.74,-1.15l3.45,-2.24l-11.89,0l3.45,2.24l-0.74,1.15l-6.27,-4.07z"/>
-  <path android:fillColor="@color/c_r" android:pathData="M53.83,14.23l3.49,5.38l-1.15,0.74l-2.23,-3.45l0,11.89l2.23,-3.45l1.15,0.74l-4.07,6.26l-4.06,-6.26l1.14,-0.74l2.24,3.45l0,-11.89l-2.24,3.45l-1.14,-0.74l4.06,-6.27z"/>
 
 </vector>
