@@ -7,7 +7,7 @@
         <item>Продвинутые методы (Фридрих (CFOP), ROUX)</item>
         <item>Сборка вслепую (Blind)</item>
         <item>Узоры на кубике</item>
-        <item>New F2L</item>
+        <!--<item>New F2L</item>-->
     </string-array>
 
     <integer-array name="main3x3_icon">
