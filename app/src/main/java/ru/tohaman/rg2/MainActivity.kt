@@ -244,7 +244,6 @@ class MainActivity : MyDefaultActivity(),
         val rightDrawerListView  = findViewById<ListView>(R.id.main_right_drawer)
         rightDrawerListView.adapter = rightDrawerAdapter
         rightDrawerListView.setOnItemClickListener { adapterView, view, i, l ->
-            //TODO добавить обработку ollPager
             val changedId = favList[i].id
             changedPhase = favList[i].url
             if (changedPhase in listOfOllMenu) {

@@ -76,4 +76,5 @@ fun getThemeFromSharedPreference(context: Context) : Int {
         "AppThemeDayNight" -> R.style.AppThemeDayNight
         else -> R.style.AppTheme
     }
+
 }
