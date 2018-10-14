@@ -23,7 +23,7 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
         const val PHASE : String = "phase"
         const val ID : String = "id"
         const val COMMENT : String = "comment"
-        const val SUB_ID : String = "subId"
+        const val SUB_ID : String = "subID"
         private var instance: BaseHelper? = null
 
         @Synchronized
@@ -90,7 +90,7 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
             })
             //удаляем старую таблицу
             db.dropTable(TABLE_MAIN, true)
-            //создаем новую (уже с subId)
+            //создаем новую (уже с subID)
             db.createTable(TABLE_MAIN,true,PHASE to TEXT,
                     ID to INTEGER, COMMENT to TEXT, SUB_ID to TEXT)
             //заполняем новую базу
@@ -126,7 +126,7 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
         return mListPagers
     }
 
-//    fun getListPagerFromBase(id: Int, phase: String, subId: String = ""): ListPager? {
+//    fun getListPagerFromBase(id: Int, phase: String, subID: String = ""): ListPager? {
 //        var listPager: ListPager? = null
 //        val db = this.readableDatabase
 //        val selectQuery = "SELECT * FROM $TABLE_MAIN WHERE $PHASE = '$phase' AND $ID = $id"

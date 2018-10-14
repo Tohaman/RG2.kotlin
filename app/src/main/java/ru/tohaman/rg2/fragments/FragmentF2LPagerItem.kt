@@ -3,6 +3,7 @@ package ru.tohaman.rg2.fragments
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.text.Html
@@ -49,7 +50,7 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
 
         val phase = arguments!!.getString("phase")
         val id = arguments!!.getInt("id")
-        val subId = arguments!!.getString("subId").toInt()
+        val subId = arguments!!.getString("subID").toInt()
         val lp = listPagerLab.getPhaseItemList(id, phase)[subId]
 
         val title = lp.subLongTitle
@@ -60,7 +61,8 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
 
         val titleTextView = view.findViewById<TextView>(F2LPagerItemtUI.Ids.pagerTitleText)
         titleTextView.text = title
-
+        //Если основной текст селектабельный, то и этот тоже надо делать таким, иначе текст будет автоматом прокручиваться при открытии view
+        titleTextView.isSelectable = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean("is_text_selectable", false)
 
         val gson = GsonBuilder().create()
         val itemsListType = object : TypeToken<ArrayList<F2lPhases>>() {}.type
@@ -74,7 +76,7 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
         mainTextView.text = spanText
 
         val imageView = view.findViewById<ImageView>(F2LPagerItemtUI.Ids.pagerImageView)
-        imageView.image = ContextCompat.getDrawable(ctx,topImage)!!
+        imageView.imageResource = topImage
 
         val favCheckBox = view.findViewById<CheckBox>(PagerItemtUI.Ids.checkBox)
         //Пришлось делать вот так, а не через xml, которая задает изображение в зависимости от статуса,
@@ -149,6 +151,7 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
                 }
             }
         }
+
 
 
         return view
@@ -228,7 +231,7 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
             return FragmentF2LPagerItem().withArguments(
                     "phase" to lp.phase,
                     "id" to lp.id,
-                    "subId" to lp.subID)
+                    "subID" to lp.subID)
         }
     }
 }

@@ -9,9 +9,7 @@ import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.app_bar_sliding.*
-import ru.tohaman.rg2.DebugTag
-import ru.tohaman.rg2.MyDefaultActivity
-import ru.tohaman.rg2.R
+import ru.tohaman.rg2.*
 import ru.tohaman.rg2.adapters.MyOnlyImageListAdapter
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
@@ -26,6 +24,8 @@ class F2LPagerActivity : MyDefaultActivity(),
     private lateinit var mListPagers : ArrayList<ListPager>
     private lateinit var mListMainItem : ArrayList<ListPager>
     private lateinit var mListPagerLab : ListPagerLab
+    private var curPhase = "EXP_F2L"
+    private var curId = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,13 +34,19 @@ class F2LPagerActivity : MyDefaultActivity(),
         setContentView(R.layout.activity_oll_pager)
         setSupportActionBar(toolbar)
 
+        //Инициируем фазу и номер этапа, должны быть переданы из другой активности, если нет, то используем значения по-умолчанию
+        if (intent.hasExtra(RUBIC_PHASE)){
+            curPhase = intent.extras.getString(RUBIC_PHASE)
+        }
+        if (intent.hasExtra(EXTRA_ID)){
+            curId = intent.extras.getInt(EXTRA_ID)
+        }
+
         Log.v (DebugTag.TAG, "SlidingTabActivity onCreate Инициализируем ListPagers и передаем его адаптерам")
         mListPagerLab = ListPagerLab.get(this)
-        mListPagers  = mListPagerLab.getPhaseList("EXP_F2L", "0").filter { it.url != "submenu" } as ArrayList<ListPager>
+        mListPagers  = mListPagerLab.getPhaseList(curPhase, "0").filter { it.url != "ollPager" } as ArrayList<ListPager>
 
-        //mViewPagerSlidingTabs = findViewById<ViewPager>(R.id.viewPagerSlidingTabs)
-        setSlidingTabAdapter(convertDescription2ListPagers(mListPagers[0]))
-        //mViewPagerSlidingTabs.currentItem = 0
+        setSlidingTabAdapter(convertDescription2ListPagers(mListPagers[curId]))
         viewPagerSlidingTabs.currentItem = 0
         tabs.setViewPager(viewPagerSlidingTabs)
 
@@ -63,7 +69,6 @@ class F2LPagerActivity : MyDefaultActivity(),
     private fun setSlidingTabAdapter(mListPagers: ArrayList<ListPager>) {
         // подключим адаптер для слайдингтаба (основного текста)
         val adapter = object : FragmentStatePagerAdapter(supportFragmentManager) {
-            //val titles = arrayOf("FR", "BR", "FL", "BL")
 
             override fun getPageTitle(position: Int): CharSequence {
                 //Заголовки для ViewPager

@@ -99,33 +99,11 @@ class MainActivity : MyDefaultActivity(),
     private var changedId = 0
     private lateinit var favList: ArrayList<ListPager>
     private var listOfSubmenu = arrayListOf<String>()
+    private var listOfOllMenu = arrayListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-
-//        var a = 0
-//        for(i in 0..999999){
-//            var st = i.toString()
-//            if (st.length < 6) {
-//                for (j in st.length .. 5) {
-//                    st = "0$st"
-//                }
-//            }
-//            var result = false
-//            loop@for (j in 1 until st.length) {
-//                if (((st[j].toInt() - (st[j-1].toInt()))%5 == 0 ) and (st[j] != st[j-1]))  {
-//                        result = true
-//                        break@loop
-//                }
-//            }
-//            if (result) {
-//                a += 1
-//            }
-//
-//        }
-
-
         //Сохраним в переменную 50 руб, чтобы каждые 30 запусков не выводилось окно "оплатить приложение"
         //а то разработчик, даже если хочет, то не может этого сделать. Нужно запустить только 1 раз.
         //mCoins = 50
@@ -140,6 +118,8 @@ class MainActivity : MyDefaultActivity(),
 
         //получаем список фаз submenu, чтобы корректно отрабатывать нажатие кнопки назад
         listOfSubmenu = mListPagerLab.getSubmenu(ctx)
+        listOfOllMenu = mListPagerLab.getOllMenu(ctx)
+
 
         // Регистрируем слушатель OnSharedPreferenceChangeListener (Изменеия в настройках)
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
@@ -208,9 +188,14 @@ class MainActivity : MyDefaultActivity(),
             "SETTINGS" -> {setFragment(FragmentSettings.newInstance())}
             "ABOUT" -> {setFragment(FragmentAbout.newInstance())}
             "AZBUKA","AZBUKA2" -> {setFragment(FragmentAzbukaSelect.newInstance())}
-            in listOfSubmenu-> {
+            in listOfSubmenu -> {
                 fab.setImageResource(R.drawable.ic_fab_backward)
                 setListFragmentPhase(curPhase)
+            }
+            in listOfOllMenu -> {
+                //TODO прверить сабсаб меню, как будет отрабатывать фазу
+                curPhase = mListPagerLab.getBackPhase(curPhase,ctx)
+                changedPhase = curPhase
             }
             else -> { setListFragmentPhase(curPhase) }
         }
@@ -259,10 +244,16 @@ class MainActivity : MyDefaultActivity(),
         val rightDrawerListView  = findViewById<ListView>(R.id.main_right_drawer)
         rightDrawerListView.adapter = rightDrawerAdapter
         rightDrawerListView.setOnItemClickListener { adapterView, view, i, l ->
+            //TODO добавить обработку ollPager
             val changedId = favList[i].id
             changedPhase = favList[i].url
-            setListFragmentPhase(changedPhase)
-            startActivity<SlidingTabsActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
+            if (changedPhase in listOfOllMenu) {
+                startActivity<F2LPagerActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
+                setListFragmentPhase(mListPagerLab.getBackPhase(changedPhase,ctx))
+            } else {
+                setListFragmentPhase(changedPhase)
+                startActivity<SlidingTabsActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
+            }
             drawer_layout.closeDrawer(GravityCompat.END)
         }
 
@@ -456,6 +447,9 @@ class MainActivity : MyDefaultActivity(),
                     "SQ_STAR" -> {
                         alert(getString(R.string.help_sq_star)) { okButton { } }.show()
                     }
+                    "CUB2X2X3" -> {
+                        alert(getString(R.string.help_cub_2x2x2)) { okButton { } }.show()
+                    }
 
                     "TIMER" -> {
                         alert(getString(R.string.help_timer)) { okButton { } }.show()
@@ -532,25 +526,16 @@ class MainActivity : MyDefaultActivity(),
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-
         // Handle navigation view item clicks here.
         Log.v(DebugTag.TAG, "NavigationItemSelected $item.itemId")
         when (item.itemId) {
             R.id.main2x2 -> { setListFragmentPhase("MAIN2X2") }
-
-//            R.id.adv2x2 -> { setListFragmentPhase("ADV2X2") }
 
             R.id.main3x3 -> { setListFragmentPhase("MAIN3X3") }
 
             R.id.big_cubes -> { setListFragmentPhase("BIG_MAIN") }
 
             R.id.other3x3 -> { setListFragmentPhase("OTHER3X3") }
-
-//            R.id.blind -> { setListFragmentPhase("BLIND") }
-
-//            R.id.blind_acc -> { setListFragmentPhase("BLINDACC") }
-
-//            R.id.begin4x4 -> { setListFragmentPhase("BEGIN4X4")}
 
             R.id.other_puzzle -> {setListFragmentPhase("OTHER")}
 
@@ -613,12 +598,16 @@ class MainActivity : MyDefaultActivity(),
         val rightDrawerListView  = findViewById<ListView>(R.id.main_right_drawer)
         rightDrawerListView.adapter = rightDrawerAdapter
 
+        //Если фаза поменялась, то
         if (changedPhase != curPhase) {
             Log.v(DebugTag.TAG, "Change Phase from $curPhase to $changedPhase")
-            setListFragmentPhase(changedPhase)
-            if (changedPhase == "EXP_F2L") {
-                startActivity<F2LPagerActivity>(RUBIC_PHASE to changedPhase)
+            //перейдем в основной активности на соответствующую фазу и откроем нужный слайдинг таб
+
+            if (changedPhase in listOfOllMenu) {
+                startActivity<F2LPagerActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
+                setListFragmentPhase(mListPagerLab.getBackPhase(changedPhase,ctx))
             } else {
+                setListFragmentPhase(changedPhase)
                 startActivity<SlidingTabsActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
             }
         }
@@ -663,7 +652,7 @@ class MainActivity : MyDefaultActivity(),
                 toast(getString(lp.description))
             }
             "ollPager" -> {  //Если тип не submenu, а ollPager
-                startActivity<F2LPagerActivity>()
+                startActivity<F2LPagerActivity>(RUBIC_PHASE to (ctx.getString(lp.description)), EXTRA_ID to 0)
             }
             //В других случаях запускаем SlidingTabActivity
             else -> { startActivity<SlidingTabsActivity>(RUBIC_PHASE to phase, EXTRA_ID to id)}

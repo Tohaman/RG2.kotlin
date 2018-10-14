@@ -188,6 +188,9 @@ class ListPagerLab private constructor(context: Context){
         lp.comment = favorite.comment
         lp.url = lp.phase
         lp.phase = "FAVORITES"
+        lp.subID = if (favorite.subID.isNullOrEmpty())
+        {""}
+        else {favorite.subID}
         return lp
     }
 
@@ -251,7 +254,8 @@ class ListPagerLab private constructor(context: Context){
     fun getBackPhase(phase: String, ctx : Context): String {
         var listPager = ListPager("", 0, "", 0)
         val submenuLP = listPagers
-                .filter {("submenu" == it.url)}
+                .filter {("submenu" == it.url) or ("ollPager" == it.url)
+                 }
         submenuLP
                 .filter { (ctx.getString(it.description) == phase) }
                 .forEach { listPager = it }
@@ -262,13 +266,23 @@ class ListPagerLab private constructor(context: Context){
     fun getSubmenu (ctx: Context): ArrayList<String> {
         val stringArray: ArrayList<String> = arrayListOf()
         listPagers
-                .filter {("submenu" == it.url) or ("ollPager" == it.url)}
+                .filter {("submenu" == it.url)}
                 .forEach {
                     stringArray.add(ctx.getString(it.description))
                 }
-
         return stringArray
     }
+
+    fun getOllMenu (ctx: Context): ArrayList<String> {
+        val stringArray: ArrayList<String> = arrayListOf()
+        listPagers
+                .filter {("ollPager" == it.url)}
+                .forEach {
+                    stringArray.add(ctx.getString(it.description))
+                }
+        return stringArray
+    }
+
 
     //возвращает из ListPagerLab один ListPager с заданными фазой и title
     fun getPhaseItemByTitle(phase: String, title: String): ListPager {
