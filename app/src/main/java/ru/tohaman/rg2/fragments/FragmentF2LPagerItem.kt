@@ -7,16 +7,19 @@ import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.text.Html
+import android.text.InputType
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import com.google.android.youtube.player.*
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
+import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.support.v4.*
 import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.DeveloperKey
@@ -151,6 +154,7 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
             }
         }
 
+        // Обрабатываем превьюшку к видео
         // Если ссылка пустая, то вообще не отображаем видеопревью (скрываем лэйаут с текстом и превьюшкой)
         val ytViewLayout = view.findViewById(F2LPagerItemtUI.Ids.youTubeLayout) as RelativeLayout
         if (url.isNullOrBlank()) {
@@ -158,18 +162,44 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
         } else {
             ytViewLayout.visibility = View.VISIBLE
         }
-
         val ytTextView = view.findViewById(F2LPagerItemtUI.Ids.youTubeTextView) as TextView
         //смотрим в настройках программы, показывать превью видео или текст
         val previewEnabled = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean(VIDEO_PREVIEW, true)
-        val thumbnailView = view.findViewById(PagerItemtUI.Ids.ytThumbnailView) as YouTubeThumbnailView
-        val playPreviewImage = view.findViewById(PagerItemtUI.Ids.icPlayPreview) as ImageView
+        val thumbnailView = view.findViewById(F2LPagerItemtUI.Ids.ytThumbnailView) as YouTubeThumbnailView
+        val playPreviewImage = view.findViewById(F2LPagerItemtUI.Ids.icPlayPreview) as ImageView
         if (previewEnabled and canPlayYouTubeVideo()) {
             showYouTubePreview(thumbnailView, ytTextView, playPreviewImage)
         } else {
             hideYouTubePreview(thumbnailView, ytTextView, playPreviewImage)  //скрыть превью, отобразить текстовой ссылкой
         }
 
+        //Выводим коммент, и делаем обработчик нажатия на него (вызваем окно редактирования)
+        val commentText = view.findViewById<TextView>(F2LPagerItemtUI.Ids.commentText)
+        commentText.text = (ctx.getString(R.string.commentText) + "\n" + comment)
+        commentText.onClick { it ->
+            alert(R.string.commentText) {
+                customView {
+                    val imm = ctx.inputMethodManager
+                    val eText = editText {
+                        inputType = InputType.TYPE_TEXT_FLAG_CAP_WORDS
+                        text = comment.toEditable()
+                    }
+                    imm.toggleSoftInput(InputMethodManager.RESULT_SHOWN,0)
+
+                    positiveButton("OK") {
+                        imm.hideSoftInputFromWindow(eText.windowToken, 0)
+                        val lps = listPagerLab.getItem(phase, id, subId.toString())
+                        comment = eText.text.toString()
+                        lps.comment = comment
+                        listPagerLab.updateListPager(lps)
+                        commentText.text = (ctx.getString(R.string.commentText) + "\n" + comment)
+                    }
+                    negativeButton("Отмена") {
+                        imm.hideSoftInputFromWindow(eText.windowToken, 0)
+                    }
+                }
+            }.show()
+        }
 
         return view
     }

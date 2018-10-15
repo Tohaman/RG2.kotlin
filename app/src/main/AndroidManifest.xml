@@ -58,17 +58,27 @@
         </activity>
         <activity
             android:name=".activities.PllTestGame"
-            android:label="@string/title_activity_pll_test_game"></activity>
+            android:label="@string/title_activity_pll_test_game">
+
+        </activity>
         <activity
             android:name=".activities.TestGameSelectPllName"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity
             android:name=".activities.TestGameSelectOllName"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity
             android:name=".activities.OllTestGame"
-            android:label="@string/title_activity_oll_test_game"></activity>
-        <activity android:name=".activities.BlindTestGame"></activity>
+            android:label="@string/title_activity_oll_test_game">
+
+        </activity>
+        <activity android:name=".activities.BlindTestGame">
+
+        </activity>
         <activity
             android:name=".activities.ShowPagerActivity"
             android:theme="@style/AppTheme">
@@ -83,7 +93,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.F2LPagerActivity"></activity>
+        <activity android:name=".activities.F2LPagerActivity">
+
+        </activity>
     </application>
 
 </manifest>

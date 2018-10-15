@@ -245,6 +245,14 @@ class ListPagerLab private constructor(context: Context){
         return listPager
     }
 
+    fun getItem(phase: String, id: Int, subId: String) : ListPager {
+        var listPager = ListPager("", 0, "", 0)
+        listPagers
+                .filter { (phase == it.phase) and (id == it.id) and (subId == it.subID)}
+                .forEach { listPager = it }
+        return listPager
+    }
+
     //возвращает из ListPagerLab список ListPager'ов с заданными фазой и номером
     fun getPhaseItemList(id: Int, phase: String): ArrayList<ListPager> {
         return listPagers.filterTo (ArrayList()) {(phase == it.phase) and (id == it.id)}
