@@ -4,55 +4,85 @@
     <string-array name="exp_f2l_title">
         <item>@string/exp_f2l_st1_title</item>
         <item>@string/exp_f2l_st2_title</item>
-        <item>@string/exp_f2l_st3_title</item>
-        <item>@string/exp_f2l_st4_title</item>
-        <item>@string/exp_f2l_st5_title</item>
+        <item>@string/exp_f2l_st2_title</item>
+        <item>@string/exp_f2l_st2_title</item>
+        <item>@string/exp_f2l_st2_title</item>
     </string-array>
 
     <integer-array name="exp_f2l_icon">
         <item>@drawable/exp_f2l_1_0</item>
         <item>@drawable/exp_f2l_2_0</item>
-        <item>@drawable/exp_f2l_3_0</item>
-        <item>@drawable/exp_f2l_4_0</item>
-        <item>@drawable/exp_f2l_5_0</item>
+        <item>@drawable/exp_f2l_2_0</item>
+        <item>@drawable/exp_f2l_2_0</item>
+        <item>@drawable/exp_f2l_2_0</item>
     </integer-array>
     
     <string-array name="exp_f2l_descr">
         <item>@string/exp_f2l_st1_descr</item>
-        <item>@string/exp_f2l_st2_descr</item>
-        <item>@string/exp_f2l_st3_descr</item>
-        <item>@string/exp_f2l_st4_descr</item>
-        <item>@string/exp_f2l_st5_descr</item>
+        <item>@string/exp_f2l_st2_1_descr</item>
+        <item>@string/exp_f2l_st2_2_descr</item>
+        <item>@string/exp_f2l_st2_3_descr</item>
+        <item>@string/exp_f2l_st2_4_descr</item>
     </string-array>
 
     <string-array name="exp_f2l_url">
         <item>@string/exp_f2l_st1_url</item>
         <item>@string/exp_f2l_st2_url</item>
-        <item>@string/exp_f2l_st3_url</item>
-        <item>@string/exp_f2l_st4_url</item>
-        <item>@string/exp_f2l_st5_url</item>
+        <item>@string/exp_f2l_st2_url</item>
+        <item>@string/exp_f2l_st2_url</item>
+        <item>@string/exp_f2l_st2_url</item>
     </string-array>
 
-    <string name="exp_f2l_st1_title">Планка снизу</string>
+    <string-array name="exp_f2l_subId">
+        <item>@string/exp_f2l_st1_subId</item>
+        <item>@string/exp_f2l_st2_1_subId</item>
+        <item>@string/exp_f2l_st2_2_subId</item>
+        <item>@string/exp_f2l_st2_3_subId</item>
+        <item>@string/exp_f2l_st2_4_subId</item>
+    </string-array>
+
+
+
+    <string name="exp_f2l_st1_title">Введение</string>
+    <string name="exp_f2l_st1_subId">0</string>
+    <string name="exp_f2l_st1_subTitle">Введение</string>
+    <string name="exp_f2l_st1_subLongTitle">Введение в Expert F2L</string>
     <string name="exp_f2l_st1_descr" formatted="false"><![CDATA[
-        [
-        {\"subTitle\":\"Введение\", \"subLongTitle\":\"Введение в Expert F2L\",
-        \"text\":\"В Expert F2L приведны сложные ситуации возникающие на этапе F2L. В основном, эти ситуации
-        связаны с разбиением «недружной» пары.\"}
-        ]
+        В Expert F2L приведны сложные ситуации возникающие на этапе F2L. В основном, эти ситуации
+        связаны с разбиением «недружной» пары.
     ]]></string>
     <string name="exp_f2l_st1_url"></string>
 
-    <string name="exp_f2l_st2_title">Планка сверху</string>
-    <string name="exp_f2l_st2_descr" formatted="false"><![CDATA[
-        [
-        {\"subTitle\":\"FR\", \"subLongTitle\":\"Передний правый слот\", \"text\":\"Текст для алгоритма FR 2\"},
-        {\"subTitle\":\"BR\", \"subLongTitle\":\"Задний правый слот\", \"text\":\"Текст для алгоритма BR 2\"},
-        {\"subTitle\":\"FL\", \"subLongTitle\":\"Передний левый слот\", \"text\":\"Текст для алгоритма FL 2\"},
-        {\"subTitle\":\"BL\", \"subLongTitle\":\"Задний левый слот\", \"text\":\"Текст для алгоритма BL 2\"}
-        ]
+    <string name="exp_f2l_st2_title">Планка спереди снизу</string>
+    <string name="exp_f2l_st2_1_subId">0</string>
+    <string name="exp_f2l_st2_1_subTitle">FR</string>
+    <string name="exp_f2l_st2_1_subLongTitle">Передний правый слот</string>
+    <string name="exp_f2l_st2_1_descr" formatted="false"><![CDATA[
+        Алгоритм: R U’ R’ U R U2 R’ U R U R’
     ]]></string>
     <string name="exp_f2l_st2_url"></string>
+
+    <string name="exp_f2l_st2_2_subId">1</string>
+    <string name="exp_f2l_st2_2_subTitle">BR</string>
+    <string name="exp_f2l_st2_2_subLongTitle">Задний правый слот</string>
+    <string name="exp_f2l_st2_2_descr" formatted="false"><![CDATA[
+        Алгоритм: R’ F R’ F’ R2 U’ R’ U R\
+    ]]></string>
+
+    <string name="exp_f2l_st2_3_subId">2</string>
+    <string name="exp_f2l_st2_3_subTitle">FL</string>
+    <string name="exp_f2l_st2_3_subLongTitle">Передний левый слот</string>
+    <string name="exp_f2l_st2_3_descr" formatted="false"><![CDATA[
+        Алгоритм: F R U’ R’ F’ L’ U’ L
+    ]]></string>
+
+    <string name="exp_f2l_st2_4_subId">3</string>
+    <string name="exp_f2l_st2_4_subTitle">BL</string>
+    <string name="exp_f2l_st2_4_subLongTitle">Задний левый слот</string>
+    <string name="exp_f2l_st2_4_descr" formatted="false"><![CDATA[
+        Алгоритм: L U L’ U’ L U’ L’ U2 L U’ L’ или L2 U2 L’ U’ L U’ L2
+    ]]></string>
+
 
     <string name="exp_f2l_st3_title">Планка сверху</string>
     <string name="exp_f2l_st3_descr" formatted="false"><![CDATA[
