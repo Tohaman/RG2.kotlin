@@ -62,4 +62,17 @@
         <item>AppThemeDayNight</item>
     </string-array>
 
+    <string-array name="text_size_title">
+        <item>Маленький (13)</item>
+        <item>Нормальный (15)</item>
+        <item>Большой (18)</item>
+        <item>Очень большой (21)</item>
+    </string-array>
+
+    <string-array name="text_size_values">
+        <item>13</item>
+        <item>15</item>
+        <item>18</item>
+        <item>21</item>
+    </string-array>
 </resources>

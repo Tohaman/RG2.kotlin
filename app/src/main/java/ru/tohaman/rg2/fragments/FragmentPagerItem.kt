@@ -23,6 +23,7 @@ import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.support.v4.*
 import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.DeveloperKey.DEVELOPER_KEY
+import ru.tohaman.rg2.IS_SCREEN_ALWAYS_ON
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.VIDEO_PREVIEW
 import ru.tohaman.rg2.data.Favorite
@@ -151,9 +152,13 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         (view.findViewById(PagerItemtUI.Ids.pagerImageView) as ImageView).imageResource = topImage
 
+        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
+        val textSize = sp.getString("text_size", "15").toFloat()
+        mainTextView.textSize = textSize
         mainTextView.text = spanText
         mainTextView.isSelectable = isTextSelectable
         mainTextView.movementMethod = LinkMovementMethod.getInstance()
+
 
         val ytTextView = view.findViewById(PagerItemtUI.Ids.youTubeTextView) as TextView
 

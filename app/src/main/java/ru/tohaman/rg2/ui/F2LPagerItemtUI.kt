@@ -1,5 +1,6 @@
 package ru.tohaman.rg2.ui
 
+import android.graphics.Color
 import android.graphics.Typeface
 import android.support.v4.content.ContextCompat
 import android.text.method.LinkMovementMethod
@@ -25,12 +26,11 @@ class F2LPagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
 
                     constraintLayout {
 //                      backgroundColor = Color.RED
-
                         val imgView = imageView {
                             id = Ids.pagerImageView
 //                            backgroundColor = Color.GREEN
-                            padding = 8.dp
-                        }.lparams(80.dp, 80.dp)
+                            padding = 0.dp
+                        }.lparams(75.dp, 75.dp)
 
                         val txtView = textView {
                             gravity = Gravity.CENTER
@@ -38,7 +38,7 @@ class F2LPagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
                             //Если текст ниже селектабельный, то и этот тоже надо делать таким,
                             //иначе текст будет автоматом прокручиваться при открытии view
 //                            isSelectable = true
-                            textSize = 18F
+                            textSize = 16F
                             typeface = Typeface.DEFAULT_BOLD
                             //padding = 10.dp
 
@@ -66,7 +66,7 @@ class F2LPagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
                             )
 
                         }
-                    }.lparams(matchParent, wrapContent) {setMargins(0.dp, 10.dp, 0.dp, 10.dp)}
+                    }.lparams(matchParent, wrapContent) {setMargins(0.dp, 5.dp, 0.dp, 8.dp)}
 
 
                     textView {
@@ -75,7 +75,7 @@ class F2LPagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
                         // Делаем ссылки кликабельными
                         movementMethod = LinkMovementMethod.getInstance()
                         textSize = 15f
-                    }.lparams(wrapContent, wrapContent)
+                    }.lparams(wrapContent, wrapContent) {setMargins(10.dp, 0.dp, 10.dp, 0.dp)}
 
                     relativeLayout {
                         id = Ids.youTubeLayout
@@ -101,9 +101,9 @@ class F2LPagerItemtUI<in Fragment> : AnkoComponentEx<Fragment>() {
                         textSize = 16f
                         textColorResource = R.color.colorAccent
                         text = ctx.getString(R.string.commentText)
-                    }.lparams(matchParent, wrapContent) {setMargins(0.dp, 8.dp, 0.dp, 32.dp)}
+                    }.lparams(matchParent, wrapContent) {setMargins(10.dp, 8.dp, 10.dp, 32.dp)}
 
-                }.lparams(matchParent, wrapContent) {setMargins(16.dp, 0.dp, 16.dp, 0.dp)}
+                }.lparams(matchParent, wrapContent)
             }.lparams(matchParent, wrapContent)
 
         }

@@ -12,6 +12,15 @@
             android:summary="Темная или светлая тема">
         </ListPreference>
 
+        <ListPreference
+            android:entries="@array/text_size_title"
+            android:entryValues="@array/text_size_values"
+            android:key="text_size"
+            android:defaultValue="15"
+            android:title="Размер шрифта"
+            android:summary="Размер шрифта в обучалках">
+        </ListPreference>
+
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="video_preview"

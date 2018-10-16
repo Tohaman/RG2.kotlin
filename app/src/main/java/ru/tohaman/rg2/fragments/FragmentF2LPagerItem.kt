@@ -15,8 +15,6 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import com.google.android.youtube.player.*
-import com.google.gson.GsonBuilder
-import com.google.gson.reflect.TypeToken
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
 import org.jetbrains.anko.sdk15.coroutines.onClick
@@ -25,7 +23,6 @@ import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.DeveloperKey
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.VIDEO_PREVIEW
-import ru.tohaman.rg2.data.F2lPhases
 import ru.tohaman.rg2.data.Favorite
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
@@ -33,7 +30,6 @@ import ru.tohaman.rg2.ui.F2LPagerItemtUI
 import ru.tohaman.rg2.ui.PagerItemtUI
 import ru.tohaman.rg2.util.spannedString
 import ru.tohaman.rg2.util.toEditable
-import java.util.ArrayList
 
 class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener {
     private var mListener: OnViewPagerInteractionListener? = null
@@ -53,7 +49,7 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
         val phase = arguments!!.getString("phase")
         val id = arguments!!.getInt("id")
         val subId = arguments!!.getString("subID").toInt()
-        val lp = listPagerLab.getPhaseItemList(id, phase)[subId]
+        val lp = listPagerLab.getItem(phase, id, subId.toString())
 
         val title = lp.subLongTitle
         val topImage = lp.icon
@@ -62,20 +58,21 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
         //url = lp.url
 
         val titleTextView = view.findViewById<TextView>(F2LPagerItemtUI.Ids.pagerTitleText)
-        titleTextView.text = title
+        titleTextView.text = "${lp.title}\n$title"
         //Если основной текст селектабельный, то и этот тоже надо делать таким, иначе текст будет автоматом прокручиваться при открытии view
         titleTextView.isSelectable = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean("is_text_selectable", false)
 
-        val gson = GsonBuilder().create()
-        val itemsListType = object : TypeToken<ArrayList<F2lPhases>>() {}.type
         var textString = "<html><body style=\"text-align:justify\"> %s </body></html>"
         val st = getString(description)
-        val listOfTexts : ArrayList<F2lPhases> = gson.fromJson(st, itemsListType)
-        textString = String.format(textString, listOfTexts[subId].text)
+        textString = String.format(textString, st)
         val spanText = spannedString(textString, imgGetter, tagHandler)
 
         val mainTextView = view.findViewById<TextView>(F2LPagerItemtUI.Ids.descriptionText)
         mainTextView.text = spanText
+        //Задаем размер текста
+        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
+        val descTextSize = sp.getString("text_size", "15").toFloat()
+        mainTextView.textSize = descTextSize
 
         val imageView = view.findViewById<ImageView>(F2LPagerItemtUI.Ids.pagerImageView)
         imageView.imageResource = topImage
