@@ -23,13 +23,12 @@ import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.support.v4.*
 import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.DeveloperKey.DEVELOPER_KEY
-import ru.tohaman.rg2.IS_SCREEN_ALWAYS_ON
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.VIDEO_PREVIEW
 import ru.tohaman.rg2.data.Favorite
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
-import ru.tohaman.rg2.ui.PagerItemtUI
+import ru.tohaman.rg2.ui.PagerItemUI
 import ru.tohaman.rg2.util.spannedString
 import ru.tohaman.rg2.util.toEditable
 
@@ -44,7 +43,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         // Создаем Вью
-        val view = PagerItemtUI<Fragment>().createView(AnkoContext.create(ctx, this))
+        val view = PagerItemUI<Fragment>().createView(AnkoContext.create(ctx, this))
         //получаем сиглет общей базы и избранного
         val listPagerLab = ListPagerLab.get(ctx)
         val favoritesList = listPagerLab.favorites
@@ -66,9 +65,9 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         val spanText = spannedString(textString, imgGetter, tagHandler)
 //        val spanText = Html.fromHtml("<br><p><strike>Test Strike</strike></p>", imgGetter, tagHandler)
 
-        val mainTextView = view.findViewById<TextView>(PagerItemtUI.Ids.descriptionText)
+        val mainTextView = view.findViewById<TextView>(PagerItemUI.Ids.descriptionText)
 
-        val favCheckBox = view.findViewById<CheckBox>(PagerItemtUI.Ids.checkBox)
+        val favCheckBox = view.findViewById<CheckBox>(PagerItemUI.Ids.checkBox)
         //Пришлось делать вот так, а не через xml, которая задает изображение в зависимости от статуса,
         //т.к. иначе при смене через избранное кэшеруется не то изображение
         var favIsChecked = false
@@ -146,11 +145,11 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         val isTextSelectable = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean("is_text_selectable", false)
 
-        (view.findViewById(PagerItemtUI.Ids.pagerTitleText) as TextView).text = title
+        (view.findViewById(PagerItemUI.Ids.pagerTitleText) as TextView).text = title
         //Если основной текст селектабельный, то и этот тоже надо делать таким, иначе текст будет автоматом прокручиваться при открытии view
-        (view.findViewById(PagerItemtUI.Ids.pagerTitleText) as TextView).isSelectable = isTextSelectable
+        (view.findViewById(PagerItemUI.Ids.pagerTitleText) as TextView).isSelectable = isTextSelectable
 
-        (view.findViewById(PagerItemtUI.Ids.pagerImageView) as ImageView).imageResource = topImage
+        (view.findViewById(PagerItemUI.Ids.pagerImageView) as ImageView).imageResource = topImage
 
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
         val textSize = sp.getString("text_size", "15").toFloat()
@@ -160,10 +159,10 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         mainTextView.movementMethod = LinkMovementMethod.getInstance()
 
 
-        val ytTextView = view.findViewById(PagerItemtUI.Ids.youTubeTextView) as TextView
+        val ytTextView = view.findViewById(PagerItemUI.Ids.youTubeTextView) as TextView
 
         // Если ссылка пустая, то вообще не отображаем видеопревью (скрываем лэйаут с текстом и превьюшкой)
-        val ytViewLayout = view.findViewById(PagerItemtUI.Ids.youTubeLayout) as RelativeLayout
+        val ytViewLayout = view.findViewById(PagerItemUI.Ids.youTubeLayout) as RelativeLayout
         if (url == "") {
             ytViewLayout.visibility = View.GONE
         } else {
@@ -172,8 +171,8 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         //смотрим в настройках программы, показывать превью видео или текст
         val previewEnabled = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean(VIDEO_PREVIEW, true)
-        val thumbnailView = view.findViewById(PagerItemtUI.Ids.ytThumbnailView) as YouTubeThumbnailView
-        val playPreviewImage = view.findViewById(PagerItemtUI.Ids.icPlayPreview) as ImageView
+        val thumbnailView = view.findViewById(PagerItemUI.Ids.ytThumbnailView) as YouTubeThumbnailView
+        val playPreviewImage = view.findViewById(PagerItemUI.Ids.icPlayPreview) as ImageView
         if (previewEnabled and canPlayYouTubeVideo()) {
             showYouTubePreview(thumbnailView, ytTextView, playPreviewImage)
         } else {
@@ -181,7 +180,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         }
 
         //Выводим коммент, и делаем обработчик нажатия на него (вызваем окно редактирования)
-        val commentText = view.findViewById<TextView>(PagerItemtUI.Ids.commentText)
+        val commentText = view.findViewById<TextView>(PagerItemUI.Ids.commentText)
         commentText.text = (ctx.getString(R.string.commentText) + "\n" + comment)
         commentText.onClick { it ->
             alert(R.string.commentText) {

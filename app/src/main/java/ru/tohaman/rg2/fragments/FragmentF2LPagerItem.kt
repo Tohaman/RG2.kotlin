@@ -26,8 +26,8 @@ import ru.tohaman.rg2.VIDEO_PREVIEW
 import ru.tohaman.rg2.data.Favorite
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab
-import ru.tohaman.rg2.ui.F2LPagerItemtUI
-import ru.tohaman.rg2.ui.PagerItemtUI
+import ru.tohaman.rg2.ui.F2LPagerItemUI
+import ru.tohaman.rg2.ui.PagerItemUI
 import ru.tohaman.rg2.util.spannedString
 import ru.tohaman.rg2.util.toEditable
 
@@ -39,7 +39,7 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         // Создаем Вью
-        val view = F2LPagerItemtUI<Fragment>().createView(AnkoContext.create(ctx, this))
+        val view = F2LPagerItemUI<Fragment>().createView(AnkoContext.create(ctx, this))
         //получаем сиглет общей базы и избранного
         val listPagerLab = ListPagerLab.get(ctx)
         val favoritesList = listPagerLab.favorites
@@ -57,7 +57,7 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
         var comment  = lp.comment
         //url = lp.url
 
-        val titleTextView = view.findViewById<TextView>(F2LPagerItemtUI.Ids.pagerTitleText)
+        val titleTextView = view.findViewById<TextView>(F2LPagerItemUI.Ids.pagerTitleText)
         titleTextView.text = "${lp.title}\n$title"
         //Если основной текст селектабельный, то и этот тоже надо делать таким, иначе текст будет автоматом прокручиваться при открытии view
         titleTextView.isSelectable = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean("is_text_selectable", false)
@@ -67,17 +67,17 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
         textString = String.format(textString, st)
         val spanText = spannedString(textString, imgGetter, tagHandler)
 
-        val mainTextView = view.findViewById<TextView>(F2LPagerItemtUI.Ids.descriptionText)
+        val mainTextView = view.findViewById<TextView>(F2LPagerItemUI.Ids.descriptionText)
         mainTextView.text = spanText
         //Задаем размер текста
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
         val descTextSize = sp.getString("text_size", "15").toFloat()
         mainTextView.textSize = descTextSize
 
-        val imageView = view.findViewById<ImageView>(F2LPagerItemtUI.Ids.pagerImageView)
+        val imageView = view.findViewById<ImageView>(F2LPagerItemUI.Ids.pagerImageView)
         imageView.imageResource = topImage
 
-        val favCheckBox = view.findViewById<CheckBox>(PagerItemtUI.Ids.checkBox)
+        val favCheckBox = view.findViewById<CheckBox>(PagerItemUI.Ids.checkBox)
         //Пришлось делать вот так, а не через xml, которая задает изображение в зависимости от статуса,
         //т.к. иначе при смене через избранное кэшеруется не то изображение
         var favIsChecked = false
@@ -153,17 +153,17 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
 
         // Обрабатываем превьюшку к видео
         // Если ссылка пустая, то вообще не отображаем видеопревью (скрываем лэйаут с текстом и превьюшкой)
-        val ytViewLayout = view.findViewById(F2LPagerItemtUI.Ids.youTubeLayout) as RelativeLayout
+        val ytViewLayout = view.findViewById(F2LPagerItemUI.Ids.youTubeLayout) as RelativeLayout
         if (url.isNullOrBlank()) {
             ytViewLayout.visibility = View.GONE
         } else {
             ytViewLayout.visibility = View.VISIBLE
         }
-        val ytTextView = view.findViewById(F2LPagerItemtUI.Ids.youTubeTextView) as TextView
+        val ytTextView = view.findViewById(F2LPagerItemUI.Ids.youTubeTextView) as TextView
         //смотрим в настройках программы, показывать превью видео или текст
         val previewEnabled = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean(VIDEO_PREVIEW, true)
-        val thumbnailView = view.findViewById(F2LPagerItemtUI.Ids.ytThumbnailView) as YouTubeThumbnailView
-        val playPreviewImage = view.findViewById(F2LPagerItemtUI.Ids.icPlayPreview) as ImageView
+        val thumbnailView = view.findViewById(F2LPagerItemUI.Ids.ytThumbnailView) as YouTubeThumbnailView
+        val playPreviewImage = view.findViewById(F2LPagerItemUI.Ids.icPlayPreview) as ImageView
         if (previewEnabled and canPlayYouTubeVideo()) {
             showYouTubePreview(thumbnailView, ytTextView, playPreviewImage)
         } else {
@@ -171,7 +171,7 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
         }
 
         //Выводим коммент, и делаем обработчик нажатия на него (вызваем окно редактирования)
-        val commentText = view.findViewById<TextView>(F2LPagerItemtUI.Ids.commentText)
+        val commentText = view.findViewById<TextView>(F2LPagerItemUI.Ids.commentText)
         commentText.text = (ctx.getString(R.string.commentText) + "\n" + comment)
         commentText.onClick { it ->
             alert(R.string.commentText) {
