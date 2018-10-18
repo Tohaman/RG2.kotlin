@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="redi_title">
+        <item>@string/redi_1_title</item>
+        <item>@string/redi_2_title</item>
+    </string-array>
+
+    <integer-array name="redi_icon">
+        <item>@drawable/redi_1</item>
+        <item>@drawable/redi_2</item>
+    </integer-array>
+
+    <string-array name="redi_descr">
+        <item>@string/redi_1_descr</item>
+        <item>@string/redi_2_descr</item>
+    </string-array>
+
+
+    <string-array name="redi_url">
+        <item>@string/redi_1_url</item>
+        <item>@string/redi_2_url</item>
+    </string-array>
+
+    <string name="redi_1_title">Расстановка углов</string>
+    <string name="redi_1_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="redi_1_url"></string>
+
+
+    <string name="redi_2_title">Расстановка ребер</string>
+    <string name="redi_2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="redi_2_url"></string>
+
+
+</resources>

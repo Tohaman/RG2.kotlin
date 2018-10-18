@@ -1,44 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="other_title">
-        <!--<item>Кубик 4х4</item>-->
-        <!--<item>Кубик 5х5</item>-->
         <item>Пирамидка (Pyraminx)</item>
         <item>Мегаминкс (Megaminx)</item>
         <item>Скьюб (Skewb)</item>
         <item>Айви куб (Ivy cube)</item>
+        <item>Реди куб (Redi cube)</item>
         <item>Скваер (Square-1)</item>
         <item>Звезда скваер (Super Square Star)</item>
         <item>Кубоид 2х2х3</item>
     </string-array>
 
     <integer-array name="other_icon">
-        <!--<item>@drawable/v4x4_begin</item>-->
-        <!--<item>@drawable/v5x5_begin</item>-->
         <item>@drawable/pyraminx</item>
         <item>@drawable/megaminx</item>
         <item>@drawable/skewb</item>
         <item>@drawable/ivy_2</item>
+        <item>@drawable/redi_2</item>
         <item>@drawable/square</item>
         <item>@drawable/sq_star_4</item>
         <item>@drawable/cub_2x2x3_4</item>
     </integer-array>
 
-    <string-array name="other_descr">
-        <!--<item>@string/other_st1_descr</item>-->
-        <!--<item>@string/other_st2_descr</item>-->
+    <integer-array name="other_descr">
         <item>@string/other_st3_descr</item>
         <item>@string/other_st4_descr</item>
         <item>@string/other_st5_descr</item>
         <item>@string/other_st6_descr</item>
+        <item>@string/other_st1_descr</item>
         <item>@string/other_st7_descr</item>
         <item>@string/other_st8_descr</item>
         <item>@string/other_st9_descr</item>
-    </string-array>
+    </integer-array>
 
     <string-array name="other_url">
-        <!--<item>submenu</item>-->
-        <!--<item>submenu</item>-->
+        <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
@@ -49,12 +45,11 @@
         <item>submenu</item>
     </string-array>
 
-    <!--<string name="other_st1_descr">BEGIN4X4</string>-->
-    <!--<string name="other_st2_descr">BEGIN5X5</string>-->
     <string name="other_st3_descr">PYRAMINX</string>
     <string name="other_st4_descr">MEGAMINX</string>
     <string name="other_st5_descr">SKEWB</string>
     <string name="other_st6_descr">IVY</string>
+    <string name="other_st1_descr">REDI</string>
     <string name="other_st7_descr">SQUARE</string>
     <string name="other_st8_descr">SQ_STAR</string>
     <string name="other_st9_descr">CUB2X2X3</string>

@@ -440,6 +440,9 @@ class MainActivity : MyDefaultActivity(),
                     "IVY" -> {
                         alert(getString(R.string.help_ivy)) { okButton { } }.show()
                     }
+                    "REDI" -> {
+                        alert(getString(R.string.help_redi)) { okButton { } }.show()
+                    }
                     "SQUARE" -> {
                         alert(getString(R.string.help_square)) { okButton { } }.show()
                     }
@@ -449,7 +452,12 @@ class MainActivity : MyDefaultActivity(),
                     "CUB2X2X3" -> {
                         alert(getString(R.string.help_cub_2x2x2)) { okButton { } }.show()
                     }
-
+                    "AZBUKA" -> {
+                        alert(getString(R.string.help_azbuka)) { okButton { } }.show()
+                    }
+                    "AZBUKA2" -> {
+                        alert(getString(R.string.help_azbuka)) { okButton { } }.show()
+                    }
                     "TIMER" -> {
                         alert(getString(R.string.help_timer)) { okButton { } }.show()
                     }

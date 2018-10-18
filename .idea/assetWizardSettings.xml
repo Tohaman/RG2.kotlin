@@ -20,10 +20,10 @@
                           <map>
                             <entry key="assetSourceType" value="FILE" />
                             <entry key="height" value="100" />
-                            <entry key="outputName" value="cub_2x2x3_3_3" />
+                            <entry key="outputName" value="redi_1" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="D:\Dropbox\RubicsGuide\ortega.svg" />
-                            <entry key="width" value="187" />
+                            <entry key="sourceFile" value="D:\Dropbox\RubicsGuide\Redi.svg" />
+                            <entry key="width" value="91" />
                           </map>
                         </option>
                       </PersistentState>
