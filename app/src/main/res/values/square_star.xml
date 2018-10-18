@@ -263,7 +263,7 @@
 
     <string name="sq_star_st5_title">Вариант с одноцветными лучами</string>
     <string name="sq_star_st5_descr" formatted="false"><![CDATA[
-        <p><a href="rg2://ytplay?time=0:36&link=aaaaaaaaaaa">Как я уже упоминал</a>
+        <p><a href="rg2://ytplay?time=0:36&link=4yWNBooGitc">Как я уже упоминал</a>
         в обучалке по сборке этой головоломки с разноцветными лучами,
         вариант с лучами одного цвета является очень простым. Главное отличие сборки этого варианта в том,
         что в этом варианте, последовательность сборки будет несколько другой. Тут проще
@@ -271,18 +271,18 @@
         лучи верхнего и нижнего слоев.</p>
 
         <p>Делается это при помощи всего лишь одного четырехходового алгоритма.</p>
-        <p><a href="rg2://ytplay?time=1:18&link=aaaaaaaaaaa">Алгоритм:</a> <b>/(-1,0)/(1,0)/</b></p>
+        <p><a href="rg2://ytplay?time=1:18&link=4yWNBooGitc">Алгоритм:</a> <b>/(-1,0)/(1,0)/</b></p>
 
         <p>который меняет два передних элемента на верхней грани. На самом деле не только их, но
         в этой головоломки и на этом этапе это не имеет значения. Как же применять этот алгоритм?</p>
 
-        <p><a href="rg2://ytplay?time=2:23&link=aaaaaaaaaaa">Для начала,</a>
+        <p><a href="rg2://ytplay?time=2:23&link=4yWNBooGitc">Для начала,</a>
         попытайтесь вращением крыши сдружить как можно больше ребер. И теперь ищем
         какие-нибудь два элемента луча стоящих на разных слоях и
-        <a href="rg2://ytplay?time=2:59&link=aaaaaaaaaaa">рядом друг с другом.</a></p>
+        <a href="rg2://ytplay?time=2:59&link=4yWNBooGitc">рядом друг с другом.</a></p>
         <p style="text-align:center"><img src="sq_star_5_1.xml"></p>
 
-        <p>Если таких ребер нет, то <a href="rg2://ytplay?time=3:17&link=aaaaaaaaaaa">надо их сделать.</a>
+        <p>Если таких ребер нет, то <a href="rg2://ytplay?time=3:17&link=4yWNBooGitc">надо их сделать.</a>
         Главное тут понимать, что оба слоя всегда вращаем ТОЛЬКО вместе.</p>
 
         <p>Если такая пара есть, то ставим ее спереди и выполняем наш простой алгоритм.</p>
@@ -294,24 +294,24 @@
         <p>После того, как все лучи «подружились», красим крышу. Опять же, на этом этапе оба слоя
         всегда вращаем только вместе. Вот базовые ситуации этого этапа:</p>
 
-        <p>1. <a href="rg2://ytplay?time=4:59&link=aaaaaaaaaaa">Три рядом стоящих элемента.</a></p>
+        <p>1. <a href="rg2://ytplay?time=4:59&link=4yWNBooGitc">Три рядом стоящих элемента.</a></p>
         <p style="text-align:center"><img src="sq_star_5_3.xml"></p>
 
         <p>решается простым слайсом.</p>
 
-        <p>2. <a href="rg2://ytplay?time=5:18&link=aaaaaaaaaaa">Два рядом стоящих элемента.</a></p>
+        <p>2. <a href="rg2://ytplay?time=5:18&link=4yWNBooGitc">Два рядом стоящих элемента.</a></p>
         <p style="text-align:center"><img src="sq_star_5_4.xml"></p>
 
         <p>Делаем слайс между этими двумя элементами и получаем ситуацию N1, т.е. три рядом стоящих
         элемента, которые уже знаем как решать.</p>
 
-        <p>3. <a href="rg2://ytplay?time=5:48&link=aaaaaaaaaaa">Одинокий элемент.</a></p>
+        <p>3. <a href="rg2://ytplay?time=5:48&link=4yWNBooGitc">Одинокий элемент.</a></p>
         <p style="text-align:center"><img src="sq_star_5_5.xml"></p>
 
         <p>Берем головоломку так, чтобы этот одинокий элемент находился спереди справа. Делаем слайс
         и получаем ситуацию с двумя рядом стоящими элементами, а как ее решать см. выше.</p>
 
-        <p>4. <a href="rg2://ytplay?time=6:25&link=aaaaaaaaaaa">Элементы стоят не рядом.</a></p>
+        <p>4. <a href="rg2://ytplay?time=6:25&link=4yWNBooGitc">Элементы стоят не рядом.</a></p>
         <p style="text-align:center"><img src="sq_star_5_6.xml"></p>
 
         <p>В этом случае рассматриваем ситуацию как две ситуации с рядом стоящими элементами. Просто
@@ -324,18 +324,18 @@
         этапу этой головоломки с разноцветными лучами. Т.е. тут могут быть всего лишь две ситуации,
         когда центр не собран:</p>
 
-        <p>1. <a href="rg2://ytplay?time=7:56&link=aaaaaaaaaaa">Одна половинка не соответствует цвету верхней грани</a></p>
+        <p>1. <a href="rg2://ytplay?time=7:56&link=4yWNBooGitc">Одна половинка не соответствует цвету верхней грани</a></p>
         <p style="text-align:center"><img src="sq_star_5_8.xml"></p>
 
-        <p><a href="rg2://ytplay?time=8:13&link=aaaaaaaaaaa">Алгоритм:</a> <b>/(3,0)/(3,0)/(3,0)</b></p>
+        <p><a href="rg2://ytplay?time=8:13&link=4yWNBooGitc">Алгоритм:</a> <b>/(3,0)/(3,0)/(3,0)</b></p>
 
-        <p>2. <a href="rg2://ytplay?time=8:33&link=aaaaaaaaaaa">Обе половинки центра не соответствуют цвету верхней грани</a></p>
+        <p>2. <a href="rg2://ytplay?time=8:33&link=4yWNBooGitc">Обе половинки центра не соответствуют цвету верхней грани</a></p>
         <p style="text-align:center"><img src="sq_star_5_9.xml"></p>
 
-        <p><a href="rg2://ytplay?time=8:41&link=aaaaaaaaaaa">Алгоритм:</a> <b>/(3,3)/</b></p>
+        <p><a href="rg2://ytplay?time=8:41&link=4yWNBooGitc">Алгоритм:</a> <b>/(3,3)/</b></p>
 
 
     ]]></string>
-    <string name="sq_star_st5_url">aaaaaaaaaaa</string>
+    <string name="sq_star_st5_url">4yWNBooGitc</string>
 
 </resources>
