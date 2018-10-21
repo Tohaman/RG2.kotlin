@@ -166,6 +166,22 @@ class MainActivity : MyDefaultActivity(),
             if ((mCoins == 0) and (count % 25 == 0)) {
                 curPhase = "THANKS"
                 alert(getString(R.string.help_thanks)) { okButton { } }.show()
+            } else {
+                //Если не подписан на канал, то выводим окно с просьбой подписаться на канал.
+                val subscribe = sp.getBoolean("subscribe", false)
+                if ((!subscribe) and (count % 9 == 0)) {
+                    alert("Понравилось приложение? Подпишитесь на наш канал в Youtube.") {
+                        positiveButton("Подписаться") {
+                            browse("https://www.youtube.com/channel/UCpSUF7w376aCRRvzkoNoAfQ")
+                        }
+                        negativeButton("Я уже подписался") {
+                            saveBoolean2SP(true,"subscribe",ctx)
+                        }
+                        neutralPressed ("Напомнить позже") {
+                        }
+
+                    }.show()
+                }
             }
         }
 
