@@ -173,13 +173,13 @@ class MainActivity : MyDefaultActivity(),
                     alert("Понравилось приложение? Подпишитесь на наш канал в Youtube.") {
                         positiveButton("Подписаться") {
                             browse("https://www.youtube.com/channel/UCpSUF7w376aCRRvzkoNoAfQ")
+                            saveBoolean2SP(true,"subscribe",ctx)
                         }
-                        negativeButton("Я уже подписался") {
+                        negativeButton("Спасибо, уже подписался") {
                             saveBoolean2SP(true,"subscribe",ctx)
                         }
                         neutralPressed ("Напомнить позже") {
                         }
-
                     }.show()
                 }
             }
