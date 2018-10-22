@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="basic_redi_title">
+        <item>@string/basic_redi_st1_title</item>
+        <item>@string/basic_redi_st2_title</item>
+        <item>@string/basic_redi_st3_title</item>
+        <item>@string/basic_redi_st4_title</item>
+    </string-array>
+
+    <integer-array name="basic_redi_icon">
+        <item>@drawable/basic_redi_1</item>
+        <item>@drawable/basic_redi_2</item>
+        <item>@drawable/basic_redi_3</item>
+        <item>@drawable/basic_redi_4</item>
+    </integer-array>
+
+    <string-array name="basic_redi_descr">
+        <item>@string/basic_redi_st1_descr</item>
+        <item>@string/basic_redi_st2_descr</item>
+        <item>@string/basic_redi_st3_descr</item>
+        <item>@string/basic_redi_st4_descr</item>
+    </string-array>
+
+    <string-array name="basic_redi_url">
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+    </string-array>
+
+    <string name="basic_redi_st1_title">R</string>
+    <string name="basic_redi_st1_descr">Право по часовой (от себя)</string>
+    <string name="basic_redi_st2_title">R\'</string>
+    <string name="basic_redi_st2_descr">Право против часовой (на себя)</string>
+    <string name="basic_redi_st3_title">L</string>
+    <string name="basic_redi_st3_descr">Лево по часовой (на себя)</string>
+    <string name="basic_redi_st4_title">L\'</string>
+    <string name="basic_redi_st4_descr">Лево против часовой (от себя)</string>
+
+</resources>

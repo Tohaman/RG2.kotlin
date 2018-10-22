@@ -215,11 +215,11 @@ class SlidingTabsActivity : MyDefaultActivity(),
                                     when (curPhase) {
                                         "PYRAMINX" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_PYR")}
                                         "SKEWB" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_SKEWB")}
-                                        "BEGIN4X4" -> {ListPagerLab.get(ctx).getPhaseList("BASIC4X4")}
+                                        "BEGIN4X4", "YAU4X4" -> {ListPagerLab.get(ctx).getPhaseList("BASIC4X4")}
                                         "BEGIN5X5" -> {ListPagerLab.get(ctx).getPhaseList("BASIC5X5")}
-                                        "SQUARE" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_SQ1")}
-                                        "SQ_STAR" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_SQ1")}
+                                        "SQUARE","SQ_STAR" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_SQ1")}
                                         "IVY" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_IVY")}
+                                        "REDI" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_REDI")}
                                         else -> {ListPagerLab.get(ctx).getPhaseList("BASIC3X3")}
                                     }
                             val lstView = listView {
