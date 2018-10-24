@@ -159,7 +159,7 @@ class MainActivity : MyDefaultActivity(),
             alert(getString(R.string.whatsnew)) { okButton { } }.show()
             saveInt2SP(curVersion, "version", ctx)
             //Тут можно указать фазу новинки, чтобы после обновления программы, открылась новинка.
-            curPhase = "CUB2X2X3"
+            curPhase = "REDI"
         } else {
             //Проверяем платил ли уже пользователь, если не платил, то каждый 25-ый вход
             //напоминаем сказать спасибо.
