@@ -222,6 +222,11 @@
         <p style="text-align:center"><img src="pattern_8_1.xml"></p>
         <p><b><a href="rg2://ytplay?time=12:55&link=l6V7517N_lQ">Алгоритм:</a>
         (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y</b></p>
+
+        <p>А если совместить первый узор с Шахматами, то получится \"Шахматы и тетрис\". Вадим,
+        спасибо за идею.
+        <p style="text-align:center"><img src="pattern_8_2.xml"></p>
+        <p><b>Алгоритм: (E2 S2) (D\' M2 D2 M2 U\' S2 E)</b></p>
     ]]></string>
     <string name="patterns_st8_url">l6V7517N_lQ</string>
     <string name="patterns_st8_comment">((R U R\' U\') y)7</string>
@@ -293,10 +298,16 @@
         написать его в поле \"Свой комментариий (алгоритм):\" к соответствующему этапу (ниже видео)
         и он отобразится в списке.</p>
 
-        <p>А если у вас есть какой-то узор, которого нет в программе и нет на сайте
-        <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>, то вы можете
-        прислать его мне на почту
-        <a href="mailto:rubicsguide@yandex.ru?subject=Узоры&body=Здравствуйте,%20Антон.">rubicsguide@yandex.ru</a></p>
+        <p>А если у вас есть какой-то узор и:<br/>
+        1. Узора <b>нет на сайте <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a></b><br/>
+        2. Этого узора нет в программе<br/>
+        3. В узоре БОЛЬШЕ 6 ходов<br/>
+        4. Это <b>НЕ простой</b> узор состоящий только из двойных ходов, типа (R2 U2 R2 U2 R2 U2). Поверьте,
+        что вы не первый кто придумывает такой узор.<br/>
+        то присылайте его мне на почту
+        <a href="mailto:rubicsguide@yandex.ru?subject=Узоры&body=Здравствуйте,%20Антон.">rubicsguide@yandex.ru</a><br/>
+        И если ваш узор действительно интересный, я его обязательно добавлю в программу.
+        </p>
     ]]></string>
     <string name="patterns_st13_url">l6V7517N_lQ</string>
     <string name="patterns_st13_comment"></string>
