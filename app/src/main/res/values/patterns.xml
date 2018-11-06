@@ -258,7 +258,7 @@
         которого нет на сайте <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>.
         Спасибо Коле Константинову за присланный узор.</p>
         <p style="text-align:center"><img src="pattern_10.xml"></p>
-        <p><b><a href="rg2://ytplay?time=16:34&link=l6V7517N_lQ">Алгоритм:</a> U2 B2 F2 L2 R2</b></p>
+        <p><b><a href="rg2://ytplay?time=16:34&link=l6V7517N_lQ">Алгоритм:</a> U2 B2 F2 L2 R2</b> или <b>U2 S2 M2</b></p>
     ]]></string>
     <string name="patterns_st10_url">l6V7517N_lQ</string>
     <string name="patterns_st10_comment">U2 B2 F2 L2 R2</string>
@@ -281,13 +281,23 @@
     <string name="patterns_st11_url">l6V7517N_lQ</string>
     <string name="patterns_st11_comment">D L\' R\' U2 L R D</string>
 
-    <string name="patterns_st12_title">12. ФБК</string>
+    <string name="patterns_st12_title">12. ФБК и Буквы Н</string>
     <string name="patterns_st12_descr" formatted="false"><![CDATA[
         <p>Очень простой узор, <a href="rg2://ytplay?time=18:00&link=l6V7517N_lQ">буквы Н</a>
         только на двух гранях. А если взять кубик стандартно,
         белой вверх, зеленой к себе, то получится эмблема ФБК. Спасибо Виктору Рудневу за присланный узор.</p>
         <p style="text-align:center"><img src="pattern_12.xml"></p>
         <p><b><a href="rg2://ytplay?time=18:15&link=l6V7517N_lQ">Алгоритм:</a> U2 F\' R2 D2 L2 B2 U2 L2 D2 F\' U2</b></p>
+
+        <p>А если немного модифицировать шахматы, то легко получить Шесть букв Н</p>
+        <p style="text-align:center"><img src="pattern_12_1.xml"></p>
+        <p><b>Алгоритм: D2 M\' S2 M U2</b></p>
+
+        <p>P.S. Меня просто завалили письмами про различные варианты букв Н, поэтому приведу лишь
+        три базовых алгоритма <b>(R2 U2)3, (R2 U2 L2 U2)3</b> и <b>(U2 M2)2</b> используя которые,
+        можно придумать множество различных узоров в которых углы остаются на своих местах, а ребра
+        меняются местами.
+        </p>
     ]]></string>
     <string name="patterns_st12_url">l6V7517N_lQ</string>
     <string name="patterns_st12_comment">U2 F\' R2 D2 L2 B2 U2 L2 D2 F\' U2</string>
@@ -298,12 +308,12 @@
         написать его в поле \"Свой комментариий (алгоритм):\" к соответствующему этапу (ниже видео)
         и он отобразится в списке.</p>
 
-        <p>А если у вас есть какой-то узор и:<br/>
+        <p>А если у вас есть какой-то узор и:<br/><br/>
         1. Узора <b>нет на сайте <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a></b><br/>
         2. Этого узора нет в программе<br/>
         3. В узоре БОЛЬШЕ 6 ходов<br/>
-        4. Это <b>НЕ простой</b> узор состоящий только из двойных ходов, типа (R2 U2 R2 U2 R2 U2). Поверьте,
-        что вы не первый кто придумывает такой узор.<br/>
+        4. Это <b>НЕ простой</b> узор состоящий только из двойных ходов, типа (R2 U2 L2 U2)3<br/>
+        5. Это <b>НЕ вариации</b> различных Буквв Н<br/><br/>
         то присылайте его мне на почту
         <a href="mailto:rubicsguide@yandex.ru?subject=Узоры&body=Здравствуйте,%20Антон.">rubicsguide@yandex.ru</a><br/>
         И если ваш узор действительно интересный, я его обязательно добавлю в программу.

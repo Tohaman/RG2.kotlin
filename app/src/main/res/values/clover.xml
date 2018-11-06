@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="clover_title">
+        <item>@string/clover_1_title</item>
+        <item>@string/clover_2_title</item>
+    </string-array>
+
+    <integer-array name="clover_icon">
+        <item>@drawable/clover_1</item>
+        <item>@drawable/clover_2</item>
+    </integer-array>
+
+    <string-array name="clover_descr">
+        <item>@string/clover_1_descr</item>
+        <item>@string/clover_2_descr</item>
+    </string-array>
+
+
+    <string-array name="clover_url">
+        <item>@string/clover_1_url</item>
+        <item>@string/clover_2_url</item>
+    </string-array>
+
+    <string name="clover_1_title">Расстановка углов</string>
+    <string name="clover_1_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="clover_1_url">lPQHCTnL5c4</string>
+
+
+    <string name="clover_2_title">Расстановка ребер</string>
+    <string name="clover_2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="clover_2_url">lPQHCTnL5c4</string>
+
+
+</resources>
