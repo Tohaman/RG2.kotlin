@@ -6,6 +6,7 @@
         <item>Скьюб (Skewb)</item>
         <item>Айви куб (Ivy cube)</item>
         <item>Реди куб (Redi cube)</item>
+        <item>Клевер куб (Clover cube)</item>
         <item>Скваер (Square-1)</item>
         <item>Звезда скваер (Super Square Star)</item>
         <item>Кубоид 2х2х3</item>
@@ -17,6 +18,7 @@
         <item>@drawable/skewb</item>
         <item>@drawable/ivy_2</item>
         <item>@drawable/redi_2</item>
+        <item>@drawable/clover_4</item>
         <item>@drawable/square</item>
         <item>@drawable/sq_star_4</item>
         <item>@drawable/cub_2x2x3_4</item>
@@ -28,12 +30,14 @@
         <item>@string/other_st5_descr</item>
         <item>@string/other_st6_descr</item>
         <item>@string/other_st1_descr</item>
+        <item>@string/other_st2_descr</item>
         <item>@string/other_st7_descr</item>
         <item>@string/other_st8_descr</item>
         <item>@string/other_st9_descr</item>
     </integer-array>
 
     <string-array name="other_url">
+        <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
@@ -50,6 +54,7 @@
     <string name="other_st5_descr">SKEWB</string>
     <string name="other_st6_descr">IVY</string>
     <string name="other_st1_descr">REDI</string>
+    <string name="other_st2_descr">CLOVER</string>
     <string name="other_st7_descr">SQUARE</string>
     <string name="other_st8_descr">SQ_STAR</string>
     <string name="other_st9_descr">CUB2X2X3</string>

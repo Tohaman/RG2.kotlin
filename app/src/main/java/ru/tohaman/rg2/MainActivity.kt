@@ -475,6 +475,9 @@ class MainActivity : MyDefaultActivity(),
                     "REDI" -> {
                         alert(getString(R.string.help_redi)) { okButton { } }.show()
                     }
+                    "CLOVER" -> {
+                        alert(getString(R.string.help_clover)) { okButton { } }.show()
+                    }
                     "SQUARE" -> {
                         alert(getString(R.string.help_square)) { okButton { } }.show()
                     }
@@ -519,6 +522,12 @@ class MainActivity : MyDefaultActivity(),
                     }
                     "BASIC_SQ1" -> {
                         alert(getString(R.string.help_basic_sq1)) { okButton { } }.show()
+                    }
+                    "BASIC_REDI" -> {
+                        alert(getString(R.string.help_basic_redi)) { okButton { } }.show()
+                    }
+                    "BASIC_CLOVER" -> {
+                        alert(getString(R.string.help_basic_clover)) { okButton { } }.show()
                     }
 
                     "BLINDGAME" -> {

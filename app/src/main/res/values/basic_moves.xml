@@ -9,6 +9,8 @@
         <item>Движения для скьюба</item>
         <item>Движения для скваера</item>
         <item>Движения для айви</item>
+        <item>Движения для реди</item>
+        <item>Движения для клевера</item>
     </string-array>
 
     <integer-array name="basic_icon">
@@ -20,6 +22,8 @@
         <item>@drawable/basic_skewb</item>
         <item>@drawable/square</item>
         <item>@drawable/ivy_2</item>
+        <item>@drawable/redi_2</item>
+        <item>@drawable/clover_4</item>
     </integer-array>
 
     <string-array name="basic_descr">
@@ -31,10 +35,14 @@
         <item>@string/basic_st5_descr</item>
         <item>@string/basic_st6_descr</item>
         <item>@string/basic_st7_descr</item>
+        <item>@string/basic_st8_descr</item>
+        <item>@string/basic_st9_descr</item>
     </string-array>
 
     <string-array name="basic_null">
         <item> </item>
+        <item>submenu</item>
+        <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
@@ -161,5 +169,7 @@
     <string name="basic_st5_descr">BASIC_SKEWB</string>
     <string name="basic_st6_descr">BASIC_SQ1</string>
     <string name="basic_st7_descr">BASIC_IVY</string>
+    <string name="basic_st8_descr">BASIC_REDI</string>
+    <string name="basic_st9_descr">BASIC_CLOVER</string>
 
 </resources>
