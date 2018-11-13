@@ -84,7 +84,7 @@
     <string name="clover_1_url">aaaaaaaaaaa</string>
 
 
-    <string name="clover_2_title">Белая сторона</string>
+    <string name="clover_2_title">Кубшейп</string>
     <string name="clover_2_descr" formatted="false"><![CDATA[
 
     <p>Первым делом <a href="rg2://ytplay?time=6:20&link=aaaaaaaaaaa">соберем белую сторону.</a>
@@ -124,7 +124,7 @@
     ]]></string>
     <string name="clover_2_url">aaaaaaaaaaa</string>
 
-    <string name="clover_3_title">Второй и Первый слои (F2L)</string>
+    <string name="clover_3_title">Первая сторона</string>
     <string name="clover_3_descr" formatted="false"><![CDATA[
     <p>Я не зря назвал этот этап именно так. А все дело в том, что сначала мы будем собирать именно
     <a href="rg2://ytplay?time=11:00&link=aaaaaaaaaaa">второй слой,</a> и только после него соберем первый.</p>
