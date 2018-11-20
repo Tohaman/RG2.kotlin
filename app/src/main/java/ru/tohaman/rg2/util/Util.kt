@@ -10,10 +10,15 @@ import android.util.Log
 import ru.tohaman.rg2.DebugTag.TAG
 import ru.tohaman.rg2.R
 import ru.tohaman.rg2.data.ListPager
+import java.util.*
 
 /**
  * Created by Test on 22.12.2017. Различные утилиты
  */
+
+
+class SolveCube (var cube: IntArray, var solve: String)   // куб, решение
+class Pair4Melting (var allComplete: Boolean, var elementsNotOnPlace: SortedMap<Int, Int>)
 
 fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
 
