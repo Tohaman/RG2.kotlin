@@ -258,7 +258,8 @@
         которого нет на сайте <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>.
         Спасибо Коле Константинову за присланный узор.</p>
         <p style="text-align:center"><img src="pattern_10.xml"></p>
-        <p><b><a href="rg2://ytplay?time=16:34&link=l6V7517N_lQ">Алгоритм:</a> U2 B2 F2 L2 R2</b> или <b>U2 S2 M2</b></p>
+        <p><b><a href="rg2://ytplay?time=16:34&link=l6V7517N_lQ">Алгоритм:</a> U2 (B2 F2) L2 R2</b> или <b>U2 S2 M2</b></p>
+
     ]]></string>
     <string name="patterns_st10_url">l6V7517N_lQ</string>
     <string name="patterns_st10_comment">U2 B2 F2 L2 R2</string>
@@ -276,8 +277,13 @@
         <p>Ну а можно сделать <a href="rg2://ytplay?time=17:26&link=l6V7517N_lQ">Рыбок на каждой грани.</a></p>
         <p style="text-align:center"><img src="pattern_11_1.xml"></p>
         <p><b><a href="rg2://ytplay?time=17:34&link=l6V7517N_lQ">Алгоритм:</a> U F2 U\' B\' U2 B U\' F2 U\' R\' U2 B\' U2 B R</b></p>
-
     ]]></string>
+    <!--<p>А если немного усложнить \"Рыбку на грани\", то можно получить много разных не всегда-->
+        <!--\"понятных\" узоров, например:</p>-->
+    <!--<p style="text-align:center"><img src="pattern_11_2.xml"></p>-->
+
+    <!--<p><b>Алгоритм: U D (R L\') U\' D\' (L R\') U D (R L\')</p>-->
+
     <string name="patterns_st11_url">l6V7517N_lQ</string>
     <string name="patterns_st11_comment">D L\' R\' U2 L R D</string>
 
@@ -313,7 +319,8 @@
         2. Этого узора нет в программе<br/>
         3. В узоре БОЛЬШЕ 6 ходов<br/>
         4. Это <b>НЕ простой</b> узор состоящий только из двойных ходов, типа (R2 U2 L2 U2)3<br/>
-        5. Это <b>НЕ вариации</b> различных Буквв Н<br/><br/>
+        5. Это <b>НЕ вариации</b> различных \"Букв Н\" или \"Крестов\" - поверьте, что их сделали
+        все кому не лень покрутить кубик<br/><br/>
         то присылайте его мне на почту
         <a href="mailto:rubicsguide@yandex.ru?subject=Узоры&body=Здравствуйте,%20Антон.">rubicsguide@yandex.ru</a><br/>
         И если ваш узор действительно интересный, я его обязательно добавлю в программу.

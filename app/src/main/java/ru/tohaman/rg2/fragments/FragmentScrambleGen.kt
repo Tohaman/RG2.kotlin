@@ -201,7 +201,7 @@ class FragmentScrambleGen : Fragment() {
         return if (checkBoxShowSolve.isChecked) {
             st
         } else {
-            st.split(" ".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray().size.toString()
+            st.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray().size.toString()
         }
     }
 
@@ -545,6 +545,3 @@ class FragmentScrambleGen : Fragment() {
 
 
 }
-
-class SolveCube (var cube: IntArray, var solve: String)   // куб, решение
-class Pair4Melting (var allComplete: Boolean, var elementsNotOnPlace: SortedMap<Int,Int>)
