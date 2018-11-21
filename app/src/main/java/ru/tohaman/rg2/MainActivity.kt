@@ -772,7 +772,7 @@ class MainActivity : MyDefaultActivity(),
     /**
      *  Далее все для покупок внутри приложения
      *  основано на гугловском стандартном приложении TrivialDrive
-     *  File - New - ImportSamle - TrivialDrive
+     *  File - New - ImportSample - TrivialDrive
      */
 
     private fun sayThanks( donationNumber : Int ) {
