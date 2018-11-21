@@ -166,7 +166,7 @@ class MainActivity : MyDefaultActivity(),
                 //Если не подписан на канал, то выводим окно с просьбой подписаться на канал.
                 val subscribe = sp.getBoolean("subscribe", false)
                 if ((!subscribe) and (count % 9 == 0)) {
-                    alert("Понравилось приложение? Подпишитесь на наш канал в Youtube.") {
+                    alert("Понравилось приложение? Подпишитесь на мой канал в Youtube.") {
                         positiveButton("Подписаться") {
                             browse("https://www.youtube.com/channel/UCpSUF7w376aCRRvzkoNoAfQ")
                             saveBoolean2SP(true,"subscribe",ctx)
@@ -198,7 +198,6 @@ class MainActivity : MyDefaultActivity(),
                 setListFragmentPhase(curPhase)
             }
             in listOfOllMenu -> {
-                //TODO прверить сабсаб меню, как будет отрабатывать фазу
                 curPhase = mListPagerLab.getBackPhase(curPhase,ctx)
                 changedPhase = curPhase
             }
@@ -1012,7 +1011,8 @@ class MainActivity : MyDefaultActivity(),
                 verifyDeveloperPayload(bigDonat)
 
         //Если какая-то покупка была, а mCoins = 0, значит пользователь переустановил
-        //приложение, но уже что-то покупал, считаем что это был маленький донат.
+        //приложение, но уже что-то покупал, считаем что это был маленький донат, хотя
+        //можно было узнать и точно, но пока не принципиально
         if ((mCoins == 0) and (mIsPremium)) {
             mCoins = 50
             saveData()
