@@ -136,7 +136,7 @@ class MainActivity : MyDefaultActivity(),
         setContentView(R.layout.activity_main)
 
         //номер текущей версии программы
-        var version = sp.getInt("version", BuildConfig.VERSION_CODE)
+        val version = sp.getInt("version", BuildConfig.VERSION_CODE)
         val curVersion = BuildConfig.VERSION_CODE
 
         //Увеличиваем счетчик запусков программы
