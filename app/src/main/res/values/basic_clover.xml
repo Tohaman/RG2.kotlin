@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="basic_clover_title">
+        <item>@string/basic_clover_st1_title</item>
+        <item>@string/basic_clover_st2_title</item>
+    </string-array>
+
+    <integer-array name="basic_clover_icon">
+        <item>@drawable/basic_clover_1</item>
+        <item>@drawable/basic_clover_2</item>
+    </integer-array>
+
+    <string-array name="basic_clover_descr">
+        <item>@string/basic_clover_st1_descr</item>
+        <item>@string/basic_clover_st2_descr</item>
+    </string-array>
+
+    <string-array name="basic_clover_url">
+        <item>basic</item>
+        <item>basic</item>
+    </string-array>
+
+    <string name="basic_clover_st1_title">R</string>
+    <string name="basic_clover_st1_descr">Правое ребро</string>
+    <string name="basic_clover_st2_title">L</string>
+    <string name="basic_clover_st2_descr">Левое ребро</string>
+
+</resources>

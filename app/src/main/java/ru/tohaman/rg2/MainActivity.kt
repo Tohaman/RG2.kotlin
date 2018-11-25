@@ -136,7 +136,7 @@ class MainActivity : MyDefaultActivity(),
         setContentView(R.layout.activity_main)
 
         //номер текущей версии программы
-        var version = sp.getInt("version", 1)
+        val version = sp.getInt("version", BuildConfig.VERSION_CODE)
         val curVersion = BuildConfig.VERSION_CODE
 
         //Увеличиваем счетчик запусков программы
@@ -148,7 +148,6 @@ class MainActivity : MyDefaultActivity(),
             //выводим окно с приветствием
             alert(getString(R.string.first_start)) { okButton { } }.show()
             //и отменяем вывод окна что нового в данной версии
-            version = curVersion
             curPhase = "MAIN3X3"
             saveInt2SP(curVersion,"version",ctx)
         }
@@ -156,10 +155,7 @@ class MainActivity : MyDefaultActivity(),
 
         // проверяем версию программы в файле настроек, если она отлична от текущей, то выводим окно с описанием обновлений
         if (curVersion != version) { //если версии разные
-            alert(getString(R.string.whatsnew)) { okButton { } }.show()
-            saveInt2SP(curVersion, "version", ctx)
-            //Тут можно указать фазу новинки, чтобы после обновления программы, открылась новинка.
-            curPhase = "REDI"
+            updateVersion(version, curVersion)
         } else {
             //Проверяем платил ли уже пользователь, если не платил, то каждый 25-ый вход
             //напоминаем сказать спасибо.
@@ -170,7 +166,7 @@ class MainActivity : MyDefaultActivity(),
                 //Если не подписан на канал, то выводим окно с просьбой подписаться на канал.
                 val subscribe = sp.getBoolean("subscribe", false)
                 if ((!subscribe) and (count % 9 == 0)) {
-                    alert("Понравилось приложение? Подпишитесь на наш канал в Youtube.") {
+                    alert("Понравилось приложение? Подпишитесь на мой канал в Youtube.") {
                         positiveButton("Подписаться") {
                             browse("https://www.youtube.com/channel/UCpSUF7w376aCRRvzkoNoAfQ")
                             saveBoolean2SP(true,"subscribe",ctx)
@@ -183,13 +179,6 @@ class MainActivity : MyDefaultActivity(),
                     }.show()
                 }
             }
-        }
-
-        //Исправление ошибки в комментах к узорам
-        val pattern = mListPagerLab.getPhaseItem(1,"PATTERNS")
-        if (pattern.comment == "S' M' S M") {
-            pattern.comment = "M2 S2 E2"
-            mListPagerLab.updateListPager(pattern)
         }
 
         //Чтобы при запуске активности в onResume не пришлось менять фазу
@@ -209,7 +198,6 @@ class MainActivity : MyDefaultActivity(),
                 setListFragmentPhase(curPhase)
             }
             in listOfOllMenu -> {
-                //TODO прверить сабсаб меню, как будет отрабатывать фазу
                 curPhase = mListPagerLab.getBackPhase(curPhase,ctx)
                 changedPhase = curPhase
             }
@@ -274,6 +262,33 @@ class MainActivity : MyDefaultActivity(),
 
     }
 
+    private fun updateVersion(fromVersion: Int, toVersion: Int) {
+        alert(getString(R.string.whatsnew)) { okButton { } }.show()
+        saveInt2SP(toVersion, "version", ctx)
+        //Тут можно указать фазу новинки, чтобы после обновления программы, открылась новинка.
+        curPhase = "CLOVER"
+        if (fromVersion < 68) { updateComment68()}
+        if (fromVersion < 79) { updateComment79()}
+    }
+
+    private fun updateComment68() {
+        //Исправление ошибки в комментах к узорам
+        val pattern = mListPagerLab.getPhaseItem(1, "PATTERNS")
+        if (pattern.comment == "S' M' S M") {
+            pattern.comment = "M2 S2 E2"
+            mListPagerLab.updateListPager(pattern)
+        }
+    }
+
+    private fun updateComment79() {
+        //Обновляем комментарии к узорам, т.к. в 79 версии меняем порядок следования узоров
+        //Меняем коммент для 7 узора с (U F B\' L2 U2 L2 F\' B U2 L2 U) на (F2 R2 D R2 D U F2 D\' R\' D\' F L2 F\' D R U\')
+        val pattern = mListPagerLab.getPhaseItem(6, "PATTERNS")
+        if (pattern.comment == "U F B' L2 U2 L2 F' B U2 L2 U") {
+            pattern.comment = "F2 R2 D R2 D U F2 D' R' D' F L2 F' D R U'"
+            mListPagerLab.updateListPager(pattern)
+        }
+    }
 
     private fun setFragment (fragment: Fragment) {
         val transaction : FragmentTransaction = supportFragmentManager.beginTransaction()
@@ -459,6 +474,9 @@ class MainActivity : MyDefaultActivity(),
                     "REDI" -> {
                         alert(getString(R.string.help_redi)) { okButton { } }.show()
                     }
+                    "CLOVER" -> {
+                        alert(getString(R.string.help_clover)) { okButton { } }.show()
+                    }
                     "SQUARE" -> {
                         alert(getString(R.string.help_square)) { okButton { } }.show()
                     }
@@ -503,6 +521,12 @@ class MainActivity : MyDefaultActivity(),
                     }
                     "BASIC_SQ1" -> {
                         alert(getString(R.string.help_basic_sq1)) { okButton { } }.show()
+                    }
+                    "BASIC_REDI" -> {
+                        alert(getString(R.string.help_basic_redi)) { okButton { } }.show()
+                    }
+                    "BASIC_CLOVER" -> {
+                        alert(getString(R.string.help_basic_clover)) { okButton { } }.show()
                     }
 
                     "BLINDGAME" -> {
@@ -747,7 +771,7 @@ class MainActivity : MyDefaultActivity(),
     /**
      *  Далее все для покупок внутри приложения
      *  основано на гугловском стандартном приложении TrivialDrive
-     *  File - New - ImportSamle - TrivialDrive
+     *  File - New - ImportSample - TrivialDrive
      */
 
     private fun sayThanks( donationNumber : Int ) {
@@ -987,7 +1011,8 @@ class MainActivity : MyDefaultActivity(),
                 verifyDeveloperPayload(bigDonat)
 
         //Если какая-то покупка была, а mCoins = 0, значит пользователь переустановил
-        //приложение, но уже что-то покупал, считаем что это был маленький донат.
+        //приложение, но уже что-то покупал, считаем что это был маленький донат, хотя
+        //можно было узнать и точно, но пока не принципиально
         if ((mCoins == 0) and (mIsPremium)) {
             mCoins = 50
             saveData()

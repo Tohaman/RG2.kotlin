@@ -27,7 +27,8 @@ import java.util.*
  * в манифесте надо для активности прописать <intent-filter>
  * <data android:scheme="rg2" android:host="ytplay"></data>
  * а манифест перед <application добавить строку></application><uses-permission android:name="android.permission.INTERNET"></uses-permission>
-  </intent-filter> */
+ * </intent-filter>
+*/
 
 class YouTubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListener {
     //https://www.stacktips.com/tutorials/android/youtube-android-player-api-example

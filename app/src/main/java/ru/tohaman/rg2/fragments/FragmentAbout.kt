@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.button_colored.view.*
+import kotlinx.android.synthetic.main.button_subscribe.view.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.support.v4.ctx
@@ -53,6 +54,13 @@ class AboutUI<in Fragment> : AnkoComponentEx<Fragment>() {
             scrollView {
                 linearLayout {
                     orientation = LinearLayout.VERTICAL
+                    include<Button>(R.layout.button_subscribe) {
+                        text = context.getString(R.string.subscibeButton)
+                        textSize = 16F
+                        padding = 20.dp
+                    }.lparams { setMargins(0, dip(20), 0, dip(20)) }
+                    val subscibeButton = btn_subscribe
+
                     textView {
                         var txt = "<html><body style=\"text-align:justify\"> %s </body></html>"
                         val st: String = resources.getString(R.string.about)
@@ -70,6 +78,7 @@ class AboutUI<in Fragment> : AnkoComponentEx<Fragment>() {
                     }.lparams { setMargins(0, dip(20), 0, dip(20)) }
                     val fiveStarButton = btn_colored
 
+
 //                    TODO Раскоментировать когда `themedButton` is fixed.
 //                    val fiveStarButton = themedButton(theme = R.style.AppTheme_Button_Colored) {
 //                        text = context.getString(R.string.fiveStarButtonText)
@@ -86,6 +95,10 @@ class AboutUI<in Fragment> : AnkoComponentEx<Fragment>() {
                         if (!browse("market://details?id=$appPackageName", false)) {
                             browse("https://play.google.com/store/apps/details?id=$appPackageName")
                         }
+                    }
+
+                    subscibeButton.onClick {
+                        browse("https://www.youtube.com/channel/UCpSUF7w376aCRRvzkoNoAfQ", false)
                     }
                 }
             }.lparams (matchParent, matchParent){

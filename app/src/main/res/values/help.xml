@@ -109,6 +109,9 @@
         правом верхнем углу в описании любого этапа, для вызова подобного списка основных движений.</string>
     <string name="help_cub_2x2x2">Простой метод сборки кубоида 2х2х3 с ускорениями.</string>
     <string name="help_azbuka">Тут вы можете выбрать или создать свою азбуку для генератора скрамблов, которую он будет использовать в решении для скрамбла.</string>
-    <string name="help_redi">Интуитивный метод сборки Redicube в один алгоритм.</string>
+    <string name="help_redi">Интуитивный метод сборки RediCube в один алгоритм.</string>
+    <string name="help_clover">Интуитивный метод сборки CloverCube в один алгоритм.</string>
+    <string name="help_basic_redi">Основные движения для Redi куба</string>
+    <string name="help_basic_clover">Основные движения для Clover куба</string>
 
 </resources>

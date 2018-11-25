@@ -60,7 +60,8 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         url = lp.url
 
         var textString = "<html><body style=\"text-align:justify\"> %s </body></html>"
-        val st = getString(description)
+        var st = ""
+        if (description != 0) {st = getString(description)}
         textString = String.format(textString, st)
         val spanText = spannedString(textString, imgGetter, tagHandler)
 //        val spanText = Html.fromHtml("<br><p><strike>Test Strike</strike></p>", imgGetter, tagHandler)

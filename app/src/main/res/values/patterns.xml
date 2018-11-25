@@ -14,6 +14,7 @@
         <item>@string/patterns_st10_title</item>
         <item>@string/patterns_st11_title</item>
         <item>@string/patterns_st12_title</item>
+        <item>@string/patterns_st13_title</item>
     </string-array>
 
     <integer-array name="patterns_icon">
@@ -29,6 +30,7 @@
         <item>@drawable/pattern_10</item>
         <item>@drawable/pattern_11</item>
         <item>@drawable/pattern_12</item>
+        <item>@drawable/pattern_13</item>
     </integer-array>
     
     <string-array name="patterns_descr">
@@ -44,6 +46,7 @@
         <item>@string/patterns_st10_descr</item>
         <item>@string/patterns_st11_descr</item>
         <item>@string/patterns_st12_descr</item>
+        <item>@string/patterns_st13_descr</item>
     </string-array>
 
     <string-array name="patterns_url">
@@ -59,6 +62,7 @@
         <item>@string/patterns_st10_url</item>
         <item>@string/patterns_st11_url</item>
         <item>@string/patterns_st12_url</item>
+        <item>@string/patterns_st13_url</item>
     </string-array>
 
     <string-array name="patterns_comment">
@@ -74,145 +78,254 @@
         <item>@string/patterns_st10_comment</item>
         <item>@string/patterns_st11_comment</item>
         <item>@string/patterns_st12_comment</item>
+        <item>@string/patterns_st13_comment</item>
     </string-array>
 
 
     <string name="patterns_st1_title">1. Точки (Вишенка)</string>
     <string name="patterns_st1_descr" formatted="false"><![CDATA[
-        <p>Больше узоров вы можете найти на сайте <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>.</p>
+        <p>Еще больше узоров вы можете найти на сайте <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>.</p>
 
-        <p>Первый узор - точки разного цвета на каждой грани. Один из самых простых алгоритмов.
+        <p><a href="rg2://ytplay?time=1:01&link=l6V7517N_lQ">Первый узор</a>
+        - точки разного цвета на каждой грани. Один из самых простых алгоритмов.
         Крутим сначала одну, потом другую среднюю грань (без разницы какую), а потом возвращаем их обратно.
         Если получилась красная точка на белой грани, то она напоминает \"вишенку\" на торте.
         </p>
         <p style="text-align:center"><img src="pattern_1.xml"></p>
-        <b><a href="rg2://ytplay?time=0:44&link=5Tjr5R9q50w">Алгоритм:</a> S\' M\' S M</b>
+        <b><a href="rg2://ytplay?time=1:16&link=l6V7517N_lQ">Алгоритм:</a> S\' M\' S M</b>
     ]]></string>
-    <string name="patterns_st1_url">5Tjr5R9q50w</string>
+    <string name="patterns_st1_url">l6V7517N_lQ</string>
     <string name="patterns_st1_comment">S\' M\' S M</string>
 
 
     <string name="patterns_st2_title">2. Шахматы</string>
     <string name="patterns_st2_descr" formatted="false"><![CDATA[
-        <p>Второй алгоритм, пожалуй еще проще первого, если выполнять, через вращение средних слоев.
+        <p><a href="rg2://ytplay?time=1:30&link=l6V7517N_lQ">Второй узор,</a> пожалуй еще проще
+        первого, если выполнять, через вращение средних слоев.
         А смотрится, пожалуй, даже эффектнее предыдущего. Просто вращаем каждый средний слой по два раза
-        или вращаем каждую грань (1:51) по два раза, но в этом случае вращать надо парами (правую с левой, верхню
+        или вращаем каждую грань по два раза, но в этом случае вращать надо парами (правую с левой, верхню
         с нижней, заднюю с передней).
         </p>
         <p style="text-align:center"><img src="pattern_2.xml"></p>
-        <b><a href="rg2://ytplay?time=1:51&link=5Tjr5R9q50w">Алгоритм:</a> R2 L2 U2 D2 F2 B2</b> или <b>M2 S2 E2</b>
+        <p><b><a href="rg2://ytplay?time=1:41&link=l6V7517N_lQ">Алгоритм:</a> R2 L2 U2 D2 F2 B2</b> или <b>M2 S2 E2</b></p>
+
+        <p>Но шахматы могут быть не только такими простыми, но и немного сложнее.
+        В этом узоре цвета на одной грани уже будут не противоположные, а смежные. Получим
+        <a href="rg2://ytplay?time=1:53&link=l6V7517N_lQ">\"Шахматы 3-го пордяка\".</a></p>
+        <p style="text-align:center"><img src="pattern_2_1.xml"></p>
+
+        <p><b><a href="rg2://ytplay?time=2:10&link=l6V7517N_lQ">Алгоритм:</a> (U2 M2 U M2 U2 S2 D\' S2) z (U2 M2 U M2 U2 S2 D\' S2) (M\' S\' M S)</b></p>
+
+        <p>А если к этому алгоритму еще добавить и простые шахматы,
+        то получим <a href="rg2://ytplay?time=3:03&link=l6V7517N_lQ">\"Шахматы 6-го порядка.\"</a></p>
+        <p style="text-align:center"><img src="pattern_2_2.xml"></p>
+        <p><b><a href="rg2://ytplay?time=3:06&link=l6V7517N_lQ">Алгоритм:</a> (U2 M2 U M2 U2 S2 D\' S2) z (U2 M2 U M2 U2 S2 D\' S2) (M\' S\' M S) (M2 E2 S2)</b></p>
+
     ]]></string>
-    <string name="patterns_st2_url">5Tjr5R9q50w</string>
+    <string name="patterns_st2_url">l6V7517N_lQ</string>
     <string name="patterns_st2_comment">M2 S2 E2</string>
 
-    <string name="patterns_st3_title">3. Кубик в кубе</string>
+    <string name="patterns_st3_title">3. Кубики</string>
     <string name="patterns_st3_descr" formatted="false"><![CDATA[
-        <p>Непростой, но очень эффектный узор. Создается впечатление, что внутри кубика 3х3 есть еще
-        один кубик.
+        <p>Непростой, но очень эффектный узор. Создается впечатление, что внутри кубика 3х3 есть
+        <a href="rg2://ytplay?time=3:23&link=l6V7517N_lQ">еще один кубик 2x2.</a>
         </p>
         <p style="text-align:center"><img src="pattern_3.xml"></p>
-        <b><a href="rg2://ytplay?time=2:52&link=5Tjr5R9q50w">Алгоритм:</a> U2 F2 R2 U\' L2 D B R\' B R\' B R\' D\' L2 U\'</b>
+        <p><b><a href="rg2://ytplay?time=3:40&link=l6V7517N_lQ">Алгоритм:</a> U2 F2 R2 U\' L2 D B R\' B R\' B R\' D\' L2 U\'</b></p>
+
+        <p>Ну или кубик 1х1, другое название этого узора - \"Мезон\"</p>
+        <p style="text-align:center"><img src="pattern_3_1.xml"></p>
+        <p><b><a href="rg2://ytplay?time=4:27&link=l6V7517N_lQ">Алгоритм:</a> (U\' B2 U L\' F2 L) (U\' B2 U L\' F2 L)</b></p>
+
+        <p>А если их объединить, то получится <a href="rg2://ytplay?time=4:24&link=l6V7517N_lQ">\"Кубик в кубе в кубе\"</a></p>
+        <p style="text-align:center"><img src="pattern_3_2.xml"></p>
+
+        <p>Или можно сделать этот узор в один алгоритм:</p>
+        <p><b><a href="rg2://ytplay?time=5:00&link=l6V7517N_lQ">Алгоритм:</a> U\' L2 F2 D\' L\' D U2 R U\' R\' U2 R2 U F\' L\' U R\'</b></p>
+
+        <p>А если сделать \"Мезон\" еще раз, то получатся \"Кольца\". Ну или можно их сделать в один алгоритм.</p>
+        <p style="text-align:center"><img src="pattern_3_3.xml"></p>
+        <p><b><a href="rg2://ytplay?time=5:31&link=l6V7517N_lQ">Алгоритм:</a> U\' L2 F2 D\' L\' D U2 R U\' R\' U2 R2 U F\' L\' U R\'</b></p>
+
     ]]></string>
-    <string name="patterns_st3_url">5Tjr5R9q50w</string>
+    <string name="patterns_st3_url">l6V7517N_lQ</string>
     <string name="patterns_st3_comment">U2 F2 R2 U\' L2 D B R\' B R\' B R\' D\' L2 U\'</string>
 
-    <string name="patterns_st4_title">4. Змея</string>
+    <string name="patterns_st4_title">4. Змеи</string>
     <string name="patterns_st4_descr" formatted="false"><![CDATA[
-        <p>Еще один очень красивый узор. Змейка через весь кубик.
-        </p>
+        <p>Еще один очень красивый узор. <a href="rg2://ytplay?time=5:57&link=l6V7517N_lQ">Змейка</a> через весь кубик.</p>
         <p style="text-align:center"><img src="pattern_4.xml"></p>
-        <b><a href="rg2://ytplay?time=4:50&link=5Tjr5R9q50w">Алгоритм:</a> U B2 L D B\' F L\' D  U\' L\' R F\' D2 R\'</b>
+        <p><b><a href="rg2://ytplay?time=6:27&link=l6V7517N_lQ">Алгоритм:</a> U B2 L D B\' F L\' D  U\' L\' R F\' D2 R\'</b></p>
+
+        <p>Или еще другой вариант Змейки:</p>
+        <p style="text-align:center"><img src="pattern_4_1.xml"></p>
+        <p><b><a href="rg2://ytplay?time=7:02&link=l6V7517N_lQ">Алгоритм:</a> (R F B\' D\') F2 (D B F\' R\') F2 (U R2 U\') (D F2 D\')</b></p>
     ]]></string>
-    <string name="patterns_st4_url">5Tjr5R9q50w</string>
+    <string name="patterns_st4_url">l6V7517N_lQ</string>
     <string name="patterns_st4_comment">U B2 L D B\' F L\' D  U\' L\' R F\' D2 R\'</string>
 
-    <string name="patterns_st5_title">5. Крест</string>
+    <string name="patterns_st5_title">5. Кресты</string>
     <string name="patterns_st5_descr" formatted="false"><![CDATA[
-        <p>Крест на каждой стороне. Остальные узоры для кубика 3х3 вы всегда можете найти на
-        сайте <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>
+        <p><a href="rg2://ytplay?time=7:34&link=l6V7517N_lQ">Крест</a> на каждой стороне кубика.
         </p>
         <p style="text-align:center"><img src="pattern_5.xml"></p>
-        <b><a href="rg2://ytplay?time=6:29&link=5Tjr5R9q50w">Алгоритм:</a> L2 R\' B2 F2 D2 B2 F2 L2 R2 U2 R\'</b>
+        <p><b><a href="rg2://ytplay?time=7:54&link=l6V7517N_lQ">Алгоритм:</a> L2 R\' B2 F2 D2 B2 F2 L2 R2 U2 R\'</b></p>
+
+        <p>Еще один крест, уголки которого <a href="rg2://ytplay?time=7:34&link=l6V7517N_lQ">стоят иначе.</a></p>
+        <p style="text-align:center"><img src="pattern_5_1.xml"></p>
+        <p><b><a href="rg2://ytplay?time=8:29&link=l6V7517N_lQ">Алгоритм:</a> U F B\' L2 U2 L2 F\' B U2 L2 U</b></p>
     ]]></string>
-    <string name="patterns_st5_url">5Tjr5R9q50w</string>
+    <string name="patterns_st5_url">l6V7517N_lQ</string>
     <string name="patterns_st5_comment">L2 R\' B2 F2 D2 B2 F2 L2 R2 U2 R\'</string>
 
     <string name="patterns_st6_title">6. Молния в точку</string>
     <string name="patterns_st6_descr" formatted="false"><![CDATA[
-        <p>Очень интересный и необычный узор, которого вы не найдете на сайте
-        <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>. Его мне прислал
-        Дмитрий Константинов, за что ему большое спасибо.
-        </p>
+        <p>Очень интересный и <a href="rg2://ytplay?time=8:58&link=l6V7517N_lQ">необычный узор,</a>
+        которого вы не найдете на сайте <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>.
+        Его мне прислал Дмитрий Константинов, за что ему большое спасибо.</p>
         <p style="text-align:center"><img src="pattern_6.xml"></p>
-        <b>Алгоритм: (R2 F B\' R2 U\'D)(R2 F B\' R2 U\'D)(R2 F B\' R2 U\'D)</b>
+        <p><b><a href="rg2://ytplay?time=9:17&link=l6V7517N_lQ">Алгоритм:</a> (R2 F B\' R2 U\'D)(R2 F B\' R2 U\'D)(R2 F B\' R2 U\'D)</b></p>
     ]]></string>
-    <string name="patterns_st6_url"></string>
+    <string name="patterns_st6_url">l6V7517N_lQ</string>
     <string name="patterns_st6_comment">(R2 F B\' R2 U\'D)3</string>
 
-    <string name="patterns_st7_title">7. Другой крест</string>
+    <string name="patterns_st7_title">7. Уголки</string>
     <string name="patterns_st7_descr" formatted="false"><![CDATA[
-        <p> Немного другой крест, отличающийся от предыдущего расположением уголков.
-        </p>
+        <p>Еще одна серия узоров - <a href="rg2://ytplay?time=9:50&link=l6V7517N_lQ">Уголки.</a><br/>
+        Первый уголок:</p>
         <p style="text-align:center"><img src="pattern_7.xml"></p>
-        <b>Алгоритм: U F B\' L2 U2 L2 F\' B U2 L2 U</b>
+        <p><b><a href="rg2://ytplay?time=10:05&link=l6V7517N_lQ">Алгоритм:</a> F2 R2 D R2 D U F2 D\' R\' D\' F L2 F\' D R U\'</b></p>
+
+        <p><a href="rg2://ytplay?time=10:36&link=l6V7517N_lQ">Второй уголок:</a></p>
+        <p style="text-align:center"><img src="pattern_7_1.xml"></p>
+        <p><b><a href="rg2://ytplay?time=10:52&link=l6V7517N_lQ">Алгоритм:</a> U L2 D F D\' B\' U L\' B2 U2 F U\' F\' U2 B\' U</b></p>
+
+        <p>А если кроме ребер и угла, еще поменять и центры, то можно получить вот такой
+        <a href="rg2://ytplay?time=11:24&link=l6V7517N_lQ">Пропеллер.</a></p>
+        <p style="text-align:center"><img src="pattern_7_2.xml"></p>
+        <p><b><a href="rg2://ytplay?time=11:40&link=l6V7517N_lQ">Алгоритм:</a> U\' L2 U2 R2 U\' B2 L\' B D R\' B\' L\' B\' D2 B\' L D B\' U</b></p>
     ]]></string>
-    <string name="patterns_st7_url"></string>
-    <string name="patterns_st7_comment">U F B\' L2 U2 L2 F\' B U2 L2 U</string>
+    <string name="patterns_st7_url">l6V7517N_lQ</string>
+    <string name="patterns_st7_comment">F2 R2 D R2 D U F2 D\' R\' D\' F L2 F\' D R U\'</string>
 
     <string name="patterns_st8_title">8. Буквы П</string>
     <string name="patterns_st8_descr" formatted="false"><![CDATA[
-        <p>Немного другой вариант четырех букв П, по сравнению с тем, что приведен на сайте
-        <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>. Очень легкий
-        для запоминания алгоритм, надо всего лищь 7 раз выполнить пиф-паф/перехват. Если повторить
-        данный алгоритм еще раз, то получится ситуация как на сайте.
-        </p>
+        <p>Для начала <a href="rg2://ytplay?time=12:17&link=l6V7517N_lQ">короткий вариант \"Буквы П\",</a>
+        в котором цвета на одной грани противоположны друг другу.</p>
         <p style="text-align:center"><img src="pattern_8.xml"></p>
-        <b>Алгоритм: (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y</b>
+        <p><b><a href="rg2://ytplay?time=12:26&link=l6V7517N_lQ">Алгоритм:</a> M2 D\' M2 D2 M2 U\' S2 E</b></p>
+
+        <p>Немного другой вариант <a href="rg2://ytplay?time=12:43&link=l6V7517N_lQ">четырех букв П,</a>
+        в котором цвета получаются смежные. Очень легкий для запоминания алгоритм, надо всего лищь
+        7 раз выполнить пиф-паф/перехват. Если повторить данный алгоритм еще раз, то получится
+        предыдущий вариант.</p>
+        <p style="text-align:center"><img src="pattern_8_1.xml"></p>
+        <p><b><a href="rg2://ytplay?time=12:55&link=l6V7517N_lQ">Алгоритм:</a>
+        (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y (R U R\' U\') y</b></p>
+
+        <p>А если совместить первый узор с Шахматами, то получится \"Шахматы и тетрис\". Вадим,
+        спасибо за идею.
+        <p style="text-align:center"><img src="pattern_8_2.xml"></p>
+        <p><b>Алгоритм: (E2 S2) (D\' M2 D2 M2 U\' S2 E)</b></p>
     ]]></string>
-    <string name="patterns_st8_url"></string>
+    <string name="patterns_st8_url">l6V7517N_lQ</string>
     <string name="patterns_st8_comment">((R U R\' U\') y)7</string>
 
-    <string name="patterns_st9_title">9. Четыре полоски</string>
+    <string name="patterns_st9_title">9. Полоски</string>
     <string name="patterns_st9_descr" formatted="false"><![CDATA[
-        <p>Еще один узор, которого нет на сайте
-        <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>. Спасибо Егору за
-        присланный узор.</p>
+        <p>Еще одна большая группа узоров - <a href="rg2://ytplay?time=13:21&link=l6V7517N_lQ">\"Полоски\".</a>
+        Немного больше вы можете найти на сайте <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru.</a>
+        Начнем с очень простого варианта, который мне прислал Егор.</p>
         <p style="text-align:center"><img src="pattern_9.xml"></p>
-        <b>Алгоритм: R2 F2 M2 B2 L2</b>
+        <p><b><a href="rg2://ytplay?time=12:55&link=l6V7517N_lQ">Алгоритм:</a> R2 F2 M2 B2 L2</b></p>
+
+        <p>Все полоски <a href="rg2://ytplay?time=13:43&link=l6V7517N_lQ">разного цвета:</a></p>
+        <p style="text-align:center"><img src="pattern_9_1.xml"></p>
+        <p><b><a href="rg2://ytplay?time=13:49&link=l6V7517N_lQ">Алгоритм:</a> (R2 F D R2 D\' R B2 R\' D R2 D\' F\')
+        (R2 B2) y2 (R2 F D R2 D\' R B2 R\' D R2 D\' F\') (L2 F2) M2 S2</b></p>
+
+        <p>А можно сделать и полоски на всех <a href="rg2://ytplay?time=15:22&link=l6V7517N_lQ">шести гранях</a></p>
+        <p style="text-align:center"><img src="pattern_9_2.xml"></p>
+        <p><b><a href="rg2://ytplay?time=15:25&link=l6V7517N_lQ">Алгоритм:</a> U\' B2 L2 U M2 U\' R2 F2 D F B R E R\' B\' R\' E R2 E\' R\' F\' B2 R2 B2 F2 S</b></p>
+
     ]]></string>
-    <string name="patterns_st9_url"></string>
+    <string name="patterns_st9_url">l6V7517N_lQ</string>
     <string name="patterns_st9_comment">R2 F2 M2 B2 L2</string>
 
     <string name="patterns_st10_title">10. Клумба</string>
     <string name="patterns_st10_descr" formatted="false"><![CDATA[
-        <p>Еще один очень простой и интересный узор, которого нет на сайте
-        <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>. Спасибо Коле Константинову за
-        присланный узор.</p>
+        <p>Еще один очень простой и <a href="rg2://ytplay?time=16:15&link=l6V7517N_lQ">интересный узор,</a>
+        которого нет на сайте <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>.
+        Спасибо Коле Константинову за присланный узор.</p>
         <p style="text-align:center"><img src="pattern_10.xml"></p>
-        <b>Алгоритм: U2 B2 F2 L2 R2</b>
+        <p><b><a href="rg2://ytplay?time=16:34&link=l6V7517N_lQ">Алгоритм:</a> U2 (B2 F2) L2 R2</b> или <b>U2 S2 M2</b></p>
+
     ]]></string>
-    <string name="patterns_st10_url"></string>
+    <string name="patterns_st10_url">l6V7517N_lQ</string>
     <string name="patterns_st10_comment">U2 B2 F2 L2 R2</string>
 
-    <string name="patterns_st11_title">11. Рыбка на грани…</string>
+    <string name="patterns_st11_title">11. Рыбки</string>
     <string name="patterns_st11_descr" formatted="false"><![CDATA[
-        <p>Узор с буквами С, Р, Т и Г на боковых гранях, но если присмотреться, то буквы Т и Р образуют
-        \"Рыбку\", поэтому и такое название. Спасибо Дмитрию Константинову за присланный узор.</p>
+        <p>Сначала об узоре с очень <a href="rg2://ytplay?time=16:44&link=l6V7517N_lQ">необчной рыбкой.</a>
+        Кто-то в нем видит буквамы С, Р, Т и Г на
+        боковых гранях, но если присмотреться, то буквы Т и Р образуют на грани кубика
+        \"Рыбку\", поэтому авторское название узора - \"Рыбка на грани\". Спасибо Дмитрию
+        Константинову за присланный узор.</p>
         <p style="text-align:center"><img src="pattern_11.xml"></p>
-        <b>Алгоритм: D L\' R\' U2 L R D</b>
+        <p><b><a href="rg2://ytplay?time=17:08&link=l6V7517N_lQ">Алгоритм:</a> D (L\' R\') U2 (L R) D</b></p>
+
+        <p>Ну а можно сделать <a href="rg2://ytplay?time=17:26&link=l6V7517N_lQ">Рыбок на каждой грани.</a></p>
+        <p style="text-align:center"><img src="pattern_11_1.xml"></p>
+        <p><b><a href="rg2://ytplay?time=17:34&link=l6V7517N_lQ">Алгоритм:</a> U F2 U\' B\' U2 B U\' F2 U\' R\' U2 B\' U2 B R</b></p>
     ]]></string>
-    <string name="patterns_st11_url"></string>
+    <!--<p>А если немного усложнить \"Рыбку на грани\", то можно получить много разных не всегда-->
+        <!--\"понятных\" узоров, например:</p>-->
+    <!--<p style="text-align:center"><img src="pattern_11_2.xml"></p>-->
+
+    <!--<p><b>Алгоритм: U D (R L\') U\' D\' (L R\') U D (R L\')</p>-->
+
+    <string name="patterns_st11_url">l6V7517N_lQ</string>
     <string name="patterns_st11_comment">D L\' R\' U2 L R D</string>
 
-    <string name="patterns_st12_title">12. ФБК</string>
+    <string name="patterns_st12_title">12. ФБК и Буквы Н</string>
     <string name="patterns_st12_descr" formatted="false"><![CDATA[
-        <p>Очень простой узор, буквы Н только на двух гранях. А если взять кубик стандартно,
+        <p>Очень простой узор, <a href="rg2://ytplay?time=18:00&link=l6V7517N_lQ">буквы Н</a>
+        только на двух гранях. А если взять кубик стандартно,
         белой вверх, зеленой к себе, то получится эмблема ФБК. Спасибо Виктору Рудневу за присланный узор.</p>
         <p style="text-align:center"><img src="pattern_12.xml"></p>
-        <b>Алгоритм: U2 F\' R2 D2 L2 B2 U2 L2 D2 F\' U2</b>
+        <p><b><a href="rg2://ytplay?time=18:15&link=l6V7517N_lQ">Алгоритм:</a> U2 F\' R2 D2 L2 B2 U2 L2 D2 F\' U2</b></p>
+
+        <p>А если немного модифицировать шахматы, то легко получить Шесть букв Н</p>
+        <p style="text-align:center"><img src="pattern_12_1.xml"></p>
+        <p><b>Алгоритм: D2 M\' S2 M U2</b></p>
+
+        <p>P.S. Меня просто завалили письмами про различные варианты букв Н, поэтому приведу лишь
+        три базовых алгоритма <b>(R2 U2)3, (R2 U2 L2 U2)3</b> и <b>(U2 M2)2</b> используя которые,
+        можно придумать множество различных узоров в которых углы остаются на своих местах, а ребра
+        меняются местами.
+        </p>
     ]]></string>
-    <string name="patterns_st12_url"></string>
+    <string name="patterns_st12_url">l6V7517N_lQ</string>
     <string name="patterns_st12_comment">U2 F\' R2 D2 L2 B2 U2 L2 D2 F\' U2</string>
 
+    <string name="patterns_st13_title">13. Свой алгоритм/узор</string>
+    <string name="patterns_st13_descr" formatted="false"><![CDATA[
+        <p>Если у вас есть свой алгоритм для какого-то из выше приведенных узоров, то всегда можете
+        написать его в поле \"Свой комментариий (алгоритм):\" к соответствующему этапу (ниже видео)
+        и он отобразится в списке.</p>
 
+        <p>А если у вас есть какой-то узор и:<br/><br/>
+        1. Узора <b>нет на сайте <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a></b><br/>
+        2. Этого узора нет в программе<br/>
+        3. В узоре БОЛЬШЕ 6 ходов<br/>
+        4. Это <b>НЕ простой</b> узор состоящий только из двойных ходов, типа (R2 U2 L2 U2)3<br/>
+        5. Это <b>НЕ вариации</b> различных \"Букв Н\" или \"Крестов\" - поверьте, что их сделали
+        все, кому не лень было покрутить кубик<br/><br/>
+        то присылайте его мне на почту
+        <a href="mailto:rubicsguide@yandex.ru?subject=Узоры&body=Здравствуйте,%20Антон.">rubicsguide@yandex.ru</a><br/>
+        И если ваш узор действительно интересный, я его обязательно добавлю в программу.
+        </p>
+    ]]></string>
+    <string name="patterns_st13_url">l6V7517N_lQ</string>
+    <string name="patterns_st13_comment"></string>
 </resources>
