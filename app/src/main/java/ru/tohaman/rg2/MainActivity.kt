@@ -140,18 +140,18 @@ class MainActivity : MyDefaultActivity(),
         val curVersion = BuildConfig.VERSION_CODE
 
         //Увеличиваем счетчик запусков программы
-        var count = sp.getInt("startcount", 0)
+        var startCount = sp.getInt("startcount", 0)
         // Увеличиваем число запусков программы на 1 и сохраняем результат.
-        count++
+        startCount++
         //если это первый запуск
-        if (count == 1) {
+        if (startCount == 1) {
             //выводим окно с приветствием
             alert(getString(R.string.first_start)) { okButton { } }.show()
             //и отменяем вывод окна что нового в данной версии
             curPhase = "MAIN3X3"
             saveInt2SP(curVersion,"version",ctx)
         }
-        saveInt2SP(count,"startcount",ctx)
+        saveInt2SP(startCount,"startcount",ctx)
 
         // проверяем версию программы в файле настроек, если она отлична от текущей, то выводим окно с описанием обновлений
         if (curVersion != version) { //если версии разные
@@ -159,13 +159,13 @@ class MainActivity : MyDefaultActivity(),
         } else {
             //Проверяем платил ли уже пользователь, если не платил, то каждый 25-ый вход
             //напоминаем сказать спасибо.
-            if ((mCoins == 0) and (count % 25 == 0)) {
+            if ((mCoins == 0) and (startCount % 25 == 0)) {
                 curPhase = "THANKS"
                 alert(getString(R.string.help_thanks)) { okButton { } }.show()
             } else {
                 //Если не подписан на канал, то выводим окно с просьбой подписаться на канал.
                 val subscribe = sp.getBoolean("subscribe", false)
-                if ((!subscribe) and (count % 9 == 0)) {
+                if ((!subscribe) and (startCount % 9 == 0)) {
                     alert("Понравилось приложение? Подпишитесь на мой канал в Youtube.") {
                         positiveButton("Подписаться") {
                             browse("https://www.youtube.com/channel/UCpSUF7w376aCRRvzkoNoAfQ")
