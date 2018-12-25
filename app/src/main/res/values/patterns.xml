@@ -15,6 +15,8 @@
         <item>@string/patterns_st11_title</item>
         <item>@string/patterns_st12_title</item>
         <item>@string/patterns_st13_title</item>
+        <item>@string/patterns_st14_title</item>
+        <item>@string/patterns_st15_title</item>
     </string-array>
 
     <integer-array name="patterns_icon">
@@ -31,6 +33,8 @@
         <item>@drawable/pattern_11</item>
         <item>@drawable/pattern_12</item>
         <item>@drawable/pattern_13</item>
+        <item>@drawable/pattern_14</item>
+        <item>@drawable/pattern_15</item>
     </integer-array>
     
     <string-array name="patterns_descr">
@@ -47,6 +51,8 @@
         <item>@string/patterns_st11_descr</item>
         <item>@string/patterns_st12_descr</item>
         <item>@string/patterns_st13_descr</item>
+        <item>@string/patterns_st14_descr</item>
+        <item>@string/patterns_st15_descr</item>
     </string-array>
 
     <string-array name="patterns_url">
@@ -63,6 +69,8 @@
         <item>@string/patterns_st11_url</item>
         <item>@string/patterns_st12_url</item>
         <item>@string/patterns_st13_url</item>
+        <item>@string/patterns_st14_url</item>
+        <item>@string/patterns_st15_url</item>
     </string-array>
 
     <string-array name="patterns_comment">
@@ -79,6 +87,8 @@
         <item>@string/patterns_st11_comment</item>
         <item>@string/patterns_st12_comment</item>
         <item>@string/patterns_st13_comment</item>
+        <item>@string/patterns_st14_comment</item>
+        <item>@string/patterns_st15_comment</item>
     </string-array>
 
 
@@ -314,8 +324,34 @@
     <string name="patterns_st12_url">l6V7517N_lQ</string>
     <string name="patterns_st12_comment">U2 F\' R2 D2 L2 B2 U2 L2 D2 F\' U2</string>
 
-    <string name="patterns_st13_title">13. Свой алгоритм/узор</string>
+    <string name="patterns_st13_title">13. Реверс</string>
     <string name="patterns_st13_descr" formatted="false"><![CDATA[
+        <p>Ситуация, когда все элементы (ребра и углы) находятся на своих местах, но все ребра перевернуты.
+        Узором такую ситуацию можно назвать лишь \"с натяжкой\", но есть у этого узора одна \"фишка\" -
+        это единственная ситуация в кубике Рубика 3х3, которую НЕВОЗМОЖНО решить, меньше чем за
+        20 ходов. Любую другую ситуацию можно решить за 19 ходов или меньше.</p>
+
+        <p style="text-align:center"><img src="pattern_13.xml"></p>
+
+        <p><b>Алгоритм: U R U2 R F2 L U2 R F\' B\' R2 D R\' L U2 F2 D2 F R2 D</b></p>
+    ]]></string>
+    <string name="patterns_st13_url">l6V7517N_lQ</string>
+    <string name="patterns_st13_comment">U R U2 R F2 L U2 R F\' B\' R2 D R\' L U2 F2 D2 F R2 D</string>
+
+    <string name="patterns_st14_title">14. Подарок с бантиком</string>
+    <string name="patterns_st14_descr" formatted="false"><![CDATA[
+        <p>Еще один узор от пользователя программы Old Foxy. Напоминает красивую полосатую коробку
+        перевязанную ленточкой с бантиком, отсюда и название.</p>
+
+        <p style="text-align:center"><img src="pattern_14.xml"></p>
+
+        <p><b>Алгоритм: B2 L2 U F2 U\' F2 R2 D\' R2 B2 F\' L\' U L2 U\' L F U\'</b></p>
+    ]]></string>
+    <string name="patterns_st14_url">l6V7517N_lQ</string>
+    <string name="patterns_st14_comment">B2 L2 U F2 U\' F2 R2 D\' R2 B2 F\' L\' U L2 U\' L F U\'</string>
+
+    <string name="patterns_st15_title">15. Свой алгоритм/узор</string>
+    <string name="patterns_st15_descr" formatted="false"><![CDATA[
         <p>Если у вас есть свой алгоритм для какого-то из выше приведенных узоров, то всегда можете
         написать его в поле \"Свой комментариий (алгоритм):\" к соответствующему этапу (ниже видео)
         и он отобразится в списке.</p>
@@ -337,6 +373,6 @@
         невозможно добавить в программу.
         </p>
     ]]></string>
-    <string name="patterns_st13_url">l6V7517N_lQ</string>
-    <string name="patterns_st13_comment"></string>
+    <string name="patterns_st15_url">l6V7517N_lQ</string>
+    <string name="patterns_st15_comment"></string>
 </resources>

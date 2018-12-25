@@ -269,7 +269,8 @@ class MainActivity : MyDefaultActivity(),
         curPhase = "CLOVER"
         if (fromVersion < 68) { updateComment68()}
         if (fromVersion < 79) { updateComment79()}
-    }
+        if (fromVersion < 86) { update86() }
+     }
 
     private fun updateComment68() {
         //Исправление ошибки в комментах к узорам
@@ -288,6 +289,18 @@ class MainActivity : MyDefaultActivity(),
             pattern.comment = "F2 R2 D R2 D U F2 D' R' D' F L2 F' D R U'"
             mListPagerLab.updateListPager(pattern)
         }
+    }
+
+    private fun update86() {
+        alert("Дорогие друзья, проекту очень требуется ваша помощь. Если вы умеете " +
+                "программировать на Kotlin или Swift и у вас есть желание помочь - пожалуйста, " +
+                "напишите мне на почту") {
+            positiveButton("OK") {
+            }
+            negativeButton("Написать") {
+                email("rubicsguide@yandex.ru", "Помощь проекту", "Добрый день, Антон.\n")
+            }
+        }.show()
     }
 
     private fun setFragment (fragment: Fragment) {
