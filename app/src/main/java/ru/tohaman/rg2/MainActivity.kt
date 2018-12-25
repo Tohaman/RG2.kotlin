@@ -59,14 +59,10 @@ const val CHK_BUF_EDGES = "checkEdgesBuffer"
 const val CHK_BUF_CORNERS = "checkCornersBuffer"
 const val CHK_SHOW_SOLVE = "checkShowSolve"
 
-
 // SKUs для продуктов: при изменении не забыть поправить в sayThanks
 const val BIG_DONATION = "big_donation"
 const val MEDIUM_DONATION = "medium_donation"
 const val SMALL_DONATION = "small_donation"
-
-val listOfBasic = listOf("BASIC3X3", "BASIC4X4", "BASIC5X5", "BASIC_PYR", "BASIC_SKEWB", "BASIC_SQ1")
-
 
 class MainActivity : MyDefaultActivity(),
         NavigationView.OnNavigationItemSelectedListener,
