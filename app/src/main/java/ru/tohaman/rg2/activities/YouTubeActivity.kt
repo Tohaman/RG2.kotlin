@@ -53,8 +53,9 @@ class YouTubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListen
         }
 
         //Log.v (DebugTag.TAG, "YouTubeActivity преобразуем время")
-        var time = intent.data!!.getQueryParameter("time")
-        videoId = intent.data!!.getQueryParameter("link")
+        var time = ""
+        intent.data!!.getQueryParameter("time").let { time = it!! }
+        intent.data!!.getQueryParameter("link").let { videoId = it!! }
 
         val result = YouTubeApiServiceUtil.isYouTubeApiServiceAvailable(ctx)
         if (result == YouTubeInitializationResult.SUCCESS) {

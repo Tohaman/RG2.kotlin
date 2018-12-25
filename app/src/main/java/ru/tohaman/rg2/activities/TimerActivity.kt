@@ -32,7 +32,7 @@ class TimerActivity : AppCompatActivity() {
         if (fragment == null) {
             fragment = FragmentTimer()
             fm.beginTransaction()
-                    .add(R.id.fragment_container, fragment, FRAGMENT_INSTANCE_NAME)
+                    .add(R.id.fragment_container, fragment as FragmentTimer, FRAGMENT_INSTANCE_NAME)
                     .commit()
         }
     }

@@ -123,7 +123,7 @@ class MainActivity : MyDefaultActivity(),
 
         //Если повернули экран или вернулись в активность, то открываем ту фазу, которая была, иначе - берем данные из SharedPreference
         curPhase = if (savedInstanceState != null) {
-            savedInstanceState.getString("phase")
+            savedInstanceState.getString("phase").let { it!! }
         } else {
             loadStartPhase()
         }
@@ -202,11 +202,11 @@ class MainActivity : MyDefaultActivity(),
 
         nav_view.setNavigationItemSelectedListener(this)
         if (!sp.getBoolean("fab_on", false)) {
-            fab.visibility = View.GONE
+            fab.hide()
         } else {
-            fab.visibility = View.VISIBLE
+            fab.show()
         }
-        fab.setOnClickListener { _ ->
+        fab.setOnClickListener {
             val backPhase = mListPagerLab.getBackPhase(curPhase,ctx)
             if (backPhase == "") {
                 when (curPhase) {
@@ -243,7 +243,7 @@ class MainActivity : MyDefaultActivity(),
         // подключим адаптер для выезжающего справа списка
         val rightDrawerListView  = findViewById<ListView>(R.id.main_right_drawer)
         rightDrawerListView.adapter = rightDrawerAdapter
-        rightDrawerListView.setOnItemClickListener { adapterView, view, i, l ->
+        rightDrawerListView.setOnItemClickListener { _, _, i, _ ->
             val changedId = favList[i].id
             changedPhase = favList[i].url
             if (changedPhase in listOfOllMenu) {
@@ -672,7 +672,7 @@ class MainActivity : MyDefaultActivity(),
 
     private fun loadStartPhase():String {
         val sp = PreferenceManager.getDefaultSharedPreferences(this)
-        return sp.getString("startPhase", "BEGIN")
+        return sp.getString("startPhase", "BEGIN").let { it!! }
     }
 
     private fun saveStartPhase(phase:String) {
@@ -747,16 +747,16 @@ class MainActivity : MyDefaultActivity(),
             }
             "fab_on" -> {
                 if (!sp.getBoolean(key, true)) {
-                    fab.visibility = View.GONE
+                    fab.hide()
                 } else {
-                    fab.visibility = View.VISIBLE
+                    fab.show()
                 }
             }
             "screen_always_on" -> {
                 setScreenOn(IS_SCREEN_ALWAYS_ON, ctx)
             }
             "startPhase" -> {
-                val phase = sp.getString(key, "BEGIN")
+                val phase = sp.getString(key, "BEGIN").let { it!! }
                 val id = sp.getInt("startId", 0)
                 if (curPhase !=  phase) {
                     changedPhase = phase
@@ -891,7 +891,7 @@ class MainActivity : MyDefaultActivity(),
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         Log.d(TAG, "onActivityResult($requestCode,$resultCode,$data")
         if (mHelper == null) return
 

@@ -11,7 +11,6 @@ import android.widget.LinearLayout.VERTICAL
 import org.jetbrains.anko.*
 import ru.tohaman.rg2.MainActivity
 import ru.tohaman.rg2.data.ListPager
-import ru.tohaman.rg2.listOfBasic
 
 /**
  * Created by anton on 27.11.17. Адаптер для listview включает в себя сразу и UI
