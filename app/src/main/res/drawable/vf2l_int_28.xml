@@ -28,9 +28,9 @@
     <path android:fillColor="@color/c_gr" android:pathData="M81.31,10.52l-5.64,5.01l0,20.21l5.45,-5.99z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M86.87,5.45l-4.77,4.21l-0.06,19.1l4.46,-5.07z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M74.75,39.02l-6.31,6.86l0.12,20.28l6.01,-7.67z"/>
-    <path android:fillColor="@color/c_b" android:pathData="M80.94,32.04l-5.39,5.93l0,19.22l5.32,-6.8z"/>
+    <path android:fillColor="@color/c_g" android:pathData="M80.94,32.04l-5.39,5.93l0,19.22l5.32,-6.8z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M86.5,25.98l-4.77,5.25l-0.06,18.05l4.58,-5.87z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M74.57,60.84l-6.01,7.73l0.13,19.22l5.94,-8.9z"/>
-    <path android:fillColor="@color/c_b" android:pathData="M80.87,52.56l-5.44,7.17l0.12,17.8l5.14,-7.79z"/>
+    <path android:fillColor="@color/c_g" android:pathData="M80.87,52.56l-5.44,7.17l0.12,17.8l5.14,-7.79z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M86.19,45.26l-4.52,6.12l-0.19,17.37l4.4,-6.73z"/>
 </vector>
