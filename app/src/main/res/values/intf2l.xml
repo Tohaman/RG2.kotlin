@@ -257,7 +257,7 @@
         слоты останутся неизменными.</p>
 
         <p>Например, планка спереди сверху, ее слот <a href="rg2://ytplay?time=2:43&link=8y-RkaihG_c">спереди справа.</a></p>
-        <p style="text-align:center"><img src="vf2l_int_21.xml"></p>
+        <p style="text-align:center"><img src="f2l_int_21.xml"></p>
 
         <p>Формулами это будет <b>(R B L) U\' (L\' B\' R\')</b> или <b>M U Rw U\' Rw\' U\' M\'</b>.
         Но если задний правый слот <a href="rg2://ytplay?time=3:30&link=8y-RkaihG_c">не занят,</a>
@@ -274,7 +274,7 @@
         мои ассоциации помогут вам их решать быстрее.</p>
 
         <p>5.1. <a href="rg2://ytplay?time=4:39&link=8y-RkaihG_c">Планка сверху</a></p>
-        <p style="text-align:center"><img src="vf2l_int_21.xml"></p>
+        <p style="text-align:center"><img src="f2l_int_21.xml"></p>
 
         <p>Самый простой и интуитивный вариант решения в таком случае, \"перепрыгнуть\" ребро углом. Если
         задний слот не занят, то это очень легко сделать<br/>
@@ -284,14 +284,14 @@
         Например, <b>M U Rw U\' Rw\' U\' M\'</b>.</p>
 
         <p>Если планка стоит <a href="rg2://ytplay?time=5:33&link=8y-RkaihG_c">вот так</a></p>
-        <p style="text-align:center"><img src="vf2l_int_22.xml"></p>
+        <p style="text-align:center"><img src="f2l_int_22.xml"></p>
 
         <p>то интуитивно, опять же, \"перепрыгиваем\" ребро углом. Подгоняем нижние два слоя и заселяем пару в три хода.
         <b>(R U\' R\' U) Dw (R\' U\' R)</b>. А чтобы не делать перехват или не крутить два нижних
         слоя, можно воспользоваться непростым алгоритмом из Advanced F2L - <b>Lw R U\' R\' U Lw\' U2 (R U\' R\')</b>.</p>
 
         <p>5.2. <a href="rg2://ytplay?time=5:52&link=8y-RkaihG_c">Планка снизу</a></p>
-        <p style="text-align:center"><img src="vf2l_int_23.xml"></p>
+        <p style="text-align:center"><img src="f2l_int_23.xml"></p>
 
         <p>Интуитивный вариант - угол должен «поднырнуть» под ребро. Опять же, если задний
         <a href="rg2://ytplay?time=6:02&link=8y-RkaihG_c">слот не занят,</a>
@@ -300,7 +300,7 @@
         сложнее, т.к. надо вернуть еще и заднюю пару: <b>(R\' U\' R) (U\' R\' U2) (R2\' U2\' R\')</b></p>
 
         <p>Если <a href="rg2://ytplay?time=6:53&link=8y-RkaihG_c">планка вертикальная</a></p>
-        <p style="text-align:center"><img src="vf2l_int_24.xml"></p>
+        <p style="text-align:center"><img src="f2l_int_24.xml"></p>
 
         <p>то, опять же, угол <a href="rg2://ytplay?time=6:56&link=8y-RkaihG_c">\"подныривает\" под ребро,</a>
         ребро проходит над углом и, поскольку, переднюю грань крутить лишний раз не хочется, то
@@ -312,11 +312,11 @@
         только \"перепрыгнув\" угол уходит еще дальше. Если
         <a href="rg2://ytplay?time=7:33&link=8y-RkaihG_c">пара горизонтальная,</a> то сначала лучше
         сделать перехват. Если <a href="rg2://ytplay?time=7:51&link=8y-RkaihG_c">вертикальная,</a> то перехват не нужен.</p>
-        <p style="text-align:center"><img src="vf2l_int_25.xml"></p>
+        <p style="text-align:center"><img src="f2l_int_25.xml"></p>
 
         <p><b>y\' (R\' U2 R) U (R\' U\' R)</b></p>
 
-        <p style="text-align:center"><img src="vf2l_int_26.xml"></p>
+        <p style="text-align:center"><img src="f2l_int_26.xml"></p>
 
         <p><b>(R U2 R\') U\' (R U R\')</b></p>
 
@@ -334,7 +334,7 @@
         Изучайте в первую очередь алгоритмы для тех ситуаций, когда для выполнения требуется перехват,
         наверняка есть короткий и удобный алгоритм, который можно выполнить без перехвата, чаще всего
         за счет вращения среднего слоя. Например, вот для такой ситуации.</p>
-        <p style="text-align:center"><img src="vf2l_int_27.xml"></p>
+        <p style="text-align:center"><img src="f2l_int_27.xml"></p>
 
         <p>Можно выполнить перехват и загнать пару в четыре хода, а можно и
         <a href="rg2://ytplay?time=10:12&link=8y-RkaihG_c">без перехвата:</a><br/>
@@ -357,10 +357,10 @@
         <p>Начнем <a href="rg2://ytplay?time=12:55&link=8y-RkaihG_c">с терминологии</a> данного ускорения:</p>
         <p>Если ребро \"дружит\" с одним из боковых центров, то такое ребро будем называть \"хорошим\",
         а если дружит с передним или задним центром, то \"плохим\".</p>
-        <p style="text-align:center"><img src="vf2l_int_28.xml"><img src="vf2l_int_29.xml"><br/>
+        <p style="text-align:center"><img src="f2l_int_28.xml"><img src="f2l_int_29.xml"><br/>
         Хорошее ребро</p>
 
-        <p style="text-align:center"><img src="vf2l_int_30.xml"><img src="vf2l_int_31.xml"><br/>
+        <p style="text-align:center"><img src="f2l_int_30.xml"><img src="f2l_int_31.xml"><br/>
         Плохое ребро</p>
 
         <p>Заметьте, что если сделать перехват, то плохое ребро станет хорошим, а хорошее плохим.</p>
