@@ -357,10 +357,10 @@
         <p>Начнем <a href="rg2://ytplay?time=12:55&link=8y-RkaihG_c">с терминологии</a> данного ускорения:</p>
         <p>Если ребро \"дружит\" с одним из боковых центров, то такое ребро будем называть \"хорошим\",
         а если дружит с передним или задним центром, то \"плохим\".</p>
-        <p style="text-align:center"><img src="f2l_int_28.xml"><img src="f2l_int_29.xml"><br/>
+        <p style="text-align:center"><img src="f2l_int_28.xml"> или <img src="f2l_int_29.xml"><br/>
         Хорошее ребро</p>
 
-        <p style="text-align:center"><img src="f2l_int_30.xml"><img src="f2l_int_31.xml"><br/>
+        <p style="text-align:center"><img src="f2l_int_30.xml"> или <img src="f2l_int_31.xml"><br/>
         Плохое ребро</p>
 
         <p>Заметьте, что если сделать перехват, то плохое ребро станет хорошим, а хорошее плохим.</p>

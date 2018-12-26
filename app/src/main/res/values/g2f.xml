@@ -15,7 +15,7 @@
     <integer-array name="g2f_icon">
         <item>@drawable/vbegin_0</item>
         <item>@drawable/vaccel_2</item>
-        <item>@drawable/vcross</item>
+        <item>@drawable/cross</item>
         <item>@drawable/vf2l</item>
         <!--<item>@drawable/vf2l</item>-->
         <item>@drawable/vpll</item>
