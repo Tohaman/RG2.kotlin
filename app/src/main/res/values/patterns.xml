@@ -375,4 +375,10 @@
     ]]></string>
     <string name="patterns_st15_url">l6V7517N_lQ</string>
     <string name="patterns_st15_comment"></string>
+
+
+
+    <!--Это - не совсем узор, а скорее скрамбл. Эта ситуация уникальна - ни на одной стороне нет ни одного блока!-->
+    <!--Алгоритм: (FBLR)(FBLR)LR-->
+
 </resources>
