@@ -113,5 +113,6 @@
     <string name="help_clover">Интуитивный метод сборки CloverCube в один алгоритм.</string>
     <string name="help_basic_redi">Основные движения для Redi куба</string>
     <string name="help_basic_clover">Основные движения для Clover куба</string>
+    <string name="help_mainF2L">Различные методы сборки первых двух слоев.</string>
 
 </resources>

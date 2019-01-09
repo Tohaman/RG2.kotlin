@@ -372,7 +372,9 @@ class MainActivity : MyDefaultActivity(),
                     "BEGIN_BNDR" -> {
                         alert(getString(R.string.help_bondarenko)) { okButton { } }.show()
                     }
-
+                    "MAIN_F2L" -> {
+                        alert(getString(R.string.help_mainF2L)) { okButton { } }.show()
+                    }
                     "MAIN2X2" -> {
                         alert(getString(R.string.help_main2x2)) { okButton { } }.show()
                     }
