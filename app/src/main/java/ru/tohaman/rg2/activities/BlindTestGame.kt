@@ -167,7 +167,6 @@ class BlindTestGame : MyDefaultActivity() {
         }
     }
 
-
     private fun maskedDrawable(scramble: String, slot: Int): LayerDrawable {
         //ширина картинки 200dp
         val width = 200

@@ -17,6 +17,7 @@
         <item>@string/patterns_st13_title</item>
         <item>@string/patterns_st14_title</item>
         <item>@string/patterns_st15_title</item>
+        <item>@string/patterns_st16_title</item>
     </string-array>
 
     <integer-array name="patterns_icon">
@@ -35,6 +36,7 @@
         <item>@drawable/pattern_13</item>
         <item>@drawable/pattern_14</item>
         <item>@drawable/pattern_15</item>
+        <item>@drawable/pattern_16</item>
     </integer-array>
     
     <string-array name="patterns_descr">
@@ -53,6 +55,7 @@
         <item>@string/patterns_st13_descr</item>
         <item>@string/patterns_st14_descr</item>
         <item>@string/patterns_st15_descr</item>
+        <item>@string/patterns_st16_descr</item>
     </string-array>
 
     <string-array name="patterns_url">
@@ -71,6 +74,7 @@
         <item>@string/patterns_st13_url</item>
         <item>@string/patterns_st14_url</item>
         <item>@string/patterns_st15_url</item>
+        <item>@string/patterns_st16_url</item>
     </string-array>
 
     <string-array name="patterns_comment">
@@ -89,6 +93,7 @@
         <item>@string/patterns_st13_comment</item>
         <item>@string/patterns_st14_comment</item>
         <item>@string/patterns_st15_comment</item>
+        <item>@string/patterns_st16_comment</item>
     </string-array>
 
 
@@ -263,6 +268,14 @@
         <p><b><a href="rg2://ytplay?time=15:25&link=l6V7517N_lQ">Алгоритм:</a> U\' B2 L2 U M2 U\' R2 F2 D F B R E R\' B\' R\' E R2 E\' R\' F\' B2 R2 B2 F2 S</b></p>
 
     ]]></string>
+
+    <!--Комбинация для создания "флагов" - E' B R D2 R' D. Будет горизонтальный триколор. Цвет,
+    который на передней стороне, будет наверху, на правой - посередине, а на нижней - внизу. Т.е.
+    для русского флага спереди должен быть белый, справа синий, а внизу красный. Так же можно
+    сделать E B' R D2 R' D, тогда все будет то же самое, но цвет верхней стороны будет внизу.
+    Вертикальный триколор - M B U R2 U' R (Хотя можно сделать горизонтальный и перехват)-->
+
+
     <string name="patterns_st9_url">l6V7517N_lQ</string>
     <string name="patterns_st9_comment">R2 F2 M2 B2 L2</string>
 
@@ -352,15 +365,15 @@
 
     <string name="patterns_st15_title">15. Цветомузыка</string>
     <string name="patterns_st15_descr" formatted="false"><![CDATA[
-    <p>Это - не совсем узор, а скорее просто скрамбл, но эта ситуация уникальна - ни на одной стороне
-    нет ни одного блока. </p>
+    <p>Еще один не совсем узор, а скорее просто интересная ситуация - ни на одной стороне нет ни одного блока.</p>
+
     <p style="text-align:center"><img src="pattern_15.xml"></p>
 
-    <p>Алгоритм: <b>(FBLR)(FBLR)LR</b></p>
+    <p>Алгоритм: <b>(F B L R) (F B L R) L R</b></p>
 
     ]]></string>
     <string name="patterns_st15_url">l6V7517N_lQ</string>
-    <string name="patterns_st15_comment"></string>
+    <string name="patterns_st15_comment">(F B L R)2 L R</string>
 
     <string name="patterns_st16_title">16. Свой алгоритм/узор</string>
     <string name="patterns_st16_descr" formatted="false"><![CDATA[
