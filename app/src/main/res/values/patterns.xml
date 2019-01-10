@@ -267,6 +267,10 @@
         <p style="text-align:center"><img src="pattern_9_2.xml"></p>
         <p><b><a href="rg2://ytplay?time=15:25&link=l6V7517N_lQ">Алгоритм:</a> U\' B2 L2 U M2 U\' R2 F2 D F B R E R\' B\' R\' E R2 E\' R\' F\' B2 R2 B2 F2 S</b></p>
 
+        Ну и раздел с полосками был бы неполным без простого алгоритма для создания флага РФ на одной из сторон кубика.
+
+
+
     ]]></string>
 
     <!--Комбинация для создания "флагов" - E' B R D2 R' D. Будет горизонтальный триколор. Цвет,
@@ -325,7 +329,7 @@
         <p><b><a href="rg2://ytplay?time=18:15&link=l6V7517N_lQ">Алгоритм:</a> U2 F\' R2 D2 L2 B2 U2 L2 D2 F\' U2</b></p>
 
         <p>А если немного модифицировать шахматы, то легко получить Шесть букв Н</p>
-        <p style="text-align:center"><img src="pattern_12_1.xml"></p>
+        <p style="text-align:center"><img src="pattern_12_1.xml" width="20%%"></p>
         <p><b>Алгоритм: D2 M\' S2 M U2</b></p>
 
         <p>P.S. В принципе, \"буквы Н\" можно отнести к узорам состоящим из двойных вращений, поэтому приведу лишь
@@ -344,7 +348,7 @@
         это единственная ситуация в кубике Рубика 3х3, которую НЕВОЗМОЖНО решить, меньше чем за
         20 ходов. Любую другую ситуацию можно решить за 19 ходов или меньше.</p>
 
-        <p style="text-align:center"><img src="pattern_13.xml"></p>
+        <p style="text-align:center"><img src="pattern_13.xml" width="20%%"></p>
 
         <p><b>Алгоритм: U R U2 R F2 L U2 R F\' B\' R2 D R\' L U2 F2 D2 F R2 D</b></p>
     ]]></string>
@@ -356,7 +360,7 @@
         <p>Еще один узор от пользователя программы Old Foxy. Напоминает красивую полосатую коробку
         перевязанную ленточкой с бантиком, отсюда и название.</p>
 
-        <p style="text-align:center"><img src="pattern_14.xml"></p>
+        <p style="text-align:center"><img src="pattern_14.xml" width="20%%"></p>
 
         <p><b>Алгоритм: B2 L2 U F2 U\' F2 R2 D\' R2 B2 F\' L\' U L2 U\' L F U\'</b></p>
     ]]></string>
@@ -367,7 +371,7 @@
     <string name="patterns_st15_descr" formatted="false"><![CDATA[
     <p>Еще один не совсем узор, а скорее просто интересная ситуация - ни на одной стороне нет ни одного блока.</p>
 
-    <p style="text-align:center"><img src="pattern_15.xml"></p>
+    <p style="text-align:center"><img src="pattern_15.xml" width="20%%"></p>
 
     <p>Алгоритм: <b>(F B L R) (F B L R) L R</b></p>
 
