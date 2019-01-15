@@ -32,7 +32,7 @@ class FragmentBlindGameSettings : Fragment() {
     private var mListener: OnBlindGameInteractionListener? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = BlindGameSettingsUI<Fragment>().createView(AnkoContext.create(ctx, this))
+        val view = BlindGameSettingsUI<Fragment>().createView(AnkoContext.create(requireContext(), this))
         val azbukaButton = view.findViewById<Button>(R.id.azbuka_select_button)
         azbukaButton.onClick {
             Log.v (DebugTag.TAG, "AzbukaButton Click")

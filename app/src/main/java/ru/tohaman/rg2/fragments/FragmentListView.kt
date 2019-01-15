@@ -48,7 +48,7 @@ class FragmentListView : ListFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         Log.v (DebugTag.TAG, "FragmentListView onActivityCreated $mPhase")
         super.onActivityCreated(savedInstanceState)
-        val listPagers : ArrayList<ListPager> = ListPagerLab.get(ctx).getPhaseList(mPhase)
+        val listPagers : ArrayList<ListPager> = ListPagerLab.get(requireContext()).getPhaseList(mPhase)
         myListAdapter = MyListAdapter(listPagers,1.5f)
         listAdapter = myListAdapter
         //толщина разделителя между пунктами меню
@@ -107,7 +107,7 @@ class FragmentListView : ListFragment() {
     }
 
     private fun loadSavedState() {
-        mPhase = arguments!!.getString("phase")
+        mPhase = arguments!!.getString("phase")!!
         Log.v (DebugTag.TAG, "Load SavedState = $mPhase")
     }
 
