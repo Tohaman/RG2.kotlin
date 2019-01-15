@@ -22,7 +22,7 @@ import java.util.ArrayList
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_sliding.*
 import org.jetbrains.anko.*
-import org.jetbrains.anko.sdk25.coroutines.onItemClick
+import org.jetbrains.anko.sdk27.coroutines.onItemClick
 import ru.tohaman.rg2.*
 import ru.tohaman.rg2.fragments.FragmentPagerItem
 import ru.tohaman.rg2.util.saveInt2SP

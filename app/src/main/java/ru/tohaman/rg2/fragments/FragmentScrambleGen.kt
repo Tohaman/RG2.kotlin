@@ -11,9 +11,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import kotlinx.android.synthetic.main.fragment_scramble_gen.*
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.async
+import kotlinx.coroutines.*
 import org.jetbrains.anko.*
+//TODO Check Anko SDK Version change to 27
 import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.support.v4.alert
@@ -26,13 +26,14 @@ import ru.tohaman.rg2.adapters.MyGridAdapter
 import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.util.*
 import java.util.*
+import kotlin.coroutines.CoroutineContext
 
 /**
  * Created by anton on 27.11.17. Фрагмент отображающий генератор скрамблов
  *
  */
 
-class FragmentScrambleGen : Fragment() {
+class FragmentScrambleGen : Fragment(), CoroutineScope {
 
     private var mListener: OnScrambleGenInteractionListener? = null
 
@@ -50,6 +51,19 @@ class FragmentScrambleGen : Fragment() {
     private lateinit var buttonPlus: Button
     private lateinit var buttonMinus: Button
 
+    // корутина может быть легко ограничена жизненным циклом Fragment
+    private val scope = CoroutineScope(Dispatchers.Main)
+
+    private val job = SupervisorJob()
+
+    override val coroutineContext = Dispatchers.Main + job
+
+    override fun onDestroy() {
+        super.onDestroy()
+        coroutineContext.cancelChildren()
+    }
+
+
 //    private var listEdgesOnPlace: SortedMap<Int,Int> = sortedMapOf(0 to 0)
 //    private var listCornersOnPlace: SortedMap<Int,Int> = sortedMapOf(0 to 0)
 
@@ -58,10 +72,10 @@ class FragmentScrambleGen : Fragment() {
 
         val sp = PreferenceManager.getDefaultSharedPreferences(context)
         val uri = activity?.intent?.data
-        var scramble = sp.getString(SCRAMBLE, "U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R")
+        var scramble = sp.getString(SCRAMBLE, "U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R")!!
         // Если вызван с параметром, то скрамбл взять из параметра, а не из базы
         if (uri != null) {
-            scramble = uri.getQueryParameter("scram")
+            scramble = uri.getQueryParameter("scram")!!
             scramble = scramble.replace("_", " ")
         }
         var chkEdgesBuffer = sp.getBoolean(CHK_BUF_EDGES, true)
@@ -197,7 +211,7 @@ class FragmentScrambleGen : Fragment() {
     }
 
     private fun showSolve(cube: IntArray): String {
-        val st = getSolve(cube, ctx).first
+        val st = getSolve(cube, requireContext()).first
         return if (checkBoxShowSolve.isChecked) {
             st
         } else {
@@ -220,11 +234,10 @@ class FragmentScrambleGen : Fragment() {
         progressText.visibility = View.VISIBLE
         textSolve.text = ""
         //запускаем в бэкграунде поиск скрамбла удовлетворяющего условиям
-        val scramble = async(UI) {
-            generateScrambleWithParam(chkEdgesBuffer, chkCornersBuffer, scrambleLength, ctx)
+        scope.launch (Dispatchers.Main) {
+            val scramble = generateScrambleWithParam(chkEdgesBuffer, chkCornersBuffer, scrambleLength, requireContext())
+            showScrambleGenResult (scramble)
         }
-        // ждем результат генерации и выводим его
-        showScrambleGenResult(scramble.await())
     }
 
     private fun showScrambleGenResult(genRes: String) {

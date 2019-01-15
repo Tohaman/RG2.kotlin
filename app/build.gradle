@@ -52,8 +52,3 @@ dependencies {
     //JodaTime
     implementation 'joda-time:joda-time:2.9.9'
 }
-kotlin {
-    experimental {
-        coroutines "enable"
-    }
-}
