@@ -13,9 +13,8 @@ import android.widget.*
 import kotlinx.android.synthetic.main.fragment_scramble_gen.*
 import kotlinx.coroutines.*
 import org.jetbrains.anko.*
-//TODO Check Anko SDK Version change to 27
-import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
-import org.jetbrains.anko.sdk15.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onCheckedChange
+import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.support.v4.alert
 import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.startActivity
@@ -226,7 +225,7 @@ class FragmentScrambleGen : Fragment(), CoroutineScope {
     }
 
 
-    private suspend fun scrambleGenerate(chkEdgesBuffer: Boolean, chkCornersBuffer: Boolean, scrambleLength: Int) {
+    private fun scrambleGenerate(chkEdgesBuffer: Boolean, chkCornersBuffer: Boolean, scrambleLength: Int) {
         Log.v(TAG, "FragmentScrambleGen scrambleGenerate")
         // делаем кнопку "Генерерировать" не активной, прогресбар активным и убираем решение скрамбла
         button_generate.isEnabled = false
