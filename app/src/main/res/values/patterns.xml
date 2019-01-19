@@ -108,6 +108,14 @@
         </p>
         <p style="text-align:center"><img src="pattern_1.xml"></p>
         <b><a href="rg2://ytplay?time=1:16&link=l6V7517N_lQ">Алгоритм:</a> S\' M\' S M</b>
+
+        <p>Ну а если вращать противоположные грани в разные стороны а не в одну относительно средней,
+        то можно получить такой вот \"Ход конем\".</p>
+        <p style="text-align:center"><img src="pattern_1_1.xml"></p>
+        <b><a href="rg2://ytplay?time=1:16&link=l6V7517N_lQ">Алгоритм:</a> (R L) (U D) (F\' B\') (R\' L\')</b>
+
+        <p>P.S. На базе этих двух узоров можно придумать много других, но пожалуйста, не надо мне их
+        присылать, добавить в программу все варианты просто невозможно.</p>
     ]]></string>
     <string name="patterns_st1_url">l6V7517N_lQ</string>
     <string name="patterns_st1_comment">S\' M\' S M</string>
@@ -162,6 +170,9 @@
         <p style="text-align:center"><img src="pattern_3_3.xml"></p>
         <p><b><a href="rg2://ytplay?time=5:31&link=l6V7517N_lQ">Алгоритм:</a> U\' L2 F2 D\' L\' D U2 R U\' R\' U2 R2 U F\' L\' U R\'</b></p>
 
+        <p>Ну а если еще переставить ребра, то можно получить и вот такой узор. Спасибо Хахулину Даниилу.</p>
+        <p style="text-align:center"><img src="pattern_3_4.xml"></p>
+        <p><b><a href="rg2://ytplay?time=5:31&link=l6V7517N_lQ">Алгоритм:</a> B D F\' B\' D L2\' U L U\' B D\' R B R D\' R L\' F U2 D</b></p>
     ]]></string>
     <string name="patterns_st3_url">l6V7517N_lQ</string>
     <string name="patterns_st3_comment">U2 F2 R2 U\' L2 D B R\' B R\' B R\' D\' L2 U\'</string>

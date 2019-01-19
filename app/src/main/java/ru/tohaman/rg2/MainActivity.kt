@@ -110,15 +110,15 @@ class MainActivity : MyDefaultActivity(),
         loadDataFromPlayMarket()
 
         Log.v (TAG, "MainActivity ListPagerLab init.")
-        mListPagerLab = ListPagerLab.get(ctx)
+        mListPagerLab = ListPagerLab.get(this)
 
         //получаем список фаз submenu, чтобы корректно отрабатывать нажатие кнопки назад
-        listOfSubmenu = mListPagerLab.getSubmenu(ctx)
-        listOfOllMenu = mListPagerLab.getOllMenu(ctx)
+        listOfSubmenu = mListPagerLab.getSubmenu(this)
+        listOfOllMenu = mListPagerLab.getOllMenu(this)
 
 
         // Регистрируем слушатель OnSharedPreferenceChangeListener (Изменеия в настройках)
-        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
+        val sp = PreferenceManager.getDefaultSharedPreferences(this)
         sp.registerOnSharedPreferenceChangeListener(this)
 
         //Если повернули экран или вернулись в активность, то открываем ту фазу, которая была, иначе - берем данные из SharedPreference
@@ -260,9 +260,9 @@ class MainActivity : MyDefaultActivity(),
 
     private fun updateVersion(fromVersion: Int, toVersion: Int) {
         alert(getString(R.string.whatsnew)) { okButton { } }.show()
-        saveInt2SP(toVersion, "version", ctx)
+        saveInt2SP(toVersion, "version", this)
         //Тут можно указать фазу новинки, чтобы после обновления программы, открылась новинка.
-        //curPhase = "PATTERNS"
+        curPhase = "PENTACLE"
         if (fromVersion < 68) { updateComment68()}
         if (fromVersion < 79) { updateComment79()}
         if (fromVersion < 86) { update86() }
@@ -305,7 +305,7 @@ class MainActivity : MyDefaultActivity(),
     }
 
     override fun onBackPressed() {
-        val backPhase = mListPagerLab.getBackPhase(curPhase,ctx)
+        val backPhase = mListPagerLab.getBackPhase(curPhase, this)
 
         if (backPhase == "") {
             when (curPhase) {
@@ -663,7 +663,7 @@ class MainActivity : MyDefaultActivity(),
 
             if (changedPhase in listOfOllMenu) {
                 startActivity<F2LPagerActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
-                setListFragmentPhase(mListPagerLab.getBackPhase(changedPhase,ctx))
+                setListFragmentPhase(mListPagerLab.getBackPhase(changedPhase, this))
             } else {
                 setListFragmentPhase(changedPhase)
                 startActivity<SlidingTabsActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
@@ -710,7 +710,7 @@ class MainActivity : MyDefaultActivity(),
                 toast(getString(lp.description))
             }
             "ollPager" -> {  //Если тип не submenu, а ollPager
-                startActivity<F2LPagerActivity>(RUBIC_PHASE to (ctx.getString(lp.description)), EXTRA_ID to 0)
+                startActivity<F2LPagerActivity>(RUBIC_PHASE to (this.getString(lp.description)), EXTRA_ID to 0)
             }
             //В других случаях запускаем SlidingTabActivity
             else -> { startActivity<SlidingTabsActivity>(RUBIC_PHASE to phase, EXTRA_ID to id)}
@@ -755,7 +755,7 @@ class MainActivity : MyDefaultActivity(),
                 }
             }
             "screen_always_on" -> {
-                setScreenOn(IS_SCREEN_ALWAYS_ON, ctx)
+                setScreenOn(IS_SCREEN_ALWAYS_ON, this)
             }
             "startPhase" -> {
                 val phase = sp.getString(key, "BEGIN").let { it!! }
@@ -833,7 +833,7 @@ class MainActivity : MyDefaultActivity(),
         loadData()
         // Создаем helper, передаем context и public key to verify signatures with
         Log.d(TAG, "Creating IAB helper.")
-        mHelper = IabHelper(ctx, base64EncodedPublicKey)
+        mHelper = IabHelper(this, base64EncodedPublicKey)
 
         //TO DO enable debug logging (Для полноценной версии надо поставить в false).
         mHelper!!.enableDebugLogging(false)
