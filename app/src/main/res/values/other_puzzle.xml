@@ -10,6 +10,7 @@
         <item>Скваер (Square-1)</item>
         <item>Звезда скваер (Super Square Star)</item>
         <item>Кубоид 2х2х3</item>
+        <item>Пентакль куб</item>
     </string-array>
 
     <integer-array name="other_icon">
@@ -22,6 +23,7 @@
         <item>@drawable/square</item>
         <item>@drawable/sq_star_4</item>
         <item>@drawable/cub_2x2x3_4</item>
+        <item>@drawable/pentacle_4</item>
     </integer-array>
 
     <integer-array name="other_descr">
@@ -34,9 +36,11 @@
         <item>@string/other_st7_descr</item>
         <item>@string/other_st8_descr</item>
         <item>@string/other_st9_descr</item>
+        <item>@string/other_st10_descr</item>
     </integer-array>
 
     <string-array name="other_url">
+        <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
@@ -58,6 +62,7 @@
     <string name="other_st7_descr">SQUARE</string>
     <string name="other_st8_descr">SQ_STAR</string>
     <string name="other_st9_descr">CUB2X2X3</string>
+    <string name="other_st10_descr">PENTACLE</string>
 
 </resources>
 
