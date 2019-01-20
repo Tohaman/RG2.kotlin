@@ -11,9 +11,9 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import kotlinx.android.synthetic.main.button_colored.view.*
 import kotlinx.android.synthetic.main.check_box.view.*
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.delay
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.sdk15.coroutines.onTouch
@@ -94,7 +94,7 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                             when (action) {
                                 MotionEvent.ACTION_DOWN -> {
                                     touchTime = System.currentTimeMillis()
-                                    launch(UI) {
+                                    launch(Main) {
                                         do {
                                             metronomTime = metronomTimePlusOne(metronomTime, v, textHz)
                                             delay(150)
@@ -112,7 +112,7 @@ class TimerSettingsUI<in Fragment> : AnkoComponentEx<Fragment>() {
                             when (action) {
                                 MotionEvent.ACTION_DOWN -> {
                                     touchTime = System.currentTimeMillis()
-                                    launch(UI) {
+                                    launch(Main) {
                                         do {
                                             metronomTime = metronomTimeMinusOne(metronomTime, v, textHz)
                                             delay(150)

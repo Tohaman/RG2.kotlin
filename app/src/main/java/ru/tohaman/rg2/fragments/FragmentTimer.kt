@@ -15,13 +15,9 @@ import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.util.Log
 import android.view.*
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.delay
-import kotlinx.coroutines.experimental.launch
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onClick
-import org.jetbrains.anko.sdk25.coroutines.onItemClick
+import org.jetbrains.anko.sdk27.coroutines.onItemClick
 import org.jetbrains.anko.support.v4.UI
 import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.dip
@@ -34,14 +30,12 @@ import ru.tohaman.rg2.fragments.FragmentScrambleGen.Companion.generateScrambleWi
 import ru.tohaman.rg2.util.saveString2SP
 import java.text.SimpleDateFormat
 import java.util.*
-import android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT
-import android.content.Context.INPUT_METHOD_SERVICE
-import android.print.PrintAttributes
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import kotlinx.coroutines.*
 
 
-class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadCompleteListener {
+class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadCompleteListener, CoroutineScope {
     private var startTime: Long = 0
     private var resetPressedTime: Long = 0
     private var leftHandDown = false
@@ -76,6 +70,19 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     private var curTime = ""
     private var delayMills = 500L
 
+    // корутина может быть легко ограничена жизненным циклом Fragment
+    private val scope = CoroutineScope(Dispatchers.Main)
+
+    private val job = SupervisorJob()
+
+    override val coroutineContext = Dispatchers.Main + job
+
+    override fun onDestroy() {
+        super.onDestroy()
+        coroutineContext.cancelChildren()
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.v (DebugTag.TAG, "FragmentTimer onCreate")
         super.onCreate(savedInstanceState)
@@ -84,7 +91,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         oneHandTimer = sp.getBoolean(ONE_HAND_TO_START, false)
         metronomEnabled = sp.getBoolean(METRONOM_ENABLED, true)
         metronomTime = sp.getInt(METRONOM_TIME, 60)
-        text4Scramble = sp.getString(SCRAMBLE, "U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R")
+        text4Scramble = sp.getString(SCRAMBLE, "U2 F2 L\' D2 R U F\' L2 B2 R L2 B2 U R")!!
         delayMills = sp.getInt(DELAY_MILLS, 500).toLong()
         isScrambleVisible = sp.getBoolean(IS_SCRAMBLE_VISIBLE, true)
         chkEdgesBuffer = sp.getBoolean(CHK_BUF_EDGES, true)
@@ -202,7 +209,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                     (secHand and !isTimerStart) -> {
                         isTimerReady = false
                         resetPressedTime = System.currentTimeMillis()
-                        launch(UI) {
+                        scope.launch(Dispatchers.Main) {
                             delay (delayMills)
                             if (resetPressedTime + delayMills - 1 < System.currentTimeMillis()) {
                                 isTimerReady = true             //таймер готов к запуску, значит красим оба кужка зеленым
@@ -293,7 +300,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
 
     private fun startShowTime () {
         //Используя корутины Котлина, отображаем время таймера, пока isTimerStart не станет false
-        launch(UI) {
+        scope.launch(Dispatchers.Main) {
             do {
                 showTimerTime()
                 delay(30)
@@ -304,7 +311,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     private fun startMetronom() {
         if (metronomEnabled) {
             //Используя корутины Котлина, воспроизводим звук метронома, пока isTimerStart не станет false
-            launch(CommonPool) {
+            scope.launch(Dispatchers.Default) {
                 do {
                     spl.play(soundIdTick, 1F, 1F, 0, 0, 1F)
                     delay((60000/metronomTime).toLong())

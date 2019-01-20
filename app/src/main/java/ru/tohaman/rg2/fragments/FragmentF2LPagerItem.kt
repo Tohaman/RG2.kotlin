@@ -46,9 +46,9 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
 
         //Данные во фрагмент передаются через фабричный метод newInstance данного фрагмента
 
-        val phase = arguments!!.getString("phase")
+        val phase = arguments!!.getString("phase")!!
         val id = arguments!!.getInt("id")
-        val subId = arguments!!.getString("subID").toInt()
+        val subId = arguments!!.getString("subID")!!.toInt()
         val lp = listPagerLab.getItem(phase, id, subId.toString())
 
         val title = lp.subLongTitle
@@ -58,7 +58,8 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
         //url = lp.url
 
         val titleTextView = view.findViewById<TextView>(F2LPagerItemUI.Ids.pagerTitleText)
-        titleTextView.text = "${lp.title}\n$title"
+        val txt = lp.title + "\n" + title
+        titleTextView.text = txt
         //Если основной текст селектабельный, то и этот тоже надо делать таким, иначе текст будет автоматом прокручиваться при открытии view
         titleTextView.isSelectable = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean("is_text_selectable", false)
 
@@ -71,7 +72,7 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
         mainTextView.text = spanText
         //Задаем размер текста
         val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
-        val descTextSize = sp.getString("text_size", "15").toFloat()
+        val descTextSize = sp.getString("text_size", "15")!!.toFloat()
         mainTextView.textSize = descTextSize
 
         val imageView = view.findViewById<ImageView>(F2LPagerItemUI.Ids.pagerImageView)

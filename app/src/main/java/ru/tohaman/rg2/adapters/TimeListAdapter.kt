@@ -13,7 +13,6 @@ import ru.tohaman.rg2.R
 import ru.tohaman.rg2.ankoconstraintlayout.constraintLayout
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.TimeNote
-import ru.tohaman.rg2.listOfBasic
 import java.text.SimpleDateFormat
 import java.util.*
 

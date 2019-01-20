@@ -59,14 +59,10 @@ const val CHK_BUF_EDGES = "checkEdgesBuffer"
 const val CHK_BUF_CORNERS = "checkCornersBuffer"
 const val CHK_SHOW_SOLVE = "checkShowSolve"
 
-
 // SKUs для продуктов: при изменении не забыть поправить в sayThanks
 const val BIG_DONATION = "big_donation"
 const val MEDIUM_DONATION = "medium_donation"
 const val SMALL_DONATION = "small_donation"
-
-val listOfBasic = listOf("BASIC3X3", "BASIC4X4", "BASIC5X5", "BASIC_PYR", "BASIC_SKEWB", "BASIC_SQ1")
-
 
 class MainActivity : MyDefaultActivity(),
         NavigationView.OnNavigationItemSelectedListener,
@@ -114,20 +110,20 @@ class MainActivity : MyDefaultActivity(),
         loadDataFromPlayMarket()
 
         Log.v (TAG, "MainActivity ListPagerLab init.")
-        mListPagerLab = ListPagerLab.get(ctx)
+        mListPagerLab = ListPagerLab.get(this)
 
         //получаем список фаз submenu, чтобы корректно отрабатывать нажатие кнопки назад
-        listOfSubmenu = mListPagerLab.getSubmenu(ctx)
-        listOfOllMenu = mListPagerLab.getOllMenu(ctx)
+        listOfSubmenu = mListPagerLab.getSubmenu(this)
+        listOfOllMenu = mListPagerLab.getOllMenu(this)
 
 
         // Регистрируем слушатель OnSharedPreferenceChangeListener (Изменеия в настройках)
-        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
+        val sp = PreferenceManager.getDefaultSharedPreferences(this)
         sp.registerOnSharedPreferenceChangeListener(this)
 
         //Если повернули экран или вернулись в активность, то открываем ту фазу, которая была, иначе - берем данные из SharedPreference
         curPhase = if (savedInstanceState != null) {
-            savedInstanceState.getString("phase")
+            savedInstanceState.getString("phase").let { it!! }
         } else {
             loadStartPhase()
         }
@@ -140,18 +136,18 @@ class MainActivity : MyDefaultActivity(),
         val curVersion = BuildConfig.VERSION_CODE
 
         //Увеличиваем счетчик запусков программы
-        var count = sp.getInt("startcount", 0)
+        var startCount = sp.getInt("startcount", 0)
         // Увеличиваем число запусков программы на 1 и сохраняем результат.
-        count++
+        startCount++
         //если это первый запуск
-        if (count == 1) {
+        if (startCount == 1) {
             //выводим окно с приветствием
             alert(getString(R.string.first_start)) { okButton { } }.show()
             //и отменяем вывод окна что нового в данной версии
             curPhase = "MAIN3X3"
             saveInt2SP(curVersion,"version",ctx)
         }
-        saveInt2SP(count,"startcount",ctx)
+        saveInt2SP(startCount,"startcount",ctx)
 
         // проверяем версию программы в файле настроек, если она отлична от текущей, то выводим окно с описанием обновлений
         if (curVersion != version) { //если версии разные
@@ -159,13 +155,13 @@ class MainActivity : MyDefaultActivity(),
         } else {
             //Проверяем платил ли уже пользователь, если не платил, то каждый 25-ый вход
             //напоминаем сказать спасибо.
-            if ((mCoins == 0) and (count % 25 == 0)) {
+            if ((mCoins == 0) and (startCount % 25 == 0)) {
                 curPhase = "THANKS"
                 alert(getString(R.string.help_thanks)) { okButton { } }.show()
             } else {
                 //Если не подписан на канал, то выводим окно с просьбой подписаться на канал.
                 val subscribe = sp.getBoolean("subscribe", false)
-                if ((!subscribe) and (count % 9 == 0)) {
+                if ((!subscribe) and (startCount % 9 == 0)) {
                     alert("Понравилось приложение? Подпишитесь на мой канал в Youtube.") {
                         positiveButton("Подписаться") {
                             browse("https://www.youtube.com/channel/UCpSUF7w376aCRRvzkoNoAfQ")
@@ -206,11 +202,11 @@ class MainActivity : MyDefaultActivity(),
 
         nav_view.setNavigationItemSelectedListener(this)
         if (!sp.getBoolean("fab_on", false)) {
-            fab.visibility = View.GONE
+            fab.hide()
         } else {
-            fab.visibility = View.VISIBLE
+            fab.show()
         }
-        fab.setOnClickListener { _ ->
+        fab.setOnClickListener {
             val backPhase = mListPagerLab.getBackPhase(curPhase,ctx)
             if (backPhase == "") {
                 when (curPhase) {
@@ -247,7 +243,7 @@ class MainActivity : MyDefaultActivity(),
         // подключим адаптер для выезжающего справа списка
         val rightDrawerListView  = findViewById<ListView>(R.id.main_right_drawer)
         rightDrawerListView.adapter = rightDrawerAdapter
-        rightDrawerListView.setOnItemClickListener { adapterView, view, i, l ->
+        rightDrawerListView.setOnItemClickListener { _, _, i, _ ->
             val changedId = favList[i].id
             changedPhase = favList[i].url
             if (changedPhase in listOfOllMenu) {
@@ -264,12 +260,13 @@ class MainActivity : MyDefaultActivity(),
 
     private fun updateVersion(fromVersion: Int, toVersion: Int) {
         alert(getString(R.string.whatsnew)) { okButton { } }.show()
-        saveInt2SP(toVersion, "version", ctx)
+        saveInt2SP(toVersion, "version", this)
         //Тут можно указать фазу новинки, чтобы после обновления программы, открылась новинка.
-        curPhase = "CLOVER"
+        curPhase = "PENTACLE"
         if (fromVersion < 68) { updateComment68()}
         if (fromVersion < 79) { updateComment79()}
-    }
+        if (fromVersion < 86) { update86() }
+     }
 
     private fun updateComment68() {
         //Исправление ошибки в комментах к узорам
@@ -290,13 +287,25 @@ class MainActivity : MyDefaultActivity(),
         }
     }
 
+    private fun update86() {
+        alert("Дорогие друзья, проекту очень требуется ваша помощь. Если вы умеете " +
+                "программировать на Kotlin или Swift и у вас есть желание помочь - пожалуйста, " +
+                "напишите мне на почту") {
+            positiveButton("OK") {
+            }
+            negativeButton("Написать") {
+                email("rubicsguide@yandex.ru", "Помощь проекту", "Добрый день, Антон.\n")
+            }
+        }.show()
+    }
+
     private fun setFragment (fragment: Fragment) {
         val transaction : FragmentTransaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame_container, fragment).commit()
     }
 
     override fun onBackPressed() {
-        val backPhase = mListPagerLab.getBackPhase(curPhase,ctx)
+        val backPhase = mListPagerLab.getBackPhase(curPhase, this)
 
         if (backPhase == "") {
             when (curPhase) {
@@ -363,7 +372,9 @@ class MainActivity : MyDefaultActivity(),
                     "BEGIN_BNDR" -> {
                         alert(getString(R.string.help_bondarenko)) { okButton { } }.show()
                     }
-
+                    "MAIN_F2L" -> {
+                        alert(getString(R.string.help_mainF2L)) { okButton { } }.show()
+                    }
                     "MAIN2X2" -> {
                         alert(getString(R.string.help_main2x2)) { okButton { } }.show()
                     }
@@ -652,7 +663,7 @@ class MainActivity : MyDefaultActivity(),
 
             if (changedPhase in listOfOllMenu) {
                 startActivity<F2LPagerActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
-                setListFragmentPhase(mListPagerLab.getBackPhase(changedPhase,ctx))
+                setListFragmentPhase(mListPagerLab.getBackPhase(changedPhase, this))
             } else {
                 setListFragmentPhase(changedPhase)
                 startActivity<SlidingTabsActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
@@ -663,7 +674,7 @@ class MainActivity : MyDefaultActivity(),
 
     private fun loadStartPhase():String {
         val sp = PreferenceManager.getDefaultSharedPreferences(this)
-        return sp.getString("startPhase", "BEGIN")
+        return sp.getString("startPhase", "BEGIN").let { it!! }
     }
 
     private fun saveStartPhase(phase:String) {
@@ -699,7 +710,7 @@ class MainActivity : MyDefaultActivity(),
                 toast(getString(lp.description))
             }
             "ollPager" -> {  //Если тип не submenu, а ollPager
-                startActivity<F2LPagerActivity>(RUBIC_PHASE to (ctx.getString(lp.description)), EXTRA_ID to 0)
+                startActivity<F2LPagerActivity>(RUBIC_PHASE to (this.getString(lp.description)), EXTRA_ID to 0)
             }
             //В других случаях запускаем SlidingTabActivity
             else -> { startActivity<SlidingTabsActivity>(RUBIC_PHASE to phase, EXTRA_ID to id)}
@@ -738,16 +749,16 @@ class MainActivity : MyDefaultActivity(),
             }
             "fab_on" -> {
                 if (!sp.getBoolean(key, true)) {
-                    fab.visibility = View.GONE
+                    fab.hide()
                 } else {
-                    fab.visibility = View.VISIBLE
+                    fab.show()
                 }
             }
             "screen_always_on" -> {
-                setScreenOn(IS_SCREEN_ALWAYS_ON, ctx)
+                setScreenOn(IS_SCREEN_ALWAYS_ON, this)
             }
             "startPhase" -> {
-                val phase = sp.getString(key, "BEGIN")
+                val phase = sp.getString(key, "BEGIN").let { it!! }
                 val id = sp.getInt("startId", 0)
                 if (curPhase !=  phase) {
                     changedPhase = phase
@@ -822,7 +833,7 @@ class MainActivity : MyDefaultActivity(),
         loadData()
         // Создаем helper, передаем context и public key to verify signatures with
         Log.d(TAG, "Creating IAB helper.")
-        mHelper = IabHelper(ctx, base64EncodedPublicKey)
+        mHelper = IabHelper(this, base64EncodedPublicKey)
 
         //TO DO enable debug logging (Для полноценной версии надо поставить в false).
         mHelper!!.enableDebugLogging(false)
@@ -882,7 +893,7 @@ class MainActivity : MyDefaultActivity(),
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         Log.d(TAG, "onActivityResult($requestCode,$resultCode,$data")
         if (mHelper == null) return
 

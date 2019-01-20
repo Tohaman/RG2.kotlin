@@ -18,7 +18,7 @@
     <path android:fillColor="@color/c_gr" android:pathData="M6.62,8.46l6.09,1.29l0.67,7.18l-5.91,-1.46z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M0.41,7.19l5.52,1.12l0.78,6.95l-5.32,-1.33z"/>
     <path android:fillColor="@color/c_w" android:pathData="M14.31,18.03l6.43,1.68l0.33,6.95l-6.24,-1.92z"/>
-    <path android:fillColor="@color/c_b" android:pathData="M7.62,16.33l5.91,1.49l0.6,6.71l-5.73,-1.75z"/>
+    <path android:fillColor="@color/c_g" android:pathData="M7.62,16.33l5.91,1.49l0.6,6.71l-5.73,-1.75z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M1.44,14.68l5.44,1.45l0.77,6.46l-5.26,-1.62z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M14.92,25.54l6.22,1.95l0.41,6.49l-6.09,-2.18z"/>
     <path android:fillColor="@color/c_gr" android:pathData="M8.42,23.54l5.74,1.82l0.57,6.24l-5.56,-1.97z"/>

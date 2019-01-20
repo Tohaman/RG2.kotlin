@@ -14,7 +14,7 @@ import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.fragment_blind_game_settings.view.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.coroutines.onClick
-import org.jetbrains.anko.sdk25.coroutines.onCheckedChange
+import org.jetbrains.anko.sdk27.coroutines.onCheckedChange
 import org.jetbrains.anko.support.v4.ctx
 import ru.tohaman.rg2.*
 import ru.tohaman.rg2.activities.BlindTestGame
@@ -32,7 +32,7 @@ class FragmentBlindGameSettings : Fragment() {
     private var mListener: OnBlindGameInteractionListener? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = BlindGameSettingsUI<Fragment>().createView(AnkoContext.create(ctx, this))
+        val view = BlindGameSettingsUI<Fragment>().createView(AnkoContext.create(requireContext(), this))
         val azbukaButton = view.findViewById<Button>(R.id.azbuka_select_button)
         azbukaButton.onClick {
             Log.v (DebugTag.TAG, "AzbukaButton Click")

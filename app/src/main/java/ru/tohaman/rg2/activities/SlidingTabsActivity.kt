@@ -8,15 +8,11 @@ import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v4.view.GravityCompat
 import android.support.v4.view.ViewPager
 import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.app.AppCompatDelegate
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.view.WindowManager
 import android.widget.ListView
-import com.google.gson.GsonBuilder
 import ru.tohaman.rg2.DebugTag.TAG
 
 import ru.tohaman.rg2.adapters.MyListAdapter
@@ -26,12 +22,9 @@ import java.util.ArrayList
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_sliding.*
 import org.jetbrains.anko.*
-import org.jetbrains.anko.sdk25.coroutines.onItemClick
-import org.jetbrains.anko.support.v4.onPageChangeListener
+import org.jetbrains.anko.sdk27.coroutines.onItemClick
 import ru.tohaman.rg2.*
-import ru.tohaman.rg2.data.Favorite
 import ru.tohaman.rg2.fragments.FragmentPagerItem
-import ru.tohaman.rg2.util.getThemeFromSharedPreference
 import ru.tohaman.rg2.util.saveInt2SP
 import ru.tohaman.rg2.util.saveString2SP
 
@@ -91,7 +84,7 @@ class SlidingTabsActivity : MyDefaultActivity(),
 
         Log.v (TAG, "SlidingTabActivity onCreate Инициализируем ListPagers и передаем его адаптерам")
         mListPagerLab = ListPagerLab.get(this)
-        val mListPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList(curPhase).filter { it.url != "submenu" } as ArrayList<ListPager>
+        val listPagers : ArrayList<ListPager> = mListPagerLab.getPhaseList(curPhase).filter { it.url != "submenu" } as ArrayList<ListPager>
 
         Log.v (TAG, "SlidingTabActivity onCreate Настраиваем SlidingTab")
         mViewPagerSlidingTabs = findViewById<ViewPager>(R.id.viewPagerSlidingTabs)
@@ -100,15 +93,15 @@ class SlidingTabsActivity : MyDefaultActivity(),
         val adapter = object : FragmentStatePagerAdapter(supportFragmentManager) {
 
             override fun getPageTitle(position: Int): CharSequence {
-                return mListPagers[position].title
+                return listPagers[position].title
             }
 
             override fun getCount(): Int {
-                return mListPagers.size
+                return listPagers.size
             }
 
             override fun getItem(position: Int): Fragment {
-                return FragmentPagerItem.newInstance(mListPagers[position])
+                return FragmentPagerItem.newInstance(listPagers[position])
             }
 
         }
@@ -118,7 +111,7 @@ class SlidingTabsActivity : MyDefaultActivity(),
 
         Log.v (TAG, "SlidingTabActivity onCreate Настраиваем ListView для списка слева ")
         // Настраиваем листвью для выезжающего слева списка
-        val listAdapter = MyListAdapter(mListPagers)
+        val listAdapter = MyListAdapter(listPagers)
         val drawerListView  = findViewById<ListView>(R.id.left_drawer)
 
         // подключим адаптер для выезжающего слева списка

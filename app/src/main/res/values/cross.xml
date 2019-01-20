@@ -9,10 +9,10 @@
     </string-array>
 
     <integer-array name="cross_icon">
-        <item>@drawable/vcross_4</item>
-        <item>@drawable/vcross</item>
+        <item>@drawable/cross_4</item>
+        <item>@drawable/cross</item>
         <item>@drawable/vbegin_3</item>
-        <item>@drawable/vcross_3</item>
+        <item>@drawable/cross_3</item>
 
     </integer-array>
 
@@ -125,7 +125,7 @@
         <p><a href="rg2://scrmbl?scram=L2_D_B2_F\'_L\'_B\'_R2_F2_B_R2_D_B">1. Скрамбл</a>
         (белой вверх, зеленой к себе): <br/><b>L2 D B2 F\' L\' B\' R2 F2 B R2 D B</b>,
         кубик должен выглядеть так:</p>
-        <p style="text-align:center"><img src="vcross_4_6.xml"></p>
+        <p style="text-align:center"><img src="cross_4_6.xml"></p>
 
         <p><a href="rg2://ytplay?time=8:31&link=O83G5WyDRcs">Решение</a> (желтой вверх, зеленой к себе):<br/>
         1. Подводим место для установки синего ребра. (D\')<br/>
@@ -139,7 +139,7 @@
         <a href="rg2://scrmbl?scram=U2_R_L_U_L\'_B_D_R\'_F2_B_U\'_R_D_B_D">2. Скрамбл</a>
         (белой вверх, зеленой к себе): <br/><b>U2 R L U L\' B D R\' F2 B U\' R D B D</b>,
         кубик должен выглядеть так:</p>
-        <p style="text-align:center"><img src="vcross_4_7.xml"></p>
+        <p style="text-align:center"><img src="cross_4_7.xml"></p>
 
         <p><a href="rg2://ytplay?time=9:59&link=O83G5WyDRcs">Решение</a> (желтой вверх, зеленой к себе):<br/>
         1. Ставим оранжевое ребро на место. (R B\')<br/>
@@ -153,7 +153,7 @@
         <p><a href="rg2://scrmbl?scram=R2_D_R_D_U_L_R2_D2_B\'_F\'_R\'_D\'">3. Скрамбл</a>
         (белой вверх, зеленой к себе) <br/><b>R2 D R D U L R2 D2 B\' F\' R\' D\'</b>,
         кубик должен выглядеть так:</p>
-        <p style="text-align:center"><img src="vcross_4_5.xml"></p>
+        <p style="text-align:center"><img src="cross_4_5.xml"></p>
 
         <p><a href="rg2://ytplay?time=11:19&link=O83G5WyDRcs">Решение</a> (желтой вверх, зеленой к себе):<br/>
         1. Подготовим зеленое ребро для установки, но пока ставить не будем.(R\')<br/>
@@ -168,7 +168,7 @@
         <p><a href="rg2://scrmbl?scram=R_D\'_B2_R\'_L2_F_B\'_L\'_U_L_U_F2_L\'_R\'">4. Скрамбл</a>
         (белой вверх, зеленой к себе): <br/><b>R D\' B2 R\' L2 F B\' L\' U L U F2 L\' R\'</b>,
         кубик должен выглядеть так:</p>
-        <p style="text-align:center"><img src="vcross_4_8.xml"></p>
+        <p style="text-align:center"><img src="cross_4_8.xml"></p>
 
         <p><a href="rg2://ytplay?time=13:10&link=O83G5WyDRcs">Решение</a> (желтой вверх, зеленой к себе):<br/>
         1. Ставим красное ребро. (L\' B)<br/>
@@ -183,7 +183,7 @@
         1. Скрамбл из стандартного положения белый верх, зеленый фронт:<br/>
          <b>B2 D2 U\' R2 F2 D2 R2 U\' R2 B2 D2 B U\' L D2 B L\' R\' D\' B D\'</b> кубик должен
          выглядеть так:<br/>
-         <p style="text-align:center"><img src="vcross_4_1.xml" width="30%%"></p>
+         <p style="text-align:center"><img src="cross_4_1.xml" width="30%%"></p>
          и вот как в данном случае можно
          <a href="rg2://ytplay?time=5:35&link=IWXpkfwimo0">решить</a> крест:<br/>
          1. первым ходом поставить белозеленое ребро на место<br/>
@@ -198,7 +198,7 @@
         2. Еще один скрамбл:
         <b>B2 R2 B U2 F\' U2 B2 R2 F\' L2 U2 L U\' R\' B U\' L D2 F D\' F</b> кубик должен
         выглядеть так:<br/>
-        <p style="text-align:center"><img src="vcross_4_2.xml" width="30%%"></p>
+        <p style="text-align:center"><img src="cross_4_2.xml" width="30%%"></p>
         и вот
         <a href="rg2://ytplay?time=6:20&link=IWXpkfwimo0">вариант</a> решения:<br/>
         Поскольку белосинее ребро совмещено со своим центром, то им лучше закончить крест, т.к. в
@@ -213,7 +213,7 @@
 
          3. Третий скрамбл:
          <b>D\' B U D2 R F U2 L\' B R2 U2 R2 B2 U D R2 F2 D2 B2 D2</b> кубик должен выглядеть так:<br/>
-         <p style="text-align:center"><img src="vcross_4_3.xml" width="30%%"></p>
+         <p style="text-align:center"><img src="cross_4_3.xml" width="30%%"></p>
          и вот как в данном случае можно
          <a href="rg2://ytplay?time=7:02&link=IWXpkfwimo0">решить</a> крест:<br/>
          В данном случае у нас оранжевое ребро уже совмещено со своим центром, поэтому его
@@ -227,7 +227,7 @@
 
          4. Четвертый скрамбл:
          <b>B L U\' R D\' L U2 F\' U\' R2 B2 L2 D B2 U D2 R2 F2</b> кубик должен выглядеть так:<br/>
-         <p style="text-align:center"><img src="vcross_4_4.xml" width="30%%"></p>
+         <p style="text-align:center"><img src="cross_4_4.xml" width="30%%"></p>
          и вот как в данном случае можно
          <a href="rg2://ytplay?time=7:45&link=IWXpkfwimo0">решить</a> крест:<br/>
          Видим, что оранжевое ребро уже на месте, красное удачно стоит напротив оранжевого и

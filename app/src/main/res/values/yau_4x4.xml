@@ -4,21 +4,25 @@
     <string-array name="yau_4x4_title">
         <item>@string/yau_4x4st1_title</item>
         <item>@string/yau_4x4st2_title</item>
+        <item>@string/yau_4x4st3_title</item>
     </string-array>
 
     <integer-array name="yau_4x4_icon">
         <item>@drawable/v4x4_begin_9</item>
         <item>@drawable/v4x4_begin_10</item>
+        <item>@drawable/v4x4_begin_11</item>
     </integer-array>
     
     <string-array name="yau_4x4_descr">
         <item>@string/yau_4x4st1_descr</item>
         <item>@string/yau_4x4st2_descr</item>
+        <item>@string/yau_4x4st3_descr</item>
     </string-array>
 
     <string-array name="yau_4x4_url">
         <item>@string/yau_4x4st1_url</item>
         <item>@string/yau_4x4st2_url</item>
+        <item>@string/yau_4x4st3_url</item>
     </string-array>
 
     <string name="yau_4x4st1_title">Метод Роберта Яу</string>
@@ -305,4 +309,14 @@
     <string name="yau_4x4st2_url">XfNVsSl30LQ</string>
 
 
+    <string name="yau_4x4st3_title">Метод Яу. Дополнение 2.</string>
+    <string name="yau_4x4st3_descr" formatted="false"><![CDATA[
+        <p>В ситуации, когда осталось 2 последние пары на верхнем слое, на противоположных гранях,
+        и элементы в парах расположены крест накрест относительно друг друга, можно сделать вот
+        такой несложный алгоритм:</p>
+        <p style="text-align:center"><img src="v4x4_begin_11.xml"></p>
+
+        <p>Алгоритм: <b>x\' Rw2 D2 Rw\' U2 Rw D2 Rw\' U2 Rw\'</b></p>
+    ]]></string>
+    <string name="yau_4x4st3_url"></string>
 </resources>
