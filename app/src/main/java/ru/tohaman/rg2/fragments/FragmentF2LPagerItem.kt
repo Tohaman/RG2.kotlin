@@ -251,10 +251,10 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
     private val tagHandler = Html.TagHandler { opening, tag, output, xmlReader ->
         //Тут можно обрабатывать свои тэги
         if (tag.equals("mytag", true)) {
-//            val open = opening
-//            val tag1 = tag
-//            val out = output
-//            val xml = xmlReader
+            val open = opening
+            val tag1 = tag
+            val out = output
+            val xml = xmlReader
 
         }
     }
