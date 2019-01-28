@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="main_skewb_title">
+        <item>Скьюб</item>
+        <item>Айви куб (Ivy cube)</item>
+        <item>Реди куб (Redi cube)</item>
+        <item>Клевер куб (Clover cube)</item>
+        <item>Контейнер куб (Container cube)</item>
+    </string-array>
+
+    <integer-array name="main_skewb_icon">
+        <item>@drawable/skewb</item>
+        <item>@drawable/ivy_2</item>
+        <item>@drawable/redi_2</item>
+        <item>@drawable/clover_4</item>
+        <item>@drawable/container_5</item>
+    </integer-array>
+
+    <string-array name="main_skewb_descr">
+        <item>@string/main_skewb_st1_descr</item>
+        <item>@string/main_skewb_st2_descr</item>
+        <item>@string/main_skewb_st3_descr</item>
+        <item>@string/main_skewb_st4_descr</item>
+        <item>@string/main_skewb_st5_descr</item>
+    </string-array>
+
+    <string-array name="main_skewb_url">
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+        <item>submenu</item>
+    </string-array>
+
+    <string name="main_skewb_st1_descr">SKEWB</string>
+    <string name="main_skewb_st2_descr">IVY</string>
+    <string name="main_skewb_st3_descr">REDI</string>
+    <string name="main_skewb_st4_descr">CLOVER</string>
+    <string name="main_skewb_st5_descr">CONTAINER</string>
+
+</resources>
