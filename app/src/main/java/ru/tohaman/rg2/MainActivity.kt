@@ -497,6 +497,13 @@ class MainActivity : MyDefaultActivity(),
                     "CUB2X2X3" -> {
                         alert(getString(R.string.help_cub_2x2x2)) { okButton { } }.show()
                     }
+                    "PENTACLE" -> {
+                        alert(getString(R.string.help_pentacle)) { okButton { } }.show()
+                    }
+                    "CONTAINER" -> {
+                        alert(getString(R.string.help_container)) { okButton { } }.show()
+                    }
+
                     "AZBUKA" -> {
                         alert(getString(R.string.help_azbuka)) { okButton { } }.show()
                     }

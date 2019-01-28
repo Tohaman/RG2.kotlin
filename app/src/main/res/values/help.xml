@@ -114,5 +114,7 @@
     <string name="help_basic_redi">Основные движения для Redi куба</string>
     <string name="help_basic_clover">Основные движения для Clover куба</string>
     <string name="help_mainF2L">Различные методы сборки первых двух слоев.</string>
+    <string name="help_pentacle">Обучалка по пентакль кубу, который является компиляцией кубика 2х2 и 5х5.</string>
+    <string name="help_container">Простой метод сборки непростого скьюба.</string>
 
 </resources>
