@@ -44,7 +44,7 @@ class YouTubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListen
         //AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         //Log.v (DebugTag.TAG, "YouTubeActivity onCreate")
         // Проверяем значения из настроек, выключать экран или нет при прсмотре видео
-        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
+        val sp = PreferenceManager.getDefaultSharedPreferences(this)
         val sleepOnYouTube = sp.getBoolean(IS_VIDEO_SCREEN_ON, false)
         if (sleepOnYouTube) {
             window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
@@ -53,11 +53,11 @@ class YouTubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListen
         }
 
         //Log.v (DebugTag.TAG, "YouTubeActivity преобразуем время")
-        var time = ""
+        var time: String
         intent.data!!.getQueryParameter("time").let { time = it!! }
         intent.data!!.getQueryParameter("link").let { videoId = it!! }
 
-        val result = YouTubeApiServiceUtil.isYouTubeApiServiceAvailable(ctx)
+        val result = YouTubeApiServiceUtil.isYouTubeApiServiceAvailable(this)
         if (result == YouTubeInitializationResult.SUCCESS) {
             startActivity(
                 YouTubeStandalonePlayer.createVideoIntent(this, DEVELOPER_KEY, videoId, stringToTimeMillis(time), true, true)

@@ -219,6 +219,6 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
 
 // Access property for Context
 val Context.database: BaseHelper
-    get() = BaseHelper.getInstance(ctx)
+    get() = BaseHelper.getInstance(this)
 
 
