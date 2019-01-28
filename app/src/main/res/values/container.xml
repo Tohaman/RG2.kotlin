@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="container_title">
+        <item>@string/container_1_title</item>
+        <item>@string/container_2_title</item>
+        <item>@string/container_3_title</item>
+        <item>@string/container_4_title</item>
+        <item>@string/container_5_title</item>
+    </string-array>
+
+    <integer-array name="container_icon">
+        <item>@drawable/container_1</item>
+        <item>@drawable/container_2</item>
+        <item>@drawable/container_3</item>
+        <item>@drawable/container_4</item>
+        <item>@drawable/container_5</item>
+    </integer-array>
+
+    <string-array name="container_descr">
+        <item>@string/container_1_descr</item>
+        <item>@string/container_2_descr</item>
+        <item>@string/container_3_descr</item>
+        <item>@string/container_4_descr</item>
+        <item>@string/container_5_descr</item>
+    </string-array>
+
+
+    <string-array name="container_url">
+        <item>@string/container_1_url</item>
+        <item>@string/container_2_url</item>
+        <item>@string/container_3_url</item>
+        <item>@string/container_4_url</item>
+        <item>@string/container_5_url</item>
+    </string-array>
+
+    <string name="container_1_title">Особенности и язык вращений</string>
+    <string name="container_1_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="container_1_url">rh3rMuESOIM</string>
+
+
+    <string name="container_2_title">1. Четыре первых угла</string>
+    <string name="container_2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="container_2_url">rh3rMuESOIM</string>
+
+    <string name="container_3_title">2. Расстановка центров</string>
+    <string name="container_3_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="container_3_url">rh3rMuESOIM</string>
+
+    <string name="container_4_title">3. Разворот центров</string>
+    <string name="container_4_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="container_4_url">rh3rMuESOIM</string>
+
+    <string name="container_5_title">4. Разворот углов</string>
+    <string name="container_5_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="container_5_url">rh3rMuESOIM</string>
+
+</resources>
