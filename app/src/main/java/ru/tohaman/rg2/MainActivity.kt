@@ -145,9 +145,9 @@ class MainActivity : MyDefaultActivity(),
             alert(getString(R.string.first_start)) { okButton { } }.show()
             //и отменяем вывод окна что нового в данной версии
             curPhase = "MAIN3X3"
-            saveInt2SP(curVersion,"version",ctx)
+            saveInt2SP(curVersion,"version",this)
         }
-        saveInt2SP(startCount,"startcount",ctx)
+        saveInt2SP(startCount,"startcount",this)
 
         // проверяем версию программы в файле настроек, если она отлична от текущей, то выводим окно с описанием обновлений
         if (curVersion != version) { //если версии разные
@@ -194,7 +194,7 @@ class MainActivity : MyDefaultActivity(),
                 setListFragmentPhase(curPhase)
             }
             in listOfOllMenu -> {
-                curPhase = mListPagerLab.getBackPhase(curPhase,ctx)
+                curPhase = mListPagerLab.getBackPhase(curPhase, this)
                 changedPhase = curPhase
             }
             else -> { setListFragmentPhase(curPhase) }
@@ -207,7 +207,7 @@ class MainActivity : MyDefaultActivity(),
             fab.show()
         }
         fab.setOnClickListener {
-            val backPhase = mListPagerLab.getBackPhase(curPhase,ctx)
+            val backPhase = mListPagerLab.getBackPhase(curPhase, this)
             if (backPhase == "") {
                 when (curPhase) {
                     "AZBUKA" -> {
@@ -248,7 +248,7 @@ class MainActivity : MyDefaultActivity(),
             changedPhase = favList[i].url
             if (changedPhase in listOfOllMenu) {
                 startActivity<F2LPagerActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
-                setListFragmentPhase(mListPagerLab.getBackPhase(changedPhase,ctx))
+                setListFragmentPhase(mListPagerLab.getBackPhase(changedPhase, this))
             } else {
                 setListFragmentPhase(changedPhase)
                 startActivity<SlidingTabsActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
@@ -932,8 +932,9 @@ class MainActivity : MyDefaultActivity(),
      * case where the user purchases an item on one device and then uses your app on
      * a different device, because on the other device you will not have access to the
      * random string you originally generated.*/
-    private fun verifyDeveloperPayload(p: Purchase): Boolean {
+    private fun verifyDeveloperPayload( p : Purchase): Boolean {
         val payload = p.developerPayload
+        Log.d (TAG, payload)
         // тут можно проверить ответ от гугла, но нам в данном случае фиолетово,
         // ибо пользователь за свою покупку ничего в приложении получить не должен
         return true
