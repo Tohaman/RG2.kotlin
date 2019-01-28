@@ -186,7 +186,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         //Выводим коммент, и делаем обработчик нажатия на него (вызваем окно редактирования)
         val commentText = view.findViewById<TextView>(PagerItemUI.Ids.commentText)
         commentText.text = (requireContext().getString(R.string.commentText) + "\n" + comment)
-        commentText.onClick { it ->
+        commentText.onClick { _ ->
             alert(R.string.commentText) {
                 customView {
                     val imm = requireContext().inputMethodManager
@@ -275,10 +275,10 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
     private val tagHandler = Html.TagHandler { opening, tag, output, xmlReader ->
         //Тут можно обрабатывать свои тэги
         if (tag.equals("mytag", true)) {
-            val open = opening
-            val tag1 = tag
-            val out = output
-            val xml = xmlReader
+//            val open = opening
+//            val tag1 = tag
+//            val out = output
+//            val xml = xmlReader
 
         }
     }

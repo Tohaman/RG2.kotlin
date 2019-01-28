@@ -33,7 +33,7 @@ import ru.tohaman.rg2.util.spannedString
 class FragmentAbout : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return AboutUI<Fragment>().createView(AnkoContext.create(ctx, this))
+        return AboutUI<Fragment>().createView(AnkoContext.create(requireContext(), this))
     }
 
     companion object {
