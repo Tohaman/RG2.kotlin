@@ -3,7 +3,7 @@ package ru.tohaman.rg2
 /**
  * Static container class for holding a reference to your Developer Key.
  * need to add this key in your gradle.properties
- * YouTube_DEVELOPER_KEY = "ХХХХХХХХХХХХХХХХХХХХХХХХ"
+ * YouTube_ApiKey = "ХХХХХХХХХХХХХХХХХХХХХХХХ"
  * RG2_Kotlin_GooglePlayKey = "XXXXXXXXXXXXXXXXXXXXXXX"
  * https://medium.com/code-better/hiding-api-keys-from-your-android-repository-b23f5598b906
  */
