@@ -2,7 +2,6 @@ package ru.tohaman.rg2.activities
 
 import android.os.Bundle
 import android.util.Log
-import org.jetbrains.anko.ctx
 import ru.tohaman.rg2.*
 import ru.tohaman.rg2.DebugTag.TAG
 import ru.tohaman.rg2.util.saveInt2SP
@@ -25,11 +24,11 @@ class ShowPagerActivity : MyDefaultActivity() {
 
         // Если вызван с параметром, то взять параметры из ссылки
         if (uri != null) {
-            phase = uri.getQueryParameter("phase")
-            item = intent.data!!.getQueryParameter("item")
+            phase = uri.getQueryParameter("phase")!!
+            item = intent.data!!.getQueryParameter("item")!!
         }
-        saveInt2SP(item.toInt(), "startId", ctx)
-        saveString2SP(phase, "startPhase", ctx)
+        saveInt2SP(item.toInt(), "startId", this)
+        saveString2SP(phase, "startPhase", this)
         finish()
     }
 

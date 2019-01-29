@@ -45,6 +45,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import ru.tohaman.rg2.DeveloperKey.base64EncodedPublicKey
 import ru.tohaman.rg2.activities.F2LPagerActivity
+import ru.tohaman.rg2.activities.MyDefaultActivity
 import ru.tohaman.rg2.adapters.MyListAdapter
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.util.*

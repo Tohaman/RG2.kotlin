@@ -1,11 +1,11 @@
-package ru.tohaman.rg2
+package ru.tohaman.rg2.activities
 
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.app.AppCompatDelegate
 import android.view.WindowManager
-import org.jetbrains.anko.ctx
+import ru.tohaman.rg2.IS_SCREEN_ALWAYS_ON
 import ru.tohaman.rg2.util.getThemeFromSharedPreference
 
 /**
