@@ -16,9 +16,17 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            buildConfigField 'String', "YouTubeApiKey", YouTube_DEVELOPER_KEY
+            buildConfigField 'String', "GooglePlayKey", RG2_Kotlin_GooglePlayKey
+            resValue 'string', "youtube_api_key", YouTube_DEVELOPER_KEY
+            }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', "YouTubeApiKey", YouTube_DEVELOPER_KEY
+            buildConfigField 'String', "GooglePlayKey", RG2_Kotlin_GooglePlayKey
+            resValue 'string', "youtube_api_key", YouTube_DEVELOPER_KEY
         }
     }
     buildToolsVersion '28.0.3'
