@@ -258,7 +258,7 @@ class MainActivity : MyDefaultActivity(),
         val rightDrawerAdapter = MyListAdapter(favList,1.3F)
 
         // подключим адаптер для выезжающего справа списка
-        val rightDrawerListView  = findViewById<ListView>(R.id.main_right_drawer)
+        val rightDrawerListView= findViewById<ListView>(R.id.main_right_drawer)
         rightDrawerListView.adapter = rightDrawerAdapter
         rightDrawerListView.setOnItemClickListener { _, _, i, _ ->
             val changedId = favList[i].id
