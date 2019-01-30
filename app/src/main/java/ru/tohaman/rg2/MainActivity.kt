@@ -493,6 +493,10 @@ class MainActivity : MyDefaultActivity(),
                     "MEGAMINX" -> {
                         alert(getString(R.string.help_megaminx)) { okButton { } }.show()
                     }
+                    "MAIN_SKEWB" -> {
+                        alert(getString(R.string.help_main_skewb)) { okButton { } }.show()
+                    }
+
                     "SKEWB" -> {
                         alert(getString(R.string.help_skewb)) { okButton { } }.show()
                     }
