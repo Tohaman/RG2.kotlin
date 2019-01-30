@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="basic_container_title">
+        <item>@string/basic_container_st1_title</item>
+        <item>@string/basic_container_st2_title</item>
+        <item>@string/basic_container_st3_title</item>
+        <item>@string/basic_container_st4_title</item>
+        <item>@string/basic_container_st5_title</item>
+        <item>@string/basic_container_st6_title</item>
+        <item>@string/basic_container_st7_title</item>
+        <item>@string/basic_container_st8_title</item>
+    </string-array>
+
+    <integer-array name="basic_container_icon">
+        <item>@drawable/container_1_3</item>
+        <item>@drawable/container_1_4</item>
+        <item>@drawable/container_1_5</item>
+        <item>@drawable/container_1_6</item>
+        <item>@drawable/container_1_7</item>
+        <item>@drawable/container_1_8</item>
+        <item>@drawable/container_1_9</item>
+        <item>@drawable/container_1_10</item>
+    </integer-array>
+
+    <string-array name="basic_container_descr">
+        <item>@string/basic_container_st1_descr</item>
+        <item>@string/basic_container_st2_descr</item>
+        <item>@string/basic_container_st3_descr</item>
+        <item>@string/basic_container_st4_descr</item>
+        <item>@string/basic_container_st5_descr</item>
+        <item>@string/basic_container_st6_descr</item>
+        <item>@string/basic_container_st7_descr</item>
+        <item>@string/basic_container_st8_descr</item>
+    </string-array>
+
+    <string-array name="basic_container_url">
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+        <item>basic</item>
+    </string-array>
+
+    <string name="basic_container_st1_title">RU</string>
+    <string name="basic_container_st1_descr">Правое верхнее по</string>
+    <string name="basic_container_st2_title">RU\'</string>
+    <string name="basic_container_st2_descr">Правое верхнее против</string>
+    <string name="basic_container_st3_title">LU\'</string>
+    <string name="basic_container_st3_descr">Правое ребро</string>
+    <string name="basic_container_st4_title">LU</string>
+    <string name="basic_container_st4_descr">Левое ребро</string>
+    <string name="basic_container_st5_title">R</string>
+    <string name="basic_container_st5_descr">Правое ребро</string>
+    <string name="basic_container_st6_title">L</string>
+    <string name="basic_container_st6_descr">Левое ребро</string>
+    <string name="basic_container_st7_title">R</string>
+    <string name="basic_container_st7_descr">Правое ребро</string>
+    <string name="basic_container_st8_title">L</string>
+    <string name="basic_container_st8_descr">Левое ребро</string>
+
+</resources>

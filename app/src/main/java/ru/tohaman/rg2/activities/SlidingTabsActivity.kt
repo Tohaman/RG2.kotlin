@@ -214,6 +214,7 @@ class SlidingTabsActivity : MyDefaultActivity(),
                                         "IVY" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_IVY")}
                                         "REDI" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_REDI")}
                                         "CLOVER" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_CLOVER")}
+                                        "CONTAINER" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_CONTAINER")}
                                         else -> {ListPagerLab.get(ctx).getPhaseList("BASIC3X3")}
                                     }
                             val lstView = listView {
