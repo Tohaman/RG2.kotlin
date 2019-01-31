@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.support.graphics.drawable.VectorDrawableCompat
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.text.Html
@@ -23,7 +24,6 @@ import org.jetbrains.anko.sdk15.coroutines.onClick
 import org.jetbrains.anko.support.v4.*
 import ru.tohaman.rg2.DebugTag
 import ru.tohaman.rg2.DeveloperKey.DEVELOPER_KEY
-import ru.tohaman.rg2.R
 import ru.tohaman.rg2.VIDEO_PREVIEW
 import ru.tohaman.rg2.data.Favorite
 import ru.tohaman.rg2.data.ListPager
@@ -31,6 +31,9 @@ import ru.tohaman.rg2.data.ListPagerLab
 import ru.tohaman.rg2.ui.PagerItemUI
 import ru.tohaman.rg2.util.spannedString
 import ru.tohaman.rg2.util.toEditable
+import java.io.IOException
+import org.xmlpull.v1.XmlPullParserFactory
+import ru.tohaman.rg2.R
 
 class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener {
     // Константы для YouTubePlayer
@@ -43,14 +46,14 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         // Создаем Вью
-        val view = PagerItemUI<Fragment>().createView(AnkoContext.create(ctx, this))
+        val view = PagerItemUI<Fragment>().createView(AnkoContext.create(requireContext(), this))
         //получаем сиглет общей базы и избранного
-        val listPagerLab = ListPagerLab.get(ctx)
+        val listPagerLab = ListPagerLab.get(requireContext())
         val favoritesList = listPagerLab.favorites
 
         //Данные во фрагмент передаются через фабричный метод newInstance данного фрагмента
 
-        val phase = arguments!!.getString("phase")
+        val phase = arguments!!.getString("phase")!!
         val id = arguments!!.getInt("id")
         val lp = listPagerLab.getPhaseItem(id, phase)
         val title = lp.title
@@ -66,9 +69,9 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         val spanText = spannedString(textString, imgGetter, tagHandler)
 //        val spanText = Html.fromHtml("<br><p><strike>Test Strike</strike></p>", imgGetter, tagHandler)
 
-        val mainTextView = view.findViewById<TextView>(PagerItemUI.Ids.descriptionText)
+        val mainTextView = view.findViewById (PagerItemUI.Ids.descriptionText) as TextView
 
-        val favCheckBox = view.findViewById<CheckBox>(PagerItemUI.Ids.checkBox)
+        val favCheckBox = view.findViewById (PagerItemUI.Ids.checkBox) as CheckBox
         //Пришлось делать вот так, а не через xml, которая задает изображение в зависимости от статуса,
         //т.к. иначе при смене через избранное кэшеруется не то изображение
         var favIsChecked = false
@@ -102,7 +105,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
                                 positiveButton("OK") {
                                     favCheckBox.buttonDrawableResource = R.drawable.ic_favorite_checked
-                                    listPagerLab.addFavorite(Favorite(phase, id, editTxt.text.toString()), ctx)
+                                    listPagerLab.addFavorite(Favorite(phase, id, editTxt.text.toString()), requireContext())
                                     if (mListener != null) {
                                         mListener!!.onViewPagerCheckBoxInteraction()
                                     }
@@ -127,7 +130,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
                                 positiveButton("OK") {
                                     favCheckBox.buttonDrawableResource = R.drawable.ic_favorite
-                                    listPagerLab.removeFavorite(phase, id, ctx)
+                                    listPagerLab.removeFavorite(phase, id, requireContext())
                                     if (mListener != null) {
                                         mListener!!.onViewPagerCheckBoxInteraction()
                                     }
@@ -152,8 +155,8 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         (view.findViewById(PagerItemUI.Ids.pagerImageView) as ImageView).imageResource = topImage
 
-        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
-        val textSize = sp.getString("text_size", "15").toFloat()
+        val sp = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val textSize = sp.getString("text_size", "15")!!.toFloat()
         mainTextView.textSize = textSize
         mainTextView.text = spanText
         mainTextView.isSelectable = isTextSelectable
@@ -182,11 +185,11 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
 
         //Выводим коммент, и делаем обработчик нажатия на него (вызваем окно редактирования)
         val commentText = view.findViewById<TextView>(PagerItemUI.Ids.commentText)
-        commentText.text = (ctx.getString(R.string.commentText) + "\n" + comment)
-        commentText.onClick { it ->
+        commentText.text = (requireContext().getString(R.string.commentText) + "\n" + comment)
+        commentText.onClick { _ ->
             alert(R.string.commentText) {
                 customView {
-                    val imm = ctx.inputMethodManager
+                    val imm = requireContext().inputMethodManager
                     val eText = editText {
                         inputType = InputType.TYPE_TEXT_FLAG_CAP_WORDS
                         text = comment.toEditable()
@@ -199,7 +202,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
                         comment = eText.text.toString()
                         lps.comment = comment
                         listPagerLab.updateListPager(lps)
-                        commentText.text = (ctx.getString(R.string.commentText) + "\n" + comment)
+                        commentText.text = (requireContext().getString(R.string.commentText) + "\n" + comment)
                     }
                     negativeButton("Отмена") {
                         imm.hideSoftInputFromWindow(eText.windowToken, 0)
@@ -236,7 +239,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
         }
     }
 
-    private fun canPlayYouTubeVideo():Boolean = YouTubeApiServiceUtil.isYouTubeApiServiceAvailable(ctx) == YouTubeInitializationResult.SUCCESS
+    private fun canPlayYouTubeVideo():Boolean = YouTubeApiServiceUtil.isYouTubeApiServiceAvailable(requireContext()) == YouTubeInitializationResult.SUCCESS
 
 //    private fun playYouTubeVideo(needPlaying:Boolean, urlToPlay: String = "0TvO_rpG_aM"): Boolean {
 //        val intent: Intent? = YouTubeStandalonePlayer.createVideoIntent(activity, DEVELOPER_KEY, urlToPlay, 1000, true, true)
@@ -257,16 +260,14 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
     @Suppress("DEPRECATION")
     private val imgGetter = Html.ImageGetter { source ->
         var sourceString = source
-        val drawable: Drawable
+        var drawable: Drawable = ContextCompat.getDrawable(requireContext(), resources.getIdentifier("ic_warning", "drawable", activity?.packageName))!!
         sourceString = sourceString.replace(".png", "")
         sourceString = sourceString.replace(".xml", "")
-        var resID = resources.getIdentifier(sourceString, "drawable", activity?.packageName)
+        val resID = resources.getIdentifier(sourceString, "drawable", activity?.packageName)
         //если картинка в drawable не найдена, то подсовываем заведомо существующую картинку
-        if (resID == 0) {
-            resID = resources.getIdentifier("ic_warning", "drawable", activity?.packageName)
+        if (resID != 0) {
+            drawable = ContextCompat.getDrawable(requireContext(), resID)!!
         }
-        drawable = ContextCompat.getDrawable(ctx,resID)!!
-
         drawable.setBounds(0, 0, drawable.intrinsicWidth, drawable.intrinsicHeight)
         drawable
     }

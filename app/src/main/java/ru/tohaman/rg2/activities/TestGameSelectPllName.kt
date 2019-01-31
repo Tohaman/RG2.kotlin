@@ -9,7 +9,6 @@ import ru.tohaman.rg2.R
 
 import org.jetbrains.anko.sdk15.coroutines.onClick
 import ru.tohaman.rg2.DebugTag
-import ru.tohaman.rg2.MyDefaultActivity
 import ru.tohaman.rg2.adapters.MyListAdapter
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.data.ListPagerLab

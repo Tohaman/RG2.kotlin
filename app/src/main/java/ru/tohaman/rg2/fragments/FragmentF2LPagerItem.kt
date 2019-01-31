@@ -39,9 +39,9 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         // Создаем Вью
-        val view = F2LPagerItemUI<Fragment>().createView(AnkoContext.create(ctx, this))
+        val view = F2LPagerItemUI<Fragment>().createView(AnkoContext.create(requireContext(), this))
         //получаем сиглет общей базы и избранного
-        val listPagerLab = ListPagerLab.get(ctx)
+        val listPagerLab = ListPagerLab.get(requireContext())
         val favoritesList = listPagerLab.favorites
 
         //Данные во фрагмент передаются через фабричный метод newInstance данного фрагмента
@@ -71,7 +71,7 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
         val mainTextView = view.findViewById<TextView>(F2LPagerItemUI.Ids.descriptionText)
         mainTextView.text = spanText
         //Задаем размер текста
-        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
+        val sp = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val descTextSize = sp.getString("text_size", "15")!!.toFloat()
         mainTextView.textSize = descTextSize
 
@@ -173,8 +173,8 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
 
         //Выводим коммент, и делаем обработчик нажатия на него (вызваем окно редактирования)
         val commentText = view.findViewById<TextView>(F2LPagerItemUI.Ids.commentText)
-        commentText.text = (ctx.getString(R.string.commentText) + "\n" + comment)
-        commentText.onClick { it ->
+        commentText.text = (requireContext().getString(R.string.commentText) + "\n" + comment)
+        commentText.onClick { _ ->
             alert(R.string.commentText) {
                 customView {
                     val imm = ctx.inputMethodManager
@@ -203,7 +203,7 @@ class FragmentF2LPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListe
     }
 
 
-    private fun canPlayYouTubeVideo():Boolean = YouTubeApiServiceUtil.isYouTubeApiServiceAvailable(ctx) == YouTubeInitializationResult.SUCCESS
+    private fun canPlayYouTubeVideo():Boolean = YouTubeApiServiceUtil.isYouTubeApiServiceAvailable(requireContext()) == YouTubeInitializationResult.SUCCESS
 
     private fun hideYouTubePreview(thumbnailView: YouTubeThumbnailView, ytTextView: TextView, playPreviewImage: ImageView) {
         thumbnailView.visibility = View.GONE

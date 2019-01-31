@@ -64,10 +64,10 @@ class SlidingTabsActivity : MyDefaultActivity(),
 
         //Инициируем фазу и номер этапа, должны быть переданы из другой активности, если нет, то используем значения по-умолчанию
         if (intent.hasExtra(RUBIC_PHASE)){
-            curPhase = intent.extras.getString(RUBIC_PHASE)
+            curPhase = intent.extras!!.getString(RUBIC_PHASE)!!
         }
         if (intent.hasExtra(EXTRA_ID)){
-            curId = intent.extras.getInt(EXTRA_ID)
+            curId = intent.extras!!.getInt(EXTRA_ID)
         }
 
         //Регистрируем обработчик изменений в SharedPreference
@@ -214,6 +214,7 @@ class SlidingTabsActivity : MyDefaultActivity(),
                                         "IVY" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_IVY")}
                                         "REDI" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_REDI")}
                                         "CLOVER" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_CLOVER")}
+                                        "CONTAINER" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_CONTAINER")}
                                         else -> {ListPagerLab.get(ctx).getPhaseList("BASIC3X3")}
                                     }
                             val lstView = listView {

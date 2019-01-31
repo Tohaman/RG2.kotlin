@@ -255,12 +255,14 @@
         <a href="rg2://ytplay?time=4:08&link=vDG7tg__FNo">на видео 4:08</a> <br/>
         <b>Алгоритм: (M\' U\' M\' U\' M\' U\' M\' U\') (M U\' M U\' M U\' M U\')</b></p>
         <p>3. Вариант от Феликса Земдегса<br/>
-        Фингертрикс: <a href="rg2://ytplay?time=11:51&link=IasVqtCHoj0">от Феликса</a> <br/>
+        Фингертрикс: <a href="rg2://ytplay?time=11:51&link=IasVqtCHoj0">от Феликса</a><br/>
         <b>Алгоритм: M U (R U R\' U\') M2\' (U R U\' Rw\')</b> хотя судя по исполнению, правильнее
         записать так:<br/> <b>Rw\' R U (R U R\' U\') Rw2 R2\' (U R U\' Rw\')</b></p>
         <b>Как смоделировать</b>: выполнить Снежинку еще раз :)
     ]]></string>
     <string name="oll_st1_url">vDG7tg__FNo</string>
+    <!--<p>А можно выполнить и вот так: <b>(R U R' U') M'2 U (R U' R' U') M'</b></p>-->
+    <!-- от Дениса Сидорова, но что-то с ним не так-->
 
     <string name="oll_st2_title">#2 Домино</string>
     <string name="oll_st2_descr" formatted="false"><![CDATA[

@@ -1,3 +1,19 @@
+/*
+ * Copyright (C) 2019 Rozov Anton
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package ru.tohaman.rg2
 
 import android.app.AlertDialog
@@ -29,6 +45,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import ru.tohaman.rg2.DeveloperKey.base64EncodedPublicKey
 import ru.tohaman.rg2.activities.F2LPagerActivity
+import ru.tohaman.rg2.activities.MyDefaultActivity
 import ru.tohaman.rg2.adapters.MyListAdapter
 import ru.tohaman.rg2.data.ListPager
 import ru.tohaman.rg2.util.*
@@ -145,9 +162,9 @@ class MainActivity : MyDefaultActivity(),
             alert(getString(R.string.first_start)) { okButton { } }.show()
             //и отменяем вывод окна что нового в данной версии
             curPhase = "MAIN3X3"
-            saveInt2SP(curVersion,"version",ctx)
+            saveInt2SP(curVersion,"version",this)
         }
-        saveInt2SP(startCount,"startcount",ctx)
+        saveInt2SP(startCount,"startcount",this)
 
         // проверяем версию программы в файле настроек, если она отлична от текущей, то выводим окно с описанием обновлений
         if (curVersion != version) { //если версии разные
@@ -165,10 +182,10 @@ class MainActivity : MyDefaultActivity(),
                     alert("Понравилось приложение? Подпишитесь на мой канал в Youtube.") {
                         positiveButton("Подписаться") {
                             browse("https://www.youtube.com/channel/UCpSUF7w376aCRRvzkoNoAfQ")
-                            saveBoolean2SP(true,"subscribe",ctx)
+                            saveBoolean2SP(true,"subscribe", baseContext)
                         }
                         negativeButton("Спасибо, уже подписался") {
-                            saveBoolean2SP(true,"subscribe",ctx)
+                            saveBoolean2SP(true,"subscribe", baseContext)
                         }
                         neutralPressed ("Напомнить позже") {
                         }
@@ -194,7 +211,7 @@ class MainActivity : MyDefaultActivity(),
                 setListFragmentPhase(curPhase)
             }
             in listOfOllMenu -> {
-                curPhase = mListPagerLab.getBackPhase(curPhase,ctx)
+                curPhase = mListPagerLab.getBackPhase(curPhase, this)
                 changedPhase = curPhase
             }
             else -> { setListFragmentPhase(curPhase) }
@@ -207,7 +224,7 @@ class MainActivity : MyDefaultActivity(),
             fab.show()
         }
         fab.setOnClickListener {
-            val backPhase = mListPagerLab.getBackPhase(curPhase,ctx)
+            val backPhase = mListPagerLab.getBackPhase(curPhase, this)
             if (backPhase == "") {
                 when (curPhase) {
                     "AZBUKA" -> {
@@ -248,7 +265,7 @@ class MainActivity : MyDefaultActivity(),
             changedPhase = favList[i].url
             if (changedPhase in listOfOllMenu) {
                 startActivity<F2LPagerActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
-                setListFragmentPhase(mListPagerLab.getBackPhase(changedPhase,ctx))
+                setListFragmentPhase(mListPagerLab.getBackPhase(changedPhase, this))
             } else {
                 setListFragmentPhase(changedPhase)
                 startActivity<SlidingTabsActivity>(RUBIC_PHASE to changedPhase, EXTRA_ID to changedId)
@@ -262,7 +279,7 @@ class MainActivity : MyDefaultActivity(),
         alert(getString(R.string.whatsnew)) { okButton { } }.show()
         saveInt2SP(toVersion, "version", this)
         //Тут можно указать фазу новинки, чтобы после обновления программы, открылась новинка.
-        curPhase = "PENTACLE"
+        curPhase = "CONTAINER"
         if (fromVersion < 68) { updateComment68()}
         if (fromVersion < 79) { updateComment79()}
         if (fromVersion < 86) { update86() }
@@ -497,6 +514,13 @@ class MainActivity : MyDefaultActivity(),
                     "CUB2X2X3" -> {
                         alert(getString(R.string.help_cub_2x2x2)) { okButton { } }.show()
                     }
+                    "PENTACLE" -> {
+                        alert(getString(R.string.help_pentacle)) { okButton { } }.show()
+                    }
+                    "CONTAINER" -> {
+                        alert(getString(R.string.help_container)) { okButton { } }.show()
+                    }
+
                     "AZBUKA" -> {
                         alert(getString(R.string.help_azbuka)) { okButton { } }.show()
                     }
@@ -925,8 +949,9 @@ class MainActivity : MyDefaultActivity(),
      * case where the user purchases an item on one device and then uses your app on
      * a different device, because on the other device you will not have access to the
      * random string you originally generated.*/
-    private fun verifyDeveloperPayload(p: Purchase): Boolean {
+    private fun verifyDeveloperPayload( p : Purchase): Boolean {
         val payload = p.developerPayload
+        Log.d (TAG, payload)
         // тут можно проверить ответ от гугла, но нам в данном случае фиолетово,
         // ибо пользователь за свою покупку ничего в приложении получить не должен
         return true
