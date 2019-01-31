@@ -56,7 +56,7 @@ class BlindTestGame : MyDefaultActivity() {
                     .forEach { it.setOnClickListener(guessButtonListener) }
         }
         //Скрываем ненужные кнопки
-        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
+        val sp = PreferenceManager.getDefaultSharedPreferences(this)
         guessRows = sp.getInt(BLIND_ROW_COUNT, 6) / 2
         isCornerChecked = sp.getBoolean(BLIND_IS_CORNER_CHECKED, true)
         isEdgeChecked = sp.getBoolean(BLIND_IS_EDGE_CHECKED, true)
@@ -74,7 +74,7 @@ class BlindTestGame : MyDefaultActivity() {
         //разбираем кубик по скрамблу
         val scrambledCube = runScramble(resetCube(), scramble)
 
-        val listPagerLab = ListPagerLab.get(ctx)
+        val listPagerLab = ListPagerLab.get(this)
         val azbuka = listPagerLab.getCurrentAzbuka()
         azbukaRnd.clear()
         //берем из азбуки только уникальные значения Set
@@ -135,9 +135,9 @@ class BlindTestGame : MyDefaultActivity() {
 
         return LayerDrawable( Array(28) { i ->
             //получаем drawable по имени "z_2s_0$i"
-            val drw = ContextCompat.getDrawable(ctx, resources.getIdentifier("z_2s_0$i", "drawable", this.packageName))
+            val drw = ContextCompat.getDrawable(this, resources.getIdentifier("z_2s_0$i", "drawable", this.packageName))
             //раскрашиваем цветом кубика
-            DrawableCompat.setTint(drw!!, ContextCompat.getColor(ctx,cubeColor[genScrambleCube[27-i]]))
+            DrawableCompat.setTint(drw!!, ContextCompat.getColor(this,cubeColor[genScrambleCube[27-i]]))
             drw
         })
     }

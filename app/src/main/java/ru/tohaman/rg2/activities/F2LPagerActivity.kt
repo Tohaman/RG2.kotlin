@@ -35,8 +35,8 @@ class F2LPagerActivity : MyDefaultActivity(),
         setSupportActionBar(toolbar)
 
         //Инициируем фазу и номер этапа, должны быть переданы из другой активности, если нет, то используем значения по-умолчанию
-        if (intent.hasExtra(RUBIC_PHASE)) curPhase = intent.extras.getString(RUBIC_PHASE)
-        if (intent.hasExtra(EXTRA_ID)) curId = intent.extras.getInt(EXTRA_ID)
+        if (intent.hasExtra(RUBIC_PHASE)) curPhase = intent.extras!!.getString(RUBIC_PHASE)!!
+        if (intent.hasExtra(EXTRA_ID)) curId = intent.extras!!.getInt(EXTRA_ID)
 
         Log.v (DebugTag.TAG, "SlidingTabActivity onCreate Инициализируем ListPagers и передаем его адаптерам")
         mListPagerLab = ListPagerLab.get(this)

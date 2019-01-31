@@ -147,8 +147,7 @@ class ListPagerLab private constructor(context: Context){
                              subIdArray : Int,
                              subTitleArray : Int,
                              subLongTitleArray : Int,
-                             context: Context,
-                             comment: Int = 0) {
+                             context: Context) {
         val titles = context.resources.getStringArray(titleArray)
         val icon = context.resources.obtainTypedArray(iconArray)
         val description = context.resources.obtainTypedArray(descrArray)
