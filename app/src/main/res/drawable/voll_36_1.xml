@@ -23,5 +23,5 @@
     <item android:drawable="@drawable/z_3d_up_45_y" android:right="@dimen/oll_right_sw"/>
     <item android:drawable="@drawable/z_3d_up_46_g" android:right="@dimen/oll_right_sw"/>
 
-    <item android:drawable="@drawable/voll_35_11" android:left="@dimen/oll_left_sw"/>
+    <item android:drawable="@drawable/voll_36_11" android:left="@dimen/oll_left_sw"/>
 </layer-list>
