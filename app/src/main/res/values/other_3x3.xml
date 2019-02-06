@@ -6,6 +6,7 @@
         <item>Мастер пираморфикс (Master Pyramorphix)</item>
         <item>Судоку куб</item>
         <item>Мельница (Windmill)</item>
+        <item>Фишер (Fisher)</item>
     </string-array>
 
     <integer-array name="other3x3_icon">
@@ -14,6 +15,7 @@
         <item>@drawable/pyramorphix</item>
         <item>@drawable/sudoku</item>
         <item>@drawable/windmill</item>
+        <item>@drawable/fisher_10</item>
     </integer-array>
 
     <string-array name="other3x3_descr">
@@ -22,9 +24,11 @@
         <item>@string/other3x3_st3_descr</item>
         <item>@string/other3x3_st4_descr</item>
         <item>@string/other3x3_st5_descr</item>
+        <item>@string/other3x3_st6_descr</item>
     </string-array>
 
     <string-array name="other3x3_url">
+        <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
@@ -37,6 +41,7 @@
     <string name="other3x3_st3_descr">PYRAMORPHIX</string>
     <string name="other3x3_st4_descr">SUDOKU</string>
     <string name="other3x3_st5_descr">WINDMILL</string>
+    <string name="other3x3_st6_descr">FISHER</string>
 
 </resources>
 
