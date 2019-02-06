@@ -413,6 +413,9 @@ class MainActivity : MyDefaultActivity(),
                     "WINDMILL" -> {
                         alert(getString(R.string.help_windmill)) { okButton { } }.show()
                     }
+                    "FISHER" -> {
+                        alert(getString(R.string.help_fisher)) { okButton { } }.show()
+                    }
 
                     "ADV2X2" -> {
                         alert(getString(R.string.help_adv2x2)) { okButton { } }.show()

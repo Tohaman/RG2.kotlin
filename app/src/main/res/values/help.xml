@@ -99,7 +99,7 @@
     <string name="help_mirror">Простой метод сборки зеркального кубика.</string>
     <string name="help_axis">Простой метод сборки ненормального кубика (Axis cube). Его основные отличия от простого кубика 3х3.</string>
     <string name="help_sudoku">Различные варианты судоку кубов и методы их сборки.</string>
-    <string name="help_windmill">Простой метод сборки Мельницы (Windmill), который так же подойдет для Fisher cube и Бочки.</string>
+    <string name="help_windmill">Простой метод сборки Мельницы (Windmill).</string>
     <string name="help_pyramorphix">Простой метод сборки необычной головоломки Master Pyramorphix, которая выглядит как пирамидка, но по сути
         является кубиком 3х3.</string>
     <string name="help_other">Другие шарнирные головоломки.</string>
@@ -122,5 +122,6 @@
     <string name="help_pentacle">Обучалка по пентакль кубу, который является компиляцией кубика 2х2 и 5х5.</string>
     <string name="help_container">Простой метод сборки непростого скьюба.</string>
     <string name="help_main_skewb">Обучалки по различным разновидностям скьюба.</string>
+    <string name="help_fisher">Простой метод сборки Фишер куба (Fisher cube)</string>
 
 </resources>

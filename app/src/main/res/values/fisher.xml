@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="fisher_title">
+        <item>@string/fisher_st1_title</item>
+        <item>@string/fisher_st2_title</item>
+        <item>@string/fisher_st3_title</item>
+        <item>@string/fisher_st4_title</item>
+    </string-array>
+
+    <integer-array name="fisher_icon">
+        <item>@drawable/fisher_1</item>
+        <item>@drawable/fisher_2</item>
+        <item>@drawable/fisher_3</item>
+        <item>@drawable/fisher_4</item>
+        <item>@drawable/fisher_5</item>
+        <item>@drawable/fisher_6</item>
+        <item>@drawable/fisher_7</item>
+        <item>@drawable/fisher_8</item>
+        <item>@drawable/fisher_9</item>
+        <item>@drawable/fisher_10</item>
+    </integer-array>
+    
+    <string-array name="fisher_descr">
+        <item>@string/fisher_st1_descr</item>
+        <item>@string/fisher_st2_descr</item>
+        <item>@string/fisher_st3_descr</item>
+        <item>@string/fisher_st4_descr</item>
+    </string-array>
+
+
+    <string-array name="fisher_url">
+        <item>@string/fisher_st1_url</item>
+        <item>@string/fisher_st2_url</item>
+        <item>@string/fisher_st3_url</item>
+        <item>@string/fisher_st4_url</item>
+    </string-array>
+
+    <string name="fisher_st1_title">Особенности головоломки</string>
+    <string name="fisher_st1_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="fisher_st1_url">Jy9OuYQuabI</string>
+
+    <string name="fisher_st2_title">1. Белый крест</string>
+    <string name="fisher_st2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="fisher_st2_url">Jy9OuYQuabI</string>
+
+    <string name="fisher_st3_title">2. Правильный белый крест</string>
+    <string name="fisher_st3_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="fisher_st3_url">Jy9OuYQuabI</string>
+
+    <string name="fisher_st4_title">3. Разворот центров среднего слоя</string>
+    <string name="fisher_st4_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="fisher_st4_url">Jy9OuYQuabI</string>
+
+    <string name="fisher_st5_title">4. </string>
+    <string name="fisher_st5_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="fisher_st5_url">Jy9OuYQuabI</string>
+
+    <string name="fisher_st6_title">5. </string>
+    <string name="fisher_st6_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="fisher_st6_url">Jy9OuYQuabI</string>
+
+    <string name="fisher_st7_title">6. </string>
+    <string name="fisher_st7_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="fisher_st7_url">Jy9OuYQuabI</string>
+
+    <string name="fisher_st8_title">7. </string>
+    <string name="fisher_st8_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="fisher_st8_url">Jy9OuYQuabI</string>
+
+    <string name="fisher_st9_title">8. </string>
+    <string name="fisher_st9_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="fisher_st9_url">Jy9OuYQuabI</string>
+
+    <string name="fisher_st10_title">9. </string>
+    <string name="fisher_st10_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="fisher_st10_url">Jy9OuYQuabI</string>
+
+</resources>
