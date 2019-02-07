@@ -6,10 +6,13 @@
 
 ## Запуск
 
-1. Клонируйте репозитарий `git clone https://github.com/Tohaman/RG2.kotlin.git`.
-2. Добавить в файл gradle.properties строчки
+1. Клонируйте репозитарий `git clone https://github.com/Tohaman/RG2.kotlin.git`. Или импортируйте его в Android Studio.
+2. Добавьте в файл gradle.properties строчки
 ```
 YouTube_ApiKey = "Ваш Youtube v3 API key"
 RG2_Kotlin_GooglePlayKey = "ХХХХХХХХХХХХХХХХ"
 ```
-3. Скомпилировать
+
+### Android Studio
+
+- Перейдите в `Run > Run app` и выберите ваше устройство на котором вы хотите запустить программу, или создайте новое виртуальное устройство при помощи мастера.  
