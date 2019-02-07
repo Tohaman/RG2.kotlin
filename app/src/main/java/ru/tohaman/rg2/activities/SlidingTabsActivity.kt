@@ -52,7 +52,7 @@ class SlidingTabsActivity : MyDefaultActivity(),
         Log.v (TAG, "SlidingTabActivity onCreate")
         setContentView(R.layout.activity_sliding_tabs)
         setSupportActionBar(toolbar)
-        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
+        val sp = PreferenceManager.getDefaultSharedPreferences(this)
         if (!sp.getBoolean("fab_on", false)) {
             fab_sl.visibility = View.GONE
         } else {
@@ -135,8 +135,8 @@ class SlidingTabsActivity : MyDefaultActivity(),
             if (curPhase != changedPhase) {
                 //вот такой "коллбэк", в основной активности обработчик onSharedPreferenceChanged
                 //обработает данные изменения и при возврате в onResume запустит что надо
-                saveInt2SP(changedId, "startId", ctx)
-                saveString2SP(changedPhase, "startPhase", ctx)
+                saveInt2SP(changedId, "startId", this)
+                saveString2SP(changedPhase, "startPhase", this)
                 onBackPressed()
             } else {
                 mViewPagerSlidingTabs.currentItem = changedId
@@ -182,7 +182,7 @@ class SlidingTabsActivity : MyDefaultActivity(),
         //Если поменяли фазу, значит меняем значение changedPhase
         when (key) {
             "startPhase" -> {
-                val phase = sp.getString(key, "ROZOV")
+                val phase = sp.getString(key, "ROZOV")!!
                 if (curPhase !=  phase) { changedPhase = phase }
                 val id = sp.getInt("startId", 0)
                 if (curId != id) { changedId = id}
