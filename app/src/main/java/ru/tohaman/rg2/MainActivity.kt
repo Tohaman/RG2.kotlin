@@ -609,6 +609,10 @@ class MainActivity : MyDefaultActivity(),
                 drawer_layout.openDrawer(GravityCompat.END)
                 return true
             }
+            R.id.main_search -> {
+                alert("В процессе разработки")
+                return true
+            }
 
             else -> return super.onOptionsItemSelected(item)
         }
