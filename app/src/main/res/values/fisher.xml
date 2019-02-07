@@ -6,6 +6,12 @@
         <item>@string/fisher_st2_title</item>
         <item>@string/fisher_st3_title</item>
         <item>@string/fisher_st4_title</item>
+        <item>@string/fisher_st5_title</item>
+        <item>@string/fisher_st6_title</item>
+        <item>@string/fisher_st7_title</item>
+        <item>@string/fisher_st8_title</item>
+        <item>@string/fisher_st9_title</item>
+        <item>@string/fisher_st10_title</item>
     </string-array>
 
     <integer-array name="fisher_icon">
@@ -26,6 +32,12 @@
         <item>@string/fisher_st2_descr</item>
         <item>@string/fisher_st3_descr</item>
         <item>@string/fisher_st4_descr</item>
+        <item>@string/fisher_st5_descr</item>
+        <item>@string/fisher_st6_descr</item>
+        <item>@string/fisher_st7_descr</item>
+        <item>@string/fisher_st8_descr</item>
+        <item>@string/fisher_st9_descr</item>
+        <item>@string/fisher_st10_descr</item>
     </string-array>
 
 
@@ -34,6 +46,12 @@
         <item>@string/fisher_st2_url</item>
         <item>@string/fisher_st3_url</item>
         <item>@string/fisher_st4_url</item>
+        <item>@string/fisher_st5_url</item>
+        <item>@string/fisher_st6_url</item>
+        <item>@string/fisher_st7_url</item>
+        <item>@string/fisher_st8_url</item>
+        <item>@string/fisher_st9_url</item>
+        <item>@string/fisher_st10_url</item>
     </string-array>
 
     <string name="fisher_st1_title">Особенности головоломки</string>
