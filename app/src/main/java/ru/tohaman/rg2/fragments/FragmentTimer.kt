@@ -87,7 +87,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         Log.v (DebugTag.TAG, "FragmentTimer onCreate")
         super.onCreate(savedInstanceState)
         retainInstance = true
-        val sp = PreferenceManager.getDefaultSharedPreferences(ctx)
+        val sp = PreferenceManager.getDefaultSharedPreferences(requireContext())
         oneHandTimer = sp.getBoolean(ONE_HAND_TO_START, false)
         metronomEnabled = sp.getBoolean(METRONOM_ENABLED, true)
         metronomTime = sp.getInt(METRONOM_TIME, 60)
@@ -98,7 +98,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         chkCornersBuffer = sp.getBoolean(CHK_BUF_CORNERS, false)
         scrambleLength = sp.getInt(SCRAMBLE_LEN, 14)
 
-        curTime = ctx.getString(R.string.begin_timer_text)
+        curTime = requireContext().getString(R.string.begin_timer_text)
 
 
 //      Примеры работы с базой времени
@@ -218,7 +218,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                                 saveResultLayout.visibility = View.GONE
                             }
                         }
-                        textTime.text = ctx.getString(R.string.begin_timer_text)
+                        textTime.text = requireContext().getString(R.string.begin_timer_text)
                     }
                     //если обе руки прикоснулись, а таймер был запущен, значит его надо остановить
                     (secHand and isTimerStart) -> {
@@ -256,8 +256,8 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     }
 
     private fun setCircleColor(handLight: ImageView, colorId: Int) {
-        val icon = ContextCompat.getDrawable(ctx, R.drawable.timer_circle)
-        DrawableCompat.setTint(icon!!, ContextCompat.getColor(ctx, colorId))
+        val icon = ContextCompat.getDrawable(requireContext(), R.drawable.timer_circle)
+        DrawableCompat.setTint(icon!!, ContextCompat.getColor(requireContext(), colorId))
         //красим кружки, только текущий или оба в зависимости от одно- или дву-рукого управления
 
         if (oneHandTimer) {
@@ -272,7 +272,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         Log.v (DebugTag.TAG, "TimerUI timerReset")
         isTimerStart = false
         isTimerReady = false
-        curTime = ctx.getString(R.string.begin_timer_text)
+        curTime = requireContext().getString(R.string.begin_timer_text)
         textTime.text = curTime
         saveResultLayout.visibility = View.GONE
     }
@@ -744,9 +744,9 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
     }
 
     private fun newScramble() {
-        text4Scramble = generateScrambleWithParam(chkEdgesBuffer, chkCornersBuffer, scrambleLength, ctx)
+        text4Scramble = generateScrambleWithParam(chkEdgesBuffer, chkCornersBuffer, scrambleLength, requireContext())
         scrambleTextView.text = text4Scramble
-        saveString2SP(text4Scramble, SCRAMBLE, ctx)
+        saveString2SP(text4Scramble, SCRAMBLE, requireContext())
         timerReset()
     }
 

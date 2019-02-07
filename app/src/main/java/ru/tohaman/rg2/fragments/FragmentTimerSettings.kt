@@ -16,7 +16,7 @@ import ru.tohaman.rg2.ui.TimerSettingsUI
 class FragmentTimerSettings : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return TimerSettingsUI<Fragment>().createView(AnkoContext.create(ctx, this))
+        return TimerSettingsUI<Fragment>().createView(AnkoContext.create(requireContext(), this))
     }
 
     companion object {

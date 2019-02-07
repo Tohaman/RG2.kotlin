@@ -33,7 +33,7 @@ import ru.tohaman.rg2.util.saveInt2SP
 class FragmentTestGameSettings : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return TestGameUI<Fragment>().createView(AnkoContext.create(ctx, this))
+        return TestGameUI<Fragment>().createView(AnkoContext.create(requireContext(), this))
     }
 
     companion object {

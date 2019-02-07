@@ -21,7 +21,7 @@ import ru.tohaman.rg2.ui.AzbukaSelectUI
 class FragmentAzbukaSelect : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return AzbukaSelectUI<Fragment>().createView(AnkoContext.create (ctx, this))
+        return AzbukaSelectUI<Fragment>().createView(AnkoContext.create (requireContext(), this))
 }
 
     companion object {

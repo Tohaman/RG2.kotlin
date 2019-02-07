@@ -245,7 +245,7 @@ class FragmentScrambleGen : Fragment(), CoroutineScope {
         progressBar.visibility = View.INVISIBLE
         progressText.visibility = View.INVISIBLE
         textScramble.text = genRes
-        saveString2SP(genRes, SCRAMBLE, ctx)
+        saveString2SP(genRes, SCRAMBLE, requireContext())
         val cube = runScramble(resetCube(), genRes)
         showCube(cube)
         textSolve.text = showSolve(cube)

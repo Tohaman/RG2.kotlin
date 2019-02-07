@@ -18,7 +18,7 @@ class TimerActivity : AppCompatActivity() {
     var fragment: Fragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(getThemeFromSharedPreference(ctx))
+        setTheme(getThemeFromSharedPreference(this))
         setContentView(R.layout.activity_fragment)
         //Включаем поддержку векторной графики на устройствах ниже Лилипопа (5.0)
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
