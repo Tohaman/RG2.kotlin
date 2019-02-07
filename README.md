@@ -6,7 +6,7 @@
 
 ## Запуск
 
-1. Скачать репозитарий
+1. Клонируйте репозитарий `git clone https://github.com/Tohaman/RG2.kotlin.git`.
 2. Добавить в файл gradle.properties строчки
 ```
 YouTube_ApiKey = "Ваш Youtube v3 API key"
