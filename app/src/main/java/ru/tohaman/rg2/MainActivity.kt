@@ -180,15 +180,15 @@ class MainActivity : MyDefaultActivity(),
                 //Если не подписан на канал, то выводим окно с просьбой подписаться на канал.
                 val subscribe = sp.getBoolean("subscribe", false)
                 if ((!subscribe) and (startCount % 9 == 0)) {
-                    alert("Понравилось приложение? Подпишитесь на мой канал в Youtube.") {
-                        positiveButton("Подписаться") {
+                    alert( R.string.subscibeText) {
+                        positiveButton(R.string.subscibeOK) {
                             browse("https://www.youtube.com/channel/UCpSUF7w376aCRRvzkoNoAfQ")
                             saveBoolean2SP(true,"subscribe", baseContext)
                         }
-                        negativeButton("Спасибо, уже подписался") {
+                        negativeButton(R.string.subscibeNotOK) {
                             saveBoolean2SP(true,"subscribe", baseContext)
                         }
-                        neutralPressed ("Напомнить позже") {
+                        neutralPressed (R.string.remindMeLater) {
                         }
                     }.show()
                 }

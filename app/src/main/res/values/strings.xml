@@ -72,5 +72,9 @@
     <string name="subscibeButton">Подписаться на канал в youtube</string>
     <string name="searchTextViewText">Что ищем?</string>
     <string name="searchExamlpeHint">например, pll</string>
+    <string name="subscibeText">Понравилось приложение? Подпишитесь на мой канал в Youtube.</string>
+    <string name="subscibeOK">Подписаться</string>
+    <string name="subscibeNotOK">Спасибо, уже подписался</string>
+    <string name="remindMeLater">Напомнить позже</string>
 
 </resources>
