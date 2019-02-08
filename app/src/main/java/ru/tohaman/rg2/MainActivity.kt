@@ -626,7 +626,7 @@ class MainActivity : MyDefaultActivity(),
                                 typeface = Typeface.DEFAULT_BOLD
                             }
                             val searchText = editText (""){
-                                hint  = resources.getString(R.string.searchExamlpeHint)
+                                hint  = getResources().getString(R.string.searchExamlpeHint)
                             }
                             positiveButton("OK") {
                                 curPhase = "search:" + searchText.text.toString()
