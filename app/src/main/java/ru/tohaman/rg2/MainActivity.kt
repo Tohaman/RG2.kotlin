@@ -595,7 +595,9 @@ class MainActivity : MyDefaultActivity(),
                         }.show()
                     }
                     else -> {
-                        if (!curPhase.startsWith("search:", true)) {
+                        if (curPhase.startsWith("search:", true)) {
+                            alert(getString(R.string.help_search)) { okButton { } }.show()
+                        } else {
                             alert(getString(R.string.help_missed)) {
                                 positiveButton("Закрыть") { }
                                 negativeButton("Отправить письмо автору") {

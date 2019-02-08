@@ -121,5 +121,10 @@
     <string name="help_container">Простой метод сборки непростого скьюба.</string>
     <string name="help_main_skewb">Обучалки по различным разновидностям скьюба.</string>
     <string name="help_fisher">Простой метод сборки Фишер куба (Fisher cube)</string>
+    <string name="help_search">Для поиска метода или головоломки вы можете задать только часть слова. Вот несколько примеров:\n
+        фиш\n
+        oll\n
+        ск\n
+    </string>
 
 </resources>

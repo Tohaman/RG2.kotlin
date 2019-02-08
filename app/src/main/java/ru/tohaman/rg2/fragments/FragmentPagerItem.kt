@@ -279,7 +279,7 @@ class FragmentPagerItem : Fragment(), YouTubeThumbnailView.OnInitializedListener
             val tag1 = tag
             val out = output
             val xml = xmlReader
-
+            Log.v (DebugTag.TAG, "$open, $tag1, $out, $xml")
         }
     }
 
