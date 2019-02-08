@@ -44,8 +44,6 @@ import android.widget.ImageView
 import android.widget.ListView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
-import kotlinx.android.synthetic.main.nav_header_main.view.*
-import org.jetbrains.anko.support.v4.alert
 import ru.tohaman.rg2.DeveloperKey.base64EncodedPublicKey
 import ru.tohaman.rg2.activities.F2LPagerActivity
 import ru.tohaman.rg2.activities.MyDefaultActivity
@@ -625,12 +623,15 @@ class MainActivity : MyDefaultActivity(),
                                 padding = dip(10)
                                 typeface = Typeface.DEFAULT_BOLD
                             }
-                            val searchText = editText (""){
-                                hint  = getResources().getString(R.string.searchExamlpeHint)
+                            val sp = PreferenceManager.getDefaultSharedPreferences(context)
+                            val searchText = sp.getString("searchText", "")!!
+                            val searchEditText = editText (searchText){
+                                hint  = resources.getString(R.string.searchExamlpeHint)
                             }
                             positiveButton("OK") {
-                                curPhase = "search:" + searchText.text.toString()
+                                curPhase = "search:" + searchEditText.text.toString()
                                 setListFragmentPhase(curPhase)
+                                saveString2SP(searchEditText.text.toString(),"searchText",context)
                             }
                             negativeButton("Отмена") {}
                         }
