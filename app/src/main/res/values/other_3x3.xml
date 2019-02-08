@@ -6,7 +6,7 @@
         <item>Мастер пираморфикс (Master Pyramorphix)</item>
         <item>Судоку куб</item>
         <item>Мельница (Windmill)</item>
-        <item>Фишер (Fisher)</item>
+        <item>Фишер куб (Fisher cube)</item>
     </string-array>
 
     <integer-array name="other3x3_icon">
