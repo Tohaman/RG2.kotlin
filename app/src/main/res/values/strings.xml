@@ -70,5 +70,7 @@
     <string name="help_bondarenko">Очень простой способ сборки кубика пиф-пафами.</string>
     <string name="big_cubes">Большие кубы (4х4 и т.д.)</string>
     <string name="subscibeButton">Подписаться на канал в youtube</string>
+    <string name="searchTextViewText">Что ищем?</string>
+    <string name="searchExamlpeHint">например, pll</string>
 
 </resources>

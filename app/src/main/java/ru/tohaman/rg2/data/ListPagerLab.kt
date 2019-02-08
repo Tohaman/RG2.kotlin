@@ -252,17 +252,23 @@ class ListPagerLab private constructor(context: Context){
 
     //возвращает из ListPagerLab список ListPager'ов с заданной фазой (все записи для данной фазы)
     fun getPhaseList(phase: String, subId: String = ""): ArrayList<ListPager> {
-        return listPagers.filterTo(ArrayList()) { (phase == it.phase) and (it.subID == subId) }
+        if (phase.startsWith("search:",true)) {
+            val searchString = phase.substring(7)
+            return listPagers.filterTo(ArrayList()) { (it.title.contains(searchString, true)) and (it.subID == subId) }
+        } else {
+            return listPagers.filterTo(ArrayList()) { (it.phase == phase) and (it.subID == subId) }
+        }
     }
 
-    //возвращает из ListPagerLab один ListPager с заданными фазой и номером
+    //возвращает из ListPagerLab один ListPager с заданными фазой и номером в фазе
     fun getPhaseItem(id: Int, phase: String): ListPager {
-        var listPager = ListPager("", 0, "", 0)
+//        var listPager = ListPager("", 0, "", 0)
 
-        listPagers
-                .filter { (phase == it.phase) and (id == it.id)}
-                .forEach { listPager = it }
-        return listPager
+        val listPagers = getPhaseList(phase)
+//        listPagers
+//                .filter { id == it.id }
+//                .forEach { listPager = it }
+        return listPagers[id]
     }
 
     fun getItem(phase: String, id: Int, subId: String) : ListPager {

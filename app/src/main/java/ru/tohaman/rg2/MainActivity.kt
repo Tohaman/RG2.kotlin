@@ -21,6 +21,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.SharedPreferences
+import android.graphics.Typeface
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.design.widget.NavigationView
@@ -43,6 +44,8 @@ import android.widget.ImageView
 import android.widget.ListView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.nav_header_main.view.*
+import org.jetbrains.anko.support.v4.alert
 import ru.tohaman.rg2.DeveloperKey.base64EncodedPublicKey
 import ru.tohaman.rg2.activities.F2LPagerActivity
 import ru.tohaman.rg2.activities.MyDefaultActivity
@@ -594,13 +597,16 @@ class MainActivity : MyDefaultActivity(),
                         }.show()
                     }
                     else -> {
-                        alert(getString(R.string.help_missed)) {
-                            positiveButton("Закрыть") {  }
-                            negativeButton("Отправить письмо автору") {
-                                email("rubicsguide@yandex.ru",
-                                        "Отсутствует help",
-                                        "Отсутствует help для $curPhase") }
-                        }.show()
+                        if (!curPhase.startsWith("search:", true)) {
+                            alert(getString(R.string.help_missed)) {
+                                positiveButton("Закрыть") { }
+                                negativeButton("Отправить письмо автору") {
+                                    email("rubicsguide@yandex.ru",
+                                            "Отсутствует help",
+                                            "Отсутствует help для $curPhase")
+                                }
+                            }.show()
+                        }
                     }
                 }
                 return true
@@ -610,7 +616,26 @@ class MainActivity : MyDefaultActivity(),
                 return true
             }
             R.id.main_search -> {
-                alert("В процессе разработки")
+                alert {
+                    customView {
+                        verticalLayout {
+                            padding = dip(10)
+                            textView(R.string.searchTextViewText) {
+                                textSize = 20f
+                                padding = dip(10)
+                                typeface = Typeface.DEFAULT_BOLD
+                            }
+                            val searchText = editText (""){
+                                hint  = resources.getString(R.string.searchExamlpeHint)
+                            }
+                            positiveButton("OK") {
+                                curPhase = "search:" + searchText.text.toString()
+                                setListFragmentPhase(curPhase)
+                            }
+                            negativeButton("Отмена") {}
+                        }
+                    }
+                }.show()
                 return true
             }
 
@@ -748,7 +773,7 @@ class MainActivity : MyDefaultActivity(),
                 startActivity<F2LPagerActivity>(RUBIC_PHASE to (this.getString(lp.description)), EXTRA_ID to 0)
             }
             //В других случаях запускаем SlidingTabActivity
-            else -> { startActivity<SlidingTabsActivity>(RUBIC_PHASE to phase, EXTRA_ID to id)}
+            else -> { startActivity<SlidingTabsActivity>(RUBIC_PHASE to lp.phase, EXTRA_ID to lp.id)}
         }
     }
 
