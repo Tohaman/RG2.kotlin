@@ -254,7 +254,17 @@ class ListPagerLab private constructor(context: Context){
     fun getPhaseList(phase: String, subId: String = ""): ArrayList<ListPager> {
         if (phase.startsWith("search:",true)) {
             val searchString = phase.substring(7)
-            return listPagers.filterTo(ArrayList()) { (it.title.contains(searchString, true)) and (it.subID == subId) }
+            //Убираем из результатов поиска внутренние переменные (фазы)
+            return listPagers.filterTo(ArrayList()) { (it.title.contains(searchString, true)) and
+                    (it.subID == subId) and
+                    (it.phase != "FAVORITES") and           //Избранное
+                    (it.phase != "AZBUKA") and              //Азбука
+                    (it.phase != "OLLTEST") and             //Фазы для миниигр
+                    (it.phase != "OLLTEST_CUSTOM") and
+                    (it.phase != "PLLTEST") and
+                    (it.phase != "PLLTEST_CUSTOM") and
+                    (it.url != "basic") and                 //Основные движения
+                    (it.url != "thanks")}                   //Спасибо
         } else {
             return listPagers.filterTo(ArrayList()) { (it.phase == phase) and (it.subID == subId) }
         }
