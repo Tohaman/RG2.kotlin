@@ -126,5 +126,6 @@
         oll\n
         ск\n
     </string>
+    <string name="help_gear">Метод сборки одной из самых простых головоломок Gear cube.</string>
 
 </resources>
