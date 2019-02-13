@@ -4,10 +4,10 @@
         <item>Зеркальный куб (Mirror blocks)</item>
         <item>Ненормальный куб (Axis cube)</item>
         <item>Мастер пираморфикс (Master Pyramorphix)</item>
-        <item>Судоку куб</item>
+        <item>Судоку куб (Sudoku)</item>
         <item>Мельница (Windmill)</item>
         <item>Фишер куб (Fisher cube)</item>
-        <item>Gear куб</item>
+        <item>Шестеренчатый куб (Gear cube)</item>
     </string-array>
 
     <integer-array name="other3x3_icon">
