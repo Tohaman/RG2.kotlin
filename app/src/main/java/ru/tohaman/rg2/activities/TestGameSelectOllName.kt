@@ -24,7 +24,7 @@ class TestGameSelectOllName : MyDefaultActivity(), FragmentListView.OnListViewIn
 
         setContentView(R.layout.activity_test_select_pll)
         actionBar?.setDisplayHomeAsUpEnabled(true)
-        val listPagerLab = ListPagerLab.get(ctx)
+        val listPagerLab = ListPagerLab.get(this)
         listPagers = listPagerLab.getPhaseList("OLLTEST")
         // Если еще нет текущих значений, значит они равны названиям Максимкиного OLL
         if (listPagers[0].comment == "") {
