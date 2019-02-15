@@ -24,7 +24,7 @@ class TestGameSelectPllName : MyDefaultActivity(), FragmentListView.OnListViewIn
 
         setContentView(R.layout.activity_test_select_pll)
         actionBar?.setDisplayHomeAsUpEnabled(true)
-        val listPagerLab = ListPagerLab.get(ctx)
+        val listPagerLab = ListPagerLab.get(this)
         listPagers = listPagerLab.getPhaseList("PLLTEST")
         // Если еще нет текущих значений, значит они равны названиям Максимкиного PLL
         if (listPagers[0].comment == "") {
