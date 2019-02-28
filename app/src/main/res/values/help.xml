@@ -127,5 +127,6 @@
         ск\n
     </string>
     <string name="help_gear">Метод сборки одной из самых простых головоломок Gear cube.</string>
+    <string name="help_prisma">Метод сборки Призмы Рубика, основанный на методике Максима Чечнева для начинающих.</string>
 
 </resources>

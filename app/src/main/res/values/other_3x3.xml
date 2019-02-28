@@ -7,6 +7,7 @@
         <item>Судоку куб (Sudoku)</item>
         <item>Мельница (Windmill)</item>
         <item>Фишер куб (Fisher cube)</item>
+        <item>Призма (Prism)</item>
         <item>Шестеренчатый куб (Gear cube)</item>
     </string-array>
 
@@ -17,6 +18,7 @@
         <item>@drawable/sudoku</item>
         <item>@drawable/windmill</item>
         <item>@drawable/fisher_10</item>
+        <item>@drawable/prisma_8</item>
         <item>@drawable/gear_2</item>
     </integer-array>
 
@@ -28,9 +30,11 @@
         <item>@string/other3x3_st5_descr</item>
         <item>@string/other3x3_st6_descr</item>
         <item>@string/other3x3_st7_descr</item>
+        <item>@string/other3x3_st8_descr</item>
     </string-array>
 
     <string-array name="other3x3_url">
+        <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
         <item>submenu</item>
@@ -46,7 +50,8 @@
     <string name="other3x3_st4_descr">SUDOKU</string>
     <string name="other3x3_st5_descr">WINDMILL</string>
     <string name="other3x3_st6_descr">FISHER</string>
-    <string name="other3x3_st7_descr">GEAR</string>
+    <string name="other3x3_st7_descr">PRISMA</string>
+    <string name="other3x3_st8_descr">GEAR</string>
 
 </resources>
 
