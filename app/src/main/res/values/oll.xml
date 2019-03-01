@@ -448,7 +448,7 @@
     <string name="oll_st12_descr" formatted="false"><![CDATA[
         <b>Как решать:</b>
         <p>Данный бумеранг можно назвать классическим, т.к. выполнить надо алгоритм
-        для новичков: в Лондон, два пиф-пафа, из Лондона. </p>
+        для новичков: в Лондон, два пиф-пафа, из Лондона.</p>
         <p style="text-align:center"><img src="voll_12_1.xml" width="60%%"></p> <br/>
         Фингертрикс: <a href="rg2://ytplay?time=1:09&link=hpKpQDXbA4Q">на видео 1:09</a> <br/>
         Фингертрикс: <a href="rg2://ytplay?time=7:42&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
@@ -460,14 +460,20 @@
 
     <string name="oll_st13_title">#13 Чистый бумеранг 1–2</string>
     <string name="oll_st13_descr" formatted="false"><![CDATA[
-        <b>Как решать:</b><br/>
-        <p>Является зеркальным случаем предыдущего, и поэтому все тоже, что и в бумеранге 2-1, но слева.
-        Повернуть на 3 и 12 часов (ход U), Из Лондона, 2 пиф-пафа слева, в Лондон.</p>
-        <p style="text-align:center"><img src="voll_13_1.xml" width="60%%"></p> <br/>
-        Фингертрикс: <a href="rg2://ytplay?time=1:20&link=CQYVqMdqpQk">на видео 1:20</a> <br/>
-        Фингертрикс: <a href="rg2://ytplay?time=7:52&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
-        <b>Алгоритм: U [F\' (L\' U\' L U) (L\' U\' L U) F]</b><br/><br/>
-        <b>Как смоделировать</b>: Аналогично предыдущему случаю. Из Лондона, 4 пиф-пафа левой рукой, в Лондон.
+    <p><b>Как решать:</b></p>
+
+    <p>Является зеркальным случаем предыдущего, и поэтому все тоже, что и в бумеранге 2-1, но слева.
+    Повернуть на 3 и 12 часов (ход U), Из Лондона, 2 пиф-пафа слева, в Лондон.</p>
+    <p style="text-align:center"><img src="oll_13_1.xml" width="30%%"></p>
+
+    <p>Фингертрикс: <a href="rg2://ytplay?time=1:20&link=CQYVqMdqpQk">на видео 1:20</a><br/>
+    Фингертрикс: <a href="rg2://ytplay?time=7:52&link=IasVqtCHoj0">от Феликса Земдегса</a><br/>
+    <b>Алгоритм: U [F\' (L\' U\' L U) (L\' U\' L U) F]</b></p>
+
+    <p>Или вариант через правую грань от Анарбека Сабирова.<br/>
+    <b>Алгоритм: R\' U\' (R\' F R F\')(R\' F R F\') R U</b></p>
+
+    <p><b>Как смоделировать</b>: Аналогично предыдущему случаю. Из Лондона, 4 пиф-пафа левой рукой, в Лондон.</p>
     ]]></string>
     <string name="oll_st13_url">CQYVqMdqpQk</string>
 
@@ -768,25 +774,32 @@
 
     <string name="oll_st28_title">#28 Левый петух с блоком</string>
     <string name="oll_st28_descr" formatted="false"><![CDATA[
-        <b>Как решать:</b>
+        <p><b>Как решать:</b></p>
+
         <p>1. Абсолютно аналогично правому петуху с блоком, только слева.</p>
-        <p style="text-align:center"><img src="voll_28_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rg2://ytplay?time=0:44&link=Rg9b36qBOeo">на видео 0:44</a> <br/>
-        <b>Алгоритм: (F\' L F\') L2 (U L U) L\' U\' L F2</b>
+
+        <p style="text-align:center"><img src="oll_28_1.xml" width="30%%"></p>
+        <p>Фингертрикс: <a href="rg2://ytplay?time=0:44&link=Rg9b36qBOeo">на видео 0:44</a><br/>
+        <b>Алгоритм: (F\' L F\') L2 (U L U) L\' U\' L F2</b></p>
+
+        <p>Или из этого же положения, довольно удобный алгоритм через правую грань. Спасибо Анарбеку
+        Сабирову за присланный алгоритм.<br/>
+        <b>Алгоритм: (R\' F R F\')(R U2 R\' U\') F\' U\' F</b></p>
 
         <p>2. Поставить петуха блоком к себе. Очень быстрый и удобный алгоритм, без вращения левой грани.
         Начальное положение рук как при пиф-пафе.</p>
-        <p style="text-align:center"><img src="voll_28_2.xml" width="60%%"></p>
-        Фингертрикс: <a href="rg2://ytplay?time=6:41&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
-        <b>Алгоритм: (R U R\' U\') (R U\' R\') (F\' U\' F) (R U R\')</b>
+
+        <p style="text-align:center"><img src="oll_28_2.xml" width="30%%"></p>
+        <p>Фингертрикс: <a href="rg2://ytplay?time=6:41&link=IasVqtCHoj0">от Феликса Земдегса</a><br/>
+        <b>Алгоритм: (R U R\' U\') (R U\' R\') (F\' U\' F) (R U R\')</b></p>
 
         <p>3. Очень простой для запоминания алгоритм. Удобнее выполнять из стандартого положения
         рук. Серединку на себя, крышу налево, пиф-паф, английский пиф-паф, серединку вернуть на место.</p>
-        <p style="text-align:center"><img src="voll_28_3.xml" width="60%%"></p>
-        <b>Алгоритм: M U (R U R\' U\') (R\' F R F\') M\'</b><br/><br/>
+        <p style="text-align:center"><img src="voll_28_3.xml" width="30%%"></p>
+        <p><b>Алгоритм: M U (R U R\' U\') (R\' F R F\') M\'</b></p>
 
-        <b>Как смоделировать</b>: <a href="rg2://ytplay?time=1:16&link=Rg9b36qBOeo">на видео 1:16</a>
-         нужно выполнить данный алгоритм три раза.
+        <p><b>Как смоделировать</b>: <a href="rg2://ytplay?time=1:16&link=Rg9b36qBOeo">на видео 1:16</a>
+         нужно выполнить данный алгоритм три раза.</p>
     ]]></string>
     <string name="oll_st28_url">Rg9b36qBOeo</string>
 
@@ -1184,17 +1197,26 @@
 
     <string name="oll_st50_title">#50 Чистая палка 1–3</string>
     <string name="oll_st50_descr" formatted="false"><![CDATA[
-        <b>Как решать:</b>
-        <p>Единственная палка, которую нужно поставить вертикально, причем тройным блоком справа, а точкой слева.
-        </p>
-        <p style="text-align:center"><img src="voll_50_1.xml" width="60%%"></p>
-        Фингертрикс: <a href="rg2://ytplay?time=0:47&link=GJrGFdkBx2s">на видео 0:47</a> <br/>
-        <b>Алгоритм: (R U R\' U R) Dw\' (R U\' R\' F\')</b><br/><br/>
+        <p><b>Как решать:</b></p>
+
+        <p>Единственная палка, которую нужно поставить вертикально, причем тройным блоком справа, а точкой слева.</p>
+
+        <p style="text-align:center"><img src="oll_50_1.xml" width="60%%"></p>
+
+        <p>Фингертрикс: <a href="rg2://ytplay?time=0:47&link=GJrGFdkBx2s">на видео 0:47</a><br/>
+        <b>Алгоритм: (R U R\' U R) Dw\' (R U\' R\' F\')</b></p>
+
         <p>Или другой вариант из того же положения, но все в другую сторону. Смотрите видео и выбирайте
         вариант фингертрикса, который вам больше подходит.</p>
-        Фингертрикс: <a href="rg2://ytplay?time=4:45&link=IasVqtCHoj0">от Феликса Земдегса</a> <br/>
-        <b>Алгоритм: (R\' U\' R U\' R\' U) y\' (R\' U R) B</b><br/><br/>
-        <b>Как смоделировать</b>: Выполнить данный алгоритм <a href="rg2://ytplay?time=1:40&link=GJrGFdkBx2s">еще раз.</a>
+
+        <p>Фингертрикс: <a href="rg2://ytplay?time=4:45&link=IasVqtCHoj0">от Феликса Земдегса</a><br/>
+        <b>Алгоритм: (R\' U\' R U\' R\' U) y\' (R\' U R) B</b></p>
+
+        <p>Ну или сделать Рыбку, получим мягкий знак, который легко решается, надо его тольк чуть довернуть.
+        Спасибо Анарбеку Сабирову за идею.<br/>
+        <b>Алгоритм: (R U R\' U R U2 R\') U\' Fw (R U R\' U\') Fw\'</b></p>
+
+        <p><b>Как смоделировать</b>: Выполнить данный алгоритм <a href="rg2://ytplay?time=1:40&link=GJrGFdkBx2s">еще раз.</a></p>
     ]]></string>
     <string name="oll_st50_url">GJrGFdkBx2s</string>
 
