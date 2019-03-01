@@ -1,0 +1,29 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <path android:fillColor="@color/black" android:pathData="M0 0h100v100H0z"/>
+    <path android:fillColor="@color/c_gr" android:pathData="M9 64v22H5V64z"/>
+    <path android:fillColor="@color/c_gr" android:pathData="M9 39v22H5V39z"/>
+    <path android:fillColor="@color/c_gr" android:pathData="M9 14v22H5V14z"/>
+    <path android:fillColor="@color/c_y" android:pathData="M95 64v22h-4V64z"/>
+    <path android:fillColor="@color/c_gr" android:pathData="M95 39v22h-4V39z"/>
+    <path android:fillColor="@color/c_gr" android:pathData="M95 14v22h-4V14z"/>
+    <path android:fillColor="@color/c_gr" android:pathData="M64 91h22v4H64z"/>
+    <path android:fillColor="@color/c_y" android:pathData="M39 91h22v4H39z"/>
+    <path android:fillColor="@color/c_gr" android:pathData="M14 91h22v4H14z"/>
+    <path android:fillColor="@color/c_gr" android:pathData="M64 5h22v4H64z"/>
+    <path android:fillColor="@color/c_y" android:pathData="M39 5h22v4H39z"/>
+    <path android:fillColor="@color/c_y" android:pathData="M14 5h22v4H14z"/>
+    <path android:fillColor="@color/c_gr" android:pathData="M64 64h22v22H64z"/>
+    <path android:fillColor="@color/c_gr" android:pathData="M39 64h22v22H39z"/>
+    <path android:fillColor="@color/c_y" android:pathData="M14 64h22v22H14z"/>
+    <path android:fillColor="@color/c_y" android:pathData="M64 39h22v22H64z"/>
+    <path android:fillColor="@color/c_y" android:pathData="M39 39h22v22H39z"/>
+    <path android:fillColor="@color/c_y" android:pathData="M14 39h22v22H14z"/>
+    <path android:fillColor="@color/c_y" android:pathData="M64 14h22v22H64z"/>
+    <path android:fillColor="@color/c_gr" android:pathData="M39 14h22v22H39z"/>
+    <path android:fillColor="@color/c_gr" android:pathData="M14 14h22v22H14z"/>
+</vector>
+
