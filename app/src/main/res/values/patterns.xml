@@ -18,6 +18,7 @@
         <item>@string/patterns_st14_title</item>
         <item>@string/patterns_st15_title</item>
         <item>@string/patterns_st16_title</item>
+        <item>@string/patterns_st17_title</item>
     </string-array>
 
     <integer-array name="patterns_icon">
@@ -37,6 +38,7 @@
         <item>@drawable/pattern_14</item>
         <item>@drawable/pattern_15</item>
         <item>@drawable/pattern_16</item>
+        <item>@drawable/pattern_17</item>
     </integer-array>
     
     <string-array name="patterns_descr">
@@ -56,6 +58,7 @@
         <item>@string/patterns_st14_descr</item>
         <item>@string/patterns_st15_descr</item>
         <item>@string/patterns_st16_descr</item>
+        <item>@string/patterns_st17_descr</item>
     </string-array>
 
     <string-array name="patterns_url">
@@ -75,6 +78,7 @@
         <item>@string/patterns_st14_url</item>
         <item>@string/patterns_st15_url</item>
         <item>@string/patterns_st16_url</item>
+        <item>@string/patterns_st17_url</item>
     </string-array>
 
     <string-array name="patterns_comment">
@@ -94,6 +98,7 @@
         <item>@string/patterns_st14_comment</item>
         <item>@string/patterns_st15_comment</item>
         <item>@string/patterns_st16_comment</item>
+        <item>@string/patterns_st17_comment</item>
     </string-array>
 
 
@@ -178,6 +183,11 @@
 
     <p><b><a href="rg2://ytplay?time=5:31&link=l6V7517N_lQ">Алгоритм:</a> B D F\' B\' D L2\' U L U\' B D\' R B R D\' R L\' F U2 D</b></p>
 
+    <p>Вот еще узор похожий на кубик в кубе - \"Буквы Р\". Спасибо Мише Flex.</p>
+    <p style="text-align:center"><img src="pattern_3_7.xml" width="20%%"></p>
+
+    <p><b>Алгоритм: F R\' U L F\' L\' F U\' R U L\' U\' L F\'</b></p>
+
     <p>И не могу сюда не добавить узор от Виктора Фроста, который можно назвать \"Кубоид в кубе\". Ну
     а как он выглядит с другой стороны, предлагаю вам узнать самим.</p>
     <p style="text-align:center"><img src="pattern_3_6.xml" width="20%%"></p>
@@ -189,27 +199,34 @@
 
     <string name="patterns_st4_title">4. Змеи</string>
     <string name="patterns_st4_descr" formatted="false"><![CDATA[
-        <p>Еще один очень красивый узор. <a href="rg2://ytplay?time=5:57&link=l6V7517N_lQ">Змейка</a> через весь кубик.</p>
-        <p style="text-align:center"><img src="pattern_4.xml" width="20%%"></p>
-        <p><b><a href="rg2://ytplay?time=6:27&link=l6V7517N_lQ">Алгоритм:</a> U B2 L D B\' F L\' D  U\' L\' R F\' D2 R\'</b></p>
+    <p>Еще один очень красивый узор. <a href="rg2://ytplay?time=5:57&link=l6V7517N_lQ">Змейка</a> через весь кубик.</p>
+    <p style="text-align:center"><img src="pattern_4.xml" width="20%%"></p>
+    <p><b><a href="rg2://ytplay?time=6:27&link=l6V7517N_lQ">Алгоритм:</a> U B2 L D B\' F L\' D  U\' L\' R F\' D2 R\'</b></p>
 
-        <p>Или еще другой вариант Змейки:</p>
-        <p style="text-align:center"><img src="pattern_4_1.xml" width="20%%"></p>
-        <p><b><a href="rg2://ytplay?time=7:02&link=l6V7517N_lQ">Алгоритм:</a> (R F B\' D\') F2 (D B F\' R\') F2 (U R2 U\') (D F2 D\')</b></p>
+    <p>Или еще другой вариант Змейки:</p>
+    <p style="text-align:center"><img src="pattern_4_1.xml" width="20%%"></p>
+    <p><b><a href="rg2://ytplay?time=7:02&link=l6V7517N_lQ">Алгоритм:</a> (R F B\' D\') F2 (D B F\' R\') F2 (U R2 U\') (D F2 D\')</b></p>
+
+    <p>Узор, который тоже можно отнести к змейкам, ведь он идет через весь кубик.</p>
+    <p style="text-align:center"><img src="pattern_4_2.xml" width="20%%"></p>
+
+    <p><b>Алгоритм: D L\' U R\' B\' R B U2 D B D\' B\' L U D\'</b></p>
     ]]></string>
     <string name="patterns_st4_url">l6V7517N_lQ</string>
     <string name="patterns_st4_comment">U B2 L D B\' F L\' D  U\' L\' R F\' D2 R\'</string>
 
     <string name="patterns_st5_title">5. Кресты</string>
     <string name="patterns_st5_descr" formatted="false"><![CDATA[
-        <p><a href="rg2://ytplay?time=7:34&link=l6V7517N_lQ">Крест</a> на каждой стороне кубика.
-        </p>
-        <p style="text-align:center"><img src="pattern_5.xml" width="20%%"></p>
-        <p><b><a href="rg2://ytplay?time=7:54&link=l6V7517N_lQ">Алгоритм:</a> L2 R\' B2 F2 D2 B2 F2 L2 R2 U2 R\'</b></p>
+    <p><a href="rg2://ytplay?time=7:34&link=l6V7517N_lQ">Крест</a> на каждой стороне кубика.</p>
+    <p style="text-align:center"><img src="pattern_5.xml" width="20%%"></p>
 
-        <p>Еще один крест, уголки которого <a href="rg2://ytplay?time=7:34&link=l6V7517N_lQ">стоят иначе.</a></p>
-        <p style="text-align:center"><img src="pattern_5_1.xml" width="20%%"></p>
-        <p><b><a href="rg2://ytplay?time=8:29&link=l6V7517N_lQ">Алгоритм:</a> U F B\' L2 U2 L2 F\' B U2 L2 U</b></p>
+    <p><b><a href="rg2://ytplay?time=7:54&link=l6V7517N_lQ">Алгоритм:</a> L2 R\' B2 F2 D2 B2 F2 L2 R2 U2 R\'</b></p>
+
+    <p>Еще один крест, уголки которого <a href="rg2://ytplay?time=7:34&link=l6V7517N_lQ">стоят иначе.</a></p>
+    <p style="text-align:center"><img src="pattern_5_1.xml" width="20%%"></p>
+
+    <p><b><a href="rg2://ytplay?time=8:29&link=l6V7517N_lQ">Алгоритм:</a> U F B\' L2 U2 L2 F\' B U2 L2 U</b></p>
+
     ]]></string>
     <string name="patterns_st5_url">l6V7517N_lQ</string>
     <string name="patterns_st5_comment">L2 R\' B2 F2 D2 B2 F2 L2 R2 U2 R\'</string>
@@ -249,7 +266,7 @@
     <p><b><a href="rg2://ytplay?time=10:52&link=l6V7517N_lQ">Алгоритм:</a> U L2 D F D\' B\' U L\' B2 U2 F U\' F\' U2 B\' U</b></p>
 
     <p>А если кроме ребер и угла, еще поменять и центры, то можно получить вот такой
-        <a href="rg2://ytplay?time=11:24&link=l6V7517N_lQ">Пропеллер.</a></p>
+    <a href="rg2://ytplay?time=11:24&link=l6V7517N_lQ">Пропеллер.</a></p>
     <p style="text-align:center"><img src="pattern_7_2.xml" width="20%%"></p>
     <p><b><a href="rg2://ytplay?time=11:40&link=l6V7517N_lQ">Алгоритм:</a> U\' L2 U2 R2 U\' B2 L\' B D R\' B\' L\' B\' D2 B\' L D B\' U</b></p>
 
@@ -257,6 +274,20 @@
     стороны длинные уголки, а с другой четыре уголка не на своих местах.</p>
     <p style="text-align:center"><img src="pattern_7_3.xml" width="30%%"></p>
     <p><b>Алгоритм: (R\' U R\' D)(F D2 F\' D) R2 (U L2) (U L2) U</b></p>
+
+    <p>Еще один вариант уголков от пользователя Gros Lep.</p>
+    <p style="text-align:center"><img src="pattern_7_4.xml" width="20%%"></p>
+
+    <p><b>Алгоритм: U\' D B R\' F R B\' L\' F\' B L F R\' B\' R F\' U\' D</b></p>
+
+    <p>Или вот такой уголок от Петра Петрова.</p>
+    <p style="text-align:center"><img src="pattern_7_5.xml" width="20%%"></p>
+
+    <p><b>Алгоритм: U\' R2 D\' B\' D R\' D\' B D R\' U</b></p>
+
+    <p>А если к нему добавить вишенку: <b>M\' S\' M S</b>, то получатся вот такие буквы М.</p>
+    <p style="text-align:center"><img src="pattern_7_6.xml" width="20%%"></p>
+
     ]]></string>
     <string name="patterns_st7_url">l6V7517N_lQ</string>
     <string name="patterns_st7_comment">F2 R2 D R2 D U F2 D\' R\' D\' F L2 F\' D R U\'</string>
@@ -347,12 +378,6 @@
         <p style="text-align:center"><img src="pattern_11_1.xml" width="20%%"></p>
         <p><b><a href="rg2://ytplay?time=17:34&link=l6V7517N_lQ">Алгоритм:</a> U F2 U\' B\' U2 B U\' F2 U\' R\' U2 B\' U2 B R</b></p>
     ]]></string>
-    <!--<p>А если немного усложнить \"Рыбку на грани\", то можно получить много разных не всегда-->
-        <!--\"понятных\" узоров, например:</p>-->
-    <!--<p style="text-align:center"><img src="pattern_11_2.xml"></p>-->
-
-    <!--<p><b>Алгоритм: U D (R L\') U\' D\' (L R\') U D (R L\')</p>-->
-
     <string name="patterns_st11_url">l6V7517N_lQ</string>
     <string name="patterns_st11_comment">D L\' R\' U2 L R D</string>
 
@@ -415,8 +440,34 @@
     <string name="patterns_st15_url">l6V7517N_lQ</string>
     <string name="patterns_st15_comment">(F B L R)2 L R</string>
 
-    <string name="patterns_st16_title">16. Свой алгоритм/узор</string>
+    <string name="patterns_st16_title">16. Авангардизм</string>
     <string name="patterns_st16_descr" formatted="false"><![CDATA[
+    <p>Иногда мне присылают очень непонятные узоры, которые и узорами то не всегда можно назвать, но
+        кого-то может они и сподвигнут на разглядывание кубика часами.</p>
+        <p>Я не буду указывать авторство этих узоров, чтобы не провоцировать новую волну, больше я
+        такие узоры добавлять не буду. Надеюсь, авторы меня за это простят.</p>
+
+    <p>Начну, пожалуй, с \"Больших блоков в окружении\".</p>
+    <p style="text-align:center"><img src="pattern_16.xml" width="20%%"></p>
+
+    <p>Алгоритм: <b>U B2 D2 L B\' L\' U\' L\' B D2 B2 </b></p>
+
+    <p>Или вот еще \"Кубик на дискотеке\".</p>
+    <p style="text-align:center"><img src="pattern_16_1.xml" width="20%%"></p>
+
+    <p>Алгоритм: <b>R\' F\' U F2 U\' F R\' F2 D2 F2 D2 F2 D F2 R2 U2</b></p>
+
+    <p>Ну и бесспорный шедевр - \"Порядок в хаосе\".</p>
+    <p style="text-align:center"><img src="pattern_16_2.xml" width="20%%"></p>
+
+    <p>Алгоритм: <b>B L2 B\' U2 B F2 U L U B U\' R U\' B F U\' R D R B\' U\'</b></p>
+    ]]></string>
+    <string name="patterns_st16_url">l6V7517N_lQ</string>
+    <string name="patterns_st16_comment">B L2 B\' U2 B F2 U L U B U\' R U\' B F U\' R D R B\' U\'</string>
+
+
+    <string name="patterns_st17_title">17. Свой алгоритм/узор</string>
+    <string name="patterns_st17_descr" formatted="false"><![CDATA[
         <p>Если у вас есть свой алгоритм для какого-то из выше приведенных узоров, то всегда можете
         написать его в поле \"Свой комментариий (алгоритм):\" к соответствующему этапу (ниже видео)
         и он отобразится в списке.</p>
@@ -430,6 +481,7 @@
         5. Это <b>НЕ вариации</b> различных \"Букв Н\" или \"Крестов\"<br/>
         6. Узор состоит <b>НЕ из других</b> простых узоров.<br/>
         7. В узоре меняются местами НЕ ТОЛЬКО ребра, но и углы.<br/><br/>
+        8. Достаточно Авангарда, узор должен быть узором, а не просто скрамблом.<br/><br/>
         то присылайте его мне на почту
         <a href="mailto:rubicsguide@yandex.ru?subject=Узоры&body=Здравствуйте,%20Антон.">rubicsguide@yandex.ru</a><br/>
         И если ваш узор <b>действительно интересный</b>, я его обязательно добавлю в программу.</p>
@@ -440,7 +492,8 @@
         невозможно добавить в программу.
         </p>
     ]]></string>
-    <string name="patterns_st16_url">l6V7517N_lQ</string>
-    <string name="patterns_st16_comment"></string>
+    <string name="patterns_st17_url">l6V7517N_lQ</string>
+    <string name="patterns_st17_comment"></string>
+
 
 </resources>
