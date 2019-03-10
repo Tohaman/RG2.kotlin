@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="cylinder_title">
+        <item>@string/cylinder_st1_title</item>
+        <item>@string/cylinder_st2_title</item>
+        <item>@string/cylinder_st3_title</item>
+        <item>@string/cylinder_st4_title</item>
+        <item>@string/cylinder_st5_title</item>
+        <item>@string/cylinder_st6_title</item>
+        <item>@string/cylinder_st7_title</item>
+        <item>@string/cylinder_st8_title</item>
+    </string-array>
+
+    <integer-array name="cylinder_icon">
+        <item>@drawable/cylinder_1</item>
+        <item>@drawable/cylinder_2</item>
+        <item>@drawable/cylinder_3</item>
+        <item>@drawable/cylinder_4</item>
+        <item>@drawable/cylinder_5</item>
+        <item>@drawable/cylinder_6</item>
+        <item>@drawable/cylinder_7</item>
+        <item>@drawable/cylinder_8</item>
+    </integer-array>
+    
+    <string-array name="cylinder_descr">
+        <item>@string/cylinder_st1_descr</item>
+        <item>@string/cylinder_st2_descr</item>
+        <item>@string/cylinder_st3_descr</item>
+        <item>@string/cylinder_st4_descr</item>
+        <item>@string/cylinder_st5_descr</item>
+        <item>@string/cylinder_st6_descr</item>
+        <item>@string/cylinder_st7_descr</item>
+        <item>@string/cylinder_st8_descr</item>
+    </string-array>
+
+
+    <string-array name="cylinder_url">
+        <item>@string/cylinder_st1_url</item>
+        <item>@string/cylinder_st2_url</item>
+        <item>@string/cylinder_st3_url</item>
+        <item>@string/cylinder_st4_url</item>
+        <item>@string/cylinder_st5_url</item>
+        <item>@string/cylinder_st6_url</item>
+        <item>@string/cylinder_st7_url</item>
+        <item>@string/cylinder_st8_url</item>
+    </string-array>
+
+    <string name="cylinder_st1_title">1. Обзор и Белый крест</string>
+    <string name="cylinder_st1_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cylinder_st1_url">aaaaaaaaaaa</string>
+
+    <string name="cylinder_st2_title">2. Правильный белый крест</string>
+    <string name="cylinder_st2_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cylinder_st2_url">aaaaaaaaaaa</string>
+
+    <string name="cylinder_st3_title">2. Правильный белый крест</string>
+    <string name="cylinder_st3_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cylinder_st3_url">aaaaaaaaaaa</string>
+
+    <string name="cylinder_st4_title">4. Ребра второго слоя</string>
+    <string name="cylinder_st4_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cylinder_st4_url">aaaaaaaaaaa</string>
+
+    <string name="cylinder_st5_title">5. Верхний крест</string>
+    <string name="cylinder_st5_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cylinder_st5_url">aaaaaaaaaaa</string>
+
+    <string name="cylinder_st6_title">6. Разворот уголков</string>
+    <string name="cylinder_st6_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cylinder_st6_url">aaaaaaaaaaa</string>
+
+    <string name="cylinder_st7_title">7. Расстановка ребер</string>
+    <string name="cylinder_st7_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cylinder_st7_url">aaaaaaaaaaa</string>
+
+    <string name="cylinder_st8_title">8. Расстановка углов</string>
+    <string name="cylinder_st8_descr" formatted="false"><![CDATA[
+    ]]></string>
+    <string name="cylinder_st8_url">aaaaaaaaaaa</string>
+    
+</resources>
