@@ -8,8 +8,6 @@
         <item>@string/cylinder_st4_title</item>
         <item>@string/cylinder_st5_title</item>
         <item>@string/cylinder_st6_title</item>
-        <item>@string/cylinder_st7_title</item>
-        <item>@string/cylinder_st8_title</item>
     </string-array>
 
     <integer-array name="cylinder_icon">
@@ -19,8 +17,6 @@
         <item>@drawable/cylinder_4</item>
         <item>@drawable/cylinder_5</item>
         <item>@drawable/cylinder_6</item>
-        <item>@drawable/cylinder_7</item>
-        <item>@drawable/cylinder_8</item>
     </integer-array>
     
     <string-array name="cylinder_descr">
@@ -30,8 +26,6 @@
         <item>@string/cylinder_st4_descr</item>
         <item>@string/cylinder_st5_descr</item>
         <item>@string/cylinder_st6_descr</item>
-        <item>@string/cylinder_st7_descr</item>
-        <item>@string/cylinder_st8_descr</item>
     </string-array>
 
 
@@ -42,8 +36,6 @@
         <item>@string/cylinder_st4_url</item>
         <item>@string/cylinder_st5_url</item>
         <item>@string/cylinder_st6_url</item>
-        <item>@string/cylinder_st7_url</item>
-        <item>@string/cylinder_st8_url</item>
     </string-array>
 
     <string name="cylinder_st1_title">1. Обзор и Белый крест</string>
@@ -51,12 +43,12 @@
     ]]></string>
     <string name="cylinder_st1_url">aaaaaaaaaaa</string>
 
-    <string name="cylinder_st2_title">2. Правильный белый крест</string>
+    <string name="cylinder_st2_title">2. Разворот средних центров</string>
     <string name="cylinder_st2_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="cylinder_st2_url">aaaaaaaaaaa</string>
 
-    <string name="cylinder_st3_title">2. Правильный белый крест</string>
+    <string name="cylinder_st3_title">3. Первый слой</string>
     <string name="cylinder_st3_descr" formatted="false"><![CDATA[
     ]]></string>
     <string name="cylinder_st3_url">aaaaaaaaaaa</string>
@@ -76,14 +68,5 @@
     ]]></string>
     <string name="cylinder_st6_url">aaaaaaaaaaa</string>
 
-    <string name="cylinder_st7_title">7. Расстановка ребер</string>
-    <string name="cylinder_st7_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cylinder_st7_url">aaaaaaaaaaa</string>
 
-    <string name="cylinder_st8_title">8. Расстановка углов</string>
-    <string name="cylinder_st8_descr" formatted="false"><![CDATA[
-    ]]></string>
-    <string name="cylinder_st8_url">aaaaaaaaaaa</string>
-    
 </resources>
