@@ -233,30 +233,32 @@
 
     <string name="patterns_st6_title">6. Молния в точку</string>
     <string name="patterns_st6_descr" formatted="false"><![CDATA[
-        <p>Очень интересный и <a href="rg2://ytplay?time=8:58&link=l6V7517N_lQ">необычный узор,</a>
+    <p>Очень интересный и <a href="rg2://ytplay?time=8:58&link=l6V7517N_lQ">необычный узор,</a>
         которого вы не найдете на сайте <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru</a>.
         Его мне прислал Дмитрий Константинов, за что ему большое спасибо.</p>
-        <p style="text-align:center"><img src="pattern_6.xml" width="20%%"></p>
-        <p><b><a href="rg2://ytplay?time=9:17&link=l6V7517N_lQ">Алгоритм:</a> (R2 F B\' R2 U\'D)(R2 F B\' R2 U\'D)(R2 F B\' R2 U\'D)</b></p>
+    <p style="text-align:center"><img src="pattern_6.xml" width="20%%"></p>
+    <p><b><a href="rg2://ytplay?time=9:17&link=l6V7517N_lQ">Алгоритм:</a> (R2 F B\' R2 U\'D)(R2 F B\' R2 U\'D)(R2 F B\' R2 U\'D)</b></p>
 
-        <p>Если комбинировать двойные вращения граней, такие как (R2 F2 B2) и/или вращения противоположных
-        граней в разные стороны, такие как (D\'U\' FB LR), то можно получить много разных довольно
-        интересных узоров, например :</p>
+    <p>Если использовать двойные вращения граней, такие как (R2 F2 B2) или вращения противоположных
+    граней в разные стороны, такие как (D\'U\' FB LR), то можно получить много разных довольно интересных
+    узоров, например:</p>
+    <p style="text-align:center"><img src="pattern_6_1.xml" width="20%%"></p>
+    <p>Алгоритм: <b>F2 R2 D\'U\' (R2 B2 L2 F2) DU F2 R2</b></p>
 
-        <p style="text-align:center"><img src="pattern_6_1.xml" width="20%%"></p>
+    <p>Или вот такой:</p>
+    <p style="text-align:center"><img src="pattern_6_2.xml" width="20%%"></p>
+    <p>Алгоритм: <b>(R L) U2 F2 D2 F2 (R L) F2 D2 B2 D2</b></p>
 
-        <p>Алгоритм: <b>F2 R2 D\'U\' (R2 B2 L2 F2) DU F2 R2</b></p>
-
-        <p>P.S. Спасибо всем приславшим подобные узоры, особенно Диме Юрченко, но к сожалению, все такие узоры добавить в
-        программу просто нереально, поэтому, надеюсь, что остальные узоры основанные на этих вращениях
-        вы сможете сделать/придумать сами.</p>
+     <p>P.S. Спасибо всем приславшим подобные узоры, особенно Диме Юрченко, но к сожалению, все такие
+     узоры добавить в программу просто нереально, поэтому, надеюсь, что остальные узоры основанные на
+     этих вращениях вы сможете сделать/придумать сами.</p>
     ]]></string>
     <string name="patterns_st6_url">l6V7517N_lQ</string>
     <string name="patterns_st6_comment">(R2 F B\' R2 U\'D)3</string>
 
     <string name="patterns_st7_title">7. Уголки</string>
     <string name="patterns_st7_descr" formatted="false"><![CDATA[
-     <p>Еще одна серия узоров - <a href="rg2://ytplay?time=9:50&link=l6V7517N_lQ">Уголки.</a><br/>
+    <p>Еще одна серия узоров - <a href="rg2://ytplay?time=9:50&link=l6V7517N_lQ">Уголки.</a><br/>
         Первый уголок:</p>
     <p style="text-align:center"><img src="pattern_7.xml" width="20%%"></p>
     <p><b><a href="rg2://ytplay?time=10:05&link=l6V7517N_lQ">Алгоритм:</a> F2 R2 D R2 D U F2 D\' R\' D\' F L2 F\' D R U\'</b></p>
