@@ -3,34 +3,34 @@
     <string-array name="main_f2l_title">
         <item>Интуитивный F2l (без формул)</item>
         <item>Жизненный F2L от Максима</item>
-        <item>Expert F2L</item>
+        <!--<item>Expert F2L</item>-->
         <item>Advanced F2L</item>
     </string-array>
 
     <integer-array name="main_f2l_icon">
         <item>@drawable/vf2l</item>
         <item>@drawable/vf2l</item>
-        <item>@drawable/vf2l</item>
+        <!--<item>@drawable/vf2l</item>-->
         <item>@drawable/vf2l</item>
     </integer-array>
 
     <string-array name="main_f2l_descr">
         <item>@string/main_f2l_st1_descr</item>
         <item>@string/main_f2l_st2_descr</item>
-        <item>@string/main_f2l_st3_descr</item>
+        <!--<item>@string/main_f2l_st3_descr</item>-->
         <item>@string/main_f2l_st4_descr</item>
     </string-array>
 
     <string-array name="main_f2l_url">
         <item>submenu</item>
         <item>submenu</item>
-        <item>ollPager</item>
+        <!--<item>ollPager</item>-->
         <item>submenu</item>
     </string-array>
 
     <string name="main_f2l_st1_descr">INT_F2L</string>
     <string name="main_f2l_st2_descr">F2L</string>
-    <string name="main_f2l_st3_descr">EXP_F2L</string>
+    <!--<string name="main_f2l_st3_descr">EXP_F2L</string>-->
     <string name="main_f2l_st4_descr">ADVF2L</string>
 
 </resources>
