@@ -280,7 +280,7 @@ class MainActivity : MyDefaultActivity(),
         alert(getString(R.string.whatsnew)) { okButton { } }.show()
         saveInt2SP(toVersion, "version", this)
         //Тут можно указать фазу новинки, чтобы после обновления программы, открылась новинка.
-        curPhase = "CYLINDER"
+        curPhase = "TW_SKEWB"
         if (fromVersion < 68) { updateComment68()}
         if (fromVersion < 79) { updateComment79()}
         if (fromVersion < 86) { update86() }
@@ -512,6 +512,9 @@ class MainActivity : MyDefaultActivity(),
 
                     "SKEWB" -> {
                         alert(getString(R.string.help_skewb)) { okButton { } }.show()
+                    }
+                    "SKEWB" -> {
+                        alert(getString(R.string.help_tw_skewb)) { okButton { } }.show()
                     }
                     "IVY" -> {
                         alert(getString(R.string.help_ivy)) { okButton { } }.show()
