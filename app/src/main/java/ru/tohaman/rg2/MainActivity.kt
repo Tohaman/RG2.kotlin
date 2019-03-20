@@ -513,7 +513,7 @@ class MainActivity : MyDefaultActivity(),
                     "SKEWB" -> {
                         alert(getString(R.string.help_skewb)) { okButton { } }.show()
                     }
-                    "SKEWB" -> {
+                    "TW_SKEWB" -> {
                         alert(getString(R.string.help_tw_skewb)) { okButton { } }.show()
                     }
                     "IVY" -> {
