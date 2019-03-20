@@ -104,7 +104,7 @@ class PllTestGame : MyDefaultActivity() {
         // выбираем случайный алгоритм
         correctAnswer = random.nextInt(21)
         // перемешиваем алгоритмы
-        Collections.shuffle(pllRnd) // shuffle file names
+        pllRnd.shuffle() // shuffle file names
 
         // находим наш случаный в перемешенном списке и помещаем его в конец списка
         val correct = pllRnd.indexOf(correctAnswer.toString())
