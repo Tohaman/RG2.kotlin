@@ -207,7 +207,7 @@ class SlidingTabsActivity : MyDefaultActivity(),
                                     //если не одна из перечисленных головоломок, то вызываем движения для кубика 3х3
                                     when (curPhase) {
                                         "PYRAMINX" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_PYR")}
-                                        "SKEWB" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_SKEWB")}
+                                        "SKEWB", "TW_SKEWB" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_SKEWB")}
                                         "BEGIN4X4", "YAU4X4" -> {ListPagerLab.get(ctx).getPhaseList("BASIC4X4")}
                                         "BEGIN5X5" -> {ListPagerLab.get(ctx).getPhaseList("BASIC5X5")}
                                         "SQUARE","SQ_STAR" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_SQ1")}
