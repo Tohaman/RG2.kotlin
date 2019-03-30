@@ -32,6 +32,7 @@
                     android:host="ytplay"
                     android:scheme="rg2" />
                 <category android:name="android.intent.category.BROWSABLE" />
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
