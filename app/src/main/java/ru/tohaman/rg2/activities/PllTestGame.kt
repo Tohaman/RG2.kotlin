@@ -167,7 +167,7 @@ class PllTestGame : MyDefaultActivity() {
         val doubleStringOfTopColorOfPll = stringOfTopColorOfPll + stringOfTopColorOfPll
 
         //инициализируем массив чисел из двойной строки(чтобы не было переполнения) со случайным смещением [topLayerOffset]
-        val cube3 = Array(9) { i -> Integer.parseInt(Character.toString(doubleStringOfTopColorOfPll[3 * topLayerOffset + i])) }
+        val cube3 = Array(9,{ i -> Integer.parseInt(Character.toString(doubleStringOfTopColorOfPll[3 * topLayerOffset + i])) })
 //      т.е. по сути делаем вот это:
 //        for (i in 0..8) {
 //            val temp = doubleStringOfTopColorOfPll[3 * topLayerOffset + i]

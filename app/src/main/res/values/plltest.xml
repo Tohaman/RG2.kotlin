@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="pll_test_phases">
-        <item>Смежные окошки (Ua)</item>
-        <item>Противоположные окошки (Ub)</item>
-        <item>Рельсы (Z)</item>
-        <item>Шахматы (H)</item>
-        <item>Запад (T)</item>
-        <item>Юг (Jb)</item>
-        <item>Светофор (F)</item>
-        <item>Австралия (Y)</item>
-        <item>Смежный треугольник (Aa)</item>
-        <item>Противоположный треугольник (Ab)</item>
-        <item>Черепаха (E)</item>
-        <item>Угол (V)</item>
-        <item>Правые кирпичи (Na)</item>
-        <item>Левые кирпичи (Nb)</item>
-        <item>Убийца (Rb)</item>
-        <item>Экватор (Ra)</item>
-        <item>Встречная машинка (Ga)</item>
-        <item>Попутная машинка (Gc)</item>
-        <item>Ближняя улитка (Gd)</item>
-        <item>Дальняя улитка (Gb)</item>
-        <item>Север (Ja)</item>
+        <item>Смежные окошки</item>
+        <item>Противоположные окошки</item>
+        <item>Рельсы</item>
+        <item>Шахматы</item>
+        <item>Запад</item>
+        <item>Юг</item>
+        <item>Светофор</item>
+        <item>Австралия</item>
+        <item>Смежный треугольник</item>
+        <item>Противоположный треугольник</item>
+        <item>Черепаха</item>
+        <item>Угол</item>
+        <item>Правые кирпичи</item>
+        <item>Левые кирпичи</item>
+        <item>Убийца</item>
+        <item>Экватор</item>
+        <item>Встречная машинка</item>
+        <item>Попутная машинка</item>
+        <item>Ближняя улитка</item>
+        <item>Дальняя улитка</item>
+        <item>Север</item>
     </string-array>
 
     <integer-array name="pll_test_icon">
@@ -85,8 +85,8 @@
         <item>Ab Perm</item>
         <item>E Perm</item>
         <item>V Perm</item>
-        <item>Na Perm</item>
         <item>Nb Perm</item>
+        <item>Na Perm</item>
         <item>Rb Perm</item>
         <item>Ra Perm</item>
         <item>Ga Perm</item>
