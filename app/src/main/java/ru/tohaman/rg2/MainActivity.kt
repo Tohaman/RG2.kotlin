@@ -500,9 +500,17 @@ class MainActivity : MyDefaultActivity(),
                         alert(getString(R.string.help_begin5x5)) { okButton { } }.show()
                     }
 
+                    "MAIN_PYRAMINX" -> {
+                        alert(getString(R.string.help_main_pyraminx)) { okButton { } }.show()
+                    }
+
                     "PYRAMINX" -> {
                         alert(getString(R.string.help_pyraminx)) { okButton { } }.show()
                     }
+                    "KEYHOLE" -> {
+                        alert(getString(R.string.help_keyhole)) { okButton { } }.show()
+                    }
+
                     "MEGAMINX" -> {
                         alert(getString(R.string.help_megaminx)) { okButton { } }.show()
                     }

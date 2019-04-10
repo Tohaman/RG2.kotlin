@@ -131,5 +131,7 @@
     <string name="help_prisma">Метод сборки Призмы Рубика, основанный на методике Максима Чечнева для начинающих.</string>
     <string name="help_cylinder">Метод сборки Цилиндра Рубика, основанный на моей методике для начинающих.</string>
     <string name="help_tw_skewb">Метод сборки закрученного скьюба в два алгоритма.</string>
+    <string name="help_main_pyraminx">Способы сборки пирамидки Мефферта</string>
+    <string name="help_keyhole">Keyhole - простой и быстрый метод сборки пирамидки.</string>
 
 </resources>

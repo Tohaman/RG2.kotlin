@@ -53,14 +53,9 @@ class SlidingTabsActivity : MyDefaultActivity(),
         setContentView(R.layout.activity_sliding_tabs)
         setSupportActionBar(toolbar)
         val sp = PreferenceManager.getDefaultSharedPreferences(this)
-        if (!sp.getBoolean("fab_on", false)) {
-            fab_sl.visibility = View.GONE
-        } else {
-            fab_sl.visibility = View.VISIBLE
-        }
-        fab_sl.setOnClickListener {
-            onBackPressed()
-        }
+        if (!sp.getBoolean("fab_on", false))
+            {fab_sl.visibility = View.GONE } else { fab_sl.visibility = View.VISIBLE }
+        fab_sl.setOnClickListener { onBackPressed() }
 
         //Инициируем фазу и номер этапа, должны быть переданы из другой активности, если нет, то используем значения по-умолчанию
         if (intent.hasExtra(RUBIC_PHASE)){
@@ -206,7 +201,7 @@ class SlidingTabsActivity : MyDefaultActivity(),
                             val listPagers : ArrayList<ListPager> =
                                     //если не одна из перечисленных головоломок, то вызываем движения для кубика 3х3
                                     when (curPhase) {
-                                        "PYRAMINX" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_PYR")}
+                                        "PYRAMINX", "KEYHOLE" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_PYR")}
                                         "SKEWB", "TW_SKEWB" -> {ListPagerLab.get(ctx).getPhaseList("BASIC_SKEWB")}
                                         "BEGIN4X4", "YAU4X4" -> {ListPagerLab.get(ctx).getPhaseList("BASIC4X4")}
                                         "BEGIN5X5" -> {ListPagerLab.get(ctx).getPhaseList("BASIC5X5")}
