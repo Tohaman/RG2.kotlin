@@ -41,7 +41,7 @@
         <item>submenu</item>
     </string-array>
 
-    <string name="other_st3_descr">PYRAMINX</string>
+    <string name="other_st3_descr">MAIN_PYRAMINX</string>
     <string name="other_st4_descr">MEGAMINX</string>
     <string name="other_st5_descr">MAIN_SKEWB</string>
     <string name="other_st7_descr">SQUARE</string>

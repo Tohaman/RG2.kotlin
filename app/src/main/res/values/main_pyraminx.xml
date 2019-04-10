@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="main_pyraminx_title">
+        <item>Послойный метод от Максима (LBL)</item>
+        <item>Быстрый метод Кейхол (Keyhole)</item>
+    </string-array>
+
+    <integer-array name="main_pyraminx_icon">
+        <item>@drawable/pyraminx</item>
+        <item>@drawable/keyhole_5</item>
+    </integer-array>
+
+    <string-array name="main_pyraminx_descr">
+        <item>@string/main_pyraminx_st1_descr</item>
+        <item>@string/main_pyraminx_st2_descr</item>
+    </string-array>
+
+    <string-array name="main_pyraminx_url">
+        <item>submenu</item>
+        <item>submenu</item>
+    </string-array>
+
+    <string name="main_pyraminx_st1_descr">PYRAMINX</string>
+    <string name="main_pyraminx_st2_descr">KEYHOLE</string>
+
+</resources>
