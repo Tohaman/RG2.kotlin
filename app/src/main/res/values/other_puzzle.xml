@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="other_title">
-        <item>Пирамидка (Pyraminx)</item>
+        <item>Пирамидка Мефферта (Pyraminx)</item>
         <item>Мегаминкс (Megaminx)</item>
         <item>Скьюбы (Skewb, Ivy, Redi, Clover, Container…)</item>
         <item>Скваер (Square-1)</item>
