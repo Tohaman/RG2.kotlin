@@ -203,7 +203,7 @@
     <p style="text-align:center"><img src="pattern_4.xml" width="20%%"></p>
     <p><b><a href="rg2://ytplay?time=6:27&link=l6V7517N_lQ">Алгоритм:</a> U B2 L D B\' F L\' D  U\' L\' R F\' D2 R\'</b></p>
 
-    <p>Или еще другой вариант Змейки:</p>
+    <p>Или другой вариант Змейки:</p>
     <p style="text-align:center"><img src="pattern_4_1.xml" width="20%%"></p>
     <p><b><a href="rg2://ytplay?time=7:02&link=l6V7517N_lQ">Алгоритм:</a> (R F B\' D\') F2 (D B F\' R\') F2 (U R2 U\') (D F2 D\')</b></p>
 
@@ -211,6 +211,12 @@
     <p style="text-align:center"><img src="pattern_4_2.xml" width="20%%"></p>
 
     <p><b>Алгоритм: D L\' U R\' B\' R B U2 D B D\' B\' L U D\'</b></p>
+
+    <p>Еще одна змея от Ненастина Савелия, которую я бы назвал \"УглоЗмейка\"</p>
+
+    <p style="text-align:center"><img src="pattern_4_3.xml" width="30%%"></p>
+
+    <p><b>Алгоритм: L2 D B2 U R2 B2 D L\' B2 F\' D\' U R\' D2 R\' B2 F\' U\' F\'</b></p>
     ]]></string>
     <string name="patterns_st4_url">l6V7517N_lQ</string>
     <string name="patterns_st4_comment">U B2 L D B\' F L\' D  U\' L\' R F\' D2 R\'</string>
@@ -323,30 +329,40 @@
 
     <string name="patterns_st9_title">9. Полоски</string>
     <string name="patterns_st9_descr" formatted="false"><![CDATA[
-        <p>Еще одна большая группа узоров - <a href="rg2://ytplay?time=13:21&link=l6V7517N_lQ">\"Полоски\".</a>
+    <p>Еще одна большая группа узоров - <a href="rg2://ytplay?time=13:21&link=l6V7517N_lQ">\"Полоски\".</a>
         Немного больше вы можете найти на сайте <a href=https://speedcubing.ru/tutorial/3x3x3/patterns>speedcubing.ru.</a>
         Начнем с очень простого варианта, который мне прислал Егор.</p>
-        <p style="text-align:center"><img src="pattern_9.xml" width="20%%"></p>
-        <p><b><a href="rg2://ytplay?time=12:55&link=l6V7517N_lQ">Алгоритм:</a> R2 F2 M2 B2 L2</b></p>
+    <p style="text-align:center"><img src="pattern_9.xml" width="20%%"></p>
 
-        <p>Все полоски <a href="rg2://ytplay?time=13:43&link=l6V7517N_lQ">разного цвета:</a></p>
-        <p style="text-align:center"><img src="pattern_9_1.xml" width="20%%"></p>
-        <p><b><a href="rg2://ytplay?time=13:49&link=l6V7517N_lQ">Алгоритм:</a> (R2 F D R2 D\' R B2 R\' D R2 D\' F\')
-        (R2 B2) y2 (R2 F D R2 D\' R B2 R\' D R2 D\' F\') (L2 F2) M2 S2</b></p>
+    <p><b><a href="rg2://ytplay?time=12:55&link=l6V7517N_lQ">Алгоритм:</a> R2 F2 M2 B2 L2</b></p>
 
-        <p>А можно сделать и полоски на всех <a href="rg2://ytplay?time=15:22&link=l6V7517N_lQ">шести гранях</a></p>
-        <p style="text-align:center"><img src="pattern_9_2.xml" width="20%%"></p>
-        <p><b><a href="rg2://ytplay?time=15:25&link=l6V7517N_lQ">Алгоритм:</a> U\' B2 L2 U M2 U\' R2 F2 D F B R E R\' B\' R\' E R2 E\' R\' F\' B2 R2 B2 F2 S</b></p>
+    <p>Все полоски <a href="rg2://ytplay?time=13:43&link=l6V7517N_lQ">разного цвета:</a></p>
 
-        <p>Ну и раздел с полосками был бы неполным без простого алгоритма для создания флага РФ на одной
-        из сторон кубика, хотя на других сторонах при этом и получается какой-то бред.</p>
+    <p style="text-align:center"><img src="pattern_9_1.xml" width="20%%"></p>
+    <p><b><a href="rg2://ytplay?time=13:49&link=l6V7517N_lQ">Алгоритм:</a>
+    (R2 F D R2 D\' R B2 R\' D R2 D\' F\') (R2 B2) y2 (R2 F D R2 D\' R B2 R\' D R2 D\' F\') (L2 F2) M2 S2</b></p>
 
-        <p>Кубик надо держать стандартно, т.е. зеленой к себе, белой вверх. Получится Российский
-        флаг на верхней стороне кубика. Спасибо Ренату Каримову за идею.</p>
+    <p>А можно сделать и полоски на всех <a href="rg2://ytplay?time=15:22&link=l6V7517N_lQ">шести гранях</a></p>
 
-        <p style="text-align:center"><img src="pattern_9_3.xml" width="20%%"></p>
+    <p style="text-align:center"><img src="pattern_9_2.xml" width="20%%"></p>
+    <p><b><a href="rg2://ytplay?time=15:25&link=l6V7517N_lQ">Алгоритм:</a>
+    U\' B2 L2 U M2 U\' R2 F2 D F B R E R\' B\' R\' E R2 E\' R\' F\' B2 R2 B2 F2 S</b></p>
 
-        <p>Алгоритм: <b>M D\' F L2 F\' L</b></p>
+    <p>Ну и раздел с полосками был бы неполным без простого алгоритма для создания флага РФ на одной
+    из сторон кубика, хотя на других сторонах при этом и получается какой-то бред.</p>
+
+    <p>Кубик надо держать стандартно, т.е. зеленой к себе, белой вверх. Получится Российский флаг
+    на верхней стороне кубика. Спасибо Ренату Каримову за идею.</p>
+
+    <p style="text-align:center"><img src="pattern_9_3.xml" width="20%%"></p>
+
+    <p>Алгоритм: <b>M D\' F L2 F\' L</b></p>
+
+    <p>А можно собрать не три полоски, а только три стороны. Спасибо Stickman animation.</p>
+
+    <p style="text-align:center"><img src="pattern_9_4.xml" width="30%%"></p>
+
+    <p>Алгоритм: <b>U\' D L2 U B2 D2 B2 D2 L F\' U D\' R U\' F2 L F\' B\'</b></p>
     ]]></string>
 
     <string name="patterns_st9_url">l6V7517N_lQ</string>
