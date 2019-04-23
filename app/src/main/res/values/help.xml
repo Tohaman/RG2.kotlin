@@ -133,5 +133,6 @@
     <string name="help_tw_skewb">Метод сборки закрученного скьюба в два алгоритма.</string>
     <string name="help_main_pyraminx">Способы сборки пирамидки Мефферта</string>
     <string name="help_keyhole">Keyhole - простой и быстрый метод сборки пирамидки.</string>
+    <string name="help_tw_cube">Простой способ собрать закрученный куб (Twisty cube)</string>
 
 </resources>

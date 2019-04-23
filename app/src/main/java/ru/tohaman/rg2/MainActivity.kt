@@ -280,7 +280,7 @@ class MainActivity : MyDefaultActivity(),
         alert(getString(R.string.whatsnew)) { okButton { } }.show()
         saveInt2SP(toVersion, "version", this)
         //Тут можно указать фазу новинки, чтобы после обновления программы, открылась новинка.
-        curPhase = "KEYHOLE"
+        curPhase = "TW_CUBE"
         if (fromVersion < 68) { updateComment68()}
         if (fromVersion < 79) { updateComment79()}
         if (fromVersion < 86) { update86() }
@@ -411,6 +411,10 @@ class MainActivity : MyDefaultActivity(),
                     "SUDOKU" -> {
                         alert(getString(R.string.help_sudoku)) { okButton { } }.show()
                     }
+                    "TW_CUBE" -> {
+                        alert(getString(R.string.help_tw_cube)) { okButton { } }.show()
+                    }
+
                     "WINDMILL" -> {
                         alert(getString(R.string.help_windmill)) { okButton { } }.show()
                     }
