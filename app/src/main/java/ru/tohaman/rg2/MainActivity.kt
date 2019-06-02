@@ -877,13 +877,13 @@ class MainActivity : MyDefaultActivity(),
      */
 
     private fun sayThanks( donationNumber : Int ) {
-        if (donationNumber < 3) {
+        if (donationNumber > 0) {
             //Донат через GooglePlay
             val donationString = when (donationNumber) {
-                1 -> {
+                2 -> {
                     MEDIUM_DONATION
                 }
-                2 -> {
+                3 -> {
                     BIG_DONATION
                 }
                 else -> {
@@ -913,8 +913,8 @@ class MainActivity : MyDefaultActivity(),
         } else {
             //Донат на Яндекс.кошелек
             //startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://money.yandex.ru/to/410016716734895")))
-            browse("https://money.yandex.ru/to/410016716734895")
-            mCoins = 50
+            browse("https://money.yandex.ru/to/410016716734895/200")
+            mCoins = 200
             saveData()
         }
     }
