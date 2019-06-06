@@ -280,7 +280,7 @@ class MainActivity : MyDefaultActivity(),
         alert(getString(R.string.whatsnew)) { okButton { } }.show()
         saveInt2SP(toVersion, "version", this)
         //Тут можно указать фазу новинки, чтобы после обновления программы, открылась новинка.
-        curPhase = "BRICK"
+        curPhase = "PENROSE"
         if (fromVersion < 68) { updateComment68()}
         if (fromVersion < 79) { updateComment79()}
         if (fromVersion < 86) { update86() }
@@ -433,6 +433,9 @@ class MainActivity : MyDefaultActivity(),
                     }
                     "GEAR" -> {
                         alert(getString(R.string.help_gear)) { okButton { } }.show()
+                    }
+                    "PENROSE" -> {
+                        alert(getString(R.string.help_penrose)) { okButton { } }.show()
                     }
 
                     "ADV2X2" -> {
