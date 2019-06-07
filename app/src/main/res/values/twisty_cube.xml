@@ -291,13 +291,13 @@
 
     <p style="text-align:center"><img src="tw_cube_5_2.xml" width="20%%"></p>
 
-    <p><a href="rg2://ytplay?time=23:07&link=UUPOcx-yX6s">Алгоритм:</a> <b>F (R U R’ U’) F’</b></p>
+    <p><a href="rg2://ytplay?time=23:07&link=UUPOcx-yX6s">Алгоритм:</a> <b>F (R U R’ U’) (R U R’ U’) F’</b></p>
 
     <p>3. <a href="rg2://ytplay?time=23:30&link=UUPOcx-yX6s">Пуля</a></p>
 
     <p style="text-align:center"><img src="tw_cube_5_3.xml" width="20%%"></p>
 
-    <p><a href="rg2://ytplay?time=23:37&link=UUPOcx-yX6s">Алгоритм:</a> <b>F (R U R’ U’) F’</b></p>
+    <p><a href="rg2://ytplay?time=23:37&link=UUPOcx-yX6s">Алгоритм:</a> <b>F (R U R’ U’) S (R U R’ U’) Fw’</b></p>
 
     <p><i>Если на этом этапе вам попалась какая-то другая ситуация,</i></p>
 
@@ -307,6 +307,9 @@
     В этом случае, сначала поставьте любое желтое ребро на второй этаж вместо любого другого стоящего
     там ребра, а затем установите поднятое со второго этажа ребро уже правильно (см. установку последнего
     ребра на предыдущем этапе).</i></p>
+
+    <p>Или можно воспользоваться вот таким несложным алгоритмом для разворота ребра второго слоя:
+    <b>(R U2 R' U)(R U2 R' U)(F' U' F)</b></p>
     ]]></string>
     <string name="tw_cube_st6_url">UUPOcx-yX6s</string>
 

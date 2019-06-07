@@ -135,5 +135,6 @@
     <string name="help_keyhole">Keyhole - простой и быстрый метод сборки пирамидки.</string>
     <string name="help_tw_cube">Простой способ собрать закрученный куб (Twisty cube)</string>
     <string name="help_brick">Метод сборки кирпич-куба, на основе методов сборки трешки приведенных в программе.</string>
+    <string name="help_penrose">Способ сборки пенроуз куба на основе алгоритмов для обычной трешки.</string>
 
 </resources>

@@ -280,7 +280,7 @@ class MainActivity : MyDefaultActivity(),
         alert(getString(R.string.whatsnew)) { okButton { } }.show()
         saveInt2SP(toVersion, "version", this)
         //Тут можно указать фазу новинки, чтобы после обновления программы, открылась новинка.
-        curPhase = "BRICK"
+        curPhase = "PENROSE"
         if (fromVersion < 68) { updateComment68()}
         if (fromVersion < 79) { updateComment79()}
         if (fromVersion < 86) { update86() }
@@ -433,6 +433,9 @@ class MainActivity : MyDefaultActivity(),
                     }
                     "GEAR" -> {
                         alert(getString(R.string.help_gear)) { okButton { } }.show()
+                    }
+                    "PENROSE" -> {
+                        alert(getString(R.string.help_penrose)) { okButton { } }.show()
                     }
 
                     "ADV2X2" -> {
@@ -877,13 +880,13 @@ class MainActivity : MyDefaultActivity(),
      */
 
     private fun sayThanks( donationNumber : Int ) {
-        if (donationNumber < 3) {
+        if (donationNumber > 0) {
             //Донат через GooglePlay
             val donationString = when (donationNumber) {
-                1 -> {
+                2 -> {
                     MEDIUM_DONATION
                 }
-                2 -> {
+                3 -> {
                     BIG_DONATION
                 }
                 else -> {
@@ -913,8 +916,8 @@ class MainActivity : MyDefaultActivity(),
         } else {
             //Донат на Яндекс.кошелек
             //startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://money.yandex.ru/to/410016716734895")))
-            browse("https://money.yandex.ru/to/410016716734895")
-            mCoins = 50
+            browse("https://money.yandex.ru/to/410016716734895/200")
+            mCoins = 200
             saveData()
         }
     }
