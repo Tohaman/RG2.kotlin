@@ -93,6 +93,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("FISHER", R.array.fisher_title, R.array.fisher_icon,R.array.fisher_descr,R.array.fisher_url,context)
         phaseInit("BRICK", R.array.brick_title, R.array.brick_icon,R.array.brick_descr,R.array.brick_url,context)
         phaseInit("PENROSE", R.array.penrose_title, R.array.penrose_icon,R.array.penrose_descr,R.array.penrose_url,context)
+        phaseInit("CUB_3X3X2", R.array.cub_3x3x2_title, R.array.cub_3x3x2_icon,R.array.cub_3x3x2_descr,R.array.cub_3x3x2_url,context)
         phaseInit("GEAR", R.array.gear_title, R.array.gear_icon,R.array.gear_descr,R.array.gear_url,context)
         phaseInit("PRISMA", R.array.prisma_title, R.array.prisma_icon,R.array.prisma_descr,R.array.prisma_url,context)
         phaseInit("CYLINDER", R.array.cylinder_title, R.array.cylinder_icon,R.array.cylinder_descr,R.array.cylinder_url,context)
