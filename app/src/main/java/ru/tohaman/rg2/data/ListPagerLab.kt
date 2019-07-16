@@ -86,6 +86,7 @@ class ListPagerLab private constructor(context: Context){
         phaseInit("CUB2X2X3", R.array.cub_2x2x3_title, R.array.cub_2x2x3_icon,R.array.cub_2x2x3_descr,R.array.cub_2x2x3_url,context)
         phaseInit("MIRROR", R.array.mirror_title, R.array.mirror_icon,R.array.mirror_descr,R.array.mirror_url,context)
         phaseInit("AXIS", R.array.axis_title, R.array.axis_icon,R.array.axis_descr,R.array.axis_url,context)
+        phaseInit("GHOST", R.array.ghost_title, R.array.ghost_icon,R.array.ghost_descr,R.array.ghost_url,context)
         phaseInit("PYRAMORPHIX", R.array.pyramorphix_title, R.array.pyramorphix_icon,R.array.pyramorphix_descr,R.array.pyramorphix_url,context)
         phaseInit("SUDOKU", R.array.sudoku_title, R.array.sudoku_icon,R.array.sudoku_descr,R.array.sudoku_url,context)
         phaseInit("TW_CUBE", R.array.tw_cube_title, R.array.tw_cube_icon,R.array.tw_cube_descr,R.array.tw_cube_url,context)
