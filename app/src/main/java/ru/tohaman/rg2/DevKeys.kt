@@ -15,11 +15,11 @@ object DeveloperKey {
      * [Google Developers Console](https://console.developers.google.com/)
      * to register a new developer key.
      */
-    val DEVELOPER_KEY = BuildConfig.YouTubeApiKey
+    const val DEVELOPER_KEY = BuildConfig.YouTubeApiKey
 
     /**
      * открытый ключ RSA для приема оплаты внутри приложения
      */
-    val base64EncodedPublicKey = BuildConfig.GooglePlayKey
+    const val base64EncodedPublicKey = BuildConfig.GooglePlayKey
 
 }
