@@ -715,6 +715,10 @@ class MainActivity : MyDefaultActivity(),
                 saveStartPhase("BLINDGAME")
             }
 
+            R.id.cubemarket -> {
+                browse("https://cubemarket.ru")
+            }
+
             R.id.basic_move -> { setListFragmentPhase("BASIC") }
 
             R.id.settings -> {

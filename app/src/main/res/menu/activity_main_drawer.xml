@@ -58,6 +58,11 @@
             android:id="@+id/blind_game"
             android:icon="@drawable/ic_menu_game"
             android:title="@string/blind_game"/>
+        <item
+            android:id="@+id/cubemarket"
+            android:icon="@drawable/ic_icon3"
+            android:title="@string/cubemarket"/>
+
     </group>
 
     <item android:title="@string/addition">
