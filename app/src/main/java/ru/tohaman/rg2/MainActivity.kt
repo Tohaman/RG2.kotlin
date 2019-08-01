@@ -280,7 +280,7 @@ class MainActivity : MyDefaultActivity(),
         alert(getString(R.string.whatsnew)) { okButton { } }.show()
         saveInt2SP(toVersion, "version", this)
         //Тут можно указать фазу новинки, чтобы после обновления программы, открылась новинка.
-        curPhase = "GHOST"
+        //curPhase = "GHOST"
         if (fromVersion < 68) { updateComment68()}
         if (fromVersion < 79) { updateComment79()}
         if (fromVersion < 86) { update86() }
