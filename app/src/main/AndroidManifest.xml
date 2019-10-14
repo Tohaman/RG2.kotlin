@@ -57,6 +57,14 @@
         <activity
             android:name=".activities.PllTestGame"
             android:label="@string/title_activity_pll_test_game">
+            <intent-filter>
+                <data
+                    android:host="plltest"
+                    android:scheme="rg2" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
 
         </activity>
         <activity

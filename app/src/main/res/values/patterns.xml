@@ -222,6 +222,13 @@
     <p style="text-align:center"><img src="pattern_4_3.xml" width="30%%"></p>
 
     <p><b>Алгоритм: L2 D B2 U R2 B2 D L\' B2 F\' D\' U R\' D2 R\' B2 F\' U\' F\'</b></p>
+
+    <p>Ну и можно сделать вот такой простой алгоритм, который мне прислал Сальников Роман, и получить \"Змейку на минималках\".</p>
+
+    <p style="text-align:center"><img src="pattern_4_4.xml" width="30%%"></p>
+
+    <p><b>Алгоритм: L2 U2 F2 D F2 R2 D2 F2 R2 U F2 L2 U2 R2 U\'</b></p>
+
     ]]></string>
     <string name="patterns_st4_url">l6V7517N_lQ</string>
     <string name="patterns_st4_comment">U B2 L D B\' F L\' D  U\' L\' R F\' D2 R\'</string>
@@ -237,6 +244,13 @@
     <p style="text-align:center"><img src="pattern_5_1.xml" width="20%%"></p>
 
     <p><b><a href="rg2://ytplay?time=8:29&link=l6V7517N_lQ">Алгоритм:</a> U F B\' L2 U2 L2 F\' B U2 L2 U</b></p>
+
+    <p>А можно переставить только углы и получить, по сути, тоже разновидность \"Креста\",
+    которую мне прислал Хэкскубер, получим \"Пьяные углы\".</p>
+
+    <p style="text-align:center"><img src="pattern_5_2.xml" width="20%%"></p>
+
+    <p><b>Алгоритм: F2 L2 F2 D U B2 R2 F2 L2 D\' U\' L B2 F2 D2 U2 R\'</b></p>
 
     ]]></string>
     <string name="patterns_st5_url">l6V7517N_lQ</string>

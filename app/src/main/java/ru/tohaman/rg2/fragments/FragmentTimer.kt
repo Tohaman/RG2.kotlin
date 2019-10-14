@@ -37,6 +37,7 @@ import kotlinx.coroutines.*
 
 class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadCompleteListener, CoroutineScope {
     private var startTime: Long = 0
+    private var stopTime: Long = 0
     private var resetPressedTime: Long = 0
     private var leftHandDown = false
     private var rightHandDown = false
@@ -204,11 +205,12 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         return when (action) {
         //если что-нажато (первое прикосновение)
             MotionEvent.ACTION_DOWN -> {
+                resetPressedTime = System.currentTimeMillis()
                 when {
                     //если обе руки прикоснулись и таймер не статован, то значит таймер "готов", обнуляем время таймера
-                    (secHand and !isTimerStart) -> {
+                    (secHand and !isTimerStart and (resetPressedTime > stopTime + 1000)) -> {
                         isTimerReady = false
-                        resetPressedTime = System.currentTimeMillis()
+
                         scope.launch(Dispatchers.Main) {
                             delay (delayMills)
                             if (resetPressedTime + delayMills - 1 < System.currentTimeMillis()) {
@@ -216,13 +218,16 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
                                 setCircleColor(leftCircle, R.color.green)
                                 setCircleColor(rightCircle, R.color.green)
                                 saveResultLayout.visibility = View.GONE
+                                textTime.text = requireContext().getString(R.string.begin_timer_text)
                             }
                         }
-                        textTime.text = requireContext().getString(R.string.begin_timer_text)
                     }
-                    //если обе руки прикоснулись, а таймер был запущен, значит его надо остановить
+                    //если обе руки прикоснулись, а таймер был запущен, значит его надо остановить,
+                    //но только если прошло более секунды с начала отсчета, иначе считаем, что это ложное срабатывание
                     (secHand and isTimerStart) -> {
-                        stopTimer()                     //останавливаем таймер
+                        if (System.currentTimeMillis() - startTime > 1000) {
+                            stopTimer()                     //останавливаем таймер
+                        }
                     }
                     //в противном случае,
                     else -> {
@@ -282,6 +287,7 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         showTimerTime()
         isTimerStart = false
         isTimerReady = false
+        stopTime = System.currentTimeMillis()
         if (isScrambleVisible) { scrambleTextView.visibility = View.VISIBLE }
         topLayout.visibility = View.VISIBLE
         saveResultLayout.visibility = View.VISIBLE
@@ -289,13 +295,15 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
 
     private fun startTimer() {
         Log.v (DebugTag.TAG, "TimerUI startTimer with metronomTime $metronomTime")
-        isTimerReady = false                     // сняли "готовость" таймера
-        startTime = System.currentTimeMillis()
-        isTimerStart = true                      // поставили признак, что таймер запущен
-        startShowTime()                         // запускаем фоновое отображение времени в фоне
-        startMetronom()                         // запускаем метроном в фоне
-        scrambleTextView.visibility = View.GONE
-        topLayout.visibility = View.GONE
+        if (System.currentTimeMillis() - stopTime > 1000) {
+            isTimerReady = false                     // сняли "готовость" таймера
+            startTime = System.currentTimeMillis()
+            isTimerStart = true                      // поставили признак, что таймер запущен
+            startShowTime()                         // запускаем фоновое отображение времени в фоне
+            startMetronom()                         // запускаем метроном в фоне
+            scrambleTextView.visibility = View.GONE
+            topLayout.visibility = View.GONE
+        }
     }
 
     private fun startShowTime () {
