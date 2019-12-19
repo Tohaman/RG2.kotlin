@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="thanks_title">
-        <item>@string/thanks_st1_title</item>
+<!--        <item>@string/thanks_st1_title</item>-->
         <item>@string/thanks_st2_title</item>
         <item>@string/thanks_st3_title</item>
         <item>@string/thanks_st4_title</item>
     </string-array>
 
     <integer-array name="thanks_icon">
-        <item>@drawable/gift_card</item>
+<!--        <item>@drawable/gift_card</item>-->
         <item>@drawable/gift_small</item>
         <item>@drawable/gift_medium</item>
         <item>@drawable/gift_big</item>
     </integer-array>
 
     <string-array name="thanks_descr">
-        <item> </item>
+<!--        <item> </item>-->
         <item> </item>
         <item> </item>
         <item> </item>
     </string-array>
 
     <string-array name="thanks_url">
-        <item>thanks</item>
+<!--        <item>thanks</item>-->
         <item>thanks</item>
         <item>thanks</item>
         <item>thanks</item>
