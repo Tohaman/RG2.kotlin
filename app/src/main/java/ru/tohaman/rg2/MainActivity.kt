@@ -890,17 +890,17 @@ class MainActivity : MyDefaultActivity(),
      */
 
     private fun sayThanks( donationNumber : Int ) {
-        if (donationNumber > 0) {
+        if (donationNumber < 3) {
             //Донат через GooglePlay
             val donationString = when (donationNumber) {
-                2 -> {
-                    MEDIUM_DONATION
+                0 -> {
+                    SMALL_DONATION
                 }
-                3 -> {
+                2 -> {
                     BIG_DONATION
                 }
                 else -> {
-                    SMALL_DONATION
+                    MEDIUM_DONATION
                 }
             }
 
