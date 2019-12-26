@@ -274,16 +274,18 @@ class MainActivity : MyDefaultActivity(),
             drawer_layout.closeDrawer(GravityCompat.END)
         }
 
+        update115()
     }
 
     private fun updateVersion(fromVersion: Int, toVersion: Int) {
         //alert(getString(R.string.whatsnew)) { okButton { } }.show()
         saveInt2SP(toVersion, "version", this)
         //Тут можно указать фазу новинки, чтобы после обновления программы, открылась новинка.
-        //curPhase = "GHOST"
+        curPhase = "GHOST"
         if (fromVersion < 68) { updateComment68()}
         if (fromVersion < 79) { updateComment79()}
         if (fromVersion < 86) { update86() }
+        if (fromVersion < 115) { update115()}
      }
 
     private fun updateComment68() {
@@ -315,6 +317,20 @@ class MainActivity : MyDefaultActivity(),
                 email("rubicsguide@yandex.ru", "Помощь проекту", "Добрый день, Антон.\n")
             }
         }.show()
+    }
+
+    private fun update115() {
+        alert("Дорогие друзья, вышла моя новая программа посвященная кубику - RG3D PLL.\n\n" +
+                "Нажмите Установить, чтобы перейти в PlayMarket") {
+            negativeButton("Посмотрю позже") {
+            }
+            positiveButton("Установить") {
+                if (!browse("market://details?id=$appPackageName", false)) {
+                    browse("https://play.google.com/store/apps/details?id=$appPackageName")
+                }
+            }
+        }.show()
+
     }
 
     private fun setFragment (fragment: Fragment) {
@@ -381,243 +397,86 @@ class MainActivity : MyDefaultActivity(),
         when (item.itemId) {
             R.id.action_help -> {
                 when (curPhase) {
-                    "BEGIN2X2" -> {
-                        alert(getString(R.string.help_begin2x2)) { okButton { } }.show()
-                    }
-                    "MAIN3X3" -> {
-                        alert(getString(R.string.help_main3x3)) { okButton { } }.show()
-                    }
-                    "BEGIN_BNDR" -> {
-                        alert(getString(R.string.help_bondarenko)) { okButton { } }.show()
-                    }
-                    "MAIN_F2L" -> {
-                        alert(getString(R.string.help_mainF2L)) { okButton { } }.show()
-                    }
-                    "MAIN2X2" -> {
-                        alert(getString(R.string.help_main2x2)) { okButton { } }.show()
-                    }
-                    "OTHER3X3" -> {
-                        alert(getString(R.string.help_other3x3)) { okButton { } }.show()
-                    }
-                    "MIRROR" -> {
-                        alert(getString(R.string.help_mirror)) { okButton { } }.show()
-                    }
-                    "AXIS" -> {
-                        alert(getString(R.string.help_axis)) { okButton { } }.show()
-                    }
-                    "PYRAMORPHIX" -> {
-                        alert(getString(R.string.help_pyramorphix)) { okButton { } }.show()
-                    }
-                    "SUDOKU" -> {
-                        alert(getString(R.string.help_sudoku)) { okButton { } }.show()
-                    }
-                    "GHOST" -> {
-                        alert(getString(R.string.help_ghost)) { okButton { } }.show()
-                    }
+                    "BEGIN2X2" -> {alert(getString(R.string.help_begin2x2)) { okButton { } }.show()}
+                    "MAIN3X3" -> {alert(getString(R.string.help_main3x3)) { okButton { } }.show()}
+                    "BEGIN_BNDR" -> {alert(getString(R.string.help_bondarenko)) { okButton { } }.show()}
+                    "MAIN_F2L" -> {alert(getString(R.string.help_mainF2L)) { okButton { } }.show()}
+                    "MAIN2X2" -> {alert(getString(R.string.help_main2x2)) { okButton { } }.show()}
+                    "OTHER3X3" -> {alert(getString(R.string.help_other3x3)) { okButton { } }.show()}
+                    "MIRROR" -> {alert(getString(R.string.help_mirror)) { okButton { } }.show()}
+                    "AXIS" -> {alert(getString(R.string.help_axis)) { okButton { } }.show()}
+                    "PYRAMORPHIX" -> {alert(getString(R.string.help_pyramorphix)) { okButton { } }.show()}
+                    "SUDOKU" -> {alert(getString(R.string.help_sudoku)) { okButton { } }.show()}
+                    "GHOST" -> {alert(getString(R.string.help_ghost)) { okButton { } }.show()}
+                    "TW_CUBE" -> {alert(getString(R.string.help_tw_cube)) { okButton { } }.show()}
+                    "WINDMILL" -> {alert(getString(R.string.help_windmill)) { okButton { } }.show()}
+                    "BRICK" -> {alert(getString(R.string.help_brick)) { okButton { } }.show()}
+                    "FISHER" -> {alert(getString(R.string.help_fisher)) { okButton { } }.show()}
+                    "PRISMA" -> {alert(getString(R.string.help_prisma)) { okButton { } }.show()}
+                    "CYLINDER" -> {alert(getString(R.string.help_cylinder)) { okButton { } }.show()}
+                    "GEAR" -> {alert(getString(R.string.help_gear)) { okButton { } }.show()}
+                    "PENROSE" -> {alert(getString(R.string.help_penrose)) { okButton { } }.show()}
+                    "CUB_3X3X2" -> {alert(getString(R.string.help_cub_3x3x2)) { okButton { } }.show()}
+                    "ADV2X2" -> {alert(getString(R.string.help_adv2x2)) { okButton { } }.show()}
+                    "CLL" -> {alert(getString(R.string.help_cll)) { okButton { } }.show()}
+                    "ORTEGA" -> {alert(getString(R.string.help_ortega)) { okButton { } }.show()}
 
-                    "TW_CUBE" -> {
-                        alert(getString(R.string.help_tw_cube)) { okButton { } }.show()
-                    }
+                    "BEGIN" -> {alert(getString(R.string.help_begin)) { okButton { } }.show()}
+                    "ROZOV" -> {alert(getString(R.string.help_begin_rozov)) { okButton { } }.show()}
 
-                    "WINDMILL" -> {
-                        alert(getString(R.string.help_windmill)) { okButton { } }.show()
-                    }
-                    "BRICK" -> {
-                        alert(getString(R.string.help_brick)) { okButton { } }.show()
-                    }
+                    "G2F" -> {alert(getString(R.string.help_g2f)) { okButton { } }.show()}
+                    "RECOMEND" -> {alert(getString(R.string.help_recomend)) { okButton { } }.show()}
+                    "ACCEL" -> {alert(getString(R.string.help_accel)) { okButton { } }.show()}
+                    "CROSS" -> {alert(getString(R.string.help_cross)) { okButton { } }.show()}
+                    "F2L" -> {alert(getString(R.string.help_f2l)) { okButton { } }.show()}
+                    "ADVF2L" -> {alert(getString(R.string.help_advf2l)) { okButton { } }.show()}
+                    "OLL" -> {alert(getString(R.string.help_oll)) { okButton { } }.show()}
+                    "PLL" -> {alert(getString(R.string.help_pll)) { okButton { } }.show()}
+                    "BLIND" -> {alert(getString(R.string.help_blind)) { okButton { } }.show()}
+                    "COLL" -> {alert(getString(R.string.help_coll)) { okButton { } }.show()}
+                    "ROUX" -> {alert(getString(R.string.help_roux)) { okButton { } }.show()}
+                    "PATTERNS" -> {alert(getString(R.string.help_patterns)) { okButton { } }.show()}
+                    "BEGIN4X4" -> {alert(getString(R.string.help_begin4x4)) { okButton { } }.show()}
+                    "BIG_MAIN" -> {alert(getString(R.string.help_big_main)) { okButton { } }.show()}
+                    "YAU4X4" -> {alert(getString(R.string.help_yau4x4)) { okButton { } }.show()}
+                    "BIG_CUBES" -> {alert(getString(R.string.help_big_cubes)) { okButton { } }.show()}
 
-                    "FISHER" -> {
-                        alert(getString(R.string.help_fisher)) { okButton { } }.show()
-                    }
-                    "PRISMA" -> {
-                        alert(getString(R.string.help_prisma)) { okButton { } }.show()
-                    }
-                    "CYLINDER" -> {
-                        alert(getString(R.string.help_cylinder)) { okButton { } }.show()
-                    }
-                    "GEAR" -> {
-                        alert(getString(R.string.help_gear)) { okButton { } }.show()
-                    }
-                    "PENROSE" -> {
-                        alert(getString(R.string.help_penrose)) { okButton { } }.show()
-                    }
-                    "CUB_3X3X2" -> {
-                        alert(getString(R.string.help_cub_3x3x2)) { okButton { } }.show()
-                    }
-                    "ADV2X2" -> {
-                        alert(getString(R.string.help_adv2x2)) { okButton { } }.show()
-                    }
-                    "CLL" -> {
-                        alert(getString(R.string.help_cll)) { okButton { } }.show()
-                    }
-                    "ORTEGA" -> {
-                        alert(getString(R.string.help_ortega)) { okButton { } }.show()
-                    }
+                    "OTHER" -> {alert(getString(R.string.help_other)) { okButton { } }.show()}
+                    "BEGIN5X5" -> {alert(getString(R.string.help_begin5x5)) { okButton { } }.show()}
+                    "MAIN_PYRAMINX" -> {alert(getString(R.string.help_main_pyraminx)) { okButton { } }.show()}
+                    "PYRAMINX" -> {alert(getString(R.string.help_pyraminx)) { okButton { } }.show()}
+                    "KEYHOLE" -> {alert(getString(R.string.help_keyhole)) { okButton { } }.show()}
+                    "MEGAMINX" -> {alert(getString(R.string.help_megaminx)) { okButton { } }.show()}
+                    "MAIN_SKEWB" -> {alert(getString(R.string.help_main_skewb)) { okButton { } }.show()}
+                    "SKEWB" -> {alert(getString(R.string.help_skewb)) { okButton { } }.show()}
+                    "TW_SKEWB" -> {alert(getString(R.string.help_tw_skewb)) { okButton { } }.show()}
+                    "IVY" -> {alert(getString(R.string.help_ivy)) { okButton { } }.show()}
+                    "REDI" -> {alert(getString(R.string.help_redi)) { okButton { } }.show()}
+                    "CLOVER" -> {alert(getString(R.string.help_clover)) { okButton { } }.show()}
+                    "SQUARE" -> {alert(getString(R.string.help_square)) { okButton { } }.show()}
+                    "SQ_STAR" -> {alert(getString(R.string.help_sq_star)) { okButton { } }.show()}
+                    "CUB2X2X3" -> {alert(getString(R.string.help_cub_2x2x2)) { okButton { } }.show()}
+                    "PENTACLE" -> {alert(getString(R.string.help_pentacle)) { okButton { } }.show()}
+                    "CONTAINER" -> {alert(getString(R.string.help_container)) { okButton { } }.show()}
 
-                    "BEGIN" -> {
-                        alert(getString(R.string.help_begin)) { okButton { } }.show()
-                    }
-                    "ROZOV" -> {
-                        alert(getString(R.string.help_begin_rozov)) { okButton { } }.show()
-                    }
+                    "AZBUKA" -> {alert(getString(R.string.help_azbuka)) { okButton { } }.show()}
+                    "AZBUKA2" -> {alert(getString(R.string.help_azbuka)) { okButton { } }.show()}
+                    "TIMER" -> {alert(getString(R.string.help_timer)) { okButton { } }.show()}
+                    "SCRAMBLEGEN" -> {alert(getString(R.string.help_scramble_gen)) { okButton { } }.show()}
+                    "TESTGAME" -> {alert(getString(R.string.help_test_game)) { okButton { } }.show()}
+                    "BASIC" -> {alert(getString(R.string.help_basic)) { okButton { } }.show()}
+                    "BASIC3X3" -> {alert(getString(R.string.help_basic_3x3)) { okButton { } }.show()}
+                    "BASIC4X4" -> {alert(getString(R.string.help_basic_4x4)) { okButton { } }.show()}
+                    "BASIC5X5" -> {alert(getString(R.string.help_basic_5x5)) { okButton { } }.show()}
+                    "BASIC_PYR" -> {alert(getString(R.string.help_basic_pyr)) { okButton { } }.show()}
+                    "BASIC_SKEWB" -> {alert(getString(R.string.help_basic_skewb)) { okButton { } }.show()}
+                    "BASIC_SQ1" -> {alert(getString(R.string.help_basic_sq1)) { okButton { } }.show()}
+                    "BASIC_REDI" -> {alert(getString(R.string.help_basic_redi)) { okButton { } }.show()}
+                    "BASIC_CLOVER" -> {alert(getString(R.string.help_basic_clover)) { okButton { } }.show()}
 
-                    "G2F" -> {
-                        alert(getString(R.string.help_g2f)) { okButton { } }.show()
-                    }
-                    "RECOMEND" -> {
-                        alert(getString(R.string.help_recomend)) { okButton { } }.show()
-                    }
-                    "ACCEL" -> {
-                        alert(getString(R.string.help_accel)) { okButton { } }.show()
-                    }
-                    "CROSS" -> {
-                        alert(getString(R.string.help_cross)) { okButton { } }.show()
-                    }
-                    "F2L" -> {
-                        alert(getString(R.string.help_f2l)) { okButton { } }.show()
-                    }
-                    "ADVF2L" -> {
-                        alert(getString(R.string.help_advf2l)) { okButton { } }.show()
-                    }
-                    "OLL" -> {
-                        alert(getString(R.string.help_oll)) { okButton { } }.show()
-                    }
-                    "PLL" -> {
-                        alert(getString(R.string.help_pll)) { okButton { } }.show()
-                    }
-                    "BLIND" -> {
-                        alert(getString(R.string.help_blind)) { okButton { } }.show()
-                    }
-                    "COLL" -> {
-                        alert(getString(R.string.help_coll)) { okButton { } }.show()
-                    }
-                    "ROUX" -> {
-                        alert(getString(R.string.help_roux)) { okButton { } }.show()
-                    }
-                    "PATTERNS" -> {
-                        alert(getString(R.string.help_patterns)) { okButton { } }.show()
-                    }
-                    "BEGIN4X4" -> {
-                        alert(getString(R.string.help_begin4x4)) { okButton { } }.show()
-                    }
-                    "BIG_MAIN" -> {
-                        alert(getString(R.string.help_big_main)) { okButton { } }.show()
-                    }
-                    "YAU4X4" -> {
-                        alert(getString(R.string.help_yau4x4)) { okButton { } }.show()
-                    }
-                    "BIG_CUBES" -> {
-                        alert(getString(R.string.help_big_cubes)) { okButton { } }.show()
-                    }
-
-                    "OTHER" -> {
-                        alert(getString(R.string.help_other)) { okButton { } }.show()
-                    }
-                    "BEGIN5X5" -> {
-                        alert(getString(R.string.help_begin5x5)) { okButton { } }.show()
-                    }
-
-                    "MAIN_PYRAMINX" -> {
-                        alert(getString(R.string.help_main_pyraminx)) { okButton { } }.show()
-                    }
-
-                    "PYRAMINX" -> {
-                        alert(getString(R.string.help_pyraminx)) { okButton { } }.show()
-                    }
-                    "KEYHOLE" -> {
-                        alert(getString(R.string.help_keyhole)) { okButton { } }.show()
-                    }
-
-                    "MEGAMINX" -> {
-                        alert(getString(R.string.help_megaminx)) { okButton { } }.show()
-                    }
-                    "MAIN_SKEWB" -> {
-                        alert(getString(R.string.help_main_skewb)) { okButton { } }.show()
-                    }
-
-                    "SKEWB" -> {
-                        alert(getString(R.string.help_skewb)) { okButton { } }.show()
-                    }
-                    "TW_SKEWB" -> {
-                        alert(getString(R.string.help_tw_skewb)) { okButton { } }.show()
-                    }
-                    "IVY" -> {
-                        alert(getString(R.string.help_ivy)) { okButton { } }.show()
-                    }
-                    "REDI" -> {
-                        alert(getString(R.string.help_redi)) { okButton { } }.show()
-                    }
-                    "CLOVER" -> {
-                        alert(getString(R.string.help_clover)) { okButton { } }.show()
-                    }
-                    "SQUARE" -> {
-                        alert(getString(R.string.help_square)) { okButton { } }.show()
-                    }
-                    "SQ_STAR" -> {
-                        alert(getString(R.string.help_sq_star)) { okButton { } }.show()
-                    }
-                    "CUB2X2X3" -> {
-                        alert(getString(R.string.help_cub_2x2x2)) { okButton { } }.show()
-                    }
-                    "PENTACLE" -> {
-                        alert(getString(R.string.help_pentacle)) { okButton { } }.show()
-                    }
-                    "CONTAINER" -> {
-                        alert(getString(R.string.help_container)) { okButton { } }.show()
-                    }
-
-                    "AZBUKA" -> {
-                        alert(getString(R.string.help_azbuka)) { okButton { } }.show()
-                    }
-                    "AZBUKA2" -> {
-                        alert(getString(R.string.help_azbuka)) { okButton { } }.show()
-                    }
-                    "TIMER" -> {
-                        alert(getString(R.string.help_timer)) { okButton { } }.show()
-                    }
-                    "SCRAMBLEGEN" -> {
-                        alert(getString(R.string.help_scramble_gen)) { okButton { } }.show()
-                    }
-                    "TESTGAME" -> {
-                        alert(getString(R.string.help_test_game)) { okButton { } }.show()
-                    }
-                    "BASIC" -> {
-                        alert(getString(R.string.help_basic)) { okButton { } }.show()
-                    }
-                    "BASIC3X3" -> {
-                        alert(getString(R.string.help_basic_3x3)) { okButton { } }.show()
-                    }
-                    "BASIC4X4" -> {
-                        alert(getString(R.string.help_basic_4x4)) { okButton { } }.show()
-                    }
-                    "BASIC5X5" -> {
-                        alert(getString(R.string.help_basic_5x5)) { okButton { } }.show()
-                    }
-                    "BASIC_PYR" -> {
-                        alert(getString(R.string.help_basic_pyr)) { okButton { } }.show()
-                    }
-                    "BASIC_SKEWB" -> {
-                        alert(getString(R.string.help_basic_skewb)) { okButton { } }.show()
-                    }
-                    "BASIC_SQ1" -> {
-                        alert(getString(R.string.help_basic_sq1)) { okButton { } }.show()
-                    }
-                    "BASIC_REDI" -> {
-                        alert(getString(R.string.help_basic_redi)) { okButton { } }.show()
-                    }
-                    "BASIC_CLOVER" -> {
-                        alert(getString(R.string.help_basic_clover)) { okButton { } }.show()
-                    }
-
-                    "BLINDGAME" -> {
-                        alert(getString(R.string.help_blind_game)) { okButton { } }.show()
-                    }
-                    "SETTINGS" -> {
-                        alert(getString(R.string.help_settings)) { okButton { } }.show()
-                    }
-                    "THANKS" -> {
-                        alert(getString(R.string.help_thanks)) { okButton { } }.show()
-                    }
+                    "BLINDGAME" -> {alert(getString(R.string.help_blind_game)) { okButton { } }.show()}
+                    "SETTINGS" -> {alert(getString(R.string.help_settings)) { okButton { } }.show()}
+                    "THANKS" -> {alert(getString(R.string.help_thanks)) { okButton { } }.show()}
                     "ABOUT" -> {
                         alert {
                             customView {
