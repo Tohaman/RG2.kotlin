@@ -321,12 +321,12 @@ class MainActivity : MyDefaultActivity(),
 
     private fun update115() {
         alert("Дорогие друзья, вышла моя новая программа посвященная кубику - RG3D PLL.\n\n" +
-                "Нажмите Установить, чтобы перейти в PlayMarket") {
+                "Хотите научиться собирать кубик быстрее, жмите Установить, чтобы перейти в PlayMarket") {
             negativeButton("Посмотрю позже") {
             }
             positiveButton("Установить") {
-                if (!browse("market://details?id=$appPackageName", false)) {
-                    browse("https://play.google.com/store/apps/details?id=$appPackageName")
+                if (!browse("market://details?id=ru.tohaman.rg3dpll", false)) {
+                    browse("https://play.google.com/store/apps/details?id=ru.tohaman.rg3dpll")
                 }
             }
         }.show()
