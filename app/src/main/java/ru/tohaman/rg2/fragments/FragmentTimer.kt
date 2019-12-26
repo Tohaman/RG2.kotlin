@@ -334,8 +334,8 @@ class FragmentTimer : Fragment(), View.OnTouchListener, SoundPool.OnLoadComplete
         var seconds = (currentTime / 1000).toInt()
         var minutes = seconds / 60
         seconds %= 60
-        if (minutes > 9) {  //если получилось больше 10 минут, то добавляем к начальному времени 10 мин.
-            startTime += 600000; minutes = 0
+        if (minutes > 59) {  //если получилось больше 60 минут, то добавляем к начальному времени 10 мин.(обнуляем таймер)
+            startTime += 3600000; minutes = 0
         }
         curTime = String.format("%d:%02d.%02d", minutes, seconds, millis)
         textTime.text = curTime
