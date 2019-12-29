@@ -285,7 +285,7 @@ class MainActivity : MyDefaultActivity(),
         if (fromVersion < 68) { updateComment68()}
         if (fromVersion < 79) { updateComment79()}
         if (fromVersion < 86) { update86() }
-        if (fromVersion < 115) { update115()}
+        if (fromVersion < 116) { update116()}
      }
 
     private fun updateComment68() {
@@ -319,7 +319,7 @@ class MainActivity : MyDefaultActivity(),
         }.show()
     }
 
-    private fun update115() {
+    private fun update116() {
         alert("Дорогие друзья, вышла моя новая программа посвященная кубику - RG3D PLL.\n\n" +
                 "Хотите научиться собирать кубик еще быстрее, жмите 'Установить', чтобы перейти в PlayMarket " +
                 "или посмотрите видеообзор программы на моем канале в YouTube.") {
