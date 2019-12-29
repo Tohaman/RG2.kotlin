@@ -114,6 +114,7 @@ class MainActivity : MyDefaultActivity(),
     private lateinit var favList: ArrayList<ListPager>
     private var listOfSubmenu = arrayListOf<String>()
     private var listOfOllMenu = arrayListOf<String>()
+    private var startCount = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -154,7 +155,7 @@ class MainActivity : MyDefaultActivity(),
         val curVersion = BuildConfig.VERSION_CODE
 
         //Увеличиваем счетчик запусков программы
-        var startCount = sp.getInt("startcount", 0)
+        startCount = sp.getInt("startcount", 0)
         // Увеличиваем число запусков программы на 1 и сохраняем результат.
         startCount++
         //если это первый запуск
@@ -274,7 +275,6 @@ class MainActivity : MyDefaultActivity(),
             drawer_layout.closeDrawer(GravityCompat.END)
         }
 
-        update115()
     }
 
     private fun updateVersion(fromVersion: Int, toVersion: Int) {
@@ -321,8 +321,12 @@ class MainActivity : MyDefaultActivity(),
 
     private fun update115() {
         alert("Дорогие друзья, вышла моя новая программа посвященная кубику - RG3D PLL.\n\n" +
-                "Хотите научиться собирать кубик быстрее, жмите Установить, чтобы перейти в PlayMarket") {
-            negativeButton("Посмотрю позже") {
+                "Хотите научиться собирать кубик еще быстрее, жмите 'Установить', чтобы перейти в PlayMarket " +
+                "или посмотрите видеообзор программы на моем канале в YouTube.") {
+            neutralPressed("Пропустить") {
+            }
+            negativeButton ("Посмотреть видео") {
+                browse("https://youtu.be/RcL2PE2dIGw")
             }
             positiveButton("Установить") {
                 if (!browse("market://details?id=ru.tohaman.rg3dpll", false)) {
@@ -361,7 +365,7 @@ class MainActivity : MyDefaultActivity(),
                             if (backPressedTime + 500 > System.currentTimeMillis()) {
                                 super.onBackPressed()
                             } else {
-                                toast("Нажмите еще раз для выхода")
+                                if (startCount > 20 ) { toast("Нажмите еще раз для выхода")}
                                 backPressedTime = System.currentTimeMillis()
                             }
                         } else {

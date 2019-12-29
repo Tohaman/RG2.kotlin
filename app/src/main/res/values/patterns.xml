@@ -315,6 +315,12 @@
     <p>А если к нему добавить вишенку: <b>M\' S\' M S</b>, то получатся вот такие буквы М.</p>
     <p style="text-align:center"><img src="pattern_7_6.xml" width="20%%"></p>
 
+    <p>Ну и еще один узор, который на первый взгляд похож на кресты, но на самом деле является
+    вариантом перестановки углов - \"Пьяные углы\" от Хэкскубера.</p>
+    <p style="text-align:center"><img src="pattern_7_7.xml" width="20%%"></p>
+
+    <p><b>Алгоритм: F2 L2 F2 D U B2 R2 F2 L2 D\' U\' L B2 F2 D2 U2 R\'</b></p>
+
     ]]></string>
     <string name="patterns_st7_url">l6V7517N_lQ</string>
     <string name="patterns_st7_comment">F2 R2 D R2 D U F2 D\' R\' D\' F L2 F\' D R U\'</string>
