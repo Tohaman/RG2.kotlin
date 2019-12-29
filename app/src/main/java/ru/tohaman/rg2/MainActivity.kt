@@ -433,6 +433,7 @@ class MainActivity : MyDefaultActivity(),
                     "ACCEL" -> {alert(getString(R.string.help_accel)) { okButton { } }.show()}
                     "CROSS" -> {alert(getString(R.string.help_cross)) { okButton { } }.show()}
                     "F2L" -> {alert(getString(R.string.help_f2l)) { okButton { } }.show()}
+                    "INT_F2L" -> {alert(getString(R.string.help_int_f2l)) { okButton { } }.show()}
                     "ADVF2L" -> {alert(getString(R.string.help_advf2l)) { okButton { } }.show()}
                     "OLL" -> {alert(getString(R.string.help_oll)) { okButton { } }.show()}
                     "PLL" -> {alert(getString(R.string.help_pll)) { okButton { } }.show()}

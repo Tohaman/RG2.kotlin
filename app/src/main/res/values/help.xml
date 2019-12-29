@@ -138,5 +138,6 @@
     <string name="help_penrose">Способ сборки пенроуз куба на основе алгоритмов для обычной трешки.</string>
     <string name="help_cub_3x3x2">Сборка кубоида 3х3х2 на основе алгоритмов простой трешки</string>
     <string name="help_ghost">Метод сборки Ghost (Призрак) куба.</string>
+    <string name="help_int_f2l">Интуитивный метод сборки первых двух слоев, на основе метода от Дилана Ванга.</string>
 
 </resources>
