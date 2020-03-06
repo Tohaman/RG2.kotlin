@@ -334,7 +334,6 @@ class MainActivity : MyDefaultActivity(),
                 }
             }
         }.show()
-
     }
 
     private fun setFragment (fragment: Fragment) {
