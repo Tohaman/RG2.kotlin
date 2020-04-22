@@ -101,20 +101,20 @@ class AzbukaSelectUI<in Fragment> : AnkoComponentEx<Fragment>()  {
                                         }.lparams {margin = 16.dp}
                                         val buttonPlus = button ("+")
 
-                                        buttonMinus.onClick {
-                                            var ch = letter[0]
-                                            when {
-                                                //код Ё находится не между Е и Ж
-                                                (ch == 'Ж') -> { ch = 'Ё' }
-                                                (ch == 'Ё') -> { ch = 'Е' }
-                                                (ch == 'А') -> { ch = 'Z' }
-                                                (ch == 'A') -> { ch = '9' }
-                                                (ch == '0') -> { ch = 'Я' }
-                                                else -> {ch--}
+                                            buttonMinus.onClick {
+                                                var ch = letter[0]
+                                                when {
+                                                    //код Ё находится не между Е и Ж
+                                                    (ch == 'Ж') -> { ch = 'Ё' }
+                                                    (ch == 'Ё') -> { ch = 'Е' }
+                                                    (ch == 'А') -> { ch = 'Z' }
+                                                    (ch == 'A') -> { ch = '9' }
+                                                    (ch == '0') -> { ch = 'Я' }
+                                                    else -> {ch--}
+                                                }
+                                                letter = ch.toString()
+                                                letterText.text = letter
                                             }
-                                            letter = ch.toString()
-                                            letterText.text = letter
-                                        }
 
                                         buttonPlus.onClick {
                                             var ch = letter[0]

@@ -199,7 +199,7 @@ class BaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_N
     }
 
     fun getTimeNoteFromBase(): List<TimeNote> {
-        var timeNoteList = ArrayList<TimeNote>()
+        val timeNoteList = ArrayList<TimeNote>()
         val db = this.readableDatabase
         db.select(TABLE_TIME).parseList(object : MapRowParser<List<TimeNote>> {
             override fun parseRow(columns: Map<String, Any?>): List<TimeNote> {

@@ -1,66 +1,13 @@
 <resources>
-
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="icon">@color/c_w</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-
-    </style>
-
-
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
     <style name="AppTheme.Button.Colored" parent="Widget.AppCompat.Button.Colored"/>
-
-    <!-- Base application theme. -->
-    <style name="AppThemeLight" parent="Theme.AppCompat.Light">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="icon">@color/c_bl</item>
-        <item name="android:textColorTertiary">@color/textColorTertiaryLight</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="AppThemeDayNight" parent="Theme.AppCompat.DayNight.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="icon">@color/c_w</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
 
     <style name="AppThemeLight.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light"/>
     <style name="AppThemeLight.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
     <style name="AppThemeLight.Button.Colored" parent="Widget.AppCompat.Button.Colored"/>
 
-
-    <!--Значения для фрагмента настроек программы-->
-
-    <string-array name="themes_title">
-        <item>Темная тема</item>
-        <item>Светлая тема</item>
-        <item>Авто (День/ночь)</item>
-    </string-array>
-
-    <string-array name="themes_values">
-        <item>AppTheme</item>
-        <item>AppThemeLight</item>
-        <item>AppThemeDayNight</item>
-    </string-array>
+<!--    Значения для фрагмента настроек программы-->
 
     <string-array name="text_size_title">
         <item>Маленький (13)</item>
